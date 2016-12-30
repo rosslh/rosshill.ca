@@ -1,0 +1,5 @@
+*.scss
+*.css.map
+.DS_Store
+.sass-cache/
+index2.html

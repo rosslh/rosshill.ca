@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--
+PURPOSE:
+"To familiarize yourself with JavaScript's boolean type and its associated operators."
+Author: Ross Hill
+Date: 11/04/2014 (dd/mm/yyyy)
+-->
+<head>
+	<meta charset="utf-8">
+	<title>Digital Logic Gates</title>
+	<!-- Site-wide favicon -->
+	<link rel="shortcut icon" href="http://faviconist.com/icons/912394c6b7153b89e27884cd47d59147/favicon.ico"/>
+	<!-- Site-wide external style sheet -->
+	<link rel="stylesheet" type="text/css" href="http://mail.rsgc.on.ca/~rhill/CSS/styles.css">
+	<!-- Javascript -->
+	<script>
+	function $(id) {
+ 		return document.getElementById(id);
+	}
+	// Equivalence gate
+	function equ(){
+		var true1 = $("true1").checked;
+		$("Output1").innerHTML = true1;
+		$("image1").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/EQU.png'
+	}
+	//Not gate
+	function not(){
+		var true1 = $("true1").checked;
+		$("Output1").innerHTML = !true1;
+		$("image1").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/NOT.png'
+	}
+	//And gate
+	function and(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		$("Output2").innerHTML = true2 && true3
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/AND.png'
+	}
+	//Or gate
+	function or(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		$("Output2").innerHTML = true2 || true3
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/OR.png'
+	}
+	//Nand gate
+	function nand(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		$("Output2").innerHTML = !(true2 && true3)
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/NAND.png'
+	}
+	//Nor gate
+	function nor(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		$("Output2").innerHTML = !(true2 || true3)
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/NOR.png'
+	}
+	//Xor gate
+	function xor(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		var xor = true2 && true3 || !true2 && !true3;
+		$("Output2").innerHTML = !xor;
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/XOR.png'
+	}
+	//Xnor gate
+	function xnor(){
+		var true2 = $("true2").checked;
+		var true3 = $("true3").checked;
+		$("Output2").innerHTML = true2 && true3 || !true2 && !true3;
+		$("image2").src = 'http://mail.rsgc.on.ca/~cdarcy/Gates/XNOR.png'
+	}
+	</script>
+	<style>
+		body{
+			font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+			color:#333;
+			background-color:#f7f5ed;
+			line-height:150%;
+		}
+		h1, h2{
+			text-align:center;
+			margin:1em;
+		}
+		table{
+			margin:1em auto;
+			border:1px solid #333;
+			border-collapse:collapse;
+			width:80%;
+			min-width:50em;
+			background:white;
+		}
+		td{
+			border:1px solid #333;
+			padding:0.5em;
+			text-align:center;
+		}
+		th{
+			background-color:#333;
+			color:white;
+			padding:0.5em;
+		}
+		input{
+			height:100%;
+			width:auto;
+		}
+		button{
+			height:2em;
+			width:50%;
+			min-width:5em;
+		}
+	</style>
+</head>
+<!-- HTML -->
+<body class="boolean">
+<h1>Boolean (Logical) Operators</h1>
+<hr>
+<h2>
+1-Input (Unary) Digital Logic Gates: <input type="button" value="EQU" onclick ="equ()"> <input type="button" value="!" onclick ="not()">
+</h2>
+<!-- First table -->
+<table class="tableboolean">
+<colgroup>
+	<col style="width: 33%">
+	<col style="width: 33%">
+	<col style="width: 33%">
+</colgroup>
+	<thead>
+		<tr>
+			<th>Input</th>
+			<th>Process</th>
+			<th>Output</th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="td1boolean">
+			<input type="radio" name="truefalse1" checked="checked" id="false1"> false <input type="radio" name="truefalse1" id="true1"> true
+		</td>
+		<td>
+			<img id="image1" src="http://mail.rsgc.on.ca/~cdarcy/Gates/EQU.png">
+		</td>
+		<td>
+			<span id="Output1">false</span>
+		</td>
+	</tr>
+</table>
+<hr>
+<h2>
+2-Input (Binary) Digital Logic Gates:
+<input type="button" value="&&" onclick ="and()">
+<input type="button" value="||" onclick ="or()">
+<input type="button" value="NAND" onclick ="nand()">
+<input type="button" value="NOR" onclick ="nor()">
+<input type="button" value="XOR" onclick ="xor()">
+<input type="button" value="XNOR" onclick ="xnor()">
+</h2>
+<!-- Second table -->
+<table class="tableboolean">
+<colgroup>
+	<col style="width: 33%">
+	<col style="width: 33%">
+	<col style="width: 33%">
+</colgroup>
+	<thead>
+		<tr>
+			<th>Input</th>
+			<th>Process</th>
+			<th>Output</th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="td2boolean">
+			<input type="radio" name="truefalse2" checked="checked" id="false2"> false <input type="radio" name="truefalse2" id="true2"> true
+		</td>
+		<td rowspan="2">
+			<img id="image2" src="http://mail.rsgc.on.ca/~cdarcy/Gates/AND.png">
+		</td>
+		<td rowspan="2">
+			<span id="Output2">false</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="td2boolean">
+		<input type="radio" name="truefalse3" checked="checked" id="false3"> false <input type="radio" name="truefalse3" id="true3"> true
+		</td>
+	</tr
+</table>
+</body>
+</html>
