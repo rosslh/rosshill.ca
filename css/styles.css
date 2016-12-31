@@ -68,11 +68,9 @@ html, body {
         font-family: "Roboto Slab"; }
       .pane1 .sidebar p .emailLink {
         color: white;
-        text-decoration: underline;
-        text-decoration-style: dotted; }
+        text-decoration: none; }
       .pane1 .sidebar p .emailLink:hover {
-        text-decoration: underline;
-        text-decoration-style: solid; }
+        text-decoration: underline; }
     .pane1 .sidebar .roles {
       font-size: 1.05em; }
   .pane1 .introText {

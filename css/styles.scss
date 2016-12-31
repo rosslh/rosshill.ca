@@ -89,12 +89,10 @@ html,body{
       }
       .emailLink{
         color:white;
-        text-decoration: underline;
-        text-decoration-style: dotted; // only mozilla
+        text-decoration: none;
       }
       .emailLink:hover{
         text-decoration: underline;
-        text-decoration-style: solid;
       }
       color:$eggshell;
       font-weight:300;
