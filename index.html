@@ -16,11 +16,9 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e95856">
 	<meta name="theme-color" content="#e95856">
-
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href='css/fonts.css' rel='stylesheet' type='text/css'>
 	<link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<script src="js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
   <div class="pane pane1">
@@ -29,9 +27,6 @@
 			<p class="namewrap">
 				<span class="name">Ross Hill</span>
 			</p>
-			<!-- <p class="roles">
-				web&nbsp;designer • front&nbsp;end • Django&nbsp;back&nbsp;end • Java&nbsp;and&nbsp;Python&nbsp;dev
-			</p> -->
 			<p>
 				<i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Toronto
 			</p>
@@ -125,43 +120,7 @@
 			</form>
 		</div>
 	</div>
-	<script type="text/javascript">
-		var elementPosition = $('#projectNav').offset();
-		$(window).resize(function(){
-			$('#projectNav').css('position', 'static');
-			elementPosition = $('#projectNav').offset();
-      if($(window).scrollTop() > elementPosition.top)
-        $('#projectNav').css('position', 'fixed').css('top', '0'); //fix to top
-		});
-    $(window).scroll(function () {
-				console.log($(window).scrollTop());
-				if ($(window).scrollTop() >= $('#pane3').offset().top-parseInt($('#projectNav').css('height'))){
-						$('#projectNav').css('opacity','0')
-        }	else if ($(window).scrollTop() > elementPosition.top) {
-						$('#projectNav').css('opacity','1')
-            $('#projectNav').css('position', 'fixed').css('top', '0');
-						var navHeight = parseInt($('#projectNav').css('height')) + parseInt($('#projectNav').css('border-top-width'));
-						$('#projectsContent').css('margin-top',navHeight);
-        } else {
-						$('#projectNav').css('opacity','1')
-            $('#projectNav').css('position', 'static');
-						$('#projectsContent').css('margin-top','0');
-        }
-     });
-		 $(function() {
-			  $('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top
-			        }, 300);
-			        return false;
-			      }
-			    }
-			  });
-			});
-	</script>
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/scroll.js" type="text/javascript"></script>
 </body>
 </html>
