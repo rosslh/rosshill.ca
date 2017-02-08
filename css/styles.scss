@@ -75,25 +75,19 @@ html,body{
         width:$diameter;
       }
     }
-    p.namewrap{
+    h1{
+      color:white;
+      text-align: center;
       margin-top:0.7em;
+      text-shadow: 2px 2px 0px $darkblue;  // or 3 3 0
+      font-size:2.2em;
+      font-family:"Roboto Slab";
+      font-weight: 300;
     }
     .fa{
       cursor:default;
     }
     p{
-      .name{
-        text-shadow: 2px 2px 0px $darkblue;  // or 3 3 0
-        font-size:2.2em;
-        font-family:"Roboto Slab";
-      }
-      .emailLink{
-        color:white;
-        text-decoration: none;
-      }
-      .emailLink:hover{
-        text-decoration: underline;
-      }
       color:$eggshell;
       font-weight:300;
       font-size: 1.1em;
@@ -104,6 +98,13 @@ html,body{
       margin-top:1.3em;
       margin-bottom:1.3em;
       text-align:center;
+      .emailLink{
+        color:white;
+        text-decoration: none;
+      }
+      .emailLink:hover{
+        text-decoration: underline;
+      }
     }
     .roles{
       // font-style: italic;
@@ -126,7 +127,7 @@ html,body{
     p:first-child{
       margin-top:0;
     }
-    h1{
+    h2{
       font-weight:400;
       font-size:2em;
       font-family:'Oswald', "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
@@ -180,13 +181,13 @@ html,body{
         padding-top:4em;
         padding-bottom:6em;
       }
-      p, h1{
+      p, h2{
         margin:0 auto;
         margin-top:0.5em;
         margin-bottom:0.5em;
         width:90%;
       }
-      h1{
+      h2{
         margin-top:0;
         margin-bottom: 1.5em !important;
       }
@@ -254,13 +255,13 @@ html,body{
       visibility: hidden;
     }
   }
-  h1, h2{
+  h2, h3{
     font-weight:400;
     font-size:2em;
     font-family:'Oswald', "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
   }
 
-  h2{
+  h3{
     font-weight:300;
     font-size: 2em;
   }
@@ -328,7 +329,7 @@ html,body{
     padding-top:2em;
     padding-bottom:3em;
   }
-  h1{
+  h2{
     margin-top:0;
     text-shadow: 3px 3px 0px $darkblue;
     font-size:2.4em;
