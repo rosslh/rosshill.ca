@@ -1,14 +1,16 @@
-$blue: #4E92C3;
-$darkblue:#337CB0;
-$red: #e53935;
+$blue: #2C7ABF;
+$darkblue:#25669F;
+$red: #d32f2f;
 $eggshell:#ffffff;
 $lightgrey:#F7F7F7;
 $charcoal:#323232;
 $green:#6ABC6D;
 $darkgreen:#49814B;
+
 * {
--webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -41,9 +43,9 @@ html,body{
 
 .pane1{
   $color:#333;
-  $compliment:$darkblue;
+  $compliment:$blue/1.2;
   $background:$eggshell;
-  $diameter: 12em;
+  $diameter: 12.5em;
   background-color:$background;
   min-height:33em;
   height:100vh;
@@ -60,16 +62,13 @@ html,body{
     width:calc(14.5em + 10%);
     float:left;
     overflow-x:hidden;
-    border-right:4px solid $compliment;
     .circle{
       @include border-radius(50%);
-      border:4px solid $compliment;
       margin:0 auto;
-      margin-top:calc(30vh - 8em - 7px);
+      margin-top:calc(30vh - 8.5em);
       height:$diameter;
       width:$diameter;
       overflow:hidden;
-      // margin-bottom:4em;
       img{
         height:$diameter;
         width:$diameter;
@@ -79,7 +78,7 @@ html,body{
       color:white;
       text-align: center;
       margin-top:0.7em;
-      text-shadow: 2px 2px 0px $darkblue;  // or 3 3 0
+      text-shadow: 2px 2px 0px $compliment;  // or 3 3 0
       font-size:2.2em;
       font-family:"Roboto Slab";
       font-weight: 300;
@@ -211,7 +210,7 @@ html,body{
     display:block;
     background-color:transparentize($color, 0.13);
     z-index:150;
-    border-top:5px solid $compliment;
+    // border-top:5px solid $compliment;
     height:$navHeight;
     text-align:center;
     width:100%;
@@ -350,7 +349,7 @@ html,body{
   	// border:1px solid #333;
   	display:block;
   	margin:0 auto;
-  	margin-bottom:1.5em;
+  	margin-bottom:1em;
   	font-size:1.5em;
   	font-family: Muli,Georgia,Times,"Times New Roman",serif;
   }
@@ -367,7 +366,9 @@ html,body{
   	font-family: Muli,Georgia,Times,"Times New Roman",serif;
   	font-size:1em;
   }
-  $button: #E9423F;
+  $button: $darkblue/1.1;
+  $hover: $button/1.2;
+  $click: $hover/1.3;
   .submit{
   	cursor:pointer;
     -webkit-transition: all .08s ease-out; /* Safari */
@@ -386,7 +387,10 @@ html,body{
   	border-radius:3px;
   }
   .submit:hover{
-  	background-color:$button/1.2;
+  	background-color:$hover;
+  }
+  .submit:active{
+    background-color:$click;
   }
   #emailaddress, #emailbody, #name{
     width:100%;
@@ -394,13 +398,8 @@ html,body{
   label{
   	display:block;
   	margin:0 auto;
-  	margin-top:1em;
-  	margin-bottom:1em;
+  	margin-bottom:0.5em;
   	font-family: Muli,Georgia,Times,"Times New Roman",serif;
   	font-size:1.2em;
-  }
-
-  label:first-child{
-  	margin-top:1.5em;
   }
 }
