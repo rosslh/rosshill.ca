@@ -28,7 +28,7 @@ html, body {
     min-height: 33em;
     height: calc(100vh);
     margin: 0;
-    background-color: #2C7ABF;
+    background-color: #426BBF;
     width: calc(14.5em + 10%);
     float: left;
     overflow-x: hidden; }
@@ -39,6 +39,7 @@ html, body {
       border-radius: 50%;
       margin: 0 auto;
       margin-top: calc(30vh - 8.5em);
+      border: 2px solid #3c61ae;
       height: 12.5em;
       width: 12.5em;
       overflow: hidden; }
@@ -49,7 +50,6 @@ html, body {
       color: white;
       text-align: center;
       margin-top: 0.7em;
-      text-shadow: 2px 2px 0px #25669f;
       font-size: 2.2em;
       font-family: "Roboto Slab";
       font-weight: 300; }
@@ -107,7 +107,7 @@ html, body {
         height: 31em;
         min-height: 0;
         border-right: none;
-        border-bottom: 5px solid #25669f;
+        border-bottom: 5px solid #3c61ae;
         padding: 0; }
       .pane1 .circle {
         height: 9em !important;
@@ -148,7 +148,7 @@ html, body {
     padding-left: 0;
     padding-right: 0;
     display: block;
-    background-color: rgba(229, 64, 61, 0.87);
+    background-color: rgba(191, 54, 65, 0.87);
     z-index: 150;
     height: 3.5em;
     text-align: center;
@@ -227,8 +227,7 @@ html, body {
 .pane3 {
   color: #ffffff;
   z-index: 3;
-  background: #2C7ABF;
-  border-top: 5px solid #25669F; }
+  background: #426BBF; }
   .pane3 .downTriangle {
     z-index: 100;
     width: 0;
@@ -239,16 +238,6 @@ html, body {
     border-top: 49px solid #ffffff;
     position: relative;
     top: -5px; }
-  .pane3 .downTriangleBorder {
-    z-index: 90;
-    width: 0;
-    height: 0;
-    border-left: 73px solid transparent;
-    border-right: 73px solid transparent;
-    margin: 0 auto;
-    position: relative;
-    top: -49px;
-    border-top: 51px solid #25669F; }
   .pane3 .content {
     width: 60%;
     margin: 0 auto;
@@ -256,7 +245,6 @@ html, body {
     padding-bottom: 3em; }
   .pane3 h2 {
     margin-top: 0;
-    text-shadow: 3px 3px 0px #25669F;
     font-size: 2.4em;
     margin-bottom: 0.8em;
     font-family: "Roboto Slab"; }
@@ -291,7 +279,7 @@ html, body {
     font-family: Muli,Georgia,Times,"Times New Roman",serif;
     font-size: 0.9em;
     margin-top: 1.5em;
-    background-color: #225d91;
+    background-color: #2b4c8f;
     height: 3em;
     width: 4.86em;
     letter-spacing: 0.03em;
@@ -301,9 +289,9 @@ html, body {
     -webkit-border-radius: 3px;
     border-radius: 3px; }
   .pane3 .submit:hover {
-    background-color: #1c4e79; }
+    background-color: #223d72; }
   .pane3 .submit:active {
-    background-color: #163c5d; }
+    background-color: #192d54; }
   .pane3 #emailaddress, .pane3 #emailbody, .pane3 #name {
     width: 100%; }
   .pane3 label {
