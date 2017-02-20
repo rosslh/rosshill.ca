@@ -1,6 +1,6 @@
-$blue: #426BBF;
-$darkblue:#25669F;
-$red: #d32f2f;
+$blue: #5c6bc0;
+$darkblue:#3f51b5;
+$red: #e53935;
 $eggshell:#ffffff;
 $lightgrey:#F7F7F7;
 $charcoal:#323232;
@@ -43,7 +43,7 @@ html,body{
 
 .pane1{
   $color:#333;
-  $compliment:$blue/1.1;
+  $compliment:$darkblue;
   $background:$eggshell;
   $diameter: 12.5em;
   background-color:$background;
@@ -66,7 +66,7 @@ html,body{
       @include border-radius(50%);
       margin:0 auto;
       margin-top:calc(30vh - 8.5em);
-      border:2px solid $compliment;
+      border:1px solid $compliment;
       height:$diameter;
       width:$diameter;
       overflow:hidden;
@@ -152,7 +152,7 @@ html,body{
       height:31em;
       min-height: 0;
       border-right:none;
-      border-bottom:5px solid $compliment;
+      // border-bottom:5px solid $compliment;
       padding:0;
       p{
         // display: none;
@@ -196,7 +196,7 @@ html,body{
 }
 
 .pane2{
-  $color:#DB4437;
+  $color:$red;
   $background:$eggshell;
   $compliment:$color/1.02;
   $navHeight:3.5em;
