@@ -28,7 +28,7 @@ html, body {
     min-height: 33em;
     height: calc(100vh);
     margin: 0;
-    background-color: #5c6bc0;
+    background-color: #4D6DC3;
     width: calc(14.5em + 10%);
     float: left;
     overflow-x: hidden; }
@@ -39,7 +39,7 @@ html, body {
       border-radius: 50%;
       margin: 0 auto;
       margin-top: calc(30vh - 8.5em);
-      border: 1px solid #3f51b5;
+      border: 1px solid #405ba3;
       height: 12.5em;
       width: 12.5em;
       overflow: hidden; }
@@ -226,7 +226,7 @@ html, body {
 .pane3 {
   color: #ffffff;
   z-index: 3;
-  background: #5c6bc0; }
+  background: #4D6DC3; }
   .pane3 .downTriangle {
     z-index: 100;
     width: 0;
@@ -278,7 +278,7 @@ html, body {
     font-family: Muli,Georgia,Times,"Times New Roman",serif;
     font-size: 0.9em;
     margin-top: 1.5em;
-    background-color: #404c90;
+    background-color: #344d92;
     height: 3em;
     width: 4.86em;
     letter-spacing: 0.03em;
@@ -288,9 +288,9 @@ html, body {
     -webkit-border-radius: 3px;
     border-radius: 3px; }
   .pane3 .submit:hover {
-    background-color: #333d73; }
+    background-color: #2a3e75; }
   .pane3 .submit:active {
-    background-color: #262d55; }
+    background-color: #1f2e57; }
   .pane3 #emailaddress, .pane3 #emailbody, .pane3 #name {
     width: 100%; }
   .pane3 label {
