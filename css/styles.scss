@@ -17,7 +17,15 @@ $darkgreen:#49814B;
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
-
+@mixin grad{
+  background: -moz-linear-gradient(112deg, #4673C9 0%, #4D6DC3 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4D6DC3), color-stop(100%, #4673C9)); /* safari4+,chrome */
+  background: -webkit-linear-gradient(112deg, #4673C9 0%, #4D6DC3 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(112deg, #4673C9 0%, #4D6DC3 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(112deg, #4673C9 0%, #4D6DC3 100%); /* ie10+ */
+  background: linear-gradient(338deg, #4673C9 0%, #4D6DC3 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4D6DC3', endColorstr='#4673C9',GradientType=0 ); /* ie6-9 */
+}
 @mixin rotate($rotation){
   // display:block;
   -ms-transform: rotate($rotation); /* IE 9 */
@@ -53,12 +61,13 @@ html,body{
   padding:0;
   overflow-y: hidden;
   .sidebar{
+    @include grad;
     position: relative;
     z-index:1000 !important;
     min-height:33em;
     height:calc(100vh);
     margin:0;
-    background-color: $blue;
+    /*background-color: $blue;*/
     width:calc(14.5em + 10%);
     float:left;
     overflow-x:hidden;
@@ -297,9 +306,10 @@ html,body{
   }
 }
 .pane3{
+  @include grad;
   color:$eggshell;
   z-index:3;
-  background:$blue;
+  // background:$blue;
   // border-top: 5px solid $darkblue;
   .downTriangle{
     z-index:100;
