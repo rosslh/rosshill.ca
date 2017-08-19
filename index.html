@@ -56,7 +56,7 @@
 </body>
 <script>
 	function loop(n) {
-		var colors = ["rgb(84, 79, 226)", "rgb(175, 53, 216)", "rgb(204, 59, 59)", "rgb(225, 194, 56)", "rgb(27, 180, 56)"];
+		var colors = ["rgb(92, 87, 224)", "rgb(175, 53, 216)", "rgb(201, 64, 64)", "rgb(221, 161, 48)", "rgb(45, 175, 70)"];
 		setTimeout(function(){
 			sweep(
 				document.getElementsByClassName("sidebar")[0],
@@ -68,12 +68,12 @@
 						n = n < colors.length-1 ? n + 1 : 0;
 						loop(n);
 					},
-					duration: 10000,
+					duration: 20000,
 					direction: [-1, 1][Math.round(Math.random())],
 					space: 'RGB'
 				}
 			)
-		}, 4000);
+		}, 7000);
 	}
 	loop(0);
 </script>
