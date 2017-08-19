@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta name="description" content="I'm Ross Hill, a University student from Toronto. I pursue software projects that I find interesting.">
 	<meta name="title" content="Ross Hill - My Personal Website and Portfolio">
-	<title>Ross Hill - My Personal Website and Portfolio</title>
+	<title>Ross Hill - Website and Portfolio</title>
 	<meta name="robots" content="index, follow">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="English">
 	<meta name="author" content="Ross Hill">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-	<!-- <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"> -->
 	<link rel="manifest" href="manifest.json">
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e95856">
 	<meta name="theme-color" content="#e95856">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href='css/fonts.css' rel='stylesheet' type='text/css'>
 	<link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="js/sweep.min.js"></script>
 </head>
+
 <body>
-  <div class="pane pane1">
-    <div class="sidebar">
-      <div class="circle"><img src="assets/headshot.jpg" alt="A photo of Ross Hill"></div>
+	<div class="pane pane1">
+		<div class="sidebar">
+			<div class="circle"><img src="assets/headshot.jpg" alt="Ross Hill"></div>
 			<h1>Ross Hill</h1>
 			<p>
 				<i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Toronto
@@ -31,93 +33,49 @@
 				<i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="mailto:ross.hill@queensu.ca">ross.hill@queensu.ca</a>
 			</p>
 			<p>
-			 <i class="fa fa-github" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="https://github.com/rosslh/">Github</a>
+				<i class="fa fa-github" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="https://github.com/rosslh/">Github</a>
 			</p>
 			<p>
-				<i class="fa fa-linkedin-square" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="https://ca.linkedin.com/in/rosslh">LinkedIn</a>
+				<i class="fa fa-linkedin-square" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="https://linkedin.com/in/rosslh">LinkedIn</a>
 			</p>
 			<p>
 				<i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;<a class="emailLink" href="/assets/resume/Resume.pdf">Resume</a>
 			</p>
-    </div>
-    <div class="introText">
-      <div class="content">
-        <h2>Hey there!</h2>
-        <p>
-				    I'm Ross Hill, a Queen's University student from Toronto, Canada. I pursue software projects that I find interesting. Some of my projects include a Python based Mandelbrot Set visualizer, a smart URL shortener, and a Firefox webextension, which you can check out <a href="https://github.com/rosslh">here</a>.
-			  </p>
-			  <p>
-					I've had experience working as a ski racing coach at <a href="http://caledonskiclub.com/">Caledon Ski Club</a> in Ontario, and during the summer as a counselor at Camp Hurontario. At Queen's University, I'm involved in clubs including Run Club and Debating.
-
-					I currently work for the Student run <a href="http://walkhome.ca/">Walkhome</a> service throughout the school year.
-			  </p>
-      </div>
-    </div>
-  </div>
-	<div class="pane pane2" id="pane2">
-		<ul id="projectNav" class="navBar">
-			<li><a href="#Django">Python</a></li>
-			<li><a href="#Javascript">Javascript</a></li>
-			<li><a href="#pane3">Contact Me</a></li>
-		</ul>
-    <div class="projects">
-      <div class="content" id="projectsContent">
-				<div class="pSection">
-					<div id="Django" class="linkto"></div>
-					<h2>Python</h2>
-					<h3>Smart URL Shortener</h3>
-					<div class="previewWrapper">
-						<a href="https://github.com/rosslh/justlink.co"><img class="preview" src="assets/previews/justlink.png" alt="A preview of Ross Hill's website justlink.co, which links to Github."></a>
-					</div>
-					<p>
-						Justlink.co is a website made by Ross Hill that provides a unique way to quickly link websites whose URLs you have forgotten. Written in Python using the Django framework, you simply need to type "justlink.co/your-description-here". Justlink.co takes your description and queries a search engine for its first result. It then redirects you to that result.
-				  </p>
-					<h3>Visualizing the Mandelbrot Set</h3>
-					<div class="previewWrapper">
-						<a href="https://github.com/rosslh/Interactive-Python-Mandelbrot"><img class="preview" src="assets/previews/fractal.png" alt="A preview of Ross Hill's website of the Mandelbrot Set project, which links to Github."></a>
-					</div>
-					<p>
-						This project is a clickable, interactive Mandelbrot set, made with Python 3, and the  PIL and Tkinter modules. The colour palette is randomly generated. The Mandelbrot set is a famous example of a fractal in mathematics. The Mandelbrot set is a visualization of an equation involving complex numbers. Graphing said equation by hand would take years, but with a computer it takes seconds.
-					</p>
-				</div>
-				<div class="pSection">
-					<div id="Javascript" class="linkto"></div>
-					<h2>Javascript</h2>
-					<h3>HidePass WebExtension</h3>
-					<div class="previewWrapper">
-						<a href='https://github.com/rosslh/HidePass'><img class="preview" src="assets/previews/hp.svg" alt="The logo of Ross Hill's hidepass extension, which links to Github."></a>
-					</div>
-					<p>
-						HidePass is Ross Hill's security extension for Firefox which hides the asterisks normally shown when entering a password, so that the length of one's password cannot be determined. An attacker knowing the length of one's password greatly decreases the number of guesses the attacker has to do in order to crack your password. Hiding the length of your password prevents this. This is especially helpful for those who need to enter their passwords while their screen is on projector.
-					</p>
-					<h3>Javascript Slot Machine</h3>
-					<div class="previewWrapper">
-						<a href="http://www.rosshill.ca/refs/slotmachine"><img class="preview" src="assets/previews/slotmachine.png" alt="A preview of Ross Hill's slot machine website, which links to the site itself."></a>
-					</div>
-					<p>
-						For my class's grade 10 computer science final exam, we were challenged to make a Javascript, HTML, and CSS slotmachine. We were given the specifications of the odds of each spin and the available wagers.
-					</p>
-				</div>
-      </div>
-    </div>
-  </div>
-	<div class="pane pane3" id="pane3">
-		<div class="downTriangle"></div>
-		<div class="downTriangleBorder"></div>
-		<div class="content">
-			<h2 class="Contact">Contact Me:</h2>
-			<form id="contactross" name="contactross" netlify>
-				<label for="name">Your name:</label>
-				<input name="name" type="text" id="name" required>
-				<label for="emailaddress">Your email address:</label>
-				<input name="email address" type="email" id="emailaddress" required>
-				<label for="emailbody">Email body:</label>
-				<textarea name="email body" id="emailbody" required></textarea>
-				<input class="submit" type="submit" value="Submit">
-			</form>
+		</div>
+		<div class="introText">
+			<h2>Hey there!</h2>
+			<p>
+				I'm Ross Hill, a Queen's University student from Toronto, Canada. I pursue software projects that I find interesting. Some of my projects include a Python based Mandelbrot Set visualizer, a smart URL shortener, and a Firefox webextension, all of which you can
+				check out <a href="https://github.com/rosslh">here</a>.
+			</p>
+			<p>
+				I've had experience working as a software development intern at <a href="https://nudge.ai">Nudge.ai</a>, an AI powered sales platform based in downtown Toronto. I've also worked as a ski racing coach at <a href="http://caledonskiclub.com/">Caledon Ski Club</a> in Ontario, and during the summer as a counselor at <a href="http://camphurontario.com/">Camp Hurontario</a>.
+			</p>
 		</div>
 	</div>
-	<script src="js/jquery.js" type="text/javascript"></script>
-	<script src="js/scroll.js" type="text/javascript"></script>
 </body>
+<script>
+	function loop(n) {
+		var colors = ["rgb(84, 79, 226)", "rgb(175, 53, 216)", "rgb(204, 59, 59)", "rgb(225, 194, 56)", "rgb(27, 180, 56)"];
+		setTimeout(function(){
+			sweep(
+				document.getElementsByClassName("sidebar")[0],
+				"background-color",
+				colors[n],
+				colors[n < colors.length-1 ? n + 1 : 0],
+				{
+					callback: function() {
+						n = n < colors.length-1 ? n + 1 : 0;
+						loop(n);
+					},
+					duration: 10000,
+					direction: [-1, 1][Math.round(Math.random())],
+					space: 'RGB'
+				}
+			)
+		}, 4000);
+	}
+	loop(0);
+</script>
+
 </html>
