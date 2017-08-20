@@ -15,6 +15,7 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e95856">
 	<meta name="theme-color" content="#e95856">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href='css/fonts.css' rel='stylesheet' type='text/css'>
 	<link href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -55,25 +56,19 @@
 	</div>
 </body>
 <script>
-	function loop(n) {
-		var colors = ["rgb(92, 87, 224)", "rgb(175, 53, 216)", "rgb(201, 64, 64)", "rgb(221, 161, 48)", "rgb(45, 175, 70)"];
-		setTimeout(function(){
-			sweep(
-				document.getElementsByClassName("sidebar")[0],
-				"background-color",
-				colors[n],
-				colors[n < colors.length-1 ? n + 1 : 0],
-				{
-					callback: function() {
-						n = n < colors.length-1 ? n + 1 : 0;
-						loop(n);
-					},
-					duration: 20000,
-					direction: [-1, 1][Math.round(Math.random())],
-					space: 'RGB'
-				}
-			)
-		}, 7000);
+	function loop() {
+		sweep(
+			document.getElementsByClassName("sidebar")[0],
+			"background-color",
+			"#523EE1",
+			"#523EE1",
+			{
+				callback: loop,
+				duration: 25000, // 25 secs
+				direction: -1, // change this to use shorter distance
+				space: 'HUSL'
+			}
+		)
 	}
 	loop(0);
 </script>

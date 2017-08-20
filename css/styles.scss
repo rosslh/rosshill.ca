@@ -1,14 +1,9 @@
-/*** uncss> filename: css/styles.css ***/
-* {
-    -webkit-text-size-adjust: 100%;
-}
-
 body,
 html {
     min-width: 22em;
     margin: 0;
     padding: 0;
-    font-size: 0.98em;
+    font-size: 14px;
     color: #323232;
     font-family: Muli, Georgia, Times, "Times New Roman", serif;
 }
@@ -29,7 +24,7 @@ html {
         float: left;
         overflow: hidden;
         text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-        background-color: rgb(92, 87, 224);
+        background-color: #523EE1;
         .circle {
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
@@ -63,7 +58,7 @@ html {
         p {
             color: #ffffff;
             font-weight: 300;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-family: Muli, Georgia, Times, "Times New Roman", serif;
             width: auto;
             padding-left: 1.8em;
@@ -103,7 +98,13 @@ html {
 
         p {
             margin-top: 1.8em;
-            font-size: 1.2em;
+            line-height:1.5;
+            font-size: 1.1em;
         }
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  Body {
+    font-size: 14px;
     }
 }
