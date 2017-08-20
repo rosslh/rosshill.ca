@@ -23,7 +23,8 @@ html {
     float: left;
     overflow: hidden;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-    background-color: #523EE1; }
+    background-image: url("../assets/seigaiha.png");
+    background-repeat: repeat; }
     .pane1 .sidebar .circle {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
