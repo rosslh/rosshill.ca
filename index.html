@@ -59,15 +59,28 @@
 		sweep(
 			document.getElementsByClassName("sidebar")[0],
 			"background-color",
-			"#523EE1",
-			"#523EE1",
+			"#390FD9",
+			"#390FD9",
 			{
 				callback: loop,
-				duration: 25000, // 25 secs
+				duration: 40000, // 25 secs
 				direction: -1, // change this to use shorter distance
 				space: 'HUSL'
 			}
 		)
+		for(element of document.querySelectorAll(".introText a")){
+			sweep(
+				element,
+				"color",
+				"#390FD9",
+				"#390FD9",
+				{
+					duration: 40000, // 25 secs
+					direction: -1, // change this to use shorter distance
+					space: 'HUSL'
+				}
+			);
+		}
 	}
 	loop(0);
 </script>
