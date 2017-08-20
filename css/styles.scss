@@ -10,20 +10,57 @@ html {
 
 .pane1 {
     min-height: 33em;
-    height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
+    @media all and (min-width:47em){
+        height: 100vh;
+        overflow-y: hidden;
+        .sidebar {
+            position: relative;
+            z-index: 1000 !important;
+            min-height: 33em;
+            height: calc(100vh);
+            margin: 0;
+            width: calc(14.5em + 10%);
+            float: left;
+            h1 {
+                margin-top: 0.7em;
+            }
+            p{
+                line-height:1.6;
+            }
+        }
+        .introText {
+            margin-left: calc(14.5em + 10%);
+            height: 100vh;
+            min-height:100%;
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+    }
+    @media all and (max-width:47em){
+        .sidebar{
+            .circle{
+                margin-top:1.5em !important;
+                margin-bottom:0 !important;
+            }
+            h1{
+                margin-top:0.2em;
+                margin-bottom: 0.2em;
+            }
+            p {
+                line-height:1.2;
+            }
+        }
+        .introText {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    }
     .sidebar {
-        position: relative;
-        z-index: 1000 !important;
-        min-height: 33em;
-        height: calc(100vh);
-        margin: 0;
-        width: calc(14.5em + 10%);
-        float: left;
         overflow: hidden;
         text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+        background-color: #390FD9;
         background-image: url("../assets/seigaiha-transparent.png");
         background-repeat: repeat;
         .circle {
@@ -46,7 +83,6 @@ html {
         h1 {
             color: white;
             text-align: center;
-            margin-top: 0.7em;
             font-size: 2.2em;
             font-family: "Roboto Slab";
             font-weight: 300;
@@ -64,8 +100,6 @@ html {
             width: auto;
             padding-left: 1.8em;
             padding-right: 1.8em;
-            margin-top: 1.3em;
-            margin-bottom: 1.3em;
             text-align: center;
 
             .emailLink {
@@ -80,15 +114,11 @@ html {
     }
 
     .introText {
-        padding: 0;
-        height: 100vh;
-        min-height:100%;
+        padding-top: 0;
+        padding-bottom: 0;
         width: 100%;
-        margin-left: calc(14.5em + 10%);
         display: table-cell;
         vertical-align: middle;
-        padding-left: 3em;
-        padding-right: 3em;
         max-width:80em;
         h2 {
             font-weight: 400;
@@ -102,10 +132,5 @@ html {
             line-height:1.5;
             font-size: 1.1em;
         }
-    }
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  Body {
-    font-size: 14px;
     }
 }
