@@ -59,28 +59,26 @@
 		sweep(
 			document.getElementsByClassName("sidebar")[0],
 			"background-color",
-			"#390FD9",
-			"#390FD9",
+			"#2C6BB7",
+			"#2C6BB7",
 			{
 				callback: loop,
 				duration: 40000, // 40 secs
 				direction: -1,
-				space: 'HSLuv' // aka HUSL
+				space: 'HSLuv'
 			}
 		)
-		for(element of document.querySelectorAll(".introText a")){
-			sweep(
-				element,
-				"color",
-				"#390FD9",
-				"#390FD9",
-				{
-					duration: 40000, // 40 secs
-					direction: -1,
-					space: 'HSLuv' // aka HUSL
-				}
-			);
-		}
+		sweep(
+			document.querySelectorAll(".introText a"),
+			"color",
+			"#2C6BB7",
+			"#2C6BB7",
+			{
+				duration: 40000, // 40 secs
+				direction: -1,
+				space: 'HSLuv'
+			}
+		);
 	}
 	loop(0);
 </script>
