@@ -81,10 +81,10 @@ html {
       padding-left: 1.8em;
       padding-right: 1.8em;
       text-align: center; }
-      .pane1 .sidebar p .emailLink {
+      .pane1 .sidebar p .sidebarLink {
         color: white;
         text-decoration: none; }
-        .pane1 .sidebar p .emailLink:hover {
+        .pane1 .sidebar p .sidebarLink:hover {
           text-decoration: underline; }
   .pane1 .introText {
     padding-top: 0;
