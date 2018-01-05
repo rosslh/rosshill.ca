@@ -51,6 +51,11 @@ html {
     background-color: #2C6BB7;
     background-image: url("../assets/seigaiha-transparent.png");
     background-repeat: repeat; }
+    .pane1 .sidebar small.key {
+      font-size: 70%; }
+    .pane1 .sidebar small.key a.key-link {
+      color: white;
+      text-decoration-style: dashed; }
     .pane1 .sidebar .circle {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
