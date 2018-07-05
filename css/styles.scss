@@ -1,28 +1,20 @@
+// compileOnSave
 body,
 html {
-    min-width: 22em;
-    margin: 0;
-    padding: 0;
     font-size: 14px;
     color: #323232;
     font-family: Muli, Georgia, Times, "Times New Roman", serif;
+    margin: 0;
 }
 
 .pane1 {
-    min-height: 33em;
-    margin: 0;
-    padding: 0;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
     @media all and (min-width:47em){
         height: 100vh;
-        overflow-y: hidden;
         .sidebar {
-            position: relative;
-            z-index: 1000 !important;
-            min-height: 33em;
-            height: calc(100vh);
-            margin: 0;
-            width: calc(14.5em + 10%);
-            float: left;
+            grid-column: span 3;
+
             h1 {
                 margin-top: 0.7em;
             }
@@ -31,15 +23,13 @@ html {
             }
         }
         .introText {
-            margin-left: calc(14.5em + 10%);
-            height: 100vh;
-            min-height:100%;
-            padding-left: 3em;
-            padding-right: 3em;
+            grid-column: span 9;
+            padding:4em;
         }
     }
     @media all and (max-width:47em){
         .sidebar{
+            grid-column: span 12;
             .circle{
                 margin-top:1.5em !important;
                 margin-bottom:0 !important;
@@ -51,82 +41,85 @@ html {
             p {
                 line-height:1.2;
             }
+            padding-bottom:1em;
         }
         .introText {
+            grid-column: span 12;
             padding-left: 1em;
             padding-right: 1em;
         }
     }
     .sidebar {
-        overflow: hidden;
         text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
         background-color: #2C6BB7;
         background-image: url("../assets/seigaiha-transparent.png");
         background-repeat: repeat;
-        small.key{
-            font-size: 70%;
-        }
-        small.key a.key-link{
-            color:white;
-            text-decoration-style: dashed;
-        }
-        .circle {
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            -ms-border-radius: 50%;
-            border-radius: 50%;
-            margin: calc(30vh - 8.5em) auto 0;
-            border: 5px solid rgba(0, 0, 0, 0.2);
-            height: 12.5em;
-            width: 12.5em;
-            overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .sidebarContent{
+          align-self: center;
+          small.key{
+              font-size: 70%;
+          }
+          small.key a.key-link{
+              color:white;
+              text-decoration-style: dashed;
+          }
+          .circle {
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              border-radius: 50%;
+              margin:0 auto;
+              border: 5px solid rgba(0, 0, 0, 0.2);
+              height: 12.5em;
+              width: 12.5em;
+              overflow: hidden;
 
-            img {
-                height: 12.5em;
-                width: 12.5em;
-            }
-        }
+              img {
+                  height: 12.5em;
+                  width: 12.5em;
+              }
+          }
 
-        h1 {
-            color: white;
-            text-align: center;
-            font-size: 2.2em;
-            font-family: "Roboto Slab";
-            font-weight: 300;
-        }
+          h1 {
+              color: white;
+              text-align: center;
+              font-size: 2.2em;
+              font-family: "Roboto Slab";
+              font-weight: 300;
+          }
 
-        .fa {
-            cursor: default;
-        }
+          .fa {
+              cursor: default;
+          }
 
-        p {
-            color: #ffffff;
-            font-weight: 300;
-            font-size: 1.1em;
-            font-family: Muli, Georgia, Times, "Times New Roman", serif;
-            width: auto;
-            padding-left: 1.8em;
-            padding-right: 1.8em;
-            text-align: center;
+          p {
+              color: #ffffff;
+              font-weight: 300;
+              font-size: 1.1em;
+              font-family: Muli, Georgia, Times, "Times New Roman", serif;
+              width: auto;
+              padding-left: 1.8em;
+              padding-right: 1.8em;
+              text-align: center;
 
-            .sidebarLink {
-                color: white;
-                text-decoration: none;
+              .sidebarLink {
+                  color: white;
+                  text-decoration: none;
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+                  &:hover {
+                      text-decoration: underline;
+                  }
+              }
+          }
         }
     }
 
     .introText {
-        padding-top: 0;
-        padding-bottom: 0;
-        width: 100%;
-        display: table-cell;
-        vertical-align: middle;
-        max-width:80em;
+      align-self: center;
+      max-width:80em;
         h2 {
             font-weight: 400;
             font-size: 2em;
