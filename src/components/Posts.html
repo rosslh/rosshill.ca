@@ -2,8 +2,8 @@
   {#each posts as post}
   <article class="post">
     <h2><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></h2>
-    <div>
-      {post.date}
+    <div class="date thin">
+      Project started {post.date}
     </div>
     <div class="twoCol">
       <div class="img">
@@ -24,27 +24,48 @@
     text-decoration: none;
   }
 
+  article.post div.date {
+    font-size: 13px;
+    color: #666;
+  }
+
   article.post div.twoCol > .img {
     width: 40%;
+    max-width: 400px;
   }
 
   article.post div.twoCol > .img > img {
     max-width: 100%;
     display: block;
-    border: 1px solid black;
+    border: 1px solid #ccc;
   }
 
   article.post div.twoCol > .content {
     width: 60%;
+    line-height: 1.7rem;
+    margin: calc(1rem - 16px) 0;
   }
+
   article.post div.twoCol {
     display: flex;
-    min-height: 15em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 0 1.5rem;
   }
+
+  article.post > div.twoCol > * {
+    margin: 1rem 2rem;
+    flex-basis: 300px;
+    flex-grow: 1;
+  }
+
   article.post:nth-child(2n) div.twoCol {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   article.post:nth-child(2n + 1) div.twoCol {
     flex-direction: row-reverse;
+    flex-wrap: wrap;
   }
 </style>
