@@ -20,20 +20,26 @@
 </div>
 
 <style>
+  article.post > h2 > a {
+    text-decoration: none;
+  }
+
   article.post div.twoCol > .img {
-    width: 30%;
+    width: 40%;
   }
 
   article.post div.twoCol > .img > img {
     max-width: 100%;
     display: block;
+    border: 1px solid black;
   }
 
   article.post div.twoCol > .content {
-    width: 70%;
+    width: 60%;
   }
   article.post div.twoCol {
     display: flex;
+    min-height: 15em;
   }
   article.post:nth-child(2n) div.twoCol {
     flex-direction: row;

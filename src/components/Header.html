@@ -1,9 +1,23 @@
 <div class="intro">
-  <div class="introImage">
+  <div class="left">
+    <div class="imgWrapper">
+      <img alt="Ross Hill" src="headshot.jpg" />
+    </div>
     <h1>Ross Hill</h1>
-    <img alt="Ross Hill" />
+    <p class="light subtitle">
+      ross@rosshill.ca
+    </p>
+    <p class="light subtitle">
+      <a href="https://github.com/rosslh">GitHub</a> /
+      <a href="https://www.linkedin.com/in/rosslh">LinkedIn</a> /
+      <a href="/resume">Resume</a>
+    </p>
   </div>
-  <div class="introBlurb">
+  <div class="right">
+    <p>
+      I'm a front-end developer who specializes in React.js and I'm always on
+      the lookout for cool new technologies.
+    </p>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -22,37 +36,57 @@
     grid-template-columns: repeat(12, 1fr);
   }
 
-  div.intro > div.introImage {
+  div.intro > div.left p.subtitle {
+    font-size: 14px;
+    width: 90%;
+    max-width: 25rem;
+    margin: 0.75rem auto;
+  }
+  div.intro > div.left p.subtitle > a {
+    color: white;
+    text-decoration: none;
+  }
+  div.intro > div.left p.subtitle > a:hover {
+    text-decoration: underline;
+  }
+  div.intro > div.left {
     grid-column: span 3;
     text-align: center;
     padding: 0 2rem;
-    background-color: #21732f;
-    padding: 2em 0;
+    background-color: #1d3557;
+    background-image: url(/background.png);
+    padding: 2rem 0 3rem;
     color: white;
   }
 
-  div.intro > div.introImage > img {
+  div.intro > div.left > div.imgWrapper {
+    border: 5px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    background-color: #eee;
+    overflow: hidden;
     height: 12rem;
     width: 12rem;
-    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  div.intro > div.left > div.imgWrapper > img {
+    background-color: #eee;
+    height: 100%;
+    width: 100%;
   }
 
   @media screen and (max-width: 700px) {
-    div.intro > div.introBlurb,
-    div.intro > div.introImage {
+    div.intro > div.right,
+    div.intro > div.left {
       grid-column: span 12 !important;
     }
   }
-  div.intro > div.introBlurb {
+  div.intro > div.right {
     grid-column: span 9;
     line-height: 2rem;
-    padding: 2em 0;
+    padding: 2rem 3rem;
     background-color: white;
-  }
-
-  div.intro > div.introBlurb > p {
-    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 </style>

@@ -2,13 +2,14 @@
   <title>Ross Hill - Website and Portfolio</title>
 </svelte:head>
 <Header/>
+<PostControls/>
 <Posts posts={posts}/>
-
 <script>
   export default {
     components: {
       Header: "../components/Header.html",
-      Posts: "../components/Posts.html"
+      Posts: "../components/Posts.html",
+      PostControls: "../components/PostControls.html"
     },
     preload({ params, query }) {
       const sort = query.sort || "new";
