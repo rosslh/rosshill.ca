@@ -3,6 +3,7 @@ title: IsEarthStillWarming.com
 date: 2018-01-01
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com
+image: isearthstillwarming.png
 ---
 
 ## Header
