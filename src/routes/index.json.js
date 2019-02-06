@@ -1,4 +1,5 @@
 import slugify from "slugify";
+import dateformat from "dateformat";
 
 const blog = require("../../../content/blog.json"); // TODO: Why is this not ../../
 
@@ -15,7 +16,7 @@ const contents = blog.map(post => {
   return {
     title: post.attributes.title,
     slug: slugify(post.attributes.title),
-    date: post.attributes.date,
+    date: dateformat(post.attributes.date, "mmmm yyyy"),
     website: post.attributes.website,
     website: post.attributes.repository,
     content: extractFirstPara(post.body),
