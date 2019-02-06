@@ -1,46 +1,55 @@
 <svelte:head>
-	<title>Sapper project template</title>
+  <title>Ross Hill - Website and Portfolio</title>
 </svelte:head>
+<Header/>
+<Posts posts={posts}/>
 
-<h1>Great success!</h1>
+<script>
+  export default {
+    components: {
+      Header: "../components/Header.html",
+      Posts: "../components/Posts.html"
+    },
+    preload({ params, query }) {
+      const sort = query.sort || "new";
+      const searchString = query.searchString || "";
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
+      const shuffle = arr => {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      };
 
-<p><strong>Try editing this file (routes/index.html) to test live reloading.</strong></p>
+      const compare = (a, b) => {
+        switch (sort.toLowerCase()) {
+          case "alpha": {
+            if (a.title < b.title) return -1;
+            if (a.title > b.title) return 1;
+            else return 0;
+          }
+          case "revalpha": {
+            if (a.title > b.title) return -1;
+            if (a.title < b.title) return 1;
+            else return 0;
+          }
+          case "old": {
+            return new Date(a.date) - new Date(b.date);
+          }
+          default: {
+            // new
+            return new Date(b.date) - new Date(a.date);
+          }
+        }
+      };
 
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+      return this.fetch(`index.json?searchString=${searchString}`)
+        .then(r => r.json())
+        .then(posts => {
+          if (sort === "shuffle") shuffle(posts);
+          else posts.sort((a, b) => compare(a, b));
+          return { posts };
+        });
+    }
+  };
+</script>
