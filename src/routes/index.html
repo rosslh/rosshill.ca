@@ -13,9 +13,19 @@
     },
     data() {
 			return {
-        sort: "old",
+        sort: "new",
         searchString: ""
 			};
+    },
+    onstate({ changed, current, previous }) {
+			if (changed.sort || changed.searchString) {
+        console.log(`sort changed: ${previous && previous.sort} -> ${current.sort}`);
+        this.fetch(`index.json?sort=${current.sort}&searchString=${current.searchString}`)
+          .then(r => r.json())
+          .then(posts => {
+            this.set({ posts });
+          });
+			}
 		},
     preload(data) {
       const sort = data.query.sort || "new";
