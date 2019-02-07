@@ -1,10 +1,9 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "homepage",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
+    "build": "npm run blogGen && sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",

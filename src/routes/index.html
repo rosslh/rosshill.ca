@@ -3,7 +3,7 @@
 </svelte:head>
 <Header/>
 <PostControls bind:sort bind:searchString/>
-<Posts posts={posts}/>
+<Posts posts={visiblePosts}/>
 <script>
   export default {
     components: {
@@ -14,27 +14,74 @@
     data() {
 			return {
         sort: "new",
-        searchString: ""
+        searchString: "",
+        posts: [],
+        visiblePosts: []
 			};
     },
+    methods: {
+      filterPosts: (posts, searchString) => {
+        if (searchString) {
+          posts = posts.filter(
+            post =>
+              post.title.toLowerCase().includes(searchString) ||
+              post.content.toLowerCase().includes(searchString)
+          );
+        }
+        return posts;
+      },
+
+      shuffle: arr => {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      },
+
+      compare: (a, b, sort) => {
+        switch (sort) {
+          case "alpha": {
+            if (a.title < b.title) return -1;
+            if (a.title > b.title) return 1;
+            else return 0;
+          }
+          case "revalpha": {
+            if (a.title > b.title) return -1;
+            if (a.title < b.title) return 1;
+            else return 0;
+          }
+          case "old": {
+            return new Date(a.date) - new Date(b.date);
+          }
+          default: {
+            // new
+            return new Date(b.date) - new Date(a.date);
+          }
+        }
+      }
+    },
+
     onstate({ changed, current, previous }) {
 			if (changed.sort || changed.searchString) {
-        console.log(`sort changed: ${previous && previous.sort} -> ${current.sort}`);
-        fetch(`index.json?sort=${current.sort}&searchString=${current.searchString}`)
-          .then(r => r.json())
-          .then(posts => {
-            this.set({ posts });
-          });
-			}
-		},
-    preload(data) {
-      const sort = data.query.sort || "new";
-      const searchString = data.query.searchString || "";
+        const searchString = current.searchString.toLowerCase();
+        const sort = current.sort.toLowerCase();
+        const filtered = this.filterPosts(current.posts, searchString);
 
-      return this.fetch(`index.json?sort=${sort}&searchString=${searchString}`)
+        let visiblePosts;
+
+        if (sort.toLowerCase() === "shuffle") visiblePosts = this.shuffle(filtered);
+        else visiblePosts = filtered.sort((a, b) => this.compare(a, b, sort));
+
+        this.set({visiblePosts});
+			}
+    },
+    
+    preload(data) {
+      return this.fetch(`index.json`)
         .then(r => r.json())
         .then(posts => {
-          return { posts };
+          return { posts, visiblePosts: posts };
         });
     }
   };
