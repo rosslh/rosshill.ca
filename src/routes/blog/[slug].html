@@ -2,14 +2,71 @@
   <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<CompactHeader />
 
-<div class="content">
-  {@html post.content}
+<div class="contentWrapper">
+  <a rel="prefetch" class="backLink" href="/">
+    &larr;
+    Back to Home
+  </a>
+  <article class="postFull">
+    <h1>{post.title}</h1>
+    <div class="subtitle">
+      Project started {post.date} &ndash; <a href="{post.repository}">GitHub</a> &ndash; <a href="{post.website}">Website</a>
+    </div>
+    <div class="imageWrapper">
+      <img src="blog/{post.image}" alt="{post.title}" />
+    </div>
+    <div class="content">
+      {@html post.content}
+    </div>
+  </article>
 </div>
+
+<style>
+  :global(article.postFull p:not(:first-child)) {
+    padding: 0.85rem 0 !important;
+  }
+
+  article.postFull {
+    margin-bottom: 2rem;
+  }
+
+  a.backLink {
+    display: block;
+    margin: 1.5rem 0;
+    color: #1d3557;
+    text-decoration: none;
+  }
+  div.subtitle {
+    font-size: 14px;
+    margin-bottom: 1.2rem;
+    color: #666;
+  }
+
+  div.imageWrapper {
+    max-width: 700px;
+    max-height: 400px;
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 3px 4px 1px rgba(34, 34, 34, 0.1);
+    margin-bottom: 1.7rem;
+  }
+
+  div.imageWrapper > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
 
 <script>
   export default {
+    components: {
+      CompactHeader: "../../components/CompactHeader.html"
+    },
     async preload({ params, query }) {
       // the `slug` parameter is available because
       // this file is called [slug].html

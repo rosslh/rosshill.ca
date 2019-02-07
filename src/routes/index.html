@@ -2,7 +2,7 @@
   <title>Ross Hill - Website and Portfolio</title>
 </svelte:head>
 <Header/>
-<PostControls/>
+<PostControls sort={sort} searchString={searchString}/>
 <Posts posts={posts}/>
 <script>
   export default {
@@ -49,7 +49,7 @@
         .then(posts => {
           if (sort === "shuffle") shuffle(posts);
           else posts.sort((a, b) => compare(a, b));
-          return { posts };
+          return { posts, sort, searchString };
         });
     }
   };

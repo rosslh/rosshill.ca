@@ -1,17 +1,77 @@
 <div class="PostControls">
   <div class="contentWrapper">
-    Projects
+    <h2>
+      Projects
+    </h2>
+    <div>
+      <label for="sortInput">Sort:</label>
+      <select on:change="changeSort(event)" value="{sort}" id="sortInput">
+        <option value="new">New</option>
+        <option value="old">Old</option>
+        <option value="alpha">Alphabetical</option>
+        <option value="revalpha">Reverse-alphabetical</option>
+        <option value="shuffle">Shuffle</option>
+      </select>
+    </div>
+    <div>
+      <input id="searchInput" type="text" />
+      <button>
+        Search
+      </button>
+    </div>
   </div>
 </div>
+<script>
+  export default {
+    methods: {
+      changeSort(e) {
+        const url =
+          location.protocol +
+          "//" +
+          location.host +
+          location.pathname +
+          "?sort=" +
+          e.target.value;
+        window.location.href = url;
+      }
+    }
+  };
+</script>
 <style>
   div.PostControls {
     background-color: #eee;
-    border-top: 1px solid #ddd;
+    border-top: 2px solid #ddd;
     border-bottom: 1px solid #ddd;
     width: 100%;
-    height: 3rem;
-    line-height: 3rem;
-    margin-bottom: 2rem;
-    box-shadow: 0px 2px 4px 0px rgba(34, 34, 34, 0.2);
+    box-shadow: 0px 2px 4px 0px rgba(34, 34, 34, 0.15);
+  }
+
+  div.PostControls > div.contentWrapper {
+    min-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  div.PostControls > div.contentWrapper > * {
+    padding: 0.75rem 2rem 0.5rem;
+    border-left: 1px solid #ddd;
+    margin: 0;
+  }
+  div.PostControls > div.contentWrapper > h2 {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    div.PostControls > div.contentWrapper {
+      flex-direction: column;
+    }
+    div.PostControls > div.contentWrapper > * {
+      border: none;
+      padding: 0.5rem 2rem;
+      text-align: center;
+    }
   }
 </style>
