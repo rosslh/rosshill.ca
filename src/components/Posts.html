@@ -1,18 +1,21 @@
 <div class="contentWrapper">
   {#each posts as post}
   <article class="post">
-    <h2><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></h2>
+    <h3><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></h3>
     <div class="date thin">
-      Project started {post.date}
+      Project started {post.prettyDate}
     </div>
     <div class="twoCol">
+      <div class="content">
+        {@html post.content}
+        <a class="readMore" rel="prefetch" href="/blog/{post.slug}"
+          >Read more...</a
+        >
+      </div>
       <div class="img">
         {#if post.image}
         <img src="{post.image}" alt="{post.title}" />
         {/if}
-      </div>
-      <div class="content">
-        {@html post.content}
       </div>
     </div>
   </article>
@@ -20,12 +23,18 @@
 </div>
 
 <style>
-  article.post > h2 > a {
+  article.post {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  article.post > h3 > a {
     text-decoration: none;
+    color: #222;
   }
 
   article.post div.date {
-    font-size: 13px;
+    font-size: 14px;
     color: #666;
   }
 
@@ -35,37 +44,42 @@
   }
 
   article.post div.twoCol > .img > img {
-    max-width: 100%;
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 3px 4px 1px rgba(34, 34, 34, 0.1);
+    max-width: 100%;
   }
 
   article.post div.twoCol > .content {
     width: 60%;
     line-height: 1.7rem;
-    margin: calc(1rem - 16px) 0;
   }
 
   article.post div.twoCol {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    margin: 0 0 1.5rem;
+    align-items: flex-end;
+    margin: 0.5rem -1rem 0;
+    flex-wrap: wrap-reverse;
   }
 
   article.post > div.twoCol > * {
-    margin: 1rem 2rem;
     flex-basis: 300px;
     flex-grow: 1;
+    padding: 0 1rem 1rem;
   }
 
-  article.post:nth-child(2n) div.twoCol {
+  /* article.post:nth-child(2n) div.twoCol {
     flex-direction: row;
-    flex-wrap: wrap;
   }
   article.post:nth-child(2n + 1) div.twoCol {
     flex-direction: row-reverse;
-    flex-wrap: wrap;
+  } */
+
+  article.post a.readMore {
+    font-size: 14px;
   }
 </style>
