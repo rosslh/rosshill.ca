@@ -41,6 +41,7 @@ const shuffle = arr => {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
+  return arr;
 };
 
 const compare = (a, b, sort) => {
