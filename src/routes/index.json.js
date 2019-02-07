@@ -16,9 +16,10 @@ const contents = blog.map(post => {
   return {
     title: post.attributes.title,
     slug: slugify(post.attributes.title),
-    date: dateformat(post.attributes.date, "mmmm yyyy"),
+    date: post.attributes.date,
+    prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
     website: post.attributes.website,
-    website: post.attributes.repository,
+    repository: post.attributes.repository,
     content: extractFirstPara(post.body),
     image: post.attributes.image ? `blog/${post.attributes.image}` : null
   };
