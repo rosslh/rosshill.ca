@@ -4,6 +4,13 @@ date: 2019-01-11
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com
 image: isearthstillwarming.png
+tags:
+  - React
+  - JavaScript
+  - Static site
+  - Data visualization
+  - React Static
+  - Cypress
 ---
 
 The goal of this webpage is to provide a high-level overview of what global warming is: how it's caused, how much the Earth has warmed, and its observed and predicted effects. Made with [React Static](https://github.com/nozzle/react-static), a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.
