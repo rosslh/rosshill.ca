@@ -64,6 +64,7 @@
 
     onstate({ changed, current, previous }) {
 			if (changed.sort || changed.searchString) {
+        // TODO: if just added char to searchString, filter visiblePosts instead of posts
         const searchString = current.searchString.toLowerCase();
         const sort = current.sort.toLowerCase();
         const filtered = this.filterPosts(current.posts, searchString);
