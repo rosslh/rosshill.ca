@@ -25,7 +25,8 @@
           posts = posts.filter(
             post =>
               post.title.toLowerCase().includes(searchString) ||
-              post.content.toLowerCase().includes(searchString)
+              post.content.toLowerCase().includes(searchString) ||
+              post.tags.some(x => x.includes(searchString))
           );
         }
         return posts;
