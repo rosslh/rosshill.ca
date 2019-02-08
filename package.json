@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "npm run blogGen && sapper build --legacy",
-    "export": "npm run blogGen && sapper export --legacy",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "dateformat": "^3.0.3",
     "polka": "^0.4.0",
     "sirv": "^0.2.0"
   },
@@ -24,6 +23,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
     "chokidar": "^2.0.4",
+    "dateformat": "^3.0.3",
     "frontmatter-markdown-to-json": "0.0.9",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.0.0",
