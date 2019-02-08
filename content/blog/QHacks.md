@@ -4,6 +4,12 @@ date: 2018-04-21
 image: qhacks.png
 website: https://qhacks.io
 repository: https://github.com/qhacks/qhacks-website
+tags:
+  - React
+  - JavaScript
+  - GraphQL
+  - Gatsby
+  - Static site
 ---
 
 [QHacks](https://qhacks.io) is a hackathon hosted at Queen’s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.
