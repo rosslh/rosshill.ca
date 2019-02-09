@@ -18,7 +18,7 @@ const contents = blog
     return {
       title: post.attributes.title,
       tags: post.attributes.tags.map(x => x.toLowerCase()).sort(),
-      slug: slugify(post.attributes.title),
+      slug: slugify(post.attributes.title).toLowerCase(),
       date: post.attributes.date,
       prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
       website: post.attributes.website,
