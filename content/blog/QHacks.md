@@ -1,7 +1,7 @@
 ---
 title: QHacks
 date: 2018-04-21
-image: qhacks.png
+image: qhacks
 website: https://qhacks.io
 repository: https://github.com/qhacks/qhacks-website
 tags:

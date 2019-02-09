@@ -1,7 +1,11 @@
 <div class="intro">
   <div class="left">
     <div class="imgWrapper">
-      <img alt="Ross Hill" src="headshot.jpg" />
+      <picture>
+        <source srcset="headshot.webp" type="image/webp" />
+        <source srcset="headshot.jpg" type="image/jpg" />
+        <img src="headshot.jpg" alt="Ross Hill" />
+      </picture>
     </div>
     <h1>Ross Hill</h1>
     <p class="light subtitle">
@@ -71,7 +75,7 @@
     margin: 0 auto;
   }
 
-  div.intro > div.left > div.imgWrapper > img {
+  div.intro > div.left > div.imgWrapper img {
     background-color: #eee;
     height: 100%;
     width: 100%;

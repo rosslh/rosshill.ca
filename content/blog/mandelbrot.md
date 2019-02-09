@@ -3,7 +3,7 @@ WIP: true
 title: Mandelbrot Set Visualizer
 date: 2016-11-29
 repository: https://github.com/rosslh/Interactive-Python-Mandelbrot
-image: mandelbrot.png
+image: mandelbrot
 tags:
   - Python
   - TKinter

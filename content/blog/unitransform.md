@@ -3,7 +3,7 @@ WIP: true
 title: Unitransform
 date: 2018-12-05
 repository: https://github.com/rosslh/unitransform
-image: unitransform.png
+image: unitransform
 tags:
   - Library
   - JavaScript
