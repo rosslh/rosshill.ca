@@ -6,7 +6,7 @@ const blog = require("../../../content/blog.json");
 const posts = blog.map(post => {
   return {
     title: post.attributes.title,
-    slug: slugify(post.attributes.title),
+    slug: slugify(post.attributes.title).toLowerCase(),
     date: dateformat(post.attributes.date, "mmmm yyyy"),
     website: post.attributes.website,
     repository: post.attributes.repository,

@@ -82,7 +82,7 @@
     async preload({ params }) {
       // the `slug` parameter is available because
       // this file is called [slug].html
-      const res = await this.fetch(`blog/${params.slug}.json`);
+      const res = await this.fetch(`blog/${params.slug.toLowerCase()}.json`);
       const data = await res.json();
 
       if (res.status === 200) {
