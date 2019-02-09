@@ -73,7 +73,7 @@
     components: {
       CompactHeader: "../../components/CompactHeader.html"
     },
-    async preload({ params, query }) {
+    async preload({ params }) {
       // the `slug` parameter is available because
       // this file is called [slug].html
       const res = await this.fetch(`blog/${params.slug}.json`);
