@@ -20,7 +20,7 @@ posts.forEach(post => {
   lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
 });
 
-export function get(req, res, next) {
+export function get(req, res) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const slug = req.params.slug.toLowerCase();
@@ -38,7 +38,7 @@ export function get(req, res, next) {
 
     res.end(
       JSON.stringify({
-        message: `Not found`
+        message: "Not found"
       })
     );
   }

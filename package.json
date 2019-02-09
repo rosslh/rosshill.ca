@@ -9,6 +9,7 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
+    "eslint": "eslint --ext .html,.js --fix src",
     "blogGen": "node node_modules/frontmatter-markdown-to-json --in=content --out=content"
   },
   "dependencies": {
@@ -24,6 +25,10 @@
     "@babel/runtime": "^7.0.0",
     "chokidar": "^2.0.4",
     "dateformat": "^3.0.3",
+    "eslint": "^5.13.0",
+    "eslint-plugin-cypress": "^2.2.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.16.0",
     "frontmatter-markdown-to-json": "0.0.9",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.0.0",
