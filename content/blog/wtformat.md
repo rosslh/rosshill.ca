@@ -3,7 +3,7 @@ WIP: true
 title: WTFormat
 date: 2018-12-05
 repository: https://github.com/rosslh/wtformat
-image: wtformat.png
+image: wtformat
 tags:
   - Moment
   - JavaScript

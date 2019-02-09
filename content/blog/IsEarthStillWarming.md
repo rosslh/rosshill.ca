@@ -3,7 +3,7 @@ title: IsEarthStillWarming.com
 date: 2019-01-11
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com
-image: isearthstillwarming.png
+image: isearthstillwarming
 tags:
   - React
   - JavaScript

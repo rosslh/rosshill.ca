@@ -14,7 +14,11 @@
       </div>
       <div class="img">
         {#if post.image}
-        <img src="{post.image}" alt="{post.title}" />
+        <picture>
+          <source srcset="{post.image}.webp" type="image/webp" />
+          <source srcset="{post.image}.png" type="image/png" />
+          <img src="{post.image}.png" alt="{post.title}" />
+        </picture>
         {/if}
       </div>
     </div>
@@ -42,7 +46,7 @@
     max-width: 400px;
   }
 
-  article.post div.twoCol > .img > img {
+  article.post div.twoCol > .img img {
     display: block;
     border: 1px solid #ddd;
     border-radius: 4px;
