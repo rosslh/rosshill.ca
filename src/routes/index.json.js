@@ -26,7 +26,8 @@ const contents = blog
       content: extractFirstPara(post.body),
       image: post.attributes.image ? `blog/${post.attributes.image}` : null
     };
-  });
+  })
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 export function get(req, res) {
   res.writeHead(200, {
