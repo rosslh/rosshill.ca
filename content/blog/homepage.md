@@ -3,7 +3,7 @@ title: Homepage
 date: 2016-12-30
 website: https://rosshill.ca
 repository: https://github.com/rosslh/rosshill.ca
-image: homepage.png
+image: homepage
 tags:
   - Sapper
   - Static site
