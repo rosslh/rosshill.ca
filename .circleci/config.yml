@@ -7,5 +7,5 @@ jobs:
           TERM: xterm
     steps:
       - checkout
-      - run: npm ci
+      - run: npm i
       - run: npm run test
