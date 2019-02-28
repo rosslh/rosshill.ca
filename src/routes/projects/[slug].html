@@ -16,9 +16,9 @@
     </div>
     <div class="imageWrapper">
         <picture>
-          <source srcset="blog/{post.image}.webp" type="image/webp" />
-          <source srcset="blog/{post.image}.png" type="image/png" />
-          <img src="blog/{post.image}.png" alt="{post.title}" />
+          <source srcset="projects/{post.image}.webp" type="image/webp" />
+          <source srcset="projects/{post.image}.png" type="image/png" />
+          <img src="projects/{post.image}.png" alt="{post.title}" />
         </picture>
     </div>
     <div class="content">
@@ -82,7 +82,7 @@
     async preload({ params }) {
       // the `slug` parameter is available because
       // this file is called [slug].html
-      const res = await this.fetch(`blog/${params.slug.toLowerCase()}.json`);
+      const res = await this.fetch(`projects/${params.slug.toLowerCase()}.json`);
       const data = await res.json();
 
       if (res.status === 200) {
