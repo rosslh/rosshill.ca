@@ -1,6 +1,7 @@
 html,
-body {
-  font-family: "Muli", sans-serif;
+body,
+body > * {
+  font-family: "Muli", sans-serif !important;
 }
 
 p {
@@ -10,6 +11,29 @@ p {
 
 .light {
   font-weight: 200;
+}
+
+div.PostControls input,
+div.PostControls .selectContainer,
+div.PostControls .selectedItem {
+  height: 2rem !important;
+  line-height: 2rem !important;
+}
+
+div.PostControls input,
+div.PostControls .selectContainer {
+  padding: 0 0.5rem !important;
+}
+
+div.PostControls .selectContainer,
+div.PostControls .inputSection > input {
+  border: 1px solid #ddd !important;
+  border-radius: 3px !important;
+  background-color: white;
+}
+
+div.PostControls > div.contentWrapper > div.inputSection > * {
+  margin: 0 6px !important;
 }
 
 body {
@@ -23,6 +47,13 @@ div.contentWrapper {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+code {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 0 3px;
 }
 
 h1,

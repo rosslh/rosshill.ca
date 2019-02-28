@@ -1,7 +1,7 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
 
-const blog = require("../../../content/blog.json"); // TODO: Why is this not ../../
+const projects = require("../../../content/projects.json"); // TODO: Why is this not ../../
 
 const extractFirstPara = content => {
   const xmldom = require("xmldom");
@@ -12,7 +12,7 @@ const extractFirstPara = content => {
   return serializer.serializeToString(doc.getElementsByTagName("p")[0]);
 };
 
-const contents = blog
+const contents = projects
   .filter(x => !x.attributes.WIP)
   .map(post => {
     return {
@@ -24,7 +24,7 @@ const contents = blog
       website: post.attributes.website,
       repository: post.attributes.repository,
       content: extractFirstPara(post.body),
-      image: post.attributes.image ? `blog/${post.attributes.image}` : null
+      image: post.attributes.image ? `projects/${post.attributes.image}` : null
     };
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));

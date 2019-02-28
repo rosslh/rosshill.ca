@@ -3,17 +3,16 @@
     <h2>
       Projects
     </h2>
-    <div>
+    <div class="inputSection">
       <label for="sortInput">Sort:&nbsp;</label>
-      <select bind:value="sort" id="sortInput">
-        <option value="new">New</option>
-        <option value="old">Old</option>
-        <option value="alpha">Alphabetical</option>
-        <option value="revalpha">Reverse-alphabetical</option>
-        <option value="shuffle">Shuffle</option>
-      </select>
+      <Select
+        {items}
+        isClearable="{false}"
+        on:select="handleSelect(event)"
+        containerStyles="border: 1px solid #bbb; background-color: white; border-radius: 4px; min-width: 200px;"
+      ></Select>
     </div>
-    <div>
+    <div class="inputSection">
       <label for="searchString">Search:&nbsp;</label>
       <input id="searchString" bind:value="searchString" type="text" />
     </div>
@@ -42,11 +41,6 @@
     margin: 0;
   }
 
-  div.PostControls > div.contentWrapper > * input {
-    border-radius: 3px;
-    border: 1px solid #bbb;
-  }
-
   div.PostControls > div.contentWrapper > *:not(h2) {
     font-size: 14px;
   }
@@ -54,6 +48,12 @@
   div.PostControls > div.contentWrapper > h2 {
     padding-left: 0;
     border-left: 0;
+  }
+
+  div.PostControls > div.contentWrapper > div.inputSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   @media screen and (max-width: 800px) {
@@ -67,3 +67,26 @@
     }
   }
 </style>
+<script>
+  import Select from "svelte-select";
+
+  export default {
+    components: {
+      Select
+    },
+    data: () => ({
+      items: [
+        { value: "new", label: "New" },
+        { value: "old", label: "Old" },
+        { value: "alpha", label: "Alphabetical" },
+        { value: "revAlpha", label: "Reverse alphabetical" },
+        { value: "shuffle", label: "Shuffle" }
+      ]
+    }),
+    methods: {
+      handleSelect({ value: sort }) {
+        this.set({ sort });
+      }
+    }
+  };
+</script>
