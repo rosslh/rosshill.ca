@@ -1,14 +1,14 @@
 <div class="contentWrapper">
   {#each posts as post}
   <article key="{post.slug}" class="post">
-    <h3><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></h3>
+    <h3><a rel="prefetch" href="projects/{post.slug}">{post.title}</a></h3>
     <div class="date thin">
       Project started {post.prettyDate}
     </div>
     <div class="twoCol">
       <div class="content">
         {@html post.content}
-        <a class="readMore" rel="prefetch" href="/blog/{post.slug}"
+        <a class="readMore" rel="prefetch" href="/projects/{post.slug}"
           >Read more...</a
         >
       </div>

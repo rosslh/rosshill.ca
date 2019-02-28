@@ -1,9 +1,9 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
 
-const blog = require("../../../content/blog.json");
+const projects = require("../../../content/projects.json");
 
-const posts = blog.map(post => {
+const posts = projects.map(post => {
   return {
     title: post.attributes.title,
     slug: slugify(post.attributes.title).toLowerCase(),
