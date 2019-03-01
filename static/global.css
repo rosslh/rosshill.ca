@@ -32,7 +32,7 @@ div.PostControls .inputSection > input {
   background-color: white;
 }
 
-div.PostControls > div.contentWrapper > div.inputSection > * {
+div.PostControls > div.contentWrapper > .inputSection > * {
   margin: 0 6px !important;
 }
 
