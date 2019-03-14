@@ -44,7 +44,7 @@
     "slugify": "^1.3.4",
     "svelte": "^2.0.0",
     "svelte-select": "^1.5.2",
-    "webp-converter-cli": "0.0.5",
-    "xmldom": "^0.1.27"
+    "unitransform": "^1.0.5",
+    "webp-converter-cli": "0.0.5"
   }
 }
