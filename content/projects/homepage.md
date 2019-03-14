@@ -4,9 +4,10 @@ date: 2016-12-30
 website: https://rosshill.ca
 repository: https://github.com/rosslh/rosshill.ca
 image: homepage
+blurb: My website where I show off my personal projects
+WIP: true
 tags:
   - Sapper
-  - Static site
   - JavaScript
   - Cypress
 ---

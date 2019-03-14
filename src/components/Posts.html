@@ -1,81 +1,50 @@
 <div class="contentWrapper">
   {#each posts as post}
   <article key="{post.slug}" class="post">
-    <h3><a rel="prefetch" href="projects/{post.slug}">{post.title}</a></h3>
-    <div class="date thin">
-      Project started {post.prettyDate}
-    </div>
-    <div class="twoCol">
-      <div class="content">
-        {@html post.content}
-        <a class="readMore" rel="prefetch" href="/projects/{post.slug}"
-          >Read more...</a
-        >
-      </div>
-      <div class="img">
-        {#if post.image}
+    <div class="image">
+      <div class="pictureFrame">
+        {#if post.thumbnail}
         <picture>
-          <source srcset="{post.image}.webp" type="image/webp" />
-          <source srcset="{post.image}.png" type="image/png" />
-          <img src="{post.image}.png" alt="{post.title}" />
+          <source srcset="{post.thumbnail}.webp" type="image/webp" />
+          <source srcset="{post.thumbnail}.png" type="image/png" />
+          <img src="{post.thumbnail}.png" alt="{post.title}" />
         </picture>
         {/if}
       </div>
+    </div>
+    <div class="text">
+      <h3><a rel="prefetch" href="projects/{post.slug}">{post.title}</a></h3>
+      <p>
+        {@html post.blurb}
+      </p>
     </div>
   </article>
   {/each}
 </div>
 <style>
   article.post {
-    padding: 2.5rem 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  article.post > h3 > a {
-    text-decoration: none;
-    color: #222;
-  }
-
-  article.post div.date {
-    font-size: 14px;
-    color: #666;
-  }
-
-  article.post div.twoCol > .img {
-    width: 40%;
-    max-width: 400px;
-  }
-
-  article.post div.twoCol > .img img {
-    display: block;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0px 3px 4px 1px rgba(34, 34, 34, 0.1);
-    max-width: 100%;
-  }
-
-  article.post div.twoCol > .content {
-    width: 60%;
-    line-height: 1.7rem;
-  }
-
-  article.post div.twoCol {
+    padding: 1.75rem 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    margin: 0.5rem -1rem 0;
-    flex-wrap: wrap-reverse;
+    align-items: center;
   }
 
-  article.post > div.twoCol > * {
-    flex-basis: 300px;
-    flex-grow: 1;
-    padding: 0 1rem 1rem;
+  article.post > * {
+    margin: 0 0.8rem;
   }
 
-  article.post a.readMore {
-    font-size: 14px;
+  article.post > div.image div.pictureFrame {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+  }
+  article.post > div.image div.pictureFrame img {
+    height: 100%;
+    width: 100%;
+  }
+
+  article.post > div.text h3 a {
+    color: #222;
+    text-decoration: none;
   }
 </style>
