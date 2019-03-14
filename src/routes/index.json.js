@@ -1,6 +1,5 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-import generate from "string-to-color";
 import { setLightness, setSaturation } from "unitransform";
 
 const projects = require("../../../content/projects.json"); // TODO: Why is this not ../../
@@ -19,12 +18,7 @@ const contents = projects
   .map(post => {
     return {
       title: post.attributes.title,
-      tags: post.attributes.tags
-        .map(x => ({
-          text: x.toLowerCase(),
-          color: setSaturation(setLightness(generate(x.toLowerCase()), 65), 80)
-        }))
-        .sort(),
+      tags: post.attributes.tags.map(x => x.toLowerCase()).sort(),
       slug: slugify(post.attributes.title).toLowerCase(),
       date: post.attributes.date,
       prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
