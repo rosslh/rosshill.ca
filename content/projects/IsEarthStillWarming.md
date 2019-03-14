@@ -4,11 +4,12 @@ date: 2019-01-11
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com
 image: isearthstillwarming
+thumbnail: fire
+blurb: A website with up-to-date global warming information and data
 tags:
   - React
   - JavaScript
-  - Static site
-  - Data visualization
+  - Data viz
   - React Static
   - Cypress
 ---

@@ -1,8 +1,10 @@
 ---
-title: Mandelbrot Set Visualizer
+title: Mandelbrot set explorer
 date: 2016-11-29
-repository: https://github.com/rosslh/Interactive-Python-Mandelbrot
+repository: https://github.com/rosslh/Mandelbrot-set-explorer
 image: mandelbrot
+thumbnail: mandelbrot-thumb
+blurb: An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.
 tags:
   - Python
   - TKinter
