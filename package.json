@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "npm run projectGen && npm run webpGen && sapper dev",
     "build": "sapper build --legacy",
-    "export": "npm run projectGen && npm run webpGen && sapper export --legacy",
+    "export": "npm run projectGen && npm run webpGen && sapper export --legacy && cp static/resume.pdf __sapper__/export/resume.pdf",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
