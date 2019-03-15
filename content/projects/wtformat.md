@@ -5,7 +5,7 @@ repository: https://github.com/rosslh/wtformat
 website: https://wtformat.com/
 image: wtformat
 thumbnail: moment
-blurb: A simple online tool for generating Moment.js date format codes
+blurb: An online tool for generating Moment.js date format codes
 tags:
   - Moment
   - JavaScript
