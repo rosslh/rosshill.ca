@@ -31,7 +31,7 @@
     "eslint-plugin-cypress": "^2.2.0",
     "eslint-plugin-html": "^5.0.3",
     "eslint-plugin-import": "^2.16.0",
-    "frontmatter-markdown-to-json": "0.0.9",
+    "frontmatter-markdown-to-json": "0.0.10",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.0.0",
     "rollup-plugin-babel": "^4.0.2",
