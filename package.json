@@ -27,7 +27,7 @@
     "chokidar": "^2.0.4",
     "cypress": "^3.1.5",
     "dateformat": "^3.0.3",
-    "eslint": "^5.13.0",
+    "eslint": "^6.0.0",
     "eslint-plugin-cypress": "^2.2.0",
     "eslint-plugin-html": "^5.0.3",
     "eslint-plugin-import": "^2.16.0",
