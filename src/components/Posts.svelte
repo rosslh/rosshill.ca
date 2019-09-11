@@ -1,0 +1,60 @@
+<script>
+  export let posts;
+</script>
+
+<style>
+  div.posts {
+    margin-bottom: 2rem;
+  }
+  article.post {
+    padding: 1.75rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  article.post > * {
+    margin: 0 0.8rem;
+  }
+
+  article.post > div.image div.pictureFrame {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+  }
+  article.post > div.image div.pictureFrame img {
+    height: 100%;
+    width: 100%;
+  }
+
+  article.post > div.text h3 a {
+    color: #222;
+    text-decoration: none;
+  }
+</style>
+
+<div class="contentWrapper posts">
+  {#each posts as post}
+    <article key={post.slug} class="post">
+      <div class="image">
+        <div class="pictureFrame">
+          {#if post.thumbnail}
+            <picture>
+              <source srcset="{post.thumbnail}.webp" type="image/webp" />
+              <source srcset="{post.thumbnail}.png" type="image/png" />
+              <img src="{post.thumbnail}.png" alt={post.title} />
+            </picture>
+          {/if}
+        </div>
+      </div>
+      <div class="text">
+        <h3>
+          <a rel="prefetch" href="projects/{post.slug}">{post.title}</a>
+        </h3>
+        <p>
+          {@html post.blurb}
+        </p>
+      </div>
+    </article>
+  {/each}
+</div>
