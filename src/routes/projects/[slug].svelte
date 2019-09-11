@@ -2,16 +2,12 @@
   export async function preload({ params, query }) {
     // the `slug` parameter is available because
     // this file is called [slug].html
-    const res = await fetch(`projects/${params.slug.toLowerCase()}.json`);
+    const res = await this.fetch(`projects/${params.slug.toLowerCase()}.json`);
     const data = await res.json();
 
-    if (res.status === 200) {
-      return {
-        post: data
-      };
-    } else {
-      error(res.status, data.message);
-    }
+    return {
+      post: data
+    };
   }
 </script>
 
