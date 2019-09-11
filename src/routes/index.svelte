@@ -1,3 +1,14 @@
+<script context="module">
+  export async function preload() {
+    const result = await this.fetch("index.json");
+    const posts = await result.json();
+    return {
+      posts,
+      visiblePosts: posts
+    };
+  }
+</script>
+
 <script>
   import { beforeUpdate, onMount } from "svelte";
   import Header from "../components/Header.svelte";
@@ -6,8 +17,8 @@
 
   let sort = "new";
   let searchString = "";
-  let posts = [];
-  let visiblePosts = [];
+  export let posts = [];
+  export let visiblePosts = [];
 
   let filterPosts = (posts, searchString) => {
     if (searchString) {
@@ -60,12 +71,6 @@
     } else sortedPosts = filtered.sort((a, b) => compare(a, b, sort));
 
     visiblePosts = sortedPosts;
-  });
-
-  onMount(async () => {
-    const result = await fetch("index.json");
-    posts = await result.json();
-    visiblePosts = posts;
   });
 </script>
 
