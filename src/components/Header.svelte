@@ -1,50 +1,3 @@
-<div class="intro">
-  <div class="left">
-    <div class="imgWrapper">
-      <picture>
-        <source srcset="headshot.webp" type="image/webp" />
-        <source srcset="headshot.jpg" type="image/jpg" />
-        <img src="headshot.jpg" alt="Ross Hill" />
-      </picture>
-    </div>
-    <h1>Ross Hill</h1>
-    <p class="subtitle">
-      ross@rosshill.ca
-    </p>
-    <p class="subtitle">
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/rosslh"
-        >GitHub</a
-      >
-      /
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/rosslh"
-        >LinkedIn</a
-      >
-      /
-      <a href="/resume.pdf">Resume</a>
-    </p>
-  </div>
-  <div class="right">
-    <p>
-      I'm a web developer who specializes in React.js and I'm always on the
-      lookout for cool new technologies.
-    </p>
-    <p>
-      Over the past year, I've had the pleasure to work on the QHack's
-      technology team, building internal tools and improving our online
-      presence. QHacks is a hackathon hosted at Queen’s University where
-      software developers come together to collaborate on projects and win
-      prizes. I helped to create a landing page for the event and the
-      application system for QHacks participants.
-    </p>
-  </div>
-</div>
-
 <style>
   div.intro {
     display: grid;
@@ -109,3 +62,47 @@
     flex-direction: column;
   }
 </style>
+
+<div class="intro">
+  <div class="left">
+    <div class="imgWrapper">
+      <picture>
+        <source srcset="headshot.webp" type="image/webp" />
+        <source srcset="headshot.jpg" type="image/jpg" />
+        <img src="headshot.jpg" alt="Ross Hill" />
+      </picture>
+    </div>
+    <h1>Ross Hill</h1>
+    <p class="subtitle">ross@rosshill.ca</p>
+    <p class="subtitle">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/rosslh">
+        GitHub
+      </a>
+      /
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/rosslh">
+        LinkedIn
+      </a>
+      /
+      <a href="/resume.pdf">Resume</a>
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      I'm a web developer specializing in React.js who is always on the lookout
+      for cool new technologies.
+    </p>
+    <p>
+      In 2018 I worked on the QHack's technology team, building internal tools
+      and improving our online presence. QHacks is a hackathon hosted at Queen’s
+      University where software developers come together to collaborate on
+      projects and win prizes. I helped to create a landing page for the event
+      and the application system for QHacks participants.
+    </p>
+  </div>
+</div>
