@@ -24,13 +24,18 @@
 
   div.intro .waveEmoji {
     display: inline-block;
-    margin-left: 0.5rem;
+    margin: 0;
+    padding: 0;
     animation: wave 0.9s 1.2s both;
     font-weight: normal !important;
   }
 
+  div.intro .helloText {
+    margin-right: 0.5rem;
+  }
+
   div.intro {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     padding-bottom: 3.5rem;
   }
 
@@ -43,7 +48,7 @@
 
 <div class="contentWrapper intro">
   <h2>
-    Hey, I'm Ross
+    <span class="helloText">Hey, I'm Ross</span>
     <span class="waveEmoji">👋</span>
   </h2>
   <p>

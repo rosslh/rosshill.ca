@@ -1,3 +1,7 @@
+<script>
+  import Separator from "./Separator.svelte";
+</script>
+
 <style>
   div.sidebar {
     grid-area: sidebar;
@@ -11,7 +15,8 @@
     }
     div.sidebarContent {
       height: unset !important;
-      padding: 2rem 0;
+      padding: 2rem 0 5rem;
+      position: initial;
     }
   }
 
@@ -78,4 +83,5 @@
       <a href="/resume.pdf">Resume</a>
     </p>
   </div>
+  <Separator intro />
 </div>

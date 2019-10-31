@@ -22,7 +22,6 @@
 <div class="twoColumn">
   <Sidebar />
   <div class="mainContent">
-    <Separator intro />
     <Intro />
     <Separator />
     <Posts {posts} />
