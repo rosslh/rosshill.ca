@@ -1,14 +1,12 @@
 ---
 title: WTFormat.com
+type: project
 date: 2018-12-05
 repository: https://github.com/rosslh/wtformat
 website: https://wtformat.com/
 image: wtformat
 thumbnail: moment
 blurb: An online tool for generating Moment.js date format codes
-tags:
-  - Moment
-  - JavaScript
 ---
 
 <a href="https://momentjs.com">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at [Nudge.ai](https://www.nudge.ai)</a>, I found myself having to go to Moment's documentation to see how to format dates in various ways.

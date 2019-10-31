@@ -1,16 +1,16 @@
 {
-  "name": "TODO",
-  "description": "TODO",
-  "version": "0.0.1",
+  "name": "homepage",
+  "description": "Ross Hill's hompage",
+  "version": "1.0.0",
   "scripts": {
     "dev": "sapper dev",
-    "build": "npm run projectGen && npm run webpGen && sapper build --legacy",
-    "export": "npm run projectGen && npm run webpGen && sapper export && cp static/resume.pdf __sapper__/export/resume.pdf",
+    "build": "npm run contentGen && npm run webpGen && sapper build --legacy",
+    "export": "npm run contentGen && npm run webpGen && sapper export && cp static/resume.pdf __sapper__/export/resume.pdf",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "projectGen": "node node_modules/frontmatter-markdown-to-json --in=content --out=content",
+    "contentGen": "node node_modules/frontmatter-markdown-to-json --in=content --out=content",
     "webpGen": "cd static && webpc -r && cd .."
   },
   "dependencies": {

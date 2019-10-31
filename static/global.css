@@ -1,7 +1,21 @@
-html,
-body,
-body > * {
-  font-family: "Muli", sans-serif !important;
+div.twoColumn {
+  display: grid;
+  grid-template-columns: 3fr 8fr;
+  grid-template-areas: "sidebar content";
+}
+div.mainContent {
+  grid-area: content;
+}
+@media (max-width: 1000px) {
+  div.twoColumn {
+    grid-template-areas: "sidebar" "content";
+    grid-template-columns: 1fr;
+  }
+}
+
+article.postFull p,
+.intro p {
+  margin: 1.5rem auto !important;
 }
 
 p {
@@ -9,44 +23,28 @@ p {
   padding: 0;
 }
 
-.light {
-  font-weight: 200;
-}
-
-div.PostControls input,
-div.PostControls .selectContainer,
-div.PostControls .selectedItem {
-  height: 2rem !important;
-  line-height: 2rem !important;
-}
-
-div.PostControls input,
-div.PostControls .selectContainer {
-  padding: 0 0.5rem !important;
-}
-
-div.PostControls .selectContainer,
-div.PostControls .inputSection > input {
-  border: 1px solid #ddd !important;
-  border-radius: 3px !important;
-  background-color: white;
-}
-
-div.PostControls > div.contentWrapper > .inputSection > * {
-  margin: 0 6px !important;
-}
-
 body {
   margin: 0;
   font-size: 14px;
   line-height: 1.7;
   color: #222;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-div.contentWrapper {
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: black;
+  font-family: "Heebo", sans-serif;
+  font-weight: regular;
+}
+
+.contentWrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 code {
@@ -54,18 +52,6 @@ code {
   border: 1px solid #eee;
   border-radius: 3px;
   padding: 0 3px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 0.5rem 0;
-  font-weight: 400;
-  line-height: 1.2;
-  font-family: "Cabin Condensed", sans-serif !important;
 }
 
 a {

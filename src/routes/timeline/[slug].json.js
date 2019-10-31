@@ -1,9 +1,9 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
 
-const projects = require("../../../content/projects.json");
+const timeline = require("../../../content/timeline.json");
 
-const posts = projects.map(post => {
+const posts = timeline.map(post => {
   return {
     title: post.attributes.title,
     slug: slugify(post.attributes.title).toLowerCase(),
@@ -11,14 +11,17 @@ const posts = projects.map(post => {
     website: post.attributes.website,
     repository: post.attributes.repository,
     content: post.body,
+    embed: post.attributes.embed,
     image: post.attributes.image
   };
 });
 
 const lookup = new Map();
-posts.forEach(post => {
-  lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
-});
+posts
+  .filter(post => post.content)
+  .forEach(post => {
+    lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
+  });
 
 export function get(req, res) {
   // the `slug` parameter is available because

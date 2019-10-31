@@ -1,60 +1,46 @@
 <script>
   export let posts;
+  import Post from "./Post.svelte";
+  import YearLabel from "./YearLabel.svelte";
+
+  let year = 0;
+  let labelIndices = [];
+
+  const addLabelForNewYear = (date, i) => {
+    const yearFromDate = getYearFromDate(date);
+    if (yearFromDate !== year) {
+      year = yearFromDate;
+      if (!labelIndices.includes(i)) labelIndices.push(i);
+    }
+    return "";
+  };
+
+  const getYearFromDate = date => {
+    return Number(date.substring(0, 4));
+  };
 </script>
 
 <style>
   div.posts {
-    margin-bottom: 2rem;
+    padding: 0 1rem;
+    margin: 1.5rem auto;
   }
-  article.post {
-    padding: 1.75rem 0;
-    display: flex;
-    align-items: center;
-  }
-
-  article.post > * {
-    margin: 0 0.8rem;
-  }
-
-  article.post > div.image div.pictureFrame {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 4rem;
-    height: 4rem;
-  }
-  article.post > div.image div.pictureFrame img {
-    height: 100%;
-    width: 100%;
-  }
-
-  article.post > div.text h3 a {
-    color: #222;
-    text-decoration: none;
+  div.postsWrapper {
+    margin-top: 3rem;
   }
 </style>
 
-<div class="contentWrapper posts">
-  {#each posts as post}
-    <article key={post.slug} class="post">
-      <div class="image">
-        <div class="pictureFrame">
-          {#if post.thumbnail}
-            <picture>
-              <source srcset="{post.thumbnail}.webp" type="image/webp" />
-              <source srcset="{post.thumbnail}.png" type="image/png" />
-              <img src="{post.thumbnail}.png" alt={post.title} />
-            </picture>
-          {/if}
-        </div>
-      </div>
-      <div class="text">
-        <h3>
-          <a rel="prefetch" href="projects/{post.slug}">{post.title}</a>
-        </h3>
-        <p>
-          {@html post.blurb}
-        </p>
-      </div>
-    </article>
-  {/each}
+<div class="contentWrapper postsWrapper">
+  <h2>Timeline</h2>
+  <div class="posts">
+    {#each posts as post, i}
+      {addLabelForNewYear(post.date, i)}
+      <YearLabel
+        firstLabel={i === 0}
+        display={labelIndices.includes(i)}
+        direction={labelIndices.length % 2 !== 0}
+        year={getYearFromDate(post.date)} />
+      <Post {post} firstPost={i === 0} left={labelIndices.length % 2 !== 0} />
+    {/each}
+  </div>
 </div>
