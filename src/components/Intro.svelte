@@ -36,7 +36,7 @@
 
   div.intro {
     padding-top: 1rem;
-    padding-bottom: 3.5rem;
+    padding-bottom: 2rem;
   }
 
   @media (min-width: 1000px) {

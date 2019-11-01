@@ -21,12 +21,12 @@
 </script>
 
 <style>
+  div.contentWrapper {
+    padding-top: 2rem !important;
+  }
   div.posts {
     padding: 0 1rem;
     margin: 1.5rem auto;
-  }
-  div.postsWrapper {
-    margin-top: 3rem;
   }
   @media (min-width: 700px) {
     div.postsWrapper {

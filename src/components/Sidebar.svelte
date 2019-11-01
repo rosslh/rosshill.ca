@@ -15,7 +15,7 @@
     }
     div.sidebarContent {
       height: unset !important;
-      padding: 2rem 0 5rem;
+      padding: 2rem 0 5.5rem;
       position: initial;
     }
   }
