@@ -17,8 +17,8 @@
     }
     div.sidebarContent {
       height: unset !important;
-      padding: 2rem 0 5.5rem;
-      position: initial;
+      padding: 2rem 0 3.5rem;
+      position: initial !important;
     }
   }
 
@@ -36,8 +36,8 @@
   div.imgWrapper {
     overflow: hidden;
     border-radius: 50%;
-    width: 9rem;
-    height: 9rem;
+    width: 9.5rem;
+    height: 9.5rem;
   }
 
   div.imgWrapper picture,

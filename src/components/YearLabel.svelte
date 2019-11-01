@@ -27,26 +27,26 @@
     height: 80px;
   }
   div.line.right > div:first-child {
-    border-left: 3px solid #444;
-    border-bottom: 3px solid #444;
+    border-left: 3px solid #555;
+    border-bottom: 3px solid #555;
     border-bottom-left-radius: 100% 80px;
   }
 
   div.line.right > div:last-child {
-    border-right: 3px solid #444;
-    border-top: 3px solid #444;
+    border-right: 3px solid #555;
+    border-top: 3px solid #555;
     border-top-right-radius: 100% 80px;
   }
 
   div.line.left > div:nth-child(2) {
-    border-right: 3px solid #444;
-    border-bottom: 3px solid #444;
+    border-right: 3px solid #555;
+    border-bottom: 3px solid #555;
     border-bottom-right-radius: 100% 80px;
   }
 
   div.line.left > div:nth-child(3) {
-    border-left: 3px solid #444;
-    border-top: 3px solid #444;
+    border-left: 3px solid #555;
+    border-top: 3px solid #555;
     border-top-left-radius: 100% 80px;
   }
 
@@ -60,10 +60,10 @@
   span.yearLabel {
     background-color: white;
     padding: 0.2rem 0.75rem;
-    border-radius: 3px;
+    border-radius: 0.5rem;
     width: 5rem;
     text-align: center;
-    border: 1px solid #444;
+    border: 1px solid #555;
   }
 
   @media (max-width: 700px) {

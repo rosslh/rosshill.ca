@@ -13,7 +13,7 @@
   }
 
   div.firstPostSpacer {
-    border-left: 3px solid #444;
+    border-left: 3px solid #555;
     height: 3rem;
     margin-left: 30%;
   }
@@ -55,19 +55,19 @@
     z-index: 4;
     padding: 1rem 0;
     background-color: white;
-    border: 1px solid #ddd;
+    border: 1px solid #cdcdcd;
     border-radius: 5px;
     margin: 1rem 0;
-    box-shadow: 1px 1px 1px 0px rgba(34, 34, 34, 0.05);
+    /* box-shadow: 1px 1px 1px 0px rgba(34, 34, 34, 0.05); */
   }
 
   div.postWrapper.left {
-    border-left: 3px solid #444;
+    border-left: 3px solid #555;
     margin-left: 30%;
   }
 
   div.postWrapper.right {
-    border-right: 3px solid #444;
+    border-right: 3px solid #555;
     justify-content: flex-end;
     margin-right: 30%;
   }
@@ -149,7 +149,7 @@
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 23px solid #ddd;
+    border-left: 23px solid #cdcdcd;
   }
 
   .arrowLeft {
@@ -175,7 +175,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 23px solid #ddd;
+    border-right: 23px solid #cdcdcd;
   }
 </style>
 

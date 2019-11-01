@@ -24,13 +24,17 @@
   div.contentWrapper {
     padding-top: 2rem !important;
   }
+
+  div.contentWrapper.postsWrapper {
+    padding: 0;
+  }
   div.posts {
     padding: 0 1rem;
     margin: 1.5rem auto;
   }
   @media (min-width: 700px) {
     div.contentWrapper.postsWrapper {
-      padding: 0 2rem !important;
+      padding: 2rem !important;
     }
   }
 </style>
