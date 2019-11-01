@@ -19,7 +19,7 @@
   }
 
   div.postWrapper {
-    padding: 0 1rem;
+    padding: 0;
     position: relative;
     display: flex;
   }
@@ -33,7 +33,12 @@
     border-radius: 50%;
     overflow: hidden;
   }
-
+  div.postWrapper.left {
+    padding-left: 2rem;
+  }
+  div.postWrapper.right {
+    padding-right: 2rem;
+  }
   div.postWrapper.left div.timelineMarker {
     transform: translate(50%, -50%);
     position: absolute;
@@ -50,9 +55,9 @@
     z-index: 4;
     padding: 1rem 0;
     background-color: white;
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 1rem;
+    margin: 1rem 0;
     box-shadow: 1px 1px 1px 0px rgba(34, 34, 34, 0.05);
   }
 
@@ -144,7 +149,7 @@
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 23px solid #eee;
+    border-left: 23px solid #ddd;
   }
 
   .arrowLeft {
@@ -170,7 +175,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 23px solid #eee;
+    border-right: 23px solid #ddd;
   }
 </style>
 
