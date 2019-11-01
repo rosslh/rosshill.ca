@@ -74,6 +74,12 @@
     }
   }
 
+  @media (min-width: 700px) and (max-width: 1200px) {
+    span.yearLabel.firstLabel {
+      transform: translate(-30%, 0) !important;
+    }
+  }
+
   span.yearLabel.firstLabel {
     z-index: 4;
     margin-left: 25%;

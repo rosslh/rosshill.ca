@@ -131,68 +131,68 @@
     z-index: 6;
     width: 0;
     height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 20px solid white;
+    border-left: 16px solid white;
   }
 
   .arrowRightBorder {
     z-index: 2;
     width: 0;
     height: 0;
-    border-top: 23px solid transparent;
-    border-bottom: 23px solid transparent;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 23px solid #cdcdcd;
+    border-left: 18px solid #cdcdcd;
   }
 
   .arrowLeft {
     z-index: 6;
     width: 0;
     height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 20px solid white;
+    border-right: 16px solid white;
   }
 
   .arrowLeftBorder {
     z-index: 2;
     width: 0;
     height: 0;
-    border-top: 23px solid transparent;
-    border-bottom: 23px solid transparent;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 23px solid #cdcdcd;
+    border-right: 18px solid #cdcdcd;
   }
 </style>
 
 {#if firstPost}
-  <div class="postSpacer" />
+  <div aria-hidden="true" class="postSpacer" />
 {/if}
 <div
   key={post.slug}
   class={`postWrapper ${left ? 'left' : 'right'} ${firstPost ? 'firstPost' : ''}`}>
-  <div class="timelineMarker" />
+  <div aria-hidden="true" class="timelineMarker" />
   {#if left}
-    <div class="arrowLeft" />
-    <div class="arrowLeftBorder" />
+    <div aria-hidden="true" class="arrowLeft" />
+    <div aria-hidden="true" class="arrowLeftBorder" />
   {:else}
-    <div class="arrowRight" />
-    <div class="arrowRightBorder" />
+    <div aria-hidden="true" class="arrowRight" />
+    <div aria-hidden="true" class="arrowRightBorder" />
   {/if}
   <div class="post">
     <div class="postHeading">
@@ -226,5 +226,5 @@
   </div>
 </div>
 {#if lastPost}
-  <div class="postSpacer" />
+  <div aria-hidden="true" class="postSpacer" />
 {/if}
