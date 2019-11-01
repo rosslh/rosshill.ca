@@ -14,7 +14,7 @@
     "webpGen": "cd static && webpc -r && cd .."
   },
   "dependencies": {
-    "autoprefixer": "^9.7.0",
+    "autoprefixer": "^9.7.1",
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^0.4.0",
