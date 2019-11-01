@@ -35,13 +35,15 @@
   }
 
   div.postWrapper.left div.timelineMarker {
-    transform: translate(-60%, -50%);
-    margin-left: -1rem;
+    transform: translate(50%, -50%);
+    position: absolute;
+    left: calc(-1rem + 2px);
   }
 
   div.postWrapper.right div.timelineMarker {
-    transform: translate(60%, -50%);
-    margin-right: -1rem;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    right: calc(-1rem + 2px);
   }
 
   div.post {
@@ -85,6 +87,7 @@
 
   div.post div.postHeading h3 {
     font-size: 1rem;
+    line-height: 1.2rem;
     margin-left: 0.75rem;
     display: inline-block;
     padding: 0.5rem 0;
@@ -108,6 +111,14 @@
   }
   div.post p.readMore {
     font-size: 0.7rem;
+  }
+
+  @media (max-width: 700px) {
+    div.post p.postText,
+    div.post p.readMore {
+      padding-left: 0 !important;
+      padding-right: 0;
+    }
   }
 
   .arrowRight {

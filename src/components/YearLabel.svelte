@@ -66,6 +66,12 @@
     border: 1px solid #444;
   }
 
+  @media (max-width: 700px) {
+    span.yearLabel.firstLabel {
+      transform: translate(-10%, 0) !important;
+    }
+  }
+
   span.yearLabel.firstLabel {
     z-index: 4;
     margin-left: 30%;

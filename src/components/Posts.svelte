@@ -28,10 +28,17 @@
   div.postsWrapper {
     margin-top: 3rem;
   }
+  @media (min-width: 700px) {
+    div.postsWrapper {
+      padding: 0 2rem;
+    }
+  }
 </style>
 
-<div class="contentWrapper postsWrapper">
+<div class="contentWrapper ">
   <h2>Timeline</h2>
+</div>
+<div class="postsWrapper">
   <div class="posts">
     {#each posts as post, i}
       {addLabelForNewYear(post.date, i)}
