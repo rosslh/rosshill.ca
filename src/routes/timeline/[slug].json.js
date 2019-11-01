@@ -12,7 +12,8 @@ const posts = timeline.map(post => {
     repository: post.attributes.repository,
     content: post.body,
     embed: post.attributes.embed,
-    image: post.attributes.image
+    image: post.attributes.image,
+    imageExt: post.attributes.imageExt
   };
 });
 

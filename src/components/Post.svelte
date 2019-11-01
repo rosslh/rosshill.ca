@@ -16,7 +16,7 @@
   div.postSpacer {
     border-left: 3px solid #555;
     height: 3rem;
-    margin-left: 30%;
+    margin-left: 25%;
   }
 
   div.postWrapper {
@@ -64,13 +64,13 @@
 
   div.postWrapper.left {
     border-left: 3px solid #555;
-    margin-left: 30%;
+    margin-left: 25%;
   }
 
   div.postWrapper.right {
     border-right: 3px solid #555;
     justify-content: flex-end;
-    margin-right: 30%;
+    margin-right: 25%;
   }
 
   div.post div.postHeading div.pictureFrame {
@@ -200,8 +200,12 @@
         {#if post.thumbnail}
           <picture>
             <source srcset="{post.thumbnail}.webp" type="image/webp" />
-            <source srcset="{post.thumbnail}.png" type="image/png" />
-            <img src="{post.thumbnail}.png" alt={post.title} />
+            <source
+              srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+              type="image/png" />
+            <img
+              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+              alt={post.title} />
           </picture>
         {/if}
       </div>

@@ -12,11 +12,8 @@ const contents = timeline
       slug: slugify(post.attributes.title).toLowerCase(),
       date: post.attributes.date,
       prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
-      website: post.attributes.website,
-      repository: post.attributes.repository,
       blurb: post.attributes.blurb,
-      embed: post.attributes.embed,
-      image: post.attributes.image ? `timeline/${post.attributes.image}` : null,
+      thumbnailExt: post.attributes.thumbnailExt,
       thumbnail: post.attributes.thumbnail
         ? `timeline/${post.attributes.thumbnail}`
         : null

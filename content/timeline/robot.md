@@ -2,6 +2,8 @@
 title: Drawing robot
 type: project
 date: 2018-09-01
+thumbnailExt: jpg
+imageExt: jpg
 image: robot
 thumbnail: arduino
 blurb: For Digital Systems, a course at Queen's, I made a drawing robot that listens to you and writes down what you say

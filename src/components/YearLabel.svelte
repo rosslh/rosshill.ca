@@ -20,7 +20,7 @@
   div.line {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 30%;
+    margin: 0 25%;
   }
   div.line > div {
     width: 50%;
@@ -58,12 +58,14 @@
   }
 
   span.yearLabel {
-    background-color: white;
-    padding: 0.2rem 0.75rem;
+    background-color: #f6f6f6;
+    height: 2.2rem;
     border-radius: 0.5rem;
     width: 5rem;
-    text-align: center;
     border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (max-width: 700px) {
@@ -74,7 +76,7 @@
 
   span.yearLabel.firstLabel {
     z-index: 4;
-    margin-left: 30%;
+    margin-left: 25%;
     position: absolute;
     transform: translate(-50%, 0);
   }

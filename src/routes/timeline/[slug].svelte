@@ -90,8 +90,12 @@
         <div class="imageWrapper">
           <picture>
             <source srcset="timeline/{post.image}.webp" type="image/webp" />
-            <source srcset="timeline/{post.image}.png" type="image/png" />
-            <img src="timeline/{post.image}.png" alt={post.title} />
+            <source
+              srcset="timeline/{post.image}.{post.imageExt || 'png'}"
+              type="image/png" />
+            <img
+              src="timeline/{post.image}.{post.imageExt || 'png'}"
+              alt={post.title} />
           </picture>
         </div>
       {/if}

@@ -21,10 +21,6 @@
 </script>
 
 <style>
-  div.contentWrapper {
-    padding-top: 2rem !important;
-  }
-
   div.contentWrapper.postsWrapper {
     padding: 0;
   }
