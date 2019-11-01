@@ -184,6 +184,7 @@
   <div aria-hidden="true" class="postSpacer" />
 {/if}
 <div
+  id="timeline-item-{post.slug}"
   key={post.slug}
   class={`postWrapper ${left ? 'left' : 'right'} ${firstPost ? 'firstPost' : ''}`}>
   <div aria-hidden="true" class="timelineMarker" />

@@ -36,7 +36,8 @@
     max-width: 600px;
     max-height: 400px;
     margin: 1.5rem auto 2rem;
-    width: 90%;
+    width: 100%;
+    overflow: hidden;
     border: 1px solid #ddd;
     padding: 0;
     border-radius: 4px;
@@ -68,7 +69,9 @@
 <div class="twoColumn">
   <Sidebar />
   <div class="contentWrapper mainContent">
-    <a rel="prefetch" class="backLink" href="/">&larr; Back to Home</a>
+    <a rel="prefetch" class="backLink" href="/#timeline-item-{post.slug}">
+      &larr; Back to Home
+    </a>
     <article class="postFull">
       <h1>{post.title}</h1>
       <div class="subtitle">
