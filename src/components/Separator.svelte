@@ -4,7 +4,7 @@
 
 <style>
   div.separator {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -30,8 +30,10 @@
   }
 </style>
 
-<div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
-  <div class="line" />
-  <div class="symbol">§</div>
-  <div class="line" />
+<div class="contentWrapper">
+  <div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
+    <div class="line" />
+    <div class="symbol">§</div>
+    <div class="line" />
+  </div>
 </div>

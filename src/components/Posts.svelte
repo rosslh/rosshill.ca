@@ -30,11 +30,11 @@
   }
   div.posts {
     padding: 0 1rem;
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 0;
   }
   @media (min-width: 700px) {
     div.contentWrapper.postsWrapper {
-      padding: 2rem !important;
+      padding: 0 2rem !important;
     }
   }
 </style>
@@ -51,7 +51,11 @@
         display={labelIndices.includes(i)}
         direction={labelIndices.length % 2 !== 0}
         year={getYearFromDate(post.date)} />
-      <Post {post} firstPost={i === 0} left={labelIndices.length % 2 !== 0} />
+      <Post
+        {post}
+        firstPost={i === 0}
+        lastPost={i === posts.length - 1}
+        left={labelIndices.length % 2 !== 0} />
     {/each}
   </div>
 </div>

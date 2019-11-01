@@ -2,17 +2,18 @@
   export let post;
   export let left;
   export let firstPost;
+  export let lastPost;
 </script>
 
 <style>
   @media (max-width: 1200px) {
-    div.firstPostSpacer,
+    div.postSpacer,
     div.postWrapper {
       margin: 0 !important;
     }
   }
 
-  div.firstPostSpacer {
+  div.postSpacer {
     border-left: 3px solid #555;
     height: 3rem;
     margin-left: 30%;
@@ -180,7 +181,7 @@
 </style>
 
 {#if firstPost}
-  <div class="firstPostSpacer" />
+  <div class="postSpacer" />
 {/if}
 <div
   key={post.slug}
@@ -220,3 +221,6 @@
     {/if}
   </div>
 </div>
+{#if lastPost}
+  <div class="postSpacer" />
+{/if}
