@@ -1,5 +1,5 @@
 ---
-title: Camp Counselor
+title: Counselor at Camp Hurontario
 type: job
 date: 2014-05-01
 thumbnail: hurontario

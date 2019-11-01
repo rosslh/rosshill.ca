@@ -1,5 +1,5 @@
 ---
-title: Ski Racing Coach
+title: Ski Instructor at Caledon Ski Club
 type: job
 date: 2014-12-01
 thumbnail: caledon

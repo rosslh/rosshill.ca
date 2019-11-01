@@ -5,13 +5,15 @@
 <style>
   div.sidebar {
     grid-area: sidebar;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #ddd;
+    background-color: #f6f6f6;
   }
 
   @media (max-width: 1000px) {
     div.sidebar {
       border-right: none;
       padding: 1.5rem;
+      background-color: white;
     }
     div.sidebarContent {
       height: unset !important;

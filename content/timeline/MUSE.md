@@ -1,5 +1,5 @@
 ---
-title: Chief Technology Officer – MUSE Magazine
+title: Chief Technology Officer at MUSE Magazine
 type: ec
 date: 2017-04-01
 thumbnail: muse

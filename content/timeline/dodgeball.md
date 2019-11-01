@@ -1,5 +1,5 @@
 ---
-title: Dodgeball
+title: "Dodgeball: The Game"
 type: project
 date: 2018-01-01
 thumbnail: dodgeball
