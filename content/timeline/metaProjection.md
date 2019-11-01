@@ -1,6 +1,6 @@
 ---
 title: MetaProjection
-type: project
+eventType: project
 date: 2019-09-01
 website: https://www.metaprojection.ca
 repository: https://github.com/rosslh/metaprojection

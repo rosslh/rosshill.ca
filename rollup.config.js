@@ -14,7 +14,12 @@ const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const preprocess = sveltePreprocess({
   postcss: {
-    plugins: [require("autoprefixer")]
+    plugins: [
+      require("autoprefixer"),
+      require("cssnano")({
+        preset: "default"
+      })
+    ]
   }
 });
 

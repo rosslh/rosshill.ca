@@ -1,6 +1,6 @@
 ---
 title: WTFormat.com
-type: project
+eventType: project
 date: 2018-12-05
 repository: https://github.com/rosslh/wtformat
 website: https://wtformat.com/

@@ -1,6 +1,6 @@
 ---
 title: "Dodgeball: The Game"
-type: project
+eventType: project
 date: 2018-01-01
 thumbnailExt: jpg
 thumbnail: dodgeball

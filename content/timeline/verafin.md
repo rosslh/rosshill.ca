@@ -1,6 +1,6 @@
 ---
 title: Intern at Verafin
-type: job
+eventType: job
 date: 2019-05-01
 thumbnail: verafin-thumb
 image: verafin

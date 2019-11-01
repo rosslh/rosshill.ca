@@ -1,6 +1,6 @@
 ---
 title: Unitransform
-type: project
+eventType: project
 date: 2018-12-05
 repository: https://github.com/rosslh/unitransform
 website: https://www.npmjs.com/package/unitransform

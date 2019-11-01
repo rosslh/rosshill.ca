@@ -3,6 +3,10 @@
   export let left;
   export let firstPost;
   export let lastPost;
+
+  $: typeString =
+    { job: "Job", ec: "Extracurricular", project: "Project" }[post.eventType] ||
+    "";
 </script>
 
 <style>
@@ -28,12 +32,14 @@
   div.timelineMarker {
     position: absolute;
     top: 50%;
-    background-color: #444;
+    background-color: white;
+    border: 3px solid #444;
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;
     overflow: hidden;
   }
+
   div.postWrapper.left {
     padding-left: 2rem;
   }
@@ -58,8 +64,7 @@
     background-color: white;
     border: 1px solid #cdcdcd;
     border-radius: 5px;
-    margin: 1rem 0;
-    /* box-shadow: 1px 1px 1px 0px rgba(34, 34, 34, 0.05); */
+    margin: 0.75rem 0;
   }
 
   div.postWrapper.left {
@@ -88,7 +93,32 @@
   div.post div.postHeading {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    min-height: 1.5rem;
+  }
+
+  div.post div.postHeading div.imageAndHeading {
+    display: flex;
+    align-items: center;
     height: 1.5rem;
+  }
+
+  div.post div.postHeading div.typeString {
+    font-size: 0.7rem;
+    padding-left: 0.5rem;
+  }
+
+  div.post div.postHeading div.typeString.job {
+    color: var(--job);
+  }
+
+  div.post div.postHeading div.typeString.ec {
+    color: var(--ec);
+  }
+
+  div.post div.postHeading div.typeString.project {
+    color: var(--project);
   }
 
   div.post div.postHeading h3 {
@@ -197,24 +227,27 @@
   {/if}
   <div class="post">
     <div class="postHeading">
-      <div class="pictureFrame">
-        {#if post.thumbnail}
-          <picture>
-            <source srcset="{post.thumbnail}.webp" type="image/webp" />
-            <source
-              srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              type="image/png" />
-            <img
-              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              alt={post.title} />
-          </picture>
-        {/if}
+      <div class="imageAndHeading">
+        <div class="pictureFrame">
+          {#if post.thumbnail}
+            <picture>
+              <source srcset="{post.thumbnail}.webp" type="image/webp" />
+              <source
+                srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                type="image/png" />
+              <img
+                src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                alt={post.title} />
+            </picture>
+          {/if}
+        </div>
+        <h3>
+          {#if post.body}
+            <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
+          {:else}{post.title}{/if}
+        </h3>
       </div>
-      <h3>
-        {#if post.body}
-          <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
-        {:else}{post.title}{/if}
-      </h3>
+      <div class="typeString {post.eventType}">{typeString}</div>
     </div>
     {#if post.blurb}
       <p class="postText">{post.blurb}</p>

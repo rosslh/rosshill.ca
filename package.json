@@ -1,7 +1,7 @@
 {
   "name": "homepage",
   "description": "Ross Hill's hompage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "dev": "sapper dev",
     "build": "npm run contentGen && npm run webpGen && sapper build --legacy",
@@ -16,8 +16,10 @@
   "dependencies": {
     "autoprefixer": "^9.7.1",
     "compression": "^1.7.1",
+    "cssnano": "^4.1.10",
     "polka": "next",
     "sirv": "^0.4.0",
+    "svelte-icons": "^1.1.0",
     "svelte-preprocess": "^3.2.1"
   },
   "devDependencies": {

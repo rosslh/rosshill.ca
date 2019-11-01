@@ -1,6 +1,6 @@
 ---
 title: QTMA
-type: ec
+eventType: ec
 date: 2019-09-01
 image: studii
 thumbnail: qtma

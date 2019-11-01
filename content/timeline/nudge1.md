@@ -1,6 +1,6 @@
 ---
 title: Front End Intern at Nudge.ai
-type: job
+eventType: job
 date: 2017-05-01
 image: Nudge1
 thumbnail: nudge-thumb

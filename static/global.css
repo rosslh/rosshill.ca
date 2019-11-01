@@ -33,17 +33,25 @@ body {
   font-size: 14px;
   line-height: 1.7;
   color: #222;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+
+:root {
+  --job: #e71f1f;
+  --project: #2b44b3;
+  --ec: #339911;
+  --other: #353535;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5 {
+h1 *,
+h2 *,
+h3 * {
   color: black;
-  font-family: "Heebo", sans-serif;
-  font-weight: regular;
+  font-family: "Heebo", sans-serif !important;
+  font-weight: medium;
 }
 
 .contentWrapper {

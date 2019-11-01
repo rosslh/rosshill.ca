@@ -1,6 +1,6 @@
 ---
 title: IsEarthStillWarming.com
-type: project
+eventType: project
 date: 2019-01-11
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com

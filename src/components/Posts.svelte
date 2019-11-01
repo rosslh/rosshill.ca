@@ -2,18 +2,28 @@
   export let posts;
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
+  import FilterControls from "./FilterControls.svelte";
 
-  let year = 0;
-  let labelIndices = [];
-
-  const addLabelForNewYear = (date, i) => {
-    const yearFromDate = getYearFromDate(date);
-    if (yearFromDate !== year) {
-      year = yearFromDate;
-      if (!labelIndices.includes(i)) labelIndices.push(i);
+  const postsMap = (post, i, postsArray) => {
+    const prevDirection = i === 0 ? false : postsArray[i - 1].direction;
+    const date = getYearFromDate(post.date);
+    const prevDate = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
+    if (date !== prevDate) {
+      post.showYearLabel = true;
+      post.direction = !prevDirection;
+    } else {
+      post.showYearLabel = false;
+      post.direction = prevDirection;
     }
-    return "";
+    return post;
   };
+
+  $: postFilter = post =>
+    !showCategories.length || showCategories.includes(post.eventType);
+
+  $: postsWithLabels = posts.filter(postFilter).map(postsMap);
+
+  let showCategories = [];
 
   const getYearFromDate = date => {
     return Number(date.substring(0, 4));
@@ -37,26 +47,30 @@
 
   div.headingWrapper {
     margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  div.headingWrapper h2 {
+    margin-bottom: 1rem;
   }
 </style>
 
 <div class="headingWrapper contentWrapper ">
   <h2>Timeline</h2>
+  <FilterControls bind:showCategories />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
-    {#each posts as post, i}
-      {addLabelForNewYear(post.date, i)}
+    {#each postsWithLabels as post, i}
       <YearLabel
+        display={post.showYearLabel}
         firstLabel={i === 0}
-        display={labelIndices.includes(i)}
-        direction={labelIndices.length % 2 !== 0}
+        direction={post.direction}
         year={getYearFromDate(post.date)} />
       <Post
         {post}
         firstPost={i === 0}
         lastPost={i === posts.length - 1}
-        left={labelIndices.length % 2 !== 0} />
+        left={post.direction} />
     {/each}
   </div>
 </div>

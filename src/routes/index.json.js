@@ -8,6 +8,7 @@ const contents = timeline
   .map(post => {
     return {
       title: post.attributes.title,
+      eventType: post.attributes.eventType,
       body: post.body,
       slug: slugify(post.attributes.title).toLowerCase(),
       date: post.attributes.date,

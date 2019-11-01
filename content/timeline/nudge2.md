@@ -1,6 +1,6 @@
 ---
 title: Full Stack Intern at Nudge.ai
-type: job
+eventType: job
 date: 2018-05-01
 image: Nudge2
 thumbnail: nudge-thumb
