@@ -35,8 +35,8 @@
   }
 
   div.intro {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
   }
 
   @media (min-width: 1000px) {

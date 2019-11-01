@@ -30,12 +30,17 @@
   }
   @media (min-width: 700px) {
     div.contentWrapper.postsWrapper {
-      padding: 0 2rem !important;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
+  }
+
+  div.headingWrapper {
+    margin-top: 3.5rem;
   }
 </style>
 
-<div class="contentWrapper ">
+<div class="headingWrapper contentWrapper ">
   <h2>Timeline</h2>
 </div>
 <div class="contentWrapper postsWrapper">

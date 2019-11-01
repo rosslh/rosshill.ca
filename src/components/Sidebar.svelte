@@ -12,7 +12,7 @@
   @media (max-width: 1000px) {
     div.sidebar {
       border-right: none;
-      padding: 1.5rem;
+      padding: 1.5rem 1.5rem 0;
       background-color: white;
     }
     div.sidebarContent {
