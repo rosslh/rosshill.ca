@@ -56,12 +56,10 @@
   }
 </style>
 
-<div>
-  {#if left}
-    <div aria-hidden="true" class="arrowLeft" />
-    <div aria-hidden="true" class="arrowLeftBorder" />
-  {:else}
-    <div aria-hidden="true" class="arrowRight" />
-    <div aria-hidden="true" class="arrowRightBorder" />
-  {/if}
-</div>
+{#if left}
+  <div aria-hidden="true" class="arrowLeft" />
+  <div aria-hidden="true" class="arrowLeftBorder" />
+{:else}
+  <div aria-hidden="true" class="arrowRight" />
+  <div aria-hidden="true" class="arrowRightBorder" />
+{/if}

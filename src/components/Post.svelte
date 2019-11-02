@@ -34,7 +34,7 @@
 
   div.post {
     z-index: 4;
-    padding: 1rem 0;
+    padding: 1rem 0.75rem;
     background-color: white;
     border: 1px solid #cdcdcd;
     border-radius: 5px;
@@ -75,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 0;
     min-height: 1.5rem;
   }
 
@@ -112,10 +112,6 @@
 
   div.post div.postHeading h3 a {
     color: black;
-  }
-
-  div.post {
-    padding: 0.7rem;
   }
 
   div.post p.postText {
