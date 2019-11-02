@@ -19,12 +19,14 @@
 </script>
 
 <style>
-  button {
-    height: 1.5rem;
-    border-radius: 2rem;
+  div.themeSwitcherWrapper {
+    padding: 1.5rem 5%;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    right: 0;
+  }
+  button {
+    height: 1.8rem;
+    border-radius: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +35,7 @@
     border: none;
     padding: 0 1rem;
     cursor: pointer;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     border: 1px solid var(--postBorder);
   }
   button .icon {
@@ -43,9 +45,8 @@
   }
 </style>
 
-<div>
-
-  {#if !loading}
+{#if !loading}
+  <div class="themeSwitcherWrapper">
     <button on:click={changeTheme}>
       {#if nextTheme === 'dark'}
         <span class="icon">
@@ -59,5 +60,5 @@
         <span>Light mode</span>
       {/if}
     </button>
-  {/if}
-</div>
+  </div>
+{/if}

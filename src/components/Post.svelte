@@ -86,7 +86,7 @@
   }
 
   div.post div.postHeading div.typeString {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     padding-left: 0.5rem;
   }
 
@@ -115,7 +115,7 @@
   }
 
   div.post p.postText {
-    font-size: 0.85rem !important;
+    font-size: 0.95rem !important;
   }
 
   div.post p.postText,
@@ -123,7 +123,7 @@
     padding: 0.5rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
   }
   div.post p.readMore {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   @media (max-width: 700px) {

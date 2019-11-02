@@ -1,27 +1,31 @@
 <script>
+  import DiCode from "svelte-icons/di/DiCode.svelte";
   export let intro;
 </script>
 
 <style>
   div.separator {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 2rem;
   }
 
   div.separator .symbol {
-    font-family: "Heebo", sans-serif;
-    font-weight: normal;
-    font-size: 0.9rem;
+    height: 1.5rem;
+    width: 1.5rem;
     color: var(--postBorder);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   div.separator .line {
     height: 1px;
-    width: calc(50% - 2rem);
-    border-bottom: 2px dotted var(--postBorder);
+    width: calc(50% - 1.5rem);
+    border-bottom: 3px dotted var(--postBorder);
   }
   @media (min-width: 1000px) {
     div.separator.intro {
@@ -33,7 +37,9 @@
 <div class="contentWrapper">
   <div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
     <div class="line" />
-    <div class="symbol">§</div>
+    <div class="symbol">
+      <DiCode />
+    </div>
     <div class="line" />
   </div>
 </div>

@@ -29,7 +29,7 @@
   div.subtitle {
     font-size: 15px;
     margin-bottom: 1.2rem;
-    color: var(--timeline);
+    color: var(--subtitle);
   }
 
   div.imageWrapper {

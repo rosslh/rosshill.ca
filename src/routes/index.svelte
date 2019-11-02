@@ -13,7 +13,6 @@
   import Intro from "../components/Intro.svelte";
   import Separator from "../components/Separator.svelte";
   import Posts from "../components/Posts.svelte";
-  import ThemeSwitcher from "../components/ThemeSwitcher.svelte";
   export let posts = [];
 </script>
 
@@ -23,7 +22,6 @@
 <div class="twoColumn">
   <Sidebar />
   <div class="mainContent">
-    <ThemeSwitcher />
     <Intro />
     <Separator />
     <Posts {posts} />

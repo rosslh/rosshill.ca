@@ -49,10 +49,16 @@
 
   h1 {
     margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  .email {
-    margin-bottom: 1rem;
+
+  p.subtitle {
+    margin-top: 1rem;
+  }
+
+  p.subtitle.role {
+    font-size: 1.3rem;
   }
 </style>
 
@@ -66,6 +72,7 @@
       </picture>
     </div>
     <h1>Ross Hill</h1>
+    <p class="subtitle role">Software Developer</p>
     <p class="subtitle email">ross@rosshill.ca</p>
     <p class="subtitle">
       <a

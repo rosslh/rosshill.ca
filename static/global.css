@@ -35,7 +35,7 @@ body {
 }
 
 body {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--foreground);
   background-color: var(--background);
@@ -46,7 +46,7 @@ body {
   --job: #e71f1f;
   --project: #2b44b3;
   --ec: #339911;
-
+  --subtitle: #555;
   --timeline: #555;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
@@ -65,6 +65,7 @@ body {
     --project: #758eff;
     --ec: #5bd632;
 
+    --subtitle: #ccc;
     --timeline: #444;
     --postBorder: #323232;
     --sidebarBorder: #323232;
@@ -83,6 +84,7 @@ html body[data-theme="light"] {
   --project: #2b44b3;
   --ec: #339911;
 
+  --subtitle: #555;
   --timeline: #555;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
@@ -100,6 +102,7 @@ html body[data-theme="dark"] {
   --project: #758eff;
   --ec: #5bd632;
 
+  --subtitle: #ccc;
   --timeline: #444;
   --postBorder: #323232;
   --sidebarBorder: #323232;
@@ -146,6 +149,6 @@ a:hover {
 
 @media (min-width: 400px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
