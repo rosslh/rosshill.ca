@@ -36,6 +36,7 @@
     cursor: pointer;
     font-size: 0.9rem;
     border: 1px solid var(--postBorder);
+    transition: none !important;
   }
   button .icon {
     height: 1rem;
