@@ -65,13 +65,13 @@ body {
     --project: #758eff;
     --ec: #5bd632;
 
-    --timeline: #666;
+    --timeline: #444;
     --postBorder: #323232;
     --sidebarBorder: #323232;
-    --timelineMarker: #777;
+    --timelineMarker: #555;
     --sidebarBackground: #111;
     --background: black;
-    --postBackground: #222;
+    --postBackground: #151515;
     --foreground: #fafafa;
     --heading: white;
     --link: white;
@@ -100,13 +100,13 @@ html body[data-theme="dark"] {
   --project: #758eff;
   --ec: #5bd632;
 
-  --timeline: #666;
+  --timeline: #444;
   --postBorder: #323232;
   --sidebarBorder: #323232;
-  --timelineMarker: #777;
+  --timelineMarker: #555;
   --sidebarBackground: #111;
   --background: black;
-  --postBackground: #222;
+  --postBackground: #151515;
   --foreground: #fafafa;
   --heading: white;
   --link: white;
