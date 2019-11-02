@@ -13,7 +13,7 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 1.8rem;
-    height: 1.5rem;
+    height: 1.7em;
     min-width: 4rem;
     cursor: pointer;
     font-size: 0.8rem;

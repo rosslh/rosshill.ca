@@ -58,7 +58,7 @@
   }
 
   span.yearLabel {
-    background-color: #f6f6f6;
+    background-color: white;
     height: 2.2rem;
     border-radius: 0.5rem;
     width: 5rem;

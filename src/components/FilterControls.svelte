@@ -35,10 +35,4 @@
   <FilterButton active={ecActive} id="ec" callback={() => toggleCategory('ec')}>
     Extracurriculars
   </FilterButton>
-  <FilterButton
-    active={otherActive}
-    id="other"
-    callback={() => toggleCategory('other')}>
-    Other
-  </FilterButton>
 </div>

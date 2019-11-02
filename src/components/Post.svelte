@@ -1,4 +1,7 @@
 <script>
+  import PostArrow from "./PostArrow.svelte";
+  import TimelineMarker from "./TimelineMarker.svelte";
+
   export let post;
   export let left;
   export let firstPost;
@@ -29,35 +32,6 @@
     display: flex;
   }
 
-  div.timelineMarker {
-    position: absolute;
-    top: 50%;
-    background-color: white;
-    border: 3px solid #444;
-    height: 0.8rem;
-    width: 0.8rem;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  div.postWrapper.left {
-    padding-left: 2rem;
-  }
-  div.postWrapper.right {
-    padding-right: 2rem;
-  }
-  div.postWrapper.left div.timelineMarker {
-    transform: translate(50%, -50%);
-    position: absolute;
-    left: calc(-1rem + 2px);
-  }
-
-  div.postWrapper.right div.timelineMarker {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    right: calc(-1rem + 2px);
-  }
-
   div.post {
     z-index: 4;
     padding: 1rem 0;
@@ -65,6 +39,13 @@
     border: 1px solid #cdcdcd;
     border-radius: 5px;
     margin: 0.75rem 0;
+  }
+
+  div.postWrapper.left {
+    padding-left: 2rem;
+  }
+  div.postWrapper.right {
+    padding-right: 2rem;
   }
 
   div.postWrapper.left {
@@ -156,58 +137,6 @@
       padding-right: 0;
     }
   }
-
-  .arrowRight {
-    z-index: 6;
-    width: 0;
-    height: 0;
-    border-top: 16px solid transparent;
-    border-bottom: 16px solid transparent;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-    right: 1.7rem;
-    border-left: 16px solid white;
-  }
-
-  .arrowRightBorder {
-    z-index: 2;
-    width: 0;
-    height: 0;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-    right: 1.7rem;
-    border-left: 18px solid #cdcdcd;
-  }
-
-  .arrowLeft {
-    z-index: 6;
-    width: 0;
-    height: 0;
-    border-top: 16px solid transparent;
-    border-bottom: 16px solid transparent;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 1.7rem;
-    border-right: 16px solid white;
-  }
-
-  .arrowLeftBorder {
-    z-index: 2;
-    width: 0;
-    height: 0;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 1.7rem;
-    border-right: 18px solid #cdcdcd;
-  }
 </style>
 
 {#if firstPost}
@@ -217,14 +146,8 @@
   id="timeline-item-{post.slug}"
   key={post.slug}
   class={`postWrapper ${left ? 'left' : 'right'} ${firstPost ? 'firstPost' : ''}`}>
-  <div aria-hidden="true" class="timelineMarker" />
-  {#if left}
-    <div aria-hidden="true" class="arrowLeft" />
-    <div aria-hidden="true" class="arrowLeftBorder" />
-  {:else}
-    <div aria-hidden="true" class="arrowRight" />
-    <div aria-hidden="true" class="arrowRightBorder" />
-  {/if}
+  <TimelineMarker {left} />
+  <PostArrow {left} />
   <div class="post">
     <div class="postHeading">
       <div class="imageAndHeading">
