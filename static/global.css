@@ -1,3 +1,8 @@
+* {
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.4s ease;
+}
+
 div.twoColumn {
   display: grid;
   grid-template-columns: 3fr 8fr;
@@ -26,6 +31,7 @@ article.postFull p,
 p {
   margin: 0;
   padding: 0;
+  color: var(--foreground);
 }
 
 html,

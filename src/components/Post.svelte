@@ -16,7 +16,8 @@
   @media (max-width: 1200px) {
     div.postSpacer,
     div.postWrapper {
-      margin: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
 

@@ -8,6 +8,7 @@
 <style>
   div.labelWrapper {
     position: relative;
+    color: var(--foreground);
   }
 
   @media (max-width: 1200px) {
@@ -58,6 +59,7 @@
   }
 
   span.yearLabel {
+    color: var(--foreground);
     background-color: var(--postBackground);
     height: 2.2rem;
     border-radius: 0.5rem;

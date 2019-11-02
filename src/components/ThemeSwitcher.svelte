@@ -32,7 +32,6 @@
     align-items: center;
     color: var(--foreground);
     background-color: var(--postBackground);
-    border: none;
     padding: 0 1rem;
     cursor: pointer;
     font-size: 0.9rem;
@@ -43,6 +42,22 @@
     width: 1rem;
     margin-right: 0.3rem;
   }
+
+  @media (max-width: 700px) {
+    span.text {
+      display: none;
+    }
+    button {
+      padding: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+
+    button .icon {
+      margin-right: 0;
+    }
+  }
 </style>
 
 {#if !loading}
@@ -52,12 +67,12 @@
         <span class="icon">
           <IoIosMoon />
         </span>
-        <span>Dark mode</span>
+        <span class="text">Dark mode</span>
       {:else}
         <span class="icon">
           <IoIosSunny />
         </span>
-        <span>Light mode</span>
+        <span class="text">Light mode</span>
       {/if}
     </button>
   </div>
