@@ -14,10 +14,6 @@ div.mainContent {
   }
 }
 
-* {
-  /* transition: all 0.4s ease; */
-}
-
 button {
   outline: none !important;
 }

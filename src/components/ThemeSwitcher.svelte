@@ -2,6 +2,7 @@
   import IoIosMoon from "svelte-icons/io/IoIosMoon.svelte";
   import IoIosSunny from "svelte-icons/io/IoIosSunny.svelte";
 
+  let loading = typeof window === "undefined";
   let userTheme =
     typeof window === "undefined"
       ? "light"
@@ -43,17 +44,20 @@
 </style>
 
 <div>
-  <button on:click={changeTheme}>
-    {#if nextTheme === 'dark'}
-      <span class="icon">
-        <IoIosMoon />
-      </span>
-      <span>Dark mode</span>
-    {:else}
-      <span class="icon">
-        <IoIosSunny />
-      </span>
-      <span>Light mode</span>
-    {/if}
-  </button>
+
+  {#if !loading}
+    <button on:click={changeTheme}>
+      {#if nextTheme === 'dark'}
+        <span class="icon">
+          <IoIosMoon />
+        </span>
+        <span>Dark mode</span>
+      {:else}
+        <span class="icon">
+          <IoIosSunny />
+        </span>
+        <span>Light mode</span>
+      {/if}
+    </button>
+  {/if}
 </div>
