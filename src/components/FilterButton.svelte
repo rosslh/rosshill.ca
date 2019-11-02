@@ -10,10 +10,10 @@
 <style>
   button {
     outline: none;
-    background-color: var(--background);
+    background-color: var(--postBackground);
     border: 1px solid var(--foreground);
     border-radius: 1.8rem;
-    height: 1.7em;
+    height: 1.8em;
     min-width: 4rem;
     cursor: pointer;
     font-size: 0.9rem;

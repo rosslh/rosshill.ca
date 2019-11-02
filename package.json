@@ -17,6 +17,7 @@
     "autoprefixer": "^9.7.1",
     "compression": "^1.7.1",
     "cssnano": "^4.1.10",
+    "mobx": "^5.14.2",
     "polka": "next",
     "sirv": "^0.4.0",
     "svelte-icons": "^1.1.0",

@@ -23,7 +23,7 @@
 <div class="twoColumn">
   <Sidebar />
   <div class="mainContent">
-    <!-- <ThemeSwitcher /> -->
+    <ThemeSwitcher />
     <Intro />
     <Separator />
     <Posts {posts} />

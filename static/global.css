@@ -14,6 +14,10 @@ div.mainContent {
   }
 }
 
+button {
+  outline: none !important;
+}
+
 article.postFull p,
 .intro p {
   margin: 1.5rem auto !important;
@@ -45,7 +49,7 @@ body {
 
   --timeline: #555;
   --postBorder: #cdcdcd;
-  --sidebarBorder: #ddd;
+  --sidebarBorder: #cdcdcd;
   --timelineMarker: #444;
   --sidebarBackground: #f6f6f6;
   --background: white;
@@ -62,9 +66,9 @@ body {
     --ec: #5bd632;
 
     --timeline: #666;
-    --postBorder: #555;
-    --sidebarBorder: #555;
-    --timelineMarker: #555;
+    --postBorder: #323232;
+    --sidebarBorder: #323232;
+    --timelineMarker: #777;
     --sidebarBackground: #111;
     --background: black;
     --postBackground: #222;
@@ -81,7 +85,7 @@ html body[data-theme="light"] {
 
   --timeline: #555;
   --postBorder: #cdcdcd;
-  --sidebarBorder: #ddd;
+  --sidebarBorder: #cdcdcd;
   --timelineMarker: #444;
   --sidebarBackground: #f6f6f6;
   --background: white;
@@ -97,9 +101,9 @@ html body[data-theme="dark"] {
   --ec: #5bd632;
 
   --timeline: #666;
-  --postBorder: #555;
-  --sidebarBorder: #555;
-  --timelineMarker: #555;
+  --postBorder: #323232;
+  --sidebarBorder: #323232;
+  --timelineMarker: #777;
   --sidebarBackground: #111;
   --background: black;
   --postBackground: #222;
