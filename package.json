@@ -20,7 +20,7 @@
     "polka": "next",
     "sirv": "^0.4.0",
     "svelte-icons": "^1.1.0",
-    "svelte-preprocess": "^3.2.1"
+    "svelte-preprocess": "^3.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
