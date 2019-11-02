@@ -1,12 +1,19 @@
 <script>
-  import UserModel from "../store.js";
   import IoIosMoon from "svelte-icons/io/IoIosMoon.svelte";
   import IoIosSunny from "svelte-icons/io/IoIosSunny.svelte";
 
-  let userTheme = UserModel.UserTheme;
+  let userTheme =
+    typeof window === "undefined"
+      ? "light"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+  let nextTheme = userTheme === "dark" ? "light" : "dark";
+
   $: changeTheme = () => {
-    UserModel.ToggleUserTheme();
-    userTheme = UserModel.UserTheme;
+    document.body.setAttribute("data-theme", nextTheme);
+    [userTheme, nextTheme] = [nextTheme, userTheme];
   };
 </script>
 
@@ -37,7 +44,7 @@
 
 <div>
   <button on:click={changeTheme}>
-    {#if userTheme === 'dark'}
+    {#if nextTheme === 'dark'}
       <span class="icon">
         <IoIosMoon />
       </span>
