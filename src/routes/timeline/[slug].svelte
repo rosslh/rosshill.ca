@@ -29,7 +29,7 @@
   div.subtitle {
     font-size: 15px;
     margin-bottom: 1.2rem;
-    color: #666;
+    color: var(--timeline);
   }
 
   div.imageWrapper {
@@ -38,7 +38,7 @@
     margin: 1.5rem auto 2rem;
     width: 100%;
     overflow: hidden;
-    border: 1px solid #ddd;
+    border: 1px solid var(--sidebarBorder);
     padding: 0;
     border-radius: 4px;
     overflow: hidden;

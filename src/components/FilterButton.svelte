@@ -10,13 +10,13 @@
 <style>
   button {
     outline: none;
-    background-color: white;
-    border: 1px solid black;
+    background-color: var(--background);
+    border: 1px solid var(--foreground);
     border-radius: 1.8rem;
     height: 1.7em;
     min-width: 4rem;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
@@ -39,7 +39,6 @@
 
   button.inactive {
     opacity: 0.8;
-    background-color: white !important;
   }
 
   button.active {
@@ -59,10 +58,6 @@
   button.ecButton {
     color: var(--ec);
     border-color: var(--ec);
-  }
-  button.otherButton {
-    color: var(--other);
-    border-color: var(--other);
   }
 </style>
 

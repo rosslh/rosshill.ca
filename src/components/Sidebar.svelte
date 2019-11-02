@@ -5,15 +5,15 @@
 <style>
   div.sidebar {
     grid-area: sidebar;
-    border-right: 1px solid #ddd;
-    background-color: #f6f6f6;
+    border-right: 1px solid var(--sidebarBorder);
+    background-color: var(--sidebarBackground);
   }
 
   @media (max-width: 1000px) {
     div.sidebar {
       border-right: none;
       padding: 1.5rem 1.5rem 0;
-      background-color: white;
+      background-color: var(--background);
     }
     div.sidebarContent {
       height: unset !important;
@@ -36,8 +36,8 @@
   div.imgWrapper {
     overflow: hidden;
     border-radius: 50%;
-    width: 9.5rem;
-    height: 9.5rem;
+    width: 12rem;
+    height: 12rem;
   }
 
   div.imgWrapper picture,
@@ -48,7 +48,7 @@
   }
 
   h1 {
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
   }
   .email {

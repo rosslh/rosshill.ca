@@ -12,7 +12,6 @@
   $: jobActive = showCategories.includes("job");
   $: ecActive = showCategories.includes("ec");
   $: projectActive = showCategories.includes("project");
-  $: otherActive = showCategories.includes("other");
 </script>
 
 <style>

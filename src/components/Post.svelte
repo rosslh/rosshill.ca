@@ -21,7 +21,7 @@
   }
 
   div.postSpacer {
-    border-left: 3px solid #555;
+    border-left: 3px solid var(--timeline);
     height: 3rem;
     margin-left: 25%;
   }
@@ -35,8 +35,8 @@
   div.post {
     z-index: 4;
     padding: 1rem 0.75rem;
-    background-color: white;
-    border: 1px solid #cdcdcd;
+    background-color: var(--postBackground);
+    border: 1px solid var(--postBorder);
     border-radius: 5px;
     margin: 0.75rem 0;
   }
@@ -49,12 +49,12 @@
   }
 
   div.postWrapper.left {
-    border-left: 3px solid #555;
+    border-left: 3px solid var(--timeline);
     margin-left: 25%;
   }
 
   div.postWrapper.right {
-    border-right: 3px solid #555;
+    border-right: 3px solid var(--timeline);
     justify-content: flex-end;
     margin-right: 25%;
   }
@@ -111,7 +111,7 @@
   }
 
   div.post div.postHeading h3 a {
-    color: black;
+    color: var(--heading);
   }
 
   div.post p.postText {

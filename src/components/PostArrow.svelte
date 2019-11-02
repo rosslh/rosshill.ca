@@ -13,7 +13,7 @@
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 16px solid white;
+    border-left: 16px solid var(--postBackground);
   }
 
   .arrowRightBorder {
@@ -26,7 +26,7 @@
     top: 50%;
     transform: translate(50%, -50%);
     right: 1.7rem;
-    border-left: 18px solid #cdcdcd;
+    border-left: 18px solid var(--postBorder);
   }
 
   .arrowLeft {
@@ -39,7 +39,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 16px solid white;
+    border-right: 16px solid var(--postBackground);
   }
 
   .arrowLeftBorder {
@@ -52,7 +52,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     left: 1.7rem;
-    border-right: 18px solid #cdcdcd;
+    border-right: 18px solid var(--postBorder);
   }
 </style>
 

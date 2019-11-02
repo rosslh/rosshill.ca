@@ -15,13 +15,13 @@
     font-family: "Heebo", sans-serif;
     font-weight: normal;
     font-size: 0.9rem;
-    color: #ccc;
+    color: var(--postBorder);
   }
 
   div.separator .line {
     height: 1px;
     width: calc(50% - 2rem);
-    border-bottom: 2px dotted #ccc;
+    border-bottom: 2px dotted var(--postBorder);
   }
   @media (min-width: 1000px) {
     div.separator.intro {

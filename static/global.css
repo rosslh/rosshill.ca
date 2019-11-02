@@ -5,6 +5,7 @@ div.twoColumn {
 }
 div.mainContent {
   grid-area: content;
+  background-color: var(--background);
 }
 @media (max-width: 1000px) {
   div.twoColumn {
@@ -32,15 +33,79 @@ body {
 body {
   font-size: 14px;
   line-height: 1.7;
-  color: #222;
+  color: var(--foreground);
+  background-color: var(--background);
   font-family: "Source Sans Pro", sans-serif !important;
 }
 
-:root {
+body {
   --job: #e71f1f;
   --project: #2b44b3;
   --ec: #339911;
-  --other: #353535;
+
+  --timeline: #555;
+  --postBorder: #cdcdcd;
+  --sidebarBorder: #ddd;
+  --timelineMarker: #444;
+  --sidebarBackground: #f6f6f6;
+  --background: white;
+  --postBackground: white;
+  --foreground: #222;
+  --heading: black;
+  --link: #1f4987;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --job: #fa6767;
+    --project: #758eff;
+    --ec: #5bd632;
+
+    --timeline: #666;
+    --postBorder: #555;
+    --sidebarBorder: #555;
+    --timelineMarker: #555;
+    --sidebarBackground: #111;
+    --background: black;
+    --postBackground: #222;
+    --foreground: #fafafa;
+    --heading: white;
+    --link: white;
+  }
+}
+
+html body[data-theme="light"] {
+  --job: #e71f1f;
+  --project: #2b44b3;
+  --ec: #339911;
+
+  --timeline: #555;
+  --postBorder: #cdcdcd;
+  --sidebarBorder: #ddd;
+  --timelineMarker: #444;
+  --sidebarBackground: #f6f6f6;
+  --background: white;
+  --postBackground: white;
+  --foreground: #222;
+  --heading: black;
+  --link: #1f4987;
+}
+
+html body[data-theme="dark"] {
+  --job: #fa6767;
+  --project: #758eff;
+  --ec: #5bd632;
+
+  --timeline: #666;
+  --postBorder: #555;
+  --sidebarBorder: #555;
+  --timelineMarker: #555;
+  --sidebarBackground: #111;
+  --background: black;
+  --postBackground: #222;
+  --foreground: #fafafa;
+  --heading: white;
+  --link: white;
 }
 
 h1,
@@ -49,7 +114,7 @@ h3,
 h1 *,
 h2 *,
 h3 * {
-  color: black;
+  color: var(--heading);
   font-family: "Heebo", sans-serif !important;
   font-weight: medium;
 }
@@ -68,7 +133,7 @@ code {
 }
 
 a {
-  color: #1f4987;
+  color: var(--link);
 }
 
 a:hover {

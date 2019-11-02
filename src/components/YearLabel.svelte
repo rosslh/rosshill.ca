@@ -27,26 +27,26 @@
     height: 80px;
   }
   div.line.right > div:first-child {
-    border-left: 3px solid #555;
-    border-bottom: 3px solid #555;
+    border-left: 3px solid var(--timeline);
+    border-bottom: 3px solid var(--timeline);
     border-bottom-left-radius: 100% 80px;
   }
 
   div.line.right > div:last-child {
-    border-right: 3px solid #555;
-    border-top: 3px solid #555;
+    border-right: 3px solid var(--timeline);
+    border-top: 3px solid var(--timeline);
     border-top-right-radius: 100% 80px;
   }
 
   div.line.left > div:nth-child(2) {
-    border-right: 3px solid #555;
-    border-bottom: 3px solid #555;
+    border-right: 3px solid var(--timeline);
+    border-bottom: 3px solid var(--timeline);
     border-bottom-right-radius: 100% 80px;
   }
 
   div.line.left > div:nth-child(3) {
-    border-left: 3px solid #555;
-    border-top: 3px solid #555;
+    border-left: 3px solid var(--timeline);
+    border-top: 3px solid var(--timeline);
     border-top-left-radius: 100% 80px;
   }
 
@@ -58,11 +58,11 @@
   }
 
   span.yearLabel {
-    background-color: white;
+    background-color: var(--postBackground);
     height: 2.2rem;
     border-radius: 0.5rem;
     width: 5rem;
-    border: 1px solid #555;
+    border: 1px solid var(--timeline);
     display: flex;
     justify-content: center;
     align-items: center;
