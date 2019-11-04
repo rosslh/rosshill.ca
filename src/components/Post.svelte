@@ -31,6 +31,7 @@
     padding: 0;
     position: relative;
     display: flex;
+    border-color: var(--timeline) !important;
   }
 
   div.post {
