@@ -53,7 +53,7 @@
   </h2>
   <p>
     I am a software developer and computer science student at Queen's
-    university. I specialize in web development, and I'm always on the lookout
+    University. I specialize in web development, and I'm always on the lookout
     for cool new technologies.
   </p>
   <p>
