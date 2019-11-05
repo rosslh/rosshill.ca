@@ -11,6 +11,7 @@
     justify-content: space-between;
     align-items: center;
     height: 2rem;
+    background-color: var(--background);
   }
 
   div.separator .symbol {
