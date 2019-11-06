@@ -10,10 +10,12 @@ div.twoColumn {
   grid-template-columns: 3fr 8fr;
   grid-template-areas: "sidebar content";
 }
+
 div.mainContent {
   grid-area: content;
   background-color: var(--background);
 }
+
 @media (max-width: 1000px) {
   div.twoColumn {
     grid-template-areas: "sidebar" "content";
