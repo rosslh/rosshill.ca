@@ -2,7 +2,7 @@
   export let tagId;
   import { tagLabels } from "../utils/constants.js";
 
-  let tagString = tagLabels[tagId] || tagId;
+  $: tagString = tagLabels[tagId] || tagId;
 </script>
 
 <style>
