@@ -62,10 +62,6 @@
   }
 </style>
 
-<svelte:head>
-  <title>{post.title}</title>
-</svelte:head>
-
 <div class="twoColumn">
   <Sidebar />
   <div class="contentWrapper mainContent">

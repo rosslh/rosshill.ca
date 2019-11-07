@@ -91,7 +91,7 @@
 </style>
 
 {#if display && !firstLabel}
-  <div class="labelWrapper" key={`label-${year}`}>
+  <div class="labelWrapper">
     <span class="yearLabel centeredLabel">{year}</span>
     <div aria-hidden="true" class={`line ${direction ? 'left' : 'right'}`}>
       <div />

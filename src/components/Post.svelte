@@ -158,7 +158,6 @@
 {/if}
 <div
   id="timeline-item-{post.slug}"
-  key={post.slug}
   class={`postWrapper ${left ? 'left' : 'right'} ${firstPost ? 'firstPost' : ''}`}>
   <TimelineMarker {left} />
   <PostArrow {left} />

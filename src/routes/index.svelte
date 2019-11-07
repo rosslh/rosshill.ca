@@ -16,9 +16,6 @@
   export let posts = [];
 </script>
 
-<svelte:head>
-  <title>Ross Hill – Website and Portfolio</title>
-</svelte:head>
 <div class="twoColumn">
   <Sidebar />
   <div class="mainContent">
