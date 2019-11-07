@@ -141,7 +141,6 @@
     font-size: 0.8rem;
     padding-top: 0.5rem !important;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
   }
@@ -203,11 +202,13 @@
       <p class="postText">{post.blurb}</p>
     {/if}
     <div class="footer">
-      {#if post.body}
-        <div class="readMore">
-          <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
-        </div>
-      {/if}
+      <div>
+        {#if post.body}
+          <div class="readMore">
+            <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
+          </div>
+        {/if}
+      </div>
       <div class="typeString {post.eventType}">{typeString}</div>
     </div>
   </div>
