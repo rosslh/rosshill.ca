@@ -8,12 +8,13 @@
 <style>
   div.tag {
     border: 1px solid var(--postBorder);
-    border-radius: 0.2rem;
+    color: var(--subtitle);
+    border-radius: 1.2rem;
     margin-right: 0.4rem;
     display: flex;
     align-items: center;
     height: 1.2rem;
-    padding: 0 0.2rem;
+    padding: 0 0.3rem;
     font-size: 0.75rem;
   }
 

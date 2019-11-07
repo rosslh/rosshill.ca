@@ -57,7 +57,7 @@ body {
   --job: #e71f1f;
   --project: #2b44b3;
   --ec: #278507;
-  --subtitle: #555;
+  --subtitle: #444;
   --timeline: #555;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
@@ -95,7 +95,7 @@ html body[data-theme="light"] {
   --project: #2b44b3;
   --ec: #278507;
 
-  --subtitle: #555;
+  --subtitle: #444;
   --timeline: #555;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
