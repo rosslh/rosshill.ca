@@ -89,8 +89,9 @@
 
   div.post div.postHeading div.tags {
     display: flex;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
     margin-left: 0.75rem;
+    flex-wrap: wrap;
   }
 
   div.post div.typeString {
