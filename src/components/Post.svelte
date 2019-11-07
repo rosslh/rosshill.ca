@@ -42,6 +42,7 @@
     border: 1px solid var(--postBorder);
     border-radius: 5px;
     margin: 0.75rem 0;
+    position: relative;
   }
 
   div.postWrapper.left {
@@ -77,11 +78,11 @@
 
   div.post div.postHeading {
     display: flex;
-    justify-content: space-between;
     min-height: 1.5rem;
+    align-items: center;
   }
 
-  div.post div.postHeading div.imageAndHeading {
+  div.post div.imageAndHeading {
     display: flex;
     align-items: center;
   }
@@ -92,20 +93,19 @@
     margin-left: 0.75rem;
   }
 
-  div.post div.postHeading div.typeString {
+  div.post div.typeString {
     font-size: 0.75rem;
-    padding-left: 0.5rem;
   }
 
-  div.post div.postHeading div.typeString.job {
+  div.post div.typeString.job {
     color: var(--job);
   }
 
-  div.post div.postHeading div.typeString.ec {
+  div.post div.typeString.ec {
     color: var(--ec);
   }
 
-  div.post div.postHeading div.typeString.project {
+  div.post div.typeString.project {
     color: var(--project);
   }
 
@@ -132,21 +132,27 @@
   }
 
   div.post p.postText,
-  div.post p.readMore {
+  div.post div.footer {
     padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
   }
 
-  div.post p.readMore {
-    padding-top: 0.3rem;
-  }
-
-  div.post p.readMore {
+  div.post div.footer {
     font-size: 0.8rem;
+    padding-top: 0.5rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
+  @media (min-width: 700px) {
+    div.typeString {
+      position: absolute;
+      top: 1rem;
+      right: 0.75rem;
+    }
+  }
   @media (max-width: 700px) {
     div.post p.postText,
-    div.post p.readMore {
+    div.post div.footer {
       padding-left: 0 !important;
       padding-right: 0;
     }
@@ -163,44 +169,44 @@
   <PostArrow {left} />
   <div class="post">
     <div class="postHeading">
-      <div class="imageAndHeading">
-        <div class="pictureFrame">
-          {#if post.thumbnail}
-            <picture>
-              <source srcset="{post.thumbnail}.webp" type="image/webp" />
-              <source
-                srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-                type="image/png" />
-              <img
-                src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-                alt={post.title} />
-            </picture>
+      <div class="pictureFrame">
+        {#if post.thumbnail}
+          <picture>
+            <source srcset="{post.thumbnail}.webp" type="image/webp" />
+            <source
+              srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+              type="image/png" />
+            <img
+              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+              alt={post.title} />
+          </picture>
+        {/if}
+      </div>
+      <div class="headingAndTags">
+        <h3>
+          {#if post.body}
+            <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
+          {:else}{post.title}{/if}
+        </h3>
+        <div class="tags">
+          {#if post.tags && post.tags.length}
+            {#each post.tags as tagId}
+              <Tag {tagId} />
+            {/each}
           {/if}
         </div>
-        <div class="headingAndTags">
-          <h3>
-            {#if post.body}
-              <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
-            {:else}{post.title}{/if}
-          </h3>
-          <div class="tags">
-            {#if post.tags && post.tags.length}
-              {#each post.tags as tagId}
-                <Tag {tagId} />
-              {/each}
-            {/if}
-          </div>
-        </div>
       </div>
-      <div class="typeString {post.eventType}">{typeString}</div>
     </div>
     {#if post.blurb}
       <p class="postText">{post.blurb}</p>
     {/if}
     {#if post.body}
-      <p class="readMore">
-        <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
-      </p>
+      <div class="footer">
+        <div class="readMore">
+          <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
+        </div>
+        <div class="typeString {post.eventType}">{typeString}</div>
+      </div>
     {/if}
   </div>
 </div>
