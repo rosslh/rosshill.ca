@@ -3,5 +3,10 @@ export const tagLabels = {
   net: ".NET",
   unity3d: "Unity 3D",
   wordpress: "WordPress",
-  javascript: "JavaScript"
+  javascript: "JavaScript",
+  graphql: "GraphQL",
+  postgres: "PostgreSQL",
+  node: "Node.js",
+  backbone: "Backbone.js",
+  gatsby: "Gatsby / React"
 };

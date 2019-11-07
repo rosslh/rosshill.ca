@@ -7,7 +7,7 @@ repository: https://github.com/rosslh/metaprojection
 image: metaprojection
 thumbnail: metaprojection-thumb
 blurb: MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district.
-tags: [react, gatsby]
+tags: [gatsby, graphql]
 ---
 
 MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.

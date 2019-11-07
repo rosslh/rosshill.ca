@@ -119,7 +119,7 @@
     font-size: 1rem;
     line-height: 1.2rem;
     display: inline-block;
-    margin: 0 0.75rem;
+    margin: 0 1rem;
     padding: 0;
   }
 
