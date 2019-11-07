@@ -15,6 +15,7 @@ const contents = timeline
       prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
       blurb: post.attributes.blurb,
       thumbnailExt: post.attributes.thumbnailExt,
+      tags: post.attributes.tags,
       thumbnail: post.attributes.thumbnail
         ? `timeline/${post.attributes.thumbnail}`
         : null

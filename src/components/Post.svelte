@@ -1,6 +1,7 @@
 <script>
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
+  import Tag from "./Tag.svelte";
 
   export let post;
   export let left;
@@ -67,6 +68,7 @@
     width: 1.7rem;
     height: 1.7rem;
     display: inline-block;
+    flex-shrink: 0;
   }
   div.post div.postHeading div.pictureFrame img {
     height: 100%;
@@ -75,16 +77,19 @@
 
   div.post div.postHeading {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0 0;
     min-height: 1.5rem;
   }
 
   div.post div.postHeading div.imageAndHeading {
     display: flex;
     align-items: center;
-    height: 1.5rem;
+  }
+
+  div.post div.postHeading div.tags {
+    display: flex;
+    padding: 0.5rem 0;
+    margin-left: 0.75rem;
   }
 
   div.post div.postHeading div.typeString {
@@ -104,12 +109,18 @@
     color: var(--project);
   }
 
+  div.post div.postHeading div.headingAndTags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   div.post div.postHeading h3 {
     font-size: 1rem;
     line-height: 1.2rem;
-    margin-left: 0.75rem;
     display: inline-block;
-    padding: 0.5rem 0;
+    margin: 0 0.75rem;
+    padding: 0;
   }
 
   div.post div.postHeading h3 a {
@@ -122,8 +133,13 @@
 
   div.post p.postText,
   div.post p.readMore {
-    padding: 0.5rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
+    padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
   }
+
+  div.post p.readMore {
+    padding-top: 0.3rem;
+  }
+
   div.post p.readMore {
     font-size: 0.8rem;
   }
@@ -162,11 +178,20 @@
             </picture>
           {/if}
         </div>
-        <h3>
-          {#if post.body}
-            <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
-          {:else}{post.title}{/if}
-        </h3>
+        <div class="headingAndTags">
+          <h3>
+            {#if post.body}
+              <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
+            {:else}{post.title}{/if}
+          </h3>
+          <div class="tags">
+            {#if post.tags && post.tags.length}
+              {#each post.tags as tagId}
+                <Tag {tagId} />
+              {/each}
+            {/if}
+          </div>
+        </div>
       </div>
       <div class="typeString {post.eventType}">{typeString}</div>
     </div>

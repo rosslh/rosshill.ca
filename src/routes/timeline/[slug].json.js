@@ -13,7 +13,8 @@ const posts = timeline.map(post => {
     content: post.body,
     embed: post.attributes.embed,
     image: post.attributes.image,
-    imageExt: post.attributes.imageExt
+    imageExt: post.attributes.imageExt,
+    tags: post.attributes.tags
   };
 });
 
