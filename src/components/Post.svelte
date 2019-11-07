@@ -141,6 +141,7 @@
     font-size: 0.8rem;
     padding-top: 0.5rem !important;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
   }
