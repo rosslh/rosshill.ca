@@ -18,12 +18,12 @@
     return post;
   };
 
+  let showCategories = [];
+
   $: postFilter = post =>
     !showCategories.length || showCategories.includes(post.eventType);
 
   $: postsWithLabels = posts.filter(postFilter).map(postsMap);
-
-  let showCategories = [];
 
   const getYearFromDate = date => {
     return Number(date.substring(0, 4));
@@ -60,7 +60,7 @@
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
-    {#each postsWithLabels as post, i}
+    {#each postsWithLabels as post, i (post.slug)}
       <YearLabel
         display={post.showYearLabel}
         firstLabel={i === 0}

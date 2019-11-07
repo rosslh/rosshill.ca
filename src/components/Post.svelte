@@ -201,14 +201,14 @@
     {#if post.blurb}
       <p class="postText">{post.blurb}</p>
     {/if}
-    {#if post.body}
-      <div class="footer">
+    <div class="footer">
+      {#if post.body}
         <div class="readMore">
           <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
         </div>
-        <div class="typeString {post.eventType}">{typeString}</div>
-      </div>
-    {/if}
+      {/if}
+      <div class="typeString {post.eventType}">{typeString}</div>
+    </div>
   </div>
 </div>
 {#if lastPost}

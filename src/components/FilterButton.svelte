@@ -2,7 +2,6 @@
   import FaRegCircle from "svelte-icons/fa/FaRegCircle.svelte";
   import FaRegCheckCircle from "svelte-icons/fa/FaRegCheckCircle.svelte";
   export let active;
-  export let text;
   export let callback;
   export let id;
 </script>
