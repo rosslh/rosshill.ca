@@ -76,7 +76,7 @@
     }
   }
 
-  @media (min-width: 700px) and (max-width: 1200px) {
+  @media (min-width: 701px) and (max-width: 1200px) {
     span.yearLabel.firstLabel {
       transform: translate(-30%, 0) !important;
     }

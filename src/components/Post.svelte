@@ -144,7 +144,10 @@
     justify-content: space-between;
     align-items: center;
   }
-  @media (min-width: 700px) {
+  @media (min-width: 701px) {
+    div.post div.postHeading {
+      padding-right: 4rem;
+    }
     div.typeString {
       position: absolute;
       top: 1rem;
@@ -152,6 +155,9 @@
     }
   }
   @media (max-width: 700px) {
+    div.post div.postHeading {
+      padding-right: 0;
+    }
     div.post p.postText,
     div.post div.footer {
       padding-left: 0 !important;
