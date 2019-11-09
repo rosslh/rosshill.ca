@@ -1,20 +1,29 @@
 <script>
+  import { onMount } from "svelte";
+
   import IoIosMoon from "svelte-icons/io/IoIosMoon.svelte";
   import IoIosSunny from "svelte-icons/io/IoIosSunny.svelte";
+  import { theme as userTheme } from "../stores.js";
+
+  onMount(() => {
+    if (!$userTheme) {
+      userTheme.set(
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+      );
+    } else {
+      document.body.setAttribute("data-theme", $userTheme);
+    }
+  });
 
   let loading = typeof window === "undefined";
-  let userTheme =
-    typeof window === "undefined"
-      ? "light"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
 
-  let nextTheme = userTheme === "dark" ? "light" : "dark";
+  $: nextTheme = $userTheme === "dark" ? "light" : "dark";
 
   $: changeTheme = () => {
-    document.body.setAttribute("data-theme", nextTheme);
-    [userTheme, nextTheme] = [nextTheme, userTheme];
+    userTheme.set(nextTheme);
+    document.body.setAttribute("data-theme", $userTheme);
   };
 </script>
 
