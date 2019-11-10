@@ -13,6 +13,9 @@
   });
 
   $: logoFillStyle = logoHasFill ? "fill: var(--heading);" : "";
+
+  let pathAnimationDuration = 1400;
+  let fillTransitionDuration = 500;
 </script>
 
 <style>
@@ -51,8 +54,8 @@
       <path
         style={logoFillStyle}
         on:introstart={() => {
-          window.setTimeout(() => (logoHasFill = true), 1000);
-          window.setTimeout(() => logoLoaded.set(true), 1500);
+          window.setTimeout(() => (logoHasFill = true), pathAnimationDuration);
+          window.setTimeout(() => logoLoaded.set(true), pathAnimationDuration + fillTransitionDuration);
         }}
         in:draw={{ duration: 3000, easing: sineIn }}
         d={path} />

@@ -73,12 +73,12 @@
   <div class="themeSwitcherWrapper">
     <button on:click={changeTheme}>
       {#if nextTheme === 'dark'}
-        <span class="icon">
+        <span aria-hidden="true" class="icon">
           <IoIosMoon />
         </span>
         <span class="text">Dark mode</span>
       {:else}
-        <span class="icon">
+        <span aria-hidden="true" class="icon">
           <IoIosSunny />
         </span>
         <span class="text">Light mode</span>
