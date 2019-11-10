@@ -26,7 +26,7 @@
     display: inline-block;
     margin: 0;
     padding: 0;
-    animation: wave 0.9s 1.2s both;
+    animation: wave 0.9s 2.5s both;
     font-weight: normal !important;
   }
 
