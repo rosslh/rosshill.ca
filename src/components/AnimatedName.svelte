@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { sineIn } from "svelte/easing";
   import { path } from "./NameSvg.js";
   import { draw } from "svelte/transition";
   import { logoLoaded } from "../stores.js";
@@ -53,7 +54,7 @@
           window.setTimeout(() => (logoHasFill = true), 1000);
           window.setTimeout(() => logoLoaded.set(true), 1500);
         }}
-        in:draw={{ duration: 3000, delay: 0 }}
+        in:draw={{ duration: 3000, easing: sineIn }}
         d={path} />
     </g>
   {/if}
