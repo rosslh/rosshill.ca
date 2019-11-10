@@ -13,18 +13,17 @@
           : "light"
       );
     } else {
-      document.body.setAttribute("data-theme", $userTheme);
+      userTheme.set($userTheme); // to trigger side effect
     }
   });
-
-  let loading = typeof window === "undefined";
 
   $: nextTheme = $userTheme === "dark" ? "light" : "dark";
 
   $: changeTheme = () => {
     userTheme.set(nextTheme);
-    document.body.setAttribute("data-theme", $userTheme);
   };
+
+  let loading = typeof window === "undefined";
 </script>
 
 <style>

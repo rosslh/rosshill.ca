@@ -69,7 +69,7 @@
       <Post
         {post}
         firstPost={i === 0}
-        lastPost={i === posts.length - 1}
+        lastPost={i === postsWithLabels.length - 1}
         left={post.direction} />
     {/each}
   </div>
