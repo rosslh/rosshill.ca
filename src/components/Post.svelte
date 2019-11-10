@@ -23,9 +23,17 @@
   }
 
   div.postSpacer {
+    height: 3rem !important;
+  }
+
+  div.postSpacer.left {
     border-left: 3px solid var(--timeline);
-    height: 3rem;
     margin-left: 25%;
+  }
+
+  div.postSpacer.right {
+    border-right: 3px solid var(--timeline);
+    margin-right: 25%;
   }
 
   div.postWrapper {
@@ -167,7 +175,7 @@
 </style>
 
 {#if firstPost}
-  <div aria-hidden="true" class="postSpacer" />
+  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
 {/if}
 <div
   id="timeline-item-{post.slug}"
@@ -220,5 +228,5 @@
   </div>
 </div>
 {#if lastPost}
-  <div aria-hidden="true" class="postSpacer" />
+  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
 {/if}
