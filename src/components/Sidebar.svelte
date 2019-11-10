@@ -1,18 +1,6 @@
 <script>
-  import { onMount } from "svelte";
   import Separator from "./Separator.svelte";
-  import { path } from "./NameSvg.js";
-  import { draw } from "svelte/transition";
-  import { logoLoaded } from "../stores.js";
-
-  let showTitle = false;
-  let logoHasFill = $logoLoaded;
-
-  onMount(() => {
-    showTitle = true;
-  });
-
-  $: logoFillStyle = logoHasFill ? "fill: var(--heading);" : "";
+  import AnimatedName from "./AnimatedName.svelte";
 </script>
 
 <style>
@@ -86,27 +74,6 @@
   p.subtitle.role {
     font-size: 1.3rem;
   }
-
-  svg.animating path {
-    transition: fill 0.5s ease;
-  }
-
-  svg {
-    height: 100%;
-    width: 100%;
-  }
-
-  svg path {
-    fill: var(--sidebarBackground);
-    stroke: var(--heading);
-    stroke-width: 2;
-  }
-
-  @media (max-width: 1000px) {
-    svg path {
-      fill: var(--background);
-    }
-  }
 </style>
 
 <div class="sidebar">
@@ -120,26 +87,7 @@
     </div>
     <h1>
       <span>Ross Hill</span>
-      <svg
-        class={$logoLoaded ? '' : 'animating'}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="85.15999145507814 9.819995117187503 329.6800170898437
-        130.360009765625">
-        <title>Ross Hill</title>
-        {#if showTitle}
-          <g>
-            <!-- TODO: You shouldn't need these setTimeouts -->
-            <path
-              style={logoFillStyle}
-              on:introstart={() => {
-                window.setTimeout(() => (logoHasFill = true), 1000);
-                window.setTimeout(() => logoLoaded.set(true), 1500);
-              }}
-              in:draw={{ duration: 3000, delay: 0 }}
-              d={path} />
-          </g>
-        {/if}
-      </svg>
+      <AnimatedName />
     </h1>
     <p class="subtitle role">Software Developer</p>
     <p class="subtitle email">ross@rosshill.ca</p>
