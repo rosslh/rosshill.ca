@@ -98,6 +98,8 @@
 
   svg path {
     fill: var(--sidebarBackground);
+    stroke: var(--heading);
+    stroke-width: 2;
   }
 
   @media (max-width: 1000px) {
@@ -128,7 +130,7 @@
           <g>
             <!-- TODO: You shouldn't need these setTimeouts -->
             <path
-              style="{logoFillStyle} stroke:var(--heading); stroke-width: 2"
+              style={logoFillStyle}
               on:introstart={() => {
                 window.setTimeout(() => (logoHasFill = true), 1000);
                 window.setTimeout(() => logoLoaded.set(true), 1500);
