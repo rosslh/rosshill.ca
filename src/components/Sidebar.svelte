@@ -62,9 +62,9 @@
 
   h1 {
     margin-top: 1rem;
-    margin-bottom: -1.5rem;
+    margin-bottom: -1rem;
     padding-bottom: 0;
-    max-height: 6rem;
+    height: 6rem;
     max-width: 100%;
   }
 
