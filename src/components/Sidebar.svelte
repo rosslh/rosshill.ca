@@ -1,5 +1,18 @@
 <script>
+  import { onMount } from "svelte";
   import Separator from "./Separator.svelte";
+  import { path } from "./NameSvg.js";
+  import { draw } from "svelte/transition";
+  import { logoLoaded } from "../stores.js";
+
+  let showTitle = false;
+  let logoHasFill = $logoLoaded;
+
+  onMount(() => {
+    showTitle = true;
+  });
+
+  $: logoFillStyle = logoHasFill ? "fill: var(--heading);" : "";
 </script>
 
 <style>
@@ -48,9 +61,22 @@
   }
 
   h1 {
-    margin-top: 2rem;
-    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-bottom: -1.5rem;
     padding-bottom: 0;
+    max-height: 6rem;
+    max-width: 100%;
+  }
+
+  h1 > span {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
   }
 
   p.subtitle {
@@ -59,6 +85,25 @@
 
   p.subtitle.role {
     font-size: 1.3rem;
+  }
+
+  svg.animating path {
+    transition: fill 0.5s ease;
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  svg path {
+    fill: var(--sidebarBackground);
+  }
+
+  @media (max-width: 1000px) {
+    svg path {
+      fill: var(--background);
+    }
   }
 </style>
 
@@ -71,7 +116,29 @@
         <img src="headshot.jpg" alt="Ross Hill" />
       </picture>
     </div>
-    <h1>Ross Hill</h1>
+    <h1>
+      <span>Ross Hill</span>
+      <svg
+        class={$logoLoaded ? '' : 'animating'}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="85.15999145507814 9.819995117187503 329.6800170898437
+        130.360009765625">
+        <title>Ross Hill</title>
+        {#if showTitle}
+          <g>
+            <!-- TODO: You shouldn't need these setTimeouts -->
+            <path
+              style="{logoFillStyle} stroke:var(--heading); stroke-width: 2"
+              on:introstart={() => {
+                window.setTimeout(() => (logoHasFill = true), 1000);
+                window.setTimeout(() => logoLoaded.set(true), 1500);
+              }}
+              in:draw={{ duration: 3000, delay: 0 }}
+              d={path} />
+          </g>
+        {/if}
+      </svg>
+    </h1>
     <p class="subtitle role">Software Developer</p>
     <p class="subtitle email">ross@rosshill.ca</p>
     <p class="subtitle">

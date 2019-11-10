@@ -1,7 +1,8 @@
-import { writable } from "svelte-persistent-store/local";
+import { writable as writablePersist } from "svelte-persistent-store/local";
+import { writable } from "svelte/store";
 
 const themeStore = initial => {
-  const { set: setStore, ...store } = writable("user-theme", initial);
+  const { set: setStore, ...store } = writablePersist("user-theme", initial);
   return {
     ...store,
     set: value => {
@@ -12,3 +13,5 @@ const themeStore = initial => {
 };
 
 export const theme = themeStore("");
+
+export const logoLoaded = writable(false);
