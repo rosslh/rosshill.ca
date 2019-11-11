@@ -26,6 +26,7 @@
   svg {
     height: 100%;
     width: 100%;
+    pointer-events: none;
   }
 
   svg path {
