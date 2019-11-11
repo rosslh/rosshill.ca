@@ -50,6 +50,7 @@ body {
   line-height: 1.7;
   color: var(--foreground);
   background-color: var(--background);
+  font-weight: 400;
   font-family: "Source Sans Pro", sans-serif !important;
 }
 
@@ -133,8 +134,7 @@ h1 *,
 h2 *,
 h3 * {
   color: var(--heading);
-  font-family: "Heebo", sans-serif !important;
-  font-weight: medium;
+  font-weight: 600 !important;
 }
 
 .contentWrapper {
