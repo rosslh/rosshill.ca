@@ -1,7 +1,7 @@
 ---
 title: Drawing robot
 eventType: project
-date: 2018-09-01
+date: 2018-09-10
 thumbnailExt: jpg
 imageExt: jpg
 image: robot
