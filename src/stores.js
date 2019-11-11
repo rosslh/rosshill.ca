@@ -14,4 +14,4 @@ const themeStore = initial => {
 
 export const theme = themeStore("");
 
-export const logoLoaded = writable(false);
+export const logoTransitionDisabled = writable(false);
