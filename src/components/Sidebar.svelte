@@ -8,6 +8,7 @@
     grid-area: sidebar;
     border-right: 1px solid var(--sidebarBorder);
     background-color: var(--sidebarBackground);
+    z-index: 10;
   }
 
   @media (max-width: 1000px) {

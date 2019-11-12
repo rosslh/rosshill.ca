@@ -9,18 +9,14 @@
 </script>
 
 <script>
-  import Sidebar from "../components/Sidebar.svelte";
   import Intro from "../components/Intro.svelte";
   import Separator from "../components/Separator.svelte";
   import Posts from "../components/Posts.svelte";
   export let posts = [];
 </script>
 
-<div class="twoColumn">
-  <Sidebar />
-  <div class="mainContent">
-    <Intro />
-    <Separator />
-    <Posts {posts} />
-  </div>
+<div class="mainContent">
+  <Intro />
+  <Separator />
+  <Posts {posts} />
 </div>

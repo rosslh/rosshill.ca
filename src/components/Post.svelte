@@ -200,7 +200,7 @@
       <div class="headingAndTags">
         <h3>
           {#if post.body}
-            <a rel="prefetch" href="timeline/{post.slug}">{post.title}</a>
+            <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
           {:else}{post.title}{/if}
         </h3>
         <div class="tags">
@@ -219,7 +219,7 @@
       <div>
         {#if post.body}
           <div class="readMore">
-            <a rel="prefetch" href="timeline/{post.slug}">Read more...</a>
+            <a rel="prefetch" href="item/{post.slug}">Read more...</a>
           </div>
         {/if}
       </div>

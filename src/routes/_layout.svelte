@@ -1,5 +1,6 @@
 <script>
   import ThemeSwitcher from "../components/ThemeSwitcher.svelte";
+  import Sidebar from "../components/Sidebar.svelte";
 </script>
 
 <style>
@@ -7,6 +8,7 @@
 </style>
 
 <ThemeSwitcher />
-<main>
+<div class="twoColumn">
+  <Sidebar />
   <slot />
-</main>
+</div>
