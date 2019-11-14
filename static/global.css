@@ -23,9 +23,10 @@ div.mainContent {
   }
 }
 
-button,
-a {
-  outline: none !important;
+a:focus,
+button:focus {
+  outline: 2px dotted var(--focusOutline) !important;
+  outline-offset: 2px !important;
 }
 
 article.postFull p,
@@ -69,6 +70,7 @@ body {
   --foreground: #222;
   --heading: black;
   --link: #1f4987;
+  --focusOutline: #ababab;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -88,6 +90,7 @@ body {
     --foreground: #fafafa;
     --heading: white;
     --link: white;
+    --focusOutline: #454545;
   }
 }
 
@@ -107,6 +110,7 @@ html body[data-theme="light"] {
   --foreground: #222;
   --heading: black;
   --link: #1f4987;
+  --focusOutline: #ababab;
 }
 
 html body[data-theme="dark"] {
@@ -125,6 +129,7 @@ html body[data-theme="dark"] {
   --foreground: #fafafa;
   --heading: white;
   --link: white;
+  --focusOutline: #454545;
 }
 
 h1,

@@ -21,7 +21,7 @@
   }
 
   a.backLink {
-    display: block;
+    display: inline-block;
     margin: 1.5rem 0;
   }
   div.subtitle {

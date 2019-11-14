@@ -8,7 +8,6 @@
 
 <style>
   button {
-    outline: none;
     background-color: var(--postBackground);
     border: 1px solid var(--foreground);
     border-radius: 1.8rem;

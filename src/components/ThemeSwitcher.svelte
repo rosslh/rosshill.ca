@@ -31,6 +31,7 @@
     padding: 1.5rem 5%;
     position: absolute;
     right: 0;
+    z-index: 100;
   }
   button {
     height: 1.8rem;
