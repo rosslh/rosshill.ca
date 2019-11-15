@@ -1,5 +1,5 @@
 ---
-title: QHacks
+title: Software Developer at QHacks
 eventType: org
 date: 2018-04-21
 image: qhacks
