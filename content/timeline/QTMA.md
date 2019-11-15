@@ -1,6 +1,6 @@
 ---
-title: QTMA
-eventType: ec
+title: Software Developer at QTMA
+eventType: org
 date: 2019-09-01
 image: studii
 thumbnail: qtma

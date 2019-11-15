@@ -9,7 +9,7 @@
   export let lastPost;
 
   $: typeString =
-    { job: "Job", ec: "Extracurricular", project: "Project" }[post.eventType] ||
+    { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
     "";
 </script>
 
@@ -110,8 +110,8 @@
     color: var(--job);
   }
 
-  div.post div.typeString.ec {
-    color: var(--ec);
+  div.post div.typeString.org {
+    color: var(--org);
   }
 
   div.post div.typeString.project {

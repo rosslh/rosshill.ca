@@ -10,7 +10,7 @@
     }
   };
   $: jobActive = showCategories.includes("job");
-  $: ecActive = showCategories.includes("ec");
+  $: orgActive = showCategories.includes("org");
   $: projectActive = showCategories.includes("project");
 </script>
 
@@ -31,7 +31,10 @@
     callback={() => toggleCategory('project')}>
     Projects
   </FilterButton>
-  <FilterButton active={ecActive} id="ec" callback={() => toggleCategory('ec')}>
-    Extracurriculars
+  <FilterButton
+    active={orgActive}
+    id="org"
+    callback={() => toggleCategory('org')}>
+    Organizations
   </FilterButton>
 </div>

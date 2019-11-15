@@ -53,9 +53,9 @@
     border-color: var(--project);
   }
 
-  button.ecButton {
-    color: var(--ec);
-    border-color: var(--ec);
+  button.orgButton {
+    color: var(--org);
+    border-color: var(--org);
   }
 </style>
 

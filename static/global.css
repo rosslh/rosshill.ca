@@ -58,7 +58,7 @@ body {
 body {
   --job: #e71f1f;
   --project: #2b44b3;
-  --ec: #278507;
+  --org: #278507;
   --subtitle: #444;
   --timeline: #555;
   --postBorder: #cdcdcd;
@@ -77,7 +77,7 @@ body {
   body {
     --job: #fa6767;
     --project: #758eff;
-    --ec: #5bd632;
+    --org: #5bd632;
 
     --subtitle: #ccc;
     --timeline: #444;
@@ -97,7 +97,7 @@ body {
 html body[data-theme="light"] {
   --job: #e71f1f;
   --project: #2b44b3;
-  --ec: #278507;
+  --org: #278507;
 
   --subtitle: #444;
   --timeline: #555;
@@ -116,7 +116,7 @@ html body[data-theme="light"] {
 html body[data-theme="dark"] {
   --job: #fa6767;
   --project: #758eff;
-  --ec: #5bd632;
+  --org: #5bd632;
 
   --subtitle: #ccc;
   --timeline: #444;

@@ -1,6 +1,6 @@
 ---
 title: QHacks
-eventType: ec
+eventType: org
 date: 2018-04-21
 image: qhacks
 thumbnail: qhacks-crown
