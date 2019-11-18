@@ -8,5 +8,6 @@ export const tagLabels = {
   postgres: "PostgreSQL",
   node: "Node.js",
   backbone: "Backbone.js",
-  gatsby: "Gatsby / React"
+  gatsby: "Gatsby / React",
+  mongo: "MongoDB"
 };
