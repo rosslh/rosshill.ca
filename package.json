@@ -19,7 +19,7 @@
     "sirv": "^0.4.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.1",
+    "autoprefixer": "^9.7.2",
     "cssnano": "^4.1.10",
     "svelte-icons": "^1.1.0",
     "svelte-persistent-store": "^0.1.1",
