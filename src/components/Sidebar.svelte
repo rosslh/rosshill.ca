@@ -38,8 +38,8 @@
   div.imgWrapper {
     overflow: hidden;
     border-radius: 50%;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   div.imgWrapper picture,
@@ -82,8 +82,8 @@
     <div class="imgWrapper">
       <picture>
         <source srcset="headshot.webp" type="image/webp" />
-        <source srcset="headshot.jpg" type="image/jpg" />
-        <img src="headshot.jpg" alt="Ross Hill" />
+        <source srcset="headshot.png" type="image/jpg" />
+        <img src="headshot.png" alt="Ross Hill" />
       </picture>
     </div>
     <h1>
