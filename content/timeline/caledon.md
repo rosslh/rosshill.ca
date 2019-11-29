@@ -1,5 +1,5 @@
 ---
-title: Ski Instructor at Caledon Ski Club
+title: Ski Instructor – Caledon Ski Club
 eventType: job
 date: 2014-12-01
 thumbnail: caledon

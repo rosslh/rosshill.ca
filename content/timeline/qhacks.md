@@ -1,12 +1,12 @@
 ---
-title: Software Developer at QHacks
+title: Software Developer – QHacks
 eventType: org
 date: 2018-04-21
 image: qhacks
 thumbnail: qhacks-crown
 website: https://qhacks.io
 repository: https://github.com/qhacks/qhacks-website
-blurb: In my role on the QHacks executive team, I worked with a two other members of the exec to build the landing page for the hackathon as well as the interface students use to apply.
+blurb: I helped build the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.
 tags: [gatsby, graphql, postgres]
 ---
 

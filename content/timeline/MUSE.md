@@ -1,5 +1,5 @@
 ---
-title: CTO at MUSE Magazine
+title: CTO – MUSE Magazine
 eventType: org
 date: 2017-11-01
 thumbnail: muse

@@ -3,20 +3,23 @@ import dateformat from "dateformat";
 
 const timeline = require("../../../content/timeline.json");
 
-const posts = timeline.map(post => {
-  return {
-    title: post.attributes.title,
-    slug: slugify(post.attributes.title).toLowerCase(),
-    date: dateformat(post.attributes.date, "mmmm yyyy"),
-    website: post.attributes.website,
-    repository: post.attributes.repository,
-    content: post.body,
-    embed: post.attributes.embed,
-    image: post.attributes.image,
-    imageExt: post.attributes.imageExt,
-    tags: post.attributes.tags
-  };
-});
+const posts = timeline
+  .filter(x => !x.attributes.WIP)
+  .map(post => {
+    return {
+      title: post.attributes.title,
+      slug: slugify(post.attributes.title).toLowerCase(),
+      date: dateformat(post.attributes.date, "mmmm yyyy"),
+      website: post.attributes.website,
+      repository: post.attributes.repository,
+      content: post.body,
+      embed: post.attributes.embed,
+      image: post.attributes.image,
+      imageExt: post.attributes.imageExt,
+      gif: post.attributes.gif,
+      tags: post.attributes.tags
+    };
+  });
 
 const lookup = new Map();
 posts

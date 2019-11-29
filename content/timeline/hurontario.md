@@ -1,5 +1,5 @@
 ---
-title: Counsellor at Camp Hurontario
+title: Counsellor – Camp Hurontario
 eventType: job
 date: 2014-05-01
 thumbnail: hurontario
