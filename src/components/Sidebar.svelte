@@ -57,17 +57,6 @@
     max-width: 100%;
   }
 
-  h1 > span {
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-  }
-
   p.subtitle {
     margin-top: 1rem;
   }
@@ -87,7 +76,6 @@
       </picture>
     </div>
     <h1>
-      <span>Ross Hill</span>
       <AnimatedName />
     </h1>
     <p class="subtitle role">Software Developer</p>
