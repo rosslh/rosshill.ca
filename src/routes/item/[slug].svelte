@@ -82,9 +82,7 @@
       {/if}
     </div>
     {#if post.gif}
-      <img
-        src="timeline/{post.gif}.gif"
-        alt={post.title} />
+      <img src="timeline/{post.gif}.gif" alt={post.title} />
     {/if}
     {#if post.image}
       <div class="imageWrapper">
@@ -92,7 +90,7 @@
           <source srcset="timeline/{post.image}.webp" type="image/webp" />
           <source
             srcset="timeline/{post.image}.{post.imageExt || 'png'}"
-            type="image/png" />
+            type="image/{post.imageExt || 'png'}" />
           <img
             src="timeline/{post.image}.{post.imageExt || 'png'}"
             alt={post.title} />

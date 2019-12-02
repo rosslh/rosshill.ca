@@ -71,7 +71,7 @@
     <div class="imgWrapper">
       <picture>
         <source srcset="headshot.webp" type="image/webp" />
-        <source srcset="headshot.png" type="image/jpg" />
+        <source srcset="headshot.png" type="image/png" />
         <img src="headshot.png" alt="Ross Hill" />
       </picture>
     </div>

@@ -190,10 +190,8 @@
             <source srcset="{post.thumbnail}.webp" type="image/webp" />
             <source
               srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              type="image/png" />
-            <img
-              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              alt={post.title} />
+              type="image/{post.thumbnailExt || 'png'}" />
+            <img src="{post.thumbnail}.{post.thumbnailExt || 'png'}" alt="" />
           </picture>
         {/if}
       </div>
