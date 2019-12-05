@@ -12,6 +12,10 @@
 </script>
 
 <script>
+  import { onMount } from "svelte";
+  onMount(async () => {
+    gtag("config", "UA-93549235-3", { page_path: window.location.pathname });
+  });
   export let post;
 </script>
 

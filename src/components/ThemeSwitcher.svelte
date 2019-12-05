@@ -20,6 +20,7 @@
   $: nextTheme = $userTheme === "dark" ? "light" : "dark";
 
   $: changeTheme = () => {
+    gtag("event", "change_theme", { event_label: nextTheme });
     userTheme.set(nextTheme);
   };
 

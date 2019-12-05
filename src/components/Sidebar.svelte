@@ -84,18 +84,24 @@
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/rosslh">
+        href="https://github.com/rosslh"
+        on:click={() => gtag('event', 'click', { event_label: 'Github' })}>
         GitHub
       </a>
       /
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/rosslh">
+        href="https://www.linkedin.com/in/rosslh"
+        on:click={() => gtag('event', 'click', { event_label: 'LinkedIn' })}>
         LinkedIn
       </a>
       /
-      <a href="/resume.pdf">Resume</a>
+      <a
+        href="/resume.pdf"
+        on:click={() => gtag('event', 'click', { event_label: 'Resume' })}>
+        Resume
+      </a>
     </p>
   </div>
   <Separator intro />

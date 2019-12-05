@@ -12,6 +12,12 @@
   import Intro from "../components/Intro.svelte";
   import Separator from "../components/Separator.svelte";
   import Posts from "../components/Posts.svelte";
+
+  import { onMount } from "svelte";
+  onMount(async () => {
+    gtag("config", "UA-93549235-3", { page_path: "/" });
+  });
+
   export let posts = [];
 </script>
 
