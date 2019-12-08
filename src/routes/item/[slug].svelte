@@ -74,13 +74,25 @@
       Started {post.date}
       {#if post.repository}
         &ndash;
-        <a target="_blank" rel="noopener noreferrer" href={post.repository}>
+        <a
+          on:click={() => gtag('event', 'outbound', {
+              event_label: post.repository
+            })}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={post.repository}>
           GitHub
         </a>
       {/if}
       {#if post.website}
         &ndash;
-        <a target="_blank" rel="noopener noreferrer" href={post.website}>
+        <a
+          on:click={() => gtag('event', 'outbound', {
+              event_label: post.website
+            })}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={post.website}>
           Website
         </a>
       {/if}
