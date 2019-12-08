@@ -64,6 +64,9 @@
   }
 </style>
 
+<svelte:head>
+  <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
+</svelte:head>
 <div class="contentWrapper mainContent">
   <a rel="prefetch" class="backLink" href="/#timeline-item-{post.slug}">
     &larr; Back to Home

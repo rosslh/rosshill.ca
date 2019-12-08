@@ -21,6 +21,9 @@
   export let posts = [];
 </script>
 
+<svelte:head>
+  <link rel="canonical" href="https://rosshill.ca/" />
+</svelte:head>
 <div class="mainContent">
   <Intro />
   <Separator />
