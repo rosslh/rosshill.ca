@@ -2,7 +2,7 @@
 title: MetaProjection
 eventType: project
 date: 2019-08-20
-website: https://www.metaprojection.ca
+website: https://2019.metaprojection.ca
 repository: https://github.com/rosslh/metaprojection
 image: metaprojection
 thumbnail: metaprojection-thumb
