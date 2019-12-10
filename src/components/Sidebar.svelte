@@ -79,7 +79,9 @@
       <AnimatedName />
     </h1>
     <p class="subtitle role">Software Developer</p>
-    <p class="subtitle email">ross@rosshill.ca</p>
+    <p class="subtitle email">
+      <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
+    </p>
     <p class="subtitle">
       <a
         target="_blank"
