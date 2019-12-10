@@ -1,4 +1,4 @@
-import { writable as writablePersist } from "svelte-persistent-store/local";
+import { writable as writablePersist } from "svelte-persistent-store/session";
 import { writable } from "svelte/store";
 
 const themeStore = initial => {
