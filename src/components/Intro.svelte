@@ -57,9 +57,8 @@
     for cool new technologies.
   </p>
   <p>
-    This year I am involved with QTMA, working on a web application called
-    Studii which helps students collaborate on course notes. I am also working
-    on my capstone project, which is a digital box office and analytics system
-    for foldA at the Isabel Bader Centre.
+    This year I am involved with QVFT, working on a fully automated vertical
+    farm. I am also working on my capstone project, which is a digital box
+    office and analytics system for foldA at the Isabel Bader Centre.
   </p>
 </div>
