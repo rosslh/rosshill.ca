@@ -20,8 +20,12 @@
   $: nextTheme = $userTheme === "dark" ? "light" : "dark";
 
   $: changeTheme = () => {
-    gtag("event", "change_theme", { event_label: nextTheme });
     userTheme.set(nextTheme);
+    try {
+      gtag("event", "change_theme", { event_label: nextTheme });
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   let loading = typeof window === "undefined";
