@@ -152,6 +152,10 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  div.post div.footer div.externalLinks {
+    color: var(--subtitle);
+  }
   @media (min-width: 701px) {
     div.post div.postHeading {
       padding-right: 4rem;
@@ -214,11 +218,29 @@
       <p class="postText">{post.blurb}</p>
     {/if}
     <div class="footer">
-      <div>
-        {#if post.body}
-          <div class="readMore">
-            <a rel="prefetch" href="item/{post.slug}">Read more...</a>
-          </div>
+      <div class="externalLinks">
+        {#if post.repository}
+          <a
+            on:click={() => gtag('event', 'outbound', {
+                event_label: post.repository
+              })}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={post.repository}>
+            GitHub
+          </a>
+        {/if}
+        {#if post.repository && post.website}&nbsp;/&nbsp;{/if}
+        {#if post.website}
+          <a
+            on:click={() => gtag('event', 'outbound', {
+                event_label: post.website
+              })}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={post.website}>
+            Website
+          </a>
         {/if}
       </div>
       <div class="typeString {post.eventType}">{typeString}</div>

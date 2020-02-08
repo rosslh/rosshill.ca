@@ -14,6 +14,8 @@ const contents = timeline
       date: post.attributes.date,
       prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
       blurb: post.attributes.blurb,
+      repository: post.attributes.repository,
+      website: post.attributes.website,
       thumbnailExt: post.attributes.thumbnailExt,
       tags: post.attributes.tags,
       thumbnail: post.attributes.thumbnail
