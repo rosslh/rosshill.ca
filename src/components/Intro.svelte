@@ -52,13 +52,9 @@
     <span class="waveEmoji">👋</span>
   </h2>
   <p>
-    I am a software developer and computer science student at Queen's
-    University. I specialize in web development, and I'm always on the lookout
-    for cool new technologies.
-  </p>
-  <p>
-    This year I am involved with QVFT, working on a fully automated vertical
-    farm. I am also working on my capstone project, which is a digital box
-    office and analytics system for foldA at the Isabel Bader Centre.
+    I am a software developer based in Toronto. I specialize in web development,
+    and I'm always on the lookout for cool new technologies. I am currently
+    working on a requirements management tool to make collaborating on software
+    projects faster and easier to do remotely.
   </p>
 </div>
