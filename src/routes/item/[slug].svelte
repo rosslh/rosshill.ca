@@ -6,7 +6,7 @@
     const data = await res.json();
 
     return {
-      post: data
+      post: data,
     };
   }
 </script>
@@ -79,7 +79,7 @@
         &ndash;
         <a
           on:click={() => gtag('event', 'outbound', {
-              event_label: post.repository
+              event_label: post.repository,
             })}
           target="_blank"
           rel="noopener noreferrer"
@@ -91,7 +91,7 @@
         &ndash;
         <a
           on:click={() => gtag('event', 'outbound', {
-              event_label: post.website
+              event_label: post.website,
             })}
           target="_blank"
           rel="noopener noreferrer"

@@ -43,7 +43,7 @@
     <picture>
       <source srcset="tags/{tagId}.webp" type="image/webp" />
       <source srcset="tags/{tagId}.png" type="image/png" />
-      <img src="tags/{tagId}.png" alt={`${tagString} logo`} />
+      <img src="tags/{tagId}.png" alt={`${tagString} logo`} loading="lazy" />
     </picture>
   </div>
   <div class="tagLabel">{tagString}</div>

@@ -195,7 +195,10 @@
             <source
               srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
               type="image/{post.thumbnailExt || 'png'}" />
-            <img src="{post.thumbnail}.{post.thumbnailExt || 'png'}" alt="" />
+            <img
+              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+              loading="lazy"
+              alt="" />
           </picture>
         {/if}
       </div>
@@ -222,7 +225,7 @@
         {#if post.repository}
           <a
             on:click={() => gtag('event', 'outbound', {
-                event_label: post.repository
+                event_label: post.repository,
               })}
             target="_blank"
             rel="noopener noreferrer"
@@ -234,7 +237,7 @@
         {#if post.website}
           <a
             on:click={() => gtag('event', 'outbound', {
-                event_label: post.website
+                event_label: post.website,
               })}
             target="_blank"
             rel="noopener noreferrer"
