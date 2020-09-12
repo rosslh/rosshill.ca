@@ -22,7 +22,7 @@
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "svelte-icons": "^1.1.0",
-    "svelte-persistent-store": "^0.1.1",
+    "svelte-persistent-store": "^0.1.4",
     "svelte-preprocess": "^4.2.1",
     "@babel/core": "^7.7.5",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
