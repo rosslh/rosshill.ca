@@ -28,7 +28,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
-    "@babel/runtime": "^7.7.7",
+    "@babel/runtime": "^7.11.2",
     "dateformat": "^3.0.3",
     "frontmatter-markdown-to-json": "0.0.10",
     "npm-run-all": "^4.1.5",
