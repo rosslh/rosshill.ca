@@ -1,9 +1,9 @@
 ---
-title: Founder – ReqWise
-eventType: job
+title: ReqWise
+eventType: project
 date: 2020-04-01
 thumbnail: reqwise
-blurb: Founded ReqWise, an easier way for digital agencies to understand their customer's needs.
-tags: [svelte, fastify, postgres]
+blurb: Created ReqWise, an easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.
+tags: [svelte, fastify, postgres, gcp]
 website: https://reqwise.com
 ---
