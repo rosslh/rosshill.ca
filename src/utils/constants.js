@@ -9,5 +9,6 @@ export const tagLabels = {
   node: "Node.js",
   backbone: "Backbone.js",
   gatsby: "Gatsby / React",
-  mongo: "MongoDB"
+  mongo: "MongoDB",
+  gcp: "Google Cloud Platform"
 };
