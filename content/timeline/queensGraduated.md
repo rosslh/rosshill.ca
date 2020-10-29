@@ -1,8 +1,7 @@
 ---
-title: Graduated Queen's University
+title: Graduated from Queen's University
 eventType: other
-date: 2020-05-01
+date: 2020-04-01
 thumbnail: queens-thumb
-WIP: true
-blurb: Bachelor of Computing Honours
+blurb: Bachelor of Computing Honours in Software Design
 ---
