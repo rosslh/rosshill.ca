@@ -53,10 +53,10 @@ body {
   --project: #2b44b3;
   --org: #278507;
   --subtitle: #444;
-  --timeline: #555;
+  --timeline: #666;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
-  --timelineMarker: #444;
+  --timelineMarker: #555;
   --sidebarBackground: #f6f6f6;
   --background: white;
   --postBackground: white;
@@ -93,10 +93,10 @@ html body[data-theme="light"] {
   --org: #278507;
 
   --subtitle: #444;
-  --timeline: #555;
+  --timeline: #666;
   --postBorder: #cdcdcd;
   --sidebarBorder: #cdcdcd;
-  --timelineMarker: #444;
+  --timelineMarker: #555;
   --sidebarBackground: #f6f6f6;
   --background: white;
   --postBackground: white;
