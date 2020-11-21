@@ -1,5 +1,5 @@
 ---
-title: Full Stack Developer Intern – Nudge.ai
+title: Full-Stack Developer Intern – Nudge.ai
 eventType: job
 date: 2018-05-01
 image: Nudge2
