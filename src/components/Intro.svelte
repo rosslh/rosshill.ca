@@ -53,8 +53,7 @@
   </h2>
   <p>
     I am a software developer based in Toronto. I specialize in web development,
-    and I'm always on the lookout for cool new technologies. My latest project
-    is a requirements management tool that makes collaborating on software
-    projects faster and easier to do remotely.
+    and I'm always on the lookout for cool new technologies. I'm helping Doctalk
+    build a collaboration tool for doctors and medical organizations.
   </p>
 </div>
