@@ -1,25 +1,25 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
 
-const timeline = require("../../../content/timeline.json"); // TODO: Why is this not ../../
+const timeline = require("../../../content/data.json"); // TODO: Why is this not ../../
 
-const contents = timeline
-  .filter(x => !x.attributes.WIP)
+const contents = Object.values(timeline)
+  .filter(post => !post.WIP)
   .map(post => {
     return {
-      title: post.attributes.title,
-      eventType: post.attributes.eventType,
-      body: post.body,
-      slug: slugify(post.attributes.title).toLowerCase(),
-      date: post.attributes.date,
-      prettyDate: dateformat(post.attributes.date, "mmmm yyyy"),
-      blurb: post.attributes.blurb,
-      repository: post.attributes.repository,
-      website: post.attributes.website,
-      thumbnailExt: post.attributes.thumbnailExt,
-      tags: post.attributes.tags,
-      thumbnail: post.attributes.thumbnail
-        ? `timeline/${post.attributes.thumbnail}`
+      title: post.title,
+      eventType: post.eventType,
+      body: post.content,
+      slug: slugify(post.title).toLowerCase(),
+      date: post.date,
+      prettyDate: dateformat(post.date, "mmmm yyyy"),
+      blurb: post.blurb,
+      repository: post.repository,
+      website: post.website,
+      thumbnailExt: post.thumbnailExt,
+      tags: post.tags,
+      thumbnail: post.thumbnail
+        ? `timeline/${post.thumbnail}`
         : null
     };
   })

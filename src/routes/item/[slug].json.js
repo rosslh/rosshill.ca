@@ -1,23 +1,23 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
 
-const timeline = require("../../../content/timeline.json");
+const timeline = require("../../../content/data.json");
 
-const posts = timeline
-  .filter(x => !x.attributes.WIP)
+const posts = Object.values(timeline)
+  .filter(post => !post.WIP)
   .map(post => {
     return {
-      title: post.attributes.title,
-      slug: slugify(post.attributes.title).toLowerCase(),
-      date: dateformat(post.attributes.date, "mmmm yyyy"),
-      website: post.attributes.website,
-      repository: post.attributes.repository,
-      content: post.body,
-      embed: post.attributes.embed,
-      image: post.attributes.image,
-      imageExt: post.attributes.imageExt,
-      gif: post.attributes.gif,
-      tags: post.attributes.tags
+      title: post.title,
+      slug: slugify(post.title).toLowerCase(),
+      date: dateformat(post.date, "mmmm yyyy"),
+      website: post.website,
+      repository: post.repository,
+      content: post.content,
+      embed: post.embed,
+      image: post.image,
+      imageExt: post.imageExt,
+      gif: post.gif,
+      tags: post.tags
     };
   });
 

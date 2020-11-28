@@ -204,7 +204,7 @@
       </div>
       <div class="headingAndTags">
         <h3>
-          {#if post.body}
+          {#if post.content}
             <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
           {:else}{post.title}{/if}
         </h3>
