@@ -28,7 +28,7 @@
     }
   };
 
-  let loading = typeof window === "undefined";
+  // let loading = typeof window === "undefined";
 </script>
 
 <style>
@@ -75,20 +75,19 @@
   }
 </style>
 
-{#if !loading}
-  <div class="themeSwitcherWrapper">
-    <button title="Use {nextTheme} theme" on:click={changeTheme}>
+<!-- {#if !loading} -->
+<div class="themeSwitcherWrapper">
+  <button title="Use {nextTheme} theme" on:click={changeTheme}>
+    <span aria-hidden="true" class="icon">
       {#if nextTheme === 'dark'}
-        <span aria-hidden="true" class="icon">
-          <IoIosMoon />
-        </span>
-        <span class="text">Dark mode</span>
+        <IoIosMoon />
       {:else}
-        <span aria-hidden="true" class="icon">
-          <IoIosSunny />
-        </span>
-        <span class="text">Light mode</span>
+        <IoIosSunny />
       {/if}
-    </button>
-  </div>
-{/if}
+    </span>
+    <span class="text">
+      {#if nextTheme === 'dark'}Dark{:else}Light{/if}
+      mode</span>
+  </button>
+</div>
+<!-- {/if} -->

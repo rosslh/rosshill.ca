@@ -60,8 +60,8 @@
   viewBox="85.15999145507814 9.819995117187503 329.6800170898437
   130.360009765625">
   <title>Ross Hill</title>
-  {#if showTitle}
-    <g>
+  <g>
+    {#if showTitle}
       <!-- TODO: You shouldn't need these setTimeouts -->
       <path
         class={pathClass}
@@ -71,6 +71,6 @@
         }}
         in:draw={{ duration: 3000, easing: sineIn }}
         d={path} />
-    </g>
-  {/if}
+    {/if}
+  </g>
 </svg>
