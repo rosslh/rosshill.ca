@@ -26,9 +26,10 @@
 
   button .symbol {
     position: static;
-    margin-right: 0.2rem;
-    height: 0.8rem;
+    margin-right: 0.3rem;
     width: 0.8rem;
+    display: inline-flex;
+    align-items: center;
   }
 
   button .text {
