@@ -28,14 +28,9 @@
   }
 
   div.logoWrapper * {
-    max-height: 100%;
-    max-width: 100%;
-    display: block;
-  }
-
-  div.logoWrapper picture * {
-    width: 100%;
     height: 100%;
+    width: 100%;
+    display: block;
   }
 
   div.tagLabel {

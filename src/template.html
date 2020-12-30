@@ -4,14 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1" />
     <meta name="theme-color" content="#1d3557" />
-
     <!-- HTML Meta Tags -->
     <title>Ross Hill – Website and Portfolio</title>
     <meta
       name="description"
       content="I am a software developer and computer science student at Queen's University. I specialize in web development, and I'm always on the lookout for cool new technologies."
     />
-
     <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Ross Hill – Website and Portfolio" />
     <meta
@@ -19,7 +17,6 @@
       content="I am a software developer and computer science student at Queen's University. I specialize in web development, and I'm always on the lookout for cool new technologies."
     />
     <meta itemprop="image" content="https://rosshill.ca/siteImage.png" />
-
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://rosshill.ca" />
     <meta property="og:type" content="website" />
@@ -29,7 +26,6 @@
       content="I am a software developer and computer science student at Queen's University. I specialize in web development, and I'm always on the lookout for cool new technologies."
     />
     <meta property="og:image" content="https://rosshill.ca/siteImage.png" />
-
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ross Hill – Website and Portfolio" />
@@ -38,34 +34,20 @@
       content="I am a software developer and computer science student at Queen's University. I specialize in web development, and I'm always on the lookout for cool new technologies."
     />
     <meta name="twitter:image" content="https://rosshill.ca/siteImage.png" />
-
     %sapper.base%
-
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="normalize.min.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=fallback"
       rel="stylesheet"
-    />
-    <!-- Sapper generates a <style> tag containing critical CSS
-	     for the current page. CSS for the rest of the app is
-	     lazily loaded when it precaches secondary pages -->
+    /> -->
     %sapper.styles%
-
-    <!-- This contains the contents of the <svelte:head> component, if
-	     the current page has one -->
     %sapper.head%
   </head>
   <body>
-    <!-- The application will be rendered inside this element,
-	     because `app/client.js` references it -->
     <div id="sapper">%sapper.html%</div>
-
-    <!-- Sapper creates a <script> tag containing `app/client.js`
-	     and anything else it needs to hydrate the app and
-	     initialise the router -->
     %sapper.scripts%
   </body>
 </html>

@@ -42,11 +42,10 @@
     height: 10rem;
   }
 
-  div.imgWrapper picture,
-  div.imgWrapper img,
-  div.imgWrapper source {
-    max-width: 100%;
-    max-height: 100%;
+  div.imgWrapper * {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   h1 {
@@ -72,7 +71,11 @@
       <picture>
         <source srcset="headshot.webp" type="image/webp" />
         <source srcset="headshot.png" type="image/png" />
-        <img src="headshot.png" alt="Ross Hill" />
+        <img
+          src="headshot.png"
+          alt="Ross Hill"
+          width="10rem"
+          height="10rem" />
       </picture>
     </div>
     <h1>

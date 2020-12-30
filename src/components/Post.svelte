@@ -79,9 +79,10 @@
     display: inline-block;
     flex-shrink: 0;
   }
-  div.post div.postHeading div.pictureFrame picture * {
+  div.post div.postHeading div.pictureFrame * {
     height: 100%;
     width: 100%;
+    display: block;
   }
 
   div.post div.postHeading {
