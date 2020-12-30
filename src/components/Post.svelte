@@ -79,7 +79,7 @@
     display: inline-block;
     flex-shrink: 0;
   }
-  div.post div.postHeading div.pictureFrame img {
+  div.post div.postHeading div.pictureFrame picture * {
     height: 100%;
     width: 100%;
   }
@@ -198,7 +198,9 @@
             <img
               src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
               loading="lazy"
-              alt="" />
+              alt=""
+              width="1.7rem"
+              height="1.7rem" />
           </picture>
         {/if}
       </div>
