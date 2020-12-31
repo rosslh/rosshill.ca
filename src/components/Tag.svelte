@@ -40,7 +40,7 @@
 
 <div class="tag">
   <div class="logoWrapper">
-    <picture>
+    <picture class="fixedSize">
       <source srcset="tags/{tagId}.webp" type="image/webp" />
       <source srcset="tags/{tagId}.png" type="image/png" />
       <img

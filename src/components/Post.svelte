@@ -191,7 +191,7 @@
     <div class="postHeading">
       <div class="pictureFrame">
         {#if post.thumbnail}
-          <picture>
+          <picture class="fixedSize">
             <source srcset="{post.thumbnail}.webp" type="image/webp" />
             <source
               srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"

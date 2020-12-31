@@ -163,11 +163,11 @@ a:hover {
   }
 }
 
-picture {
+picture.fixedSize {
   position: relative;
 }
 
-picture * {
+picture.fixedSize * {
   position: absolute;
   top: 0;
   left: 0;
