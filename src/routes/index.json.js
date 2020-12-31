@@ -9,7 +9,7 @@ const contents = Object.values(timeline)
     return {
       title: post.title,
       eventType: post.eventType,
-      content: post.content,
+      hasContent: !!post.content,
       slug: slugify(post.title).toLowerCase(),
       date: post.date,
       prettyDate: dateformat(post.date, "mmmm yyyy"),
