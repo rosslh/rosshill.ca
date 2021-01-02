@@ -1,5 +1,5 @@
 ---
-title: Mandelbrot set explorer
+title: Mandelbrot Set Explorer
 eventType: project
 date: 2016-11-29
 repository: https://github.com/rosslh/Mandelbrot-set-explorer

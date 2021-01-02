@@ -12,5 +12,6 @@ export const tagLabels = {
   mongo: "MongoDB",
   gcp: "GCP",
   svelte: "Svelte / JavaScript",
-  fastify: "Fastify / Node.js"
+  fastify: "Fastify / Node.js",
+  wasm: "WebAssembly"
 };
