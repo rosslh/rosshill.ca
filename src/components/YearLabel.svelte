@@ -64,10 +64,11 @@
     height: 2.2rem;
     border-radius: 0.5rem;
     width: 5rem;
-    border: 1px solid var(--timeline);
+    border: 1px solid var(--postBorder);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
   }
 
   @media (max-width: 700px) {

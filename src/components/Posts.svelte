@@ -20,12 +20,12 @@
 
   let showCategories = [];
 
-  $: postFilter = post =>
+  $: postFilter = (post) =>
     !showCategories.length || showCategories.includes(post.eventType);
 
   $: postsWithLabels = posts.filter(postFilter).map(postsMap);
 
-  const getYearFromDate = date => {
+  const getYearFromDate = (date) => {
     return Number(date.substring(0, 4));
   };
 </script>
@@ -36,7 +36,7 @@
   }
   div.posts {
     padding: 0 1rem;
-    margin: 1.5rem auto 0;
+    margin: 2rem auto 0;
   }
   @media (min-width: 700px) {
     div.contentWrapper.postsWrapper {

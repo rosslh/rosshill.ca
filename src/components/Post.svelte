@@ -126,7 +126,7 @@
   }
 
   div.post div.postHeading h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.2rem;
     display: inline-block;
     margin: 0 1rem;
