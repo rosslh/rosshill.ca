@@ -25,7 +25,7 @@
     active={jobActive}
     id="job"
     callback={() => toggleCategory('job')}>
-    Work experience
+    Work Experience
   </FilterButton>
   <FilterButton
     active={projectActive}

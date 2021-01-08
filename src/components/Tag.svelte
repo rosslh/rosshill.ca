@@ -45,7 +45,7 @@
       <source srcset="tags/{tagId}.png" type="image/png" />
       <img
         src="tags/{tagId}.png"
-        alt={`${tagString} logo`}
+        alt=""
         loading="lazy"
         width="0.85rem"
         height="0.85rem" />
