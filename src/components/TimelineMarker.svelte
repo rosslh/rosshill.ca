@@ -16,13 +16,13 @@
   div.timelineMarker.left {
     transform: translate(50%, -50%);
     position: absolute;
-    left: calc(-1rem + 2px);
+    left: calc(-1rem + 1.5px);
   }
 
   div.timelineMarker.right {
     transform: translate(-50%, -50%);
     position: absolute;
-    right: calc(-1rem + 2px);
+    right: calc(-1rem + 1.5px);
   }
 </style>
 
