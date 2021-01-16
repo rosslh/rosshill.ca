@@ -81,7 +81,7 @@ body {
     --sidebarBackground: #212733;
     --background: #1A1F28;
     --postBackground: #212733;
-    --foreground: #d9d7ce;
+    --foreground: #dad9d6;
     --heading: white;
     --link: white;
     --focusOutline: #516170;
@@ -120,7 +120,7 @@ html body[data-theme="dark"] {
   --sidebarBackground: #212733;
   --background: #1A1F28;
   --postBackground: #212733;
-  --foreground: #d9d7ce;
+  --foreground: #dad9d6;
   --heading: white;
   --link: white;
   --focusOutline: #516170;
