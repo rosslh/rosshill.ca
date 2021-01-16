@@ -3,6 +3,49 @@
   import AnimatedName from "./AnimatedName.svelte";
 </script>
 
+<div class="sidebar">
+  <div class="sidebarContent">
+    <div class="imgWrapper">
+      <picture class="fixedSize">
+        <source srcset="headshot.webp" type="image/webp" />
+        <source srcset="headshot.png" type="image/png" />
+        <img src="headshot.png" alt="Ross Hill" width="10rem" height="10rem" />
+      </picture>
+    </div>
+    <h1>
+      <AnimatedName />
+    </h1>
+    <p class="subtitle role">Software Developer</p>
+    <p class="subtitle email">
+      <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
+    </p>
+    <p class="subtitle">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/rosslh"
+        on:click={() => gtag("event", "outbound", { event_label: "Github" })}>
+        GitHub
+      </a>
+      /
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/rosslh"
+        on:click={() => gtag("event", "outbound", { event_label: "LinkedIn" })}>
+        LinkedIn
+      </a>
+      /
+      <a
+        href="/resume.pdf"
+        on:click={() => gtag("event", "outbound", { event_label: "Resume" })}>
+        Resume
+      </a>
+    </p>
+  </div>
+  <Separator intro />
+</div>
+
 <style>
   div.sidebar {
     grid-area: sidebar;
@@ -62,48 +105,6 @@
 
   p.subtitle.role {
     font-size: 1.3rem;
+    color: var(--heading);
   }
 </style>
-
-<div class="sidebar">
-  <div class="sidebarContent">
-    <div class="imgWrapper">
-      <picture class="fixedSize">
-        <source srcset="headshot.webp" type="image/webp" />
-        <source srcset="headshot.png" type="image/png" />
-        <img src="headshot.png" alt="Ross Hill" width="10rem" height="10rem" />
-      </picture>
-    </div>
-    <h1>
-      <AnimatedName />
-    </h1>
-    <p class="subtitle role">Software Developer</p>
-    <p class="subtitle email">
-      <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
-    </p>
-    <p class="subtitle">
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/rosslh"
-        on:click={() => gtag('event', 'outbound', { event_label: 'Github' })}>
-        GitHub
-      </a>
-      /
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/rosslh"
-        on:click={() => gtag('event', 'outbound', { event_label: 'LinkedIn' })}>
-        LinkedIn
-      </a>
-      /
-      <a
-        href="/resume.pdf"
-        on:click={() => gtag('event', 'outbound', { event_label: 'Resume' })}>
-        Resume
-      </a>
-    </p>
-  </div>
-  <Separator intro />
-</div>
