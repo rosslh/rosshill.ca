@@ -53,18 +53,18 @@ body {
   --job: #DC2626;
   --project: #2563EB;
   --org: #059669;
-  --subtitle: #444;
-  --timeline: #666;
-  --postBorder: #cdcdcd;
-  --sidebarBorder: #cdcdcd;
-  --timelineMarker: #555;
-  --sidebarBackground: #f8f8f8;
-  --background: white;
-  --postBackground: white;
-  --foreground: #404040;
-  --heading: #222;
+  --subtitle: #44444C;
+  --timeline: #66666F;
+  --postBorder: #CBCBD0;
+  --sidebarBorder: #CBCBD0;
+  --timelineMarker: #52525B;
+  --sidebarBackground: #F3F4F6;
+  --background: #F9FAFB;
+  --postBackground: #F9FAFB;
+  --foreground: #2F3948;
+  --heading: #1F2937;
   --link: #1f4987;
-  --focusOutline: #ababab;
+  --focusOutline: #A1A1AA;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,9 +81,9 @@ body {
     --sidebarBackground: #212733;
     --background: #1A1F28;
     --postBackground: #212733;
-    --foreground: #dad9d6;
-    --heading: white;
-    --link: white;
+    --foreground: #E5E7EB;
+    --heading: #F9FAFB;
+    --link: #F9FAFB;
     --focusOutline: #516170;
   }
 }
@@ -93,18 +93,18 @@ html body[data-theme="light"] {
   --project: #2563EB;
   --org: #059669;
 
-  --subtitle: #444;
-  --timeline: #666;
-  --postBorder: #cdcdcd;
-  --sidebarBorder: #cdcdcd;
-  --timelineMarker: #555;
-  --sidebarBackground: #f8f8f8;
-  --background: white;
-  --postBackground: white;
-  --foreground: #404040;
-  --heading: #222;
+  --subtitle: #44444C;
+  --timeline: #66666F;
+  --postBorder: #CBCBD0;
+  --sidebarBorder: #CBCBD0;
+  --timelineMarker: #52525B;
+  --sidebarBackground: #F3F4F6;
+  --background: #F9FAFB;
+  --postBackground: #F9FAFB;
+  --foreground: #2F3948;
+  --heading: #1F2937;
   --link: #1f4987;
-  --focusOutline: #ababab;
+  --focusOutline: #A1A1AA;
 }
 
 html body[data-theme="dark"] {
@@ -120,9 +120,9 @@ html body[data-theme="dark"] {
   --sidebarBackground: #212733;
   --background: #1A1F28;
   --postBackground: #212733;
-  --foreground: #dad9d6;
-  --heading: white;
-  --link: white;
+  --foreground: #E5E7EB;
+  --heading: #F9FAFB;
+  --link: #F9FAFB;
   --focusOutline: #516170;
 }
 
