@@ -25,7 +25,7 @@
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={0.4}
+  threshold={firstPost ? 0 : 0.4}
   bind:intersecting
 >
   <div
@@ -34,7 +34,7 @@
     class={`postWrapper ${left ? "left" : "right"}`}
   >
     <TimelineMarker {left} />
-    <div class={`fadeIn ${!firstPost && !hasIntersected && "invisible"}`}>
+    <div class={`fadeIn ${!hasIntersected && "invisible"}`}>
       <PostArrow {left} />
       <div class="post">
         <div class="postHeading">
