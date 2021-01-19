@@ -48,7 +48,7 @@
     padding: 1rem 0.75rem;
     background-color: var(--postBackground);
     border: 1px solid var(--postBorder);
-    border-radius: 5px;
+    border-radius: 0.3rem;
     margin: 0.75rem 0;
     position: relative;
   }

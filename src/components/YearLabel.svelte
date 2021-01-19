@@ -62,7 +62,7 @@
     color: var(--foreground);
     background-color: var(--postBackground);
     height: 2.2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     width: 5rem;
     border: 1px solid var(--postBorder);
     display: flex;
