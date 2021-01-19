@@ -8,6 +8,7 @@
   export let left;
   export let firstPost;
   export let lastPost;
+  export let noAnimation;
 
   $: typeString =
     { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
@@ -34,7 +35,7 @@
     class={`postWrapper ${left ? "left" : "right"}`}
   >
     <TimelineMarker {left} />
-    <div class={`fadeIn ${!hasIntersected && "invisible"}`}>
+    <div class={`fadeIn ${!noAnimation && !hasIntersected && "invisible"}`}>
       <PostArrow {left} />
       <div class="post">
         <div class="postHeading">

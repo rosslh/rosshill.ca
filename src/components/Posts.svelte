@@ -19,6 +19,7 @@
   };
 
   let showCategories = [];
+  let noAnimation = false;
 
   $: postFilter = (post) =>
     !showCategories.length || showCategories.includes(post.eventType);
@@ -29,6 +30,30 @@
     return Number(date.substring(0, 4));
   };
 </script>
+
+<div class="headingWrapper contentWrapper ">
+  <h2>Timeline</h2>
+  <FilterControls bind:showCategories bind:noAnimation />
+</div>
+<div class="contentWrapper postsWrapper">
+  <div class="posts">
+    {#each postsWithLabels as post, i (post.slug)}
+      <YearLabel
+        display={post.showYearLabel}
+        firstLabel={i === 0}
+        direction={post.direction}
+        year={getYearFromDate(post.date)}
+      />
+      <Post
+        {post}
+        {noAnimation}
+        firstPost={i === 0}
+        lastPost={i === postsWithLabels.length - 1}
+        left={post.direction}
+      />
+    {/each}
+  </div>
+</div>
 
 <style>
   div.contentWrapper.postsWrapper {
@@ -53,24 +78,3 @@
     margin-bottom: 1rem;
   }
 </style>
-
-<div class="headingWrapper contentWrapper ">
-  <h2>Timeline</h2>
-  <FilterControls bind:showCategories />
-</div>
-<div class="contentWrapper postsWrapper">
-  <div class="posts">
-    {#each postsWithLabels as post, i (post.slug)}
-      <YearLabel
-        display={post.showYearLabel}
-        firstLabel={i === 0}
-        direction={post.direction}
-        year={getYearFromDate(post.date)} />
-      <Post
-        {post}
-        firstPost={i === 0}
-        lastPost={i === postsWithLabels.length - 1}
-        left={post.direction} />
-    {/each}
-  </div>
-</div>
