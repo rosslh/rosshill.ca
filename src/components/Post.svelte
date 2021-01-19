@@ -1,4 +1,5 @@
 <script>
+  import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
@@ -11,7 +12,101 @@
   $: typeString =
     { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
     "";
+
+  let element;
+  let intersecting;
+
+  $: hasIntersected = hasIntersected || intersecting;
 </script>
+
+{#if firstPost}
+  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
+{/if}
+<IntersectionObserver
+  {element}
+  complete={hasIntersected}
+  threshold={0.4}
+  bind:intersecting
+>
+  <div
+    bind:this={element}
+    id="timeline-item-{post.slug}"
+    class={`postWrapper ${left ? "left" : "right"}`}
+  >
+    <TimelineMarker {left} />
+    <div class={`fadeIn ${!firstPost && !hasIntersected && "invisible"}`}>
+      <PostArrow {left} />
+      <div class="post">
+        <div class="postHeading">
+          <div class="pictureFrame">
+            {#if post.thumbnail}
+              <picture class="fixedSize">
+                <source srcset="{post.thumbnail}.webp" type="image/webp" />
+                <source
+                  srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  type="image/{post.thumbnailExt || 'png'}"
+                />
+                <img
+                  src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  loading="lazy"
+                  alt=""
+                  width="1.7rem"
+                  height="1.7rem"
+                />
+              </picture>
+            {/if}
+          </div>
+          <div class="headingAndTags">
+            <h3>
+              {#if post.hasContent}
+                <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
+              {:else}{post.title}{/if}
+            </h3>
+            <div class="tags">
+              {#if post.tags && post.tags.length}
+                {#each post.tags as tagId}
+                  <Tag {tagId} />
+                {/each}
+              {/if}
+            </div>
+          </div>
+        </div>
+        {#if post.blurb}
+          <p class="postText">{post.blurb}</p>
+        {/if}
+        <div class="footer">
+          <div class="externalLinks">
+            {#if post.repository}
+              <a
+                on:click={() =>
+                  gtag("event", "outbound", {
+                    event_label: post.repository,
+                  })}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={post.repository}> GitHub </a>
+            {/if}
+            {#if post.repository && post.website}&nbsp;/&nbsp;{/if}
+            {#if post.website}
+              <a
+                on:click={() =>
+                  gtag("event", "outbound", {
+                    event_label: post.website,
+                  })}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={post.website}> Website </a>
+            {/if}
+          </div>
+          <div class="typeString {post.eventType}">{typeString}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</IntersectionObserver>
+{#if lastPost}
+  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
+{/if}
 
 <style>
   @media (max-width: 1200px) {
@@ -41,6 +136,15 @@
     position: relative;
     display: flex;
     border-color: var(--timeline) !important;
+  }
+
+  div.fadeIn {
+    transition: opacity 0.7s linear;
+    opacity: 1;
+  }
+
+  div.fadeIn.invisible {
+    opacity: 0;
   }
 
   div.post {
@@ -178,81 +282,3 @@
     }
   }
 </style>
-
-{#if firstPost}
-  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
-{/if}
-<div
-  id="timeline-item-{post.slug}"
-  class={`postWrapper ${left ? 'left' : 'right'} ${firstPost ? 'firstPost' : ''}`}>
-  <TimelineMarker {left} />
-  <PostArrow {left} />
-  <div class="post">
-    <div class="postHeading">
-      <div class="pictureFrame">
-        {#if post.thumbnail}
-          <picture class="fixedSize">
-            <source srcset="{post.thumbnail}.webp" type="image/webp" />
-            <source
-              srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              type="image/{post.thumbnailExt || 'png'}" />
-            <img
-              src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
-              loading="lazy"
-              alt=""
-              width="1.7rem"
-              height="1.7rem" />
-          </picture>
-        {/if}
-      </div>
-      <div class="headingAndTags">
-        <h3>
-          {#if post.hasContent}
-            <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
-          {:else}{post.title}{/if}
-        </h3>
-        <div class="tags">
-          {#if post.tags && post.tags.length}
-            {#each post.tags as tagId}
-              <Tag {tagId} />
-            {/each}
-          {/if}
-        </div>
-      </div>
-    </div>
-    {#if post.blurb}
-      <p class="postText">{post.blurb}</p>
-    {/if}
-    <div class="footer">
-      <div class="externalLinks">
-        {#if post.repository}
-          <a
-            on:click={() => gtag('event', 'outbound', {
-                event_label: post.repository,
-              })}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={post.repository}>
-            GitHub
-          </a>
-        {/if}
-        {#if post.repository && post.website}&nbsp;/&nbsp;{/if}
-        {#if post.website}
-          <a
-            on:click={() => gtag('event', 'outbound', {
-                event_label: post.website,
-              })}
-            target="_blank"
-            rel="noopener noreferrer"
-            href={post.website}>
-            Website
-          </a>
-        {/if}
-      </div>
-      <div class="typeString {post.eventType}">{typeString}</div>
-    </div>
-  </div>
-</div>
-{#if lastPost}
-  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
-{/if}
