@@ -31,6 +31,24 @@
   let loading = typeof window === "undefined";
 </script>
 
+<div class="themeSwitcherWrapper">
+  <button title="Use {nextTheme} theme" on:click={changeTheme}>
+    {#if !loading}
+      <span aria-hidden="true" class="icon">
+        {#if nextTheme === "dark"}
+          <IoIosMoon />
+        {:else}
+          <IoIosSunny />
+        {/if}
+      </span>
+      <span class="text">
+        {#if nextTheme === "dark"}Dark{:else}Light{/if}
+        mode</span
+      >
+    {/if}
+  </button>
+</div>
+
 <style>
   div.themeSwitcherWrapper {
     padding: 1.5rem 5%;
@@ -51,7 +69,6 @@
     cursor: pointer;
     font-size: 0.9rem;
     border: 1px solid var(--postBorder);
-    transition: none !important;
   }
   button .icon {
     height: 1rem;
@@ -75,20 +92,3 @@
     }
   }
 </style>
-
-<div class="themeSwitcherWrapper">
-  <button title="Use {nextTheme} theme" on:click={changeTheme}>
-    {#if !loading}
-      <span aria-hidden="true" class="icon">
-        {#if nextTheme === 'dark'}
-          <IoIosMoon />
-        {:else}
-          <IoIosSunny />
-        {/if}
-      </span>
-      <span class="text">
-        {#if nextTheme === 'dark'}Dark{:else}Light{/if}
-        mode</span>
-    {/if}
-  </button>
-</div>

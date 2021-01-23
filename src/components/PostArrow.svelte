@@ -20,7 +20,7 @@
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
-    right: 1.7rem;
+    right: -0.2rem;
     border-left: 16px solid var(--postBackground);
   }
 
@@ -33,7 +33,7 @@
     position: absolute;
     top: 50%;
     transform: translate(50%, -50%);
-    right: 1.7rem;
+    right: -0.2rem;
     border-left: 18.5px solid var(--postBorder);
   }
 
@@ -46,7 +46,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    left: 1.7rem;
+    left: -0.2rem;
     border-right: 16px solid var(--postBackground);
   }
 
@@ -59,7 +59,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    left: 1.7rem;
+    left: -0.2rem;
     border-right: 18.5px solid var(--postBorder);
   }
 </style>

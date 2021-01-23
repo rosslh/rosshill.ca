@@ -25,7 +25,7 @@
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={firstPost ? 0 : 0.2}
+  threshold={firstPost ? 0 : 0.25}
   bind:intersecting
 >
   <div
@@ -139,12 +139,14 @@
   }
 
   div.fadeIn {
-    transition: opacity 0.7s ease-in;
+    transition: opacity 0.6s ease-in, transform 0.6s ease;
     opacity: 1;
+    transform: scale(1);
   }
 
   div.fadeIn.invisible {
     opacity: 0;
+    transform: scale(0.9);
   }
 
   div.post {

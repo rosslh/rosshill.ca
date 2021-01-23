@@ -13,5 +13,3 @@ const themeStore = initial => {
 };
 
 export const theme = themeStore("");
-
-export const logoTransitionDisabled = writable(false);
