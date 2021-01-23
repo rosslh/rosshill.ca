@@ -44,13 +44,14 @@
         direction={post.direction}
         year={getYearFromDate(post.date)}
       />
-      <Post
-        {post}
-        {noAnimation}
-        firstPost={i === 0}
-        lastPost={i === postsWithLabels.length - 1}
-        left={post.direction}
-      />
+      {#key i}
+        <Post
+          {post}
+          firstPost={i === 0}
+          lastPost={i === postsWithLabels.length - 1}
+          left={post.direction}
+        />
+      {/key}
     {/each}
   </div>
 </div>
