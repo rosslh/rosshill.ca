@@ -8,7 +8,6 @@
   export let left;
   export let firstPost;
   export let lastPost;
-  export let noAnimation;
 
   $: typeString =
     { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
@@ -26,7 +25,7 @@
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={firstPost ? 0 : 0.4}
+  threshold={firstPost ? 0 : 0.2}
   bind:intersecting
 >
   <div
@@ -35,7 +34,7 @@
     class={`postWrapper ${left ? "left" : "right"}`}
   >
     <TimelineMarker {left} />
-    <div class={`fadeIn ${!noAnimation && !hasIntersected && "invisible"}`}>
+    <div class={`fadeIn ${!hasIntersected && "invisible"}`}>
       <PostArrow {left} />
       <div class="post">
         <div class="postHeading">
@@ -140,7 +139,7 @@
   }
 
   div.fadeIn {
-    transition: opacity 0.7s linear;
+    transition: opacity 0.7s ease-in;
     opacity: 1;
   }
 
