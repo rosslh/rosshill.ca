@@ -47,7 +47,7 @@
     "svelte": "^3.31.2",
     "svelte-icons": "^1.1.0",
     "svelte-persistent-store": "^0.1.1",
-    "svelte-preprocess": "^4.3.0",
+    "svelte-preprocess": "^4.6.3",
     "webp-converter-cli": "0.0.5"
   }
 }
