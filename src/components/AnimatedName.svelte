@@ -14,7 +14,6 @@
   $: pathClass = logoHasFill ? "logoHasFill" : "initial";
 
   const logoFillDelay = 1000;
-  const logoFillDuration = 800;
 </script>
 
 <svg
@@ -29,7 +28,7 @@
       <path
         class={pathClass}
         on:introstart={() => {
-          window.setTimeout(() => (logoHasFill = true), logoFillDelay);
+          setTimeout(() => (logoHasFill = true), logoFillDelay);
         }}
         in:draw={{ duration: 3000, easing: sineIn }}
         d={svgPath}
@@ -46,7 +45,6 @@
   }
 
   svg path {
-    /* transition: fill 0.5s ease-in; */
     stroke: var(--heading);
     stroke-width: 2;
   }
