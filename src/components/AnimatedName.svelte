@@ -20,7 +20,8 @@
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="85.15999145507814 9.819995117187503 329.6800170898437
-  130.360009765625">
+  130.360009765625"
+>
   <title>Ross Hill</title>
   <g>
     {#if showTitle}
@@ -42,11 +43,13 @@
     height: 100%;
     width: 100%;
     pointer-events: none;
+    transition: fill 0.5s ease, stroke 0.5s ease;
   }
 
   svg path {
     stroke: var(--heading);
     stroke-width: 2;
+    transition: fill 0.5s ease, stroke 0.5s ease;
   }
 
   svg path.initial {

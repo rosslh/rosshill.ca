@@ -48,7 +48,7 @@
 
 <div class="contentWrapper intro">
   <h2>
-    <span class="helloText">Hey, I'm Ross</span>
+    <span class="helloText">Hey, I’m Ross</span>
     <span class="waveEmoji">👋</span>
   </h2>
   <p>
