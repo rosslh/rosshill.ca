@@ -5,6 +5,22 @@
   export let display;
 </script>
 
+{#if display && !firstLabel}
+  <div class="labelWrapper doTransition">
+    <span class="yearLabel doTransition centeredLabel">{year}</span>
+    <div aria-hidden="true" class={`line ${direction ? "left" : "right"}`}>
+      <div class="doTransition" />
+      <div class="doTransition" />
+      <div class="doTransition" />
+      <div class="doTransition" />
+    </div>
+  </div>
+{:else if display && firstLabel}
+  <div class="labelWrapper doTransition">
+    <span class="yearLabel doTransition firstLabel">{year}</span>
+  </div>
+{/if}
+
 <style>
   div.labelWrapper {
     position: relative;
@@ -90,19 +106,3 @@
     transform: translate(-50%, 0);
   }
 </style>
-
-{#if display && !firstLabel}
-  <div class="labelWrapper">
-    <span class="yearLabel centeredLabel">{year}</span>
-    <div aria-hidden="true" class={`line ${direction ? 'left' : 'right'}`}>
-      <div />
-      <div />
-      <div />
-      <div />
-    </div>
-  </div>
-{:else if display && firstLabel}
-  <div class="labelWrapper">
-    <span class="yearLabel firstLabel">{year}</span>
-  </div>
-{/if}

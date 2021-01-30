@@ -19,6 +19,76 @@
   export let post;
 </script>
 
+<svelte:head>
+  <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
+</svelte:head>
+<div class="contentWrapper mainContent doTransition">
+  <a rel="prefetch" class="backLink" href="/#timeline-item-{post.slug}">
+    &larr; Back to Home
+  </a>
+  <article class="postFull">
+    <h1>{post.title}</h1>
+    <div class="subtitle doTransition">
+      Started {post.date}
+      {#if post.repository}
+        &ndash;
+        <a
+          on:click={() =>
+            gtag("event", "outbound", {
+              event_label: post.repository,
+            })}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={post.repository}
+        >
+          GitHub
+        </a>
+      {/if}
+      {#if post.website}
+        &ndash;
+        <a
+          on:click={() =>
+            gtag("event", "outbound", {
+              event_label: post.website,
+            })}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={post.website}
+        >
+          Website
+        </a>
+      {/if}
+    </div>
+    {#if post.gif}
+      <img src="timeline/{post.gif}.gif" alt={post.title} />
+    {/if}
+    {#if post.image}
+      <div class="imageWrapper doTransition">
+        <picture>
+          <source srcset="timeline/{post.image}.webp" type="image/webp" />
+          <source
+            srcset="timeline/{post.image}.{post.imageExt || 'png'}"
+            type="image/{post.imageExt || 'png'}"
+          />
+          <img
+            src="timeline/{post.image}.{post.imageExt || 'png'}"
+            alt={post.title}
+          />
+        </picture>
+      </div>
+    {/if}
+    {#if post.embed}
+      <div class="embedWrapper">
+        {@html post.embed}
+      </div>
+    {/if}
+
+    <div class="content">
+      {@html post.content}
+    </div>
+  </article>
+</div>
+
 <style>
   article.postFull {
     margin-bottom: 3rem;
@@ -63,67 +133,3 @@
     justify-content: center;
   }
 </style>
-
-<svelte:head>
-  <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
-</svelte:head>
-<div class="contentWrapper mainContent">
-  <a rel="prefetch" class="backLink" href="/#timeline-item-{post.slug}">
-    &larr; Back to Home
-  </a>
-  <article class="postFull">
-    <h1>{post.title}</h1>
-    <div class="subtitle">
-      Started {post.date}
-      {#if post.repository}
-        &ndash;
-        <a
-          on:click={() => gtag('event', 'outbound', {
-              event_label: post.repository,
-            })}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={post.repository}>
-          GitHub
-        </a>
-      {/if}
-      {#if post.website}
-        &ndash;
-        <a
-          on:click={() => gtag('event', 'outbound', {
-              event_label: post.website,
-            })}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={post.website}>
-          Website
-        </a>
-      {/if}
-    </div>
-    {#if post.gif}
-      <img src="timeline/{post.gif}.gif" alt={post.title} />
-    {/if}
-    {#if post.image}
-      <div class="imageWrapper">
-        <picture>
-          <source srcset="timeline/{post.image}.webp" type="image/webp" />
-          <source
-            srcset="timeline/{post.image}.{post.imageExt || 'png'}"
-            type="image/{post.imageExt || 'png'}" />
-          <img
-            src="timeline/{post.image}.{post.imageExt || 'png'}"
-            alt={post.title} />
-        </picture>
-      </div>
-    {/if}
-    {#if post.embed}
-      <div class="embedWrapper">
-        {@html post.embed}
-      </div>
-    {/if}
-
-    <div class="content">
-      {@html post.content}
-    </div>
-  </article>
-</div>

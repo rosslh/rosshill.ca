@@ -1,3 +1,15 @@
+<div class="contentWrapper intro">
+  <h2>
+    <span class="helloText">Hey, I’m Ross</span>
+    <span class="waveEmoji">👋</span>
+  </h2>
+  <p>
+    I am a software developer based in Toronto. I specialize in web development,
+    and I'm always on the lookout for cool new technologies. I'm helping Doctalk
+    build a collaboration tool for doctors and medical organizations.
+  </p>
+</div>
+
 <style>
   @keyframes wave {
     0%,
@@ -45,15 +57,3 @@
     }
   }
 </style>
-
-<div class="contentWrapper intro">
-  <h2>
-    <span class="helloText">Hey, I’m Ross</span>
-    <span class="waveEmoji">👋</span>
-  </h2>
-  <p>
-    I am a software developer based in Toronto. I specialize in web development,
-    and I'm always on the lookout for cool new technologies. I'm helping Doctalk
-    build a collaboration tool for doctors and medical organizations.
-  </p>
-</div>

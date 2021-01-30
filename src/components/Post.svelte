@@ -20,7 +20,10 @@
 </script>
 
 {#if firstPost}
-  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
+  <div
+    aria-hidden="true"
+    class="postSpacer doTransition {left ? 'left' : 'right'}"
+  />
 {/if}
 <IntersectionObserver
   {element}
@@ -31,12 +34,12 @@
   <div
     bind:this={element}
     id="timeline-item-{post.slug}"
-    class={`postWrapper ${left ? "left" : "right"}`}
+    class={`postWrapper doTransition ${left ? "left" : "right"}`}
   >
     <TimelineMarker {left} />
     <div class={`fadeIn ${!hasIntersected && "invisible"}`}>
       <PostArrow {left} />
-      <div class="post">
+      <div class="post doTransition">
         <div class="postHeading">
           <div class="pictureFrame">
             {#if post.thumbnail}
@@ -75,7 +78,7 @@
           <p class="postText">{post.blurb}</p>
         {/if}
         <div class="footer">
-          <div class="externalLinks">
+          <div class="externalLinks doTransition">
             {#if post.repository}
               <a
                 on:click={() =>
@@ -84,7 +87,10 @@
                   })}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={post.repository}> GitHub </a>
+                href={post.repository}
+              >
+                GitHub
+              </a>
             {/if}
             {#if post.repository && post.website}&nbsp;/&nbsp;{/if}
             {#if post.website}
@@ -95,17 +101,25 @@
                   })}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={post.website}> Website </a>
+                href={post.website}
+              >
+                Website
+              </a>
             {/if}
           </div>
-          <div class="typeString {post.eventType}">{typeString}</div>
+          <div class="typeString doTransition {post.eventType}">
+            {typeString}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </IntersectionObserver>
 {#if lastPost}
-  <div aria-hidden="true" class="postSpacer {left ? 'left' : 'right'}" />
+  <div
+    aria-hidden="true"
+    class="postSpacer doTransition {left ? 'left' : 'right'}"
+  />
 {/if}
 
 <style>

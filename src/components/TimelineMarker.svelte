@@ -2,6 +2,11 @@
   export let left;
 </script>
 
+<div
+  aria-hidden="true"
+  class="timelineMarker doTransition {left ? 'left' : 'right'}"
+/>
+
 <style>
   div.timelineMarker {
     position: absolute;
@@ -25,5 +30,3 @@
     right: calc(-1rem + 1.5px);
   }
 </style>
-
-<div aria-hidden="true" class="timelineMarker {left ? 'left' : 'right'}" />

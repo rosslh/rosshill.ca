@@ -39,7 +39,7 @@ body {
   margin: 0;
 }
 
-*:not(svg):not(path) {
+.doTransition, body, p, a, h1, h2, h3, h4, code {
   transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
 }
 
@@ -133,9 +133,7 @@ html body[data-theme="dark"] {
 h1,
 h2,
 h3,
-h1 *,
-h2 *,
-h3 * {
+h4 {
   color: var(--heading);
   font-weight: 600 !important;
 }

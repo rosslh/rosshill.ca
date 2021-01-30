@@ -3,11 +3,11 @@
 </script>
 
 {#if left}
-  <div aria-hidden="true" class="arrowLeft" />
-  <div aria-hidden="true" class="arrowLeftBorder" />
+  <div aria-hidden="true" class="arrowLeft doTransition" />
+  <div aria-hidden="true" class="arrowLeftBorder doTransition" />
 {:else}
-  <div aria-hidden="true" class="arrowRight" />
-  <div aria-hidden="true" class="arrowRightBorder" />
+  <div aria-hidden="true" class="arrowRight doTransition" />
+  <div aria-hidden="true" class="arrowRightBorder doTransition" />
 {/if}
 
 <style>

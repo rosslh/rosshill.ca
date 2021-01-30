@@ -3,6 +3,16 @@
   export let intro;
 </script>
 
+<div class="contentWrapper">
+  <div aria-hidden="true" class="separator doTransition {intro ? 'intro' : ''}">
+    <div class="line doTransition" />
+    <div class="symbol doTransition">
+      <DiCode />
+    </div>
+    <div class="line doTransition" />
+  </div>
+</div>
+
 <style>
   div.separator {
     width: 75%;
@@ -34,13 +44,3 @@
     }
   }
 </style>
-
-<div class="contentWrapper">
-  <div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
-    <div class="line" />
-    <div class="symbol">
-      <DiCode />
-    </div>
-    <div class="line" />
-  </div>
-</div>

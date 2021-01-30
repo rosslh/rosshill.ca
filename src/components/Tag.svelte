@@ -5,6 +5,23 @@
   $: tagString = tagLabels[tagId] || tagId;
 </script>
 
+<div class="tag doTransition">
+  <div class="logoWrapper">
+    <picture class="fixedSize">
+      <source srcset="tags/{tagId}.webp" type="image/webp" />
+      <source srcset="tags/{tagId}.png" type="image/png" />
+      <img
+        src="tags/{tagId}.png"
+        alt=""
+        loading="lazy"
+        width="0.85rem"
+        height="0.85rem"
+      />
+    </picture>
+  </div>
+  <div class="tagLabel">{tagString}</div>
+</div>
+
 <style>
   div.tag {
     border: 1px solid var(--postBorder);
@@ -37,19 +54,3 @@
     text-transform: capitalize;
   }
 </style>
-
-<div class="tag">
-  <div class="logoWrapper">
-    <picture class="fixedSize">
-      <source srcset="tags/{tagId}.webp" type="image/webp" />
-      <source srcset="tags/{tagId}.png" type="image/png" />
-      <img
-        src="tags/{tagId}.png"
-        alt=""
-        loading="lazy"
-        width="0.85rem"
-        height="0.85rem" />
-    </picture>
-  </div>
-  <div class="tagLabel">{tagString}</div>
-</div>

@@ -3,7 +3,7 @@
   import AnimatedName from "./AnimatedName.svelte";
 </script>
 
-<div class="sidebar">
+<div class="sidebar doTransition">
   <div class="sidebarContent">
     <div class="imgWrapper">
       <picture class="fixedSize">
@@ -15,7 +15,7 @@
     <h1>
       <AnimatedName />
     </h1>
-    <p class="subtitle role">Software Developer</p>
+    <p class="subtitle role doTransition">Software Developer</p>
     <p class="subtitle email">
       <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
     </p>
@@ -24,7 +24,8 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "Github" })}>
+        on:click={() => gtag("event", "outbound", { event_label: "Github" })}
+      >
         GitHub
       </a>
       /
@@ -32,13 +33,15 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "LinkedIn" })}>
+        on:click={() => gtag("event", "outbound", { event_label: "LinkedIn" })}
+      >
         LinkedIn
       </a>
       /
       <a
         href="/resume.pdf"
-        on:click={() => gtag("event", "outbound", { event_label: "Resume" })}>
+        on:click={() => gtag("event", "outbound", { event_label: "Resume" })}
+      >
         Resume
       </a>
     </p>

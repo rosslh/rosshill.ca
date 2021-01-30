@@ -32,7 +32,11 @@
 </script>
 
 <div class="themeSwitcherWrapper">
-  <button title="Use {nextTheme} theme" on:click={changeTheme}>
+  <button
+    title="Use {nextTheme} theme"
+    class="doTransition"
+    on:click={changeTheme}
+  >
     {#if !loading}
       <span aria-hidden="true" class="icon">
         {#if nextTheme === "dark"}

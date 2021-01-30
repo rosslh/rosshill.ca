@@ -3,7 +3,7 @@
     const result = await this.fetch("index.json");
     const posts = await result.json();
     return {
-      posts
+      posts,
     };
   }
 </script>
@@ -24,7 +24,7 @@
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/" />
 </svelte:head>
-<div class="mainContent">
+<div class="mainContent doTransition">
   <Intro />
   <Separator />
   <Posts {posts} />

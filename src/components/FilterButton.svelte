@@ -6,6 +6,22 @@
   export let id;
 </script>
 
+<button
+  class="doTransition {id}Button {active ? 'active' : 'inactive'}"
+  on:click={callback}
+>
+  <span class="symbol">
+    {#if active}
+      <FaRegCheckCircle />
+    {:else}
+      <FaRegCircle />
+    {/if}
+  </span>
+  <span class="text">
+    <slot />
+  </span>
+</button>
+
 <style>
   button {
     background-color: var(--postBackground);
@@ -59,16 +75,3 @@
     border-color: var(--org);
   }
 </style>
-
-<button class="{id}Button {active ? 'active' : 'inactive'}" on:click={callback}>
-  <span class="symbol">
-    {#if active}
-      <FaRegCheckCircle />
-    {:else}
-      <FaRegCircle />
-    {/if}
-  </span>
-  <span class="text">
-    <slot />
-  </span>
-</button>
