@@ -4,7 +4,7 @@
 </script>
 
 <div class="contentWrapper">
-  <div aria-hidden="true" class="separator doTransition {intro ? 'intro' : ''}">
+  <div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
     <div class="line doTransition" />
     <div class="symbol doTransition">
       <DiCode />
@@ -21,7 +21,6 @@
     justify-content: space-between;
     align-items: center;
     height: 3rem;
-    background-color: var(--background);
   }
 
   div.separator .symbol {

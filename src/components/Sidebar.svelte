@@ -59,7 +59,7 @@
 
   @media (max-width: 1000px) {
     div.sidebar {
-      border-right: none;
+      border-width: 0;
       padding: 1.5rem 1.5rem 0;
       background-color: var(--background);
     }
