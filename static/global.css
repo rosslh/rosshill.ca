@@ -144,6 +144,12 @@ h4 {
   padding: 0 5%;
 }
 
+span.smallSlash {
+  transform: scale(0.9);
+  padding: 0 1px;
+  display: inline-block;
+}
+
 code {
   background-color: var(--postBackground) !important;
   border: 1px solid var(--postBorder);

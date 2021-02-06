@@ -28,7 +28,7 @@
       >
         GitHub
       </a>
-      /
+      <span class="smallSlash">/</span>
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -37,7 +37,7 @@
       >
         LinkedIn
       </a>
-      /
+      <span class="smallSlash">/</span>
       <a
         href="/resume.pdf"
         on:click={() => gtag("event", "outbound", { event_label: "Resume" })}
@@ -104,6 +104,7 @@
 
   p.subtitle {
     margin-top: 1rem;
+    color: var(--subtitle);
   }
 
   p.subtitle.role {

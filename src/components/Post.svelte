@@ -92,7 +92,9 @@
                 GitHub
               </a>
             {/if}
-            {#if post.repository && post.website}&nbsp;/&nbsp;{/if}
+            {#if post.repository && post.website}
+              <span class="smallSlash">/</span>
+            {/if}
             {#if post.website}
               <a
                 on:click={() =>
