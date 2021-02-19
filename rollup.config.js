@@ -23,10 +23,16 @@ const preprocess = sveltePreprocess({
   }
 });
 
-const onwarn = (warning, onwarn) =>
-  (warning.code === "CIRCULAR_DEPENDENCY" &&
-    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+const onwarn = (warning, onwarn) => {
+  if (warning.code === "CIRCULAR_DEPENDENCY" && /[/\\]@sapper[/\\]/.test(warning.message)) {
+    return;
+  }
+  if (warning.code === "missing-declaration" && warning.message.startsWith("'gtag'")) {
+    return;
+  }
   onwarn(warning);
+}
+
 const dedupe = importee =>
   importee === "svelte" || importee.startsWith("svelte/");
 

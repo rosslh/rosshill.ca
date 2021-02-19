@@ -28,7 +28,7 @@
     }
   };
 
-  let loading = typeof window === "undefined";
+  const loading = typeof window === "undefined";
 </script>
 
 <div class="themeSwitcherWrapper">

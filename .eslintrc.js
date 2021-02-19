@@ -1,21 +1,37 @@
 module.exports = {
-  extends: "eslint:recommended",
-  parserOptions: {
-    ecmaVersion: 8,
-    sourceType: "module"
-  },
-  plugins: ["cypress", "html"],
   env: {
-    "cypress/globals": true,
     browser: true,
-    node: true,
-    es6: true
+    es6: true,
+    node: true
   },
+  extends: ["eslint:recommended"],
+  globals: {
+    gtag: false
+  },
+  overrides: [{
+    files: ['*.svelte'],
+    processor: 'svelte3/svelte3'
+  }],
+  parser: "babel-eslint",
+  plugins: ['svelte3'],
   rules: {
-    "no-restricted-globals": 0,
-    indent: ["error", 2],
-    quotes: ["error", "double"],
-    "import/no-extraneous-dependencies": 0,
-    "global-require": 0
+    "brace-style": [1, "1tbs"],
+    curly: [1, "multi-line"],
+    eqeqeq: [2, "always", {
+      "null": "ignore"
+    }],
+    "no-console": [1, {
+      allow: ["warn", "error"]
+    }],
+    "no-param-reassign": 1,
+    "no-unused-vars": [1, {
+      argsIgnorePattern: "^_"
+    }],
+    "no-var": 2,
+    "prefer-const": 1,
+    semi: 1
+  },
+  settings: {
+    "svelte3/ignore-warnings": warning => warning.code === "missing-declaration" && warning.message.startsWith("'gtag'")
   }
 };

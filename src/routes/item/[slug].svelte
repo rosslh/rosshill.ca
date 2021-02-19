@@ -1,5 +1,5 @@
 <script context="module">
-  export async function preload({ params, query }) {
+  export async function preload({ params, query: _query }) {
     // the `slug` parameter is available because
     // this file is called [slug].html
     const res = await this.fetch(`item/${params.slug.toLowerCase()}.json`);

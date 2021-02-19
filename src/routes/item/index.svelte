@@ -1,4 +1,5 @@
-<script>
-  import { onMount } from "svelte";
-  onMount(() => redirect(303, "/"));
+<script context="module">
+  export async function preload(_page, _session) {
+    return this.redirect(303, '/');
+  }
 </script>

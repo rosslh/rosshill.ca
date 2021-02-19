@@ -49,7 +49,7 @@ SOFTWARE.
     //   dispatch("observe", entry);
     // }
     await tick();
-    if (observer && element != null && element != prevElement) {
+    if (observer && element != null && element !== prevElement) {
       observer.observe(element);
       if (prevElement != null) {
         observer.unobserve(prevElement);
