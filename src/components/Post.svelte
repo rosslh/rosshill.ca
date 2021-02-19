@@ -75,7 +75,7 @@
           </div>
         </div>
         {#if post.blurb}
-          <p class="postText">{post.blurb}</p>
+          <p class="postText">{@html post.blurb}</p>
         {/if}
         <div class="footer">
           <div class="externalLinks doTransition">

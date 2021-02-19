@@ -4,27 +4,11 @@
     "eventType": "job",
     "date": "2014-12-01T00:00:00.000Z",
     "thumbnail": "caledon",
-    "blurb": "I taught children how to ski – from their first time on skis to racing competitively in a team. I gained experience in leading a team and working closely with other employees.",
+    "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
     "preview": "",
     "content": "",
     "iso8601Date": "2014-11-30T19:00:00-05:00",
     "basename": "caledon"
-  },
-  "concreteRose": {
-    "title": "Director of Technology – Concrete Rose Foundation",
-    "eventType": "org",
-    "date": "2019-11-10T00:00:00.000Z",
-    "thumbnail": "crf",
-    "blurb": "I am creating a website for the Concrete Rose Foundation (CRF), a student-run non-profit organization founded at Queen’s University which provides access to education for those restricted by socioeconomic barriers. The site will have language localization for English and Arabic.",
-    "tags": [
-      "svelte"
-    ],
-    "repository": "https://github.com/rosslh/Concrete-Rose-Foundation",
-    "WIP": true,
-    "preview": "",
-    "content": "",
-    "iso8601Date": "2019-11-09T19:00:00-05:00",
-    "basename": "concreteRose"
   },
   "doctalk": {
     "title": "Started as a developer at Doctalk",
@@ -33,6 +17,7 @@
     "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
     "tags": [
       "react",
+      "prosemirror",
       "django",
       "postgres"
     ],
@@ -50,7 +35,7 @@
     "thumbnail": "dodgeball",
     "repository": "https://github.com/rosslh/Dodgeball-The-Game",
     "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
-    "blurb": "For Human-Computer Interaction, a course at Queen's, my group created a dodgeball game with motion tracking",
+    "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
     "tags": [
       "unity3d"
     ],
@@ -64,7 +49,7 @@
     "eventType": "project",
     "date": "2019-09-01T00:00:00.000Z",
     "thumbnail": "folda",
-    "blurb": "foldA is a live digital performance festival based out of the Isabel Bader Centre in Kingston, Ontario. For my capstone project, I created an online system for selling tickets and getting audience metrics for foldA.",
+    "blurb": "An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.",
     "tags": [
       "svelte",
       "flask",
@@ -82,7 +67,7 @@
     "eventType": "project",
     "date": "2019-11-01T00:00:00.000Z",
     "thumbnail": "homepageThumb",
-    "blurb": "Using Svelte, a zero-runtime web framework, I redesigned my website with a timeline and dark mode",
+    "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
     "tags": [
       "svelte"
     ],
@@ -98,7 +83,7 @@
     "date": "2014-05-01T00:00:00.000Z",
     "thumbnail": "hurontario",
     "thumbnailExt": "jpg",
-    "blurb": "As a counsellor I worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+    "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
     "preview": "",
     "content": "",
     "iso8601Date": "2014-04-30T20:00:00-04:00",
@@ -117,7 +102,7 @@
       "react"
     ],
     "preview": "The goal of this webpage is to provide a high-level overview of what …",
-    "content": "\n\nThe goal of this webpage is to provide a high-level overview of what global warming is: how it's caused, how much the Earth has warmed, and its observed and predicted effects. Made with [React Static](https://github.com/nozzle/react-static), a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.\n\nThe webpage has a summary of the current state of global warming, with references provided for each piece of information. The website fetches its data and generates the webpages at build time, and on runtime it simply serves the already generated webpages. I chose this approach because retrieving and parsing the climate data takes some time. The servers we fetch data from are fairly slow, and the data comes in as a CSV which needs to be parsed into JSON in order to be used in a JavaScript application.\n",
+    "content": "\n\nThe goal of this webpage is to provide a high-level overview of what global warming is: how it's caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.\n\nThe webpage has a summary of the current state of global warming, with references provided for each piece of information. The website fetches its data and generates the webpages at build time, and on runtime it simply serves the already generated webpages. I chose this approach because retrieving and parsing the climate data takes some time. The servers we fetch data from are fairly slow, and the data comes in as a CSV which needs to be parsed into JSON in order to be used in a JavaScript application.\n",
     "iso8601Date": "2019-01-10T19:00:00-05:00",
     "basename": "IsEarthStillWarming"
   },
@@ -145,7 +130,7 @@
     "repository": "https://github.com/rosslh/metaprojection",
     "image": "metaprojection",
     "thumbnail": "metaprojection-thumb",
-    "blurb": "MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district.",
+    "blurb": "An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district.",
     "tags": [
       "gatsby",
       "graphql"
@@ -160,7 +145,7 @@
     "eventType": "org",
     "date": "2017-11-01T00:00:00.000Z",
     "thumbnail": "muse",
-    "blurb": "I created a WordPress-based platform for publishing student-submitted articles, that reflects the design language of the physical MUSE magazine",
+    "blurb": "Created a WordPress-based platform for publishing student-submitted articles that reflects the design language of the physical MUSE magazine",
     "tags": [
       "wordpress"
     ],
@@ -175,7 +160,7 @@
     "date": "2017-05-01T00:00:00.000Z",
     "image": "Nudge1",
     "thumbnail": "nudge-thumb",
-    "blurb": "I created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
+    "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
     "tags": [
       "react",
       "redux"
@@ -191,7 +176,7 @@
     "date": "2018-05-01T00:00:00.000Z",
     "image": "Nudge2",
     "thumbnail": "nudge-thumb",
-    "blurb": "I implemented a system for receiving, verifying, and handling GDPR requests. I also added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
+    "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
     "tags": [
       "react",
       "net",
@@ -210,7 +195,7 @@
     "thumbnail": "qhacks-crown",
     "website": "https://2019.qhacks.io",
     "repository": "https://github.com/qhacks/qhacks-website",
-    "blurb": "I helped build the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.",
+    "blurb": "Built the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.",
     "tags": [
       "gatsby",
       "graphql",
@@ -227,7 +212,7 @@
     "date": "2019-09-01T00:00:00.000Z",
     "image": "studii",
     "thumbnail": "qtma",
-    "blurb": "Software developer in an eight-person product team, within a tech incubator at Queen’s University. I built a user interface using React.js for Studii, a collaborative studying web application for students.",
+    "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
     "tags": [
       "react",
       "django",
@@ -282,7 +267,7 @@
     "eventType": "project",
     "date": "2020-04-02T00:00:00.000Z",
     "thumbnail": "reqwise",
-    "blurb": "Created ReqWise, an easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.",
+    "blurb": "An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.",
     "tags": [
       "svelte",
       "fastify",
@@ -304,7 +289,7 @@
     "imageExt": "jpg",
     "image": "robot",
     "thumbnail": "arduino",
-    "blurb": "For Digital Systems, a course at Queen's, I made a drawing robot that listens to you and writes down what you say",
+    "blurb": "A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.",
     "tags": [
       "arduino",
       "rpi"
@@ -339,7 +324,7 @@
     "thumbnailExt": "png",
     "thumbnail": "traffic",
     "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
-    "blurb": "For Reinforcement Learning, an AI course at Queen's, my group created a simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent.",
+    "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
     "tags": [
       "python"
     ],
@@ -369,7 +354,7 @@
     "date": "2019-05-01T00:00:00.000Z",
     "thumbnail": "verafin-thumb",
     "image": "verafin",
-    "blurb": "I made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. I created a software plugin that identifies high risk customers across hundreds of institutions, based on transaction and biographical characteristics.",
+    "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
     "tags": [
       "java",
       "postgres",
@@ -385,7 +370,7 @@
     "eventType": "project",
     "date": "2020-01-31T00:00:00.000Z",
     "thumbnail": "vibeify",
-    "blurb": "Vibeify is an artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+    "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
     "tags": [
       "tensorflow",
       "react",
@@ -409,8 +394,8 @@
     "tags": [
       "javascript"
     ],
-    "preview": "[Moment.js](https://momentjs.com) is a JavaScript library that can …",
-    "content": "\n\n[Moment.js](https://momentjs.com) is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at [Nudge.ai](https://www.nudge.ai)</a>, I found myself having to go to Moment's documentation to see how to format dates in various ways.\n\nIn order to make the process of date formatting faster, I created WTFormat.com, which gives you a date which you rewite in your preferred format. The site then generates the Moment format code that would yield that output.",
+    "preview": "<a target=\"_blank\" rel=\"noopener noreferrer\" …",
+    "content": "\n\n<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment's documentation to see how to format dates in various ways.\n\nIn order to make the process of date formatting faster, I created WTFormat.com, which gives you a date which you rewite in your preferred format. The site then generates the Moment format code that would yield that output.",
     "iso8601Date": "2018-07-04T20:00:00-04:00",
     "basename": "wtformat"
   }

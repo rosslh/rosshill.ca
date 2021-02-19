@@ -6,7 +6,7 @@ website: https://2019.metaprojection.ca
 repository: https://github.com/rosslh/metaprojection
 image: metaprojection
 thumbnail: metaprojection-thumb
-blurb: MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district.
+blurb: An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district.
 tags: [gatsby, graphql]
 ---
 

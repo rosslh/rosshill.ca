@@ -6,7 +6,7 @@ thumbnailExt: jpg
 imageExt: jpg
 image: robot
 thumbnail: arduino
-blurb: For Digital Systems, a course at Queen's, I made a drawing robot that listens to you and writes down what you say
+blurb: A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.
 tags: [arduino, rpi]
 ---
 

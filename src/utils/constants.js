@@ -1,6 +1,6 @@
 export const tagLabels = {
   backbone: "Backbone.js",
-  fastify: "Fastify / Node.js",
+  fastify: "Fastify / Node",
   gatsby: "Gatsby / React",
   gcp: "GCP",
   graphql: "GraphQL",
@@ -9,6 +9,7 @@ export const tagLabels = {
   net: ".NET",
   node: "Node.js",
   postgres: "PostgreSQL",
+  prosemirror: "ProseMirror",
   rpi: "Raspberry Pi",
   svelte: "Svelte / JavaScript",
   typescript: "TypeScript",

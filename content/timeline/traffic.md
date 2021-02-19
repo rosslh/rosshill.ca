@@ -5,6 +5,6 @@ date: 2019-11-01
 thumbnailExt: png
 thumbnail: traffic
 repository: https://github.com/ZaneLittle/Traffic-Light-Simulation
-blurb: For Reinforcement Learning, an AI course at Queen's, my group created a simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent.
+blurb: A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.
 tags: [python]
 ---
