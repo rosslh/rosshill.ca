@@ -61,7 +61,7 @@
     z-index: 100;
   }
   button {
-    width: 8rem;
+    width: 9rem;
     height: 1.8rem;
     border-radius: 1.8rem;
     display: flex;

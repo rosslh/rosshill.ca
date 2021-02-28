@@ -67,7 +67,8 @@ export default {
               "@babel/preset-env",
               {
                 targets: "> 0.25%, last 2 versions",
-                corejs: "3.9.0"
+                corejs: { version: 3 },
+                useBuiltIns: 'entry'
               }
             ]
           ],
@@ -79,14 +80,12 @@ export default {
                 useESModules: true
               }
             ],
-            "@babel/plugin-proposal-object-rest-spread"
+            "@babel/plugin-transform-spread",
+            "@babel/plugin-proposal-object-rest-spread",
           ]
         }),
 
-      !dev &&
-        terser({
-          module: true
-        })
+      !dev && terser({ module: true })
     ],
 
     onwarn
