@@ -10,7 +10,7 @@ import sveltePreprocess from "svelte-preprocess";
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const legacy = Boolean(process.env.SAPPER_LEGACY_BUILD);
 
 const preprocess = sveltePreprocess({
   postcss: {
@@ -66,7 +66,8 @@ export default {
             [
               "@babel/preset-env",
               {
-                targets: "> 0.25%, not dead"
+                targets: "> 0.25%, last 2 versions",
+                corejs: "3.9.0"
               }
             ]
           ],
@@ -77,7 +78,8 @@ export default {
               {
                 useESModules: true
               }
-            ]
+            ],
+            "@babel/plugin-proposal-object-rest-spread"
           ]
         }),
 
