@@ -1,21 +1,19 @@
 <script context="module">
-  export async function preload({ params, query: _query }) {
+  export async function load({ page, fetch }) {
     // the `slug` parameter is available because
     // this file is called [slug].html
-    const res = await this.fetch(`item/${params.slug.toLowerCase()}.json`);
-    const data = await res.json();
+    const res = await fetch(`item/${page.params.slug.toLowerCase()}.json`);
+    const post = await res.json();
 
     return {
-      post: data,
+      props: {
+        post
+      }
     };
   }
 </script>
 
 <script>
-  import { onMount } from "svelte";
-  onMount(async () => {
-    gtag("config", "UA-93549235-3", { page_path: window.location.pathname });
-  });
   export let post;
 </script>
 
@@ -33,10 +31,6 @@
       {#if post.repository}
         &ndash;
         <a
-          on:click={() =>
-            gtag("event", "outbound", {
-              event_label: post.repository,
-            })}
           target="_blank"
           rel="noopener noreferrer"
           href={post.repository}
@@ -47,10 +41,6 @@
       {#if post.website}
         &ndash;
         <a
-          on:click={() =>
-            gtag("event", "outbound", {
-              event_label: post.website,
-            })}
           target="_blank"
           rel="noopener noreferrer"
           href={post.website}

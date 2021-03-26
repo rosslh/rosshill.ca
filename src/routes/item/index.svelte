@@ -1,5 +1,5 @@
 <script context="module">
-  export async function preload(_page, _session) {
-    return this.redirect(303, '/');
+  export async function load(_) {
+    return {status: 303, redirect: '/'};
   }
 </script>

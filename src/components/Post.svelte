@@ -10,7 +10,7 @@
   export let lastPost;
 
   $: typeString =
-    { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
+    ({ job: "Job", org: "Organization", project: "Project" })[post.eventType] ||
     "";
 
   let element;
@@ -81,10 +81,6 @@
           <div class="externalLinks doTransition">
             {#if post.repository}
               <a
-                on:click={() =>
-                  gtag("event", "outbound", {
-                    event_label: post.repository,
-                  })}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.repository}
@@ -97,10 +93,6 @@
             {/if}
             {#if post.website}
               <a
-                on:click={() =>
-                  gtag("event", "outbound", {
-                    event_label: post.website,
-                  })}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.website}

@@ -1,9 +1,9 @@
 <script context="module">
-  export async function preload() {
-    const result = await this.fetch("index.json");
+  export async function load({ fetch }) {
+    const result = await fetch("index.json");
     const posts = await result.json();
     return {
-      posts,
+      props: { posts },
     };
   }
 </script>
@@ -12,11 +12,6 @@
   import Intro from "../components/Intro.svelte";
   import Separator from "../components/Separator.svelte";
   import Posts from "../components/Posts.svelte";
-
-  import { onMount } from "svelte";
-  onMount(async () => {
-    gtag("config", "UA-93549235-3", { page_path: "/" });
-  });
 
   export let posts = [];
 </script>

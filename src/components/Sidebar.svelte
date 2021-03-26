@@ -24,7 +24,6 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "Github" })}
       >
         GitHub
       </a>
@@ -33,14 +32,12 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "LinkedIn" })}
       >
         LinkedIn
       </a>
       <span class="smallSlash">/</span>
       <a
         href="/resume.pdf"
-        on:click={() => gtag("event", "outbound", { event_label: "Resume" })}
       >
         Resume
       </a>
