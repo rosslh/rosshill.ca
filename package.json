@@ -5,9 +5,9 @@
 		"build": "npm run contentGen && npm run webpGen && svelte-kit build",
 		"contentGen": "cd content/timeline && npx m2j . --content -o ../data.json",
 		"dev": "svelte-kit dev",
-		"export": "npm run contentGen && npm run webpGen && svelte-kit export && cp static/resume.pdf .svelte/export/resume.pdf",
+		"export": "npm run build && cp static/resume.pdf .build/resume.pdf",
 		"lint": "eslint src",
-		"start": "node .svelte/build",
+		"start": "svelte-kit start",
 		"webpGen": "cd static && webpc -r && cd .."
 	},
 	"dependencies": {
