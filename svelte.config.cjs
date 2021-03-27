@@ -38,9 +38,9 @@ module.exports = {
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {})
 			},
-			rollupOptions: {
-				external: [/node_modules/]
-			}
+			// rollupOptions: {
+			// 	external: [/node_modules/]
+			// }
 		}
 	}
 };
