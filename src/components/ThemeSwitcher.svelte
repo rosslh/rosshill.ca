@@ -21,11 +21,6 @@
 
   $: changeTheme = () => {
     userTheme.set(nextTheme);
-    try {
-      gtag("event", "change_theme", { event_label: nextTheme });
-    } catch (e) {
-      console.error(e);
-    }
   };
 
   const loading = typeof window === "undefined";

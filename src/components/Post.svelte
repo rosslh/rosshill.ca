@@ -10,7 +10,7 @@
   export let lastPost;
 
   $: typeString =
-    { job: "Job", org: "Organization", project: "Project" }[post.eventType] ||
+    ({ job: "Job", org: "Organization", project: "Project" })[post.eventType] ||
     "";
 
   let element;
@@ -44,13 +44,13 @@
           <div class="pictureFrame">
             {#if post.thumbnail}
               <picture class="fixedSize">
-                <source srcset="{post.thumbnail}.webp" type="image/webp" />
+                <source srcset="/{post.thumbnail}.webp" type="image/webp" />
                 <source
-                  srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  srcset="/{post.thumbnail}.{post.thumbnailExt || 'png'}"
                   type="image/{post.thumbnailExt || 'png'}"
                 />
                 <img
-                  src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  src="/{post.thumbnail}.{post.thumbnailExt || 'png'}"
                   loading="lazy"
                   alt=""
                   width="1.7rem"
@@ -81,10 +81,6 @@
           <div class="externalLinks doTransition">
             {#if post.repository}
               <a
-                on:click={() =>
-                  gtag("event", "outbound", {
-                    event_label: post.repository,
-                  })}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.repository}
@@ -97,10 +93,6 @@
             {/if}
             {#if post.website}
               <a
-                on:click={() =>
-                  gtag("event", "outbound", {
-                    event_label: post.website,
-                  })}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.website}

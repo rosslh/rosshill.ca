@@ -1,7 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-
-const timeline = require("../../../content/data.json");
+import timeline from "../../../content/data.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -28,26 +27,26 @@ posts
     lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
   });
 
-export function get(req, res) {
+export function get(req) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const slug = req.params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
-    res.writeHead(200, {
-      "Content-Type": "application/json"
-    });
+    // res.writeHead(200, {
+    //   "Content-Type": "application/json"
+    // });
 
-    res.end(lookup.get(slug));
+    return { body: lookup.get(slug) };
   } else {
-    res.writeHead(404, {
-      "Content-Type": "application/json"
-    });
+    // res.writeHead(404, {
+    //   "Content-Type": "application/json"
+    // });
 
-    res.end(
-      JSON.stringify({
+    return {
+      body: {
         message: "Not found"
-      })
-    );
+      }
+    };
   }
 }

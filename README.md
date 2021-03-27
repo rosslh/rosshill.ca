@@ -1,1 +1,1 @@
-Built with Svelte
+Built with SvelteKit

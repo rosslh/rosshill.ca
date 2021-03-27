@@ -1,7 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-
-const timeline = require("../../../content/data.json"); // TODO: Why is this not ../../
+import timeline from "../../content/data.json"; // TODO: Why is this not ../../
 
 const contents = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -25,9 +24,9 @@ const contents = Object.values(timeline)
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-export function get(req, res) {
-  res.writeHead(200, {
-    "Content-Type": "application/json"
-  });
-  res.end(JSON.stringify(contents));
+export function get(_req) {
+  // res.writeHead(200, {
+  //   "Content-Type": "application/json"
+  // });
+  return { body: contents };
 }

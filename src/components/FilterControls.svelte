@@ -7,10 +7,8 @@
     noAnimation = true;
     if (showCategories.includes(category)) {
       showCategories = showCategories.filter((x) => x !== category);
-      gtag("event", "hide_category", { event_label: category });
     } else {
       showCategories = [...showCategories, category]; // push doesn't update state
-      gtag("event", "show_category", { event_label: category });
     }
   };
   $: jobActive = showCategories.includes("job");

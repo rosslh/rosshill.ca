@@ -7,9 +7,9 @@
   <div class="sidebarContent">
     <div class="imgWrapper">
       <picture class="fixedSize">
-        <source srcset="headshot.webp" type="image/webp" />
-        <source srcset="headshot.png" type="image/png" />
-        <img src="headshot.png" alt="Ross Hill" width="10rem" height="10rem" />
+        <source srcset="/headshot.webp" type="image/webp" />
+        <source srcset="/headshot.png" type="image/png" />
+        <img src="/headshot.png" alt="Ross Hill" width="10rem" height="10rem" />
       </picture>
     </div>
     <h1>
@@ -24,7 +24,6 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "Github" })}
       >
         GitHub
       </a>
@@ -33,14 +32,12 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.linkedin.com/in/rosslh"
-        on:click={() => gtag("event", "outbound", { event_label: "LinkedIn" })}
       >
         LinkedIn
       </a>
       <span class="smallSlash">/</span>
       <a
         href="/resume.pdf"
-        on:click={() => gtag("event", "outbound", { event_label: "Resume" })}
       >
         Resume
       </a>
