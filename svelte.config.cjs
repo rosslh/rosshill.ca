@@ -17,7 +17,7 @@ module.exports = {
 		// host: null,
 		// hostHeader: null,
 		paths: {
-			assets: 'static',
+			assets: '',
 			base: ''
 		},
 		prerender: {

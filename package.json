@@ -6,7 +6,7 @@
 		"build": "rm -rf .svelte/ && rm -rf build && npm run contentGen && npm run webpGen && svelte-kit build",
 		"contentGen": "cd content/timeline && npx m2j . --content -o ../data.json",
 		"dev": "svelte-kit dev",
-		"export": "npm run build && cp static/resume.pdf .build/resume.pdf",
+		"export": "npm run build && cp static/resume.pdf build/resume.pdf",
 		"lint": "eslint src",
 		"start": "svelte-kit start",
 		"webpGen": "cd static && webpc -r && cd .."
