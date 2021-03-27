@@ -8,10 +8,10 @@
 <div class="tag doTransition">
   <div class="logoWrapper">
     <picture class="fixedSize">
-      <source srcset="tags/{tagId}.webp" type="image/webp" />
-      <source srcset="tags/{tagId}.png" type="image/png" />
+      <source srcset="/tags/{tagId}.webp" type="image/webp" />
+      <source srcset="/tags/{tagId}.png" type="image/png" />
       <img
-        src="tags/{tagId}.png"
+        src="/tags/{tagId}.png"
         alt=""
         loading="lazy"
         width="0.85rem"

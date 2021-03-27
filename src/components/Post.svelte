@@ -44,13 +44,13 @@
           <div class="pictureFrame">
             {#if post.thumbnail}
               <picture class="fixedSize">
-                <source srcset="{post.thumbnail}.webp" type="image/webp" />
+                <source srcset="/{post.thumbnail}.webp" type="image/webp" />
                 <source
-                  srcset="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  srcset="/{post.thumbnail}.{post.thumbnailExt || 'png'}"
                   type="image/{post.thumbnailExt || 'png'}"
                 />
                 <img
-                  src="{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  src="/{post.thumbnail}.{post.thumbnailExt || 'png'}"
                   loading="lazy"
                   alt=""
                   width="1.7rem"

@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Ross Hill's homepage",
 	"scripts": {
-		"build": "npm run contentGen && npm run webpGen && svelte-kit build",
+		"build": "rm -rf .svelte/ && rm -rf build && npm run contentGen && npm run webpGen && svelte-kit build",
 		"contentGen": "cd content/timeline && npx m2j . --content -o ../data.json",
 		"dev": "svelte-kit dev",
 		"export": "npm run build && cp static/resume.pdf .build/resume.pdf",

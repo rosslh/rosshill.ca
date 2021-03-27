@@ -2,7 +2,7 @@
   export async function load({ page, fetch }) {
     // the `slug` parameter is available because
     // this file is called [slug].html
-    const res = await fetch(`item/${page.params.slug.toLowerCase()}.json`);
+    const res = await fetch(`/item/${page.params.slug.toLowerCase()}.json`);
     const post = await res.json();
 
     return {
@@ -50,18 +50,18 @@
       {/if}
     </div>
     {#if post.gif}
-      <img src="timeline/{post.gif}.gif" alt={post.title} />
+      <img src="/timeline/{post.gif}.gif" alt={post.title} />
     {/if}
     {#if post.image}
       <div class="imageWrapper doTransition">
         <picture>
-          <source srcset="timeline/{post.image}.webp" type="image/webp" />
+          <source srcset="/timeline/{post.image}.webp" type="image/webp" />
           <source
-            srcset="timeline/{post.image}.{post.imageExt || 'png'}"
+            srcset="/timeline/{post.image}.{post.imageExt || 'png'}"
             type="image/{post.imageExt || 'png'}"
           />
           <img
-            src="timeline/{post.image}.{post.imageExt || 'png'}"
+            src="/timeline/{post.image}.{post.imageExt || 'png'}"
             alt={post.title}
           />
         </picture>
