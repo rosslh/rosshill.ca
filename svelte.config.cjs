@@ -9,7 +9,7 @@ module.exports = {
 		files: {
 			assets: 'static',
 			// hooks: 'src/hooks',
-			// lib: 'src/lib',
+			lib: 'src/lib',
 			routes: 'src/routes',
 			// serviceWorker: 'src/service-worker',
 			template: 'src/app.html'

@@ -1,6 +1,6 @@
 <script>
   export let tagId;
-  import { tagLabels } from "../utils/constants.js";
+  import { tagLabels } from "$lib/constants.js";
 
   $: tagString = tagLabels[tagId] || tagId;
 </script>

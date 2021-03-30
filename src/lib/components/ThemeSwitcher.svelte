@@ -3,7 +3,7 @@
 
   import IoIosMoon from "svelte-icons/io/IoIosMoon.svelte";
   import IoIosSunny from "svelte-icons/io/IoIosSunny.svelte";
-  import { theme as userTheme } from "../stores.js";
+  import { theme as userTheme } from "$lib/stores.js";
 
   onMount(() => {
     if (!$userTheme) {

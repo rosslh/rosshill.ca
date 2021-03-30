@@ -5,15 +5,15 @@
   import FilterControls from "./FilterControls.svelte";
 
   const postsMap = (post, i, postsArray) => {
-    const prevDirection = i === 0 ? false : postsArray[i - 1].direction;
-    const date = getYearFromDate(post.date);
-    const prevDate = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
-    if (date !== prevDate) {
+    const prevLeftAligned = i === 0 ? false : postsArray[i - 1].leftAligned;
+    const year = getYearFromDate(post.date);
+    const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
+    if (year !== prevYear) {
       post.showYearLabel = true;
-      post.direction = !prevDirection;
+      post.leftAligned = !prevLeftAligned;
     } else {
       post.showYearLabel = false;
-      post.direction = prevDirection;
+      post.leftAligned = prevLeftAligned;
     }
     return post;
   };
@@ -21,14 +21,12 @@
   let showCategories = [];
   let noAnimation = false;
 
-  $: postFilter = (post) =>
+  $: postFilter = post =>
     !showCategories.length || showCategories.includes(post.eventType);
 
   $: postsWithLabels = posts.filter(postFilter).map(postsMap);
 
-  const getYearFromDate = (date) => {
-    return Number(date.substring(0, 4));
-  };
+  const getYearFromDate = date => Number(date.substring(0, 4));
 </script>
 
 <div class="headingWrapper contentWrapper ">
@@ -41,15 +39,15 @@
       <YearLabel
         display={post.showYearLabel}
         firstLabel={i === 0}
-        direction={post.direction}
+        direction={post.leftAligned}
         year={getYearFromDate(post.date)}
       />
-      {#key `${i}|${post.direction}`}
+      {#key `${i}|${post.leftAligned}`}
         <Post
           {post}
           firstPost={i === 0}
           lastPost={i === postsWithLabels.length - 1}
-          left={post.direction}
+          left={post.leftAligned}
         />
       {/key}
     {/each}

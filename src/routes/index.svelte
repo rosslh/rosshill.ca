@@ -9,9 +9,9 @@
 </script>
 
 <script>
-  import Intro from "../components/Intro.svelte";
-  import Separator from "../components/Separator.svelte";
-  import Posts from "../components/Posts.svelte";
+  import Intro from "$lib/components/Intro.svelte";
+  import Separator from "$lib/components/Separator.svelte";
+  import Posts from "$lib/components/Posts.svelte";
 
   export let posts = [];
 </script>
