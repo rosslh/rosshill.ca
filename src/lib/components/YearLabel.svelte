@@ -5,19 +5,17 @@
   export let display;
 </script>
 
-{#if display && !firstLabel}
+{#if display}
   <div class="labelWrapper doTransition">
-    <span class="yearLabel doTransition centeredLabel">{year}</span>
-    <div aria-hidden="true" class={`line ${direction ? "left" : "right"}`}>
-      <div class="doTransition" />
-      <div class="doTransition" />
-      <div class="doTransition" />
-      <div class="doTransition" />
-    </div>
-  </div>
-{:else if display && firstLabel}
-  <div class="labelWrapper doTransition">
-    <span class="yearLabel doTransition firstLabel">{year}</span>
+    <span class="yearLabel doTransition {firstLabel ? 'firstLabel' : 'centeredLabel'}">{year}</span>
+    {#if !firstLabel}
+      <div aria-hidden="true" class={`line ${direction ? "left" : "right"}`}>
+        <div class="doTransition" />
+        <div class="doTransition" />
+        <div class="doTransition" />
+        <div class="doTransition" />
+      </div>
+    {/if}
   </div>
 {/if}
 

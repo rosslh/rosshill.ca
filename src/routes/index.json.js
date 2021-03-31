@@ -25,8 +25,5 @@ const contents = Object.values(timeline)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 export function get(_req) {
-  // res.writeHead(200, {
-  //   "Content-Type": "application/json"
-  // });
   return { body: contents };
 }

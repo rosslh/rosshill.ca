@@ -33,16 +33,8 @@ export function get(req) {
   const slug = req.params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
-    // res.writeHead(200, {
-    //   "Content-Type": "application/json"
-    // });
-
     return { body: lookup.get(slug) };
   } else {
-    // res.writeHead(404, {
-    //   "Content-Type": "application/json"
-    // });
-
     return {
       body: {
         message: "Not found"
