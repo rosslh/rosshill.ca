@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-import timeline from "../../content/data.json"; // TODO: Why is this not ../../
+import timeline from "$lib/data.json";
 
 const contents = Object.values(timeline)
   .filter(post => !post.WIP)

@@ -26,17 +26,15 @@ SOFTWARE.
   export let root = null;
   export let rootMargin = "0px";
   export let threshold = 0;
-  // export let entry = null;
   export let intersecting = false;
   export let complete = false;
 
   import {
     tick,
-    /* createEventDispatcher, */
     onDestroy,
     afterUpdate,
   } from "svelte";
-  // const dispatch = createEventDispatcher();
+  
   let prevElement = null;
   let observer = undefined;
 
@@ -45,9 +43,7 @@ SOFTWARE.
       observer && observer.disconnect();
       return;
     }
-    // if (entry != null) {
-    //   dispatch("observe", entry);
-    // }
+
     await tick();
     if (observer && element != null && element !== prevElement) {
       observer.observe(element);
@@ -63,7 +59,6 @@ SOFTWARE.
   });
 
   const handleIntersection = ([_entry]) => {
-    // entry = _entry;
     intersecting = _entry.isIntersecting;
   };
 

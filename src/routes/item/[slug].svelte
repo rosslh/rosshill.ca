@@ -49,9 +49,6 @@
         </a>
       {/if}
     </div>
-    {#if post.gif}
-      <img src="/timeline/{post.gif}.gif" alt={post.title} />
-    {/if}
     {#if post.image}
       <div class="imageWrapper doTransition">
         <picture>

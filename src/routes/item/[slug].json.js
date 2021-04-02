@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-import timeline from "../../../content/data.json";
+import timeline from "$lib/data.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -15,7 +15,6 @@ const posts = Object.values(timeline)
       embed: post.embed,
       image: post.image,
       imageExt: post.imageExt,
-      gif: post.gif,
       tags: post.tags
     };
   });

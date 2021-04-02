@@ -9,7 +9,7 @@
   <div class="labelWrapper doTransition">
     <span class="yearLabel doTransition {firstLabel ? 'firstLabel' : 'centeredLabel'}">{year}</span>
     {#if !firstLabel}
-      <div aria-hidden="true" class={`line ${direction ? "left" : "right"}`}>
+      <div aria-hidden="true" class="line {direction ? 'left' : 'right'}">
         <div class="doTransition" />
         <div class="doTransition" />
         <div class="doTransition" />
