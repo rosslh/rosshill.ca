@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-import timeline from "$lib/data.json";
+import {data as timeline} from "$lib/data.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -11,7 +11,7 @@ const posts = Object.values(timeline)
       date: dateformat(post.date, "mmmm yyyy"),
       website: post.website,
       repository: post.repository,
-      content: post.content,
+      contents: post.contents,
       embed: post.embed,
       image: post.image,
       imageExt: post.imageExt,
@@ -21,7 +21,7 @@ const posts = Object.values(timeline)
 
 const lookup = new Map();
 posts
-  .filter(post => post.content)
+  .filter(post => post.contents)
   .forEach(post => {
     lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
   });

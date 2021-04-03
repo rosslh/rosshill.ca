@@ -71,7 +71,7 @@
     {/if}
 
     <div class="content">
-      {@html post.content}
+      {@html post.contents}
     </div>
   </article>
 </div>
@@ -115,7 +115,7 @@
   div.embedWrapper {
     max-width: 90%;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 1.5rem auto 2rem;
     display: flex;
     justify-content: center;
   }

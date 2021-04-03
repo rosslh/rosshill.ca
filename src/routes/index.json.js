@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import dateformat from "dateformat";
-import timeline from "$lib/data.json";
+import {data as timeline} from "$lib/data.json";
 
 const contents = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -8,7 +8,7 @@ const contents = Object.values(timeline)
     return {
       title: post.title,
       eventType: post.eventType,
-      hasContent: !!post.content,
+      hasContent: !!post.contents,
       slug: slugify(post.title).toLowerCase(),
       date: post.date,
       prettyDate: dateformat(post.date, "mmmm yyyy"),
