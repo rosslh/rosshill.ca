@@ -66,7 +66,7 @@
     {/if}
     {#if post.embed}
       <div class="embedWrapper">
-        <div>
+        <div class="doTransition">
           {@html post.embed}
         </div>
       </div>
