@@ -118,5 +118,17 @@
     margin: 1.5rem auto 2rem;
     display: flex;
     justify-content: center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  :global(div.embedWrapper iframe) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; 
   }
 </style>

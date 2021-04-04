@@ -15,6 +15,53 @@
   },
   "data": [
     {
+      "id": "dodgeball",
+      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
+      "title": "Dodgeball: The Game",
+      "eventType": "project",
+      "date": "2018-01-01T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "thumbnail": "dodgeball",
+      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
+      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
+      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
+      "tags": [
+        "unity3d"
+      ],
+      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
+      "meta": {
+        "relativePath": "dodgeball.html",
+        "createdAt": "2021-04-02T05:14:17.020Z",
+        "lastModified": "2021-04-02T05:14:17.019Z",
+        "size": 1550,
+        "formattedSize": "1.5 KB"
+      }
+    },
+    {
+      "id": "folda",
+      "contents": "",
+      "title": "foldA Box Office System",
+      "eventType": "project",
+      "date": "2019-09-01T00:00:00.000Z",
+      "thumbnail": "folda",
+      "blurb": "An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.",
+      "tags": [
+        "svelte",
+        "flask",
+        "postgres"
+      ],
+      "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
+      "website": "https://folda.netlify.com/",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "folda.html",
+        "createdAt": "2021-04-02T05:14:17.096Z",
+        "lastModified": "2021-04-02T05:14:17.095Z",
+        "size": 416,
+        "formattedSize": "416 Bytes"
+      }
+    },
+    {
       "id": "doctalk",
       "contents": "",
       "title": "Started as a developer at Doctalk",
@@ -55,74 +102,6 @@
       }
     },
     {
-      "id": "folda",
-      "contents": "",
-      "title": "foldA Box Office System",
-      "eventType": "project",
-      "date": "2019-09-01T00:00:00.000Z",
-      "thumbnail": "folda",
-      "blurb": "An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.",
-      "tags": [
-        "svelte",
-        "flask",
-        "postgres"
-      ],
-      "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
-      "website": "https://folda.netlify.com/",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "folda.html",
-        "createdAt": "2021-04-02T05:14:17.096Z",
-        "lastModified": "2021-04-02T05:14:17.095Z",
-        "size": 416,
-        "formattedSize": "416 Bytes"
-      }
-    },
-    {
-      "id": "homepage",
-      "contents": "",
-      "title": "Homepage redesign",
-      "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnail": "homepageThumb",
-      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
-      "tags": [
-        "svelte"
-      ],
-      "WIP": true,
-      "excerpt": "",
-      "meta": {
-        "relativePath": "homepage.html",
-        "createdAt": "2021-04-02T05:14:17.185Z",
-        "lastModified": "2021-04-02T05:14:17.184Z",
-        "size": 220,
-        "formattedSize": "220 Bytes"
-      }
-    },
-    {
-      "id": "dodgeball",
-      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
-      "title": "Dodgeball: The Game",
-      "eventType": "project",
-      "date": "2018-01-01T00:00:00.000Z",
-      "thumbnailExt": "jpg",
-      "thumbnail": "dodgeball",
-      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
-      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
-      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
-      "tags": [
-        "unity3d"
-      ],
-      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
-      "meta": {
-        "relativePath": "dodgeball.html",
-        "createdAt": "2021-04-02T05:14:17.020Z",
-        "lastModified": "2021-04-02T05:14:17.019Z",
-        "size": 1550,
-        "formattedSize": "1.5 KB"
-      }
-    },
-    {
       "id": "hurontario",
       "contents": "",
       "title": "Counsellor – Camp Hurontario",
@@ -138,6 +117,28 @@
         "lastModified": "2021-04-02T05:14:17.234Z",
         "size": 282,
         "formattedSize": "282 Bytes"
+      }
+    },
+    {
+      "id": "mandelbrot",
+      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
+      "title": "Mandelbrot Set Explorer",
+      "eventType": "project",
+      "date": "2016-11-29T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
+      "image": "mandelbrot",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
+      "tags": [
+        "python"
+      ],
+      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
+      "meta": {
+        "relativePath": "mandelbrot.html",
+        "createdAt": "2021-04-02T05:14:17.328Z",
+        "lastModified": "2021-04-02T05:14:17.327Z",
+        "size": 1196,
+        "formattedSize": "1.2 KB"
       }
     },
     {
@@ -164,25 +165,24 @@
       }
     },
     {
-      "id": "mandelbrot",
-      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
-      "title": "Mandelbrot Set Explorer",
+      "id": "homepage",
+      "contents": "",
+      "title": "Homepage redesign",
       "eventType": "project",
-      "date": "2016-11-29T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
-      "image": "mandelbrot",
-      "thumbnail": "mandelbrot-thumb",
-      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnail": "homepageThumb",
+      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
       "tags": [
-        "python"
+        "svelte"
       ],
-      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
+      "WIP": true,
+      "excerpt": "",
       "meta": {
-        "relativePath": "mandelbrot.html",
-        "createdAt": "2021-04-02T05:14:17.328Z",
-        "lastModified": "2021-04-02T05:14:17.327Z",
-        "size": 1196,
-        "formattedSize": "1.2 KB"
+        "relativePath": "homepage.html",
+        "createdAt": "2021-04-02T05:14:17.185Z",
+        "lastModified": "2021-04-02T05:14:17.184Z",
+        "size": 220,
+        "formattedSize": "220 Bytes"
       }
     },
     {
@@ -300,6 +300,29 @@
       }
     },
     {
+      "id": "QTMA",
+      "contents": "",
+      "title": "Software Developer – QTMA",
+      "eventType": "org",
+      "date": "2019-09-01T00:00:00.000Z",
+      "image": "studii",
+      "thumbnail": "qtma",
+      "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
+      "tags": [
+        "react",
+        "django",
+        "mongo"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "QTMA.html",
+        "createdAt": "2021-04-02T05:14:17.999Z",
+        "lastModified": "2021-04-02T05:14:17.998Z",
+        "size": 345,
+        "formattedSize": "345 Bytes"
+      }
+    },
+    {
       "id": "queensEnrolled",
       "contents": "",
       "title": "Started at Queen's University",
@@ -333,29 +356,6 @@
       }
     },
     {
-      "id": "QTMA",
-      "contents": "",
-      "title": "Software Developer – QTMA",
-      "eventType": "org",
-      "date": "2019-09-01T00:00:00.000Z",
-      "image": "studii",
-      "thumbnail": "qtma",
-      "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
-      "tags": [
-        "react",
-        "django",
-        "mongo"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "QTMA.html",
-        "createdAt": "2021-04-02T05:14:17.999Z",
-        "lastModified": "2021-04-02T05:14:17.998Z",
-        "size": 345,
-        "formattedSize": "345 Bytes"
-      }
-    },
-    {
       "id": "QVFT",
       "contents": "",
       "title": "Director of Systems Automation – QVFT",
@@ -380,31 +380,6 @@
       }
     },
     {
-      "id": "reqwise",
-      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is Questionnaires, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is Organizing Requirements. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload Files and Designs from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive Feedback and Approval from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
-      "title": "ReqWise",
-      "eventType": "project",
-      "date": "2020-04-02T00:00:00.000Z",
-      "thumbnail": "reqwise",
-      "blurb": "An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.",
-      "tags": [
-        "svelte",
-        "fastify",
-        "postgres",
-        "gcp"
-      ],
-      "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
-      "repository": "https://github.com/rosslh/ReqWise",
-      "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>",
-      "meta": {
-        "relativePath": "reqwise.html",
-        "createdAt": "2021-04-03T20:46:19.876Z",
-        "lastModified": "2021-04-03T20:46:19.876Z",
-        "size": 2256,
-        "formattedSize": "2.2 KB"
-      }
-    },
-    {
       "id": "robot",
       "contents": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we’ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>\n",
       "title": "Drawing robot",
@@ -426,6 +401,31 @@
         "lastModified": "2021-04-02T05:14:18.375Z",
         "size": 949,
         "formattedSize": "949 Bytes"
+      }
+    },
+    {
+      "id": "reqwise",
+      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is Questionnaires, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is Organizing Requirements. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload Files and Designs from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive Feedback and Approval from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
+      "title": "ReqWise",
+      "eventType": "project",
+      "date": "2020-04-02T00:00:00.000Z",
+      "thumbnail": "reqwise",
+      "blurb": "An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.",
+      "tags": [
+        "svelte",
+        "fastify",
+        "postgres",
+        "gcp"
+      ],
+      "embed": "<iframe src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "repository": "https://github.com/rosslh/ReqWise",
+      "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>",
+      "meta": {
+        "relativePath": "reqwise.html",
+        "createdAt": "2021-04-04T00:17:09.717Z",
+        "lastModified": "2021-04-04T00:17:09.717Z",
+        "size": 2231,
+        "formattedSize": "2.2 KB"
       }
     },
     {

@@ -5,7 +5,7 @@ date: 2020-04-02
 thumbnail: reqwise
 blurb: An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.
 tags: [svelte, fastify, postgres, gcp]
-embed: <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xrtc45-qvG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+embed: <iframe src="https://www.youtube-nocookie.com/embed/xrtc45-qvG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 repository: https://github.com/rosslh/ReqWise
 ---
 
