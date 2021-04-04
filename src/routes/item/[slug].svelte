@@ -66,7 +66,9 @@
     {/if}
     {#if post.embed}
       <div class="embedWrapper">
-        {@html post.embed}
+        <div>
+          {@html post.embed}
+        </div>
       </div>
     {/if}
 
@@ -100,7 +102,6 @@
     border: 1px solid var(--sidebarBorder);
     padding: 0;
     border-radius: 4px;
-    overflow: hidden;
     box-shadow: 0px 2px 2px 0px rgba(20, 20, 20, 0.1);
   }
 
@@ -113,14 +114,18 @@
   }
 
   div.embedWrapper {
-    max-width: 90%;
-    overflow: hidden;
-    margin: 1.5rem auto 2rem;
-    display: flex;
-    justify-content: center;
-    position: relative;
     width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto 2rem;
+  }
+
+  div.embedWrapper > div {
+    position: relative;
     padding-bottom: 56.25%;
+    overflow: hidden;
+    border: 1px solid var(--sidebarBorder);
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px 0px rgba(20, 20, 20, 0.1);
   }
 
   :global(div.embedWrapper iframe) {

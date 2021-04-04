@@ -23,7 +23,7 @@
       "thumbnailExt": "jpg",
       "thumbnail": "dodgeball",
       "repository": "https://github.com/rosslh/Dodgeball-The-Game",
-      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
+      "embed": "<iframe width=\"480\" height=\"299\" src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
       "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
       "tags": [
         "unity3d"
@@ -31,10 +31,50 @@
       "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
       "meta": {
         "relativePath": "dodgeball.html",
-        "createdAt": "2021-04-02T05:14:17.020Z",
-        "lastModified": "2021-04-02T05:14:17.019Z",
-        "size": 1550,
+        "createdAt": "2021-04-04T13:04:25.196Z",
+        "lastModified": "2021-04-04T13:04:25.196Z",
+        "size": 1575,
         "formattedSize": "1.5 KB"
+      }
+    },
+    {
+      "id": "caledon",
+      "contents": "",
+      "title": "Ski Instructor – Caledon Ski Club",
+      "eventType": "job",
+      "date": "2014-12-01T00:00:00.000Z",
+      "thumbnail": "caledon",
+      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "caledon.html",
+        "createdAt": "2021-04-02T05:14:16.597Z",
+        "lastModified": "2021-04-02T05:14:16.596Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
+      }
+    },
+    {
+      "id": "doctalk",
+      "contents": "",
+      "title": "Started as a developer at Doctalk",
+      "date": "2020-11-30T00:00:00.000Z",
+      "thumbnail": "doctalk-thumb",
+      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
+      "tags": [
+        "react",
+        "prosemirror",
+        "django",
+        "postgres"
+      ],
+      "eventType": "job",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "doctalk.html",
+        "createdAt": "2021-04-02T05:14:16.916Z",
+        "lastModified": "2021-04-02T05:14:16.915Z",
+        "size": 608,
+        "formattedSize": "608 Bytes"
       }
     },
     {
@@ -62,46 +102,6 @@
       }
     },
     {
-      "id": "doctalk",
-      "contents": "",
-      "title": "Started as a developer at Doctalk",
-      "date": "2020-11-30T00:00:00.000Z",
-      "thumbnail": "doctalk-thumb",
-      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
-      "tags": [
-        "react",
-        "prosemirror",
-        "django",
-        "postgres"
-      ],
-      "eventType": "job",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "doctalk.html",
-        "createdAt": "2021-04-02T05:14:16.916Z",
-        "lastModified": "2021-04-02T05:14:16.915Z",
-        "size": 608,
-        "formattedSize": "608 Bytes"
-      }
-    },
-    {
-      "id": "caledon",
-      "contents": "",
-      "title": "Ski Instructor – Caledon Ski Club",
-      "eventType": "job",
-      "date": "2014-12-01T00:00:00.000Z",
-      "thumbnail": "caledon",
-      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "caledon.html",
-        "createdAt": "2021-04-02T05:14:16.597Z",
-        "lastModified": "2021-04-02T05:14:16.596Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
-      }
-    },
-    {
       "id": "hurontario",
       "contents": "",
       "title": "Counsellor – Camp Hurontario",
@@ -120,25 +120,24 @@
       }
     },
     {
-      "id": "mandelbrot",
-      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
-      "title": "Mandelbrot Set Explorer",
+      "id": "homepage",
+      "contents": "",
+      "title": "Homepage redesign",
       "eventType": "project",
-      "date": "2016-11-29T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
-      "image": "mandelbrot",
-      "thumbnail": "mandelbrot-thumb",
-      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnail": "homepageThumb",
+      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
       "tags": [
-        "python"
+        "svelte"
       ],
-      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
+      "WIP": true,
+      "excerpt": "",
       "meta": {
-        "relativePath": "mandelbrot.html",
-        "createdAt": "2021-04-02T05:14:17.328Z",
-        "lastModified": "2021-04-02T05:14:17.327Z",
-        "size": 1196,
-        "formattedSize": "1.2 KB"
+        "relativePath": "homepage.html",
+        "createdAt": "2021-04-02T05:14:17.185Z",
+        "lastModified": "2021-04-02T05:14:17.184Z",
+        "size": 220,
+        "formattedSize": "220 Bytes"
       }
     },
     {
@@ -165,24 +164,25 @@
       }
     },
     {
-      "id": "homepage",
-      "contents": "",
-      "title": "Homepage redesign",
+      "id": "mandelbrot",
+      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
+      "title": "Mandelbrot Set Explorer",
       "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnail": "homepageThumb",
-      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
+      "date": "2016-11-29T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
+      "image": "mandelbrot",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
       "tags": [
-        "svelte"
+        "python"
       ],
-      "WIP": true,
-      "excerpt": "",
+      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
       "meta": {
-        "relativePath": "homepage.html",
-        "createdAt": "2021-04-02T05:14:17.185Z",
-        "lastModified": "2021-04-02T05:14:17.184Z",
-        "size": 220,
-        "formattedSize": "220 Bytes"
+        "relativePath": "mandelbrot.html",
+        "createdAt": "2021-04-02T05:14:17.328Z",
+        "lastModified": "2021-04-02T05:14:17.327Z",
+        "size": 1196,
+        "formattedSize": "1.2 KB"
       }
     },
     {
@@ -252,6 +252,29 @@
       }
     },
     {
+      "id": "nudge2",
+      "contents": "",
+      "title": "Full-Stack Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2018-05-01T00:00:00.000Z",
+      "image": "Nudge2",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
+      "tags": [
+        "react",
+        "net",
+        "postgres"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge2.html",
+        "createdAt": "2021-04-02T05:14:17.612Z",
+        "lastModified": "2021-04-02T05:14:17.612Z",
+        "size": 359,
+        "formattedSize": "359 Bytes"
+      }
+    },
+    {
       "id": "qhacks",
       "contents": "<p>QHacks is a hackathon hosted at Queen’s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>\n<p>I also build the front-end of our QHacks application dashboard - the webapp interested students used to apply to the event and give us more information about themselves. Over the month leading up the the event, the application system took in applications from over 1200 interested students - about 400 of which were accepted.</p>\n",
       "title": "Software Developer – QHacks",
@@ -274,29 +297,6 @@
         "lastModified": "2021-04-02T05:14:17.787Z",
         "size": 1093,
         "formattedSize": "1.1 KB"
-      }
-    },
-    {
-      "id": "nudge2",
-      "contents": "",
-      "title": "Full-Stack Developer Intern – Nudge.ai",
-      "eventType": "job",
-      "date": "2018-05-01T00:00:00.000Z",
-      "image": "Nudge2",
-      "thumbnail": "nudge-thumb",
-      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
-      "tags": [
-        "react",
-        "net",
-        "postgres"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "nudge2.html",
-        "createdAt": "2021-04-02T05:14:17.612Z",
-        "lastModified": "2021-04-02T05:14:17.612Z",
-        "size": 359,
-        "formattedSize": "359 Bytes"
       }
     },
     {
@@ -323,22 +323,6 @@
       }
     },
     {
-      "id": "queensEnrolled",
-      "contents": "",
-      "title": "Started at Queen's University",
-      "eventType": "other",
-      "date": "2016-09-01T00:00:00.000Z",
-      "thumbnail": "queens-thumb",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "queensEnrolled.html",
-        "createdAt": "2021-04-02T05:14:18.079Z",
-        "lastModified": "2021-04-02T05:14:18.079Z",
-        "size": 102,
-        "formattedSize": "102 Bytes"
-      }
-    },
-    {
       "id": "queensGraduated",
       "contents": "",
       "title": "Graduated from Queen's University",
@@ -353,6 +337,22 @@
         "lastModified": "2021-04-02T05:14:18.153Z",
         "size": 164,
         "formattedSize": "164 Bytes"
+      }
+    },
+    {
+      "id": "queensEnrolled",
+      "contents": "",
+      "title": "Started at Queen's University",
+      "eventType": "other",
+      "date": "2016-09-01T00:00:00.000Z",
+      "thumbnail": "queens-thumb",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "queensEnrolled.html",
+        "createdAt": "2021-04-02T05:14:18.079Z",
+        "lastModified": "2021-04-02T05:14:18.079Z",
+        "size": 102,
+        "formattedSize": "102 Bytes"
       }
     },
     {
@@ -405,7 +405,7 @@
     },
     {
       "id": "reqwise",
-      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is Questionnaires, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is Organizing Requirements. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload Files and Designs from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive Feedback and Approval from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
+      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is <strong>Questionnaires</strong>, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is <strong>Organizing Requirements</strong>. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload <strong>Files and Designs</strong> from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive <strong>Feedback and Approval</strong> from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
       "title": "ReqWise",
       "eventType": "project",
       "date": "2020-04-02T00:00:00.000Z",
@@ -417,14 +417,14 @@
         "postgres",
         "gcp"
       ],
-      "embed": "<iframe src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
       "repository": "https://github.com/rosslh/ReqWise",
-      "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is hard.</p>",
+      "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2021-04-04T00:17:09.717Z",
-        "lastModified": "2021-04-04T00:17:09.717Z",
-        "size": 2231,
+        "createdAt": "2021-04-04T18:26:55.190Z",
+        "lastModified": "2021-04-04T18:26:55.190Z",
+        "size": 2274,
         "formattedSize": "2.2 KB"
       }
     },
@@ -519,29 +519,6 @@
       }
     },
     {
-      "id": "vibeify",
-      "contents": "",
-      "title": "Vibeify",
-      "eventType": "project",
-      "date": "2020-01-31T00:00:00.000Z",
-      "thumbnail": "vibeify",
-      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
-      "tags": [
-        "tensorflow",
-        "react",
-        "spotify"
-      ],
-      "repository": "https://github.com/rosslh/vibeify",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "vibeify.html",
-        "createdAt": "2021-04-02T05:14:18.667Z",
-        "lastModified": "2021-04-02T05:14:18.666Z",
-        "size": 363,
-        "formattedSize": "363 Bytes"
-      }
-    },
-    {
       "id": "wtformat",
       "contents": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment&#39;s documentation to see how to format dates in various ways.</p>\n<p>In order to make the process of date formatting faster, I created WTFormat.com, which gives you a date which you rewite in your preferred format. The site then generates the Moment format code that would yield that output.</p>\n",
       "title": "WTFormat.com",
@@ -562,6 +539,29 @@
         "lastModified": "2021-04-02T05:14:18.709Z",
         "size": 944,
         "formattedSize": "944 Bytes"
+      }
+    },
+    {
+      "id": "vibeify",
+      "contents": "",
+      "title": "Vibeify",
+      "eventType": "project",
+      "date": "2020-01-31T00:00:00.000Z",
+      "thumbnail": "vibeify",
+      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+      "tags": [
+        "tensorflow",
+        "react",
+        "spotify"
+      ],
+      "repository": "https://github.com/rosslh/vibeify",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "vibeify.html",
+        "createdAt": "2021-04-02T05:14:18.667Z",
+        "lastModified": "2021-04-02T05:14:18.666Z",
+        "size": 363,
+        "formattedSize": "363 Bytes"
       }
     }
   ]

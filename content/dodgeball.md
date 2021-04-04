@@ -5,7 +5,7 @@ date: 2018-01-01
 thumbnailExt: jpg
 thumbnail: dodgeball
 repository: https://github.com/rosslh/Dodgeball-The-Game
-embed: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+embed: <iframe width="480" height="299" src="https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 blurb: A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.
 tags: [unity3d]
 ---
