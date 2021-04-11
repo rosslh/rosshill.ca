@@ -14,6 +14,7 @@
 </script>
 
 <script>
+  import OutboundLink from "$lib/components/OutboundLink.svelte";
   export let post;
 </script>
 
@@ -30,23 +31,23 @@
       Started {post.date}
       {#if post.repository}
         &ndash;
-        <a
+        <OutboundLink
           target="_blank"
           rel="noopener noreferrer"
           href={post.repository}
         >
           GitHub
-        </a>
+        </OutboundLink>
       {/if}
       {#if post.website}
         &ndash;
-        <a
+        <OutboundLink
           target="_blank"
           rel="noopener noreferrer"
           href={post.website}
         >
           Website
-        </a>
+        </OutboundLink>
       {/if}
     </div>
     {#if post.image}
