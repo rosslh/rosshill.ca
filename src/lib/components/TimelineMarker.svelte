@@ -12,7 +12,7 @@
     position: absolute;
     top: 50%;
     background-color: var(--background);
-    border: 3px solid var(--timelineMarker);
+    border: 3px solid var(--timeline);
     height: 0.8rem;
     width: 0.8rem;
     border-radius: 50%;

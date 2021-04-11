@@ -3,6 +3,7 @@
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
+  import OutboundLink from "./OutboundLink.svelte";
 
   export let post;
   export let left;
@@ -80,25 +81,25 @@
         <div class="footer">
           <div class="externalLinks doTransition">
             {#if post.repository}
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.repository}
               >
                 GitHub
-              </a>
+              </OutboundLink>
             {/if}
             {#if post.repository && post.website}
               <span class="smallSlash">/</span>
             {/if}
             {#if post.website}
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noopener noreferrer"
                 href={post.website}
               >
                 Website
-              </a>
+              </OutboundLink>
             {/if}
           </div>
           <div class="typeString doTransition {post.eventType}">

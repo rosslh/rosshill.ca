@@ -15,29 +15,6 @@
   },
   "data": [
     {
-      "id": "dodgeball",
-      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
-      "title": "Dodgeball: The Game",
-      "eventType": "project",
-      "date": "2018-01-01T00:00:00.000Z",
-      "thumbnailExt": "jpg",
-      "thumbnail": "dodgeball",
-      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
-      "embed": "<iframe width=\"480\" height=\"299\" src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
-      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
-      "tags": [
-        "unity3d"
-      ],
-      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
-      "meta": {
-        "relativePath": "dodgeball.html",
-        "createdAt": "2021-04-04T13:04:25.196Z",
-        "lastModified": "2021-04-04T13:04:25.196Z",
-        "size": 1575,
-        "formattedSize": "1.5 KB"
-      }
-    },
-    {
       "id": "caledon",
       "contents": "",
       "title": "Ski Instructor – Caledon Ski Club",
@@ -102,24 +79,6 @@
       }
     },
     {
-      "id": "hurontario",
-      "contents": "",
-      "title": "Counsellor – Camp Hurontario",
-      "eventType": "job",
-      "date": "2014-05-01T00:00:00.000Z",
-      "thumbnail": "hurontario",
-      "thumbnailExt": "jpg",
-      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "hurontario.html",
-        "createdAt": "2021-04-02T05:14:17.235Z",
-        "lastModified": "2021-04-02T05:14:17.234Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
-      }
-    },
-    {
       "id": "homepage",
       "contents": "",
       "title": "Homepage redesign",
@@ -138,6 +97,47 @@
         "lastModified": "2021-04-02T05:14:17.184Z",
         "size": 220,
         "formattedSize": "220 Bytes"
+      }
+    },
+    {
+      "id": "dodgeball",
+      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
+      "title": "Dodgeball: The Game",
+      "eventType": "project",
+      "date": "2018-01-01T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "thumbnail": "dodgeball",
+      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
+      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
+      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
+      "tags": [
+        "unity3d"
+      ],
+      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
+      "meta": {
+        "relativePath": "dodgeball.html",
+        "createdAt": "2021-04-04T18:35:50.321Z",
+        "lastModified": "2021-04-04T18:35:50.321Z",
+        "size": 1550,
+        "formattedSize": "1.5 KB"
+      }
+    },
+    {
+      "id": "hurontario",
+      "contents": "",
+      "title": "Counsellor – Camp Hurontario",
+      "eventType": "job",
+      "date": "2014-05-01T00:00:00.000Z",
+      "thumbnail": "hurontario",
+      "thumbnailExt": "jpg",
+      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "hurontario.html",
+        "createdAt": "2021-04-02T05:14:17.235Z",
+        "lastModified": "2021-04-02T05:14:17.234Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
       }
     },
     {
@@ -380,30 +380,6 @@
       }
     },
     {
-      "id": "robot",
-      "contents": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we’ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>\n",
-      "title": "Drawing robot",
-      "eventType": "project",
-      "date": "2018-09-10T00:00:00.000Z",
-      "thumbnailExt": "jpg",
-      "imageExt": "jpg",
-      "image": "robot",
-      "thumbnail": "arduino",
-      "blurb": "A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.",
-      "tags": [
-        "arduino",
-        "rpi"
-      ],
-      "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
-      "meta": {
-        "relativePath": "robot.html",
-        "createdAt": "2021-04-02T05:14:18.376Z",
-        "lastModified": "2021-04-02T05:14:18.375Z",
-        "size": 949,
-        "formattedSize": "949 Bytes"
-      }
-    },
-    {
       "id": "reqwise",
       "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is <strong>Questionnaires</strong>, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is <strong>Organizing Requirements</strong>. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload <strong>Files and Designs</strong> from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive <strong>Feedback and Approval</strong> from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
       "title": "ReqWise",
@@ -453,25 +429,27 @@
       }
     },
     {
-      "id": "traffic",
-      "contents": "",
-      "title": "Traffic Light Optimization",
+      "id": "robot",
+      "contents": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we’ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>\n",
+      "title": "Drawing robot",
       "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnailExt": "png",
-      "thumbnail": "traffic",
-      "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
-      "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
+      "date": "2018-09-10T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "imageExt": "jpg",
+      "image": "robot",
+      "thumbnail": "arduino",
+      "blurb": "A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.",
       "tags": [
-        "python"
+        "arduino",
+        "rpi"
       ],
-      "excerpt": "",
+      "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
       "meta": {
-        "relativePath": "traffic.html",
-        "createdAt": "2021-04-02T05:14:18.519Z",
-        "lastModified": "2021-04-02T05:14:18.518Z",
-        "size": 370,
-        "formattedSize": "370 Bytes"
+        "relativePath": "robot.html",
+        "createdAt": "2021-04-02T05:14:18.376Z",
+        "lastModified": "2021-04-02T05:14:18.375Z",
+        "size": 949,
+        "formattedSize": "949 Bytes"
       }
     },
     {
@@ -496,26 +474,48 @@
       }
     },
     {
-      "id": "verafin",
+      "id": "traffic",
       "contents": "",
-      "title": "Software Developer Intern – Verafin",
-      "eventType": "job",
-      "date": "2019-05-01T00:00:00.000Z",
-      "thumbnail": "verafin-thumb",
-      "image": "verafin",
-      "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
+      "title": "Traffic Light Optimization",
+      "eventType": "project",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnailExt": "png",
+      "thumbnail": "traffic",
+      "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
+      "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
       "tags": [
-        "java",
-        "postgres",
-        "backbone"
+        "python"
       ],
       "excerpt": "",
       "meta": {
-        "relativePath": "verafin.html",
-        "createdAt": "2021-04-02T05:14:18.618Z",
-        "lastModified": "2021-04-02T05:14:18.618Z",
-        "size": 412,
-        "formattedSize": "412 Bytes"
+        "relativePath": "traffic.html",
+        "createdAt": "2021-04-02T05:14:18.519Z",
+        "lastModified": "2021-04-02T05:14:18.518Z",
+        "size": 370,
+        "formattedSize": "370 Bytes"
+      }
+    },
+    {
+      "id": "vibeify",
+      "contents": "",
+      "title": "Vibeify",
+      "eventType": "project",
+      "date": "2020-01-31T00:00:00.000Z",
+      "thumbnail": "vibeify",
+      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+      "tags": [
+        "tensorflow",
+        "react",
+        "spotify"
+      ],
+      "repository": "https://github.com/rosslh/vibeify",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "vibeify.html",
+        "createdAt": "2021-04-02T05:14:18.667Z",
+        "lastModified": "2021-04-02T05:14:18.666Z",
+        "size": 363,
+        "formattedSize": "363 Bytes"
       }
     },
     {
@@ -542,26 +542,26 @@
       }
     },
     {
-      "id": "vibeify",
+      "id": "verafin",
       "contents": "",
-      "title": "Vibeify",
-      "eventType": "project",
-      "date": "2020-01-31T00:00:00.000Z",
-      "thumbnail": "vibeify",
-      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+      "title": "Software Developer Intern – Verafin",
+      "eventType": "job",
+      "date": "2019-05-01T00:00:00.000Z",
+      "thumbnail": "verafin-thumb",
+      "image": "verafin",
+      "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
       "tags": [
-        "tensorflow",
-        "react",
-        "spotify"
+        "java",
+        "postgres",
+        "backbone"
       ],
-      "repository": "https://github.com/rosslh/vibeify",
       "excerpt": "",
       "meta": {
-        "relativePath": "vibeify.html",
-        "createdAt": "2021-04-02T05:14:18.667Z",
-        "lastModified": "2021-04-02T05:14:18.666Z",
-        "size": 363,
-        "formattedSize": "363 Bytes"
+        "relativePath": "verafin.html",
+        "createdAt": "2021-04-02T05:14:18.618Z",
+        "lastModified": "2021-04-02T05:14:18.618Z",
+        "size": 412,
+        "formattedSize": "412 Bytes"
       }
     }
   ]

@@ -61,7 +61,6 @@ body {
   --timeline: #66666F;
   --postBorder: #CBCBD0;
   --sidebarBorder: #CBCBD0;
-  --timelineMarker: #52525B;
   --sidebarBackground: #F3F4F6;
   --background: #F9FAFB;
   --postBackground: #F9FAFB;
@@ -81,7 +80,6 @@ body {
     --timeline: #516170;
     --postBorder: #343d4a;
     --sidebarBorder: #343d4a;
-    --timelineMarker: #516170;
     --sidebarBackground: #212733;
     --background: #1A1F28;
     --postBackground: #212733;
@@ -101,7 +99,6 @@ html body[data-theme="light"] {
   --timeline: #66666F;
   --postBorder: #CBCBD0;
   --sidebarBorder: #CBCBD0;
-  --timelineMarker: #52525B;
   --sidebarBackground: #F3F4F6;
   --background: #F9FAFB;
   --postBackground: #F9FAFB;
@@ -120,7 +117,6 @@ html body[data-theme="dark"] {
   --timeline: #516170;
   --postBorder: #343d4a;
   --sidebarBorder: #343d4a;
-  --timelineMarker: #516170;
   --sidebarBackground: #212733;
   --background: #1A1F28;
   --postBackground: #212733;
