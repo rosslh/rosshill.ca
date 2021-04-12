@@ -6,5 +6,5 @@
 			"$lib/*": ["src/lib/*"]
 		}
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte", "redirectsGen.js"]
+	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte", "_redirectsGen.js"]
 }

@@ -4,8 +4,7 @@
   "description": "Ross Hill's homepage",
   "type": "module",
   "scripts": {
-    "redirectsGen": "node --experimental-json-modules redirectsGen.js",
-    "build": "rm -rf .svelte/ && rm -rf build && npm run contentGen && npm run redirectsGen && npm run webpGen && svelte-kit build",
+    "build": "rm -rf .svelte/ && rm -rf build && npm run contentGen && npm run webpGen && svelte-kit build",
     "contentGen": "markdown-json -c markdown-config.json",
     "dev": "svelte-kit dev",
     "export": "npm run build && cp static/resume.pdf build/resume.pdf",
