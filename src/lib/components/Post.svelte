@@ -81,11 +81,7 @@
         <div class="footer">
           <div class="externalLinks doTransition">
             {#if post.repository}
-              <OutboundLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href={post.repository}
-              >
+              <OutboundLink href={post.repository}>
                 GitHub
               </OutboundLink>
             {/if}
@@ -93,11 +89,7 @@
               <span class="smallSlash">/</span>
             {/if}
             {#if post.website}
-              <OutboundLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href={post.website}
-              >
+              <OutboundLink href={post.website}>
                 Website
               </OutboundLink>
             {/if}

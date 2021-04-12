@@ -31,21 +31,13 @@
       Started {post.date}
       {#if post.repository}
         &ndash;
-        <OutboundLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href={post.repository}
-        >
+        <OutboundLink href={post.repository}>
           GitHub
         </OutboundLink>
       {/if}
       {#if post.website}
         &ndash;
-        <OutboundLink
-          target="_blank"
-          rel="noopener noreferrer"
-          href={post.website}
-        >
+        <OutboundLink href={post.website}>
           Website
         </OutboundLink>
       {/if}

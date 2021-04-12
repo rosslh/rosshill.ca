@@ -21,19 +21,11 @@
       <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
     </p>
     <p class="subtitle">
-      <OutboundLink
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/rosslh"
-      >
+      <OutboundLink href="https://github.com/rosslh">
         GitHub
       </OutboundLink>
       <span class="smallSlash">/</span>
-      <OutboundLink
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/rosslh"
-      >
+      <OutboundLink href="https://www.linkedin.com/in/rosslh">
         LinkedIn
       </OutboundLink>
       <span class="smallSlash">/</span>
