@@ -1,5 +1,21 @@
 const staticAdapter = require('@sveltejs/adapter-static');
 const pkg = require('./package.json');
+const { data } = require("./src/lib/data.json");
+const slugify = require("slugify");
+
+const pages = ['*'];
+const getRedirect = (url) => `/redirect/${encodeURIComponent(url)}`;
+data.forEach(entry => {
+  if (entry.contents) {
+    pages.push(`/item/${slugify(entry.title).toLowerCase()}`);
+  }
+  if (entry.website) {
+    pages.push(getRedirect(entry.website));
+  }
+  if (entry.repository) {
+    pages.push(getRedirect(entry.repository));
+  }
+});
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -24,7 +40,7 @@ module.exports = {
 			crawl: true,
 			enabled: true,
 			force: false,
-			pages: ['*']
+			pages
 		},
 
 		adapter: staticAdapter(),

@@ -15,23 +15,6 @@
   },
   "data": [
     {
-      "id": "caledon",
-      "contents": "",
-      "title": "Ski Instructor – Caledon Ski Club",
-      "eventType": "job",
-      "date": "2014-12-01T00:00:00.000Z",
-      "thumbnail": "caledon",
-      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "caledon.html",
-        "createdAt": "2021-04-02T05:14:16.597Z",
-        "lastModified": "2021-04-02T05:14:16.596Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
-      }
-    },
-    {
       "id": "doctalk",
       "contents": "",
       "title": "Started as a developer at Doctalk",
@@ -52,6 +35,23 @@
         "lastModified": "2021-04-02T05:14:16.915Z",
         "size": 608,
         "formattedSize": "608 Bytes"
+      }
+    },
+    {
+      "id": "caledon",
+      "contents": "",
+      "title": "Ski Instructor – Caledon Ski Club",
+      "eventType": "job",
+      "date": "2014-12-01T00:00:00.000Z",
+      "thumbnail": "caledon",
+      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "caledon.html",
+        "createdAt": "2021-04-02T05:14:16.597Z",
+        "lastModified": "2021-04-02T05:14:16.596Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
       }
     },
     {
@@ -79,27 +79,6 @@
       }
     },
     {
-      "id": "homepage",
-      "contents": "",
-      "title": "Homepage redesign",
-      "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnail": "homepageThumb",
-      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
-      "tags": [
-        "svelte"
-      ],
-      "WIP": true,
-      "excerpt": "",
-      "meta": {
-        "relativePath": "homepage.html",
-        "createdAt": "2021-04-02T05:14:17.185Z",
-        "lastModified": "2021-04-02T05:14:17.184Z",
-        "size": 220,
-        "formattedSize": "220 Bytes"
-      }
-    },
-    {
       "id": "dodgeball",
       "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
       "title": "Dodgeball: The Game",
@@ -123,21 +102,24 @@
       }
     },
     {
-      "id": "hurontario",
+      "id": "homepage",
       "contents": "",
-      "title": "Counsellor – Camp Hurontario",
-      "eventType": "job",
-      "date": "2014-05-01T00:00:00.000Z",
-      "thumbnail": "hurontario",
-      "thumbnailExt": "jpg",
-      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "title": "Homepage redesign",
+      "eventType": "project",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnail": "homepageThumb",
+      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
+      "tags": [
+        "svelte"
+      ],
+      "WIP": true,
       "excerpt": "",
       "meta": {
-        "relativePath": "hurontario.html",
-        "createdAt": "2021-04-02T05:14:17.235Z",
-        "lastModified": "2021-04-02T05:14:17.234Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
+        "relativePath": "homepage.html",
+        "createdAt": "2021-04-02T05:14:17.185Z",
+        "lastModified": "2021-04-02T05:14:17.184Z",
+        "size": 220,
+        "formattedSize": "220 Bytes"
       }
     },
     {
@@ -183,6 +165,24 @@
         "lastModified": "2021-04-02T05:14:17.327Z",
         "size": 1196,
         "formattedSize": "1.2 KB"
+      }
+    },
+    {
+      "id": "hurontario",
+      "contents": "",
+      "title": "Counsellor – Camp Hurontario",
+      "eventType": "job",
+      "date": "2014-05-01T00:00:00.000Z",
+      "thumbnail": "hurontario",
+      "thumbnailExt": "jpg",
+      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "hurontario.html",
+        "createdAt": "2021-04-02T05:14:17.235Z",
+        "lastModified": "2021-04-02T05:14:17.234Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
       }
     },
     {
@@ -252,29 +252,6 @@
       }
     },
     {
-      "id": "nudge2",
-      "contents": "",
-      "title": "Full-Stack Developer Intern – Nudge.ai",
-      "eventType": "job",
-      "date": "2018-05-01T00:00:00.000Z",
-      "image": "Nudge2",
-      "thumbnail": "nudge-thumb",
-      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
-      "tags": [
-        "react",
-        "net",
-        "postgres"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "nudge2.html",
-        "createdAt": "2021-04-02T05:14:17.612Z",
-        "lastModified": "2021-04-02T05:14:17.612Z",
-        "size": 359,
-        "formattedSize": "359 Bytes"
-      }
-    },
-    {
       "id": "qhacks",
       "contents": "<p>QHacks is a hackathon hosted at Queen’s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>\n<p>I also build the front-end of our QHacks application dashboard - the webapp interested students used to apply to the event and give us more information about themselves. Over the month leading up the the event, the application system took in applications from over 1200 interested students - about 400 of which were accepted.</p>\n",
       "title": "Software Developer – QHacks",
@@ -297,6 +274,29 @@
         "lastModified": "2021-04-02T05:14:17.787Z",
         "size": 1093,
         "formattedSize": "1.1 KB"
+      }
+    },
+    {
+      "id": "nudge2",
+      "contents": "",
+      "title": "Full-Stack Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2018-05-01T00:00:00.000Z",
+      "image": "Nudge2",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
+      "tags": [
+        "react",
+        "net",
+        "postgres"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge2.html",
+        "createdAt": "2021-04-02T05:14:17.612Z",
+        "lastModified": "2021-04-02T05:14:17.612Z",
+        "size": 359,
+        "formattedSize": "359 Bytes"
       }
     },
     {
@@ -323,6 +323,22 @@
       }
     },
     {
+      "id": "queensEnrolled",
+      "contents": "",
+      "title": "Started at Queen's University",
+      "eventType": "other",
+      "date": "2016-09-01T00:00:00.000Z",
+      "thumbnail": "queens-thumb",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "queensEnrolled.html",
+        "createdAt": "2021-04-02T05:14:18.079Z",
+        "lastModified": "2021-04-02T05:14:18.079Z",
+        "size": 102,
+        "formattedSize": "102 Bytes"
+      }
+    },
+    {
       "id": "queensGraduated",
       "contents": "",
       "title": "Graduated from Queen's University",
@@ -337,22 +353,6 @@
         "lastModified": "2021-04-02T05:14:18.153Z",
         "size": 164,
         "formattedSize": "164 Bytes"
-      }
-    },
-    {
-      "id": "queensEnrolled",
-      "contents": "",
-      "title": "Started at Queen's University",
-      "eventType": "other",
-      "date": "2016-09-01T00:00:00.000Z",
-      "thumbnail": "queens-thumb",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "queensEnrolled.html",
-        "createdAt": "2021-04-02T05:14:18.079Z",
-        "lastModified": "2021-04-02T05:14:18.079Z",
-        "size": 102,
-        "formattedSize": "102 Bytes"
       }
     },
     {
@@ -453,6 +453,28 @@
       }
     },
     {
+      "id": "traffic",
+      "contents": "",
+      "title": "Traffic Light Optimization",
+      "eventType": "project",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnailExt": "png",
+      "thumbnail": "traffic",
+      "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
+      "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
+      "tags": [
+        "python"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "traffic.html",
+        "createdAt": "2021-04-02T05:14:18.519Z",
+        "lastModified": "2021-04-02T05:14:18.518Z",
+        "size": 370,
+        "formattedSize": "370 Bytes"
+      }
+    },
+    {
       "id": "unitransform",
       "contents": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>\n",
       "title": "Unitransform",
@@ -474,25 +496,26 @@
       }
     },
     {
-      "id": "traffic",
+      "id": "verafin",
       "contents": "",
-      "title": "Traffic Light Optimization",
-      "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnailExt": "png",
-      "thumbnail": "traffic",
-      "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
-      "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
+      "title": "Software Developer Intern – Verafin",
+      "eventType": "job",
+      "date": "2019-05-01T00:00:00.000Z",
+      "thumbnail": "verafin-thumb",
+      "image": "verafin",
+      "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
       "tags": [
-        "python"
+        "java",
+        "postgres",
+        "backbone"
       ],
       "excerpt": "",
       "meta": {
-        "relativePath": "traffic.html",
-        "createdAt": "2021-04-02T05:14:18.519Z",
-        "lastModified": "2021-04-02T05:14:18.518Z",
-        "size": 370,
-        "formattedSize": "370 Bytes"
+        "relativePath": "verafin.html",
+        "createdAt": "2021-04-02T05:14:18.618Z",
+        "lastModified": "2021-04-02T05:14:18.618Z",
+        "size": 412,
+        "formattedSize": "412 Bytes"
       }
     },
     {
@@ -539,29 +562,6 @@
         "lastModified": "2021-04-02T05:14:18.709Z",
         "size": 944,
         "formattedSize": "944 Bytes"
-      }
-    },
-    {
-      "id": "verafin",
-      "contents": "",
-      "title": "Software Developer Intern – Verafin",
-      "eventType": "job",
-      "date": "2019-05-01T00:00:00.000Z",
-      "thumbnail": "verafin-thumb",
-      "image": "verafin",
-      "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
-      "tags": [
-        "java",
-        "postgres",
-        "backbone"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "verafin.html",
-        "createdAt": "2021-04-02T05:14:18.618Z",
-        "lastModified": "2021-04-02T05:14:18.618Z",
-        "size": 412,
-        "formattedSize": "412 Bytes"
       }
     }
   ]
