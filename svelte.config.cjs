@@ -3,8 +3,8 @@ const pkg = require('./package.json');
 const { data } = require("./src/lib/data.json");
 const slugify = require("slugify");
 
-const pages = ['*'];
 const getRedirect = (url) => `/redirect/${encodeURIComponent(url)}`;
+const pages = ['*', getRedirect('https://www.linkedin.com/in/rosslh'), getRedirect('https://github.com/rosslh')];
 data.forEach(entry => {
   if (entry.contents) {
     pages.push(`/item/${slugify(entry.title, { replacement: '-', lower: true, remove: /[:]/ })}`);

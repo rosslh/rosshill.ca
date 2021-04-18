@@ -15,6 +15,29 @@
   },
   "data": [
     {
+      "id": "dodgeball",
+      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
+      "title": "Dodgeball: The Game",
+      "eventType": "project",
+      "date": "2018-01-01T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "thumbnail": "dodgeball",
+      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
+      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
+      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
+      "tags": [
+        "unity3d"
+      ],
+      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
+      "meta": {
+        "relativePath": "dodgeball.html",
+        "createdAt": "2021-04-04T18:35:50.321Z",
+        "lastModified": "2021-04-04T18:35:50.321Z",
+        "size": 1550,
+        "formattedSize": "1.5 KB"
+      }
+    },
+    {
       "id": "doctalk",
       "contents": "",
       "title": "Started as a developer at Doctalk",
@@ -79,29 +102,6 @@
       }
     },
     {
-      "id": "dodgeball",
-      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
-      "title": "Dodgeball: The Game",
-      "eventType": "project",
-      "date": "2018-01-01T00:00:00.000Z",
-      "thumbnailExt": "jpg",
-      "thumbnail": "dodgeball",
-      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
-      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
-      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
-      "tags": [
-        "unity3d"
-      ],
-      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
-      "meta": {
-        "relativePath": "dodgeball.html",
-        "createdAt": "2021-04-04T18:35:50.321Z",
-        "lastModified": "2021-04-04T18:35:50.321Z",
-        "size": 1550,
-        "formattedSize": "1.5 KB"
-      }
-    },
-    {
       "id": "homepage",
       "contents": "",
       "title": "Homepage redesign",
@@ -120,6 +120,24 @@
         "lastModified": "2021-04-02T05:14:17.184Z",
         "size": 220,
         "formattedSize": "220 Bytes"
+      }
+    },
+    {
+      "id": "hurontario",
+      "contents": "",
+      "title": "Counsellor – Camp Hurontario",
+      "eventType": "job",
+      "date": "2014-05-01T00:00:00.000Z",
+      "thumbnail": "hurontario",
+      "thumbnailExt": "jpg",
+      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "hurontario.html",
+        "createdAt": "2021-04-02T05:14:17.235Z",
+        "lastModified": "2021-04-02T05:14:17.234Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
       }
     },
     {
@@ -168,24 +186,6 @@
       }
     },
     {
-      "id": "hurontario",
-      "contents": "",
-      "title": "Counsellor – Camp Hurontario",
-      "eventType": "job",
-      "date": "2014-05-01T00:00:00.000Z",
-      "thumbnail": "hurontario",
-      "thumbnailExt": "jpg",
-      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "hurontario.html",
-        "createdAt": "2021-04-02T05:14:17.235Z",
-        "lastModified": "2021-04-02T05:14:17.234Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
-      }
-    },
-    {
       "id": "metaProjection",
       "contents": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.</p>\n<p>I made this project during the run-up to the 2019 Canadian federal election because I found myself checking multiple electoral projection sites that would sometimes have conflicting information. MetaProjection.ca gives a balanced overview of the election by combining the results of multiple reputable poll-trackers.</p>\n<p>MetaProjection was built with Gatsby, a React.js static site generator. First, the projection sources are scraped for their data, which is saved into json files. This data is then queried from the React client using GraphQL.</p>\n",
       "title": "MetaProjection",
@@ -230,25 +230,26 @@
       }
     },
     {
-      "id": "nudge1",
+      "id": "nudge2",
       "contents": "",
-      "title": "Front End Developer Intern – Nudge.ai",
+      "title": "Full-Stack Developer Intern – Nudge.ai",
       "eventType": "job",
-      "date": "2017-05-01T00:00:00.000Z",
-      "image": "Nudge1",
+      "date": "2018-05-01T00:00:00.000Z",
+      "image": "Nudge2",
       "thumbnail": "nudge-thumb",
-      "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
+      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
       "tags": [
         "react",
-        "redux"
+        "net",
+        "postgres"
       ],
       "excerpt": "",
       "meta": {
-        "relativePath": "nudge1.html",
-        "createdAt": "2021-04-02T05:14:17.551Z",
-        "lastModified": "2021-04-02T05:14:17.550Z",
-        "size": 429,
-        "formattedSize": "429 Bytes"
+        "relativePath": "nudge2.html",
+        "createdAt": "2021-04-02T05:14:17.612Z",
+        "lastModified": "2021-04-02T05:14:17.612Z",
+        "size": 359,
+        "formattedSize": "359 Bytes"
       }
     },
     {
@@ -277,29 +278,6 @@
       }
     },
     {
-      "id": "nudge2",
-      "contents": "",
-      "title": "Full-Stack Developer Intern – Nudge.ai",
-      "eventType": "job",
-      "date": "2018-05-01T00:00:00.000Z",
-      "image": "Nudge2",
-      "thumbnail": "nudge-thumb",
-      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
-      "tags": [
-        "react",
-        "net",
-        "postgres"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "nudge2.html",
-        "createdAt": "2021-04-02T05:14:17.612Z",
-        "lastModified": "2021-04-02T05:14:17.612Z",
-        "size": 359,
-        "formattedSize": "359 Bytes"
-      }
-    },
-    {
       "id": "QTMA",
       "contents": "",
       "title": "Software Developer – QTMA",
@@ -320,6 +298,28 @@
         "lastModified": "2021-04-02T05:14:17.998Z",
         "size": 345,
         "formattedSize": "345 Bytes"
+      }
+    },
+    {
+      "id": "nudge1",
+      "contents": "",
+      "title": "Front End Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2017-05-01T00:00:00.000Z",
+      "image": "Nudge1",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
+      "tags": [
+        "react",
+        "redux"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge1.html",
+        "createdAt": "2021-04-02T05:14:17.551Z",
+        "lastModified": "2021-04-02T05:14:17.550Z",
+        "size": 429,
+        "formattedSize": "429 Bytes"
       }
     },
     {
@@ -405,30 +405,6 @@
       }
     },
     {
-      "id": "rust-fractals",
-      "contents": "",
-      "title": "Mandelbrot Set Explorer v2",
-      "eventType": "project",
-      "date": "2021-01-01T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
-      "website": "https://rust-mandelbrot.netlify.app/",
-      "thumbnail": "mandelbrot-thumb",
-      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Built with Rust, compiled to WebAssembly, running on Web Workers.",
-      "tags": [
-        "rust",
-        "wasm",
-        "typescript"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "rust-fractals.html",
-        "createdAt": "2021-04-02T05:14:18.460Z",
-        "lastModified": "2021-04-02T05:14:18.459Z",
-        "size": 401,
-        "formattedSize": "401 Bytes"
-      }
-    },
-    {
       "id": "robot",
       "contents": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we’ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>\n",
       "title": "Drawing robot",
@@ -450,6 +426,30 @@
         "lastModified": "2021-04-02T05:14:18.375Z",
         "size": 949,
         "formattedSize": "949 Bytes"
+      }
+    },
+    {
+      "id": "rust-fractals",
+      "contents": "",
+      "title": "Mandelbrot Set Explorer v2",
+      "eventType": "project",
+      "date": "2021-01-01T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
+      "website": "https://rust-mandelbrot.netlify.app/",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Built with Rust, compiled to WebAssembly, running on Web Workers.",
+      "tags": [
+        "rust",
+        "wasm",
+        "typescript"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "rust-fractals.html",
+        "createdAt": "2021-04-02T05:14:18.460Z",
+        "lastModified": "2021-04-02T05:14:18.459Z",
+        "size": 401,
+        "formattedSize": "401 Bytes"
       }
     },
     {
