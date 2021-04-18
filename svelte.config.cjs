@@ -7,7 +7,7 @@ const pages = ['*'];
 const getRedirect = (url) => `/redirect/${encodeURIComponent(url)}`;
 data.forEach(entry => {
   if (entry.contents) {
-    pages.push(`/item/${slugify(entry.title).toLowerCase()}`);
+    pages.push(`/item/${slugify(entry.title, { replacement: '-', lower: true, remove: /[:]/ })}`);
   }
   if (entry.website) {
     pages.push(getRedirect(entry.website));

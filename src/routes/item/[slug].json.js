@@ -7,7 +7,7 @@ const posts = Object.values(timeline)
   .map(post => {
     return {
       title: post.title,
-      slug: slugify(post.title).toLowerCase(),
+      slug: slugify(post.title, { replacement: '-', lower: true, remove: /[:]/ }),
       date: dateformat(post.date, "mmmm yyyy"),
       website: post.website,
       repository: post.repository,
