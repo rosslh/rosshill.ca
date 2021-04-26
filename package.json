@@ -13,7 +13,7 @@
     "webpGen": "cd static && webpc -r && cd .."
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.4",
+    "@sveltejs/adapter-static": "^1.0.0-next.6",
     "@sveltejs/kit": "1.0.0-next.84",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
