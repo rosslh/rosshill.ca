@@ -13,8 +13,8 @@
     "webpGen": "cd static && webpc -r && cd .."
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.4",
-    "@sveltejs/kit": "1.0.0-next.90",
+    "@sveltejs/adapter-static": "1.0.0-next.4",
+    "@sveltejs/kit": "1.0.0-next.84",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
     "eslint": "^7.23.0",
@@ -23,7 +23,7 @@
     "slugify": "^1.5.0",
     "svelte": "^3.38.0",
     "svelte-icons": "^2.1.0",
-    "vite": "^2.1.4",
+    "vite": "2.1.4",
     "webp-converter-cli": "0.0.5"
   },
   "engines": {
