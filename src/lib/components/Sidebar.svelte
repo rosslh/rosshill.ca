@@ -29,9 +29,7 @@
         LinkedIn
       </OutboundLink>
       <span class="smallSlash">/</span>
-      <a
-        href="/resume.pdf"
-      >
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume
       </a>
     </p>
