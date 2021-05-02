@@ -45,7 +45,7 @@ module.exports = {
 
 		adapter: staticAdapter(),
 
-		target: 'body',
+		target: '#svelte',
 
 		vite: {
 			ssr: {
