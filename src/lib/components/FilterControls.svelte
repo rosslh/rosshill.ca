@@ -1,14 +1,12 @@
 <script>
   export let showCategories;
-  export let noAnimation;
   import FilterButton from "./FilterButton.svelte";
 
   const toggleCategory = (category) => {
-    noAnimation = true;
     if (showCategories.includes(category)) {
       showCategories = showCategories.filter((x) => x !== category);
     } else {
-      showCategories = [...showCategories, category]; // push doesn't update state
+      showCategories = [...showCategories, category];
     }
   };
   $: jobActive = showCategories.includes("job");
@@ -19,19 +17,22 @@
 <div class="filterControls">
   <FilterButton
     active={jobActive}
-    id="job"
     callback={() => toggleCategory("job")}
-  >Work Experience</FilterButton>
+    id="job">
+    Work Experience
+  </FilterButton>
   <FilterButton
     active={projectActive}
-    id="project"
     callback={() => toggleCategory("project")}
-  >Projects</FilterButton>
+    id="project">
+    Projects
+  </FilterButton>
   <FilterButton
     active={orgActive}
-    id="org"
     callback={() => toggleCategory("org")}
-  >Organizations</FilterButton>
+    id="org">
+    Organizations
+  </FilterButton>
 </div>
 
 <style>

@@ -4,11 +4,19 @@
   export let active;
   export let callback;
   export let id;
+
+  let preventTransition = false;
+
+  const handleClick = () => {
+    preventTransition = true;
+    callback();
+    setTimeout(() => { preventTransition=false; }, 500);
+  };
 </script>
 
 <button
-  class="doTransition {id}Button {active ? 'active' : 'inactive'}"
-  on:click={callback}
+  class="{id}Button {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
+  on:click={handleClick}
 >
   <span class="symbol">
     {#if active}
@@ -48,12 +56,16 @@
     align-items: center;
   }
 
+  :global(button > .symbol > svg) {
+    overflow: visible;
+  }
+
   button .text {
     line-height: 1.2rem;
   }
 
   button.inactive {
-    opacity: 0.8;
+    border-color: var(--postBorder) !important;
   }
 
   button.active {

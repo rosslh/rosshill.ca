@@ -4,8 +4,7 @@
 
 <div
   aria-hidden="true"
-  class="timelineMarker doTransition {left ? 'left' : 'right'}"
-/>
+  class="timelineMarker doTransition {left ? 'left' : 'right'}" />
 
 <style>
   div.timelineMarker {

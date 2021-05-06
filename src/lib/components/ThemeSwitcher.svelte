@@ -42,8 +42,8 @@
       </span>
       <span class="text">
         {#if nextTheme === "dark"}Dark{:else}Light{/if}
-        mode</span
-      >
+        mode
+      </span>
     {/if}
   </button>
 </div>

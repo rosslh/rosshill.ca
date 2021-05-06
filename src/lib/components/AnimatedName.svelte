@@ -25,7 +25,7 @@
   <title>Ross Hill</title>
   <g>
     {#if showTitle}
-      <!-- TODO: You shouldn't need the setTimeout -->
+      <!-- TODO: Why do you need the setTimeout? -->
       <path
         class={pathClass}
         on:introstart={() => {

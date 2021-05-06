@@ -212,6 +212,7 @@
 
   div.post div.typeString {
     font-size: 0.75rem;
+    background-color: var(--postBackground);
   }
 
   div.post div.typeString.job {

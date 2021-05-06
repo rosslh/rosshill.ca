@@ -19,7 +19,6 @@
   };
 
   let showCategories = [];
-  let noAnimation = false;
 
   $: postFilter = post =>
     !showCategories.length || showCategories.includes(post.eventType);
@@ -31,7 +30,7 @@
 
 <div class="headingWrapper contentWrapper ">
   <h2>Timeline</h2>
-  <FilterControls bind:showCategories bind:noAnimation />
+  <FilterControls bind:showCategories />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">

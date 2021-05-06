@@ -56,7 +56,7 @@ body {
 body {
   --job: #DC2626;
   --project: #2563EB;
-  --org: #059669;
+  --org: #048159;
   --subtitle: #44444C;
   --timeline: #66666F;
   --postBorder: #CBCBD0;
@@ -93,7 +93,7 @@ body {
 html body[data-theme="light"] {
   --job: #DC2626;
   --project: #2563EB;
-  --org: #059669;
+  --org: #048159;
 
   --subtitle: #44444C;
   --timeline: #66666F;
