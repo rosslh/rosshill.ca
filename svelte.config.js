@@ -1,7 +1,9 @@
-const staticAdapter = require('@sveltejs/adapter-static');
-const pkg = require('./package.json');
-const { data } = require("./src/lib/data.json");
-const slugify = require("slugify");
+import staticAdapter from '@sveltejs/adapter-static';
+import slugify from "slugify";
+import fs from "fs";
+
+const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.meta.url), 'utf8'));
+const { data } = getJson("./src/lib/data.json");
 
 const getRedirect = (url) => `/redirect/${encodeURIComponent(url)}`;
 const pages = ['*', getRedirect('https://www.linkedin.com/in/rosslh'), getRedirect('https://github.com/rosslh')];
@@ -18,7 +20,7 @@ data.forEach(entry => {
 });
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+export default {
 	kit: {
 		amp: false,
 		// appDir: '_app',
@@ -46,11 +48,6 @@ module.exports = {
 		adapter: staticAdapter(),
 
 		target: '#svelte',
-
-		vite: {
-			ssr: {
-				noExternal: Object.keys(pkg.dependencies || {})
-			}
-		}
+    vite: () => ({})
 	}
 };

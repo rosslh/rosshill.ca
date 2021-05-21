@@ -2,7 +2,8 @@
   body, body * {
     animation-delay: 0ms !important;
     animation-duration: 1ms !important;
-    transition: none !important;
+    transition-delay: 0ms !important;
+    transition-duration: 1ms !important;
   }
 }
 
