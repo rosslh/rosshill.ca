@@ -7,3 +7,5 @@ node_modules
 .svelte
 .vscode/
 .vscode
+.svelte-kit
+.svelte-kit/

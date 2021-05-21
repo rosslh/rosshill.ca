@@ -14,7 +14,7 @@
 
   $: pathClass = logoHasFill ? "logoHasFill" : "initial";
 
-  $: logoFillDelay = reduceMotion ? 0 : 1000;
+  const logoFillDelay = reduceMotion ? 0 : 1000;
 </script>
 
 <svg
