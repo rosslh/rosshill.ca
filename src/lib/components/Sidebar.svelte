@@ -1,7 +1,7 @@
 <script>
   import Separator from "./Separator.svelte";
   import AnimatedName from "./AnimatedName.svelte";
-  import OutboundLink from "./OutboundLink.svelte";
+  import ExternalLink from "./ExternalLink.svelte";
 </script>
 
 <div class="sidebar doTransition">
@@ -21,13 +21,13 @@
       <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
     </p>
     <p class="subtitle">
-      <OutboundLink href="https://github.com/rosslh">
+      <ExternalLink href="https://github.com/rosslh">
         GitHub
-      </OutboundLink>
+      </ExternalLink>
       <span class="smallSlash">/</span>
-      <OutboundLink href="https://www.linkedin.com/in/rosslh">
+      <ExternalLink href="https://www.linkedin.com/in/rosslh">
         LinkedIn
-      </OutboundLink>
+      </ExternalLink>
       <span class="smallSlash">/</span>
       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume

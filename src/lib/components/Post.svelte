@@ -3,7 +3,8 @@
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
-  import OutboundLink from "./OutboundLink.svelte";
+  import ExternalLink from "./ExternalLink.svelte";
+  import { reduceMotion } from "$lib/constants";
 
   export let post;
   export let left;
@@ -17,7 +18,7 @@
   let element;
   let intersecting;
 
-  $: hasIntersected = hasIntersected || intersecting;
+  $: hasIntersected = reduceMotion || hasIntersected || intersecting;
 </script>
 
 {#if firstPost}
@@ -81,17 +82,17 @@
         <div class="footer">
           <div class="externalLinks doTransition">
             {#if post.repository}
-              <OutboundLink href={post.repository}>
+              <ExternalLink href={post.repository}>
                 GitHub
-              </OutboundLink>
+              </ExternalLink>
             {/if}
             {#if post.repository && post.website}
               <span class="smallSlash">/</span>
             {/if}
             {#if post.website}
-              <OutboundLink href={post.website}>
+              <ExternalLink href={post.website}>
                 Website
-              </OutboundLink>
+              </ExternalLink>
             {/if}
           </div>
           <div class="typeString doTransition {post.eventType}">
@@ -140,7 +141,7 @@
   }
 
   div.fadeIn {
-    transition: opacity 0.6s ease-in, transform 0.6s ease;
+    transition: opacity 0.5s ease-in, transform 0.5s ease;
     opacity: 1;
     transform: scale(1);
   }

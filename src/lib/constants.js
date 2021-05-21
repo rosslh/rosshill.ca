@@ -1,3 +1,5 @@
+import isbot from 'isbot';
+
 export const tagLabels = {
   backbone: "Backbone.js",
   fastify: "Fastify / Node",
@@ -17,3 +19,11 @@ export const tagLabels = {
   wasm: "WebAssembly",
   wordpress: "WordPress",
 };
+
+const isBrowser = typeof window !== "undefined";
+
+const isBot = isBrowser && isbot(window.navigator.userAgent);
+const prefersReducedMotion = isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const intersectionObserverSupported = isBrowser && "IntersectionObserver" in window;
+
+export const reduceMotion = isBrowser && (isBot || prefersReducedMotion || !intersectionObserverSupported);

@@ -51,6 +51,10 @@
     margin-bottom: 3.5rem;
   }
 
+  h2 {
+    margin-top: 0;
+  }
+
   @media (min-width: 1000px) {
     div.intro {
       padding-top: 3rem;

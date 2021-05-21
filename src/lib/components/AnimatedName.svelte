@@ -3,6 +3,7 @@
   import { sineIn } from "svelte/easing";
   import svgPath from "./NameSvg.js";
   import { draw } from "svelte/transition";
+  import { reduceMotion } from "$lib/constants";
 
   let showTitle = false;
   let logoHasFill = false;
@@ -13,7 +14,7 @@
 
   $: pathClass = logoHasFill ? "logoHasFill" : "initial";
 
-  const logoFillDelay = 1000;
+  $: logoFillDelay = reduceMotion ? 0 : 1000;
 </script>
 
 <svg
@@ -25,7 +26,6 @@
   <title>Ross Hill</title>
   <g>
     {#if showTitle}
-      <!-- TODO: Why do you need the setTimeout? -->
       <path
         class={pathClass}
         on:introstart={() => {
