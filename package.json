@@ -22,7 +22,7 @@
     "eslint-plugin-svelte3": "^3.1.2",
     "isbot": "^3.0.26",
     "markdown-json": "^1.5.1",
-    "slugify": "^1.5.0",
+    "slugify": "^1.5.3",
     "svelte": "3.38.2",
     "svelte-icons": "^2.1.0",
     "vite": "2.3.6",
