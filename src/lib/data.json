@@ -38,29 +38,6 @@
       }
     },
     {
-      "id": "doctalk",
-      "contents": "",
-      "title": "Started as a developer at Doctalk",
-      "date": "2020-11-30T00:00:00.000Z",
-      "thumbnail": "doctalk-thumb",
-      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
-      "tags": [
-        "react",
-        "prosemirror",
-        "django",
-        "postgres"
-      ],
-      "eventType": "job",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "doctalk.html",
-        "createdAt": "2021-04-02T05:14:16.916Z",
-        "lastModified": "2021-04-02T05:14:16.915Z",
-        "size": 608,
-        "formattedSize": "608 Bytes"
-      }
-    },
-    {
       "id": "caledon",
       "contents": "",
       "title": "Ski Instructor – Caledon Ski Club",
@@ -99,6 +76,29 @@
         "lastModified": "2021-04-02T05:14:17.095Z",
         "size": 416,
         "formattedSize": "416 Bytes"
+      }
+    },
+    {
+      "id": "doctalk",
+      "contents": "",
+      "title": "Started as a developer at Doctalk",
+      "date": "2020-11-30T00:00:00.000Z",
+      "thumbnail": "doctalk-thumb",
+      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
+      "tags": [
+        "react",
+        "prosemirror",
+        "django",
+        "postgres"
+      ],
+      "eventType": "job",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "doctalk.html",
+        "createdAt": "2021-04-02T05:14:16.916Z",
+        "lastModified": "2021-04-02T05:14:16.915Z",
+        "size": 608,
+        "formattedSize": "608 Bytes"
       }
     },
     {
@@ -164,28 +164,6 @@
       }
     },
     {
-      "id": "mandelbrot",
-      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
-      "title": "Mandelbrot Set Explorer",
-      "eventType": "project",
-      "date": "2016-11-29T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
-      "image": "mandelbrot",
-      "thumbnail": "mandelbrot-thumb",
-      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
-      "tags": [
-        "python"
-      ],
-      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
-      "meta": {
-        "relativePath": "mandelbrot.html",
-        "createdAt": "2021-04-02T05:14:17.328Z",
-        "lastModified": "2021-04-02T05:14:17.327Z",
-        "size": 1196,
-        "formattedSize": "1.2 KB"
-      }
-    },
-    {
       "id": "metaProjection",
       "contents": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.</p>\n<p>I made this project during the run-up to the 2019 Canadian federal election because I found myself checking multiple electoral projection sites that would sometimes have conflicting information. MetaProjection.ca gives a balanced overview of the election by combining the results of multiple reputable poll-trackers.</p>\n<p>MetaProjection was built with Gatsby, a React.js static site generator. First, the projection sources are scraped for their data, which is saved into json files. This data is then queried from the React client using GraphQL.</p>\n",
       "title": "MetaProjection",
@@ -207,6 +185,28 @@
         "lastModified": "2021-04-02T05:14:17.385Z",
         "size": 1345,
         "formattedSize": "1.3 KB"
+      }
+    },
+    {
+      "id": "mandelbrot",
+      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
+      "title": "Mandelbrot Set Explorer",
+      "eventType": "project",
+      "date": "2016-11-29T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
+      "image": "mandelbrot",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
+      "tags": [
+        "python"
+      ],
+      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
+      "meta": {
+        "relativePath": "mandelbrot.html",
+        "createdAt": "2021-04-02T05:14:17.328Z",
+        "lastModified": "2021-04-02T05:14:17.327Z",
+        "size": 1196,
+        "formattedSize": "1.2 KB"
       }
     },
     {
@@ -250,6 +250,28 @@
         "lastModified": "2021-04-02T05:14:17.612Z",
         "size": 359,
         "formattedSize": "359 Bytes"
+      }
+    },
+    {
+      "id": "nudge1",
+      "contents": "",
+      "title": "Front End Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2017-05-01T00:00:00.000Z",
+      "image": "Nudge1",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
+      "tags": [
+        "react",
+        "redux"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge1.html",
+        "createdAt": "2021-04-02T05:14:17.551Z",
+        "lastModified": "2021-04-02T05:14:17.550Z",
+        "size": 429,
+        "formattedSize": "429 Bytes"
       }
     },
     {
@@ -301,25 +323,20 @@
       }
     },
     {
-      "id": "nudge1",
+      "id": "queensGraduated",
       "contents": "",
-      "title": "Front End Developer Intern – Nudge.ai",
-      "eventType": "job",
-      "date": "2017-05-01T00:00:00.000Z",
-      "image": "Nudge1",
-      "thumbnail": "nudge-thumb",
-      "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
-      "tags": [
-        "react",
-        "redux"
-      ],
+      "title": "Graduated from Queen's University",
+      "eventType": "other",
+      "date": "2020-04-01T00:00:00.000Z",
+      "thumbnail": "queens-thumb",
+      "blurb": "Bachelor of Computing (Honours) in Software Design.<br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cips.ca/SoftwareEngineering/\">CIPS Accredited</a> Software Engineering program.",
       "excerpt": "",
       "meta": {
-        "relativePath": "nudge1.html",
-        "createdAt": "2021-04-02T05:14:17.551Z",
-        "lastModified": "2021-04-02T05:14:17.550Z",
-        "size": 429,
-        "formattedSize": "429 Bytes"
+        "relativePath": "queensGraduated.html",
+        "createdAt": "2021-06-22T16:06:19.685Z",
+        "lastModified": "2021-06-22T16:06:19.685Z",
+        "size": 308,
+        "formattedSize": "308 Bytes"
       }
     },
     {
@@ -336,23 +353,6 @@
         "lastModified": "2021-04-02T05:14:18.079Z",
         "size": 102,
         "formattedSize": "102 Bytes"
-      }
-    },
-    {
-      "id": "queensGraduated",
-      "contents": "",
-      "title": "Graduated from Queen's University",
-      "eventType": "other",
-      "date": "2020-04-01T00:00:00.000Z",
-      "thumbnail": "queens-thumb",
-      "blurb": "Bachelor of Computing (Honours) in Software Design",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "queensGraduated.html",
-        "createdAt": "2021-04-02T05:14:18.154Z",
-        "lastModified": "2021-04-02T05:14:18.153Z",
-        "size": 164,
-        "formattedSize": "164 Bytes"
       }
     },
     {
@@ -519,29 +519,6 @@
       }
     },
     {
-      "id": "vibeify",
-      "contents": "",
-      "title": "Vibeify",
-      "eventType": "project",
-      "date": "2020-01-31T00:00:00.000Z",
-      "thumbnail": "vibeify",
-      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
-      "tags": [
-        "tensorflow",
-        "react",
-        "spotify"
-      ],
-      "repository": "https://github.com/rosslh/vibeify",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "vibeify.html",
-        "createdAt": "2021-04-02T05:14:18.667Z",
-        "lastModified": "2021-04-02T05:14:18.666Z",
-        "size": 363,
-        "formattedSize": "363 Bytes"
-      }
-    },
-    {
       "id": "wtformat",
       "contents": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment&#39;s documentation to see how to format dates in various ways.</p>\n<p>In order to make the process of date formatting faster, I created WTFormat.com, which gives you a date which you rewite in your preferred format. The site then generates the Moment format code that would yield that output.</p>\n",
       "title": "WTFormat.com",
@@ -562,6 +539,29 @@
         "lastModified": "2021-04-02T05:14:18.709Z",
         "size": 944,
         "formattedSize": "944 Bytes"
+      }
+    },
+    {
+      "id": "vibeify",
+      "contents": "",
+      "title": "Vibeify",
+      "eventType": "project",
+      "date": "2020-01-31T00:00:00.000Z",
+      "thumbnail": "vibeify",
+      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+      "tags": [
+        "tensorflow",
+        "react",
+        "spotify"
+      ],
+      "repository": "https://github.com/rosslh/vibeify",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "vibeify.html",
+        "createdAt": "2021-04-02T05:14:18.667Z",
+        "lastModified": "2021-04-02T05:14:18.666Z",
+        "size": 363,
+        "formattedSize": "363 Bytes"
       }
     }
   ]

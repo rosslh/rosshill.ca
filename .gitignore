@@ -5,6 +5,8 @@ node_modules
 /functions
 .svelte/
 .svelte
+.svelte-kit/
+.svelte-kit
 .vscode/
 .vscode
 .svelte-kit

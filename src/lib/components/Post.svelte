@@ -266,6 +266,11 @@
   div.post div.footer div.externalLinks {
     color: var(--subtitle);
   }
+
+  div.post div.footer div.externalLinks .smallSlash {
+    transform-origin: bottom;
+  }
+  
   @media (min-width: 701px) {
     div.post div.postHeading {
       padding-right: 4rem;
