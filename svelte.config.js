@@ -1,4 +1,5 @@
-import staticAdapter from '@sveltejs/adapter-static';
+import netlifyAdapter from '@sveltejs/adapter-netlify';
+
 import slugify from "slugify";
 import fs from "fs";
 
@@ -45,7 +46,7 @@ export default {
 			pages
 		},
 
-		adapter: staticAdapter(),
+		adapter: netlifyAdapter(),
 
 		target: '#svelte',
     vite: () => ({})
