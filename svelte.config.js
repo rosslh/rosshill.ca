@@ -2,22 +2,13 @@ import staticAdapter from '@sveltejs/adapter-static';
 import slugify from "slugify";
 import fs from "fs";
 
+// This isn't strictly necessary but I don't trust the crawler
 const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.meta.url), 'utf8'));
 const { data } = getJson("./src/lib/data.json");
-
-const getRedirect = (url) => `/redirect/${encodeURIComponent(url)}`;
-const pages = ['*', getRedirect('https://www.linkedin.com/in/rosslh'), getRedirect('https://github.com/rosslh')];
-data.forEach(entry => {
-  if (entry.contents) {
-    pages.push(`/item/${slugify(entry.title, { replacement: '-', lower: true, remove: /[:]/ })}`);
-  }
-  if (entry.website) {
-    pages.push(getRedirect(entry.website));
-  }
-  if (entry.repository) {
-    pages.push(getRedirect(entry.repository));
-  }
-});
+const pages = data
+  .filter(entry => entry.contents)
+  .map(entry => `/item/${slugify(entry.title, { replacement: '-', lower: true, remove: /[:]/ })}`)
+  .concat(['*']);
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {

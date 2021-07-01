@@ -42,6 +42,10 @@ p {
   color: var(--foreground);
 }
 
+html {
+  visibility: visible !important;
+}
+
 html,
 body {
   padding: 0;
@@ -58,7 +62,6 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   font-weight: 400;
-  /* font-family: "Source Sans Pro", sans-serif !important; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
