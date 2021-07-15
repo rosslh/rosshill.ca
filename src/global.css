@@ -90,11 +90,11 @@ body {
 
     --subtitle: #c7c7c7;
     --timeline: #516170;
-    --postBorder: #343d4a;
-    --sidebarBorder: #343d4a;
-    --sidebarBackground: #212733;
+    --postBorder: #242a37;
+    --sidebarBorder: #242a37;
+    --sidebarBackground: #242a37;
     --background: #1A1F28;
-    --postBackground: #212733;
+    --postBackground: #242a37;
     --foreground: #E5E7EB;
     --heading: #F9FAFB;
     --link: #F9FAFB;
@@ -127,11 +127,11 @@ html body[data-theme="dark"] {
 
   --subtitle: #c7c7c7;
   --timeline: #516170;
-  --postBorder: #343d4a;
-  --sidebarBorder: #343d4a;
-  --sidebarBackground: #212733;
+  --postBorder: #242a37;
+  --sidebarBorder: #242a37;
+  --sidebarBackground: #242a37;
   --background: #1A1F28;
-  --postBackground: #212733;
+  --postBackground: #242a37;
   --foreground: #E5E7EB;
   --heading: #F9FAFB;
   --link: #F9FAFB;

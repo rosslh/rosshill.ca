@@ -58,7 +58,7 @@
   button {
     width: 9rem;
     height: 1.8rem;
-    border-radius: 1.8rem;
+    border-radius: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;

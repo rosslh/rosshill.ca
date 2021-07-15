@@ -34,7 +34,7 @@
   button {
     background-color: var(--postBackground);
     border: 1px solid var(--foreground);
-    border-radius: 1.8rem;
+    border-radius: 0.9rem;
     height: 1.8rem;
     min-width: 4rem;
     cursor: pointer;
