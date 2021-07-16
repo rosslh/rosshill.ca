@@ -1,13 +1,13 @@
-import slugify from "slugify";
+import { slugify } from "$lib/constants";
 import dateformat from "dateformat";
-import {data as timeline} from "$lib/data.json";
+import { data as timeline } from "$lib/data.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
   .map(post => {
     return {
       title: post.title,
-      slug: slugify(post.title, { replacement: '-', lower: true, remove: /[:]/ }),
+      slug: slugify(post.title),
       date: dateformat(post.date, "mmmm yyyy"),
       website: post.website,
       repository: post.repository,

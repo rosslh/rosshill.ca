@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
 </svelte:head>
 <div class="contentWrapper mainContent doTransition">
-  <a rel="prefetch" class="backLink" href="/#timeline-item-{post.slug}">
+  <a rel="prefetch" class="backLink" href="/#timeline-{post.slug}">
     &larr; Back to Home
   </a>
   <article class="postFull">
@@ -95,7 +95,7 @@
     border: 1px solid var(--sidebarBorder);
     padding: 0;
     border-radius: 4px;
-    box-shadow: 0px 2px 2px 0px rgba(20, 20, 20, 0.1);
+    box-shadow: var(--boxShadow);
   }
 
   div.imageWrapper img {
@@ -118,7 +118,7 @@
     overflow: hidden;
     border: 1px solid var(--sidebarBorder);
     border-radius: 4px;
-    box-shadow: 0px 2px 2px 0px rgba(20, 20, 20, 0.1);
+    box-shadow: var(--boxShadow);
   }
 
   :global(div.embedWrapper iframe) {

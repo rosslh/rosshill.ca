@@ -35,7 +35,7 @@
 >
   <div
     bind:this={element}
-    id="timeline-item-{post.slug}"
+    id="timeline-{post.slug}"
     class="postWrapper doTransition {left ? 'left' : 'right'}"
   >
     <TimelineMarker {left} />

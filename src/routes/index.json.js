@@ -1,6 +1,6 @@
-import slugify from "slugify";
+import { slugify } from "$lib/constants";
 import dateformat from "dateformat";
-import {data as timeline} from "$lib/data.json";
+import { data as timeline } from "$lib/data.json";
 
 const contents = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -9,7 +9,7 @@ const contents = Object.values(timeline)
       title: post.title,
       eventType: post.eventType,
       hasContent: !!post.contents,
-      slug: slugify(post.title, { replacement: '-', lower: true, remove: /[:]/ }),
+      slug: slugify(post.title),
       date: post.date,
       prettyDate: dateformat(post.date, "mmmm yyyy"),
       blurb: post.blurb,

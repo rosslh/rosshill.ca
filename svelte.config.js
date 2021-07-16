@@ -1,5 +1,5 @@
 import staticAdapter from '@sveltejs/adapter-static';
-import slugify from "slugify";
+import { slugify } from "./src/lib/constants.js";
 import fs from "fs";
 
 // This isn't strictly necessary but I don't trust the crawler
@@ -7,7 +7,7 @@ const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.
 const { data } = getJson("./src/lib/data.json");
 const pages = data
   .filter(entry => entry.contents)
-  .map(entry => `/item/${slugify(entry.title, { replacement: '-', lower: true, remove: /[:]/ })}`)
+  .map(entry => `/item/${slugify(entry.title)}`)
   .concat(['*']);
 
 /** @type {import('@sveltejs/kit').Config} */

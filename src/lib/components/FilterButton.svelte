@@ -69,7 +69,7 @@
   }
 
   button.active {
-    box-shadow: 1px 1px 2px #22222220;
+    box-shadow: var(--boxShadow);
   }
 
   button.jobButton {

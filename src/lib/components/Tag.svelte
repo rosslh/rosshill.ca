@@ -25,9 +25,8 @@
 <style>
   div.tag {
     /* border: 1px solid var(--postBorder); */
+    /* border-radius: 1.2rem; */
     color: var(--subtitle);
-    background-color: var(--postBackground);
-    border-radius: 1.2rem;
     margin: 0.2rem 0;
     margin-right: 0.4rem;
     display: flex;
