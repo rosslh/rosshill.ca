@@ -1,5 +1,4 @@
 import isbot from 'isbot';
-import slug from "slugify";
 
 export const tagLabels = {
   backbone: "Backbone.js",
@@ -28,5 +27,3 @@ const prefersReducedMotion = isBrowser && window.matchMedia("(prefers-reduced-mo
 const intersectionObserverSupported = isBrowser && "IntersectionObserver" in window;
 
 export const reduceMotion = isBrowser && (isBot || prefersReducedMotion || !intersectionObserverSupported);
-
-export const slugify = str => slug(str, { replacement: '-', lower: true, remove: /[:]/ }).replace(/-+/g,"-");

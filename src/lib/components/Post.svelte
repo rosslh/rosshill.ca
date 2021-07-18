@@ -5,6 +5,7 @@
   import Tag from "./Tag.svelte";
   import ExternalLink from "./ExternalLink.svelte";
   import { reduceMotion } from "$lib/constants";
+  import { remsToPixels } from "$lib/functions";
 
   export let post;
   export let left;
@@ -55,8 +56,8 @@
                   src="/{post.thumbnail}.{post.thumbnailExt || 'png'}"
                   loading="lazy"
                   alt=""
-                  width="1.7rem"
-                  height="1.7rem"
+                  width={remsToPixels(1.7)}
+                  height={remsToPixels(1.7)}
                 />
               </picture>
             {/if}
@@ -288,7 +289,7 @@
     div.post p.postText,
     div.post div.footer {
       padding-left: 0 !important;
-      padding-right: 0;
+      padding-right: 0 !important;
     }
   }
 </style>

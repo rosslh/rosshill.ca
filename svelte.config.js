@@ -1,5 +1,5 @@
 import staticAdapter from '@sveltejs/adapter-static';
-import { slugify } from "./src/lib/constants.js";
+import { slugify } from "./src/lib/functions.js";
 import fs from "fs";
 
 // This isn't strictly necessary but I don't trust the crawler

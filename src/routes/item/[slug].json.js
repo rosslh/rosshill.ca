@@ -1,4 +1,4 @@
-import { slugify } from "$lib/constants";
+import { slugify } from "$lib/functions";
 import dateformat from "dateformat";
 import { data as timeline } from "$lib/data.json";
 

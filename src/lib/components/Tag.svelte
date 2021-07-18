@@ -1,6 +1,7 @@
 <script>
   export let tagId;
   import { tagLabels } from "$lib/constants.js";
+  import { remsToPixels } from "$lib/functions.js";
 
   $: tagString = tagLabels[tagId] || tagId;
 </script>
@@ -14,8 +15,8 @@
         src="/tags/{tagId}.png"
         alt=""
         loading="lazy"
-        width="0.85rem"
-        height="0.85rem"
+        width={remsToPixels(0.85)}
+        height={remsToPixels(0.85)}
       />
     </picture>
   </div>
