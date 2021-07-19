@@ -26,7 +26,7 @@
     &larr; Back to Home
   </a>
   <article class="postFull">
-    <h1>{post.title}</h1>
+    <h2>{post.title}</h2>
     <div class="subtitle doTransition">
       Started {post.date}
       {#if post.repository}
@@ -76,10 +76,6 @@
     margin-bottom: 3rem;
   }
 
-  a.backLink {
-    display: inline-block;
-    margin: 1.5rem 0;
-  }
   div.subtitle {
     font-size: 15px;
     margin-bottom: 1.2rem;

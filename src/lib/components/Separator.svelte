@@ -3,8 +3,8 @@
   export let intro;
 </script>
 
-<div class="contentWrapper">
-  <div aria-hidden="true" class="separator {intro ? 'intro' : ''}">
+<div class="contentWrapper {intro ? 'intro' : ''}">
+  <div aria-hidden="true" class="separator">
     <div class="line doTransition" />
     <div class="symbol doTransition">
       <DiCode />
@@ -38,7 +38,7 @@
     border-bottom: 3px dotted var(--postBorder);
   }
   @media (min-width: 1000px) {
-    div.separator.intro {
+    div.contentWrapper.intro {
       display: none;
     }
   }

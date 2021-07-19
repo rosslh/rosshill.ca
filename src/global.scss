@@ -136,6 +136,7 @@ h4 {
 
 .contentWrapper {
   max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -169,4 +170,9 @@ picture.fixedSize {
     top: 0;
     left: 0;
   }
+}
+
+a.backLink {
+  display: inline-block;
+  margin: 1.5rem 0;
 }

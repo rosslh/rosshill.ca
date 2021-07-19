@@ -40,7 +40,7 @@
     class="postWrapper doTransition {left ? 'left' : 'right'}"
   >
     <TimelineMarker {left} />
-    <div class="fadeIn {!hasIntersected && 'invisible'}">
+    <div class="fadeIn {hasIntersected ? '' : 'invisible'}">
       <PostArrow {left} />
       <div class="post doTransition">
         <div class="postHeading">
