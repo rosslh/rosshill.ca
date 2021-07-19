@@ -11,7 +11,8 @@
     "lint": "eslint src",
     "preview": "svelte-kit preview",
     "start": "svelte-kit start",
-    "webpGen": "cd static && webpc -r && cd .."
+    "webpGen": "cd static && webpc -r && cd ..",
+    "postbuild": "mv build/404/index.html build/404.html"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "1.0.0-next.13",
