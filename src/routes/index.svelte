@@ -19,7 +19,7 @@
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/" />
 </svelte:head>
-<div class="mainContent doTransition">
+<div class="mainContent">
   <Intro />
   <Separator />
   <Posts {posts} />

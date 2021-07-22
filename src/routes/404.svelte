@@ -2,7 +2,7 @@
 import { remsToPixels } from "$lib/functions";
 </script>
 
-<div class="contentWrapper mainContent doTransition">
+<div class="contentWrapper mainContent">
   <a rel="prefetch" class="backLink" href="/">
     &larr; Back to Home
   </a>

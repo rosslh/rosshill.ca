@@ -10,7 +10,9 @@
   const handleClick = () => {
     preventTransition = true;
     callback();
-    setTimeout(() => { preventTransition=false; }, 500);
+    setTimeout(() => {
+      preventTransition=false;
+    }, 500);
   };
 </script>
 
@@ -44,6 +46,7 @@
     padding: 0 1rem;
     margin: 0.5rem 0.1rem;
   }
+  
   button:first-child {
     margin-left: 0;
   }

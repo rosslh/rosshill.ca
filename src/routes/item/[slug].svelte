@@ -21,7 +21,7 @@
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
 </svelte:head>
-<div class="contentWrapper mainContent doTransition">
+<div class="contentWrapper mainContent">
   <a rel="prefetch" class="backLink" href="/#timeline-{post.slug}">
     &larr; Back to Home
   </a>
