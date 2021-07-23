@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "1.0.0-next.13",
-    "@sveltejs/kit": "1.0.0-next.131",
+    "@sveltejs/kit": "1.0.0-next.137",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
     "eslint": "^7.31.0",
