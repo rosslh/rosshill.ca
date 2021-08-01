@@ -1,5 +1,5 @@
 ---
-title: Mandelbrot Set Explorer v2 
+title: Mandelbrot Set in Rust
 eventType: project
 date: 2021-01-01
 repository: https://github.com/rosslh/rust-mandelbrot-set/

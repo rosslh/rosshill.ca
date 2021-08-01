@@ -458,7 +458,7 @@
     {
       "id": "rust-fractals",
       "contents": "",
-      "title": "Mandelbrot Set Explorer v2",
+      "title": "Mandelbrot Set in Rust",
       "eventType": "project",
       "date": "2021-01-01T00:00:00.000Z",
       "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
@@ -473,10 +473,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2021-04-02T05:14:18.460Z",
-        "lastModified": "2021-04-02T05:14:18.459Z",
-        "size": 401,
-        "formattedSize": "401 Bytes"
+        "createdAt": "2021-08-01T15:31:49.277Z",
+        "lastModified": "2021-08-01T15:31:49.277Z",
+        "size": 396,
+        "formattedSize": "396 Bytes"
       }
     },
     {
