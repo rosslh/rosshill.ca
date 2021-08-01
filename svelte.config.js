@@ -32,7 +32,6 @@ export default {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			force: false,
 			pages
 		},
 

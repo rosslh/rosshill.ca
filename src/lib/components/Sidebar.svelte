@@ -79,6 +79,8 @@
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
+    min-width: 10rem;
+    min-height: 10rem;
   }
 
   div.imgWrapper * {

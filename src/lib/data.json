@@ -2,19 +2,126 @@
   "app": {
     "config": "markdown-config.json",
     "cwd": "./",
-    "src": "content/",
+    "deterministicOrder": true,
+    "display": true,
+    "dist": "src/lib/data.json",
     "filePattern": "**/*.md",
     "ignore": "",
-    "dist": "src/lib/data.json",
-    "display": true,
-    "server": false,
     "port": 3001,
+    "server": false,
+    "src": "content/",
     "name": "markdown-json",
     "metadata": true,
-    "deterministicOrder": true,
-    "version": "1.5.1"
+    "version": "1.5.0"
   },
   "data": [
+    {
+      "id": "IsEarthStillWarming",
+      "contents": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&#39;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>\n<p>The webpage has a summary of the current state of global warming, with references provided for each piece of information. The website fetches its data and generates the webpages at build time, and on runtime it simply serves the already generated webpages. I chose this approach because retrieving and parsing the climate data takes some time. The servers we fetch data from are fairly slow, and the data comes in as a CSV which needs to be parsed into JSON in order to be used in a JavaScript application.</p>\n",
+      "title": "IsEarthStillWarming.com",
+      "eventType": "project",
+      "date": "2019-01-11T00:00:00.000Z",
+      "website": "https://isearthstillwarming.com",
+      "repository": "https://github.com/rosslh/isearthstillwarming.com",
+      "image": "isearthstillwarming",
+      "thumbnail": "fire",
+      "blurb": "A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.",
+      "tags": [
+        "react"
+      ],
+      "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
+      "meta": {
+        "relativePath": "IsEarthStillWarming.html",
+        "createdAt": "2021-04-02T05:14:17.279Z",
+        "lastModified": "2021-04-02T05:14:17.278Z",
+        "size": 1476,
+        "formattedSize": "1.4 KB"
+      }
+    },
+    {
+      "id": "MUSE",
+      "contents": "",
+      "title": "CTO – MUSE Magazine",
+      "eventType": "org",
+      "date": "2017-11-01T00:00:00.000Z",
+      "thumbnail": "muse",
+      "blurb": "Created a WordPress-based platform for publishing student-submitted articles that reflects the design language of the physical MUSE magazine",
+      "tags": [
+        "wordpress"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "MUSE.html",
+        "createdAt": "2021-04-02T05:14:17.487Z",
+        "lastModified": "2021-04-02T05:14:17.486Z",
+        "size": 250,
+        "formattedSize": "250 Bytes"
+      }
+    },
+    {
+      "id": "QTMA",
+      "contents": "",
+      "title": "Software Developer – QTMA",
+      "eventType": "org",
+      "date": "2019-09-01T00:00:00.000Z",
+      "image": "studii",
+      "thumbnail": "qtma",
+      "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
+      "tags": [
+        "react",
+        "django",
+        "mongo"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "QTMA.html",
+        "createdAt": "2021-04-02T05:14:17.999Z",
+        "lastModified": "2021-04-02T05:14:17.998Z",
+        "size": 345,
+        "formattedSize": "345 Bytes"
+      }
+    },
+    {
+      "id": "QVFT",
+      "contents": "",
+      "title": "Director of Systems Automation – QVFT",
+      "eventType": "org",
+      "date": "2019-11-10T00:00:00.000Z",
+      "thumbnail": "qvft",
+      "blurb": "In charge of running weekly meetings, setting goals, and providing technical assistance to team members. The Systems Automation team is building an software system for adjusting environment variables, such as temperature or light intensity, in order to maximize crop yield.",
+      "tags": [
+        "svelte",
+        "flask",
+        "arduino"
+      ],
+      "repository": "https://github.com/QVFT/",
+      "website": "https://www.qvft.ca/",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "QVFT.html",
+        "createdAt": "2021-04-02T05:14:18.221Z",
+        "lastModified": "2021-04-02T05:14:18.220Z",
+        "size": 481,
+        "formattedSize": "481 Bytes"
+      }
+    },
+    {
+      "id": "caledon",
+      "contents": "",
+      "title": "Ski Instructor – Caledon Ski Club",
+      "eventType": "job",
+      "date": "2014-12-01T00:00:00.000Z",
+      "thumbnail": "caledon",
+      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "caledon.html",
+        "createdAt": "2021-04-02T05:14:16.597Z",
+        "lastModified": "2021-04-02T05:14:16.596Z",
+        "size": 282,
+        "formattedSize": "282 Bytes"
+      }
+    },
     {
       "id": "doctalk",
       "contents": "",
@@ -39,23 +146,6 @@
       }
     },
     {
-      "id": "caledon",
-      "contents": "",
-      "title": "Ski Instructor – Caledon Ski Club",
-      "eventType": "job",
-      "date": "2014-12-01T00:00:00.000Z",
-      "thumbnail": "caledon",
-      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "caledon.html",
-        "createdAt": "2021-04-02T05:14:16.597Z",
-        "lastModified": "2021-04-02T05:14:16.596Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
-      }
-    },
-    {
       "id": "dodgeball",
       "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
       "title": "Dodgeball: The Game",
@@ -76,27 +166,6 @@
         "lastModified": "2021-04-04T18:35:50.321Z",
         "size": 1550,
         "formattedSize": "1.5 KB"
-      }
-    },
-    {
-      "id": "homepage",
-      "contents": "",
-      "title": "Homepage redesign",
-      "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnail": "homepageThumb",
-      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
-      "tags": [
-        "svelte"
-      ],
-      "WIP": true,
-      "excerpt": "",
-      "meta": {
-        "relativePath": "homepage.html",
-        "createdAt": "2021-04-02T05:14:17.185Z",
-        "lastModified": "2021-04-02T05:14:17.184Z",
-        "size": 220,
-        "formattedSize": "220 Bytes"
       }
     },
     {
@@ -124,6 +193,27 @@
       }
     },
     {
+      "id": "homepage",
+      "contents": "",
+      "title": "Homepage redesign",
+      "eventType": "project",
+      "date": "2019-11-01T00:00:00.000Z",
+      "thumbnail": "homepageThumb",
+      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
+      "tags": [
+        "svelte"
+      ],
+      "WIP": true,
+      "excerpt": "",
+      "meta": {
+        "relativePath": "homepage.html",
+        "createdAt": "2021-04-02T05:14:17.185Z",
+        "lastModified": "2021-04-02T05:14:17.184Z",
+        "size": 220,
+        "formattedSize": "220 Bytes"
+      }
+    },
+    {
       "id": "hurontario",
       "contents": "",
       "title": "Counsellor – Camp Hurontario",
@@ -139,29 +229,6 @@
         "lastModified": "2021-04-02T05:14:17.234Z",
         "size": 282,
         "formattedSize": "282 Bytes"
-      }
-    },
-    {
-      "id": "IsEarthStillWarming",
-      "contents": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&#39;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>\n<p>The webpage has a summary of the current state of global warming, with references provided for each piece of information. The website fetches its data and generates the webpages at build time, and on runtime it simply serves the already generated webpages. I chose this approach because retrieving and parsing the climate data takes some time. The servers we fetch data from are fairly slow, and the data comes in as a CSV which needs to be parsed into JSON in order to be used in a JavaScript application.</p>\n",
-      "title": "IsEarthStillWarming.com",
-      "eventType": "project",
-      "date": "2019-01-11T00:00:00.000Z",
-      "website": "https://isearthstillwarming.com",
-      "repository": "https://github.com/rosslh/isearthstillwarming.com",
-      "image": "isearthstillwarming",
-      "thumbnail": "fire",
-      "blurb": "A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.",
-      "tags": [
-        "react"
-      ],
-      "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
-      "meta": {
-        "relativePath": "IsEarthStillWarming.html",
-        "createdAt": "2021-04-02T05:14:17.279Z",
-        "lastModified": "2021-04-02T05:14:17.278Z",
-        "size": 1476,
-        "formattedSize": "1.4 KB"
       }
     },
     {
@@ -199,35 +266,41 @@
       "blurb": "An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district.",
       "tags": [
         "gatsby",
-        "graphql"
+        "graphql",
+        "node"
       ],
       "excerpt": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user&#x2019;s geolocation to find their district and display its likely winner.</p>",
       "meta": {
         "relativePath": "metaProjection.html",
-        "createdAt": "2021-04-02T05:14:17.386Z",
-        "lastModified": "2021-04-02T05:14:17.385Z",
-        "size": 1345,
+        "createdAt": "2021-08-01T15:06:32.533Z",
+        "lastModified": "2021-08-01T15:06:32.533Z",
+        "size": 1351,
         "formattedSize": "1.3 KB"
       }
     },
     {
-      "id": "MUSE",
+      "id": "metaProjection2021",
       "contents": "",
-      "title": "CTO – MUSE Magazine",
-      "eventType": "org",
-      "date": "2017-11-01T00:00:00.000Z",
-      "thumbnail": "muse",
-      "blurb": "Created a WordPress-based platform for publishing student-submitted articles that reflects the design language of the physical MUSE magazine",
+      "title": "MetaProjection 2021",
+      "eventType": "project",
+      "date": "2021-07-27T00:00:00.000Z",
+      "website": "https://metaprojection.ca",
+      "repository": "https://github.com/rosslh/metaprojection",
+      "image": "metaprojection",
+      "thumbnail": "metaprojection-thumb",
+      "blurb": "An aggregator of multiple Canadian election projections which provides an overview of how the election is playing out, both federally and by district. Updated for 2021.",
       "tags": [
-        "wordpress"
+        "gatsby",
+        "graphql",
+        "node"
       ],
       "excerpt": "",
       "meta": {
-        "relativePath": "MUSE.html",
-        "createdAt": "2021-04-02T05:14:17.487Z",
-        "lastModified": "2021-04-02T05:14:17.486Z",
-        "size": 250,
-        "formattedSize": "250 Bytes"
+        "relativePath": "metaProjection2021.html",
+        "createdAt": "2021-08-01T15:16:57.551Z",
+        "lastModified": "2021-08-01T15:16:57.551Z",
+        "size": 428,
+        "formattedSize": "428 Bytes"
       }
     },
     {
@@ -301,29 +374,6 @@
       }
     },
     {
-      "id": "QTMA",
-      "contents": "",
-      "title": "Software Developer – QTMA",
-      "eventType": "org",
-      "date": "2019-09-01T00:00:00.000Z",
-      "image": "studii",
-      "thumbnail": "qtma",
-      "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
-      "tags": [
-        "react",
-        "django",
-        "mongo"
-      ],
-      "excerpt": "",
-      "meta": {
-        "relativePath": "QTMA.html",
-        "createdAt": "2021-04-02T05:14:17.999Z",
-        "lastModified": "2021-04-02T05:14:17.998Z",
-        "size": 345,
-        "formattedSize": "345 Bytes"
-      }
-    },
-    {
       "id": "queensEnrolled",
       "contents": "",
       "title": "Started at Queen's University",
@@ -354,30 +404,6 @@
         "lastModified": "2021-07-15T13:10:35.722Z",
         "size": 343,
         "formattedSize": "343 Bytes"
-      }
-    },
-    {
-      "id": "QVFT",
-      "contents": "",
-      "title": "Director of Systems Automation – QVFT",
-      "eventType": "org",
-      "date": "2019-11-10T00:00:00.000Z",
-      "thumbnail": "qvft",
-      "blurb": "In charge of running weekly meetings, setting goals, and providing technical assistance to team members. The Systems Automation team is building an software system for adjusting environment variables, such as temperature or light intensity, in order to maximize crop yield.",
-      "tags": [
-        "svelte",
-        "flask",
-        "arduino"
-      ],
-      "repository": "https://github.com/QVFT/",
-      "website": "https://www.qvft.ca/",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "QVFT.html",
-        "createdAt": "2021-04-02T05:14:18.221Z",
-        "lastModified": "2021-04-02T05:14:18.220Z",
-        "size": 481,
-        "formattedSize": "481 Bytes"
       }
     },
     {
@@ -476,6 +502,27 @@
       }
     },
     {
+      "id": "unitransform",
+      "contents": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>\n",
+      "title": "Unitransform",
+      "eventType": "project",
+      "date": "2018-12-05T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/unitransform",
+      "website": "https://www.npmjs.com/package/unitransform",
+      "image": "unitransform",
+      "thumbnail": "rainbow",
+      "WIP": true,
+      "blurb": "A JavaScript library for visually consistent color transformations through HSLuv color space",
+      "excerpt": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>",
+      "meta": {
+        "relativePath": "unitransform.html",
+        "createdAt": "2021-04-02T05:14:18.575Z",
+        "lastModified": "2021-04-02T05:14:18.574Z",
+        "size": 564,
+        "formattedSize": "564 Bytes"
+      }
+    },
+    {
       "id": "verafin",
       "contents": "",
       "title": "Software Developer Intern – Verafin",
@@ -496,27 +543,6 @@
         "lastModified": "2021-04-02T05:14:18.618Z",
         "size": 412,
         "formattedSize": "412 Bytes"
-      }
-    },
-    {
-      "id": "unitransform",
-      "contents": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>\n",
-      "title": "Unitransform",
-      "eventType": "project",
-      "date": "2018-12-05T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/unitransform",
-      "website": "https://www.npmjs.com/package/unitransform",
-      "image": "unitransform",
-      "thumbnail": "rainbow",
-      "WIP": true,
-      "blurb": "A JavaScript library for visually consistent color transformations through HSLuv color space",
-      "excerpt": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>",
-      "meta": {
-        "relativePath": "unitransform.html",
-        "createdAt": "2021-04-02T05:14:18.575Z",
-        "lastModified": "2021-04-02T05:14:18.574Z",
-        "size": 564,
-        "formattedSize": "564 Bytes"
       }
     },
     {

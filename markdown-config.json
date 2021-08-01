@@ -6,5 +6,6 @@
   "ignore": "",
   "dist": "src/lib/data.json",
   "metadata": true,
-  "server": false
+  "server": false,
+  "deterministicOrder": true
 }
