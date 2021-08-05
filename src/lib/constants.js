@@ -10,6 +10,7 @@ export const tagLabels = {
   mongo: "MongoDB",
   net: ".NET",
   node: "Node",
+  nuxt: "NuxtJS / Vue",
   postgres: "PostgreSQL",
   prosemirror: "ProseMirror",
   rpi: "Raspberry Pi",

@@ -12,20 +12,20 @@
     "preview": "svelte-kit preview",
     "start": "svelte-kit start",
     "webpGen": "cd static && webpc -r && cd ..",
-    "postbuild": "mv build/404/index.html build/404.html"
+    "postbuild": "mv .svelte-kit/static/build/404/index.html .svelte-kit/static/build/404.html"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.13",
-    "@sveltejs/kit": "1.0.0-next.139",
+    "@sveltejs/adapter-static": "1.0.0-next.15",
+    "@sveltejs/kit": "1.0.0-next.142",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
     "eslint": "^7.31.0",
     "eslint-plugin-svelte3": "^3.1.2",
     "isbot": "^3.2.3",
-    "markdown-json": "rosslh/markdown-json#master",
+    "markdown-json": "^1.6.0",
     "sass": "^1.35.2",
     "slugify": "^1.6.0",
-    "svelte": "3.41.0",
+    "svelte": "3.42.1",
     "svelte-icons": "^2.1.0",
     "vite": "2.4.4",
     "webp-converter-cli": "^0.0.5"
