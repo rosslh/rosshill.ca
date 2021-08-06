@@ -4,6 +4,7 @@
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
   import ExternalLink from "./ExternalLink.svelte";
+  import PostSpacer from "./PostSpacer.svelte";
   import { reduceMotion } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
 
@@ -23,10 +24,7 @@
 </script>
 
 {#if firstPost}
-  <div
-    aria-hidden="true"
-    class="postSpacer doTransition {left ? 'left' : 'right'}"
-  />
+  <PostSpacer {left} />
 {/if}
 <IntersectionObserver
   {element}
@@ -105,61 +103,15 @@
   </div>
 </IntersectionObserver>
 {#if lastPost}
-  <div
-    aria-hidden="true"
-    class="postSpacer doTransition {left ? 'left' : 'right'}"
-  />
-  <div
-    aria-hidden="true"
-    class="bottomMarker doTransition {left ? 'left' : 'right'}"
-  />
+  <PostSpacer {left} showBottomMarker />
 {/if}
 
 <style>
   @media (max-width: 1200px) {
-    div.postSpacer,
     div.postWrapper {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
-
-    div.bottomMarker.left {
-      margin-left: calc(-1rem + 3px) !important;
-      margin-right: calc(100% - 1rem) !important;
-    }
-
-    div.bottomMarker.right {
-      margin-left: calc(100% - 1rem) !important;
-      margin-right: calc(-1rem + 3px) !important;
-    }
-  }
-
-  div.postSpacer {
-    height: 3rem !important;
-  }
-
-  div.postSpacer.left {
-    border-left: 3px solid var(--timeline);
-    margin-left: 25%;
-  }
-
-  div.postSpacer.right {
-    border-right: 3px solid var(--timeline);
-    margin-right: 25%;
-  }
-
-  div.bottomMarker {
-    border-bottom: 3px solid var(--timeline);
-  }
-
-  div.bottomMarker.left {
-    margin-right: calc(75% - 1rem);
-    margin-left: calc(25% - 1rem + 2px);
-  }
-
-  div.bottomMarker.right {
-    margin-right: calc(25% - 1rem + 2px);
-    margin-left: calc(75% - 1rem);
   }
 
   div.postWrapper {

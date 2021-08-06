@@ -91,10 +91,9 @@
   }
 
   img.travolta {
-    margin-top: 3rem;
     width: 20rem;
     height: 20rem;
     display: block;
-    margin: 1rem auto 2rem;
+    margin: 2rem auto 2rem;
   }
 </style>

@@ -63,10 +63,10 @@ body {
 
 html {
   visibility: visible !important;
+  font-size: 15px;
 }
 
 body {
-  font-size: 15px;
   line-height: 1.7;
   color: var(--foreground);
   background-color: var(--background);
@@ -84,7 +84,7 @@ body {
 }
 
 @media (min-width: 400px) {
-  body {
+  html {
     font-size: 17px;
   }
 }

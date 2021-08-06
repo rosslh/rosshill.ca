@@ -9,20 +9,20 @@
   import Tag from "./Tag.svelte";
   import { tagParents } from "$lib/constants";
 
-  const toggleCategory = (category) => {
-    if (showCategories.includes(category)) {
-      showCategories = showCategories.filter((x) => x !== category);
+  const toggleItemInList = (list, item) => {
+    if (list.includes(item)) {
+      return list.filter((x) => x !== item);
     } else {
-      showCategories = [...showCategories, category];
+      return [...list, item];
     }
   };
 
-  const toggleTag = (tag) => {
-    if (showTags.includes(tag)) {
-      showTags = showTags.filter((x) => x !== tag);
-    } else {
-      showTags = [...showTags, tag];
-    }
+  const toggleCategory = category => {
+    showCategories = toggleItemInList(showCategories, category);
+  };
+
+  const toggleTag = tag => {
+    showTags = toggleItemInList(showTags, tag);
   };
 
   $: jobActive = showCategories.includes("job");
@@ -30,25 +30,32 @@
   $: projectActive = showCategories.includes("project");
 
   let tagsOrdered = [];
-  let minTagNum = 2;
+  let minTagNum = 2; // number of posts required for a tag to be shown
 
   $: {
     const tagCounts = {};
 
-    posts.forEach(({tags}) => {
+    posts.forEach(({ tags }) => {
       if (tags) {
+        // for each tag in post, add 1 to count
         tags.forEach(tag => {
           tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-          tagParents[tag].forEach(parentTag => {
-            tagCounts[parentTag] = (tagCounts[parentTag] || 0) + 1;
-          });
         });
+
+        // get parent tags of each tag and remove duplicates
+        const parentTags = [...new Set(tags.map(tag => tagParents[tag]).flat())];
+
+        parentTags
+          .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags
+          .forEach(parentTag => {
+            tagCounts[parentTag] = (tagCounts[parentTag] || 0) + 1; // add 1 to count for each parent tag
+          });
       }
     });
 
     tagsOrdered = Object.entries(tagCounts)
       .filter(tag => tag[1] >= minTagNum)
-      .sort((a, b) => {
+      .sort((a, b) => { // order by tag count then alphanumerically
         if (a[1] < b[1]) {
           return 1;
         } else if (a[1] > b[1]) {

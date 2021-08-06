@@ -42,13 +42,12 @@
     border: 1px solid var(--foreground);
     border-radius: 0.9rem;
     height: 1.8rem;
-    /* min-width: 4rem; */
     cursor: pointer;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
-    margin: 0.5rem 0.1rem;
+    margin: 0.25rem 0.15rem;
   }
 
   button.small {
