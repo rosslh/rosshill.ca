@@ -3,7 +3,9 @@
   import FaRegCheckCircle from "svelte-icons/fa/FaRegCheckCircle.svelte";
   export let active;
   export let callback;
-  export let id;
+  export let classPrefix;
+  export let showCheckbox = false;
+  export let small = false;
 
   let preventTransition = false;
 
@@ -17,16 +19,18 @@
 </script>
 
 <button
-  class="{id}Button {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
+  class="{classPrefix}Button {small ? 'small' : ''} {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
   on:click={handleClick}
 >
-  <span class="symbol">
-    {#if active}
-      <FaRegCheckCircle />
-    {:else}
-      <FaRegCircle />
-    {/if}
-  </span>
+  {#if showCheckbox}
+    <span class="symbol">
+      {#if active}
+        <FaRegCheckCircle />
+      {:else}
+        <FaRegCircle />
+      {/if}
+    </span>
+  {/if}
   <span class="text">
     <slot />
   </span>
@@ -38,13 +42,18 @@
     border: 1px solid var(--foreground);
     border-radius: 0.9rem;
     height: 1.8rem;
-    min-width: 4rem;
+    /* min-width: 4rem; */
     cursor: pointer;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
     margin: 0.5rem 0.1rem;
+  }
+
+  button.small {
+    height: 1.5rem;
+    padding: 0 0.25rem;
   }
   
   button:first-child {
@@ -88,5 +97,17 @@
   button.orgButton {
     color: var(--org);
     border-color: var(--org);
+  }
+
+  button.tagButton {
+    border-color: var(--activeTagBorder);
+  }
+
+  button.tagButton.inactive {
+    opacity: 0.85;
+  }
+
+  :global(button.tagButton .tag) {
+    margin: 0 !important;
   }
 </style>

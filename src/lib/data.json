@@ -27,15 +27,17 @@
       "thumbnail": "fire",
       "blurb": "A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.",
       "tags": [
-        "react"
+        "react",
+        "node",
+        "cypress"
       ],
       "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
       "meta": {
         "relativePath": "IsEarthStillWarming.html",
-        "createdAt": "2021-04-02T05:14:17.279Z",
-        "lastModified": "2021-04-02T05:14:17.278Z",
-        "size": 1476,
-        "formattedSize": "1.4 KB"
+        "createdAt": "2021-08-05T17:57:38.438Z",
+        "lastModified": "2021-08-05T17:57:38.438Z",
+        "size": 1491,
+        "formattedSize": "1.5 KB"
       }
     },
     {
@@ -131,18 +133,19 @@
       "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
       "tags": [
         "react",
-        "prosemirror",
+        "redux",
         "django",
-        "postgres"
+        "postgres",
+        "cypress"
       ],
       "eventType": "job",
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-04-02T05:14:16.916Z",
-        "lastModified": "2021-04-02T05:14:16.915Z",
-        "size": 608,
-        "formattedSize": "608 Bytes"
+        "createdAt": "2021-08-05T17:57:38.438Z",
+        "lastModified": "2021-08-05T17:57:38.438Z",
+        "size": 628,
+        "formattedSize": "628 Bytes"
       }
     },
     {
@@ -190,27 +193,6 @@
         "lastModified": "2021-04-02T05:14:17.095Z",
         "size": 416,
         "formattedSize": "416 Bytes"
-      }
-    },
-    {
-      "id": "homepage",
-      "contents": "",
-      "title": "Homepage redesign",
-      "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
-      "thumbnail": "homepageThumb",
-      "blurb": "Redesigned my website with a timeline and dark mode using Svelte, a zero-runtime web framework",
-      "tags": [
-        "svelte"
-      ],
-      "WIP": true,
-      "excerpt": "",
-      "meta": {
-        "relativePath": "homepage.html",
-        "createdAt": "2021-04-02T05:14:17.185Z",
-        "lastModified": "2021-04-02T05:14:17.184Z",
-        "size": 220,
-        "formattedSize": "220 Bytes"
       }
     },
     {
@@ -272,8 +254,8 @@
       "excerpt": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user&#x2019;s geolocation to find their district and display its likely winner.</p>",
       "meta": {
         "relativePath": "metaProjection.html",
-        "createdAt": "2021-08-01T15:06:32.533Z",
-        "lastModified": "2021-08-01T15:06:32.533Z",
+        "createdAt": "2021-08-05T18:27:44.415Z",
+        "lastModified": "2021-08-05T18:27:44.415Z",
         "size": 1351,
         "formattedSize": "1.3 KB"
       }
@@ -297,8 +279,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "metaProjection2021.html",
-        "createdAt": "2021-08-01T15:16:57.551Z",
-        "lastModified": "2021-08-01T15:16:57.551Z",
+        "createdAt": "2021-08-05T18:27:44.415Z",
+        "lastModified": "2021-08-05T18:27:44.415Z",
         "size": 428,
         "formattedSize": "428 Bytes"
       }
@@ -336,16 +318,17 @@
       "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
       "tags": [
         "react",
+        "redux",
         "net",
         "postgres"
       ],
       "excerpt": "",
       "meta": {
         "relativePath": "nudge2.html",
-        "createdAt": "2021-04-02T05:14:17.612Z",
-        "lastModified": "2021-04-02T05:14:17.612Z",
-        "size": 359,
-        "formattedSize": "359 Bytes"
+        "createdAt": "2021-08-05T17:59:28.857Z",
+        "lastModified": "2021-08-05T17:59:28.857Z",
+        "size": 366,
+        "formattedSize": "366 Bytes"
       }
     },
     {
@@ -362,14 +345,15 @@
       "tags": [
         "gatsby",
         "graphql",
-        "postgres"
+        "postgres",
+        "cypress"
       ],
       "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
       "meta": {
         "relativePath": "qhacks.html",
-        "createdAt": "2021-04-02T05:14:17.787Z",
-        "lastModified": "2021-04-02T05:14:17.787Z",
-        "size": 1093,
+        "createdAt": "2021-08-05T18:27:44.415Z",
+        "lastModified": "2021-08-05T18:27:44.415Z",
+        "size": 1102,
         "formattedSize": "1.1 KB"
       }
     },
@@ -425,8 +409,8 @@
       "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2021-07-06T21:17:10.024Z",
-        "lastModified": "2021-07-06T21:17:10.024Z",
+        "createdAt": "2021-08-05T18:27:44.415Z",
+        "lastModified": "2021-08-05T18:27:44.415Z",
         "size": 2274,
         "formattedSize": "2.2 KB"
       }
@@ -555,17 +539,16 @@
       "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
       "tags": [
         "tensorflow",
-        "react",
-        "spotify"
+        "react"
       ],
       "repository": "https://github.com/rosslh/vibeify",
       "excerpt": "",
       "meta": {
         "relativePath": "vibeify.html",
-        "createdAt": "2021-04-02T05:14:18.667Z",
-        "lastModified": "2021-04-02T05:14:18.666Z",
-        "size": 363,
-        "formattedSize": "363 Bytes"
+        "createdAt": "2021-08-05T20:07:51.454Z",
+        "lastModified": "2021-08-05T20:07:51.454Z",
+        "size": 354,
+        "formattedSize": "354 Bytes"
       }
     },
     {
@@ -609,8 +592,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "wtformat2.html",
-        "createdAt": "2021-08-05T00:53:50.854Z",
-        "lastModified": "2021-08-05T00:53:50.854Z",
+        "createdAt": "2021-08-05T18:27:44.415Z",
+        "lastModified": "2021-08-05T18:27:44.415Z",
         "size": 364,
         "formattedSize": "364 Bytes"
       }

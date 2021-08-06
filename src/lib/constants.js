@@ -21,6 +21,36 @@ export const tagLabels = {
   wordpress: "WordPress",
 };
 
+export const tagParents = {
+  "arduino": [],
+  "backbone": ["javascript"],
+  "cypress": ["javascript"],
+  "django": ["python"],
+  "fastify": ["node", "javascript"],
+  "flask": ["python"],
+  "gatsby": ["graphql", "react", "javascript"],
+  "gcp": [],
+  "graphql": [],
+  "java": [],
+  "javascript": [],
+  "mongo": [],
+  "net": [],
+  "node": ["javascript"],
+  "nuxt": ["javascript"],
+  "postgres": [],
+  "python": [],
+  "react": ["javascript"],
+  "redux": ["javascript"],
+  "rpi": [],
+  "rust": [],
+  "svelte": ["javascript"],
+  "tensorflow": [],
+  "typescript": ["javascript"],
+  "unity3d": [],
+  "wasm": [],
+  "wordpress": [],
+};
+
 const isBrowser = typeof window !== "undefined";
 
 const isBot = isBrowser && isbot(window.navigator.userAgent);

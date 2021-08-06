@@ -109,6 +109,10 @@
     aria-hidden="true"
     class="postSpacer doTransition {left ? 'left' : 'right'}"
   />
+  <div
+    aria-hidden="true"
+    class="bottomMarker doTransition {left ? 'left' : 'right'}"
+  />
 {/if}
 
 <style>
@@ -117,6 +121,16 @@
     div.postWrapper {
       margin-left: 0 !important;
       margin-right: 0 !important;
+    }
+
+    div.bottomMarker.left {
+      margin-left: calc(-1rem + 3px) !important;
+      margin-right: calc(100% - 1rem) !important;
+    }
+
+    div.bottomMarker.right {
+      margin-left: calc(100% - 1rem) !important;
+      margin-right: calc(-1rem + 3px) !important;
     }
   }
 
@@ -132,6 +146,20 @@
   div.postSpacer.right {
     border-right: 3px solid var(--timeline);
     margin-right: 25%;
+  }
+
+  div.bottomMarker {
+    border-bottom: 3px solid var(--timeline);
+  }
+
+  div.bottomMarker.left {
+    margin-right: calc(75% - 1rem);
+    margin-left: calc(25% - 1rem + 2px);
+  }
+
+  div.bottomMarker.right {
+    margin-right: calc(25% - 1rem + 2px);
+    margin-left: calc(75% - 1rem);
   }
 
   div.postWrapper {

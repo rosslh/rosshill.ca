@@ -3,6 +3,8 @@
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
+  import { remsToPixels } from "$lib/functions";
+  import { tagParents } from "$lib/constants";
 
   const postsMap = (post, i, postsArray) => {
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].leftAligned;
@@ -19,18 +21,22 @@
   };
 
   let showCategories = [];
+  let showTags = [];
 
-  $: postFilter = post =>
-    !showCategories.length || showCategories.includes(post.eventType);
+  $: postInShownCategories = post => !showCategories.length || showCategories.includes(post.eventType);
 
-  $: postsWithLabels = posts.filter(postFilter).map(postsMap);
+  $: parentTagShown = tag => tagParents[tag] && tagParents[tag].some(parentTag => showTags.includes(parentTag));
+  $: postInShownTags = post => !showTags.length
+    || (typeof post.tags !== "undefined" && post.tags.some(tag => showTags.includes(tag) || parentTagShown(tag)));
+
+  $: postsWithLabels = posts.filter(post => postInShownCategories(post) && postInShownTags(post)).map(postsMap);
 
   const getYearFromDate = date => Number(date.substring(0, 4));
 </script>
 
 <div class="headingWrapper contentWrapper ">
-  <h2>Timeline</h2>
-  <FilterControls bind:showCategories />
+  <h2>Experience</h2>
+  <FilterControls bind:showCategories bind:showTags {posts} />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
@@ -50,6 +56,14 @@
         />
       {/key}
     {/each}
+    {#if !postsWithLabels.length}
+      <img
+        class="travolta"
+        src="/travolta.gif"
+        alt="No items found"
+        width={remsToPixels(20)}
+        height={remsToPixels(20)} />
+    {/if}
   </div>
 </div>
 
@@ -74,5 +88,13 @@
   }
   div.headingWrapper h2 {
     margin-bottom: 1rem;
+  }
+
+  img.travolta {
+    margin-top: 3rem;
+    width: 20rem;
+    height: 20rem;
+    display: block;
+    margin: 1rem auto 2rem;
   }
 </style>

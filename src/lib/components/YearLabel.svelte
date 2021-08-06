@@ -42,6 +42,7 @@
   div.line > div {
     width: 50%;
     height: 80px;
+    border-color: var(--timeline);
   }
   div.line.right > div:first-child {
     border-left: 3px solid var(--timeline);

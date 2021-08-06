@@ -5,5 +5,5 @@ date: 2018-05-01
 image: Nudge2
 thumbnail: nudge-thumb
 blurb: Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.
-tags: [react, net, postgres]
+tags: [react, redux, net, postgres]
 ---

@@ -1,6 +1,13 @@
 <script>
   export let showCategories;
+  export let showTags;
+  export let posts;
+
+  import FaTimes from 'svelte-icons/fa/FaTimes.svelte';
+
   import FilterButton from "./FilterButton.svelte";
+  import Tag from "./Tag.svelte";
+  import { tagParents } from "$lib/constants";
 
   const toggleCategory = (category) => {
     if (showCategories.includes(category)) {
@@ -9,31 +16,144 @@
       showCategories = [...showCategories, category];
     }
   };
+
+  const toggleTag = (tag) => {
+    if (showTags.includes(tag)) {
+      showTags = showTags.filter((x) => x !== tag);
+    } else {
+      showTags = [...showTags, tag];
+    }
+  };
+
   $: jobActive = showCategories.includes("job");
   $: orgActive = showCategories.includes("org");
   $: projectActive = showCategories.includes("project");
+
+  let tagsOrdered = [];
+  let minTagNum = 2;
+
+  $: {
+    const tagCounts = {};
+
+    posts.forEach(({tags}) => {
+      if (tags) {
+        tags.forEach(tag => {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+          tagParents[tag].forEach(parentTag => {
+            tagCounts[parentTag] = (tagCounts[parentTag] || 0) + 1;
+          });
+        });
+      }
+    });
+
+    tagsOrdered = Object.entries(tagCounts)
+      .filter(tag => tag[1] >= minTagNum)
+      .sort((a, b) => {
+        if (a[1] < b[1]) {
+          return 1;
+        } else if (a[1] > b[1]) {
+          return -1;
+        }
+        return a[0] < b[0] ? -1 : 1;
+      })
+      .map(tag => tag[0]);
+  }
 </script>
 
-<div class="filterControls">
+<div class="category-buttons">
   <FilterButton
+    showCheckbox
     active={jobActive}
     callback={() => toggleCategory("job")}
-    id="job">
+    classPrefix="job"
+  >
     Work Experience
   </FilterButton>
   <FilterButton
+    showCheckbox
     active={projectActive}
     callback={() => toggleCategory("project")}
-    id="project">
+    classPrefix="project"
+  >
     Projects
   </FilterButton>
   <FilterButton
+    showCheckbox
     active={orgActive}
     callback={() => toggleCategory("org")}
-    id="org">
+    classPrefix="org"
+  >
     Organizations
   </FilterButton>
+  {#if showCategories.length || showTags.length}
+    <button
+      class="secondary-button doTransition"
+      on:click={() => {
+        showCategories = [];
+        showTags = [];
+      }}
+    >
+      <span class="symbol"><FaTimes /></span> Clear filters
+    </button>
+  {/if}
+</div>
+<div class="tag-buttons">
+  {#each tagsOrdered as tag}
+    <FilterButton
+      small
+      active={showTags.includes(tag)}
+      callback={()=>toggleTag(tag)}
+      classPrefix="tag"
+    >
+      <Tag tagId={tag} />
+    </FilterButton>
+  {/each}
+  {#if minTagNum !== 0}
+    <button
+      class="secondary-button doTransition"
+      on:click={() => {
+        minTagNum = 0;
+      }}
+    >
+      Show more...
+    </button>
+  {/if}
 </div>
 
 <style>
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tag-buttons {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .secondary-button {
+    background: none;
+    padding: 0 0 0.1rem;
+    border: none;
+    border-bottom: 1px solid var(--subtitle);
+    border-radius: 0;
+    color: var(--subtitle);
+    cursor: pointer;
+    font-size: 0.75rem;
+    margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .secondary-button .symbol {
+    position: static;
+    margin-top: 0.05rem;
+    margin-right: 0.3rem;
+    width: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
 </style>
