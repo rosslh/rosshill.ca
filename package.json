@@ -15,7 +15,7 @@
     "postbuild": "mv .svelte-kit/static/build/404/index.html .svelte-kit/static/build/404.html"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.15",
+    "@sveltejs/adapter-static": "1.0.0-next.16",
     "@sveltejs/kit": "1.0.0-next.142",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
