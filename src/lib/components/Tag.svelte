@@ -20,16 +20,13 @@
       />
     </picture>
   </div>
-  <div class="tagLabel">{tagString}</div>
+  <div class={tagString === tagId ? "capitalize" : ""}>{tagString}</div>
 </div>
 
 <style>
   div.tag {
-    /* border: 1px solid var(--postBorder); */
-    /* border-radius: 1.2rem; */
     color: var(--subtitle);
-    margin: 0.2rem 0;
-    margin-right: 0.4rem;
+    margin: 0.2rem 0.1rem 0.2rem 0;
     display: flex;
     align-items: center;
     height: 1.2rem;
@@ -51,7 +48,7 @@
     display: block;
   }
 
-  div.tagLabel {
+  div.capitalize {
     text-transform: capitalize;
   }
 </style>

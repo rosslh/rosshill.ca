@@ -47,16 +47,12 @@
     display: inline-flex;
     align-items: center;
     padding: 0 1rem;
-    margin: 0.25rem 0.15rem;
+    margin: 0.3rem 0.35rem 0.3rem 0;
   }
 
   button.small {
     height: 1.5rem;
     padding: 0 0.25rem;
-  }
-  
-  button:first-child {
-    margin-left: 0;
   }
 
   button .symbol {

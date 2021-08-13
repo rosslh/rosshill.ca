@@ -43,7 +43,7 @@
         });
 
         // get parent tags of each tag and remove duplicates
-        const parentTags = [...new Set(tags.map(tag => tagParents[tag]).flat())];
+        const parentTags = [...new Set(tags.map(tag => tagParents[tag] || []).flat())];
 
         parentTags
           .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags

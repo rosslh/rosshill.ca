@@ -136,16 +136,17 @@
         "redux",
         "django",
         "postgres",
-        "cypress"
+        "cypress",
+        "heroku"
       ],
       "eventType": "job",
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-08-05T17:57:38.438Z",
-        "lastModified": "2021-08-05T17:57:38.438Z",
-        "size": 628,
-        "formattedSize": "628 Bytes"
+        "createdAt": "2021-08-13T20:19:32.601Z",
+        "lastModified": "2021-08-13T20:19:32.601Z",
+        "size": 636,
+        "formattedSize": "636 Bytes"
       }
     },
     {
