@@ -28,15 +28,14 @@
       "blurb": "A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.",
       "tags": [
         "react",
-        "node",
-        "cypress"
+        "node"
       ],
       "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
       "meta": {
         "relativePath": "IsEarthStillWarming.html",
-        "createdAt": "2021-08-05T17:57:38.438Z",
-        "lastModified": "2021-08-05T17:57:38.438Z",
-        "size": 1491,
+        "createdAt": "2021-08-13T22:25:36.231Z",
+        "lastModified": "2021-08-13T22:25:36.231Z",
+        "size": 1494,
         "formattedSize": "1.5 KB"
       }
     },
@@ -136,15 +135,14 @@
         "redux",
         "django",
         "postgres",
-        "cypress",
         "heroku"
       ],
       "eventType": "job",
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-08-13T20:19:32.601Z",
-        "lastModified": "2021-08-13T20:19:32.601Z",
+        "createdAt": "2021-08-13T22:25:36.231Z",
+        "lastModified": "2021-08-13T22:25:36.231Z",
         "size": 636,
         "formattedSize": "636 Bytes"
       }
@@ -346,15 +344,14 @@
       "tags": [
         "gatsby",
         "graphql",
-        "postgres",
-        "cypress"
+        "postgres"
       ],
       "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
       "meta": {
         "relativePath": "qhacks.html",
-        "createdAt": "2021-08-05T18:27:44.415Z",
-        "lastModified": "2021-08-05T18:27:44.415Z",
-        "size": 1102,
+        "createdAt": "2021-08-13T22:25:36.231Z",
+        "lastModified": "2021-08-13T22:25:36.231Z",
+        "size": 1105,
         "formattedSize": "1.1 KB"
       }
     },
