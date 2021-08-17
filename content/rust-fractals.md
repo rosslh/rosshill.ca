@@ -1,7 +1,7 @@
 ---
 title: Mandelbrot Set in Rust
 eventType: project
-date: 2021-01-01
+date: 2021-01-02
 repository: https://github.com/rosslh/rust-mandelbrot-set/
 website: https://rust-mandelbrot.netlify.app/
 thumbnail: mandelbrot-thumb

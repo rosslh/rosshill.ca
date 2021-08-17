@@ -44,7 +44,8 @@
       "contents": "",
       "title": "CTO – MUSE Magazine",
       "eventType": "org",
-      "date": "2017-11-01T00:00:00.000Z",
+      "date": "2017-11-02T00:00:00.000Z",
+      "endDate": "2018-04-20T00:00:00.000Z",
       "thumbnail": "muse",
       "blurb": "Created a WordPress-based platform for publishing student-submitted articles that reflects the design language of the physical MUSE magazine",
       "tags": [
@@ -53,10 +54,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "MUSE.html",
-        "createdAt": "2021-04-02T05:14:17.487Z",
-        "lastModified": "2021-04-02T05:14:17.486Z",
-        "size": 250,
-        "formattedSize": "250 Bytes"
+        "createdAt": "2021-08-17T21:33:52.087Z",
+        "lastModified": "2021-08-17T21:33:52.087Z",
+        "size": 270,
+        "formattedSize": "270 Bytes"
       }
     },
     {
@@ -64,7 +65,8 @@
       "contents": "",
       "title": "Software Developer – QTMA",
       "eventType": "org",
-      "date": "2019-09-01T00:00:00.000Z",
+      "date": "2019-09-02T00:00:00.000Z",
+      "endDate": "2020-04-20T00:00:00.000Z",
       "image": "studii",
       "thumbnail": "qtma",
       "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
@@ -76,10 +78,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "QTMA.html",
-        "createdAt": "2021-04-02T05:14:17.999Z",
-        "lastModified": "2021-04-02T05:14:17.998Z",
-        "size": 345,
-        "formattedSize": "345 Bytes"
+        "createdAt": "2021-08-17T21:33:52.068Z",
+        "lastModified": "2021-08-17T21:33:52.068Z",
+        "size": 365,
+        "formattedSize": "365 Bytes"
       }
     },
     {
@@ -88,6 +90,7 @@
       "title": "Director of Systems Automation – QVFT",
       "eventType": "org",
       "date": "2019-11-10T00:00:00.000Z",
+      "endDate": "2020-04-20T00:00:00.000Z",
       "thumbnail": "qvft",
       "blurb": "In charge of running weekly meetings, setting goals, and providing technical assistance to team members. The Systems Automation team is building an software system for adjusting environment variables, such as temperature or light intensity, in order to maximize crop yield.",
       "tags": [
@@ -100,10 +103,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "QVFT.html",
-        "createdAt": "2021-04-02T05:14:18.221Z",
-        "lastModified": "2021-04-02T05:14:18.220Z",
-        "size": 481,
-        "formattedSize": "481 Bytes"
+        "createdAt": "2021-08-17T21:18:46.792Z",
+        "lastModified": "2021-08-17T21:18:46.792Z",
+        "size": 501,
+        "formattedSize": "501 Bytes"
       }
     },
     {
@@ -111,23 +114,26 @@
       "contents": "",
       "title": "Ski Instructor – Caledon Ski Club",
       "eventType": "job",
-      "date": "2014-12-01T00:00:00.000Z",
+      "date": "2014-12-02T00:00:00.000Z",
+      "endDate": "2016-03-20T00:00:00.000Z",
+      "seasonal": true,
       "thumbnail": "caledon",
       "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
       "excerpt": "",
       "meta": {
         "relativePath": "caledon.html",
-        "createdAt": "2021-04-02T05:14:16.597Z",
-        "lastModified": "2021-04-02T05:14:16.596Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
+        "createdAt": "2021-08-17T22:51:29.112Z",
+        "lastModified": "2021-08-17T22:51:29.112Z",
+        "size": 317,
+        "formattedSize": "317 Bytes"
       }
     },
     {
       "id": "doctalk",
       "contents": "",
-      "title": "Started as a developer at Doctalk",
+      "title": "Full Stack Developer at Doctalk",
       "date": "2020-11-30T00:00:00.000Z",
+      "ongoing": true,
       "thumbnail": "doctalk-thumb",
       "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
       "tags": [
@@ -141,10 +147,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-08-13T22:25:36.231Z",
-        "lastModified": "2021-08-13T22:25:36.231Z",
-        "size": 636,
-        "formattedSize": "636 Bytes"
+        "createdAt": "2021-08-17T20:27:34.525Z",
+        "lastModified": "2021-08-17T20:27:34.525Z",
+        "size": 649,
+        "formattedSize": "649 Bytes"
       }
     },
     {
@@ -152,7 +158,7 @@
       "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
       "title": "Dodgeball: The Game",
       "eventType": "project",
-      "date": "2018-01-01T00:00:00.000Z",
+      "date": "2018-01-02T00:00:00.000Z",
       "thumbnailExt": "jpg",
       "thumbnail": "dodgeball",
       "repository": "https://github.com/rosslh/Dodgeball-The-Game",
@@ -164,8 +170,8 @@
       "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
       "meta": {
         "relativePath": "dodgeball.html",
-        "createdAt": "2021-04-04T18:35:50.321Z",
-        "lastModified": "2021-04-04T18:35:50.321Z",
+        "createdAt": "2021-08-17T21:33:52.069Z",
+        "lastModified": "2021-08-17T21:33:52.069Z",
         "size": 1550,
         "formattedSize": "1.5 KB"
       }
@@ -175,23 +181,24 @@
       "contents": "",
       "title": "foldA Box Office System",
       "eventType": "project",
-      "date": "2019-09-01T00:00:00.000Z",
+      "date": "2019-09-02T00:00:00.000Z",
       "thumbnail": "folda",
       "blurb": "An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.",
       "tags": [
         "svelte",
         "flask",
-        "postgres"
+        "postgres",
+        "heroku"
       ],
       "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
       "website": "https://folda.netlify.com/",
       "excerpt": "",
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2021-04-02T05:14:17.096Z",
-        "lastModified": "2021-04-02T05:14:17.095Z",
-        "size": 416,
-        "formattedSize": "416 Bytes"
+        "createdAt": "2021-08-17T21:33:52.069Z",
+        "lastModified": "2021-08-17T21:33:52.069Z",
+        "size": 424,
+        "formattedSize": "424 Bytes"
       }
     },
     {
@@ -199,17 +206,19 @@
       "contents": "",
       "title": "Counsellor – Camp Hurontario",
       "eventType": "job",
-      "date": "2014-05-01T00:00:00.000Z",
+      "date": "2014-05-02T00:00:00.000Z",
+      "endDate": "2016-08-20T00:00:00.000Z",
+      "seasonal": true,
       "thumbnail": "hurontario",
       "thumbnailExt": "jpg",
       "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
       "excerpt": "",
       "meta": {
         "relativePath": "hurontario.html",
-        "createdAt": "2021-04-02T05:14:17.235Z",
-        "lastModified": "2021-04-02T05:14:17.234Z",
-        "size": 282,
-        "formattedSize": "282 Bytes"
+        "createdAt": "2021-08-17T22:51:39.478Z",
+        "lastModified": "2021-08-17T22:51:39.478Z",
+        "size": 317,
+        "formattedSize": "317 Bytes"
       }
     },
     {
@@ -289,7 +298,8 @@
       "contents": "",
       "title": "Front End Developer Intern – Nudge.ai",
       "eventType": "job",
-      "date": "2017-05-01T00:00:00.000Z",
+      "date": "2017-05-02T00:00:00.000Z",
+      "endDate": "2017-08-20T00:00:00.000Z",
       "image": "Nudge1",
       "thumbnail": "nudge-thumb",
       "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
@@ -300,18 +310,19 @@
       "excerpt": "",
       "meta": {
         "relativePath": "nudge1.html",
-        "createdAt": "2021-04-02T05:14:17.551Z",
-        "lastModified": "2021-04-02T05:14:17.550Z",
-        "size": 429,
-        "formattedSize": "429 Bytes"
+        "createdAt": "2021-08-17T21:33:52.069Z",
+        "lastModified": "2021-08-17T21:33:52.069Z",
+        "size": 449,
+        "formattedSize": "449 Bytes"
       }
     },
     {
       "id": "nudge2",
       "contents": "",
-      "title": "Full-Stack Developer Intern – Nudge.ai",
+      "title": "Full Stack Developer Intern – Nudge.ai",
       "eventType": "job",
-      "date": "2018-05-01T00:00:00.000Z",
+      "date": "2018-05-02T00:00:00.000Z",
+      "endDate": "2018-08-20T00:00:00.000Z",
       "image": "Nudge2",
       "thumbnail": "nudge-thumb",
       "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
@@ -324,10 +335,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "nudge2.html",
-        "createdAt": "2021-08-05T17:59:28.857Z",
-        "lastModified": "2021-08-05T17:59:28.857Z",
-        "size": 366,
-        "formattedSize": "366 Bytes"
+        "createdAt": "2021-08-17T21:33:52.069Z",
+        "lastModified": "2021-08-17T21:33:52.069Z",
+        "size": 386,
+        "formattedSize": "386 Bytes"
       }
     },
     {
@@ -336,6 +347,7 @@
       "title": "Software Developer – QHacks",
       "eventType": "org",
       "date": "2018-04-21T00:00:00.000Z",
+      "endDate": "2019-03-20T00:00:00.000Z",
       "image": "qhacks",
       "thumbnail": "qhacks-crown",
       "website": "https://2019.qhacks.io",
@@ -349,43 +361,28 @@
       "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
       "meta": {
         "relativePath": "qhacks.html",
-        "createdAt": "2021-08-13T22:25:36.231Z",
-        "lastModified": "2021-08-13T22:25:36.231Z",
-        "size": 1105,
+        "createdAt": "2021-08-17T21:57:00.494Z",
+        "lastModified": "2021-08-17T21:57:00.494Z",
+        "size": 1125,
         "formattedSize": "1.1 KB"
       }
     },
     {
       "id": "queensEnrolled",
       "contents": "",
-      "title": "Started at Queen's University",
+      "title": "Student at Queen's University",
       "eventType": "other",
-      "date": "2016-09-01T00:00:00.000Z",
-      "thumbnail": "queens-thumb",
-      "excerpt": "",
-      "meta": {
-        "relativePath": "queensEnrolled.html",
-        "createdAt": "2021-04-02T05:14:18.079Z",
-        "lastModified": "2021-04-02T05:14:18.079Z",
-        "size": 102,
-        "formattedSize": "102 Bytes"
-      }
-    },
-    {
-      "id": "queensGraduated",
-      "contents": "",
-      "title": "Graduated from Queen's University",
-      "eventType": "other",
-      "date": "2020-04-01T00:00:00.000Z",
+      "date": "2016-09-02T00:00:00.000Z",
+      "endDate": "2020-04-02T00:00:00.000Z",
       "thumbnail": "queens-thumb",
       "blurb": "Bachelor of Computing (Honours, Software Design).<br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cips.ca/SoftwareEngineering/#:~:text=queen%E2%80%99s%20university\">CIPS Accredited</a> Software Engineering program.",
       "excerpt": "",
       "meta": {
-        "relativePath": "queensGraduated.html",
-        "createdAt": "2021-07-15T13:10:35.722Z",
-        "lastModified": "2021-07-15T13:10:35.722Z",
-        "size": 343,
-        "formattedSize": "343 Bytes"
+        "relativePath": "queensEnrolled.html",
+        "createdAt": "2021-08-17T22:13:17.503Z",
+        "lastModified": "2021-08-17T22:13:17.503Z",
+        "size": 359,
+        "formattedSize": "359 Bytes"
       }
     },
     {
@@ -442,7 +439,7 @@
       "contents": "",
       "title": "Mandelbrot Set in Rust",
       "eventType": "project",
-      "date": "2021-01-01T00:00:00.000Z",
+      "date": "2021-01-02T00:00:00.000Z",
       "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
       "website": "https://rust-mandelbrot.netlify.app/",
       "thumbnail": "mandelbrot-thumb",
@@ -455,8 +452,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2021-08-01T15:31:49.277Z",
-        "lastModified": "2021-08-01T15:31:49.277Z",
+        "createdAt": "2021-08-17T21:33:52.068Z",
+        "lastModified": "2021-08-17T21:33:52.068Z",
         "size": 396,
         "formattedSize": "396 Bytes"
       }
@@ -466,7 +463,7 @@
       "contents": "",
       "title": "Traffic Light Optimization",
       "eventType": "project",
-      "date": "2019-11-01T00:00:00.000Z",
+      "date": "2019-11-02T00:00:00.000Z",
       "thumbnailExt": "png",
       "thumbnail": "traffic",
       "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
@@ -477,8 +474,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "traffic.html",
-        "createdAt": "2021-04-02T05:14:18.519Z",
-        "lastModified": "2021-04-02T05:14:18.518Z",
+        "createdAt": "2021-08-17T21:33:52.068Z",
+        "lastModified": "2021-08-17T21:33:52.068Z",
         "size": 370,
         "formattedSize": "370 Bytes"
       }
@@ -498,10 +495,10 @@
       "excerpt": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>",
       "meta": {
         "relativePath": "unitransform.html",
-        "createdAt": "2021-04-02T05:14:18.575Z",
-        "lastModified": "2021-04-02T05:14:18.574Z",
-        "size": 564,
-        "formattedSize": "564 Bytes"
+        "createdAt": "2021-08-17T22:13:41.865Z",
+        "lastModified": "2021-08-17T22:13:41.865Z",
+        "size": 565,
+        "formattedSize": "565 Bytes"
       }
     },
     {
@@ -509,7 +506,8 @@
       "contents": "",
       "title": "Software Developer Intern – Verafin",
       "eventType": "job",
-      "date": "2019-05-01T00:00:00.000Z",
+      "date": "2019-05-02T00:00:00.000Z",
+      "endDate": "2019-08-20T00:00:00.000Z",
       "thumbnail": "verafin-thumb",
       "image": "verafin",
       "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
@@ -521,10 +519,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "verafin.html",
-        "createdAt": "2021-04-02T05:14:18.618Z",
-        "lastModified": "2021-04-02T05:14:18.618Z",
-        "size": 412,
-        "formattedSize": "412 Bytes"
+        "createdAt": "2021-08-17T21:33:52.068Z",
+        "lastModified": "2021-08-17T21:33:52.068Z",
+        "size": 432,
+        "formattedSize": "432 Bytes"
       }
     },
     {
@@ -577,7 +575,7 @@
       "contents": "",
       "title": "WTFormat v2.0",
       "eventType": "project",
-      "date": "2021-08-01T00:00:00.000Z",
+      "date": "2021-08-02T00:00:00.000Z",
       "repository": "https://github.com/rosslh/wtformat",
       "website": "https://wtformat.com/",
       "image": "wtformat",
@@ -590,8 +588,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "wtformat2.html",
-        "createdAt": "2021-08-05T18:27:44.415Z",
-        "lastModified": "2021-08-05T18:27:44.415Z",
+        "createdAt": "2021-08-17T20:29:30.024Z",
+        "lastModified": "2021-08-17T20:29:30.024Z",
         "size": 364,
         "formattedSize": "364 Bytes"
       }

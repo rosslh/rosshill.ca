@@ -2,6 +2,7 @@
 title: Software Developer – QHacks
 eventType: org
 date: 2018-04-21
+endDate: 2019-03-20
 image: qhacks
 thumbnail: qhacks-crown
 website: https://2019.qhacks.io

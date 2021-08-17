@@ -15,6 +15,7 @@
 
 <script>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
+  import FormattedDate from "$lib/components/FormattedDate.svelte";
   export let post;
 </script>
 
@@ -28,15 +29,15 @@
   <article class="postFull">
     <h2>{post.title}</h2>
     <div class="subtitle doTransition">
-      Started {post.date}
+      <FormattedDate {post} />
       {#if post.repository}
-        &ndash;
+        <span class="smallSlash">/</span>
         <ExternalLink href={post.repository}>
           GitHub
         </ExternalLink>
       {/if}
       {#if post.website}
-        &ndash;
+        <span class="smallSlash">/</span>
         <ExternalLink href={post.website}>
           Website
         </ExternalLink>

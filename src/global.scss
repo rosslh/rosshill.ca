@@ -3,8 +3,13 @@
   --project: #1b74af;
   --org: #15803D;
 
+  --job-marker: #fca8a8;
+  --project-marker: #8cc2fc;
+  --org-marker: #7eda95;
+  --other-marker: #aeb1b6;
+
   --background: #f8f9fb;
-  --focusOutline: #787b81;
+  --focusOutline: #81848a;
   --foreground: #2f3949;
   --heading: #1f2938;
   --link: #205990;
@@ -14,13 +19,18 @@
   --sidebarBorder: #d1d5dd;
   --subtitle: #434548;
   --activeTagBorder: #434548;
-  --timeline: #787b81;
+  --timeline: #81848a;
 }
 
 @mixin dark-theme () {
   --job: #f28282;
   --project: #6fa5ef;
   --org: #55b574;
+
+  --job-marker: var(--job);
+  --project-marker: var(--project);
+  --org-marker: var(--org);
+  --other-marker: #a4adbe;
 
   --background: #1A1F28;
   --focusOutline: #58606e;

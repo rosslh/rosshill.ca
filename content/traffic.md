@@ -1,7 +1,7 @@
 ---
 title: "Traffic Light Optimization"
 eventType: project
-date: 2019-11-01
+date: 2019-11-02
 thumbnailExt: png
 thumbnail: traffic
 repository: https://github.com/ZaneLittle/Traffic-Light-Simulation

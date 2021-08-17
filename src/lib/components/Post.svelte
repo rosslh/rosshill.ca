@@ -4,6 +4,7 @@
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
   import ExternalLink from "./ExternalLink.svelte";
+  import FormattedDate from "./FormattedDate.svelte";
   import PostSpacer from "./PostSpacer.svelte";
   import { reduceMotion } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
@@ -12,10 +13,6 @@
   export let left;
   export let firstPost;
   export let lastPost;
-
-  $: typeString =
-    ({ job: "Job", org: "Organization", project: "Project" })[post.eventType] ||
-    "";
 
   let element;
   let intersecting;
@@ -37,7 +34,9 @@
     id="timeline-{post.slug}"
     class="postWrapper doTransition {left ? 'left' : 'right'}"
   >
-    <TimelineMarker {left} />
+    <TimelineMarker
+      {left}
+      eventType={post.eventType} />
     <div class="fadeIn {hasIntersected ? '' : 'invisible'}">
       <PostArrow {left} />
       <div class="post doTransition">
@@ -94,9 +93,7 @@
               </ExternalLink>
             {/if}
           </div>
-          <div class="typeString doTransition {post.eventType}">
-            {typeString}
-          </div>
+          <FormattedDate {post} />
         </div>
       </div>
     </div>
@@ -138,7 +135,7 @@
     background-color: var(--postBackground);
     border: 1px solid var(--postBorder);
     border-radius: 0.5rem;
-    margin: 0.75rem 0;
+    margin: 0.8rem 0;
     position: relative;
   }
 
@@ -174,14 +171,13 @@
     display: block;
   }
 
+  :global(div.post > div.footer > div.dateString) {
+    font-size: 0.8rem;
+  }
+
   div.post div.postHeading {
     display: flex;
     min-height: 1.5rem;
-    align-items: center;
-  }
-
-  div.post div.imageAndHeading {
-    display: flex;
     align-items: center;
   }
 
@@ -190,23 +186,6 @@
     padding: 0.3rem 0;
     margin-left: 0.75rem;
     flex-wrap: wrap;
-  }
-
-  div.post div.typeString {
-    font-size: 0.75rem;
-    background-color: var(--postBackground);
-  }
-
-  div.post div.typeString.job {
-    color: var(--job);
-  }
-
-  div.post div.typeString.org {
-    color: var(--org);
-  }
-
-  div.post div.typeString.project {
-    color: var(--project);
   }
 
   div.post div.postHeading div.headingAndTags {
@@ -251,21 +230,8 @@
   div.post div.footer div.externalLinks .smallSlash {
     transform-origin: bottom;
   }
-  
-  @media (min-width: 701px) {
-    div.post div.postHeading {
-      padding-right: 4rem;
-    }
-    div.typeString {
-      position: absolute;
-      top: 1rem;
-      right: 0.75rem;
-    }
-  }
+
   @media (max-width: 700px) {
-    div.post div.postHeading {
-      padding-right: 0;
-    }
     div.post p.postText,
     div.post div.footer {
       padding-left: 0 !important;

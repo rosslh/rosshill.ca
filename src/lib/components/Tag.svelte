@@ -31,7 +31,7 @@
     align-items: center;
     height: 1.2rem;
     padding: 0 0.3rem;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
   div.logoWrapper {

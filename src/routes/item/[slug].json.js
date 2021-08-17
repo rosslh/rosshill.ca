@@ -1,5 +1,4 @@
 import { slugify } from "$lib/functions";
-import dateformat from "dateformat";
 import { data as timeline } from "$lib/data.json";
 
 const posts = Object.values(timeline)
@@ -8,7 +7,10 @@ const posts = Object.values(timeline)
     return {
       title: post.title,
       slug: slugify(post.title),
-      date: dateformat(post.date, "mmmm yyyy"),
+      date: post.date,
+      endDate: post.endDate,
+      seasonal: post.seasonal,
+      ongoing: post.ongoing,
       website: post.website,
       repository: post.repository,
       contents: post.contents,

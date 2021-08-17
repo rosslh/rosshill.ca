@@ -1,7 +1,7 @@
 ---
 title: foldA Box Office System
 eventType: project
-date: 2019-09-01
+date: 2019-09-02
 thumbnail: folda
 blurb: An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.
 tags: [svelte, flask, postgres, heroku]
