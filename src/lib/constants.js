@@ -15,6 +15,7 @@ export const tagLabels = {
   prosemirror: "ProseMirror",
   rpi: "Raspberry Pi",
   svelte: "Svelte.js",
+  tensorflow: "TensorFlow",
   typescript: "TypeScript",
   unity3d: "Unity 3D",
   wasm: "WebAssembly",

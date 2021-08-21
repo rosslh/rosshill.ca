@@ -1,8 +1,8 @@
 {
   "background_color": "#ffffff",
-  "theme_color": "#1d3557",
-  "name": "RossHill.ca",
-  "short_name": "RossHill.ca",
+  "theme_color": "#212732",
+  "name": "rosshill.ca",
+  "short_name": "rosshill.ca",
   "start_url": "/",
   "icons": [
     {

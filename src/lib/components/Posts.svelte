@@ -60,7 +60,8 @@
       <img
         class="travolta"
         src="/travolta.gif"
-        alt="No items found"
+        title="No items found"
+        alt="Vincent Vega from Pulp Fiction (played by John Travolta) looking around confused because there are no timeline items."
         width={remsToPixels(20)}
         height={remsToPixels(20)} />
     {/if}

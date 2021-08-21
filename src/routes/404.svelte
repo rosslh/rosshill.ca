@@ -11,7 +11,7 @@ import { remsToPixels } from "$lib/functions";
   <img
     class="travolta"
     src="/travolta.gif"
-    alt=""
+    alt="Vincent Vega from Pulp Fiction (played by John Travolta) looking around confused because the page wasn't found."
     width={remsToPixels(20)}
     height={remsToPixels(20)} />
 
