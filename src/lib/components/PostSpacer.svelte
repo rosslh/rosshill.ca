@@ -48,7 +48,6 @@
 
   div.bottomMarker {
     border-bottom: 3px solid var(--timeline);
-    margin-bottom: 2rem;
   }
 
   div.bottomMarker.left {

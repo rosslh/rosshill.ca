@@ -1,5 +1,5 @@
 ---
-title: Full Stack Developer at Doctalk
+title: Full Stack Developer – Doctalk
 date: 2020-11-30
 ongoing: true
 thumbnail: doctalk-thumb
