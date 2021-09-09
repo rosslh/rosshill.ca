@@ -3,6 +3,7 @@
   import AnimatedName from "./AnimatedName.svelte";
   import ExternalLink from "./ExternalLink.svelte";
   import { remsToPixels } from "$lib/functions";
+  import InlineSeparator from "./InlineSeparator.svelte";
 </script>
 
 <div class="sidebar doTransition">
@@ -29,11 +30,11 @@
       <ExternalLink href="https://github.com/rosslh">
         GitHub
       </ExternalLink>
-      <span class="smallSlash">/</span>
+      <InlineSeparator />
       <ExternalLink href="https://www.linkedin.com/in/rosslh">
         LinkedIn
       </ExternalLink>
-      <span class="smallSlash">/</span>
+      <InlineSeparator />
       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume
       </a>
@@ -44,7 +45,6 @@
 
 <style>
   div.sidebar {
-    grid-area: sidebar;
     border-right: 1px solid var(--sidebarBorder);
     background-color: var(--sidebarBackground);
     z-index: 10;

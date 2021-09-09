@@ -5,7 +5,7 @@ import fs from "fs";
 // This isn't strictly necessary but I don't trust the crawler
 const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.meta.url), 'utf8'));
 const { data } = getJson("./src/lib/data.json");
-const pages = data
+const entries = data
   .filter(entry => entry.contents)
   .map(entry => `/item/${slugify(entry.title)}`)
   .concat(['*']);
@@ -32,7 +32,7 @@ export default {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			pages
+			entries
 		},
 
 		adapter: staticAdapter(),

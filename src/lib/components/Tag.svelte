@@ -6,8 +6,8 @@
   $: tagString = tagLabels[tagId] || tagId;
 </script>
 
-<div class="tag doTransition">
-  <div class="logoWrapper">
+<span class="tag doTransition">
+  <span class="logoWrapper">
     <picture class="fixedSize">
       <source srcset="/tags/{tagId}.webp" type="image/webp" />
       <source srcset="/tags/{tagId}.png" type="image/png" />
@@ -19,12 +19,12 @@
         height={remsToPixels(0.85)}
       />
     </picture>
-  </div>
-  <div class={tagString === tagId ? "capitalize" : ""}>{tagString}</div>
-</div>
+  </span>
+  <span class={tagString === tagId ? "capitalize" : ""}>{tagString}</span>
+</span>
 
 <style>
-  div.tag {
+  .tag {
     color: var(--subtitle);
     margin: 0.2rem 0.1rem 0.2rem 0;
     display: flex;
@@ -34,21 +34,21 @@
     font-size: 0.8rem;
   }
 
-  div.logoWrapper {
+  .logoWrapper {
     border-radius: 50%;
     overflow: hidden;
     height: 0.85rem;
     width: 0.85rem;
-    margin-right: 0.2rem;
+    margin-right: 0.25rem;
   }
 
-  div.logoWrapper * {
+  .logoWrapper * {
     height: 100%;
     width: 100%;
     display: block;
   }
 
-  div.capitalize {
+  .capitalize {
     text-transform: capitalize;
   }
 </style>

@@ -23,17 +23,17 @@
   on:click={handleClick}
 >
   {#if showCheckbox}
-    <div class="symbol">
+    <span class="symbol">
       {#if active}
         <FaRegCheckCircle />
       {:else}
         <FaRegCircle />
       {/if}
-    </div>
+    </span>
   {/if}
-  <div class="text">
+  <span class="text">
     <slot />
-  </div>
+  </span>
 </button>
 
 <style>

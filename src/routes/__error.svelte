@@ -11,7 +11,7 @@
 <script>
   import NotFound from "./404.svelte";
   export let error;
-  console.log(error);
+  console.error(error);
 </script>
 
 <NotFound />

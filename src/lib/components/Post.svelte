@@ -8,6 +8,7 @@
   import PostSpacer from "./PostSpacer.svelte";
   import { reduceMotion } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
+  import InlineSeparator from "./InlineSeparator.svelte";
 
   export let post;
   export let left;
@@ -85,7 +86,7 @@
               </ExternalLink>
             {/if}
             {#if post.repository && post.website}
-              <span class="smallSlash">/</span>
+              <InlineSeparator />
             {/if}
             {#if post.website}
               <ExternalLink href={post.website}>
@@ -204,6 +205,7 @@
 
   div.post div.postHeading h3 a {
     color: var(--heading);
+    text-decoration: underline !important;
   }
 
   div.post p.postText {
@@ -217,7 +219,7 @@
 
   div.post div.footer {
     font-size: 0.8rem;
-    padding-top: 0.5rem !important;
+    padding-top: 0.75rem !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -225,10 +227,6 @@
 
   div.post div.footer div.externalLinks {
     color: var(--subtitle);
-  }
-
-  div.post div.footer div.externalLinks .smallSlash {
-    transform-origin: bottom;
   }
 
   @media (max-width: 700px) {

@@ -1,18 +1,18 @@
 @mixin light-theme () {
   --job: #dd1615;
-  --project: #1b74af;
+  --project: #9b33f6;
   --org: #15803D;
 
   --job-marker: #f48181;
-  --project-marker: #50a8f1;
-  --org-marker: #48b869;
+  --project-marker: #b890f1;
+  --org-marker: #60b576;
   --other-marker: #a3a3a3;
 
   --background: #f8f9fb;
   --focusOutline: #81848a;
   --foreground: #2f3949;
   --heading: #1f2938;
-  --link: #205990;
+  --link: #195896;
   --postBackground: #f3f4f7;
   --postBorder: #d1d5dd;
   --sidebarBackground: #f3f4f7;
@@ -24,7 +24,7 @@
 
 @mixin dark-theme () {
   --job: #f28282;
-  --project: #6fa5ef;
+  --project: #b592ea;
   --org: #55b574;
 
   --job-marker: var(--job);
@@ -36,7 +36,7 @@
   --focusOutline: #58606e;
   --foreground: #e5e7eb;
   --heading: #fcfcfd;
-  --link: #fcfcfd;
+  --link: #9bbaf0;
   --postBackground: #212732;
   --postBorder: #2d3642;
   --sidebarBackground: #212732;
@@ -102,16 +102,10 @@ body {
 div.twoColumn {
   display: grid;
   grid-template-columns: 3fr 8fr;
-  grid-template-areas: "sidebar content";
-}
-
-div.mainContent {
-  grid-area: content;
 }
 
 @media (max-width: 1000px) {
   div.twoColumn {
-    grid-template-areas: "sidebar" "content";
     grid-template-columns: 1fr;
   }
 }
@@ -152,12 +146,6 @@ h4 {
   padding: 0 5%;
 }
 
-span.smallSlash {
-  transform: scale(0.9);
-  padding: 0 1px;
-  display: inline-block;
-}
-
 code {
   background-color: var(--postBackground) !important;
   border: 1px solid var(--postBorder);
@@ -167,6 +155,7 @@ code {
 
 a {
   color: var(--link);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline !important;

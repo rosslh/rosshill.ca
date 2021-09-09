@@ -16,6 +16,7 @@
 <script>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
+  import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   export let post;
 </script>
 
@@ -31,13 +32,13 @@
     <div class="subtitle doTransition">
       <FormattedDate {post} />
       {#if post.repository}
-        <span class="smallSlash">/</span>
+        <InlineSeparator />
         <ExternalLink href={post.repository}>
           GitHub
         </ExternalLink>
       {/if}
       {#if post.website}
-        <span class="smallSlash">/</span>
+        <InlineSeparator />
         <ExternalLink href={post.website}>
           Website
         </ExternalLink>
