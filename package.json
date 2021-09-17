@@ -24,7 +24,7 @@
     "eslint-plugin-svelte3": "^3.2.0",
     "isbot": "^3.3.2",
     "markdown-json": "^1.6.0",
-    "sass": "^1.39.0",
+    "sass": "^1.41.1",
     "slugify": "^1.6.0",
     "svelte": "3.42.4",
     "svelte-icons": "^2.1.0",
