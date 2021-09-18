@@ -6,6 +6,7 @@
   export let classPrefix;
   export let showCheckbox = false;
   export let small = false;
+  export let extraClasses = '';
 
   let preventTransition = false;
 
@@ -19,7 +20,7 @@
 </script>
 
 <button
-  class="{classPrefix}Button {small ? 'small' : ''} {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
+  class="{classPrefix}Button {extraClasses ? extraClasses : ''} {small ? 'small' : ''} {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
   on:click={handleClick}
 >
   {#if showCheckbox}

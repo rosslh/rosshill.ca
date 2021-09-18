@@ -16,19 +16,19 @@
     "webpGen": "cd static && webpc -r && cd .."
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.18",
-    "@sveltejs/kit": "1.0.0-next.165",
+    "@sveltejs/adapter-static": "1.0.0-next.19",
+    "@sveltejs/kit": "1.0.0-next.169",
     "babel-eslint": "^10.1.0",
     "dateformat": "^4.5.1",
     "eslint": "^7.32.0",
-    "eslint-plugin-svelte3": "^3.2.0",
-    "isbot": "^3.3.2",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "isbot": "^3.3.3",
     "markdown-json": "^1.6.0",
-    "sass": "^1.39.0",
+    "sass": "^1.41.1",
     "slugify": "^1.6.0",
-    "svelte": "3.42.4",
+    "svelte": "3.42.6",
     "svelte-icons": "^2.1.0",
-    "vite": "2.5.6",
+    "vite": "2.5.10",
     "webp-converter-cli": "^0.0.5"
   },
   "engines": {

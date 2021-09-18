@@ -45,4 +45,7 @@
   <meta name="twitter:image" content={siteImage} />
   <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <!-- So Travolta gif appears immediately -->
+  <link rel="preload" href="/travolta.gif" as="image" />
 </svelte:head>

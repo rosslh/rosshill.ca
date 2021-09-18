@@ -105,7 +105,7 @@
   {/if}
 </div>
 <div class="tag-buttons">
-  {#each tagsOrdered as tag}
+  {#each tagsOrdered as tag, i}
     <FilterButton
       small
       active={showTags.includes(tag)}
@@ -150,7 +150,7 @@
     color: var(--subtitle);
     cursor: pointer;
     font-size: 0.75rem;
-    margin-left: 1rem;
+    margin: 0.3rem 0.35rem;
     display: inline-flex;
     align-items: center;
   }

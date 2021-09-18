@@ -3,8 +3,8 @@
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
-  import { remsToPixels } from "$lib/functions";
   import { tagParents } from "$lib/constants";
+  import ConfusedTravolta from "./ConfusedTravolta.svelte";
 
   const postsMap = (post, i, postsArray) => {
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].leftAligned;
@@ -57,13 +57,7 @@
       {/key}
     {/each}
     {#if !postsWithLabels.length}
-      <img
-        class="travolta"
-        src="/travolta.gif"
-        title="No items found"
-        alt="Vincent Vega from Pulp Fiction (played by John Travolta) looking around confused because there are no timeline items."
-        width={remsToPixels(20)}
-        height={remsToPixels(20)} />
+      <ConfusedTravolta />
     {/if}
   </div>
 </div>
@@ -89,12 +83,5 @@
   }
   div.headingWrapper h2 {
     margin-bottom: 1rem;
-  }
-
-  img.travolta {
-    width: 20rem;
-    height: 20rem;
-    display: block;
-    margin: 2rem auto 2rem;
   }
 </style>

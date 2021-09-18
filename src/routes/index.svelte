@@ -21,6 +21,5 @@
 </svelte:head>
 <div class="mainContent">
   <Intro />
-  <Separator />
   <Posts {posts} />
 </div>
