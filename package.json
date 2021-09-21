@@ -19,7 +19,7 @@
     "@sveltejs/adapter-static": "1.0.0-next.19",
     "@sveltejs/kit": "1.0.0-next.169",
     "babel-eslint": "^10.1.0",
-    "dateformat": "^4.5.1",
+    "dateformat": "^5.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "isbot": "^3.3.3",
