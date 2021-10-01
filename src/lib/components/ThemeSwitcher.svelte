@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
-  import IoIosMoon from "svelte-icons/io/IoIosMoon.svelte";
-  import IoIosSunny from "svelte-icons/io/IoIosSunny.svelte";
+  import IoIosMoon from "~icons/ion/ios-moon";
+  import IoIosSunny from "~icons/ion/ios-sunny";
   import { theme as userTheme } from "$lib/stores.js";
 
   onMount(() => {
@@ -70,8 +70,9 @@
     border: 1px solid var(--postBorder);
   }
   button .icon {
-    height: 1rem;
-    width: 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
     margin-right: 0.3rem;
   }
 

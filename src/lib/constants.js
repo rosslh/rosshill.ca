@@ -8,7 +8,7 @@ export const tagLabels = {
   graphql: "GraphQL",
   javascript: "JavaScript",
   mongo: "MongoDB",
-  net: ".NET",
+  net: ".NET / C#",
   node: "Node",
   nuxt: "NuxtJS / Vue",
   postgres: "PostgreSQL",

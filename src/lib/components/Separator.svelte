@@ -1,5 +1,5 @@
 <script>
-  import DiCode from "svelte-icons/di/DiCode.svelte";
+  import DiCode from "~icons/iconoir/code";
   export let intro;
 </script>
 
@@ -24,8 +24,9 @@
   }
 
   div.separator .symbol {
-    height: 1.5rem;
-    width: 1.5rem;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
     color: var(--postBorder);
     display: flex;
     align-items: center;

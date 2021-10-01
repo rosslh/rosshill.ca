@@ -47,25 +47,25 @@
   div.line.right > div:first-child {
     border-left: 3px solid var(--timeline);
     border-bottom: 3px solid var(--timeline);
-    border-bottom-left-radius: 100% 80px;
+    border-bottom-left-radius: 100%;
   }
 
   div.line.right > div:last-child {
     border-right: 3px solid var(--timeline);
     border-top: 3px solid var(--timeline);
-    border-top-right-radius: 100% 80px;
+    border-top-right-radius: 100%;
   }
 
   div.line.left > div:nth-child(2) {
     border-right: 3px solid var(--timeline);
     border-bottom: 3px solid var(--timeline);
-    border-bottom-right-radius: 100% 80px;
+    border-bottom-right-radius: 100%;
   }
 
   div.line.left > div:nth-child(3) {
     border-left: 3px solid var(--timeline);
     border-top: 3px solid var(--timeline);
-    border-top-left-radius: 100% 80px;
+    border-top-left-radius: 100%;
   }
 
   span.centeredLabel {

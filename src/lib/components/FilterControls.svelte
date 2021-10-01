@@ -3,7 +3,7 @@
   export let showTags;
   export let posts;
 
-  import FaTimes from 'svelte-icons/fa/FaTimes.svelte';
+  import FaTimes from '~icons/fa-solid/times';
 
   import FilterButton from "./FilterButton.svelte";
   import Tag from "./Tag.svelte";
@@ -157,9 +157,10 @@
 
   .secondary-button .symbol {
     position: static;
-    margin-top: 0.05rem;
-    margin-right: 0.3rem;
-    width: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.2rem;
+    font-size: 0.6rem;
     display: inline-flex;
     align-items: center;
   }

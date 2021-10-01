@@ -1,6 +1,6 @@
 <script>
-  import FaRegCircle from "svelte-icons/fa/FaRegCircle.svelte";
-  import FaRegCheckCircle from "svelte-icons/fa/FaRegCheckCircle.svelte";
+  import FaRegCircle from "~icons/fa-regular/circle";
+  import FaRegCheckCircle from "~icons/fa-regular/check-circle";
   export let active;
   export let callback;
   export let classPrefix;
@@ -58,8 +58,10 @@
 
   button .symbol {
     position: static;
+    display: inline-flex;
+    align-items: center;
     margin-right: 0.3rem;
-    width: 0.8rem;
+    font-size: 0.65rem;
     display: inline-flex;
     align-items: center;
   }

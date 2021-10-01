@@ -10,7 +10,6 @@
 
 <script>
   import Intro from "$lib/components/Intro.svelte";
-  import Separator from "$lib/components/Separator.svelte";
   import Posts from "$lib/components/Posts.svelte";
 
   export let posts = [];
