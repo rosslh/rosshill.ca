@@ -1,6 +1,6 @@
 <script>
-  import FaRegCircle from "~icons/fa-regular/circle";
-  import FaRegCheckCircle from "~icons/fa-regular/check-circle";
+  import Circle from "~icons/fa-regular/circle";
+  import CheckCircle from "~icons/fa-regular/check-circle";
   export let active;
   export let callback;
   export let classPrefix;
@@ -26,9 +26,9 @@
   {#if showCheckbox}
     <span class="symbol">
       {#if active}
-        <FaRegCheckCircle />
+        <CheckCircle />
       {:else}
-        <FaRegCircle />
+        <Circle />
       {/if}
     </span>
   {/if}

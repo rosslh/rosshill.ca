@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
-  import IoIosMoon from "~icons/ion/ios-moon";
-  import IoIosSunny from "~icons/ion/ios-sunny";
+  import Moon from "~icons/ion/ios-moon";
+  import Sunny from "~icons/ion/ios-sunny";
   import { theme as userTheme } from "$lib/stores.js";
 
   onMount(() => {
@@ -35,9 +35,9 @@
     {#if !loading}
       <span aria-hidden="true" class="icon">
         {#if nextTheme === "dark"}
-          <IoIosMoon />
+          <Moon />
         {:else}
-          <IoIosSunny />
+          <Sunny />
         {/if}
       </span>
       <span class="text">

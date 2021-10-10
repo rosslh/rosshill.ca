@@ -8,8 +8,10 @@
 
   const postsMap = (post, i, postsArray) => {
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].leftAligned;
-    const year = getYearFromDate(post.date);
     const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
+
+    const year = getYearFromDate(post.date);
+
     if (year !== prevYear) {
       post.showYearLabel = true;
       post.leftAligned = !prevLeftAligned;
@@ -17,19 +19,27 @@
       post.showYearLabel = false;
       post.leftAligned = prevLeftAligned;
     }
+    
     return post;
   };
 
   let showCategories = [];
   let showTags = [];
 
-  $: postInShownCategories = post => !showCategories.length || showCategories.includes(post.eventType);
+  $: categoryFilter = post => {
+    return !showCategories.length || showCategories.includes(post.eventType);
+  };
 
-  $: parentTagShown = tag => tagParents[tag] && tagParents[tag].some(parentTag => showTags.includes(parentTag));
-  $: postInShownTags = post => !showTags.length
-    || (typeof post.tags !== "undefined" && post.tags.some(tag => showTags.includes(tag) || parentTagShown(tag)));
+  $: parentTagShown = tag => { // TODO: why does this work without reactive declaration?
+    return tagParents[tag] && tagParents[tag].some(parentTag => showTags.includes(parentTag));
+  };
 
-  $: postsWithLabels = posts.filter(post => postInShownCategories(post) && postInShownTags(post)).map(postsMap);
+  $: tagFilter = post => {
+    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some(tag => showTags.includes(tag) || parentTagShown(tag));
+    return !showTags.length || postHasShownTag;
+  };
+
+  $: postsWithLabels = posts.filter(post => categoryFilter(post) && tagFilter(post)).map(postsMap);
 
   const getYearFromDate = date => Number(date.substring(0, 4));
 </script>
@@ -44,7 +54,7 @@
       <YearLabel
         display={post.showYearLabel}
         firstLabel={i === 0}
-        direction={post.leftAligned}
+        rightToLeft={post.leftAligned}
         year={getYearFromDate(post.date)}
       />
       {#key `${i}|${post.leftAligned}`}

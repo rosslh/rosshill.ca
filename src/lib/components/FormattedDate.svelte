@@ -4,7 +4,7 @@
   export let post;
 </script>
 
-<div class="dateString">
+<div class="dateString doTransition">
   {#if post.seasonal}
     Seasonal:
   {/if}

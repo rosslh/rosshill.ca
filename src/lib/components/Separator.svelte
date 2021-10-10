@@ -1,5 +1,5 @@
 <script>
-  import DiCode from "~icons/iconoir/code";
+  import Code from "~icons/iconoir/code";
   export let intro;
 </script>
 
@@ -7,7 +7,7 @@
   <div aria-hidden="true" class="separator">
     <div class="line doTransition" />
     <div class="symbol doTransition">
-      <DiCode />
+      <Code />
     </div>
     <div class="line doTransition" />
   </div>

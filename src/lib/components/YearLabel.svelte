@@ -1,6 +1,6 @@
 <script>
   export let year;
-  export let direction;
+  export let rightToLeft;
   export let firstLabel;
   export let display;
 </script>
@@ -11,7 +11,7 @@
       {year}
     </span>
     {#if !firstLabel}
-      <div aria-hidden="true" class="line {direction ? 'left' : 'right'}">
+      <div aria-hidden="true" class="line {rightToLeft ? 'rtl' : 'ltr'}">
         <div class="doTransition" />
         <div class="doTransition" />
         <div class="doTransition" />
@@ -44,25 +44,25 @@
     height: 80px;
     border-color: var(--timeline);
   }
-  div.line.right > div:first-child {
+  div.line.ltr > div:first-child {
     border-left: 3px solid var(--timeline);
     border-bottom: 3px solid var(--timeline);
     border-bottom-left-radius: 100%;
   }
 
-  div.line.right > div:last-child {
+  div.line.ltr > div:last-child {
     border-right: 3px solid var(--timeline);
     border-top: 3px solid var(--timeline);
     border-top-right-radius: 100%;
   }
 
-  div.line.left > div:nth-child(2) {
+  div.line.rtl > div:nth-child(2) {
     border-right: 3px solid var(--timeline);
     border-bottom: 3px solid var(--timeline);
     border-bottom-right-radius: 100%;
   }
 
-  div.line.left > div:nth-child(3) {
+  div.line.rtl > div:nth-child(3) {
     border-left: 3px solid var(--timeline);
     border-top: 3px solid var(--timeline);
     border-top-left-radius: 100%;

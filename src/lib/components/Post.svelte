@@ -19,6 +19,15 @@
   let intersecting;
 
   $: hasIntersected = reduceMotion || hasIntersected || intersecting;
+
+  // Graceful degradation for fading in posts
+  const serverRendered = typeof window === "undefined";
+  $: getFadeInClass = () => {
+    if (serverRendered) {
+      return "ssrFadeIn";
+    }
+    return hasIntersected ? "fadeIn" : "fadeIn invisible";
+  };
 </script>
 
 {#if firstPost}
@@ -38,7 +47,7 @@
     <TimelineMarker
       {left}
       eventType={post.eventType} />
-    <div class="fadeIn {hasIntersected ? '' : 'invisible'}">
+    <div class={getFadeInClass()}>
       <PostArrow {left} />
       <div class="post doTransition">
         <div class="postHeading">
@@ -117,6 +126,24 @@
     position: relative;
     display: flex;
     border-color: var(--timeline) !important;
+  }
+
+  div.ssrFadeIn {
+    opacity: 0;
+    transform: scale(1);
+    animation: fadeInAnimation ease-in 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
   }
 
   div.fadeIn {

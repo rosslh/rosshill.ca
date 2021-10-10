@@ -58,8 +58,8 @@ SOFTWARE.
     observer && observer.disconnect();
   });
 
-  const handleIntersection = ([_entry]) => {
-    intersecting = _entry.isIntersecting;
+  const handleIntersection = ([entry]) => {
+    intersecting = entry.isIntersecting;
   };
 
   $: {

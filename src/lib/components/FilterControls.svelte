@@ -3,7 +3,7 @@
   export let showTags;
   export let posts;
 
-  import FaTimes from '~icons/fa-solid/times';
+  import Times from '~icons/fa-solid/times';
 
   import FilterButton from "./FilterButton.svelte";
   import Tag from "./Tag.svelte";
@@ -100,7 +100,7 @@
         showTags = [];
       }}
     >
-      <span class="symbol"><FaTimes /></span> Clear filters
+      <span class="symbol"><Times /></span> Clear filters
     </button>
   {/if}
 </div>
