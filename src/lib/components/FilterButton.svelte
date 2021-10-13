@@ -2,7 +2,7 @@
   import Circle from "~icons/fa-regular/circle";
   import CheckCircle from "~icons/fa-regular/check-circle";
   export let active;
-  export let callback;
+  export let onClick;
   export let classPrefix;
   export let showCheckbox = false;
   export let small = false;
@@ -12,9 +12,9 @@
 
   const handleClick = () => {
     preventTransition = true;
-    callback();
+    onClick();
     setTimeout(() => {
-      preventTransition=false;
+      preventTransition = false;
     }, 500);
   };
 </script>
@@ -43,7 +43,6 @@
     border: 1px solid var(--foreground);
     border-radius: 0.9rem;
     height: 1.8rem;
-    cursor: pointer;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;

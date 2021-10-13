@@ -1,0 +1,598 @@
+{
+  "app": {
+    "config": "markdown-config.json",
+    "cwd": "./",
+    "deterministicOrder": true,
+    "display": true,
+    "dist": "src/lib/posts.json",
+    "filePattern": "**/*.md",
+    "ignore": "",
+    "port": 3001,
+    "server": false,
+    "src": "content/",
+    "name": "markdown-json",
+    "metadata": true,
+    "version": "1.6.0"
+  },
+  "data": [
+    {
+      "id": "IsEarthStillWarming",
+      "contents": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&#39;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>\n<p>The webpage has a summary of the current state of global warming, with references provided for each piece of information. The website fetches its data and generates the webpages at build time, and on runtime it simply serves the already generated webpages. I chose this approach because retrieving and parsing the climate data takes some time. The servers we fetch data from are fairly slow, and the data comes in as a CSV which needs to be parsed into JSON in order to be used in a JavaScript application.</p>\n",
+      "title": "IsEarthStillWarming.com",
+      "eventType": "project",
+      "date": "2019-01-11T00:00:00.000Z",
+      "website": "https://isearthstillwarming.com",
+      "repository": "https://github.com/rosslh/isearthstillwarming.com",
+      "image": "isearthstillwarming",
+      "thumbnail": "fire",
+      "blurb": "A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.",
+      "tags": [
+        "react",
+        "nodedotjs"
+      ],
+      "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
+      "meta": {
+        "relativePath": "IsEarthStillWarming.html",
+        "createdAt": "2021-10-12T02:34:27.215Z",
+        "lastModified": "2021-10-12T02:34:27.215Z",
+        "size": 1499,
+        "formattedSize": "1.5 KB"
+      }
+    },
+    {
+      "id": "MUSE",
+      "contents": "",
+      "title": "CTO – MUSE Magazine",
+      "eventType": "org",
+      "date": "2017-11-02T00:00:00.000Z",
+      "endDate": "2018-04-20T00:00:00.000Z",
+      "thumbnail": "muse",
+      "blurb": "Created a WordPress-based platform for publishing student-submitted articles that reflects the design language of the physical MUSE magazine",
+      "tags": [
+        "wordpress"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "MUSE.html",
+        "createdAt": "2021-08-17T21:33:52.087Z",
+        "lastModified": "2021-08-17T21:33:52.087Z",
+        "size": 270,
+        "formattedSize": "270 Bytes"
+      }
+    },
+    {
+      "id": "QTMA",
+      "contents": "",
+      "title": "Software Developer – QTMA",
+      "eventType": "org",
+      "date": "2019-09-02T00:00:00.000Z",
+      "endDate": "2020-04-20T00:00:00.000Z",
+      "image": "studii",
+      "thumbnail": "qtma",
+      "blurb": "Software developer in an eight-person product team within a tech incubator at Queen’s University. Built a user interface using React.js for Studii, a collaborative studying web application for students.",
+      "tags": [
+        "react",
+        "django",
+        "mongodb"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "QTMA.html",
+        "createdAt": "2021-10-12T02:35:16.534Z",
+        "lastModified": "2021-10-12T02:35:16.534Z",
+        "size": 367,
+        "formattedSize": "367 Bytes"
+      }
+    },
+    {
+      "id": "QVFT",
+      "contents": "",
+      "title": "Director of Systems Automation – QVFT",
+      "eventType": "org",
+      "date": "2019-11-10T00:00:00.000Z",
+      "endDate": "2020-04-20T00:00:00.000Z",
+      "thumbnail": "qvft",
+      "blurb": "In charge of running weekly meetings, setting goals, and providing technical assistance to team members. The Systems Automation team is building an software system for adjusting environment variables, such as temperature or light intensity, in order to maximize crop yield.",
+      "tags": [
+        "svelte",
+        "flask",
+        "arduino"
+      ],
+      "repository": "https://github.com/QVFT/",
+      "website": "https://www.qvft.ca/",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "QVFT.html",
+        "createdAt": "2021-08-17T21:18:46.792Z",
+        "lastModified": "2021-08-17T21:18:46.792Z",
+        "size": 501,
+        "formattedSize": "501 Bytes"
+      }
+    },
+    {
+      "id": "caledon",
+      "contents": "",
+      "title": "Ski Instructor – Caledon Ski Club",
+      "eventType": "job",
+      "date": "2014-12-02T00:00:00.000Z",
+      "endDate": "2016-03-20T00:00:00.000Z",
+      "seasonal": true,
+      "thumbnail": "caledon",
+      "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "caledon.html",
+        "createdAt": "2021-08-17T22:51:29.112Z",
+        "lastModified": "2021-08-17T22:51:29.112Z",
+        "size": 317,
+        "formattedSize": "317 Bytes"
+      }
+    },
+    {
+      "id": "doctalk",
+      "contents": "",
+      "title": "Full Stack Developer – Doctalk",
+      "date": "2020-11-30T00:00:00.000Z",
+      "ongoing": true,
+      "thumbnail": "doctalk-thumb",
+      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
+      "tags": [
+        "react",
+        "redux",
+        "django",
+        "postgresql",
+        "heroku"
+      ],
+      "eventType": "job",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "doctalk.html",
+        "createdAt": "2021-10-12T02:30:07.105Z",
+        "lastModified": "2021-10-12T02:30:07.105Z",
+        "size": 652,
+        "formattedSize": "652 Bytes"
+      }
+    },
+    {
+      "id": "dodgeball",
+      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
+      "title": "Dodgeball: The Game",
+      "eventType": "project",
+      "date": "2018-01-02T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "thumbnail": "dodgeball",
+      "repository": "https://github.com/rosslh/Dodgeball-The-Game",
+      "embed": "<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000\" frameborder=\"0\" width=\"480\" height=\"299\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>",
+      "blurb": "A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.",
+      "tags": [
+        "unity"
+      ],
+      "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
+      "meta": {
+        "relativePath": "dodgeball.html",
+        "createdAt": "2021-10-12T02:36:12.237Z",
+        "lastModified": "2021-10-12T02:36:12.237Z",
+        "size": 1548,
+        "formattedSize": "1.5 KB"
+      }
+    },
+    {
+      "id": "folda",
+      "contents": "",
+      "title": "foldA Box Office System",
+      "eventType": "project",
+      "date": "2019-09-02T00:00:00.000Z",
+      "thumbnail": "folda",
+      "blurb": "An online system for selling tickets and getting audience metrics for foldA, a digital performance festival in Kingston, Ontario. Created as my Queen's Computing capstone project.",
+      "tags": [
+        "svelte",
+        "flask",
+        "postgresql",
+        "heroku"
+      ],
+      "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
+      "website": "https://folda.netlify.com/",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "folda.html",
+        "createdAt": "2021-10-12T02:30:07.105Z",
+        "lastModified": "2021-10-12T02:30:07.105Z",
+        "size": 426,
+        "formattedSize": "426 Bytes"
+      }
+    },
+    {
+      "id": "hurontario",
+      "contents": "",
+      "title": "Counsellor – Camp Hurontario",
+      "eventType": "job",
+      "date": "2014-05-02T00:00:00.000Z",
+      "endDate": "2016-08-20T00:00:00.000Z",
+      "seasonal": true,
+      "thumbnail": "hurontario",
+      "thumbnailExt": "jpg",
+      "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "hurontario.html",
+        "createdAt": "2021-08-17T22:51:39.478Z",
+        "lastModified": "2021-08-17T22:51:39.478Z",
+        "size": 317,
+        "formattedSize": "317 Bytes"
+      }
+    },
+    {
+      "id": "mandelbrot",
+      "contents": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>\n<p>One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.</p>\n",
+      "title": "Mandelbrot Set Explorer",
+      "eventType": "project",
+      "date": "2016-11-29T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/Mandelbrot-set-explorer",
+      "image": "mandelbrot",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.",
+      "tags": [
+        "python"
+      ],
+      "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
+      "meta": {
+        "relativePath": "mandelbrot.html",
+        "createdAt": "2021-04-02T05:14:17.328Z",
+        "lastModified": "2021-04-02T05:14:17.327Z",
+        "size": 1196,
+        "formattedSize": "1.2 KB"
+      }
+    },
+    {
+      "id": "metaProjection",
+      "contents": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.</p>\n<p>I made this project during the run-up to the 2019 Canadian federal election because I found myself checking multiple electoral projection sites that would sometimes have conflicting information. MetaProjection.ca gives a balanced overview of the election by combining the results of multiple reputable poll-trackers.</p>\n<p>MetaProjection was built with Gatsby, a React.js static site generator. First, the projection sources are scraped for their data, which is saved into json files. This data is then queried from the React client using GraphQL.</p>\n",
+      "title": "MetaProjection",
+      "eventType": "project",
+      "date": "2019-08-20T00:00:00.000Z",
+      "website": "https://2019.metaprojection.ca",
+      "repository": "https://github.com/rosslh/metaprojection",
+      "image": "metaprojection",
+      "thumbnail": "metaprojection-thumb",
+      "blurb": "An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district.",
+      "tags": [
+        "gatsby",
+        "graphql",
+        "nodedotjs"
+      ],
+      "excerpt": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user&#x2019;s geolocation to find their district and display its likely winner.</p>",
+      "meta": {
+        "relativePath": "metaProjection.html",
+        "createdAt": "2021-10-12T02:34:27.215Z",
+        "lastModified": "2021-10-12T02:34:27.215Z",
+        "size": 1356,
+        "formattedSize": "1.3 KB"
+      }
+    },
+    {
+      "id": "metaProjection2021",
+      "contents": "",
+      "title": "MetaProjection 2021",
+      "eventType": "project",
+      "date": "2021-07-27T00:00:00.000Z",
+      "website": "https://metaprojection.ca",
+      "repository": "https://github.com/rosslh/metaprojection",
+      "image": "metaprojection",
+      "thumbnail": "metaprojection-thumb",
+      "blurb": "An aggregator of multiple Canadian election projections which provides an overview of how the election is playing out, both federally and by district. Updated for 2021.",
+      "tags": [
+        "gatsby",
+        "graphql",
+        "nodedotjs"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "metaProjection2021.html",
+        "createdAt": "2021-10-12T02:34:27.215Z",
+        "lastModified": "2021-10-12T02:34:27.215Z",
+        "size": 433,
+        "formattedSize": "433 Bytes"
+      }
+    },
+    {
+      "id": "nudge1",
+      "contents": "",
+      "title": "Front End Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2017-05-02T00:00:00.000Z",
+      "endDate": "2017-08-20T00:00:00.000Z",
+      "image": "Nudge1",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.",
+      "tags": [
+        "react",
+        "redux"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge1.html",
+        "createdAt": "2021-08-17T21:33:52.069Z",
+        "lastModified": "2021-08-17T21:33:52.069Z",
+        "size": 449,
+        "formattedSize": "449 Bytes"
+      }
+    },
+    {
+      "id": "nudge2",
+      "contents": "",
+      "title": "Full Stack Developer Intern – Nudge.ai",
+      "eventType": "job",
+      "date": "2018-05-02T00:00:00.000Z",
+      "endDate": "2018-08-20T00:00:00.000Z",
+      "image": "Nudge2",
+      "thumbnail": "nudge-thumb",
+      "blurb": "Implemented a system for receiving, verifying, and handling GDPR requests. Added the capability for users to suggest changes to the information shown in our public pages with an intuitive interface.",
+      "tags": [
+        "react",
+        "redux",
+        "dotnet",
+        "postgresql"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "nudge2.html",
+        "createdAt": "2021-10-12T02:35:56.658Z",
+        "lastModified": "2021-10-12T02:35:56.658Z",
+        "size": 391,
+        "formattedSize": "391 Bytes"
+      }
+    },
+    {
+      "id": "qhacks",
+      "contents": "<p>QHacks is a hackathon hosted at Queen’s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>\n<p>I also build the front-end of our QHacks application dashboard - the webapp interested students used to apply to the event and give us more information about themselves. Over the month leading up the the event, the application system took in applications from over 1200 interested students - about 400 of which were accepted.</p>\n",
+      "title": "Software Developer – QHacks",
+      "eventType": "org",
+      "date": "2018-04-21T00:00:00.000Z",
+      "endDate": "2019-03-20T00:00:00.000Z",
+      "image": "qhacks",
+      "thumbnail": "qhacks-crown",
+      "website": "https://2019.qhacks.io",
+      "repository": "https://github.com/qhacks/qhacks-website",
+      "blurb": "Built the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.",
+      "tags": [
+        "gatsby",
+        "graphql",
+        "postgresql"
+      ],
+      "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
+      "meta": {
+        "relativePath": "qhacks.html",
+        "createdAt": "2021-10-12T02:30:07.116Z",
+        "lastModified": "2021-10-12T02:30:07.116Z",
+        "size": 1127,
+        "formattedSize": "1.1 KB"
+      }
+    },
+    {
+      "id": "queensEnrolled",
+      "contents": "",
+      "title": "Student at Queen's University",
+      "eventType": "other",
+      "date": "2016-09-02T00:00:00.000Z",
+      "endDate": "2020-04-02T00:00:00.000Z",
+      "thumbnail": "queens-thumb",
+      "blurb": "Bachelor of Computing (Honours, Software Design).<br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://cips.ca/SoftwareEngineering/#:~:text=queen%E2%80%99s%20university\">CIPS Accredited</a> Software Engineering program.",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "queensEnrolled.html",
+        "createdAt": "2021-08-17T22:13:17.503Z",
+        "lastModified": "2021-08-17T22:13:17.503Z",
+        "size": 359,
+        "formattedSize": "359 Bytes"
+      }
+    },
+    {
+      "id": "reqwise",
+      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is <strong>Questionnaires</strong>, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is <strong>Organizing Requirements</strong>. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload <strong>Files and Designs</strong> from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive <strong>Feedback and Approval</strong> from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
+      "title": "ReqWise",
+      "eventType": "project",
+      "date": "2020-04-02T00:00:00.000Z",
+      "thumbnail": "reqwise",
+      "blurb": "An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.",
+      "tags": [
+        "svelte",
+        "fastify",
+        "postgresql",
+        "googlecloud"
+      ],
+      "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "repository": "https://github.com/rosslh/ReqWise",
+      "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
+      "meta": {
+        "relativePath": "reqwise.html",
+        "createdAt": "2021-10-12T02:35:03.173Z",
+        "lastModified": "2021-10-12T02:35:03.173Z",
+        "size": 2284,
+        "formattedSize": "2.2 KB"
+      }
+    },
+    {
+      "id": "robot",
+      "contents": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we’ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>\n",
+      "title": "Drawing robot",
+      "eventType": "project",
+      "date": "2018-09-10T00:00:00.000Z",
+      "thumbnailExt": "jpg",
+      "imageExt": "jpg",
+      "image": "robot",
+      "thumbnail": "arduino",
+      "blurb": "A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.",
+      "tags": [
+        "arduino",
+        "raspberrypi"
+      ],
+      "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
+      "meta": {
+        "relativePath": "robot.html",
+        "createdAt": "2021-10-12T02:35:45.502Z",
+        "lastModified": "2021-10-12T02:35:45.502Z",
+        "size": 957,
+        "formattedSize": "957 Bytes"
+      }
+    },
+    {
+      "id": "rust-fractals",
+      "contents": "",
+      "title": "Mandelbrot Set in Rust",
+      "eventType": "project",
+      "date": "2021-01-02T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
+      "website": "https://rust-mandelbrot.netlify.app/",
+      "thumbnail": "mandelbrot-thumb",
+      "blurb": "An interactive application that lets you explore the Mandelbrot set fractal. Built with Rust, compiled to WebAssembly, running on Web Workers.",
+      "tags": [
+        "rust",
+        "webassembly",
+        "typescript"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "rust-fractals.html",
+        "createdAt": "2021-10-12T02:32:42.491Z",
+        "lastModified": "2021-10-12T02:32:42.491Z",
+        "size": 403,
+        "formattedSize": "403 Bytes"
+      }
+    },
+    {
+      "id": "traffic",
+      "contents": "",
+      "title": "Traffic Light Optimization",
+      "eventType": "project",
+      "date": "2019-11-02T00:00:00.000Z",
+      "thumbnailExt": "png",
+      "thumbnail": "traffic",
+      "repository": "https://github.com/ZaneLittle/Traffic-Light-Simulation",
+      "blurb": "A simulation of interconnected intersections, whose lights' behaviour is optimized by a learning agent. Created for Reinforcement Learning, an AI course at Queen's.",
+      "tags": [
+        "python"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "traffic.html",
+        "createdAt": "2021-08-17T21:33:52.068Z",
+        "lastModified": "2021-08-17T21:33:52.068Z",
+        "size": 370,
+        "formattedSize": "370 Bytes"
+      }
+    },
+    {
+      "id": "unitransform",
+      "contents": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>\n",
+      "title": "Unitransform",
+      "eventType": "project",
+      "date": "2018-12-05T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/unitransform",
+      "website": "https://www.npmjs.com/package/unitransform",
+      "image": "unitransform",
+      "thumbnail": "rainbow",
+      "WIP": true,
+      "blurb": "A JavaScript library for visually consistent color transformations through HSLuv color space",
+      "excerpt": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>",
+      "meta": {
+        "relativePath": "unitransform.html",
+        "createdAt": "2021-08-17T22:13:41.865Z",
+        "lastModified": "2021-08-17T22:13:41.865Z",
+        "size": 565,
+        "formattedSize": "565 Bytes"
+      }
+    },
+    {
+      "id": "verafin",
+      "contents": "",
+      "title": "Software Developer Intern – Verafin",
+      "eventType": "job",
+      "date": "2019-05-02T00:00:00.000Z",
+      "endDate": "2019-08-20T00:00:00.000Z",
+      "thumbnail": "verafin-thumb",
+      "image": "verafin",
+      "blurb": "Made multiple upgrades and bug fixes to the user interface that were requested by Verafin clients. Created a software plugin that identifies high risk customers across hundreds of institutions based on transaction and biographical characteristics.",
+      "tags": [
+        "java",
+        "postgresql",
+        "backbone"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "verafin.html",
+        "createdAt": "2021-10-12T02:30:07.103Z",
+        "lastModified": "2021-10-12T02:30:07.103Z",
+        "size": 434,
+        "formattedSize": "434 Bytes"
+      }
+    },
+    {
+      "id": "vibeify",
+      "contents": "",
+      "title": "Vibeify",
+      "eventType": "project",
+      "date": "2020-01-31T00:00:00.000Z",
+      "thumbnail": "vibeify",
+      "blurb": "An artificially intelligent DJ that uses your webcam to determine the level of energy in the room and selects songs from your playlists that match the vibe. My team created Vibeify for QHacks 2020.",
+      "tags": [
+        "tensorflow",
+        "react"
+      ],
+      "repository": "https://github.com/rosslh/vibeify",
+      "excerpt": "",
+      "meta": {
+        "relativePath": "vibeify.html",
+        "createdAt": "2021-08-05T20:07:51.454Z",
+        "lastModified": "2021-08-05T20:07:51.454Z",
+        "size": 354,
+        "formattedSize": "354 Bytes"
+      }
+    },
+    {
+      "id": "wtformat",
+      "contents": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment&#39;s documentation to see how to format dates in various ways.</p>\n<p>In order to make the process of date formatting faster, I created WTFormat.com, which gives you a date which you rewrite in your preferred format. The site then generates the Moment format code that would yield that output.</p>\n",
+      "title": "WTFormat.com",
+      "eventType": "project",
+      "date": "2018-07-05T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/wtformat",
+      "website": "https://wtformat.com/",
+      "image": "wtformat",
+      "thumbnail": "moment",
+      "blurb": "An online tool for generating Moment.js date format codes",
+      "tags": [
+        "javascript"
+      ],
+      "excerpt": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment&apos;s documentation to see how to format dates in various ways.</p>",
+      "meta": {
+        "relativePath": "wtformat.html",
+        "createdAt": "2021-08-05T00:36:56.030Z",
+        "lastModified": "2021-08-05T00:36:56.030Z",
+        "size": 946,
+        "formattedSize": "946 Bytes"
+      }
+    },
+    {
+      "id": "wtformat2",
+      "contents": "",
+      "title": "WTFormat v2.0",
+      "eventType": "project",
+      "date": "2021-08-02T00:00:00.000Z",
+      "repository": "https://github.com/rosslh/wtformat",
+      "website": "https://wtformat.com/",
+      "image": "wtformat",
+      "thumbnail": "moment",
+      "blurb": "WTFormat is an online tool for generating date format codes. Updated to support more formatting libraries, now using NuxtJS (Vue) and TypeScript.",
+      "tags": [
+        "nuxtdotjs",
+        "typescript"
+      ],
+      "excerpt": "",
+      "meta": {
+        "relativePath": "wtformat2.html",
+        "createdAt": "2021-10-12T02:33:53.764Z",
+        "lastModified": "2021-10-12T02:33:53.764Z",
+        "size": 369,
+        "formattedSize": "369 Bytes"
+      }
+    }
+  ]
+}

@@ -7,7 +7,7 @@ thumbnail: dodgeball
 repository: https://github.com/rosslh/Dodgeball-The-Game
 embed: <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ5WVy2lBOIX_RNUNP2MyYjy0ly-OMkrJUdsJQSeBwpispC888dcIcHa0QitigKCiwbix3n_yvAhQOM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 blurb: A dodgeball game with motion tracking, created for Human-Computer Interaction, a course at Queen's.
-tags: [unity3d]
+tags: [unity]
 ---
 
 For Human-Computer Interactions, a course at Queen's, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.

@@ -1,5 +1,5 @@
 import { slugify } from "$lib/functions";
-import { data as timeline } from "$lib/data.json";
+import { data as timeline } from "$lib/posts.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)

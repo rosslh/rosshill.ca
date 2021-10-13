@@ -1,9 +1,9 @@
 <script context="module">
   export async function load({ fetch }) {
     const result = await fetch("index.json");
-    const posts = await result.json();
+    const { posts, brandColors } = await result.json();
     return {
-      props: { posts },
+      props: { posts, brandColors },
     };
   }
 </script>
@@ -13,6 +13,7 @@
   import Posts from "$lib/components/Posts.svelte";
 
   export let posts = [];
+  export let brandColors = {};
 </script>
 
 <svelte:head>
@@ -20,5 +21,5 @@
 </svelte:head>
 <div class="mainContent">
   <Intro />
-  <Posts {posts} />
+  <Posts {posts} {brandColors} />
 </div>

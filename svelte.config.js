@@ -1,11 +1,12 @@
 import staticAdapter from '@sveltejs/adapter-static';
-import { slugify } from "./src/lib/functions.js";
 import fs from "fs";
 import Icons from 'unplugin-icons/vite';
 
+import { slugify } from "./src/lib/functions.js";
+
 // This isn't strictly necessary but I don't trust the crawler
 const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.meta.url), 'utf8'));
-const { data } = getJson("./src/lib/data.json");
+const { data } = getJson("./src/lib/posts.json");
 const entries = data
   .filter(entry => entry.contents)
   .map(entry => `/item/${slugify(entry.title)}`)
