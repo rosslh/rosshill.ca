@@ -2,7 +2,7 @@
   export let showCategories;
   export let showTags;
   export let posts;
-  export let icons;
+  export let brandColors;
 
   import Times from '~icons/fa-solid/times';
 
@@ -108,10 +108,10 @@
 <div class="tag-buttons">
   {#each tagsOrdered as tag}
     <Tag
-      active={showTags.includes(tag)}
-      onClick={() => toggleTag(tag)}
       tagId={tag}
-      icon={icons[tag]} />
+      active={showTags.includes(tag)}
+      color={brandColors[tag]}
+      onClick={() => toggleTag(tag)} />
   {/each}
   {#if minTagNum !== 0}
     <button

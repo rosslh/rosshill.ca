@@ -13,7 +13,7 @@ function getBestContrast(compareTo) {
 }
 
 function main() {
-  const icons = {};
+  const brandColors = {};
 
   fs.readFile('src/lib/posts.json', 'utf8' , (err, file) => {
     // get icons
@@ -22,7 +22,7 @@ function main() {
       .filter(post => post.tags)
       .forEach(post => {
         post.tags.forEach(tag => {
-          if (!(tag in icons)) {
+          if (!(tag in brandColors)) {
             let icon = Icons.Get(tag);
             if (!icon) {
               icon = Icons.Get("javascript");
@@ -30,13 +30,24 @@ function main() {
           
             const bestContrast = getBestContrast(icon.hex);
 
-            icons[tag] = { foreground: bestContrast, hex: icon.hex, path: icon.path, title: icon.title };
+            const svg = `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: #${bestContrast};" fill="#${bestContrast}"><title>{icon.title}</title><path d="${icon.path}"/></svg>`;
+
+            // write svg to file
+            fs.writeFile(`static/tags/${tag}.svg`, svg, err => {
+              if (err) {
+                console.error(err);
+                return;
+              }
+              //file written successfully
+            });
+
+            brandColors[tag] = icon.hex;
           }
         });
       });
 
     // output file
-    fs.writeFile('src/lib/icons.json', JSON.stringify(icons), err => {
+    fs.writeFile('src/lib/brandColors.json', JSON.stringify(brandColors), err => {
       if (err) {
         console.error(err);
         return;

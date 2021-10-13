@@ -1,11 +1,13 @@
 <script>
   export let tagId;
-  export let icon;
-  export let onClick;
   export let active;
+  export let color;
+  export let onClick;
+
+  import { Div, Button } from 'svelte-elements';
 
   import { tagLabels } from "$lib/constants.js";
-  import { Div, Button } from 'svelte-elements';
+  import { remsToPixels } from "$lib/functions";
 
   $: tagString = tagLabels[tagId] || tagId;
 
@@ -25,11 +27,13 @@
   class="tag {preventTransition ? '' : 'doTransition'} {active ? 'active' : ''}"
   on:click={onClick ? handleClick : null}
 >
-  <span class="logoWrapper doTransition" style={`background-color: #${icon.hex};`}>
-    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={`fill: #${icon.foreground};`} fill={`#${icon.foreground}`}>
-      <title>{icon.title}</title>
-      <path d={icon.path}/>
-    </svg>
+  <span class="logoWrapper doTransition" style="background-color: #{color};">
+    <img
+      src="/tags/{tagId}.svg"
+      alt=""
+      loading="lazy"
+      height={remsToPixels(0.85)}
+      width={remsToPixels(0.85)} />
   </span>
   <span class={`tagString ${tagString === tagId ? "capitalize" : ""}`}>{tagString}</span>
 </svelte:component>
@@ -73,7 +77,7 @@
     padding: 0 0.25rem;
   }
 
-  :global(.logoWrapper > svg) {
+  .logoWrapper > img {
     fill: var(--subtitle);
     height: 0.85rem;
     width: 0.85rem;

@@ -1,6 +1,6 @@
 <script>
   export let posts;
-  export let icons;
+  export let brandColors;
 
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
@@ -48,7 +48,7 @@
 
 <div class="headingWrapper contentWrapper ">
   <h2>Experience</h2>
-  <FilterControls bind:showCategories bind:showTags {posts} {icons} />
+  <FilterControls bind:showCategories bind:showTags {posts} {brandColors} />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
@@ -62,7 +62,7 @@
       {#key `${i}|${post.leftAligned}`}
         <Post
           {post}
-          {icons}
+          {brandColors}
           firstPost={i === 0}
           lastPost={i === postsWithLabels.length - 1}
           left={post.leftAligned}

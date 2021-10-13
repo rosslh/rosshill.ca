@@ -11,7 +11,7 @@
   import InlineSeparator from "./InlineSeparator.svelte";
 
   export let post;
-  export let icons;
+  export let brandColors;
   export let left;
   export let firstPost;
   export let lastPost;
@@ -79,7 +79,7 @@
             <div class="tags">
               {#if post.tags && post.tags.length}
                 {#each post.tags as tagId}
-                  <Tag {tagId} icon={icons[tagId]} />
+                  <Tag {tagId} color={brandColors[tagId]} />
                 {/each}
               {/if}
             </div>
