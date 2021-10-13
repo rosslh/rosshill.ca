@@ -110,6 +110,10 @@ div.twoColumn {
   }
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 a:focus,
 button:focus {
   outline: 2px dotted var(--focusOutline) !important;

@@ -2,6 +2,7 @@
   export let showCategories;
   export let showTags;
   export let posts;
+  export let icons;
 
   import Times from '~icons/fa-solid/times';
 
@@ -69,26 +70,26 @@
 
 <div class="category-buttons">
   <FilterButton
-    showCheckbox
     active={jobActive}
-    callback={() => toggleCategory("job")}
     classPrefix="job"
+    onClick={() => toggleCategory("job")}
+    showCheckbox
   >
     Work Experience
   </FilterButton>
   <FilterButton
-    showCheckbox
     active={projectActive}
-    callback={() => toggleCategory("project")}
     classPrefix="project"
+    onClick={() => toggleCategory("project")}
+    showCheckbox
   >
     Projects
   </FilterButton>
   <FilterButton
-    showCheckbox
     active={orgActive}
-    callback={() => toggleCategory("org")}
     classPrefix="org"
+    onClick={() => toggleCategory("org")}
+    showCheckbox
   >
     Organizations
   </FilterButton>
@@ -105,15 +106,12 @@
   {/if}
 </div>
 <div class="tag-buttons">
-  {#each tagsOrdered as tag, i}
-    <FilterButton
-      small
+  {#each tagsOrdered as tag}
+    <Tag
       active={showTags.includes(tag)}
-      callback={()=>toggleTag(tag)}
-      classPrefix="tag"
-    >
-      <Tag tagId={tag} />
-    </FilterButton>
+      onClick={() => toggleTag(tag)}
+      tagId={tag}
+      icon={icons[tag]} />
   {/each}
   {#if minTagNum !== 0}
     <button
@@ -148,7 +146,6 @@
     border-bottom: 1px solid var(--subtitle);
     border-radius: 0;
     color: var(--subtitle);
-    cursor: pointer;
     font-size: 0.75rem;
     margin: 0.3rem 0.35rem;
     display: inline-flex;

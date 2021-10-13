@@ -1,5 +1,7 @@
 <script>
   export let posts;
+  export let icons;
+
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
@@ -46,7 +48,7 @@
 
 <div class="headingWrapper contentWrapper ">
   <h2>Experience</h2>
-  <FilterControls bind:showCategories bind:showTags {posts} />
+  <FilterControls bind:showCategories bind:showTags {posts} {icons} />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
@@ -60,6 +62,7 @@
       {#key `${i}|${post.leftAligned}`}
         <Post
           {post}
+          {icons}
           firstPost={i === 0}
           lastPost={i === postsWithLabels.length - 1}
           left={post.leftAligned}

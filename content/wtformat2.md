@@ -7,5 +7,5 @@ website: https://wtformat.com/
 image: wtformat
 thumbnail: moment
 blurb: WTFormat is an online tool for generating date format codes. Updated to support more formatting libraries, now using NuxtJS (Vue) and TypeScript.
-tags: [nuxt, typescript]
+tags: [nuxtdotjs, typescript]
 ---

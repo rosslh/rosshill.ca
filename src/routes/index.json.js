@@ -1,5 +1,6 @@
 import { slugify } from "$lib/functions";
-import { data as timeline } from "$lib/data.json";
+import { data as timeline } from "$lib/posts.json";
+import icons from "$lib/icons.json";
 
 const contents = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -26,5 +27,5 @@ const contents = Object.values(timeline)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 export function get(_req) {
-  return { body: contents };
+  return { body: { posts: contents, icons } };
 }

@@ -65,7 +65,6 @@
     color: var(--foreground);
     background-color: var(--postBackground);
     padding: 0 1rem;
-    cursor: pointer;
     font-size: 0.9rem;
     border: 1px solid var(--postBorder);
   }
