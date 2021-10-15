@@ -17,7 +17,7 @@
     "webpGen": "cd static && webpc -r && cd .."
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.413",
+    "@iconify/json": "^1.1.415",
     "@sveltejs/adapter-static": "1.0.0-next.21",
     "@sveltejs/kit": "1.0.0-next.182",
     "babel-eslint": "^10.1.0",
