@@ -19,7 +19,7 @@
   "devDependencies": {
     "@iconify/json": "^1.1.413",
     "@sveltejs/adapter-static": "1.0.0-next.21",
-    "@sveltejs/kit": "1.0.0-next.182",
+    "@sveltejs/kit": "1.0.0-next.184",
     "babel-eslint": "^10.1.0",
     "color-contrast": "^1.0.0",
     "dateformat": "^5.0.1",
