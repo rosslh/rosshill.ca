@@ -42,8 +42,8 @@
 
 <style>
   :global(.tag) {
-    height: 1.3rem;
-    margin: 0.25rem 0.25rem 0.25rem 0;
+    height: 1.5rem;
+    margin: 0.3rem 0.25rem 0.3rem 0;
     padding: 0 0.15rem 0 0;
     position: relative;
 
