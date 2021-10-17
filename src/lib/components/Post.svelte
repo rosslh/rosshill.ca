@@ -3,7 +3,6 @@
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
   import Tag from "./Tag.svelte";
-  import ExternalLink from "./ExternalLink.svelte";
   import FormattedDate from "./FormattedDate.svelte";
   import PostSpacer from "./PostSpacer.svelte";
   import { reduceMotion } from "$lib/constants";
@@ -79,7 +78,11 @@
             <div class="tags">
               {#if post.tags && post.tags.length}
                 {#each post.tags as tagId}
-                  <Tag {tagId} color={brandColors[tagId]} />
+                  <Tag
+                    {tagId}
+                    background={brandColors[tagId].background}
+                    foreground={brandColors[tagId].foreground}
+                    lazyLoad />
                 {/each}
               {/if}
             </div>
@@ -91,17 +94,17 @@
         <div class="footer">
           <div class="externalLinks doTransition">
             {#if post.repository}
-              <ExternalLink href={post.repository}>
+              <a target="_blank" rel="noopener noreferrer" href={post.repository}>
                 GitHub
-              </ExternalLink>
+              </a>
             {/if}
             {#if post.repository && post.website}
               <InlineSeparator />
             {/if}
             {#if post.website}
-              <ExternalLink href={post.website}>
+              <a target="_blank" rel="noopener noreferrer" href={post.website}>
                 Website
-              </ExternalLink>
+              </a>
             {/if}
           </div>
           <FormattedDate {post} />

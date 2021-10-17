@@ -70,7 +70,7 @@
       {/key}
     {/each}
     {#if !postsWithLabels.length}
-      <ConfusedTravolta />
+      <ConfusedTravolta reason="there are no results" />
     {/if}
   </div>
 </div>

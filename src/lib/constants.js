@@ -1,9 +1,9 @@
 import isbot from 'isbot';
 
 export const tagLabels = {
-  backbone: "Backbone.js",
+  backbonedotjs: "Backbone.js",
   // fastify: "Fastify / Node",
-  gatsby: "Gatsby / React",
+  // gatsby: "Gatsby / React",
   googlecloud: "GCP",
   graphql: "GraphQL",
   javascript: "JavaScript",
@@ -23,7 +23,7 @@ export const tagLabels = {
 };
 
 export const tagParents = {
-  "backbone": ["javascript"],
+  "backbonedotjs": ["javascript"],
   "cypress": ["javascript"],
   "django": ["python"],
   "fastify": ["nodedotjs", "javascript"],

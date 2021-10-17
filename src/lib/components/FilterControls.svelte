@@ -110,7 +110,8 @@
     <Tag
       tagId={tag}
       active={showTags.includes(tag)}
-      color={brandColors[tag]}
+      background={brandColors[tag].background}
+      foreground={brandColors[tag].foreground}
       onClick={() => toggleTag(tag)} />
   {/each}
   {#if minTagNum !== 0}

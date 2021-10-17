@@ -7,6 +7,6 @@
     &larr; Back to Home
   </a>
   <h2>404: Page not found</h2>
-  <ConfusedTravolta />
+  <ConfusedTravolta reason="the page wasn't found" />
 </div>
 

@@ -1,11 +1,12 @@
 <script>
   import { remsToPixels } from "$lib/functions";
+  export let reason;
 </script>
 
 <img
   class="travolta"
   src="/travolta.gif"
-  alt="Vincent Vega from Pulp Fiction (played by John Travolta) looking around confused because the page wasn't found."
+  alt="John Travolta looking confused{reason ? ` because ${reason}` : ''}."
   width={remsToPixels(20)}
   height={remsToPixels(20)} />
 

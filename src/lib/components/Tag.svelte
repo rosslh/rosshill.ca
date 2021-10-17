@@ -1,8 +1,10 @@
 <script>
   export let tagId;
   export let active;
-  export let color;
+  export let background;
+  export let foreground;
   export let onClick;
+  export let lazyLoad = false;
 
   import { Div, Button } from 'svelte-elements';
 
@@ -11,77 +13,85 @@
 
   $: tagString = tagLabels[tagId] || tagId;
 
-  let preventTransition = false;
-  const handleClick = () => {
-    preventTransition = true;
-    onClick();
-    setTimeout(() => {
-      preventTransition=false;
-    }, 500);
-  };
+  const imgOffset = tagId === "unity" ? 0.35 : 0.4;
 </script>
 
 <!-- TODO: use svelte:element once that's available -->
 <svelte:component
   this={onClick ? Button : Div}
-  class="tag {preventTransition ? '' : 'doTransition'} {active ? 'active' : ''}"
-  on:click={onClick ? handleClick : null}
+  on:click={onClick}
+  class="tag doTransition {active ? 'active' : ''}"
 >
-  <span class="logoWrapper doTransition" style="background-color: #{color};">
+  <span class="logoWrapper" style="background-color: #{background};">
     <img
       src="/tags/{tagId}.svg"
       alt=""
-      loading="lazy"
+      loading={lazyLoad ? "lazy" : null}
+      role="img"
+      style="margin-left: {imgOffset}rem;"
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)} />
   </span>
-  <span class={`tagString ${tagString === tagId ? "capitalize" : ""}`}>{tagString}</span>
+  <span
+    class={`tagString ${tagString === tagId ? "capitalize" : ""}`}
+    style={active ? `color: #${foreground};` : ""}
+  >
+    {tagString}
+  </span>
 </svelte:component>
 
 <style>
   :global(.tag) {
-    margin: 0.25rem 0.25rem 0.25rem 0;
     height: 1.3rem;
-    padding: 0 0.25rem 0 0;
-    display: flex;
-    align-items: center;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    padding: 0 0.15rem 0 0;
+    position: relative;
 
     background-color: var(--postBackground);
-    border: 1px solid var(--postBorder);
-    border-radius: 0.9rem;
-    overflow: hidden;
-    opacity: 0.9;
     color: var(--subtitle);
-    font-size: 0.8rem;
-
-  }
-
-  :global(.tag.active) {
-    border-color: var(--foreground);
-    opacity: 1;
+    border-radius: 0.9rem;
+    border: 1px solid var(--postBorder);
+    font-size: 0.8rem;    
   }
 
   .logoWrapper {
-    padding: 0 0 0 0.2rem;
-    margin-left: -0.1rem; /* intentionally overflows by 0.1rem */
-    height: 1.5rem; /* intentionally overflows by 0.1rem */
-    width: 1.9rem;
+    position: absolute;
+    width: 1.6rem;
+    /* 1px accounts for border */
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    opacity: 0.9;
-    border-right: 1px solid var(--postBorder);
+    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease, /* taken from .doTransition */
+      width 0.3s ease, border-radius 0.3s ease;
+
+    border: 1px solid var(--postBorder);
+    border-top-left-radius: 0.9rem;
+    border-bottom-left-radius: 0.9rem;
+  }
+
+  :global(.tag.active .logoWrapper) {
+    border-bottom-right-radius: 0.9rem;
+    border-color: var(--foreground);
+    border-top-right-radius: 0.9rem;
+    /* 2px accounts for negative margin + border */
+    width: calc(100% + 2px);
   }
 
   .tagString {
+    margin-left: 1.5rem;
     padding: 0 0.25rem;
+    position: relative;
+    transition: color 0.3s ease;
+    z-index: 2;
   }
 
   .logoWrapper > img {
+    display: block;
     fill: var(--subtitle);
     height: 0.85rem;
     width: 0.85rem;
-    display: block;
   }
 
   .capitalize {

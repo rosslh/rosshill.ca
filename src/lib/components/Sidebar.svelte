@@ -1,7 +1,6 @@
 <script>
   import Separator from "./Separator.svelte";
   import AnimatedName from "./AnimatedName.svelte";
-  import ExternalLink from "./ExternalLink.svelte";
   import { remsToPixels } from "$lib/functions";
   import InlineSeparator from "./InlineSeparator.svelte";
 </script>
@@ -27,13 +26,13 @@
       <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
     </p>
     <p class="subtitle">
-      <ExternalLink href="https://github.com/rosslh">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh">
         GitHub
-      </ExternalLink>
+      </a>
       <InlineSeparator />
-      <ExternalLink href="https://www.linkedin.com/in/rosslh">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh">
         LinkedIn
-      </ExternalLink>
+      </a>
       <InlineSeparator />
       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
         Resume

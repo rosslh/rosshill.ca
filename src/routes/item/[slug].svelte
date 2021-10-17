@@ -14,7 +14,6 @@
 </script>
 
 <script>
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   export let post;
@@ -33,15 +32,15 @@
       <FormattedDate {post} />
       {#if post.repository}
         <InlineSeparator />
-        <ExternalLink href={post.repository}>
+        <a target="_blank" rel="noopener noreferrer" href={post.repository}>
           GitHub
-        </ExternalLink>
+        </a>
       {/if}
       {#if post.website}
         <InlineSeparator />
-        <ExternalLink href={post.website}>
+        <a target="_blank" rel="noopener noreferrer" href={post.website}>
           Website
-        </ExternalLink>
+        </a>
       {/if}
     </div>
     {#if post.image}

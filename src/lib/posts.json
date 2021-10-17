@@ -33,8 +33,8 @@
       "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
       "meta": {
         "relativePath": "IsEarthStillWarming.html",
-        "createdAt": "2021-10-12T02:34:27.215Z",
-        "lastModified": "2021-10-12T02:34:27.215Z",
+        "createdAt": "2021-10-13T04:50:08.688Z",
+        "lastModified": "2021-10-13T04:50:08.688Z",
         "size": 1499,
         "formattedSize": "1.5 KB"
       }
@@ -78,8 +78,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "QTMA.html",
-        "createdAt": "2021-10-12T02:35:16.534Z",
-        "lastModified": "2021-10-12T02:35:16.534Z",
+        "createdAt": "2021-10-13T04:50:08.690Z",
+        "lastModified": "2021-10-13T04:50:08.690Z",
         "size": 367,
         "formattedSize": "367 Bytes"
       }
@@ -147,8 +147,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-10-12T02:30:07.105Z",
-        "lastModified": "2021-10-12T02:30:07.105Z",
+        "createdAt": "2021-10-13T04:50:08.691Z",
+        "lastModified": "2021-10-13T04:50:08.691Z",
         "size": 652,
         "formattedSize": "652 Bytes"
       }
@@ -170,8 +170,8 @@
       "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
       "meta": {
         "relativePath": "dodgeball.html",
-        "createdAt": "2021-10-12T02:36:12.237Z",
-        "lastModified": "2021-10-12T02:36:12.237Z",
+        "createdAt": "2021-10-13T04:50:08.692Z",
+        "lastModified": "2021-10-13T04:50:08.692Z",
         "size": 1548,
         "formattedSize": "1.5 KB"
       }
@@ -195,8 +195,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2021-10-12T02:30:07.105Z",
-        "lastModified": "2021-10-12T02:30:07.105Z",
+        "createdAt": "2021-10-13T04:50:08.693Z",
+        "lastModified": "2021-10-13T04:50:08.693Z",
         "size": 426,
         "formattedSize": "426 Bytes"
       }
@@ -262,8 +262,8 @@
       "excerpt": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user&#x2019;s geolocation to find their district and display its likely winner.</p>",
       "meta": {
         "relativePath": "metaProjection.html",
-        "createdAt": "2021-10-12T02:34:27.215Z",
-        "lastModified": "2021-10-12T02:34:27.215Z",
+        "createdAt": "2021-10-13T04:50:08.694Z",
+        "lastModified": "2021-10-13T04:50:08.694Z",
         "size": 1356,
         "formattedSize": "1.3 KB"
       }
@@ -287,8 +287,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "metaProjection2021.html",
-        "createdAt": "2021-10-12T02:34:27.215Z",
-        "lastModified": "2021-10-12T02:34:27.215Z",
+        "createdAt": "2021-10-13T04:50:08.696Z",
+        "lastModified": "2021-10-13T04:50:08.696Z",
         "size": 433,
         "formattedSize": "433 Bytes"
       }
@@ -335,8 +335,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "nudge2.html",
-        "createdAt": "2021-10-12T02:35:56.658Z",
-        "lastModified": "2021-10-12T02:35:56.658Z",
+        "createdAt": "2021-10-13T04:50:08.697Z",
+        "lastModified": "2021-10-13T04:50:08.697Z",
         "size": 391,
         "formattedSize": "391 Bytes"
       }
@@ -361,8 +361,8 @@
       "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
       "meta": {
         "relativePath": "qhacks.html",
-        "createdAt": "2021-10-12T02:30:07.116Z",
-        "lastModified": "2021-10-12T02:30:07.116Z",
+        "createdAt": "2021-10-13T04:50:08.698Z",
+        "lastModified": "2021-10-13T04:50:08.698Z",
         "size": 1127,
         "formattedSize": "1.1 KB"
       }
@@ -404,8 +404,8 @@
       "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2021-10-12T02:35:03.173Z",
-        "lastModified": "2021-10-12T02:35:03.173Z",
+        "createdAt": "2021-10-13T04:50:08.699Z",
+        "lastModified": "2021-10-13T04:50:08.699Z",
         "size": 2284,
         "formattedSize": "2.2 KB"
       }
@@ -428,8 +428,8 @@
       "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
       "meta": {
         "relativePath": "robot.html",
-        "createdAt": "2021-10-12T02:35:45.502Z",
-        "lastModified": "2021-10-12T02:35:45.502Z",
+        "createdAt": "2021-10-13T04:50:08.700Z",
+        "lastModified": "2021-10-13T04:50:08.700Z",
         "size": 957,
         "formattedSize": "957 Bytes"
       }
@@ -452,8 +452,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2021-10-12T02:32:42.491Z",
-        "lastModified": "2021-10-12T02:32:42.491Z",
+        "createdAt": "2021-10-13T04:50:08.701Z",
+        "lastModified": "2021-10-13T04:50:08.701Z",
         "size": 403,
         "formattedSize": "403 Bytes"
       }
@@ -514,15 +514,15 @@
       "tags": [
         "java",
         "postgresql",
-        "backbone"
+        "backbonedotjs"
       ],
       "excerpt": "",
       "meta": {
         "relativePath": "verafin.html",
-        "createdAt": "2021-10-12T02:30:07.103Z",
-        "lastModified": "2021-10-12T02:30:07.103Z",
-        "size": 434,
-        "formattedSize": "434 Bytes"
+        "createdAt": "2021-10-15T15:57:14.296Z",
+        "lastModified": "2021-10-15T15:57:14.296Z",
+        "size": 439,
+        "formattedSize": "439 Bytes"
       }
     },
     {
@@ -588,8 +588,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "wtformat2.html",
-        "createdAt": "2021-10-12T02:33:53.764Z",
-        "lastModified": "2021-10-12T02:33:53.764Z",
+        "createdAt": "2021-10-13T04:50:08.704Z",
+        "lastModified": "2021-10-13T04:50:08.704Z",
         "size": 369,
         "formattedSize": "369 Bytes"
       }

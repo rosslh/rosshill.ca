@@ -99,6 +99,10 @@ body {
   }
 }
 
+img {
+  color: transparent; /* don't show alt text when loading */
+}
+
 div.twoColumn {
   display: grid;
   grid-template-columns: 3fr 8fr;
