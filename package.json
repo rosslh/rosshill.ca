@@ -30,7 +30,7 @@
     "sass": "^1.43.2",
     "simple-icons": "^5.19.0",
     "slugify": "^1.6.1",
-    "svelte": "3.43.2",
+    "svelte": "3.44.0",
     "svelte-elements": "^0.4.2",
     "unplugin-icons": "^0.12.16",
     "vite": "2.6.7",
