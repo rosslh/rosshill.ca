@@ -33,7 +33,7 @@
     "svelte": "3.43.2",
     "svelte-elements": "^0.4.2",
     "unplugin-icons": "^0.12.16",
-    "vite": "2.6.7",
+    "vite": "2.6.10",
     "webp-converter-cli": "^0.0.5"
   },
   "engines": {
