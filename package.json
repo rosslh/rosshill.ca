@@ -17,7 +17,7 @@
     "upgrade": "ncu -u && ncu -u --target newest --filter \"@sveltejs/adapter-static @sveltejs/kit\" && npm i"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.415",
+    "@iconify/json": "^1.1.417",
     "@sveltejs/adapter-static": "1.0.0-next.21",
     "@sveltejs/kit": "1.0.0-next.184",
     "babel-eslint": "^10.1.0",
