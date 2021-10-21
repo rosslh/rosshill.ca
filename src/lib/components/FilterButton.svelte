@@ -1,36 +1,33 @@
 <script>
   import Circle from "~icons/fa-regular/circle";
-  import CheckCircle from "~icons/fa-regular/check-circle";
+  import CheckCircle from "~icons/fa-solid/check-circle";
   export let active;
   export let onClick;
   export let classPrefix;
-  export let showCheckbox = false;
   export let extraClasses = '';
 
-  let preventTransition = false;
+  let isToggling = false;
 
   const handleClick = () => {
-    preventTransition = true;
+    isToggling = true;
     onClick();
     setTimeout(() => {
-      preventTransition = false;
-    }, 500);
+      isToggling = false;
+    }, 300);
   };
 </script>
 
 <button
-  class="{classPrefix}Button {extraClasses ? extraClasses : ''} {active ? 'active' : 'inactive'} {preventTransition ? '' : 'doTransition'}"
+  class="{classPrefix}Button {isToggling ? 'toggling': 'doTransition'} {extraClasses ? extraClasses : ''} {active ? 'active' : 'inactive'}"
   on:click={handleClick}
 >
-  {#if showCheckbox}
-    <span class="symbol">
-      {#if active}
-        <CheckCircle />
-      {:else}
-        <Circle />
-      {/if}
-    </span>
-  {/if}
+  <span class="symbol">
+    {#if active}
+      <CheckCircle />
+    {:else}
+      <Circle />
+    {/if}
+  </span>
   <span class="text">
     <slot />
   </span>
@@ -39,14 +36,18 @@
 <style>
   button {
     background-color: var(--postBackground);
-    border: 1px solid var(--foreground);
+    border: 1px solid var(--postBorder);
     border-radius: 0.9rem;
     height: 1.8rem;
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     margin: 0.3rem 0.35rem 0.3rem 0;
+  }
+
+  button.toggling {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
   }
 
   button .symbol {
@@ -67,38 +68,33 @@
     line-height: 1.2rem;
   }
 
-  button.inactive {
-    border-color: var(--postBorder) !important;
-  }
-
-  button.active {
-    box-shadow: var(--boxShadow);
-  }
-
   button.jobButton {
     color: var(--job);
+  }
+
+  button.jobButton.active {
+    color: var(--background);
+    background-color: var(--job);
     border-color: var(--job);
   }
 
   button.projectButton {
     color: var(--project);
+  }
+
+  button.projectButton.active {
+    color: var(--background);
+    background-color: var(--project);
     border-color: var(--project);
   }
 
   button.orgButton {
     color: var(--org);
+  }
+
+  button.orgButton.active {
+    color: var(--background);
+    background-color: var(--org);
     border-color: var(--org);
-  }
-
-  button.tagButton {
-    border-color: var(--activeTagBorder);
-  }
-
-  button.tagButton.inactive {
-    opacity: 0.85;
-  }
-
-  :global(button.tagButton .tag) {
-    margin: 0 !important;
   }
 </style>

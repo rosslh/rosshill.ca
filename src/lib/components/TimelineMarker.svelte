@@ -31,7 +31,7 @@
     background-color: var(--project-marker);
   }
   div.timelineMarker.other {
-    background-color: var(--other-marker);
+    background-color: var(--timeline);
   }
 
   div.timelineMarker.left {

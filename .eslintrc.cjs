@@ -12,7 +12,10 @@ module.exports = {
 		files: ['*.svelte'],
 		processor: 'svelte3/svelte3'
 	}],
-	parser: "babel-eslint",
+	parser: "@babel/eslint-parser",
+  parserOptions: {
+    requireConfigFile: false
+  },
 	plugins: ['svelte3'],
 	rules: {
 		"brace-style": [1, "1tbs"],

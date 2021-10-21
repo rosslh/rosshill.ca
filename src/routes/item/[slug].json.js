@@ -1,5 +1,6 @@
 import { slugify } from "$lib/functions";
 import { data as timeline } from "$lib/posts.json";
+import brandColors from "$lib/brandColors.json";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -25,7 +26,7 @@ const lookup = new Map();
 posts
   .filter(post => post.contents)
   .forEach(post => {
-    lookup.set(post.slug.toLowerCase(), JSON.stringify(post));
+    lookup.set(post.slug, post);
   });
 
 export function get(req) {
@@ -34,7 +35,9 @@ export function get(req) {
   const slug = req.params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
-    return { body: lookup.get(slug) };
+    return {
+      body: { post: lookup.get(slug), brandColors }
+    };
   } else {
     return {
       body: {

@@ -51,6 +51,10 @@
     margin-bottom: 3.5rem;
   }
 
+  .intro p {
+    margin: 1.5rem auto !important;
+  }
+
   h2 {
     margin-top: 0;
   }

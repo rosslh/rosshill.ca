@@ -18,7 +18,7 @@
   const serverRendered = typeof window === "undefined";
   $: getPathClass = () => {
     if (serverRendered) {
-      return "serverRendered"
+      return "serverRendered";
     }
     return logoHasFill ? "logoHasFill" : "initial";
   };
@@ -28,8 +28,7 @@
   class={serverRendered ? "ssrFadeIn" : ""}
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="85.15999145507814 9.819995117187503 329.6800170898437
-  130.360009765625"
+  viewBox="85.15999145507814 9.819995117187503 329.6800170898437 130.360009765625"
 >
   <title>Ross Hill</title>
   <g>

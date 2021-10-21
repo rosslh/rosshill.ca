@@ -9,7 +9,7 @@ const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.
 
 const { data } = getJson("./src/lib/posts.json");
 const entries = data
-  .filter(({ contents }) => contents)
+  .filter(({ contents, WIP }) => contents && !WIP)
   .map(({ title }) => `/item/${slugify(title)}`)
   .concat(['*']);
 

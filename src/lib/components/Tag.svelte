@@ -1,9 +1,9 @@
 <script>
   export let tagId;
-  export let active;
+  export let active = false;
   export let background;
   export let foreground;
-  export let onClick;
+  export let onClick = null;
   export let lazyLoad = false;
 
   import { Div, Button } from 'svelte-elements';
@@ -14,27 +14,36 @@
   $: tagString = tagLabels[tagId] || tagId;
 
   const imgOffset = tagId === "unity" ? 0.35 : 0.4;
+
+  let isToggling = false;
+
+  const handleClick = () => {
+    isToggling = true;
+    onClick();
+    setTimeout(() => {
+      isToggling = false;
+    }, 300);
+  };
 </script>
 
 <!-- TODO: use svelte:element once that's available -->
 <svelte:component
   this={onClick ? Button : Div}
-  on:click={onClick}
+  on:click={handleClick}
   class="tag doTransition {active ? 'active' : ''}"
+  style={active ? `color: #${foreground};` : ""}
 >
-  <span class="logoWrapper" style="background-color: #{background};">
+  <span class="logoWrapper {isToggling ? 'toggling' : 'doTransition'}" style="background-color: #{background};">
     <img
       src="/tags/{tagId}.svg"
       alt=""
       loading={lazyLoad ? "lazy" : null}
-      role="img"
       style="margin-left: {imgOffset}rem;"
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)} />
   </span>
   <span
     class={`tagString ${tagString === tagId ? "capitalize" : ""}`}
-    style={active ? `color: #${foreground};` : ""}
   >
     {tagString}
   </span>
@@ -63,12 +72,19 @@
     bottom: -1px;
     display: flex;
     align-items: center;
-    transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease, /* taken from .doTransition */
-      width 0.3s ease, border-radius 0.3s ease;
 
     border: 1px solid var(--postBorder);
     border-top-left-radius: 0.9rem;
     border-bottom-left-radius: 0.9rem;
+  }
+
+  .logoWrapper.toggling {
+    transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+  }
+
+  .logoWrapper.doTransition {
+    /* taken from global.scss .doTransition */
+    transition: border-color 0.5s ease, width 0.5s ease, border-radius 0.5s ease;
   }
 
   :global(.tag.active .logoWrapper) {
@@ -83,7 +99,6 @@
     margin-left: 1.5rem;
     padding: 0 0.25rem;
     position: relative;
-    transition: color 0.3s ease;
     z-index: 2;
   }
 

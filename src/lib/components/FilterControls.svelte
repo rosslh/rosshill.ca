@@ -73,7 +73,6 @@
     active={jobActive}
     classPrefix="job"
     onClick={() => toggleCategory("job")}
-    showCheckbox
   >
     Work Experience
   </FilterButton>
@@ -81,7 +80,6 @@
     active={projectActive}
     classPrefix="project"
     onClick={() => toggleCategory("project")}
-    showCheckbox
   >
     Projects
   </FilterButton>
@@ -89,7 +87,6 @@
     active={orgActive}
     classPrefix="org"
     onClick={() => toggleCategory("org")}
-    showCheckbox
   >
     Organizations
   </FilterButton>

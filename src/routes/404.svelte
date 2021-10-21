@@ -1,11 +1,10 @@
 <script>
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
+  import BackLink from '$lib/components/BackLink.svelte';
 </script>
 
 <div class="contentWrapper mainContent">
-  <a rel="prefetch" class="backLink" href="/">
-    &larr; Back to Home
-  </a>
+  <BackLink />
   <h2>404: Page not found</h2>
   <ConfusedTravolta reason="the page wasn't found" />
 </div>

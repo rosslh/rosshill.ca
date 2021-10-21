@@ -1,12 +1,11 @@
 @mixin light-theme () {
-  --job: #dd1615;
+  --job: #d92120;
   --project: #9b33f6;
   --org: #15803D;
 
-  --job-marker: #f48181;
+  --job-marker: #f18383;
   --project-marker: #b890f1;
   --org-marker: #60b576;
-  --other-marker: #a3a3a3;
 
   --activeTagBorder: #434548;
   --background: #f8f9fb;
@@ -30,7 +29,6 @@
   --job-marker: var(--job);
   --project-marker: var(--project);
   --org-marker: var(--org);
-  --other-marker: #a4adbe;
 
   --activeTagBorder: #bdc7d9;
   --background: #1A1F28;
@@ -103,15 +101,8 @@ img {
   color: transparent; /* don't show alt text when loading */
 }
 
-div.twoColumn {
-  display: grid;
-  grid-template-columns: 3fr 8fr;
-}
-
-@media (max-width: 1000px) {
-  div.twoColumn {
-    grid-template-columns: 1fr;
-  }
+input, input[type="button"], button {
+  touch-action: manipulation;
 }
 
 button:not(:disabled) {
@@ -178,9 +169,4 @@ picture.fixedSize {
     top: 0;
     left: 0;
   }
-}
-
-a.backLink {
-  display: inline-block;
-  margin: 1.5rem 0;
 }

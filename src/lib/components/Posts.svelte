@@ -2,6 +2,8 @@
   export let posts;
   export let brandColors;
 
+  import { onMount } from "svelte";
+
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
@@ -24,6 +26,14 @@
     
     return post;
   };
+
+  onMount(() => { // TODO: this shouldn't be necessary
+    const id = window.location.hash.replace(/^#/, '');
+    const element = id && document.getElementById(id);
+    if (id && element) {
+      element.scrollIntoView();
+    }
+  });
 
   let showCategories = [];
   let showTags = [];
