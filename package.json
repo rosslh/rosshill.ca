@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/eslint-parser": "^7.15.8",
-    "@iconify/json": "^1.1.417",
+    "@iconify/json": "^1.1.418",
     "@sveltejs/adapter-static": "1.0.0-next.21",
     "@sveltejs/kit": "1.0.0-next.187",
     "color-contrast": "^1.0.0",
