@@ -1,11 +1,14 @@
-import staticAdapter from '@sveltejs/adapter-static';
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
 import fs from "fs";
 import Icons from 'unplugin-icons/vite';
+import preprocess from 'svelte-preprocess';
+import staticAdapter from '@sveltejs/adapter-static';
 
 import { slugify } from "./src/lib/functions.js";
 
 // This isn't strictly necessary but I don't trust the crawler
-const getJson = fileName => JSON.parse(fs.readFileSync(new URL(fileName, import.meta.url), 'utf8'));
+const getJson = fileName => JSON.parse(fs.readFileSync(fileName, 'utf8'));
 
 const { data } = getJson("./src/lib/posts.json");
 const entries = data
@@ -48,5 +51,17 @@ export default {
         }),
       ],
     },
-  }
+  },
+  preprocess: preprocess({
+    // TODO: Add babel support
+    // TODO: Add typescript support
+    postcss: {
+      plugins: [
+        autoprefixer(),
+        cssnano({
+          preset: 'default',
+        }),
+      ],
+    }
+  }),
 };

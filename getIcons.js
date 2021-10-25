@@ -29,7 +29,7 @@ function main() {
       .forEach(post => {
         post.tags.forEach(tag => {
           if (!(tag in brandColors)) {
-            let icon = Icons.Get(tag)
+            const icon = Icons.Get(tag)
               ?? (tag.endsWith("dotjs") ? Icons.Get("javascript") : Icons.Get("visualstudiocode"));
             
             const foreground = getBestContrast(icon.hex);

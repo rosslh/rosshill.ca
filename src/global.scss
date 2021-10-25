@@ -109,10 +109,22 @@ button:not(:disabled) {
   cursor: pointer;
 }
 
-a:focus,
-button:focus {
+@mixin focus-styles () {
   outline: 2px dotted var(--focusOutline) !important;
-  outline-offset: 2px !important;
+  outline-offset: 1px !important;
+}
+
+:focus {
+  @include focus-styles();
+}
+
+// disables :focus styles if :focus-visible supported
+:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+:focus-visible {
+  @include focus-styles();
 }
 
 article.postFull p,
