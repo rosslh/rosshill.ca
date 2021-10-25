@@ -29,7 +29,7 @@
     "color-contrast": "^1.0.0",
     "cssnano": "^5.0.8",
     "dateformat": "^5.0.2",
-    "eslint": "^8.0.1",
+    "eslint": "^8.1.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "isbot": "^3.3.4",
     "markdown-json": "^1.6.0",
