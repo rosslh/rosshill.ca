@@ -54,7 +54,6 @@ export default {
   },
   preprocess: preprocess({
     // TODO: Add babel support
-    // TODO: Add typescript support
     postcss: {
       plugins: [
         autoprefixer(),

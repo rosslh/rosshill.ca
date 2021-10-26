@@ -1,9 +1,9 @@
-<script>
-  export let tagId;
+<script lang="ts">
+  export let tagId: string;
   export let active = false;
-  export let background;
-  export let foreground;
-  export let onClick = null;
+  export let background: string;
+  export let foreground: string;
+  export let onClick: () => void = null;
   export let lazyLoad = false;
 
   import { Div, Button } from 'svelte-elements';

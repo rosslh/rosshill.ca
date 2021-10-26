@@ -1,10 +1,11 @@
-<script>
+<script type="ts">
+  export let active: boolean;
+  export let onClick: () => void;
+  export let classPrefix: string;
+  export let extraClasses = '';
+
   import Circle from "~icons/fa-regular/circle";
   import CheckCircle from "~icons/fa-solid/check-circle";
-  export let active;
-  export let onClick;
-  export let classPrefix;
-  export let extraClasses = '';
 
   let isToggling = false;
 
