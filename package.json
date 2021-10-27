@@ -39,7 +39,7 @@
     "eslint-plugin-svelte3": "^3.2.1",
     "isbot": "^3.3.4",
     "markdown-json": "^1.6.0",
-    "sass": "^1.43.3",
+    "sass": "^1.43.4",
     "simple-icons": "^5.20.0",
     "slugify": "^1.6.1",
     "svelte": "3.44.0",
