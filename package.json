@@ -31,7 +31,7 @@
     "@types/dateformat": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.0",
     "color-contrast": "^1.0.0",
     "cssnano": "^5.0.8",
     "dateformat": "^5.0.2",
