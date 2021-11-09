@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let href = "/";
 
   import LeftArrow from '~icons/feather/corner-up-left';

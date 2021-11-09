@@ -1,59 +1,53 @@
-<script>
-  export let posts;
-  export let brandColors;
+<script lang="ts">
+  export let posts: PostItem[];
+  
+  export let brandColors: BrandColors;
 
-  import { onMount } from "svelte";
-
+  import type { BrandColors, PostItem } from "src/global";
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
   import { tagParents } from "$lib/constants";
   import ConfusedTravolta from "./ConfusedTravolta.svelte";
 
-  const postsMap = (post, i, postsArray) => {
-    const prevLeftAligned = i === 0 ? false : postsArray[i - 1].leftAligned;
+  const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
+    const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
     const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
 
     const year = getYearFromDate(post.date);
 
     if (year !== prevYear) {
       post.showYearLabel = true;
-      post.leftAligned = !prevLeftAligned;
+      post.isLeftAligned = !prevLeftAligned;
     } else {
       post.showYearLabel = false;
-      post.leftAligned = prevLeftAligned;
+      post.isLeftAligned = prevLeftAligned;
     }
     
     return post;
   };
 
-  onMount(() => { // TODO: this shouldn't be necessary
-    const id = window.location.hash.replace(/^#/, '');
-    const element = id && document.getElementById(id);
-    if (id && element) {
-      element.scrollIntoView();
-    }
-  });
-
   let showCategories = [];
   let showTags = [];
 
-  $: categoryFilter = post => {
+  $: categoryFilter = (post: PostItem) => {
     return !showCategories.length || showCategories.includes(post.eventType);
   };
 
-  $: parentTagShown = tag => { // TODO: why does this work without reactive declaration?
-    return tagParents[tag] && tagParents[tag].some(parentTag => showTags.includes(parentTag));
+  $: parentTagShown = (tag: string) => { // TODO: why does this work without reactive declaration?
+    return tagParents[tag] && tagParents[tag].some((parentTag: string) => showTags.includes(parentTag));
   };
 
-  $: tagFilter = post => {
+  $: tagFilter = (post: PostItem) => {
     const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some(tag => showTags.includes(tag) || parentTagShown(tag));
     return !showTags.length || postHasShownTag;
   };
 
-  $: postsWithLabels = posts.filter(post => categoryFilter(post) && tagFilter(post)).map(postsMap);
+  $: postsWithLabels = posts
+    .filter((post: PostItem) => categoryFilter(post) && tagFilter(post))
+    .map(setLabelVisibilityAndAlignment);
 
-  const getYearFromDate = date => Number(date.substring(0, 4));
+  const getYearFromDate = (date: string) => Number(date.substring(0, 4));
 </script>
 
 <div class="headingWrapper contentWrapper ">
@@ -63,19 +57,20 @@
 <div class="contentWrapper postsWrapper">
   <div class="posts">
     {#each postsWithLabels as post, i (post.slug)}
-      <YearLabel
-        display={post.showYearLabel}
-        firstLabel={i === 0}
-        rightToLeft={post.leftAligned}
-        year={getYearFromDate(post.date)}
-      />
-      {#key `${i}|${post.leftAligned}`}
+      {#if post.showYearLabel}
+        <YearLabel
+          isFirstLabel={i === 0}
+          isRightToLeft={post.isLeftAligned}
+          year={getYearFromDate(post.date)}
+        />
+      {/if}
+      {#key `${i}|${post.isLeftAligned}`}
         <Post
           {post}
           {brandColors}
-          firstPost={i === 0}
-          lastPost={i === postsWithLabels.length - 1}
-          left={post.leftAligned}
+          isFirstPost={i === 0}
+          isLastPost={i === postsWithLabels.length - 1}
+          left={post.isLeftAligned}
         />
       {/key}
     {/each}

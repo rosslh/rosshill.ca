@@ -24,8 +24,8 @@ const contents = Object.values(timeline)
         : null
     };
   })
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
+  .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
-export function get(_req) {
+export function get() {
   return { body: { posts: contents, brandColors } };
 }

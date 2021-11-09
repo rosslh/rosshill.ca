@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
   import BackLink from '$lib/components/BackLink.svelte';
 </script>

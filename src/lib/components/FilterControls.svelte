@@ -1,16 +1,17 @@
-<script>
-  export let showCategories;
-  export let showTags;
-  export let posts;
-  export let brandColors;
+<script lang="ts">
+  export let showCategories: string[];
+  export let showTags: string[];
+  export let posts: PostItem[];
+  export let brandColors: BrandColors;
 
   import Times from '~icons/fa-solid/times';
-
+  
+  import type { BrandColors, PostItem } from 'src/global';
   import FilterButton from "./FilterButton.svelte";
   import Tag from "./Tag.svelte";
   import { tagParents } from "$lib/constants";
 
-  const toggleItemInList = (list, item) => {
+  const toggleItemInList = (list: string[], item: string) => {
     if (list.includes(item)) {
       return list.filter((x) => x !== item);
     } else {
@@ -18,11 +19,11 @@
     }
   };
 
-  const toggleCategory = category => {
+  const toggleCategory = (category: string) => {
     showCategories = toggleItemInList(showCategories, category);
   };
 
-  const toggleTag = tag => {
+  const toggleTag = (tag: string) => {
     showTags = toggleItemInList(showTags, tag);
   };
 

@@ -1,25 +1,22 @@
-<script>
-  export let year;
-  export let rightToLeft;
-  export let firstLabel;
-  export let display;
+<script lang="ts">
+  export let year: number;
+  export let isRightToLeft: boolean;
+  export let isFirstLabel: boolean;
 </script>
 
-{#if display}
-  <div class="labelWrapper doTransition">
-    <span class="yearLabel doTransition {firstLabel ? 'firstLabel' : 'centeredLabel'}">
-      {year}
-    </span>
-    {#if !firstLabel}
-      <div aria-hidden="true" class="line {rightToLeft ? 'rtl' : 'ltr'}">
-        <div class="doTransition" />
-        <div class="doTransition" />
-        <div class="doTransition" />
-        <div class="doTransition" />
-      </div>
-    {/if}
-  </div>
-{/if}
+<div class="labelWrapper doTransition">
+  <span class="yearLabel doTransition {isFirstLabel ? 'firstLabel' : 'centeredLabel'}">
+    {year}
+  </span>
+  {#if !isFirstLabel}
+    <div aria-hidden="true" class="line {isRightToLeft ? 'rtl' : 'ltr'}">
+      <div class="doTransition" />
+      <div class="doTransition" />
+      <div class="doTransition" />
+      <div class="doTransition" />
+    </div>
+  {/if}
+</div>
 
 <style>
   div.labelWrapper {

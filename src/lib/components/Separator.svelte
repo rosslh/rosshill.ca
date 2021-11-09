@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
   import Code from "~icons/iconoir/code";
-  export let intro;
 </script>
 
-<div class="contentWrapper {intro ? 'intro' : ''}">
+<div class="contentWrapper">
   <div aria-hidden="true" class="separator">
     <div class="line doTransition" />
     <div class="symbol doTransition">
@@ -39,7 +38,7 @@
     border-bottom: 3px dotted var(--postBorder);
   }
   @media (min-width: 1000px) {
-    div.contentWrapper.intro {
+    div.contentWrapper {
       display: none;
     }
   }

@@ -1,5 +1,5 @@
-<script>
-  export let left;
+<script lang="ts">
+  export let left: boolean;
 </script>
 
 {#if left}

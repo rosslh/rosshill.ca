@@ -1,6 +1,7 @@
 import { slugify } from "$lib/functions";
 import { data as timeline } from "$lib/posts.json";
 import brandColors from "$lib/brandColors.json";
+import type { Request } from "@sveltejs/kit";
 
 const posts = Object.values(timeline)
   .filter(post => !post.WIP)
@@ -29,7 +30,7 @@ posts
     lookup.set(post.slug, post);
   });
 
-export function get(req) {
+export function get(req: Request) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const slug = req.params.slug.toLowerCase();

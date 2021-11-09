@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Separator from "./Separator.svelte";
   import AnimatedName from "./AnimatedName.svelte";
   import { remsToPixels } from "$lib/functions";
@@ -39,7 +39,7 @@
       </a>
     </p>
   </div>
-  <Separator intro />
+  <Separator />
 </div>
 
 <style>

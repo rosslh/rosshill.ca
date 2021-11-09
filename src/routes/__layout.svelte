@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import { cheekyMessagePrinted } from "$lib/stores";
+
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
   import Sidebar from "$lib/components/Sidebar.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
@@ -9,6 +11,37 @@
   const title = "Ross Hill – Website and Portfolio";
   const description = "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.";
   const siteImage = "https://rosshill.ca/siteImage.png";
+
+  const getCssVariable = (variableName: string) => {
+    const style = getComputedStyle(document.querySelector("body"));
+    return style.getPropertyValue(`--${variableName}`);
+  };
+
+  const printCheekyMessage = () => {
+      const commonStyles = `display: inline-block; background-color: ${getCssVariable("postBackground")}; border: 1px solid ${getCssVariable("postBorder")}; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;`;
+      const mainForeground = `color: ${getCssVariable("foreground")};`;
+      const borderRadiusLeft = 'border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem;';
+      const borderRadiusRight = 'border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem;';
+
+      // eslint-disable-next-line no-console
+      console.log(
+        '%c Like the site? Check out the source code here:%chttps://github.com/rosslh/rosshill.ca',
+        `padding: 1rem 0.25rem 1rem 0.5rem; font-weight: bold; ${borderRadiusLeft} ${mainForeground} ${commonStyles} border-right: none;`,
+        `padding: 1rem 0.5rem 1rem 0; ${mainForeground} ${borderRadiusRight} ${commonStyles} border-left: none;`
+      );
+      // eslint-disable-next-line no-console
+      console.log(
+        `%c © Copyright 2015-${new Date().getFullYear()} Ross Hill. All Rights Reserved.`,
+        `padding: 1rem 0.5rem; color: ${getCssVariable("subtitle")}; ${borderRadiusLeft} ${borderRadiusRight} ${commonStyles}`
+      );
+  };
+
+  $: {
+    if (typeof window !== "undefined" && !$cheekyMessagePrinted) {
+      $cheekyMessagePrinted = true;
+      printCheekyMessage();
+    }
+  }
 </script>
 
 <ThemeSwitcher />

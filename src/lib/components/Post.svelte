@@ -1,4 +1,11 @@
-<script>
+<script lang="ts">
+  export let post: PostItem;
+  export let brandColors: BrandColors;
+  export let left: boolean;
+  export let isFirstPost: boolean;
+  export let isLastPost: boolean;
+
+  import type { BrandColors, PostItem } from "src/global";
   import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
@@ -9,14 +16,8 @@
   import { remsToPixels } from "$lib/functions";
   import InlineSeparator from "./InlineSeparator.svelte";
 
-  export let post;
-  export let brandColors;
-  export let left;
-  export let firstPost;
-  export let lastPost;
-
-  let element;
-  let intersecting;
+  let element: HTMLElement;
+  let intersecting: boolean;
 
   $: hasIntersected = reduceMotion || hasIntersected || intersecting;
 
@@ -30,13 +31,13 @@
   };
 </script>
 
-{#if firstPost}
+{#if isFirstPost}
   <PostSpacer {left} />
 {/if}
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={firstPost ? 0 : 0.25}
+  threshold={isFirstPost ? 0 : 0.25}
   bind:intersecting
 >
   <div
@@ -113,7 +114,7 @@
     </div>
   </div>
 </IntersectionObserver>
-{#if lastPost}
+{#if isLastPost}
   <PostSpacer {left} showBottomMarker />
 {/if}
 

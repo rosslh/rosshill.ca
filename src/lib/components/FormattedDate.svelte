@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import dateformat from "dateformat";
+  import type { PostItem } from "src/global";
 
-  export let post;
+  export let post: PostItem;
 </script>
 
 <div class="dateString doTransition">

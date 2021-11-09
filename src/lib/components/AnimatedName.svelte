@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import { sineIn } from "svelte/easing";
-  import svgPath from "./NameSvg.js";
+  import svgPath from "./NameSvg";
   import { draw } from "svelte/transition";
   import { reduceMotion } from "$lib/constants";
 

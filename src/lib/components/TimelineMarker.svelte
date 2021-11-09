@@ -1,6 +1,6 @@
-<script>
-  export let left;
-  export let eventType;
+<script lang="ts">
+  export let left: boolean;
+  export let eventType: string;
 
   const typeString =
     ({ job: "Job", org: "Organization", project: "Project" })[eventType] ||

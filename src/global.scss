@@ -1,10 +1,10 @@
 @mixin light-theme () {
   --job: #d92120;
-  --project: #9b33f6;
+  --project: #7c4bf6;
   --org: #15803D;
 
   --job-marker: #f18383;
-  --project-marker: #b890f1;
+  --project-marker: #a896f1;
   --org-marker: #60b576;
 
   --activeTagBorder: #434548;
@@ -23,8 +23,8 @@
 
 @mixin dark-theme () {
   --job: #f28282;
-  --project: #b592ea;
-  --org: #55b574;
+  --project: #a797ea;
+  --org: #55b56f;
 
   --job-marker: var(--job);
   --project-marker: var(--project);
@@ -103,6 +103,7 @@ img {
 
 input, input[type="button"], button {
   touch-action: manipulation;
+  user-select: none;
 }
 
 button:not(:disabled) {

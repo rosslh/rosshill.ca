@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
 
   import Moon from "~icons/ion/ios-moon";
   import Sunny from "~icons/ion/ios-sunny";
-  import { theme as userTheme } from "$lib/stores.js";
+  import { theme as userTheme } from "$lib/stores";
 
   onMount(() => {
     if (!$userTheme) {

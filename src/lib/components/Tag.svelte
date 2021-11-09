@@ -8,7 +8,7 @@
 
   import { Div, Button } from 'svelte-elements';
 
-  import { tagLabels } from "$lib/constants.js";
+  import { tagLabels } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
 
   $: tagString = tagLabels[tagId] || tagId;

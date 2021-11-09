@@ -1,19 +1,20 @@
 import fs from 'fs';
 import Icons from "simple-icons";
-import colorContrast from 'color-contrast';
+import chroma from 'chroma-js';
+import type { PostItem } from 'src/global';
 
-function getBestContrast(compareTo) {
+function getBestContrast(color: string) {
   // colors taken from global.scss
-  const white = "FCFCFD";
-  const black = "1F2938";
-  const whiteContrast = colorContrast(compareTo, white);
-  const blackContrast = colorContrast(compareTo, black);
+  const light = "FCFCFD";
+  const dark = "1F2938";
+  const contrastWithLight = chroma.contrast(color, light);
+  const contrastWithDark = chroma.contrast(color, dark);
 
   // prefer white icons
-  return whiteContrast + 4.8 > blackContrast ? white : black;
+  return contrastWithLight + 4.8 > contrastWithDark ? light : dark;
 }
 
-function handleWriteFileError(err) {
+function handleWriteFileError(err: Error) {
   if (err) {
     console.error(err);
   }
@@ -22,12 +23,12 @@ function handleWriteFileError(err) {
 function main() {
   const brandColors = {};
 
-  fs.readFile('src/lib/posts.json', 'utf8' , (err, file) => {
+  fs.readFile('src/lib/posts.json', 'utf8' , (_err, file) => {
     const { data } = JSON.parse(file);
     data
-      .filter(post => post.tags && post.tags.length)
-      .forEach(post => {
-        post.tags.forEach(tag => {
+      .filter((post: PostItem) => post.tags && post.tags.length)
+      .forEach((post: PostItem) => {
+        post.tags.forEach((tag: string) => {
           if (!(tag in brandColors)) {
             const icon = Icons.Get(tag)
               ?? (tag.endsWith("dotjs") ? Icons.Get("javascript") : Icons.Get("visualstudiocode"));
