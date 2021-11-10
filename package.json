@@ -24,7 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.0",
-    "@iconify/json": "^1.1.425",
+    "@iconify/json": "^1.1.426",
     "@sveltejs/adapter-static": "1.0.0-next.21",
     "@sveltejs/kit": "1.0.0-next.195",
     "@types/chroma-js": "^2.1.3",
