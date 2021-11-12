@@ -18,21 +18,10 @@
   };
 
   const printCheekyMessage = () => {
-      const commonStyles = `display: inline-block; background-color: ${getCssVariable("postBackground")}; border: 1px solid ${getCssVariable("postBorder")}; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;`;
-      const mainForeground = `color: ${getCssVariable("foreground")};`;
-      const borderRadiusLeft = 'border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem;';
-      const borderRadiusRight = 'border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem;';
-
       // eslint-disable-next-line no-console
       console.log(
-        '%c Like the site? Check out the source code here:%chttps://github.com/rosslh/rosshill.ca',
-        `padding: 1rem 0.25rem 1rem 0.5rem; font-weight: bold; ${borderRadiusLeft} ${mainForeground} ${commonStyles} border-right: none;`,
-        `padding: 1rem 0.5rem 1rem 0; ${mainForeground} ${borderRadiusRight} ${commonStyles} border-left: none;`
-      );
-      // eslint-disable-next-line no-console
-      console.log(
-        `%c © Copyright 2015-${new Date().getFullYear()} Ross Hill. All Rights Reserved.`,
-        `padding: 1rem 0.5rem; color: ${getCssVariable("subtitle")}; ${borderRadiusLeft} ${borderRadiusRight} ${commonStyles}`
+        '%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca',
+        `background-color: ${getCssVariable("postBackground")}; border-radius: 0.5rem; border: 1px solid ${getCssVariable("postBorder")}; color: ${getCssVariable("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 600; padding: 0.75rem;`
       );
   };
 
@@ -76,8 +65,13 @@
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={siteImage} />
+
   <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">  
 </svelte:head>
 
 <style>

@@ -40,10 +40,6 @@
           <Sunny />
         {/if}
       </span>
-      <span class="text">
-        {#if nextTheme === "dark"}Dark{:else}Light{/if}
-        mode
-      </span>
     {/if}
   </button>
 </div>
@@ -57,14 +53,15 @@
   }
   button {
     width: 9rem;
-    height: 1.8rem;
-    border-radius: 0.9rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--foreground);
     background-color: var(--postBackground);
-    padding: 0 1rem;
+    padding: 0;
     font-size: 0.9rem;
     border: 1px solid var(--postBorder);
   }
@@ -72,22 +69,6 @@
     display: inline-flex;
     align-items: center;
     font-size: 0.8rem;
-    margin-right: 0.3rem;
-  }
-
-  @media (max-width: 700px) {
-    span.text {
-      display: none;
-    }
-    button {
-      padding: 0;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-    }
-
-    button .icon {
-      margin-right: 0;
-    }
+    margin-right: 0;
   }
 </style>

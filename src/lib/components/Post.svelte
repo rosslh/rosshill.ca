@@ -231,7 +231,7 @@
     font-size: 0.95rem;
     line-height: 1.2rem;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 0.5rem 0 1rem;
     padding: 0;
   }
 

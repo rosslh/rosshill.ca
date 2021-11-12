@@ -76,10 +76,10 @@
   div.imgWrapper {
     overflow: hidden;
     border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
-    min-width: 10rem;
-    min-height: 10rem;
+    width: 11rem;
+    height: 11rem;
+    min-width: 11rem;
+    min-height: 11rem;
   }
 
   div.imgWrapper * {
@@ -89,7 +89,7 @@
   }
 
   h1 {
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     margin-bottom: -1rem;
     padding-bottom: 0;
     height: 6rem;

@@ -14,13 +14,15 @@ function getBestContrast(color: string) {
   return contrastWithLight + 4.8 > contrastWithDark ? light : dark;
 }
 
-function handleWriteFileError(err: Error) {
+function handleFileError(err: Error) {
   if (err) {
     console.error(err);
   }
 }
 
 function main() {
+  deleteFilesInDirectory("static/tags");
+
   const brandColors = {};
 
   fs.readFile('src/lib/posts.json', 'utf8' , (_err, file) => {
@@ -35,13 +37,21 @@ function main() {
             
             const foreground = getBestContrast(icon.hex);
             const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${foreground}"><path d="${icon.path}"/></svg>`;
-            fs.writeFile(`static/tags/${tag}.svg`, svg, handleWriteFileError);
+            fs.writeFile(`static/tags/${tag}.svg`, svg, handleFileError);
             brandColors[tag] = { background: icon.hex, foreground };
           }
         });
       });
 
-    fs.writeFile('src/lib/brandColors.json', JSON.stringify(brandColors), handleWriteFileError);
+    fs.writeFile('src/lib/brandColors.json', JSON.stringify(brandColors), handleFileError);
+  });
+}
+
+function deleteFilesInDirectory(directory: string) {
+  fs.readdir(directory, (_err, files) => {
+    files.forEach(file => {
+      fs.unlink(`static/tags/${file}`, handleFileError);
+    });
   });
 }
 
