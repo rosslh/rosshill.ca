@@ -41,7 +41,7 @@
     "isbot": "^3.3.4",
     "markdown-json": "^1.6.0",
     "sass": "^1.43.4",
-    "simple-icons": "^5.22.0",
+    "simple-icons": "^5.23.0",
     "slugify": "^1.6.2",
     "svelte": "3.44.1",
     "svelte-check": "^2.2.8",
