@@ -38,8 +38,8 @@
     display: inline-block;
     margin: 0;
     padding: 0;
-    animation: wave 0.9s linear 2.5s both;
-    font-weight: normal !important;
+    animation: wave 0.9s linear 3.5s both;
+    font-weight: 400 !important;
   }
 
   div.intro .helloText {
@@ -47,12 +47,12 @@
   }
 
   div.intro {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 
   .intro p {
-    margin: 1.5rem auto !important;
+    margin: 1rem auto !important;
   }
 
   h2 {

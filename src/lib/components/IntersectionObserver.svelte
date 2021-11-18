@@ -40,7 +40,9 @@ SOFTWARE.
 
   afterUpdate(async () => {
     if (complete) {
-      observer && observer.disconnect();
+      if (observer) {
+        observer.disconnect();
+      }
       return;
     }
 
@@ -55,7 +57,9 @@ SOFTWARE.
   });
 
   onDestroy(() => {
-    observer && observer.disconnect();
+    if (observer) {
+      observer.disconnect();
+    }
   });
 
   const handleIntersection = ([entry]) => {

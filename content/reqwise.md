@@ -15,9 +15,7 @@ I graduated from university in April 2020. As part of my computer science degree
 
 If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there's a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.
 
-
-
-## Feature overview
+### Feature overview
 
 The first feature ReqWise offers is **Questionnaires**, where you can ask your stakeholders questions to get an idea for what you're supposed to build. Questionnaires can be used to supplement time-consuming meetings.
 

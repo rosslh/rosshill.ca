@@ -3,6 +3,7 @@
   
   export let brandColors: BrandColors;
 
+  import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "src/global";
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
@@ -27,20 +28,17 @@
     return post;
   };
 
-  let showCategories = [];
-  let showTags = [];
-
   $: categoryFilter = (post: PostItem) => {
-    return !showCategories.length || showCategories.includes(post.eventType);
+    return !$showCategories.length || $showCategories.includes(post.eventType);
   };
 
-  $: parentTagShown = (tag: string) => { // TODO: why does this work without reactive declaration?
-    return tagParents[tag] && tagParents[tag].some((parentTag: string) => showTags.includes(parentTag));
+  $: parentTagShown = (tag: string) => {
+    return tagParents[tag] && tagParents[tag].some((parentTag: string) => $showTags.includes(parentTag));
   };
 
   $: tagFilter = (post: PostItem) => {
-    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some(tag => showTags.includes(tag) || parentTagShown(tag));
-    return !showTags.length || postHasShownTag;
+    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some(tag => $showTags.includes(tag) || parentTagShown(tag));
+    return !$showTags.length || postHasShownTag;
   };
 
   $: postsWithLabels = posts
@@ -52,7 +50,7 @@
 
 <div class="headingWrapper contentWrapper ">
   <h2>Experience</h2>
-  <FilterControls bind:showCategories bind:showTags {posts} {brandColors} />
+  <FilterControls bind:showCategories={$showCategories} bind:showTags={$showTags} {posts} {brandColors} />
 </div>
 <div class="contentWrapper postsWrapper">
   <div class="posts">
@@ -64,6 +62,7 @@
           year={getYearFromDate(post.date)}
         />
       {/if}
+      <!-- Only transition if index or alignment changes -->
       {#key `${i}|${post.isLeftAligned}`}
         <Post
           {post}
@@ -96,7 +95,7 @@
   }
 
   div.headingWrapper {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
     margin-bottom: 2rem;
   }
   div.headingWrapper h2 {

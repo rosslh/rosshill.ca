@@ -1,22 +1,26 @@
 import { writable } from "svelte/store";
 
-const storageKey = "user-theme";
-const localStorageEnabled = typeof localStorage !== "undefined" && localStorage;
-
-const themeStore = (initial: string)  => {
+const localStore = (localStorageKey: string, callback?: (val: string) => void)  => {
+  const localStorageEnabled = typeof localStorage !== "undefined" && localStorage;
+  const initial = localStorageEnabled ? localStorage.getItem(localStorageKey) : "";
   const { set: setStore, ...store } = writable(initial);
   return {
     ...store,
     set: (value: string) => {
-      document.body.setAttribute("data-theme", value);
+      if (callback) {
+        callback(value);
+      }
       setStore(value);
       if (localStorageEnabled) {
-        localStorage.setItem(storageKey, value);
+        localStorage.setItem(localStorageKey, value);
       }
     }
   };
 };
 
-export const theme = themeStore(localStorageEnabled ? localStorage.getItem(storageKey) : "");
+export const theme = localStore("user-theme", value => document.body.setAttribute("data-theme", value));
+
+export const showCategories = writable([]);
+export const showTags = writable([]);
 
 export const cheekyMessagePrinted = writable(false);

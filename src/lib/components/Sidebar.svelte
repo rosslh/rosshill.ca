@@ -60,6 +60,10 @@
       padding: 2rem 0 3.5rem;
       position: initial !important;
     }
+
+    div.imgWrapper {
+      margin-top: 0 !important;
+    }
   }
 
   div.sidebarContent {
@@ -76,10 +80,11 @@
   div.imgWrapper {
     overflow: hidden;
     border-radius: 50%;
-    width: 11rem;
-    height: 11rem;
-    min-width: 11rem;
-    min-height: 11rem;
+    width: 10.5rem;
+    height: 10.5rem;
+    min-width: 10.5rem;
+    min-height: 10.5rem;
+    margin-top: -2rem;
   }
 
   div.imgWrapper * {
@@ -92,8 +97,11 @@
     margin-top: 0.8rem;
     margin-bottom: -1rem;
     padding-bottom: 0;
-    height: 6rem;
+    height: 5.5rem;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   p.subtitle {

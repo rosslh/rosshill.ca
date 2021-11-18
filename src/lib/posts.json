@@ -387,7 +387,7 @@
     },
     {
       "id": "reqwise",
-      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h2 id=\"feature-overview\">Feature overview</h2>\n<p>The first feature ReqWise offers is <strong>Questionnaires</strong>, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is <strong>Organizing Requirements</strong>. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload <strong>Files and Designs</strong> from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive <strong>Feedback and Approval</strong> from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
+      "contents": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>\n<p>I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client&#39;s expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.</p>\n<p>If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there&#39;s a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.</p>\n<h3 id=\"feature-overview\">Feature overview</h3>\n<p>The first feature ReqWise offers is <strong>Questionnaires</strong>, where you can ask your stakeholders questions to get an idea for what you&#39;re supposed to build. Questionnaires can be used to supplement time-consuming meetings.</p>\n<p>ReqWise&#39;s next feature is <strong>Organizing Requirements</strong>. Arrange stakeholders&#39; needs into requirements and sub-requirements. Prioritize the most important ones.</p>\n<p>ReqWise isn&#39;t limited to text-based requirements. Upload <strong>Files and Designs</strong> from your computer or draw diagrams with the built-in editor.</p>\n<p>Lastly, you can receive <strong>Feedback and Approval</strong> from clients. Stakeholders can review requirements and designs to make sure that you build what they want.</p>\n",
       "title": "ReqWise",
       "eventType": "project",
       "date": "2020-04-02T00:00:00.000Z",
@@ -404,9 +404,9 @@
       "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2021-10-13T04:50:08.699Z",
-        "lastModified": "2021-10-13T04:50:08.699Z",
-        "size": 2284,
+        "createdAt": "2021-11-16T22:08:40.289Z",
+        "lastModified": "2021-11-16T22:08:40.289Z",
+        "size": 2283,
         "formattedSize": "2.2 KB"
       }
     },

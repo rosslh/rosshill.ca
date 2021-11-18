@@ -8,7 +8,7 @@ const contents = Object.values(timeline)
     return {
       title: post.title,
       eventType: post.eventType,
-      hasContent: !!post.contents,
+      hasContent: Boolean(post.contents),
       slug: slugify(post.title),
       date: post.date,
       endDate: post.endDate,
@@ -19,9 +19,7 @@ const contents = Object.values(timeline)
       website: post.website,
       thumbnailExt: post.thumbnailExt,
       tags: post.tags,
-      thumbnail: post.thumbnail
-        ? `timeline/${post.thumbnail}`
-        : null
+      thumbnail: post.thumbnail ?? `timeline/${post.thumbnail}`
     };
   })
   .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));

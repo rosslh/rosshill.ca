@@ -26,13 +26,10 @@ const posts = Object.values(timeline)
 const lookup = new Map();
 posts
   .filter(post => post.contents)
-  .forEach(post => {
-    lookup.set(post.slug, post);
-  });
+  .forEach(post => lookup.set(post.slug, post));
 
 export function get(req: Request) {
-  // the `slug` parameter is available because
-  // this file is called [slug].json.js
+  // the `slug` parameter is available because this file is called [slug].json.js
   const slug = req.params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
@@ -41,9 +38,7 @@ export function get(req: Request) {
     };
   } else {
     return {
-      body: {
-        message: "Not found"
-      }
+      body: { message: "Not found" }
     };
   }
 }

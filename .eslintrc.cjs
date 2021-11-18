@@ -30,9 +30,7 @@ module.exports = {
       allow: ["warn", "error"]
     }],
     "no-param-reassign": 1,
-    "no-unused-vars": [1, {
-      argsIgnorePattern: "^_"
-    }],
+    "no-unused-vars": 0,
     "@typescript-eslint/no-unused-vars": [1, {
       argsIgnorePattern: "^_"
     }],

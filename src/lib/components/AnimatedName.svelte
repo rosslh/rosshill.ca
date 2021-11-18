@@ -7,6 +7,7 @@
 
   let showTitle = false;
   let logoHasFill = false;
+  let doneFilling = false;
 
   onMount(() => {
     showTitle = true;
@@ -20,7 +21,11 @@
     if (serverRendered) {
       return "serverRendered";
     }
-    return logoHasFill ? "logoHasFill" : "initial";
+    let className = logoHasFill ? "logoHasFill" : "initial";
+    if (doneFilling) {
+      className += " doneFilling";
+    }
+    return className;
   };
 </script>
 
@@ -28,7 +33,7 @@
   class={serverRendered ? "ssrFadeIn" : ""}
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="85.15999145507814 9.819995117187503 329.6800170898437 130.360009765625"
+  viewBox="0 0 368.7 73.501"
 >
   <title>Ross Hill</title>
   <g>
@@ -37,6 +42,7 @@
         class={getPathClass()}
         on:introstart={serverRendered ? null : () => {
           setTimeout(() => (logoHasFill = true), logoFillDelay);
+          setTimeout(() => (doneFilling = true), logoFillDelay + 900);
         }}
         in:draw={serverRendered ? null : { duration: 3000, easing: sineIn }}
         d={svgPath}
@@ -47,16 +53,16 @@
 
 <style>
   svg {
-    height: 100%;
-    width: 100%;
+    height: 60%;
+    width: 60%;
     pointer-events: none;
-    transition: fill 0.5s ease, stroke 0.5s ease;
+    transition: fill 0.9s ease, stroke 0.9s ease;
   }
 
   svg path {
     stroke: var(--heading);
-    stroke-width: 2;
-    transition: fill 0.5s ease, stroke 0.5s ease;
+    stroke-width: 1px;
+    transition: fill 0.9s ease, stroke 0.9s ease;
   }
 
   svg path.initial {
@@ -86,6 +92,11 @@
 
   svg path.logoHasFill {
     fill: var(--heading);
+    stroke: var(--sidebarBackground);
+  }
+
+  svg path.doneFilling {
+    transition: fill 0.5s ease, stroke 0.5s ease !important;
   }
 
   @media (max-width: 1000px) {

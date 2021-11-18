@@ -14,17 +14,11 @@
   export let post: PostItem;
   export let brandColors: BrandColors = {};
   
-  import { onMount } from 'svelte';
   import type { BrandColors, PostItem } from "src/global";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from '$lib/components/BackLink.svelte';
-
-  onMount(async () => {
-    // TODO: this shouldn't be necessary
-    scrollTo(0, 0);
-  });
 </script>
 
 <svelte:head>

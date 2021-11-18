@@ -82,7 +82,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @media (max-width: 700px) {
