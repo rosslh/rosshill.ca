@@ -4,7 +4,7 @@
     "cwd": "./",
     "deterministicOrder": true,
     "display": true,
-    "dist": "src/lib/posts.json",
+    "dist": "src/data/posts.json",
     "filePattern": "**/*.md",
     "ignore": "",
     "port": 3001,
@@ -416,10 +416,9 @@
       "title": "Drawing robot",
       "eventType": "project",
       "date": "2018-09-10T00:00:00.000Z",
-      "thumbnailExt": "jpg",
       "imageExt": "jpg",
-      "image": "robot",
-      "thumbnail": "arduino",
+      "image": "circuit",
+      "thumbnail": "robot",
       "blurb": "A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.",
       "tags": [
         "arduino",
@@ -428,10 +427,10 @@
       "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
       "meta": {
         "relativePath": "robot.html",
-        "createdAt": "2021-10-13T04:50:08.700Z",
-        "lastModified": "2021-10-13T04:50:08.700Z",
-        "size": 957,
-        "formattedSize": "957 Bytes"
+        "createdAt": "2021-11-22T00:17:37.034Z",
+        "lastModified": "2021-11-22T00:17:37.034Z",
+        "size": 939,
+        "formattedSize": "939 Bytes"
       }
     },
     {

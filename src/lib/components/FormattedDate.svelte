@@ -1,6 +1,6 @@
 <script lang="ts">
   import dateformat from "dateformat";
-  import type { PostItem } from "src/global";
+  import type { PostItem } from "$lib/types";
 
   export let post: PostItem;
 </script>

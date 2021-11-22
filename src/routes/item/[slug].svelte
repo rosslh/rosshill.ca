@@ -14,7 +14,7 @@
   export let post: PostItem;
   export let brandColors: BrandColors = {};
   
-  import type { BrandColors, PostItem } from "src/global";
+  import type { BrandColors, PostItem } from "$lib/types";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
@@ -85,12 +85,12 @@
 </div>
 
 <style>
-  article.postFull {
-    margin-bottom: 3rem;
+  h2 {
+    margin-top: 1rem;
   }
 
-  :global(article.postFull .content p) {
-    margin: 1.5rem auto !important;
+  article.postFull {
+    margin-bottom: 3rem;
   }
 
   div.subtitle {
@@ -123,7 +123,6 @@
     border: 1px solid var(--sidebarBorder);
     padding: 0;
     border-radius: 4px;
-    box-shadow: var(--boxShadow);
   }
 
   div.imageWrapper img {
@@ -146,7 +145,6 @@
     overflow: hidden;
     border: 1px solid var(--sidebarBorder);
     border-radius: 4px;
-    box-shadow: var(--boxShadow);
   }
 
   :global(div.embedWrapper iframe) {

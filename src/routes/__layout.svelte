@@ -5,8 +5,8 @@
   import Sidebar from "$lib/components/Sidebar.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
-  import "../global.scss";
-  import "../normalize.min.css";
+  import "$styles/global.scss";
+  import "$styles/normalize.min.css";
 
   const title = "Ross Hill – Website and Portfolio";
   const description = "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.";

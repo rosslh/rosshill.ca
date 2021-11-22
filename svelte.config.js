@@ -3,6 +3,7 @@ import cssnano from "cssnano";
 import Icons from 'unplugin-icons/vite';
 import preprocess from 'svelte-preprocess';
 import staticAdapter from '@sveltejs/adapter-static';
+import { resolve } from "path";
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -10,7 +11,7 @@ export default {
     amp: false,
     // appDir: '_app',
     files: {
-      assets: 'static',
+      assets: 'src/static',
       // hooks: 'src/hooks',
       lib: 'src/lib',
       routes: 'src/routes',
@@ -38,6 +39,12 @@ export default {
           compiler: 'svelte',
         }),
       ],
+      resolve: {
+        alias: {
+          $data: resolve('./src/data'),
+          $styles: resolve('./src/styles'),
+        }
+      }
     },
   },
   preprocess: preprocess({

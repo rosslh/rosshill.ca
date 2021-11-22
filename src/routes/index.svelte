@@ -12,7 +12,7 @@
   export let posts: PostItem[] = [];
   export let brandColors: BrandColors = {};
 
-  import type { BrandColors, PostItem } from "src/global";
+  import type { BrandColors, PostItem } from "$lib/types";
   import Intro from "$lib/components/Intro.svelte";
   import Posts from "$lib/components/Posts.svelte";
 </script>

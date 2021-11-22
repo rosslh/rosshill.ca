@@ -5,7 +5,7 @@
   export let isFirstPost: boolean;
   export let isLastPost: boolean;
 
-  import type { BrandColors, PostItem } from "src/global";
+  import type { BrandColors, PostItem } from "$lib/types";
   import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostArrow from "./PostArrow.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";

@@ -4,7 +4,7 @@
   export let brandColors: BrandColors;
 
   import { showCategories, showTags } from "$lib/stores";
-  import type { BrandColors, PostItem } from "src/global";
+  import type { BrandColors, PostItem } from "$lib/types";
   import Post from "./Post.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./FilterControls.svelte";
@@ -97,8 +97,5 @@
   div.headingWrapper {
     margin-top: 3rem;
     margin-bottom: 2rem;
-  }
-  div.headingWrapper h2 {
-    margin-bottom: 1rem;
   }
 </style>

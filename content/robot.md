@@ -2,10 +2,9 @@
 title: Drawing robot
 eventType: project
 date: 2018-09-10
-thumbnailExt: jpg
 imageExt: jpg
-image: robot
-thumbnail: arduino
+image: circuit
+thumbnail: robot
 blurb: A drawing robot that listens to you and writes down what you say. Created for Digital Systems, a course at Queen's.
 tags: [arduino, raspberrypi]
 ---

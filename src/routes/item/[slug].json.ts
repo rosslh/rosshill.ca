@@ -1,6 +1,6 @@
 import { slugify } from "$lib/functions";
-import { data as timeline } from "$lib/posts.json";
-import brandColors from "$lib/brandColors.json";
+import { data as timeline } from "$data/posts.json";
+import brandColors from "$data/brandColors.json";
 import type { Request } from "@sveltejs/kit";
 
 const posts = Object.values(timeline)

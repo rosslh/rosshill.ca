@@ -6,7 +6,7 @@
 
   import Times from '~icons/fa-solid/times';
   
-  import type { BrandColors, PostItem } from 'src/global';
+  import type { BrandColors, PostItem } from "$lib/types";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "./Tag.svelte";
   import { tagParents } from "$lib/constants";
