@@ -2,7 +2,7 @@
   export let active: boolean;
   export let onClick: () => void;
   export let classPrefix: string;
-  export let extraClasses = '';
+  export let extraClasses = "";
 
   import Circle from "~icons/fa-regular/circle";
   import CheckCircle from "~icons/fa-solid/check-circle";
@@ -19,7 +19,7 @@
 </script>
 
 <button
-  class="{classPrefix}Button {isToggling ? 'toggling': 'doTransition'} {extraClasses ? extraClasses : ''} {active ? 'active' : 'inactive'}"
+  class="{classPrefix}-button {isToggling ? 'toggling': 'do-transition'} {extraClasses ? extraClasses : ''} {active ? 'active' : 'inactive'}"
   on:click={handleClick}
 >
   <span class="symbol">
@@ -36,8 +36,8 @@
 
 <style>
   button {
-    background-color: var(--postBackground);
-    border: 1px solid var(--postBorder);
+    background-color: var(--panel-background);
+    border: 1px solid var(--border);
     border-radius: 0.9rem;
     height: 1.8rem;
     font-size: 0.9rem;
@@ -69,31 +69,31 @@
     line-height: 1.2rem;
   }
 
-  button.jobButton {
+  button.job-button {
     color: var(--job);
   }
 
-  button.jobButton.active {
+  button.job-button.active {
     color: var(--background);
     background-color: var(--job);
     border-color: var(--job);
   }
 
-  button.projectButton {
+  button.project-button {
     color: var(--project);
   }
 
-  button.projectButton.active {
+  button.project-button.active {
     color: var(--background);
     background-color: var(--project);
     border-color: var(--project);
   }
 
-  button.orgButton {
+  button.org-button {
     color: var(--org);
   }
 
-  button.orgButton.active {
+  button.org-button.active {
     color: var(--background);
     background-color: var(--org);
     border-color: var(--org);

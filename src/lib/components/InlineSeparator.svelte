@@ -1,7 +1,7 @@
-<span class="inlineSeparator">&centerdot;</span>
+<span class="inline-separator">&centerdot;</span>
 
 <style>
-  span.inlineSeparator {
+  span.inline-separator {
     padding: 0 1px;
     display: inline-block;
   }

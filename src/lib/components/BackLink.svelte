@@ -1,21 +1,21 @@
 <script lang="ts">
   export let href = "/";
 
-  import LeftArrow from '~icons/feather/corner-up-left';
+  import LeftArrow from "~icons/feather/corner-up-left";
 </script>
 
-<a rel="prefetch" class="backLink" {href}>
+<a rel="prefetch" class="back-link" {href}>
   <LeftArrow /> Back to Home
 </a>
 
 <style>
-  a.backLink {
+  a.back-link {
     display: inline-flex;
     align-items: center;
     margin: 1.5rem 0;
   }
 
-  :global(a.backLink > svg) {
+  :global(a.back-link > svg) {
     margin-right: 0.5rem;
   }
 </style>

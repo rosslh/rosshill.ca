@@ -1,9 +1,9 @@
 <script lang="ts">
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
-  import BackLink from '$lib/components/BackLink.svelte';
+  import BackLink from "$lib/components/BackLink.svelte";
 </script>
 
-<div class="contentWrapper mainContent">
+<div class="content-wrapper main-content">
   <BackLink />
   <h2>404: Page not found</h2>
   <ConfusedTravolta reason="the page wasn't found" />
