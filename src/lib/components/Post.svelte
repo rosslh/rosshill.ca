@@ -25,9 +25,9 @@
   const serverRendered = typeof window === "undefined";
   $: getFadeInClass = () => {
     if (serverRendered) {
-      return "ssrFadeIn";
+      return "ssr-fade-in";
     }
-    return hasIntersected ? "fadeIn" : "fadeIn invisible";
+    return hasIntersected ? "fade-in" : "fade-in invisible";
   };
 </script>
 
@@ -43,18 +43,18 @@
   <div
     bind:this={element}
     id="timeline-{post.slug}"
-    class="postWrapper doTransition {left ? 'left' : 'right'}"
+    class="post-wrapper do-transition {left ? 'left' : 'right'}"
   >
     <TimelineMarker
       {left}
       eventType={post.eventType} />
     <div class={getFadeInClass()}>
       <PostArrow {left} />
-      <div class="post doTransition">
-        <div class="postHeading">
-          <div class="pictureFrame">
+      <div class="post do-transition">
+        <div class="post-heading">
+          <div class="picture-frame">
             {#if post.thumbnail}
-              <picture class="fixedSize">
+              <picture class="fixed-size">
                 <source srcset="/timeline/{post.thumbnail}.webp" type="image/webp" />
                 <source
                   srcset="/timeline/{post.thumbnail}.{post.thumbnailExt || 'png'}"
@@ -70,7 +70,7 @@
               </picture>
             {/if}
           </div>
-          <div class="headingAndTags">
+          <div class="heading-and-tags">
             <h3>
               {#if post.hasContent}
                 <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
@@ -90,10 +90,10 @@
           </div>
         </div>
         {#if post.blurb}
-          <p class="postText">{@html post.blurb}</p>
+          <p class="post-text">{@html post.blurb}</p>
         {/if}
         <div class="footer">
-          <div class="externalLinks doTransition">
+          <div class="external-links do-transition">
             {#if post.repository}
               <a target="_blank" rel="noopener noreferrer" href={post.repository}>
                 GitHub
@@ -120,29 +120,29 @@
 
 <style>
   @media (max-width: 1200px) {
-    div.postWrapper {
+    div.post-wrapper {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
   }
 
-  div.postWrapper {
+  div.post-wrapper {
     padding: 0;
     position: relative;
     display: flex;
     border-color: var(--timeline) !important;
   }
 
-  div.ssrFadeIn {
+  div.ssr-fade-in {
     opacity: 0;
     transform: scale(1);
-    animation: fadeInAnimation ease-in 0.5s;
+    animation: fade-in-animation ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 3s;
   }
 
-  @keyframes fadeInAnimation {
+  @keyframes fade-in-animation {
     0% {
         opacity: 0;
     }
@@ -151,13 +151,13 @@
      }
   }
 
-  div.fadeIn {
+  div.fade-in {
     transition: opacity 0.5s ease-in, transform 0.5s ease;
     opacity: 1;
     transform: scale(1);
   }
 
-  div.fadeIn.invisible {
+  div.fade-in.invisible {
     opacity: 0;
     transform: scale(0.9);
   }
@@ -165,32 +165,32 @@
   div.post {
     z-index: 4;
     padding: 1rem 0.75rem;
-    background-color: var(--postBackground);
-    border: 1px solid var(--postBorder);
+    background-color: var(--panel-background);
+    border: 1px solid var(--border);
     border-radius: 0.5rem;
     margin: 0.8rem 0;
     position: relative;
   }
 
-  div.postWrapper.left {
+  div.post-wrapper.left {
     padding-left: 2rem;
   }
-  div.postWrapper.right {
+  div.post-wrapper.right {
     padding-right: 2rem;
   }
 
-  div.postWrapper.left {
+  div.post-wrapper.left {
     border-left: 3px solid var(--timeline);
     margin-left: 25%;
   }
 
-  div.postWrapper.right {
+  div.post-wrapper.right {
     border-right: 3px solid var(--timeline);
     justify-content: flex-end;
     margin-right: 25%;
   }
 
-  div.post div.postHeading div.pictureFrame {
+  div.post div.post-heading div.picture-frame {
     border-radius: 50%;
     overflow: hidden;
     width: 1.7rem;
@@ -198,36 +198,36 @@
     display: inline-block;
     flex-shrink: 0;
   }
-  div.post div.postHeading div.pictureFrame * {
+  div.post div.post-heading div.picture-frame * {
     height: 100%;
     width: 100%;
     display: block;
   }
 
-  :global(div.post > div.footer > div.dateString) {
+  :global(div.post > div.footer > div.date-string) {
     font-size: 0.8rem;
   }
 
-  div.post div.postHeading {
+  div.post div.post-heading {
     display: flex;
     min-height: 1.5rem;
     align-items: center;
   }
 
-  div.post div.postHeading div.tags {
+  div.post div.post-heading div.tags {
     display: flex;
     padding: 0.3rem 0;
     margin-left: 0.75rem;
     flex-wrap: wrap;
   }
 
-  div.post div.postHeading div.headingAndTags {
+  div.post div.post-heading div.heading-and-tags {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
   }
 
-  div.post div.postHeading h3 {
+  div.post div.post-heading h3 {
     font-size: 0.95rem;
     line-height: 1.2rem;
     display: inline-block;
@@ -235,16 +235,16 @@
     padding: 0;
   }
 
-  div.post div.postHeading h3 a {
+  div.post div.post-heading h3 a {
     color: var(--heading);
     text-decoration: underline !important;
   }
 
-  div.post p.postText {
+  div.post p.post-text {
     font-size: 0.95rem !important;
   }
 
-  div.post p.postText,
+  div.post p.post-text,
   div.post div.footer {
     padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
   }
@@ -257,12 +257,12 @@
     align-items: center;
   }
 
-  div.post div.footer div.externalLinks {
+  div.post div.footer div.external-links {
     color: var(--subtitle);
   }
 
   @media (max-width: 700px) {
-    div.post p.postText,
+    div.post p.post-text,
     div.post div.footer {
       padding-left: 0 !important;
       padding-right: 0 !important;

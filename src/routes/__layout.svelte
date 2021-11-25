@@ -5,12 +5,8 @@
   import Sidebar from "$lib/components/Sidebar.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
-  import "$styles/global.scss";
-  import "$styles/normalize.min.css";
-
-  const title = "Ross Hill – Website and Portfolio";
-  const description = "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.";
-  const siteImage = "https://rosshill.ca/siteImage.png";
+  import "../assets/styles/global.scss";
+  import "../assets/styles/normalize.min.css";
 
   const getCssVariable = (variableName: string) => {
     const style = getComputedStyle(document.querySelector("body"));
@@ -20,8 +16,8 @@
   const printCheekyMessage = () => {
       // eslint-disable-next-line no-console
       console.log(
-        '%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca',
-        `background-color: ${getCssVariable("postBackground")}; border-radius: 0.5rem; border: 1px solid ${getCssVariable("postBorder")}; color: ${getCssVariable("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`
+        "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
+        `background-color: ${getCssVariable("panel-background")}; border-radius: 0.5rem; border: 1px solid ${getCssVariable("border")}; color: ${getCssVariable("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`
       );
   };
 
@@ -31,10 +27,14 @@
       printCheekyMessage();
     }
   }
+
+  const title = "Ross Hill – Website and Portfolio";
+  const description = "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.";
+  const siteImage = "https://rosshill.ca/siteImage.png";
 </script>
 
 <ThemeSwitcher />
-<div class="twoColumn">
+<div class="two-column">
   <Sidebar />
   <div>
     <slot />
@@ -43,8 +43,6 @@
 </div>
 
 <svelte:head>
-  <meta charset="utf-8" />
-
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="theme-color" content="#212732" />
   <!-- HTML Meta Tags -->
@@ -71,13 +69,13 @@
 </svelte:head>
 
 <style>
-  div.twoColumn {
+  div.two-column {
     display: grid;
     grid-template-columns: 3fr 8fr;
   }
 
   @media (max-width: 1000px) {
-    div.twoColumn {
+    div.two-column {
       grid-template-columns: 1fr;
     }
   }

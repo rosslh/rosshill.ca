@@ -48,11 +48,11 @@
   const getYearFromDate = (date: string) => Number(date.substring(0, 4));
 </script>
 
-<div class="headingWrapper contentWrapper ">
+<div class="heading-wrapper content-wrapper ">
   <h2>Experience</h2>
   <FilterControls bind:showCategories={$showCategories} bind:showTags={$showTags} {posts} {brandColors} />
 </div>
-<div class="contentWrapper postsWrapper">
+<div class="content-wrapper posts-wrapper">
   <div class="posts">
     {#each postsWithLabels as post, i (post.slug)}
       {#if post.showYearLabel}
@@ -80,7 +80,7 @@
 </div>
 
 <style>
-  div.contentWrapper.postsWrapper {
+  div.content-wrapper.posts-wrapper {
     padding: 0;
   }
   div.posts {
@@ -88,13 +88,13 @@
     margin: 2rem auto 0;
   }
   @media (min-width: 700px) {
-    div.contentWrapper.postsWrapper {
+    div.content-wrapper.posts-wrapper {
       padding-left: 2rem;
       padding-right: 2rem;
     }
   }
 
-  div.headingWrapper {
+  div.heading-wrapper {
     margin-top: 3rem;
     margin-bottom: 2rem;
   }

@@ -19,18 +19,18 @@
   const serverRendered = typeof window === "undefined";
   $: getPathClass = () => {
     if (serverRendered) {
-      return "serverRendered";
+      return "server-rendered";
     }
-    let className = logoHasFill ? "logoHasFill" : "initial";
+    let className = logoHasFill ? "logo-has-fill" : "initial";
     if (doneFilling) {
-      className += " doneFilling";
+      className += " done-filling";
     }
     return className;
   };
 </script>
 
 <svg
-  class={serverRendered ? "ssrFadeIn" : ""}
+  class={serverRendered ? "ssr-fade-in" : ""}
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 368.7 73.501"
@@ -66,22 +66,22 @@
   }
 
   svg path.initial {
-    fill: var(--sidebarBackground);
+    fill: var(--panel-background);
   }
 
-  svg path.serverRendered {
+  svg path.server-rendered {
     fill: var(--heading);
   }
 
-  svg.ssrFadeIn {
+  svg.ssr-fade-in {
     opacity: 0;
-    animation: fadeInAnimation ease-in 0.5s;
+    animation: fade-in-animation ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-delay: 3s;
   }
 
-  @keyframes fadeInAnimation {
+  @keyframes fade-in-animation {
     0% {
         opacity: 0;
     }
@@ -90,12 +90,12 @@
      }
   }
 
-  svg path.logoHasFill {
+  svg path.logo-has-fill {
     fill: var(--heading);
-    stroke: var(--sidebarBackground);
+    stroke: var(--panel-background);
   }
 
-  svg path.doneFilling {
+  svg path.done-filling {
     transition: fill 0.5s ease, stroke 0.5s ease !important;
   }
 

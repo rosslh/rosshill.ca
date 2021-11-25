@@ -2,13 +2,13 @@
   import Code from "~icons/iconoir/code";
 </script>
 
-<div class="contentWrapper">
+<div class="content-wrapper">
   <div aria-hidden="true" class="separator">
-    <div class="line doTransition" />
-    <div class="symbol doTransition">
+    <div class="line do-transition" />
+    <div class="symbol do-transition">
       <Code />
     </div>
-    <div class="line doTransition" />
+    <div class="line do-transition" />
   </div>
 </div>
 
@@ -26,7 +26,7 @@
     font-size: 1.2rem;
     display: inline-flex;
     align-items: center;
-    color: var(--postBorder);
+    color: var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,10 +35,10 @@
   div.separator .line {
     height: 1px;
     width: calc(50% - 1.5rem);
-    border-bottom: 3px dotted var(--postBorder);
+    border-bottom: 3px dotted var(--border);
   }
   @media (min-width: 1000px) {
-    div.contentWrapper {
+    div.content-wrapper {
       display: none;
     }
   }

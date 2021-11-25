@@ -1,0 +1,216 @@
+@import "/node_modules/hsluv-sass";
+
+$theme-hue: 246;
+$theme-saturation: 30%;
+
+@function theme-color($lightness) {
+  @return hsluv($theme-hue, $theme-saturation, $lightness);
+}
+
+$job-hue: 12;
+$project-hue: 272;
+$org-hue: 135;
+
+@mixin light-theme() {
+  $category-button-saturation: 70%;
+  $category-button-lightness: 50%;
+
+  $marker-saturation: $category-button-saturation - 10;
+  $marker-lightness: $category-button-lightness + 10;
+
+  --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
+  --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
+  --org: #{hsluv($org-hue, $category-button-saturation, $category-button-lightness)};
+
+  --job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
+  --project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
+  --org-marker: #{hsluv($org-hue, $marker-saturation, $marker-lightness)};
+
+  --heading: #{theme-color(20%)};
+  --foreground: #{theme-color(30%)};
+  --link: #{hsluv($theme-hue, 90%, 40%)};
+  --subtitle: #{theme-color(35%)};
+  --focus-outline: #{theme-color(50%)};
+  --timeline: #{theme-color(50%)};
+  --border: #{theme-color(87%)};
+  --panel-background: #{theme-color(96%)};
+  --background: #{theme-color(98%)};
+}
+
+@mixin dark-theme() {
+  $category-button-saturation: 75%;
+  $category-button-lightness: 65%;
+
+  --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
+  --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
+  --org: #{hsluv($org-hue, $category-button-saturation, $category-button-lightness)};
+
+  --job-marker: var(--job);
+  --project-marker: var(--project);
+  --org-marker: var(--org);
+
+  --heading: #{theme-color(87%)};
+  --foreground: #{theme-color(80%)};
+  --link: #{hsluv($theme-hue, 75%, 75%)};
+  --subtitle: #{theme-color(70%)};
+  --focus-outline: #{theme-color(30%)};
+  --timeline: #{theme-color(30%)};
+  --border: #{theme-color(15%)};
+  --panel-background: #{theme-color(10%)};
+  --background: #{theme-color(7%)};
+}
+
+body,
+html body[data-theme="light"] {
+  @include light-theme();
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-theme();
+  }
+}
+
+html body[data-theme="dark"] {
+  @include dark-theme();
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  visibility: visible !important;
+  font-size: 15px;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body * {
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    transition-delay: 0ms !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+@media (min-width: 400px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+img {
+  color: transparent; /* don't show alt text when loading */
+}
+
+input,
+input[type="button"],
+button {
+  touch-action: manipulation;
+  user-select: none;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+@mixin focus-styles() {
+  outline: 2px dotted var(--focus-outline) !important;
+  outline-offset: 1px !important;
+}
+
+:focus {
+  @include focus-styles();
+}
+
+// disables :focus styles if :focus-visible supported
+:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+:focus-visible {
+  @include focus-styles();
+}
+
+article.post-full p,
+.intro p {
+  margin: 1rem auto !important;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+}
+
+.do-transition,
+body,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+code {
+  transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--heading);
+  font-weight: 700 !important;
+}
+
+h2 {
+  font-size: 1.65rem;
+  margin: 2rem 0 1rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 1.697rem 0 0.848rem;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+code {
+  background-color: var(--panel-background) !important;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+picture.fixed-size {
+  position: relative;
+
+  * {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

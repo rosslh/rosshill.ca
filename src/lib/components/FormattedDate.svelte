@@ -5,7 +5,7 @@
   export let post: PostItem;
 </script>
 
-<div class="dateString doTransition">
+<div class="date-string do-transition">
   {#if post.seasonal}
     Seasonal:
   {/if}
@@ -18,7 +18,7 @@
 </div>
 
 <style>
-  div.dateString {
+  div.date-string {
     color: var(--subtitle);
     display: inline-block;
   }

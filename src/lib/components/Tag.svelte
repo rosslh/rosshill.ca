@@ -6,7 +6,7 @@
   export let onClick: () => void = null;
   export let lazyLoad = false;
 
-  import { Div, Button } from 'svelte-elements';
+  import { Div, Button } from "svelte-elements";
 
   import { tagLabels } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
@@ -30,10 +30,10 @@
 <svelte:component
   this={onClick ? Button : Div}
   on:click={handleClick}
-  class="tag doTransition {active ? 'active' : ''}"
+  class="tag do-transition {active ? 'active' : ''}"
   style={active ? `color: #${foreground};` : ""}
 >
-  <span class="logoWrapper {isToggling ? 'toggling' : 'doTransition'}" style="background-color: #{background};">
+  <span class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}" style="background-color: #{background};">
     <img
       src="/tags/{tagId}.svg"
       alt=""
@@ -43,7 +43,7 @@
       width={remsToPixels(0.85)} />
   </span>
   <span
-    class={`tagString ${tagString === tagId ? "capitalize" : ""}`}
+    class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
   >
     {tagString}
   </span>
@@ -56,14 +56,14 @@
     padding: 0 0.2rem 0 0;
     position: relative;
 
-    background-color: var(--postBackground);
+    background-color: var(--panel-background);
     color: var(--subtitle);
     border-radius: 0.9rem;
-    border: 1px solid var(--postBorder);
+    border: 1px solid var(--border);
     font-size: 0.8rem;    
   }
 
-  .logoWrapper {
+  .logo-wrapper {
     position: absolute;
     width: 1.6rem;
     /* 1px accounts for border */
@@ -73,21 +73,21 @@
     display: flex;
     align-items: center;
 
-    border: 1px solid var(--postBorder);
+    border: 1px solid var(--border);
     border-top-left-radius: 0.9rem;
     border-bottom-left-radius: 0.9rem;
   }
 
-  .logoWrapper.toggling {
+  .logo-wrapper.toggling {
     transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
   }
 
-  .logoWrapper.doTransition {
-    /* taken from global.scss .doTransition */
+  .logo-wrapper.do-transition {
+    /* taken from global.scss .do-transition */
     transition: border-color 0.5s ease, width 0.5s ease, border-radius 0.5s ease;
   }
 
-  :global(.tag.active .logoWrapper) {
+  :global(.tag.active .logo-wrapper) {
     border-bottom-right-radius: 0.9rem;
     border-color: var(--foreground);
     border-top-right-radius: 0.9rem;
@@ -95,14 +95,14 @@
     width: calc(100% + 2px);
   }
 
-  .tagString {
+  .tag-string {
     margin-left: 1.5rem;
     padding: 0 0.25rem;
     position: relative;
     z-index: 2;
   }
 
-  .logoWrapper > img {
+  .logo-wrapper > img {
     display: block;
     fill: var(--subtitle);
     height: 0.85rem;

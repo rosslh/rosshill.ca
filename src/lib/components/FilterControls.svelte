@@ -4,7 +4,7 @@
   export let posts: PostItem[];
   export let brandColors: BrandColors;
 
-  import Times from '~icons/fa-solid/times';
+  import Times from "~icons/fa-solid/times";
   
   import type { BrandColors, PostItem } from "$lib/types";
   import FilterButton from "./FilterButton.svelte";
@@ -93,7 +93,7 @@
   </FilterButton>
   {#if showCategories.length || showTags.length}
     <button
-      class="secondary-button doTransition"
+      class="secondary-button do-transition"
       on:click={() => {
         showCategories = [];
         showTags = [];
@@ -114,7 +114,7 @@
   {/each}
   {#if minTagNum !== 0}
     <button
-      class="secondary-button doTransition"
+      class="secondary-button do-transition"
       on:click={() => {
         minTagNum = 0;
       }}

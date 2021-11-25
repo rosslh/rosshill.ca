@@ -1,8 +1,8 @@
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import Icons from 'unplugin-icons/vite';
-import preprocess from 'svelte-preprocess';
-import staticAdapter from '@sveltejs/adapter-static';
+import Icons from "unplugin-icons/vite";
+import preprocess from "svelte-preprocess";
+import staticAdapter from "@sveltejs/adapter-static";
 import { resolve } from "path";
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -11,38 +11,37 @@ export default {
     amp: false,
     // appDir: '_app',
     files: {
-      assets: 'src/static',
+      assets: "src/assets",
       // hooks: 'src/hooks',
-      lib: 'src/lib',
-      routes: 'src/routes',
+      lib: "src/lib",
+      routes: "src/routes",
       // serviceWorker: 'src/service-worker',
-      template: 'src/app.html'
+      template: "src/app.html"
     },
     // host: null,
     // hostHeader: null,
     paths: {
-      assets: '',
-      base: ''
+      assets: "",
+      base: ""
     },
     prerender: {
       crawl: true,
       enabled: true,
-      entries: ['*']
+      entries: ["*"]
     },
 
     adapter: staticAdapter(),
 
-    target: '#svelte',
+    target: "#svelte",
     vite: {
       plugins: [
         Icons({
-          compiler: 'svelte',
+          compiler: "svelte",
         }),
       ],
       resolve: {
         alias: {
-          $data: resolve('./src/data'),
-          $styles: resolve('./src/styles'),
+          $data: resolve("./src/data"),
         }
       }
     },
@@ -52,7 +51,7 @@ export default {
       plugins: [
         autoprefixer(),
         cssnano({
-          preset: 'default',
+          preset: "default",
         }),
       ],
     }

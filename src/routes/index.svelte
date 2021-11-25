@@ -20,7 +20,7 @@
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/" />
 </svelte:head>
-<div class="mainContent">
+<div class="main-content">
   <Intro />
   <Posts {posts} {brandColors} />
 </div>

@@ -18,18 +18,18 @@
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
-  import BackLink from '$lib/components/BackLink.svelte';
+  import BackLink from "$lib/components/BackLink.svelte";
 </script>
 
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
 </svelte:head>
-<div class="contentWrapper mainContent">
+<div class="content-wrapper main-content">
   <BackLink href="/#timeline-{post.slug}" />
-  <article class="postFull">
+  <article class="post-full">
     <h2>{post.title}</h2>
     <div class="details">
-      <div class="subtitle doTransition">
+      <div class="subtitle do-transition">
         <FormattedDate {post} />
         {#if post.repository}
           <InlineSeparator />
@@ -45,7 +45,7 @@
         {/if}
       </div>
       {#if post.tags && post.tags.length}
-        <div class="tagsWrapper">
+        <div class="tags-wrapper">
           {#each post.tags as tagId}
             <Tag
               {tagId}
@@ -56,7 +56,7 @@
       {/if}
     </div>
     {#if post.image}
-      <div class="imageWrapper doTransition">
+      <div class="image-wrapper do-transition">
         <picture>
           <source srcset="/timeline/{post.image}.webp" type="image/webp" />
           <source
@@ -71,8 +71,8 @@
       </div>
     {/if}
     {#if post.embed}
-      <div class="embedWrapper">
-        <div class="doTransition">
+      <div class="embed-wrapper">
+        <div class="do-transition">
           {@html post.embed}
         </div>
       </div>
@@ -89,7 +89,7 @@
     margin-top: 1rem;
   }
 
-  article.postFull {
+  article.post-full {
     margin-bottom: 3rem;
   }
 
@@ -108,24 +108,24 @@
     margin-top: -0.75rem;
   }
 
-  div.tagsWrapper {
+  div.tags-wrapper {
     display: flex;
     flex-wrap: wrap;
     margin: 0.5rem 0 0;
   }
 
-  div.imageWrapper {
+  div.image-wrapper {
     max-width: 600px;
     max-height: 400px;
     margin: 1.5rem auto 2rem;
     width: 100%;
     overflow: hidden;
-    border: 1px solid var(--sidebarBorder);
+    border: 1px solid var(--border);
     padding: 0;
     border-radius: 4px;
   }
 
-  div.imageWrapper img {
+  div.image-wrapper img {
     max-width: 100%;
     max-height: 100%;
     padding: 0;
@@ -133,21 +133,21 @@
     display: block;
   }
 
-  div.embedWrapper {
+  div.embed-wrapper {
     width: 100%;
     max-width: 600px;
     margin: 1.5rem auto 2rem;
   }
 
-  div.embedWrapper > div {
+  div.embed-wrapper > div {
     position: relative;
     padding-bottom: 56.25%;
     overflow: hidden;
-    border: 1px solid var(--sidebarBorder);
+    border: 1px solid var(--border);
     border-radius: 4px;
   }
 
-  :global(div.embedWrapper iframe) {
+  :global(div.embed-wrapper iframe) {
     position: absolute;
     top: 0;
     left: 0;
