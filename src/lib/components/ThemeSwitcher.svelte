@@ -26,10 +26,10 @@
   const loading = typeof window === "undefined";
 </script>
 
-<div class="themeSwitcherWrapper">
+<div class="theme-switcher-wrapper">
   <button
     title="Use {nextTheme} theme"
-    class="doTransition"
+    class="do-transition"
     on:click={changeTheme}
   >
     {#if !loading}
@@ -45,7 +45,7 @@
 </div>
 
 <style>
-  div.themeSwitcherWrapper {
+  div.theme-switcher-wrapper {
     padding: 1.5rem 5%;
     position: absolute;
     right: 0;
@@ -60,10 +60,10 @@
     justify-content: center;
     align-items: center;
     color: var(--foreground);
-    background-color: var(--postBackground);
+    background-color: var(--panel-background);
     padding: 0;
     font-size: 0.9rem;
-    border: 1px solid var(--postBorder);
+    border: 1px solid var(--border);
   }
   button .icon {
     display: inline-flex;

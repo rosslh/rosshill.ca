@@ -10,10 +10,10 @@
 <div
   aria-hidden="true"
   title={typeString}
-  class="timelineMarker doTransition {left ? 'left' : 'right'} {eventType || "other"}" />
+  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType || "other"}" />
 
 <style>
-  div.timelineMarker {
+  div.timeline-marker {
     position: absolute;
     top: 50%;
     height: 0.8rem;
@@ -21,26 +21,26 @@
     border-radius: 50%;
     overflow: hidden;
   }
-  div.timelineMarker.org {
+  div.timeline-marker.org {
     background-color: var(--org-marker);
   }
-  div.timelineMarker.job {
+  div.timeline-marker.job {
     background-color: var(--job-marker);
   }
-  div.timelineMarker.project {
+  div.timeline-marker.project {
     background-color: var(--project-marker);
   }
-  div.timelineMarker.other {
+  div.timeline-marker.other {
     background-color: var(--timeline);
   }
 
-  div.timelineMarker.left {
+  div.timeline-marker.left {
     transform: translate(50%, -50%);
     position: absolute;
     left: calc(-1rem + 2px);
   }
 
-  div.timelineMarker.right {
+  div.timeline-marker.right {
     transform: translate(-50%, -50%);
     position: absolute;
     right: calc(-1rem + 2px);

@@ -1,7 +1,7 @@
-<div class="contentWrapper intro">
+<div class="content-wrapper intro">
   <h2>
-    <span class="helloText">Hey, I’m Ross</span>
-    <span class="waveEmoji">👋</span>
+    <span class="hello-text">Hey, I’m Ross</span>
+    <span class="wave-emoji">👋</span>
   </h2>
   <p>
     I am a software developer based in Toronto. I specialize in web development
@@ -34,7 +34,7 @@
     }
   }
 
-  div.intro .waveEmoji {
+  div.intro .wave-emoji {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -42,7 +42,7 @@
     font-weight: 400 !important;
   }
 
-  div.intro .helloText {
+  div.intro .hello-text {
     margin-right: 0.5rem;
   }
 

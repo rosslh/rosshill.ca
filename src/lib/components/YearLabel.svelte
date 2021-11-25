@@ -4,29 +4,29 @@
   export let isFirstLabel: boolean;
 </script>
 
-<div class="labelWrapper doTransition">
-  <span class="yearLabel doTransition {isFirstLabel ? 'firstLabel' : 'centeredLabel'}">
+<div class="label-wrapper do-transition">
+  <span class="year-label do-transition {isFirstLabel ? 'first-label' : 'centered-label'}">
     {year}
   </span>
   {#if !isFirstLabel}
     <div aria-hidden="true" class="line {isRightToLeft ? 'rtl' : 'ltr'}">
-      <div class="doTransition" />
-      <div class="doTransition" />
-      <div class="doTransition" />
-      <div class="doTransition" />
+      <div class="do-transition" />
+      <div class="do-transition" />
+      <div class="do-transition" />
+      <div class="do-transition" />
     </div>
   {/if}
 </div>
 
 <style>
-  div.labelWrapper {
+  div.label-wrapper {
     position: relative;
-    color: var(--foreground);
+    color: var(--heading);
   }
 
   @media (max-width: 1200px) {
     div.line,
-    span.yearLabel {
+    span.year-label {
       margin: 0 !important;
     }
   }
@@ -65,20 +65,20 @@
     border-top-left-radius: 100%;
   }
 
-  span.centeredLabel {
+  span.centered-label {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  span.yearLabel {
-    color: var(--foreground);
-    background-color: var(--postBackground);
+  span.year-label {
+    color: var(--heading);
+    background-color: var(--panel-background);
     height: 2.2rem;
     border-radius: 0.5rem;
     width: 5rem;
-    border: 1px solid var(--postBorder);
+    border: 1px solid var(--border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,18 +86,18 @@
   }
 
   @media (max-width: 700px) {
-    span.yearLabel.firstLabel {
+    span.year-label.first-label {
       transform: translate(-10%, 0) !important;
     }
   }
 
   @media (min-width: 701px) and (max-width: 1200px) {
-    span.yearLabel.firstLabel {
+    span.year-label.first-label {
       transform: translate(-30%, 0) !important;
     }
   }
 
-  span.yearLabel.firstLabel {
+  span.year-label.first-label {
     z-index: 4;
     margin-left: 25%;
     position: absolute;

@@ -1,12 +1,12 @@
-import fs from 'fs';
+import fs from "fs";
 import Icons from "simple-icons";
-import chroma from 'chroma-js';
-import type { PostItem } from '$lib/types';
+import chroma from "chroma-js";
+import type { PostItem } from "$lib/types";
 
 function getBestContrast(color: string) {
   // colors taken from global.scss
   const light = "FCFCFD";
-  const dark = "2C313A";
+  const dark = "262A33";
   const contrastWithLight = chroma.contrast(color, light);
   const contrastWithDark = chroma.contrast(color, dark);
 
@@ -20,14 +20,14 @@ function handleFileError(err: Error) {
   }
 }
 
-const tagDirectory = "src/static/tags/";
+const tagDirectory = "src/assets/tags/";
 
 function main() {
   deleteFilesInDirectory(tagDirectory);
 
   const brandColors = {};
 
-  fs.readFile('src/data/posts.json', 'utf8' , (_err, file) => {
+  fs.readFile("src/data/posts.json", "utf8" , (_err, file) => {
     const { data } = JSON.parse(file);
     data
       .filter((post: PostItem) => post.tags && post.tags.length)
@@ -45,7 +45,7 @@ function main() {
         });
       });
 
-    fs.writeFile('src/data/brandColors.json', JSON.stringify(brandColors), handleFileError);
+    fs.writeFile("src/data/brandColors.json", JSON.stringify(brandColors), handleFileError);
   });
 }
 

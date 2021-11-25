@@ -5,10 +5,10 @@
   import InlineSeparator from "./InlineSeparator.svelte";
 </script>
 
-<div class="sidebar doTransition">
-  <div class="sidebarContent">
-    <div class="imgWrapper">
-      <picture class="fixedSize">
+<div class="sidebar do-transition">
+  <div class="sidebar-content">
+    <div class="img-wrapper">
+      <picture class="fixed-size">
         <source srcset="/headshot.webp" type="image/webp" />
         <source srcset="/headshot.png" type="image/png" />
         <img
@@ -21,7 +21,7 @@
     <h1>
       <AnimatedName />
     </h1>
-    <p class="subtitle role doTransition">Software Developer</p>
+    <p class="subtitle role do-transition">Software Developer</p>
     <p class="subtitle email">
       <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
     </p>
@@ -44,8 +44,8 @@
 
 <style>
   div.sidebar {
-    border-right: 1px solid var(--sidebarBorder);
-    background-color: var(--sidebarBackground);
+    border-right: 1px solid var(--border);
+    background-color: var(--panel-background);
     z-index: 10;
   }
 
@@ -55,18 +55,18 @@
       padding: 1.5rem 1.5rem 0;
       background-color: var(--background);
     }
-    div.sidebarContent {
+    div.sidebar-content {
       height: unset !important;
       padding: 2rem 0 3.5rem;
       position: initial !important;
     }
 
-    div.imgWrapper {
+    div.img-wrapper {
       margin-top: 0 !important;
     }
   }
 
-  div.sidebarContent {
+  div.sidebar-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,7 @@
     top: 0;
   }
 
-  div.imgWrapper {
+  div.img-wrapper {
     overflow: hidden;
     border-radius: 50%;
     width: 10.5rem;
@@ -87,7 +87,7 @@
     margin-top: -2rem;
   }
 
-  div.imgWrapper * {
+  div.img-wrapper * {
     display: block;
     width: 100%;
     height: 100%;
