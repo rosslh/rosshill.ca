@@ -51,6 +51,9 @@
 
 <style>
   :global(.tag) {
+    display: inline-flex;
+    align-items: center;
+    
     height: 1.5rem;
     margin: 0.3rem 0.25rem 0.3rem 0;
     padding: 0 0.2rem 0 0;
@@ -60,7 +63,7 @@
     color: var(--subtitle);
     border-radius: 0.9rem;
     border: 1px solid var(--border);
-    font-size: 0.8rem;    
+    font-size: 0.8rem;
   }
 
   .logo-wrapper {

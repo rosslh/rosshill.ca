@@ -29,11 +29,11 @@ $org-hue: 135;
   --heading: #{theme-color(20%)};
   --foreground: #{theme-color(30%)};
   --link: #{hsluv($theme-hue, 90%, 40%)};
-  --subtitle: #{theme-color(40%)};
-  --focus-outline: #{theme-color(50%)};
-  --timeline: #{theme-color(50%)};
-  --border: #{theme-color(87%)};
-  --panel-background: #{theme-color(96%)};
+  --subtitle: #{theme-color(38%)};
+  --focus-outline: #{theme-color(60%)};
+  --timeline: #{theme-color(60%)};
+  --border: #{theme-color(85%)};
+  --panel-background: #{theme-color(95.5%)};
   --background: #{theme-color(98%)};
 }
 
@@ -49,15 +49,15 @@ $org-hue: 135;
   --project-marker: var(--project);
   --org-marker: var(--org);
 
-  --heading: #{theme-color(87%)};
-  --foreground: #{theme-color(80%)};
-  --link: #{hsluv($theme-hue, 75%, 75%)};
-  --subtitle: #{theme-color(65%)};
-  --focus-outline: #{theme-color(30%)};
-  --timeline: #{theme-color(30%)};
-  --border: #{theme-color(20%)};
-  --panel-background: #{theme-color(12%)};
-  --background: #{theme-color(7%)};
+  --heading: #{theme-color(95%)};
+  --foreground: #{theme-color(87%)};
+  --link: #{hsluv($theme-hue, 90%, 77%)};
+  --subtitle: #{theme-color(75%)};
+  --focus-outline: #{theme-color(35%)};
+  --timeline: #{theme-color(35%)};
+  --border: #{theme-color(22%)};
+  --panel-background: #{theme-color(13%)};
+  --background: #{theme-color(8%)};
 }
 
 body,
