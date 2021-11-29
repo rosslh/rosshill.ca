@@ -35,7 +35,7 @@
     "@typescript-eslint/parser": "^5.4.0",
     "autoprefixer": "^10.4.0",
     "chroma-js": "^2.1.2",
-    "cssnano": "^5.0.11",
+    "cssnano": "^5.0.12",
     "dateformat": "^5.0.2",
     "eslint": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
