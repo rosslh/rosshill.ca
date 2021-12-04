@@ -77,7 +77,7 @@
     background-color: var(--panel-background);
     height: 2.2rem;
     border-radius: 0.5rem;
-    width: 5rem;
+    width: 4.5rem;
     border: 1px solid var(--border);
     display: flex;
     justify-content: center;
@@ -85,13 +85,13 @@
     font-weight: 700;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 699px) {
     span.year-label.first-label {
       transform: translate(-10%, 0) !important;
     }
   }
 
-  @media (min-width: 701px) and (max-width: 1200px) {
+  @media (min-width: 700px) and (max-width: 1200px) {
     span.year-label.first-label {
       transform: translate(-30%, 0) !important;
     }

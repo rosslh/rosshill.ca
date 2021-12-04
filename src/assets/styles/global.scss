@@ -12,11 +12,11 @@ $project-hue: 272;
 $org-hue: 135;
 
 @mixin light-theme() {
-  $category-button-saturation: 70%;
-  $category-button-lightness: 50%;
+  $category-button-saturation: 74%;
+  $category-button-lightness: 46%;
 
-  $marker-saturation: $category-button-saturation - 10;
-  $marker-lightness: $category-button-lightness + 10;
+  $marker-saturation: $category-button-saturation - 15;
+  $marker-lightness: $category-button-lightness + 15;
 
   --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
   --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
@@ -55,8 +55,8 @@ $org-hue: 135;
   --subtitle: #{theme-color(75%)};
   --focus-outline: #{theme-color(35%)};
   --timeline: #{theme-color(35%)};
-  --border: #{theme-color(22%)};
-  --panel-background: #{theme-color(13%)};
+  --border: #{theme-color(23%)};
+  --panel-background: #{theme-color(14%)};
   --background: #{theme-color(8%)};
 }
 
@@ -88,6 +88,7 @@ html {
 
 body {
   line-height: 1.6;
+  overflow-y: scroll;
   color: var(--foreground);
   background-color: var(--background);
 }
@@ -112,15 +113,22 @@ img {
   color: transparent; /* don't show alt text when loading */
 }
 
-input,
 input[type="button"],
 button {
   touch-action: manipulation;
   user-select: none;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-button:not(:disabled) {
-  cursor: pointer;
+a,
+input[type="button"],
+button {
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 @mixin focus-styles() {
@@ -183,10 +191,16 @@ h3 {
 }
 
 .content-wrapper {
-  max-width: 1000px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
   padding: 0 5%;
+}
+
+@media (min-width: 700px) {
+  .content-wrapper {
+    padding: 0 7%;
+  }
 }
 
 code {

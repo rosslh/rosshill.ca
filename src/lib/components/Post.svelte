@@ -261,11 +261,11 @@
     color: var(--subtitle);
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 699px) {
     div.post p.post-text,
     div.post div.footer {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+      padding-left: 0.2rem !important;
+      padding-right: 0.2rem !important;
     }
   }
 </style>

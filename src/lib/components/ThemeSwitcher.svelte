@@ -51,6 +51,13 @@
     right: 0;
     z-index: 100;
   }
+
+  @media (min-width: 700px) {
+    .theme-switcher-wrapper {
+      padding: 1.5rem 7%;
+    }
+  }
+
   button {
     width: 9rem;
     height: 2rem;

@@ -33,7 +33,7 @@
     "no-constant-condition": 2,
     "no-implicit-coercion": 2,
     "no-param-reassign": 1,
-    "no-unused-vars": 0,
+    "no-unused-vars": 1,
     "no-var": 2,
     "prefer-const": 1,
     "quote-props": [1, "consistent"],

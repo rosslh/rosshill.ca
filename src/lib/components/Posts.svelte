@@ -89,8 +89,8 @@
   }
   @media (min-width: 700px) {
     div.content-wrapper.posts-wrapper {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 7%;
+      padding-right: 7%;
     }
   }
 

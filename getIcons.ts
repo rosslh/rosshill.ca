@@ -1,16 +1,8 @@
+import { hsluvToHex } from "hsluv-ts";
 import chroma from "chroma-js";
 import fs from "fs";
-import { hsluvToHex } from "hsluv-ts";
-import Icons from "simple-icons";
-import type { PostItem } from "$lib/types";
-
-function getBestContrast(color: string, light: string, dark: string) {
-  const contrastWithLight = chroma.contrast(color, light);
-  const contrastWithDark = chroma.contrast(color, dark);
-
-  // prefer light icons
-  return contrastWithLight + 4.8 > contrastWithDark ? light : dark;
-}
+import Icons, { SimpleIcon } from "simple-icons";
+import type { PostItem, BrandColors } from "$lib/types";
 
 function handleFileError(err: Error) {
   if (err) {
@@ -26,19 +18,21 @@ function deleteFilesInDirectory(directory: string) {
   });
 }
 
-function getNumbersFromFileWithRegex(fileName: string, lineRegex: RegExp) {
+function getNumberFromSassProperty(fileName: string, propertyName: string) {
+  const escapedPropertyName = propertyName.replace("$", "\\$");
+  const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fs.readFileSync(fileName, "utf8").split("\n")
-    .filter(line => lineRegex.test(line));
-  
+    .filter(line => pattern.test(line));
+
   return matches.map(m => parseFloat(m.replace(/[^\d.]*/g, "")));
 }
 
 function getForegroundColors() {
   const cssFile = "src/assets/styles/global.scss";
 
-  const [themeHue] = getNumbersFromFileWithRegex(cssFile, /\s*\$theme-hue:.*;/);
-  const [themeSaturation] = getNumbersFromFileWithRegex(cssFile, /\s*\$theme-saturation:.*;/);
-  const [darkColorLightness, lightColorLightness] = getNumbersFromFileWithRegex(cssFile, /\s*--heading:.*;/);
+  const [themeHue] = getNumberFromSassProperty(cssFile, "$theme-hue");
+  const [themeSaturation] = getNumberFromSassProperty(cssFile, "$theme-saturation");
+  const [darkColorLightness, lightColorLightness] = getNumberFromSassProperty(cssFile, "--heading");
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness]).replace(/^#/, "").toUpperCase();
   const dark = hsluvToHex([themeHue, themeSaturation, darkColorLightness]).replace(/^#/, "").toUpperCase();
@@ -46,31 +40,55 @@ function getForegroundColors() {
   return { light, dark };
 }
 
-function writeBrandColorsToFile(tagDirectory: string, light: string, dark: string) {
+function getBestContrast(color: string, light: string, dark: string) {
+  const contrastWithLight = chroma.contrast(color, light);
+  const contrastWithDark = chroma.contrast(color, dark);
+
+  // prefer light icons
+  return contrastWithLight + 4.8 > contrastWithDark ? light : dark;
+}
+
+function getColorsForTag(icon: SimpleIcon, light: string, dark: string) {
+  const background = icon.hex;
+  const foreground = getBestContrast(background, light, dark);
+  return { foreground, background };
+}
+
+function createSvgForTag(tag: string, icon: SimpleIcon, brandColors: BrandColors, tagDirectory: string) {
+  const { foreground } = brandColors[tag];
+  const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${foreground}"><path d="${icon.path}"/></svg>`;
+  fs.writeFile(`${tagDirectory}${tag}.svg`, svg, handleFileError);
+}
+
+function getIconDataForTag(tag: string, brandColors: BrandColors, light: string, dark: string, tagDirectory: string) {
+  if (!brandColors[tag]) {
+    const icon = Icons.Get(tag)
+      ?? (tag.endsWith("dotjs") ? Icons.Get("javascript") : Icons.Get("visualstudiocode"));
+
+    brandColors[tag] = getColorsForTag(icon, light, dark);
+    createSvgForTag(tag, icon, brandColors, tagDirectory);
+  }
+}
+
+function getTagIconsAndColors(tagDirectory: string, light: string, dark: string) {
   const brandColors = {};
   fs.readFile("src/data/posts.json", "utf8", (_err, file) => {
     const { data } = JSON.parse(file);
     data
       .filter((post: PostItem) => post.tags && post.tags.length)
       .forEach((post: PostItem) => {
-        post.tags.forEach((tag: string) => {
-          if (!brandColors[tag]) {
-            const icon = Icons.Get(tag)
-              ?? (tag.endsWith("dotjs") ? Icons.Get("javascript") : Icons.Get("visualstudiocode"));
-
-            const foreground = getBestContrast(icon.hex, light, dark);
-            const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${foreground}"><path d="${icon.path}"/></svg>`;
-            fs.writeFile(`${tagDirectory}${tag}.svg`, svg, handleFileError);
-            brandColors[tag] = { background: icon.hex, foreground };
-          }
-        });
+        post.tags.forEach(tag => getIconDataForTag(tag, brandColors, light, dark, tagDirectory));
       });
 
     fs.writeFile("src/data/brandColors.json", JSON.stringify(brandColors), handleFileError);
   });
 }
 
-const tagDirectory = "src/assets/tags/";
-deleteFilesInDirectory(tagDirectory);
-const { light, dark } = getForegroundColors();
-writeBrandColorsToFile(tagDirectory, light, dark);
+function main() {
+  const tagDirectory = "src/assets/tags/";
+  deleteFilesInDirectory(tagDirectory);
+  const { light, dark } = getForegroundColors();
+  getTagIconsAndColors(tagDirectory, light, dark);
+}
+
+main();

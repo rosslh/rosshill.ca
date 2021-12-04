@@ -49,6 +49,7 @@
   div.intro {
     margin-top: 3rem;
     margin-bottom: 3rem;
+    padding-top: 3rem;
   }
 
   .intro p {
@@ -59,9 +60,9 @@
     margin-top: 0;
   }
 
-  @media (min-width: 1000px) {
+  @media (max-width: 1000px) {
     div.intro {
-      padding-top: 3rem;
+      padding-top: 0;
     }
   }
 </style>

@@ -37,9 +37,14 @@
     width: calc(50% - 1.5rem);
     border-bottom: 3px dotted var(--border);
   }
-  @media (min-width: 1000px) {
+
+  div.content-wrapper {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
     div.content-wrapper {
-      display: none;
+      display: block;
     }
   }
 </style>
