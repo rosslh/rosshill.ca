@@ -5,7 +5,7 @@
     const { post, brandColors } = await res.json();
 
     return {
-      props: { post, brandColors }
+      props: { post, brandColors },
     };
   }
 </script>

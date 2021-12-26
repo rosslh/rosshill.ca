@@ -19,7 +19,7 @@ const posts = Object.values(timeline)
       embed: post.embed,
       image: post.image,
       imageExt: post.imageExt,
-      tags: post.tags
+      tags: post.tags,
     };
   });
 
@@ -34,11 +34,11 @@ export function get(req: Request) {
 
   if (lookup.has(slug)) {
     return {
-      body: { post: lookup.get(slug), brandColors }
+      body: { post: lookup.get(slug), brandColors },
     };
   } else {
     return {
-      body: { message: "Not found" }
+      body: { message: "Not found" },
     };
   }
 }

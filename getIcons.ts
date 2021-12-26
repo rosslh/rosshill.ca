@@ -18,7 +18,7 @@ function deleteFilesInDirectory(directory: string) {
   });
 }
 
-function getNumberFromSassProperty(fileName: string, propertyName: string) {
+function getNumbersBySassPropertyName(fileName: string, propertyName: string) {
   const escapedPropertyName = propertyName.replace("$", "\\$");
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fs.readFileSync(fileName, "utf8").split("\n")
@@ -30,9 +30,9 @@ function getNumberFromSassProperty(fileName: string, propertyName: string) {
 function getForegroundColors() {
   const cssFile = "src/assets/styles/global.scss";
 
-  const [themeHue] = getNumberFromSassProperty(cssFile, "$theme-hue");
-  const [themeSaturation] = getNumberFromSassProperty(cssFile, "$theme-saturation");
-  const [darkColorLightness, lightColorLightness] = getNumberFromSassProperty(cssFile, "--heading");
+  const [themeHue] = getNumbersBySassPropertyName(cssFile, "$theme-hue");
+  const [themeSaturation] = getNumbersBySassPropertyName(cssFile, "$theme-saturation");
+  const [darkColorLightness, lightColorLightness] = getNumbersBySassPropertyName(cssFile, "--heading");
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness]).replace(/^#/, "").toUpperCase();
   const dark = hsluvToHex([themeHue, themeSaturation, darkColorLightness]).replace(/^#/, "").toUpperCase();
@@ -44,7 +44,7 @@ function getBestContrast(color: string, light: string, dark: string) {
   const contrastWithLight = chroma.contrast(color, light);
   const contrastWithDark = chroma.contrast(color, dark);
 
-  // prefer light icons
+  // prefer light-on-dark icons
   return contrastWithLight + 4.8 > contrastWithDark ? light : dark;
 }
 

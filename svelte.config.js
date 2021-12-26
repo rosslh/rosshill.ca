@@ -16,18 +16,18 @@ export default {
       lib: "src/lib",
       routes: "src/routes",
       // serviceWorker: 'src/service-worker',
-      template: "src/app.html"
+      template: "src/app.html",
     },
     // host: null,
     // hostHeader: null,
     paths: {
       assets: "",
-      base: ""
+      base: "",
     },
     prerender: {
       crawl: true,
       enabled: true,
-      entries: ["*"]
+      entries: ["*"],
     },
 
     adapter: staticAdapter(),
@@ -42,8 +42,8 @@ export default {
       resolve: {
         alias: {
           $data: resolve("./src/data"),
-        }
-      }
+        },
+      },
     },
   },
   preprocess: preprocess({
@@ -54,6 +54,6 @@ export default {
           preset: "default",
         }),
       ],
-    }
+    },
   }),
 };

@@ -13,10 +13,15 @@
 
   $: tagString = tagLabels[tagId] || tagId;
 
-  const imgOffset = tagId === "unity" ? 0.35 : 0.4;
+  const iconOffsets = {
+    flask: { x: "0.05rem" },
+    java:  { y: "-0.05rem" },
+    redux: { y: "-0.05rem" },
+  };
+
+  const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
 
   let isToggling = false;
-
   const handleClick = () => {
     isToggling = true;
     onClick();
@@ -24,6 +29,9 @@
       isToggling = false;
     }, 300);
   };
+
+  const getHexOpacity = (floatPercentage: number) => Math.round(255 * floatPercentage).toString(16);
+  $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
 <!-- TODO: use svelte:element once that's available -->
@@ -38,11 +46,12 @@
       src="/tags/{tagId}.svg"
       alt=""
       loading={lazyLoad ? "lazy" : null}
-      style="margin-left: {imgOffset}rem;"
+      style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)} />
   </span>
   <span
+    style={`border-left: 1px solid ${dividerColor};`}
     class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
   >
     {tagString}
@@ -92,16 +101,23 @@
 
   :global(.tag.active .logo-wrapper) {
     border-bottom-right-radius: 0.9rem;
-    border-color: var(--foreground);
+    border-color: var(--subtitle);
     border-top-right-radius: 0.9rem;
     /* 2px accounts for negative margin + border */
     width: calc(100% + 2px);
   }
 
   .tag-string {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: calc(100% - 0.4rem);
     margin-left: 1.5rem;
-    padding: 0 0.25rem;
+    padding: 0 0.25rem 0 0.2rem;
+
     position: relative;
+    transition: border-color 0.3s ease;
     z-index: 2;
   }
 
@@ -110,6 +126,7 @@
     fill: var(--subtitle);
     height: 0.85rem;
     width: 0.85rem;
+    transform: translateX(0.4rem);
   }
 
   .capitalize {

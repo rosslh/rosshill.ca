@@ -19,7 +19,7 @@ const contents = Object.values(timeline)
       website: post.website,
       thumbnailExt: post.thumbnailExt,
       tags: post.tags,
-      thumbnail: post.thumbnail ?? `timeline/${post.thumbnail}`
+      thumbnail: post.thumbnail ?? `timeline/${post.thumbnail}`,
     };
   })
   .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));

@@ -23,7 +23,9 @@
     }],
     "brace-style": [1, "1tbs"],
     "camelcase": 1,
+    "comma-dangle": [1, "always-multiline"],
     "curly": [1, "multi-line"],
+    "eol-last": 1,
     "eqeqeq": [2, "always", {
       "null": "ignore"
     }],
@@ -33,12 +35,13 @@
     "no-constant-condition": 2,
     "no-implicit-coercion": 2,
     "no-param-reassign": 1,
+    "no-trailing-spaces": [1, { "skipBlankLines": true }],
     "no-unused-vars": 1,
     "no-var": 2,
     "prefer-const": 1,
     "quote-props": [1, "consistent"],
     "quotes": [1, "double"],
-    "semi": 1
+    "semi": 1,
   },
   settings: {
     'svelte3/typescript': true

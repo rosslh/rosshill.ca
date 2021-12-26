@@ -164,7 +164,7 @@
 
   div.post {
     z-index: 4;
-    padding: 1rem 0.75rem;
+    padding: 0.8rem;
     background-color: var(--panel-background);
     border: 1px solid var(--border);
     border-radius: 0.5rem;

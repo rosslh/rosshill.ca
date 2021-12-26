@@ -14,7 +14,7 @@ const localStore = (localStorageKey: string, callback?: (val: string) => void)  
       if (localStorageEnabled) {
         localStorage.setItem(localStorageKey, value);
       }
-    }
+    },
   };
 };
 

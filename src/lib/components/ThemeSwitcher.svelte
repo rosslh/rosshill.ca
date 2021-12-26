@@ -10,7 +10,7 @@
       userTheme.set(
         window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
-          : "light"
+          : "light",
       );
     } else {
       userTheme.set($userTheme); // to trigger side effect
