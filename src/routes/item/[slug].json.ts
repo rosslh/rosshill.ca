@@ -18,7 +18,7 @@ const posts = Object.values(timeline)
       contents: post.contents,
       embed: post.embed,
       image: post.image,
-      imageExt: post.imageExt,
+      imageExt: post.imageExt || "png",
       tags: post.tags,
     };
   });

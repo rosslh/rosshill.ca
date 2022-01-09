@@ -57,11 +57,11 @@
               <picture class="fixed-size">
                 <source srcset="/timeline/{post.thumbnail}.webp" type="image/webp" />
                 <source
-                  srcset="/timeline/{post.thumbnail}.{post.thumbnailExt || 'png'}"
-                  type="image/{post.thumbnailExt || 'png'}"
+                  srcset="/timeline/{post.thumbnail}.{post.thumbnailExt}"
+                  type="image/{post.thumbnailExt}"
                 />
                 <img
-                  src="/timeline/{post.thumbnail}.{post.thumbnailExt || 'png'}"
+                  src="/timeline/{post.thumbnail}.{post.thumbnailExt}"
                   loading="lazy"
                   alt=""
                   width={remsToPixels(1.7)}

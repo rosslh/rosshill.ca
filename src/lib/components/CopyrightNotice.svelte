@@ -1,5 +1,5 @@
 <footer class="content-wrapper do-transition">
-  &copy; Copyright 2015-{new Date().getFullYear()} Ross Hill. All Rights Reserved.
+  Copyright &copy; 2015-{new Date().getFullYear()} Ross Hill. All Rights Reserved.
 </footer>
 
 <style>

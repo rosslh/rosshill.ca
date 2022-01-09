@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-  export async function load({ page, fetch }) {
+  export async function load({ fetch, params }) {
     // the `slug` parameter is available because this file is called [slug].html
-    const res = await fetch(`/item/${page.params.slug.toLowerCase()}.json`);
+    const res = await fetch(`/item/${params.slug.toLowerCase()}.json`);
     const { post, brandColors } = await res.json();
 
     return {
@@ -14,17 +14,25 @@
   export let post: PostItem;
   export let brandColors: BrandColors = {};
   
+  import { onMount, tick } from "svelte";
+
   import type { BrandColors, PostItem } from "$lib/types";
   import FormattedDate from "$lib/components/FormattedDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+
+  let mainContent: HTMLElement;
+  onMount(async () => {
+    await tick();
+    mainContent.scrollIntoView();
+  });
 </script>
 
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
 </svelte:head>
-<div class="content-wrapper main-content">
+<div bind:this={mainContent} class="content-wrapper main-content">
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
     <h2>{post.title}</h2>
@@ -60,11 +68,11 @@
         <picture>
           <source srcset="/timeline/{post.image}.webp" type="image/webp" />
           <source
-            srcset="/timeline/{post.image}.{post.imageExt || 'png'}"
-            type="image/{post.imageExt || 'png'}"
+            srcset="/timeline/{post.image}.{post.imageExt}"
+            type="image/{post.imageExt}"
           />
           <img
-            src="/timeline/{post.image}.{post.imageExt || 'png'}"
+            src="/timeline/{post.image}.{post.imageExt}"
             alt={post.title}
           />
         </picture>
