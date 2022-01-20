@@ -1,0 +1,95 @@
+<script lang="ts">
+  import Tag from "$lib/components/Tag.svelte";
+  export let brandColors: BrandColors;
+  export let post: PostItem;
+  import type { BrandColors, PostItem } from "$lib/types";
+  import { remsToPixels } from "$lib/functions";
+</script>
+
+<div class="post-heading">
+  <div class="picture-frame">
+    {#if post.thumbnail}
+      <picture class="fixed-size">
+        <source srcset="/timeline/{post.thumbnail}.webp" type="image/webp" />
+        <source
+          srcset="/timeline/{post.thumbnail}.{post.thumbnailExt}"
+          type="image/{post.thumbnailExt}"
+        />
+        <img
+          src="/timeline/{post.thumbnail}.{post.thumbnailExt}"
+          loading="lazy"
+          alt=""
+          width={remsToPixels(1.7)}
+          height={remsToPixels(1.7)}
+        />
+      </picture>
+    {/if}
+  </div>
+  <div class="heading-and-tags">
+    <h3>
+      {#if post.hasContent}
+        <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
+      {:else}{post.title}{/if}
+    </h3>
+    <div class="tags">
+      {#if post.tags && post.tags.length}
+        {#each post.tags as tagId}
+          <Tag
+            {tagId}
+            background={brandColors[tagId].background}
+            foreground={brandColors[tagId].foreground}
+            lazyLoad />
+        {/each}
+      {/if}
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  div.post-heading {
+    display: flex;
+    min-height: 1.5rem;
+    align-items: center;
+
+    div.picture-frame {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 1.7rem;
+      height: 1.7rem;
+      display: inline-block;
+      flex-shrink: 0;
+
+      * {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    div.heading-and-tags {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      h3 {
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+        display: inline-block;
+        margin: 0 0.5rem 0 1rem;
+        padding: 0;
+
+        a {
+          color: var(--heading);
+          text-decoration: underline !important;
+        }
+      }
+
+      div.tags {
+        display: flex;
+        padding: 0.3rem 0;
+        margin-left: 0.75rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
+</style>

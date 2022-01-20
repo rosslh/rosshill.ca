@@ -9,8 +9,10 @@
 </script>
 
 <script lang="ts">
-  import NotFound from "./404.svelte";
   export let error: string;
+  
+  import NotFound from "./404.svelte";
+
   console.error(error);
 </script>
 

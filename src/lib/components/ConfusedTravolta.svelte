@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { remsToPixels } from "$lib/functions";
   export let reason: string;
+
+  import { remsToPixels } from "$lib/functions";
 </script>
 
 <img

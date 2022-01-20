@@ -14,8 +14,10 @@
   $: tagString = tagLabels[tagId] || tagId;
 
   const iconOffsets = {
+    django: { y: "0.05rem" },
     flask: { x: "0.05rem" },
-    java:  { y: "-0.05rem" },
+    java: { y: "-0.05rem" },
+    postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
   };
 
@@ -58,7 +60,8 @@
   </span>
 </svelte:component>
 
-<style>
+<style lang="scss">
+  // TODO: :global won't be necessary once svelte:element is being used
   :global(.tag) {
     display: inline-flex;
     align-items: center;
@@ -88,15 +91,23 @@
     border: 1px solid var(--border);
     border-top-left-radius: 0.9rem;
     border-bottom-left-radius: 0.9rem;
-  }
 
-  .logo-wrapper.toggling {
-    transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
-  }
+    &.toggling {
+      transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+    }
 
-  .logo-wrapper.do-transition {
-    /* taken from global.scss .do-transition */
-    transition: border-color 0.5s ease, width 0.5s ease, border-radius 0.5s ease;
+    &.do-transition {
+      /* taken from global.scss .do-transition */
+      transition: border-color 0.5s ease, width 0.5s ease, border-radius 0.5s ease;
+    }
+
+    > img {
+      display: block;
+      fill: var(--subtitle);
+      height: 0.85rem;
+      width: 0.85rem;
+      transform: translateX(0.4rem);
+    }
   }
 
   :global(.tag.active .logo-wrapper) {
@@ -119,17 +130,9 @@
     position: relative;
     transition: border-color 0.3s ease;
     z-index: 2;
-  }
 
-  .logo-wrapper > img {
-    display: block;
-    fill: var(--subtitle);
-    height: 0.85rem;
-    width: 0.85rem;
-    transform: translateX(0.4rem);
-  }
-
-  .capitalize {
-    text-transform: capitalize;
+    &.capitalize {
+      text-transform: capitalize;
+    }
   }
 </style>

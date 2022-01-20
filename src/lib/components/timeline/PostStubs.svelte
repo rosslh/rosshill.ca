@@ -5,11 +5,11 @@
 
   import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "$lib/types";
-  import Post from "./Post.svelte";
-  import YearLabel from "./YearLabel.svelte";
-  import FilterControls from "./FilterControls.svelte";
   import { tagParents } from "$lib/constants";
-  import ConfusedTravolta from "./ConfusedTravolta.svelte";
+  import PostStub from "$lib/components/timeline/post-stub/PostStub.svelte";
+  import YearLabel from "$lib/components/timeline/YearLabel.svelte";
+  import FilterControls from "$lib/components/timeline/filters/FilterControls.svelte";
+  import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
   const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
@@ -64,7 +64,7 @@
       {/if}
       <!-- Only transition if index or alignment changes -->
       {#key `${i}|${post.isLeftAligned}`}
-        <Post
+        <PostStub
           {post}
           {brandColors}
           isFirstPost={i === 0}

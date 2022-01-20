@@ -10,7 +10,7 @@
   </p>
 </div>
 
-<style>
+<style lang="scss">
   @keyframes wave {
     0%,
     100% {
@@ -34,30 +34,30 @@
     }
   }
 
-  div.intro .wave-emoji {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    animation: wave 0.9s linear 3.5s both;
-    font-weight: 400 !important;
-  }
-
-  div.intro .hello-text {
-    margin-right: 0.5rem;
-  }
-
   div.intro {
     margin-top: 3rem;
     margin-bottom: 3rem;
     padding-top: 3rem;
-  }
 
-  .intro p {
-    margin: 1rem auto !important;
-  }
+    h2 {
+      margin-top: 0;
 
-  h2 {
-    margin-top: 0;
+      .hello-text {
+        margin-right: 0.5rem;
+      }
+
+      .wave-emoji {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        animation: wave 0.9s linear 3.5s both;
+        font-weight: 400 !important;
+      }
+    }
+
+    p {
+      margin: 1rem auto !important;
+    }
   }
 
   @media (max-width: 1000px) {

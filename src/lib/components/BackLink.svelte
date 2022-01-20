@@ -15,7 +15,7 @@
     margin: 1.5rem 0;
   }
 
-  :global(a.back-link > svg) {
+  a.back-link > :global(svg) {
     margin-right: 0.5rem;
   }
 </style>

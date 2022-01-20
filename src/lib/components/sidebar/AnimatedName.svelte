@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { sineIn } from "svelte/easing";
-  import svgPath from "./NameSvg";
   import { draw } from "svelte/transition";
+  
   import { reduceMotion } from "$lib/constants";
+  import svgPath from "$lib/components/sidebar/NameSvg";
 
   let showTitle = false;
   let logoHasFill = false;
@@ -51,34 +52,43 @@
   </g>
 </svg>
 
-<style>
+<style lang="scss">
   svg {
     height: 60%;
     width: 60%;
     pointer-events: none;
     transition: fill 0.9s ease, stroke 0.9s ease;
-  }
 
-  svg path {
-    stroke: var(--heading);
-    stroke-width: 1px;
-    transition: fill 0.9s ease, stroke 0.9s ease;
-  }
+    &.ssr-fade-in {
+      opacity: 0;
+      animation: fade-in-animation ease-in 0.5s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+    }
 
-  svg path.initial {
-    fill: var(--panel-background);
-  }
+    path {
+      stroke: var(--heading);
+      stroke-width: 1px;
+      transition: fill 0.9s ease, stroke 0.9s ease;
 
-  svg path.server-rendered {
-    fill: var(--heading);
-  }
+      &.initial {
+        fill: var(--panel-background);
+      }
 
-  svg.ssr-fade-in {
-    opacity: 0;
-    animation: fade-in-animation ease-in 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 3s;
+      &.server-rendered {
+        fill: var(--heading);
+      }
+
+      &.logo-has-fill {
+        fill: var(--heading);
+        stroke: var(--panel-background);
+      }
+
+      &.done-filling {
+        transition: fill 0.5s ease, stroke 0.5s ease !important;
+      }
+    }
   }
 
   @keyframes fade-in-animation {
@@ -88,15 +98,6 @@
     100% {
         opacity: 1;
      }
-  }
-
-  svg path.logo-has-fill {
-    fill: var(--heading);
-    stroke: var(--panel-background);
-  }
-
-  svg path.done-filling {
-    transition: fill 0.5s ease, stroke 0.5s ease !important;
   }
 
   @media (max-width: 1000px) {

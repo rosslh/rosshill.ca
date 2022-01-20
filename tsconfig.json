@@ -23,11 +23,11 @@
 		"allowJs": true,
 		"checkJs": false,
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
       "$data": ["src/data"],
-			"$data/*": ["src/data/*"]
-		}
+      "$data/*": ["src/data/*"],
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"]
+    }
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "getIcons.ts"]
 }

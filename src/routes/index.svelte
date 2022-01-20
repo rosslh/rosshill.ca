@@ -13,8 +13,9 @@
   export let brandColors: BrandColors = {};
 
   import type { BrandColors, PostItem } from "$lib/types";
+  
   import Intro from "$lib/components/Intro.svelte";
-  import Posts from "$lib/components/Posts.svelte";
+  import PostStubs from "$lib/components/timeline/PostStubs.svelte";
 </script>
 
 <svelte:head>
@@ -22,5 +23,5 @@
 </svelte:head>
 <div class="main-content">
   <Intro />
-  <Posts {posts} {brandColors} />
+  <PostStubs {posts} {brandColors} />
 </div>

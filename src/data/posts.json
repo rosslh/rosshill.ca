@@ -12,7 +12,7 @@
     "src": "content/",
     "name": "markdown-json",
     "metadata": true,
-    "version": "1.6.0"
+    "version": "1.6.1"
   },
   "data": [
     {
@@ -33,8 +33,8 @@
       "excerpt": "<p>The goal of this webpage is to provide a high-level overview of what global warming is: how it&apos;s caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/nozzle/react-static\">React Static</a>, a static-site generator for React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.</p>",
       "meta": {
         "relativePath": "IsEarthStillWarming.html",
-        "createdAt": "2021-10-13T04:50:08.688Z",
-        "lastModified": "2021-10-13T04:50:08.688Z",
+        "createdAt": "2022-01-19T22:15:07.713Z",
+        "lastModified": "2022-01-19T22:15:07.713Z",
         "size": 1499,
         "formattedSize": "1.5 KB"
       }
@@ -54,8 +54,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "MUSE.html",
-        "createdAt": "2021-08-17T21:33:52.087Z",
-        "lastModified": "2021-08-17T21:33:52.087Z",
+        "createdAt": "2022-01-19T22:15:07.748Z",
+        "lastModified": "2022-01-19T22:15:07.748Z",
         "size": 270,
         "formattedSize": "270 Bytes"
       }
@@ -78,8 +78,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "QTMA.html",
-        "createdAt": "2021-10-13T04:50:08.690Z",
-        "lastModified": "2021-10-13T04:50:08.690Z",
+        "createdAt": "2022-01-19T22:15:07.784Z",
+        "lastModified": "2022-01-19T22:15:07.784Z",
         "size": 367,
         "formattedSize": "367 Bytes"
       }
@@ -103,8 +103,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "QVFT.html",
-        "createdAt": "2021-08-17T21:18:46.792Z",
-        "lastModified": "2021-08-17T21:18:46.792Z",
+        "createdAt": "2022-01-19T22:15:07.801Z",
+        "lastModified": "2022-01-19T22:15:07.801Z",
         "size": 501,
         "formattedSize": "501 Bytes"
       }
@@ -122,8 +122,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "caledon.html",
-        "createdAt": "2021-08-17T22:51:29.112Z",
-        "lastModified": "2021-08-17T22:51:29.112Z",
+        "createdAt": "2022-01-19T22:15:07.666Z",
+        "lastModified": "2022-01-19T22:15:07.666Z",
         "size": 317,
         "formattedSize": "317 Bytes"
       }
@@ -147,8 +147,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2021-10-13T04:50:08.691Z",
-        "lastModified": "2021-10-13T04:50:08.691Z",
+        "createdAt": "2022-01-19T22:15:07.676Z",
+        "lastModified": "2022-01-19T22:15:07.676Z",
         "size": 652,
         "formattedSize": "652 Bytes"
       }
@@ -170,8 +170,8 @@
       "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
       "meta": {
         "relativePath": "dodgeball.html",
-        "createdAt": "2021-10-13T04:50:08.692Z",
-        "lastModified": "2021-10-13T04:50:08.692Z",
+        "createdAt": "2022-01-19T22:15:07.686Z",
+        "lastModified": "2022-01-19T22:15:07.686Z",
         "size": 1548,
         "formattedSize": "1.5 KB"
       }
@@ -195,8 +195,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2021-10-13T04:50:08.693Z",
-        "lastModified": "2021-10-13T04:50:08.693Z",
+        "createdAt": "2022-01-19T22:15:07.694Z",
+        "lastModified": "2022-01-19T22:15:07.694Z",
         "size": 426,
         "formattedSize": "426 Bytes"
       }
@@ -215,8 +215,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "hurontario.html",
-        "createdAt": "2021-08-17T22:51:39.478Z",
-        "lastModified": "2021-08-17T22:51:39.478Z",
+        "createdAt": "2022-01-19T22:15:07.704Z",
+        "lastModified": "2022-01-19T22:15:07.704Z",
         "size": 317,
         "formattedSize": "317 Bytes"
       }
@@ -237,8 +237,8 @@
       "excerpt": "<p>The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.</p>",
       "meta": {
         "relativePath": "mandelbrot.html",
-        "createdAt": "2021-04-02T05:14:17.328Z",
-        "lastModified": "2021-04-02T05:14:17.327Z",
+        "createdAt": "2022-01-19T22:15:07.722Z",
+        "lastModified": "2022-01-19T22:15:07.722Z",
         "size": 1196,
         "formattedSize": "1.2 KB"
       }
@@ -262,8 +262,8 @@
       "excerpt": "<p>MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user&#x2019;s geolocation to find their district and display its likely winner.</p>",
       "meta": {
         "relativePath": "metaProjection.html",
-        "createdAt": "2021-10-13T04:50:08.694Z",
-        "lastModified": "2021-10-13T04:50:08.694Z",
+        "createdAt": "2022-01-19T22:15:07.730Z",
+        "lastModified": "2022-01-19T22:15:07.730Z",
         "size": 1356,
         "formattedSize": "1.3 KB"
       }
@@ -287,8 +287,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "metaProjection2021.html",
-        "createdAt": "2021-10-13T04:50:08.696Z",
-        "lastModified": "2021-10-13T04:50:08.696Z",
+        "createdAt": "2022-01-19T22:15:07.739Z",
+        "lastModified": "2022-01-19T22:15:07.739Z",
         "size": 433,
         "formattedSize": "433 Bytes"
       }
@@ -310,8 +310,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "nudge1.html",
-        "createdAt": "2021-08-17T21:33:52.069Z",
-        "lastModified": "2021-08-17T21:33:52.069Z",
+        "createdAt": "2022-01-19T22:15:07.756Z",
+        "lastModified": "2022-01-19T22:15:07.756Z",
         "size": 449,
         "formattedSize": "449 Bytes"
       }
@@ -335,8 +335,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "nudge2.html",
-        "createdAt": "2021-10-13T04:50:08.697Z",
-        "lastModified": "2021-10-13T04:50:08.697Z",
+        "createdAt": "2022-01-19T22:15:07.764Z",
+        "lastModified": "2022-01-19T22:15:07.764Z",
         "size": 391,
         "formattedSize": "391 Bytes"
       }
@@ -361,8 +361,8 @@
       "excerpt": "<p>QHacks is a hackathon hosted at Queen&#x2019;s University where software developers come together to collaborate on projects and win prizes. As part of the Technology team on the QHacks 2018/2019 Executive, my role was to help build a new website for the event that contains information on sponsors, the event schedule, and how to apply.</p>",
       "meta": {
         "relativePath": "qhacks.html",
-        "createdAt": "2021-10-13T04:50:08.698Z",
-        "lastModified": "2021-10-13T04:50:08.698Z",
+        "createdAt": "2022-01-19T22:15:07.775Z",
+        "lastModified": "2022-01-19T22:15:07.775Z",
         "size": 1127,
         "formattedSize": "1.1 KB"
       }
@@ -379,8 +379,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "queensEnrolled.html",
-        "createdAt": "2021-08-17T22:13:17.503Z",
-        "lastModified": "2021-08-17T22:13:17.503Z",
+        "createdAt": "2022-01-19T22:15:07.793Z",
+        "lastModified": "2022-01-19T22:15:07.793Z",
         "size": 359,
         "formattedSize": "359 Bytes"
       }
@@ -404,8 +404,8 @@
       "excerpt": "<p>I made ReqWise for one reason: Building websites is fun. Collaborating with clients is <em>hard</em>.</p>",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2021-11-16T22:08:40.289Z",
-        "lastModified": "2021-11-16T22:08:40.289Z",
+        "createdAt": "2022-01-19T22:15:07.811Z",
+        "lastModified": "2022-01-19T22:15:07.811Z",
         "size": 2283,
         "formattedSize": "2.2 KB"
       }
@@ -427,8 +427,8 @@
       "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
       "meta": {
         "relativePath": "robot.html",
-        "createdAt": "2021-11-22T00:17:37.034Z",
-        "lastModified": "2021-11-22T00:17:37.034Z",
+        "createdAt": "2022-01-19T22:15:07.821Z",
+        "lastModified": "2022-01-19T22:15:07.821Z",
         "size": 939,
         "formattedSize": "939 Bytes"
       }
@@ -451,8 +451,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2021-10-13T04:50:08.701Z",
-        "lastModified": "2021-10-13T04:50:08.701Z",
+        "createdAt": "2022-01-19T22:15:07.829Z",
+        "lastModified": "2022-01-19T22:15:07.829Z",
         "size": 403,
         "formattedSize": "403 Bytes"
       }
@@ -473,8 +473,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "traffic.html",
-        "createdAt": "2021-08-17T21:33:52.068Z",
-        "lastModified": "2021-08-17T21:33:52.068Z",
+        "createdAt": "2022-01-19T22:15:07.838Z",
+        "lastModified": "2022-01-19T22:15:07.838Z",
         "size": 370,
         "formattedSize": "370 Bytes"
       }
@@ -494,8 +494,8 @@
       "excerpt": "<p>Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.</p>",
       "meta": {
         "relativePath": "unitransform.html",
-        "createdAt": "2021-08-17T22:13:41.865Z",
-        "lastModified": "2021-08-17T22:13:41.865Z",
+        "createdAt": "2022-01-19T22:15:07.847Z",
+        "lastModified": "2022-01-19T22:15:07.847Z",
         "size": 565,
         "formattedSize": "565 Bytes"
       }
@@ -518,8 +518,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "verafin.html",
-        "createdAt": "2021-10-15T15:57:14.296Z",
-        "lastModified": "2021-10-15T15:57:14.296Z",
+        "createdAt": "2022-01-19T22:15:07.856Z",
+        "lastModified": "2022-01-19T22:15:07.856Z",
         "size": 439,
         "formattedSize": "439 Bytes"
       }
@@ -540,8 +540,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "vibeify.html",
-        "createdAt": "2021-08-05T20:07:51.454Z",
-        "lastModified": "2021-08-05T20:07:51.454Z",
+        "createdAt": "2022-01-19T22:15:07.864Z",
+        "lastModified": "2022-01-19T22:15:07.864Z",
         "size": 354,
         "formattedSize": "354 Bytes"
       }
@@ -563,8 +563,8 @@
       "excerpt": "<p><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://momentjs.com\">Moment.js</a> is a JavaScript library that can parse, manipulate, and format dates and times. To format a date, you give Moment a time code like <code>YYYY-MM-DD</code>. When I was working front-end at <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.nudge.ai\">Nudge.ai</a>, I found myself having to go to Moment&apos;s documentation to see how to format dates in various ways.</p>",
       "meta": {
         "relativePath": "wtformat.html",
-        "createdAt": "2021-08-05T00:36:56.030Z",
-        "lastModified": "2021-08-05T00:36:56.030Z",
+        "createdAt": "2022-01-19T22:15:07.873Z",
+        "lastModified": "2022-01-19T22:15:07.873Z",
         "size": 946,
         "formattedSize": "946 Bytes"
       }
@@ -587,8 +587,8 @@
       "excerpt": "",
       "meta": {
         "relativePath": "wtformat2.html",
-        "createdAt": "2021-10-13T04:50:08.704Z",
-        "lastModified": "2021-10-13T04:50:08.704Z",
+        "createdAt": "2022-01-19T22:15:07.882Z",
+        "lastModified": "2022-01-19T22:15:07.882Z",
         "size": 369,
         "formattedSize": "369 Bytes"
       }

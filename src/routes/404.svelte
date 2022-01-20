@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+  import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 </script>
 
 <div class="content-wrapper main-content">

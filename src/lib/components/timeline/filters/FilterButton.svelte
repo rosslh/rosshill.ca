@@ -34,7 +34,7 @@
   </span>
 </button>
 
-<style>
+<style lang="scss">
   button {
     background-color: var(--panel-background);
     border: 1px solid var(--border);
@@ -45,57 +45,57 @@
     align-items: center;
     padding: 0 0.75rem;
     margin: 0.3rem 0.35rem 0.3rem 0;
-  }
 
-  button.toggling {
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
-  }
+    &.toggling {
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    }
 
-  button .symbol {
-    position: static;
-    display: inline-flex;
-    align-items: center;
-    margin-right: 0.3rem;
-    font-size: 0.65rem;
-    display: inline-flex;
-    align-items: center;
-  }
+    &.job-button {
+      color: var(--job);
 
-  :global(button > .symbol > svg) {
+      &.active {
+        color: var(--background);
+        background-color: var(--job);
+        border-color: var(--job);
+      }
+    }
+
+    &.project-button {
+      color: var(--project);
+
+      &.active {
+        color: var(--background);
+        background-color: var(--project);
+        border-color: var(--project);
+      }
+    }
+
+    &.org-button {
+      color: var(--org);
+
+      &.active {
+        color: var(--background);
+        background-color: var(--org);
+        border-color: var(--org);
+      }
+    }
+
+    .symbol {
+      position: static;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 0.3rem;
+      font-size: 0.65rem;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .text {
+      line-height: 1.2rem;
+    }
+  } 
+
+  button > .symbol > :global(svg) {
     overflow: visible;
-  }
-
-  button .text {
-    line-height: 1.2rem;
-  }
-
-  button.job-button {
-    color: var(--job);
-  }
-
-  button.job-button.active {
-    color: var(--background);
-    background-color: var(--job);
-    border-color: var(--job);
-  }
-
-  button.project-button {
-    color: var(--project);
-  }
-
-  button.project-button.active {
-    color: var(--background);
-    background-color: var(--project);
-    border-color: var(--project);
-  }
-
-  button.org-button {
-    color: var(--org);
-  }
-
-  button.org-button.active {
-    color: var(--background);
-    background-color: var(--org);
-    border-color: var(--org);
   }
 </style>

@@ -2,7 +2,7 @@
   import { cheekyMessagePrinted } from "$lib/stores";
 
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
-  import Sidebar from "$lib/components/Sidebar.svelte";
+  import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   import "../assets/styles/global.scss";
@@ -13,7 +13,7 @@
     return style.getPropertyValue(`--${variableName}`);
   };
 
-  const printCheekyMessage = () => {
+  const printGithubLink = () => {
       // eslint-disable-next-line no-console
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
@@ -24,7 +24,7 @@
   $: {
     if (typeof window !== "undefined" && !$cheekyMessagePrinted) {
       $cheekyMessagePrinted = true;
-      printCheekyMessage();
+      printGithubLink();
     }
   }
 
