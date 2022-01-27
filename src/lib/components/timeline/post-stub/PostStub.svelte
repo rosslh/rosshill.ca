@@ -35,7 +35,7 @@
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={isFirstPost ? 0 : 0.25}
+  threshold={isFirstPost ? 0 : 0.5}
   bind:intersecting
 >
   <div
@@ -108,7 +108,8 @@
     }
 
     div.fade-in {
-      transition: opacity 0.5s ease-in 0.1s, transform 0.5s ease-out 0.1s;
+      // easing function made with https://matthewlein.com/tools/ceaser
+      transition: opacity 0.3s ease-in, transform 0.6s cubic-bezier(0.440, 0.170, 0.375, 1.385);
       opacity: 1;
       transform: rotateY(0deg);
 
@@ -124,11 +125,11 @@
       opacity: 0;
 
         &.left {
-          transform: rotateY(20deg);
+          transform: rotateY(60deg);
         }
 
         &.right {
-          transform: rotateY(-20deg);
+          transform: rotateY(-60deg);
         }
       }
     }
