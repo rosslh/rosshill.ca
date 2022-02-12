@@ -29,7 +29,7 @@
 <style lang="scss">
   div.footer {
     font-size: 0.8rem;
-    padding-top: 0.75rem !important;
+    padding: 0.75rem 0.75rem 0 calc(1.8rem + 0.75rem);
     display: flex;
     justify-content: space-between;
     align-items: center;

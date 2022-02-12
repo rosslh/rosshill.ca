@@ -11,10 +11,10 @@
   import { tagLabels } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
 
-  $: tagString = tagLabels[tagId] || tagId;
+  $: tagString = tagLabels[tagId] ?? tagId;
 
   const iconOffsets = {
-    django: { y: "0.05rem" },
+    django: { y: "0.05rem", x: "-0.05rem" },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
@@ -41,6 +41,7 @@
   this={onClick ? Button : Div}
   on:click={handleClick}
   class="tag do-transition {active ? 'active' : ''}"
+  data-test={onClick ? `skill-filter-${tagId}` : null}
   style={active ? `color: #${foreground};` : ""}
 >
   <span class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}" style="background-color: #{background};">
@@ -106,7 +107,7 @@
       fill: var(--subtitle);
       height: 0.85rem;
       width: 0.85rem;
-      transform: translateX(0.4rem);
+      transform: translateX(0.41rem);
     }
   }
 

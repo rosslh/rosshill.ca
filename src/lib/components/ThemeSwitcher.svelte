@@ -29,6 +29,7 @@
 
 <div class="theme-switcher-wrapper">
   <button
+    data-test="theme-switcher"
     title="Use {nextTheme} theme"
     class="do-transition"
     on:click={changeTheme}
@@ -53,10 +54,9 @@
     z-index: 100;
 
     button {
-      width: 9rem;
-      height: 2rem;
-      width: 2rem;
-      border-radius: 50%;
+      height: 2.1rem;
+      width: 2.1rem;
+      border-radius: 0.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -69,7 +69,7 @@
       .icon {
         display: inline-flex;
         align-items: center;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-right: 0;
       }
     }

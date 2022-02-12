@@ -28,7 +28,7 @@
   <div class="heading-and-tags">
     <h3>
       {#if post.hasContent}
-        <a rel="prefetch" href="item/{post.slug}">{post.title}</a>
+        <a rel="prefetch" data-test="post-stub-link" href="item/{post.slug}">{post.title}</a>
       {:else}{post.title}{/if}
     </h3>
     <div class="tags">

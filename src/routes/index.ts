@@ -17,7 +17,7 @@ const contents = Object.values(timeline)
       blurb: post.blurb,
       repository: post.repository,
       website: post.website,
-      thumbnailExt: post.thumbnailExt || "png",
+      thumbnailExt: post.thumbnailExt ?? "png",
       tags: post.tags,
       thumbnail: post.thumbnail ?? `timeline/${post.thumbnail}`,
     };

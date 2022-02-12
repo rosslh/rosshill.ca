@@ -9,3 +9,8 @@ node_modules
 .svelte-kit
 .vscode/
 .vscode
+test-results/
+playwright-report/
+tests/integration/build/
+tests/integration/build
+build/

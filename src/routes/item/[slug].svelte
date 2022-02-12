@@ -1,15 +1,3 @@
-<script lang="ts" context="module">
-  export async function load({ fetch, params }) {
-    // the `slug` parameter is available because this file is called [slug].html
-    const res = await fetch(`/item/${params.slug.toLowerCase()}.json`);
-    const { post, brandColors } = await res.json();
-
-    return {
-      props: { post, brandColors },
-    };
-  }
-</script>
-
 <script lang="ts">
   export let post: PostItem;
   export let brandColors: BrandColors = {};
@@ -33,10 +21,10 @@
 <svelte:head>
   <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
 </svelte:head>
-<div bind:this={mainContent} class="content-wrapper main-content">
+<div bind:this={mainContent} class="content-wrapper main-content" data-test="main-content">
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
-    <h2>{post.title}</h2>
+    <h2 data-test="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
         <PostDate {post} />

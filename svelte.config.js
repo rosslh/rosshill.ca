@@ -4,10 +4,11 @@ import Icons from "unplugin-icons/vite";
 import preprocess from "svelte-preprocess";
 import staticAdapter from "@sveltejs/adapter-static";
 import { resolve } from "path";
-
+ 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
   kit: {
+    adapter: staticAdapter(),
     amp: false,
     // appDir: '_app',
     files: {
@@ -18,6 +19,7 @@ export default {
       // serviceWorker: 'src/service-worker',
       template: "src/app.html",
     },
+    inlineStyleThreshold: 100_000,
     // host: null,
     // hostHeader: null,
     paths: {
@@ -29,10 +31,6 @@ export default {
       enabled: true,
       entries: ["*"],
     },
-
-    adapter: staticAdapter(),
-
-    target: "#svelte",
     vite: {
       plugins: [
         Icons({

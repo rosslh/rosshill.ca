@@ -10,7 +10,7 @@
 <div
   aria-hidden="true"
   title={typeString}
-  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType || "other"}" />
+  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? "other"}" />
 
 <style lang="scss">
   div.timeline-marker {

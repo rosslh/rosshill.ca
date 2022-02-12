@@ -41,16 +41,16 @@
       if (tags) {
         // for each tag in post, add 1 to count
         tags.forEach(tag => {
-          tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+          tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
         });
 
         // get parent tags of each tag and remove duplicates
-        const parentTags = [...new Set(tags.map(tag => tagParents[tag] || []).flat())];
+        const parentTags = [...new Set(tags.map(tag => tagParents[tag] ?? []).flat())];
 
         parentTags
           .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags
           .forEach(parentTag => {
-            tagCounts[parentTag] = (tagCounts[parentTag] || 0) + 1; // add 1 to count for each parent tag
+            tagCounts[parentTag] = (tagCounts[parentTag] ?? 0) + 1; // add 1 to count for each parent tag
           });
       }
     });
@@ -93,6 +93,7 @@
   </FilterButton>
   {#if showCategories.length || showTags.length}
     <button
+      data-test="clear-filters"
       class="secondary-button do-transition"
       on:click={() => {
         showCategories = [];
@@ -114,6 +115,7 @@
   {/each}
   {#if minTagNum !== 0}
     <button
+      data-test="show-more-tags"
       class="secondary-button do-transition"
       on:click={() => {
         minTagNum = 0;

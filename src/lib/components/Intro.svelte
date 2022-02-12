@@ -1,6 +1,8 @@
 <div class="content-wrapper intro">
   <h2>
-    <span class="hello-text">Hey, I’m Ross</span>
+    <span class="hello-text" data-test="main-heading">
+      Hey, I’m Ross
+    </span>
     <span class="wave-emoji">👋</span>
   </h2>
   <p>

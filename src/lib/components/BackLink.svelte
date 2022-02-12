@@ -4,7 +4,7 @@
   import LeftArrow from "~icons/feather/corner-up-left";
 </script>
 
-<a rel="prefetch" class="back-link" {href}>
+<a rel="prefetch" data-test="back-link" class="back-link" {href}>
   <LeftArrow /> Back to Home
 </a>
 

@@ -19,6 +19,7 @@
 </script>
 
 <button
+  data-test="event-filter-{classPrefix}"
   class="{classPrefix}-button {isToggling ? 'toggling': 'do-transition'} {extraClasses ? extraClasses : ''} {active ? 'active' : 'inactive'}"
   on:click={handleClick}
 >

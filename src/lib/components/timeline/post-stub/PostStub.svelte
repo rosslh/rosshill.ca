@@ -41,6 +41,7 @@
   <div
     bind:this={element}
     id="timeline-{post.slug}"
+    data-test="post-stub-{post.slug}"
     class="post-wrapper do-transition {left ? 'left' : 'right'}"
   >
     <TimelineMarker
@@ -143,8 +144,8 @@
       margin: 0.8rem 0;
       position: relative;
 
-      p.post-text, :global(div.footer) {
-        padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem) !important;
+      p.post-text {
+        padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem);
       }
     }
   }

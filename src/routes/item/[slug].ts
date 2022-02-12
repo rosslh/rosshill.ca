@@ -18,7 +18,7 @@ const posts = Object.values(timeline)
       contents: post.contents,
       embed: post.embed,
       image: post.image,
-      imageExt: post.imageExt || "png",
+      imageExt: post.imageExt ?? "png",
       tags: post.tags,
     };
   });
@@ -29,7 +29,7 @@ posts
   .forEach(post => lookup.set(post.slug, post));
 
 export function get(req: Request) {
-  // the `slug` parameter is available because this file is called [slug].json.js
+  // the `slug` parameter is available because this file is called [slug].js
   const slug = req.params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
@@ -38,7 +38,7 @@ export function get(req: Request) {
     };
   } else {
     return {
-      body: { message: "Not found" },
+      body: { message: "Not found", post: null, brandColors },
     };
   }
 }
