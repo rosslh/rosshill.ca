@@ -75,6 +75,12 @@
     }
   }
 
+  @media (max-width: 699px) {
+    .theme-switcher-wrapper button {
+      transform: scale(0.8);
+    }
+  }
+
   @media (min-width: 700px) {
     .theme-switcher-wrapper {
       padding: 1.5rem 7%;

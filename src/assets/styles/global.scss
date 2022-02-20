@@ -91,6 +91,8 @@ body {
   overflow-y: scroll;
   color: var(--foreground);
   background-color: var(--background);
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {

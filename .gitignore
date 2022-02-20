@@ -11,6 +11,6 @@ node_modules
 .vscode
 test-results/
 playwright-report/
-tests/integration/build/
-tests/integration/build
+tests/build/
+tests/build
 build/

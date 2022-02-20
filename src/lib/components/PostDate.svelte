@@ -1,22 +1,21 @@
 <script lang="ts">
-  export let post: PostItem;
+  export let date: PostDate;
 
   import { format } from "date-fns";
-  
-  import type { PostItem } from "$lib/types";
+  import type { PostDate } from "$lib/types";
 
-  const date = new Date(post.date);
-  const endDate = new Date(post.endDate);
+  const startDate = new Date(date.start);
+  const endDate = date.end && new Date(date.end);
 </script>
 
 <div class="date-string do-transition">
-  {#if post.seasonal}
+  {#if date.isSeasonal}
     Seasonal:
   {/if}
-  {post.seasonal ? format(date, "y") : format(date, "MMM y")}
-  {#if post.endDate}
-    - {post.seasonal ? format(endDate, "y") : format(endDate, "MMM y")}
-  {:else if post.ongoing}
+  {date.isSeasonal ? format(startDate, "y") : format(startDate, "MMM y")}
+  {#if endDate}
+    - {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
+  {:else if date.isOngoing}
     - Present
   {/if}
 </div>

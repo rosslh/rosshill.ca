@@ -1,7 +1,8 @@
 <script lang="ts">
   export let posts: PostItem[];
-  
   export let brandColors: BrandColors;
+
+  import { format } from "date-fns";
 
   import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "$lib/types";
@@ -13,9 +14,9 @@
 
   const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
-    const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date);
+    const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date.start);
 
-    const year = getYearFromDate(post.date);
+    const year = getYearFromDate(post.date.start);
 
     if (year !== prevYear) {
       post.showYearLabel = true;
@@ -45,12 +46,17 @@
     .filter((post: PostItem) => categoryFilter(post) && tagFilter(post))
     .map(setLabelVisibilityAndAlignment);
 
-  const getYearFromDate = (date: string) => Number(date.substring(0, 4));
+  const getYearFromDate = (date: string) => format(new Date(date), "yyyy");
 </script>
 
 <div class="heading-wrapper content-wrapper ">
   <h2>Experience</h2>
-  <FilterControls bind:showCategories={$showCategories} bind:showTags={$showTags} {posts} {brandColors} />
+  <FilterControls
+    bind:showCategories={$showCategories}
+    bind:showTags={$showTags}
+    {brandColors}
+    {posts}
+  />
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
@@ -59,7 +65,7 @@
         <YearLabel
           isFirstLabel={i === 0}
           isRightToLeft={post.isLeftAligned}
-          year={getYearFromDate(post.date)}
+          year={getYearFromDate(post.date.start)}
         />
       {/if}
       <!-- Only transition if index or alignment changes -->

@@ -38,21 +38,19 @@
     const tagCounts = {};
 
     posts.forEach(({ tags }) => {
-      if (tags) {
-        // for each tag in post, add 1 to count
-        tags.forEach(tag => {
-          tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+      // for each tag in post, add 1 to count
+      tags.forEach(tag => {
+        tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+      });
+
+      // get parent tags of each tag and remove duplicates
+      const parentTags = [...new Set(tags.map(tag => tagParents[tag] ?? []).flat())];
+
+      parentTags
+        .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags
+        .forEach(parentTag => {
+          tagCounts[parentTag] = (tagCounts[parentTag] ?? 0) + 1; // add 1 to count for each parent tag
         });
-
-        // get parent tags of each tag and remove duplicates
-        const parentTags = [...new Set(tags.map(tag => tagParents[tag] ?? []).flat())];
-
-        parentTags
-          .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags
-          .forEach(parentTag => {
-            tagCounts[parentTag] = (tagCounts[parentTag] ?? 0) + 1; // add 1 to count for each parent tag
-          });
-      }
     });
 
     tagsOrdered = Object.entries(tagCounts)

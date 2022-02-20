@@ -1,25 +1,35 @@
+export interface PostDate {
+  start: string; // needs to be JSON serialized, not a JS object
+  end?: string;
+  isOngoing: boolean;
+  isSeasonal: boolean;
+}
+
 export interface PostItem {
-  blurb: string;
-  content: string;
-  contents: string;
-  date: string;
-  embed: string
-  endDate: string;
-  eventType: string;
-  hasContent: boolean;
-  image: string;
-  imageExt: string;
-  isLeftAligned: boolean;
-  ongoing: boolean;
-  repository: string;
-  seasonal: boolean;
-  showYearLabel: boolean;
+  blurb?: string;
+  contents?: string;
+  date: PostDate,
+  embed?: string;
+  eventType?: string;
+  hasContent?: boolean;
+  image?: {
+    name: string;
+    extension: string;
+    width: number;
+    height: number;
+    aspectRatio: number;
+  };
+  isLeftAligned?: boolean;
+  repository?: string;
+  showYearLabel?: boolean;
   slug: string;
   tags: string[];
-  thumbnail: string;
-  thumbnailExt: string;
+  thumbnail?: {
+    name: string;
+    extension: string;
+  };
   title: string;
-  website: string;
+  website?: string;
 }
 
 export interface BrandColors {

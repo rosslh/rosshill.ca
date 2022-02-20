@@ -27,7 +27,7 @@
     <h2 data-test="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
-        <PostDate {post} />
+        <PostDate date={post.date} />
         {#if post.repository}
           <InlineSeparator />
           <a target="_blank" rel="noopener noreferrer" href={post.repository}>
@@ -41,7 +41,7 @@
           </a>
         {/if}
       </div>
-      {#if post.tags && post.tags.length}
+      {#if post.tags.length}
         <div class="tags-wrapper">
           {#each post.tags as tagId}
             <Tag
@@ -53,19 +53,27 @@
       {/if}
     </div>
     {#if post.image}
-      <div class="image-wrapper do-transition">
-        <picture>
-          <source srcset="/timeline/{post.image}.webp" type="image/webp" />
-          <source
-            srcset="/timeline/{post.image}.{post.imageExt}"
-            type="image/{post.imageExt}"
-          />
-          <img
-            src="/timeline/{post.image}.{post.imageExt}"
-            alt={post.title}
-          />
-        </picture>
-      </div>
+      <picture
+        style="aspect-ratio: {post.image.aspectRatio};"
+        width={post.image.width}
+        height={post.image.height}
+      >
+        <source
+          srcset="/timeline/{post.image.name}.webp"
+          type="image/webp"
+        />
+        <source
+          srcset="/timeline/{post.image.name}.{post.image.extension}"
+          type="image/{post.image.extension}"
+        />
+        <img
+          style="aspect-ratio: {post.image.aspectRatio};"
+          width={post.image.width}
+          height={post.image.height}
+          src="/timeline/{post.image.name}.{post.image.extension}"
+          alt={post.title}
+        />
+      </picture>
     {/if}
     {#if post.embed}
       <div class="embed-wrapper">
@@ -109,24 +117,17 @@
         margin: 0.5rem 0 0;
       }
     }
-
-    div.image-wrapper {
+    
+    img {
       max-width: 600px;
+      max-width: min(600px, 100%);
       max-height: 400px;
+      width: auto;
+      height: auto;
       margin: 1.5rem auto 2rem;
-      width: 100%;
-      overflow: hidden;
+      display: block;
       border: 1px solid var(--border);
-      padding: 0;
-      border-radius: 4px;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        padding: 0;
-        margin: 0;
-        display: block;
-      }
+      border-radius: 0.5rem;
     }
 
     div.embed-wrapper {
@@ -139,7 +140,7 @@
         padding-bottom: 56.25%;
         overflow: hidden;
         border: 1px solid var(--border);
-        border-radius: 4px;
+        border-radius: 0.5rem;
       }
     }
   }

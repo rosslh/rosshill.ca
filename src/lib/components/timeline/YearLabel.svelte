@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let year: number;
+  export let year: string;
   export let isRightToLeft: boolean;
   export let isFirstLabel: boolean;
 </script>

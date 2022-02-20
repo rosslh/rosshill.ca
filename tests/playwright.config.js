@@ -1,16 +1,17 @@
 // @ts-check
 import { devices } from "@playwright/test";
-// import path from "path";
+
+const retries = process.env.CI ? 3 : 0;
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  * @type {import('@playwright/test').PlaywrightTestConfig}
  */
 const config = {
-  testDir: "./build/specs",
+  testDir: "./build/tests/src/specs",
 
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 90 * 1000,
 
   expect: {
 
@@ -25,7 +26,8 @@ const config = {
   forbidOnly: Boolean(process.env.CI),
 
   /* Retry twice on CI and once locally */
-  retries: process.env.CI ? 2 : 1,
+  retries: retries,
+  maxFailures: retries + 1,
 
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
@@ -79,12 +81,12 @@ const config = {
     //     ...devices['Pixel 5'],
     //   },
     // },
-    {
-      name: "Mobile Safari",
-      use: {
-        ...devices["iPhone 12"],
-      },
-    },
+    // {
+    //   name: "Mobile Safari",
+    //   use: {
+    //     ...devices["iPhone 12"],
+    //   },
+    // },
 
     /* Test against branded browsers. */
     // {
@@ -106,7 +108,7 @@ const config = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "npm run preview",
+    command: "npm run serve",
     port: 3000,
   },
 };

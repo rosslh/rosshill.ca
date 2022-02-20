@@ -1,29 +1,32 @@
-import { slugify } from "$lib/functions";
 import { data as timeline } from "$data/posts.json";
+import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
+import type { PostItem } from "$lib/types";
 
-const contents = Object.values(timeline)
+const posts: PostItem[] = Object.values(timeline)
   .filter(post => !post.WIP)
-  .map(post => {
-    return {
-      title: post.title,
+  .map(post => ({
+      blurb: post.blurb,
+      date: {
+        start: post.date,
+        end: post.endDate,
+        isOngoing: post.isOngoing ?? false,
+        isSeasonal: post.isSeasonal ?? false,
+      },
       eventType: post.eventType,
       hasContent: Boolean(post.contents),
-      slug: slugify(post.title),
-      date: post.date,
-      endDate: post.endDate,
-      seasonal: post.seasonal,
-      ongoing: post.ongoing,
-      blurb: post.blurb,
       repository: post.repository,
+      slug: slugify(post.title),
+      tags: post.tags ?? [],
+      thumbnail: post.thumbnail && {
+        name: post.thumbnail ?? `timeline/${post.thumbnail}`,
+        extension: post.thumbnailExt ?? "png",
+      },
+      title: post.title,
       website: post.website,
-      thumbnailExt: post.thumbnailExt ?? "png",
-      tags: post.tags,
-      thumbnail: post.thumbnail ?? `timeline/${post.thumbnail}`,
-    };
-  })
-  .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+  }))
+  .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));
 
 export function get() {
-  return { body: { posts: contents, brandColors } };
+  return { body: { posts: posts, brandColors } };
 }

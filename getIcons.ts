@@ -75,7 +75,7 @@ function getTagIconsAndColors(tagDirectory: string, light: string, dark: string)
   fs.readFile("src/data/posts.json", "utf8", (_err, file) => {
     const { data } = JSON.parse(file);
     data
-      .filter((post: PostItem) => post.tags && post.tags.length)
+      .filter((post: PostItem) => post.tags?.length)
       .forEach((post: PostItem) => {
         post.tags.forEach(tag => getIconDataForTag(tag, brandColors, light, dark, tagDirectory));
       });

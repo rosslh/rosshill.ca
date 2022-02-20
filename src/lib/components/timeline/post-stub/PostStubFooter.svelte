@@ -23,7 +23,7 @@
       </a>
     {/if}
   </div>
-  <PostDate {post} />
+  <PostDate date={post.date} />
 </div>
 
 <style lang="scss">

@@ -41,7 +41,7 @@
   this={onClick ? Button : Div}
   on:click={handleClick}
   class="tag do-transition {active ? 'active' : ''}"
-  data-test={onClick ? `skill-filter-${tagId}` : null}
+  data-test={onClick ? `skill-filter-${tagId}` : `skill-tag-${tagId}`}
   style={active ? `color: #${foreground};` : ""}
 >
   <span class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}" style="background-color: #{background};">

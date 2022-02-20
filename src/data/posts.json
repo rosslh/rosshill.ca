@@ -116,16 +116,16 @@
       "eventType": "job",
       "date": "2014-12-02T00:00:00.000Z",
       "endDate": "2016-03-20T00:00:00.000Z",
-      "seasonal": true,
+      "isSeasonal": true,
       "thumbnail": "caledon",
       "blurb": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
       "excerpt": "",
       "meta": {
         "relativePath": "caledon.html",
-        "createdAt": "2022-01-19T22:15:07.666Z",
-        "lastModified": "2022-01-19T22:15:07.666Z",
-        "size": 317,
-        "formattedSize": "317 Bytes"
+        "createdAt": "2022-02-17T18:25:24.173Z",
+        "lastModified": "2022-02-17T18:25:24.173Z",
+        "size": 319,
+        "formattedSize": "319 Bytes"
       }
     },
     {
@@ -133,7 +133,7 @@
       "contents": "",
       "title": "Full Stack Developer – Doctalk",
       "date": "2020-11-30T00:00:00.000Z",
-      "ongoing": true,
+      "isOngoing": true,
       "thumbnail": "doctalk-thumb",
       "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
       "tags": [
@@ -147,10 +147,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2022-01-19T22:15:07.676Z",
-        "lastModified": "2022-01-19T22:15:07.676Z",
-        "size": 652,
-        "formattedSize": "652 Bytes"
+        "createdAt": "2022-02-17T18:25:48.794Z",
+        "lastModified": "2022-02-17T18:25:48.794Z",
+        "size": 654,
+        "formattedSize": "654 Bytes"
       }
     },
     {
@@ -208,17 +208,17 @@
       "eventType": "job",
       "date": "2014-05-02T00:00:00.000Z",
       "endDate": "2016-08-20T00:00:00.000Z",
-      "seasonal": true,
+      "isSeasonal": true,
       "thumbnail": "hurontario",
       "thumbnailExt": "jpg",
       "blurb": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
       "excerpt": "",
       "meta": {
         "relativePath": "hurontario.html",
-        "createdAt": "2022-01-19T22:15:07.704Z",
-        "lastModified": "2022-01-19T22:15:07.704Z",
-        "size": 317,
-        "formattedSize": "317 Bytes"
+        "createdAt": "2022-02-17T18:25:24.175Z",
+        "lastModified": "2022-02-17T18:25:24.175Z",
+        "size": 319,
+        "formattedSize": "319 Bytes"
       }
     },
     {
