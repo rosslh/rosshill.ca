@@ -13,24 +13,16 @@
     return style.getPropertyValue(`--${variableName}`);
   };
 
-  const printGithubLink = () => {
+  $: {
+    if (typeof window !== "undefined" && !$cheekyMessagePrinted) {
+      $cheekyMessagePrinted = true;
       // eslint-disable-next-line no-console
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
         `background-color: ${getCssVariable("panel-background")}; border-radius: 0.5rem; border: 1px solid ${getCssVariable("border")}; color: ${getCssVariable("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`,
       );
-  };
-
-  $: {
-    if (typeof window !== "undefined" && !$cheekyMessagePrinted) {
-      $cheekyMessagePrinted = true;
-      printGithubLink();
     }
   }
-
-  const title = "Ross Hill – Website and Portfolio";
-  const description = "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.";
-  const siteImage = "https://rosshill.ca/siteImage.png";
 </script>
 
 <ThemeSwitcher />
@@ -43,29 +35,56 @@
 </div>
 
 <svelte:head>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#212732" />
-  <!-- HTML Meta Tags -->
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta itemprop="image" content={siteImage} />
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://rosshill.ca" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={siteImage} />
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={siteImage} />
+  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->
+  <style>
+    /* source-sans-pro-regular - latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-weight: 100 400;
+      font-display: block;
+      src: url('/fonts/source-sans-pro-v18-latin-regular.eot'); /* IE9 Compat Modes */
+      src: local('Source Sans Pro'),
+        url('/fonts/source-sans-pro-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/source-sans-pro-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/source-sans-pro-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('/fonts/source-sans-pro-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+    }
 
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+    /* source-sans-pro-600 - latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-weight: 500 900;
+      font-display: block;
+      src: url('/fonts/source-sans-pro-v18-latin-700.eot'); /* IE9 Compat Modes */
+      src: local('Source Sans Pro'),
+        url('/fonts/source-sans-pro-v18-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/fonts/source-sans-pro-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/fonts/source-sans-pro-v18-latin-700.woff') format('woff'), /* Modern Browsers */
+        url('/fonts/source-sans-pro-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+    }
+
+    html {
+      font-weight: 400;
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;    
+    }
+
+    h1, h2, h3, h4 { font-weight: 700; }
+  </style>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1f242b">
+  <meta name="msapplication-TileColor" content="#1f242b">
+  <meta name="theme-color" content="#1f242b">
 </svelte:head>
 
 <style>

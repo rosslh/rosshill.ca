@@ -1,8 +1,10 @@
 <script lang="ts">
+  import type { BrandColors, PostItem } from "$lib/types";
   import Tag from "$lib/components/Tag.svelte";
+  
   export let brandColors: BrandColors;
   export let post: PostItem;
-  import type { BrandColors, PostItem } from "$lib/types";
+
   import { remsToPixels } from "$lib/functions";
 </script>
 

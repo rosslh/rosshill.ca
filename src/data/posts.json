@@ -1,6 +1,6 @@
 {
   "app": {
-    "config": "markdown-config.json",
+    "config": "content/.mdconfig.json",
     "cwd": "./",
     "deterministicOrder": true,
     "display": true,

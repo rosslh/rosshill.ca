@@ -1,52 +1,51 @@
 <script lang="ts">
-  export let posts: PostItem[];
-  export let brandColors: BrandColors;
 
   import { format } from "date-fns";
 
   import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "$lib/types";
+
+  export let posts: PostItem[];
+  export let brandColors: BrandColors;
+
   import { tagParents } from "$lib/constants";
   import PostStub from "$lib/components/timeline/post-stub/PostStub.svelte";
   import YearLabel from "$lib/components/timeline/YearLabel.svelte";
   import FilterControls from "$lib/components/timeline/filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
+  const getYearFromDate = (date: string) => format(new Date(date), "yyyy");
+
   const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
+    const output = post;
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
     const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date.start);
 
-    const year = getYearFromDate(post.date.start);
+    const year = getYearFromDate(output.date.start);
 
     if (year !== prevYear) {
-      post.showYearLabel = true;
-      post.isLeftAligned = !prevLeftAligned;
+      output.showYearLabel = true;
+      output.isLeftAligned = !prevLeftAligned;
     } else {
-      post.showYearLabel = false;
-      post.isLeftAligned = prevLeftAligned;
+      output.showYearLabel = false;
+      output.isLeftAligned = prevLeftAligned;
     }
     
-    return post;
+    return output;
   };
 
-  $: categoryFilter = (post: PostItem) => {
-    return !$showCategories.length || $showCategories.includes(post.eventType);
-  };
+  $: categoryFilter = (post: PostItem) => !$showCategories.length || $showCategories.includes(post.eventType);
 
-  $: parentTagShown = (tag: string) => {
-    return tagParents[tag] && tagParents[tag].some((parentTag: string) => $showTags.includes(parentTag));
-  };
+  $: parentTagShown = (tag: string) => tagParents[tag] && tagParents[tag].some((parentTag: string) => $showTags.includes(parentTag));
 
   $: tagFilter = (post: PostItem) => {
-    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some(tag => $showTags.includes(tag) || parentTagShown(tag));
+    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.includes(tag) || parentTagShown(tag));
     return !$showTags.length || postHasShownTag;
   };
 
   $: postsWithLabels = posts
     .filter((post: PostItem) => categoryFilter(post) && tagFilter(post))
     .map(setLabelVisibilityAndAlignment);
-
-  const getYearFromDate = (date: string) => format(new Date(date), "yyyy");
 </script>
 
 <div class="heading-wrapper content-wrapper ">

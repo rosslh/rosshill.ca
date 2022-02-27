@@ -1,8 +1,8 @@
 <script lang="ts">
-  export let date: PostDate;
-
   import { format } from "date-fns";
   import type { PostDate } from "$lib/types";
+
+  export let date: PostDate;
 
   const startDate = new Date(date.start);
   const endDate = date.end && new Date(date.end);

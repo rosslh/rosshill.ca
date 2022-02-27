@@ -1,11 +1,12 @@
 <script lang="ts">
+  import type { PostItem, BrandColors } from "$lib/types";
+
   export let post: PostItem;
   export let brandColors: BrandColors;
   export let left: boolean;
   export let isFirstPost: boolean;
   export let isLastPost: boolean;
 
-  import type { PostItem, BrandColors } from "$lib/types";
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
   import PostStubTriangle from "$lib/components/timeline/post-stub/PostStubTriangle.svelte";
@@ -47,7 +48,7 @@
     <TimelineMarker
       {left}
       eventType={post.eventType} />
-    <div class="{getFadeInClass()} {left ? 'left': 'right'}">
+    <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
       <div class="post do-transition">
         <PostStubHeading {post} {brandColors} />

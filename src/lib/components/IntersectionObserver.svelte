@@ -36,7 +36,7 @@ SOFTWARE.
   } from "svelte";
   
   let prevElement = null;
-  let observer = undefined;
+  let observer: IntersectionObserver;
 
   afterUpdate(async () => {
     if (complete) {

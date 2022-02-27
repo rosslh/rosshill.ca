@@ -7,7 +7,6 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
 
-
 test("Landing page has correct heading", async ({ page }) => {
   await expectToHaveText(page, "main-heading", "Hey, I’m Ross");
 });

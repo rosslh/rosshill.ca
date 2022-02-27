@@ -26,7 +26,7 @@ const config = {
   forbidOnly: Boolean(process.env.CI),
 
   /* Retry twice on CI and once locally */
-  retries: retries,
+  retries,
   maxFailures: retries + 1,
 
   /* Opt out of parallel tests on CI. */

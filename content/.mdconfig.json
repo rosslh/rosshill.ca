@@ -1,0 +1,11 @@
+{
+  "name": "markdown-json",
+  "cwd": "./",
+  "src": "content/",
+  "filePattern": "**/*.md",
+  "ignore": "",
+  "dist": "src/data/posts.json",
+  "metadata": true,
+  "server": false,
+  "deterministicOrder": true
+}

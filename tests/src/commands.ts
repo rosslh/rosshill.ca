@@ -13,18 +13,18 @@ export async function expectCount(page: Page, dataAttribute: string, expectedCou
 
 export async function expectToHaveText(page: Page, dataAttribute: string, text: string) {
   const element = getElement(page, dataAttribute);
-  const elementText = await element.evaluate(element => element.textContent);
+  const elementText = await element.evaluate((el) => el.textContent);
   expect(elementText).toContain(text);
 }
 
 async function userIsScrolledToBottom(page: Page) {
-  const { documentHeightPx, currentScrollPx } = await page.evaluate(() => {
+  const evaluated = await page.evaluate(() => {
     const documentHeightPx = document.body.scrollHeight;
     const currentScrollPx = window.scrollY + window.innerHeight;
     return { documentHeightPx, currentScrollPx };
   });
   const bufferPx = 5;
-  return currentScrollPx + bufferPx > documentHeightPx;
+  return evaluated.currentScrollPx + bufferPx > evaluated.documentHeightPx;
 }
 
 export async function elementIsAtTopOfViewport(page: Page, selector: string) {
@@ -32,5 +32,5 @@ export async function elementIsAtTopOfViewport(page: Page, selector: string) {
   const boundingBox = await element.boundingBox();
   const bufferPx = 5;
   const elementIsAtTop = Math.abs(boundingBox.y) < bufferPx;
-  return elementIsAtTop || await userIsScrolledToBottom(page);
+  return elementIsAtTop || userIsScrolledToBottom(page);
 }

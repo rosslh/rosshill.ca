@@ -29,5 +29,6 @@
       "$lib/*": ["src/lib/*"]
     }
 	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "getIcons.ts"]
+	"include": ["svelte.config.js", "src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "scripts/**/*.ts"],
+  "exclude": ["./build", "./svelte-kit", "./node_modules"]
 }

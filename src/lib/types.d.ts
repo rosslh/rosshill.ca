@@ -24,7 +24,7 @@ export interface PostItem {
   showYearLabel?: boolean;
   slug: string;
   tags: string[];
-  thumbnail?: {
+  thumbnail: {
     name: string;
     extension: string;
   };

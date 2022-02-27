@@ -1,10 +1,10 @@
 <script lang="ts">
+  import { MetaTags } from "svelte-meta-tags";
+  import { onMount, tick } from "svelte";
+  import type { BrandColors, PostItem } from "$lib/types";
+
   export let post: PostItem;
   export let brandColors: BrandColors = {};
-  
-  import { onMount, tick } from "svelte";
-
-  import type { BrandColors, PostItem } from "$lib/types";
   
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
@@ -16,11 +16,51 @@
     await tick();
     mainContent.scrollIntoView();
   });
+
+  const meta = {
+    title: `${post.title} | Ross Hill`,
+    description: post.blurb ?? post.title,
+    url: `https://rosshill.ca/item/${post.slug}`,
+    image: {
+      url: post.image
+        ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
+        : "https://rosshill.ca/siteImage.png",
+      width: post.image ? post.image.width : 1000,
+      height: post.image ? post.image.height : 523,
+      alt: post.title,
+    },
+    siteName: "Ross Hill",
+    author: "Ross Hill",
+    tags: post.tags,
+  };
 </script>
 
-<svelte:head>
-  <link rel="canonical" href="https://rosshill.ca/item/{post.slug}" />
-</svelte:head>
+<MetaTags
+  title={meta.title}
+  description={meta.description}
+  canonical={meta.url}
+  openGraph={{
+    article: {
+      authors: [meta.author],
+      tags: meta.tags,
+    },
+    description: meta.description,
+    images: [{
+      ...meta.image,
+    }],
+    site_name: meta.siteName,
+    title: meta.title,
+    type: "article",
+    url: meta.url,
+  }}
+  twitter={{
+    cardType: "summary_large_image",
+    title: meta.title,
+    description: meta.description,
+    image: meta.image.url,
+    imageAlt: meta.image.alt,
+  }}
+/>
 <div bind:this={mainContent} class="content-wrapper main-content" data-test="main-content">
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
@@ -67,6 +107,7 @@
           type="image/{post.image.extension}"
         />
         <img
+          class="do-transition"
           style="aspect-ratio: {post.image.aspectRatio};"
           width={post.image.width}
           height={post.image.height}

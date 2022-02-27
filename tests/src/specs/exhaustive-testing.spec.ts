@@ -1,8 +1,8 @@
-import { elementIsAtTopOfViewport, expectCount, getElement } from "../commands.js";
 import { expect, test } from "@playwright/test";
-import { slugify } from "../../../src/lib/functions.js";
 import fs from "fs";
 import type { Page } from "playwright-core";
+import { slugify } from "../../../src/lib/functions.js";
+import { elementIsAtTopOfViewport, expectCount, getElement } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
@@ -52,14 +52,14 @@ async function readJsonFile(file: string) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
-readJsonFile("../src/data/posts.json").then(({data: timeline}) => {
+readJsonFile("../src/data/posts.json").then(({ data: timeline }) => {
   const postsWithContent = timeline.filter(({ contents, WIP }) => contents && !WIP);
 
-  for (let i = 0; i < postsWithContent.length; i++) {
+  for (let i = 0; i < postsWithContent.length; i += 1) {
     const { title } = postsWithContent[i];
     const slug = slugify(title);
     test(`You can navigate to and from ${slug} page`, async ({ page, baseURL }) => {
-        await testPage(page, baseURL, slug);
+      await testPage(page, baseURL, slug);
     });
   }
 });

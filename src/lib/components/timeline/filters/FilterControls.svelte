@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { BrandColors, PostItem } from "$lib/types";
+
   export let showCategories: string[];
   export let showTags: string[];
   export let posts: PostItem[];
@@ -6,7 +8,6 @@
 
   import Times from "~icons/fa-solid/times";
   
-  import type { BrandColors, PostItem } from "$lib/types";
   import { tagParents } from "$lib/constants";
   import FilterButton from "$lib/components/timeline/filters/FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
@@ -14,9 +15,8 @@
   const toggleItemInList = (list: string[], item: string) => {
     if (list.includes(item)) {
       return list.filter((x) => x !== item);
-    } else {
-      return [...list, item];
     }
+    return [...list, item];
   };
 
   const toggleCategory = (category: string) => {
@@ -39,31 +39,32 @@
 
     posts.forEach(({ tags }) => {
       // for each tag in post, add 1 to count
-      tags.forEach(tag => {
+      tags.forEach((tag) => {
         tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
       });
 
       // get parent tags of each tag and remove duplicates
-      const parentTags = [...new Set(tags.map(tag => tagParents[tag] ?? []).flat())];
+      const parentTags = [...new Set(tags.map((tag) => tagParents[tag] ?? []).flat())];
 
       parentTags
-        .filter(parentTag => !tags.includes(parentTag)) // remove parent tags if they already in post tags
-        .forEach(parentTag => {
+        .filter((parentTag) => !tags.includes(parentTag)) // remove parent tags if they already in post tags
+        .forEach((parentTag) => {
           tagCounts[parentTag] = (tagCounts[parentTag] ?? 0) + 1; // add 1 to count for each parent tag
         });
     });
 
     tagsOrdered = Object.entries(tagCounts)
-      .filter(tag => tag[1] >= minTagNum)
+      .filter((tag) => tag[1] >= minTagNum)
       .sort((a, b) => { // order by tag count then alphanumerically
         if (a[1] < b[1]) {
           return 1;
-        } else if (a[1] > b[1]) {
+        }
+        if (a[1] > b[1]) {
           return -1;
         }
         return a[0] < b[0] ? -1 : 1;
       })
-      .map(tag => tag[0]);
+      .map((tag) => tag[0]);
   }
 </script>
 

@@ -2,9 +2,8 @@
   export let left: boolean;
   export let eventType: string;
 
-  const typeString =
-    ({ job: "Job", org: "Organization", project: "Project" })[eventType] ||
-    "";
+  const typeString = ({ job: "Job", org: "Organization", project: "Project" })[eventType]
+    || "";
 </script>
 
 <div

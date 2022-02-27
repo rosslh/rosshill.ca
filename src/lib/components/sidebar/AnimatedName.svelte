@@ -42,8 +42,18 @@
       <path
         class={getPathClass()}
         on:introstart={serverRendered ? null : () => {
-          setTimeout(() => (logoHasFill = true), logoFillDelay);
-          setTimeout(() => (doneFilling = true), logoFillDelay + 900);
+          setTimeout(
+            () => {
+              logoHasFill = true;
+            },
+            logoFillDelay,
+          );
+          setTimeout(
+            () => {
+              doneFilling = true;
+            },
+            logoFillDelay + 900,
+          );
         }}
         in:draw={serverRendered ? null : { duration: 3000, easing: sineIn }}
         d={svgPath}

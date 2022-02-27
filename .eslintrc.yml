@@ -4,19 +4,27 @@
     es6: true,
     node: true
   },
-  extends: ["eslint:recommended", 'plugin:@typescript-eslint/recommended'],
-  ignorePatterns: ['*.cjs'],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    # "airbnb-typescript/base"
+  ],
+  ignorePatterns: ["*.cjs"],
   overrides: [{
-    files: ['*.svelte'],
-    processor: 'svelte3/svelte3'
+    files: ["*.svelte"],
+    processor: "svelte3/svelte3"
   }],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
+    # tsconfigRootDir: __dirname,
     ecmaVersion: 2019,
     requireConfigFile: false,
-    sourceType: 'module'
+    sourceType: "module",
+    # project: ["./tsconfig.json", "./tests/tsconfig.json"],
+    # extraFileExtensions: ['.svelte'],
   },
-  plugins: ['svelte3', '@typescript-eslint'],
+  plugins: ["svelte3", "@typescript-eslint"],
   rules: {
     "@typescript-eslint/no-inferrable-types": 0,
     "@typescript-eslint/no-unused-vars": [1, {
@@ -42,9 +50,19 @@
     "prefer-const": 1,
     "quote-props": [1, "consistent"],
     "quotes": [1, "double"],
+    "@typescript-eslint/quotes": [1, "double"],
     "semi": 1,
+    "linebreak-style": 0,
+    "import/no-extraneous-dependencies": 0,
+    "max-len": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "import/no-unresolved": 0,
+    "import/first": 0,
+    "import/no-mutable-exports": 0,
+    "no-multiple-empty-lines": 0,
   },
   settings: {
-    'svelte3/typescript': true
+    "svelte3/typescript": true
   }
 }
