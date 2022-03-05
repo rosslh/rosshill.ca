@@ -30,7 +30,7 @@
   <div class="heading-and-tags">
     <h3>
       {#if post.hasContent}
-        <a rel="prefetch" data-test="post-stub-link-{post.slug}" href="item/{post.slug}">{post.title}</a>
+        <a sveltekit:prefetch data-test="post-stub-link-{post.slug}" href="item/{post.slug}">{post.title}</a>
       {:else}{post.title}{/if}
     </h3>
     <div class="tags">

@@ -1,7 +1,7 @@
 // @ts-check
 import { devices } from "@playwright/test";
 
-const retries = process.env.CI ? 3 : 0;
+const retries = process.env.CI ? 3 : 1;
 
 /**
  * @see https://playwright.dev/docs/test-configuration

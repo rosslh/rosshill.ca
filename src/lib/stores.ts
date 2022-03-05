@@ -22,5 +22,6 @@ export const theme = localStore("user-theme", (value) => document.body.setAttrib
 
 export const showCategories = writable([]);
 export const showTags = writable([]);
+export const minTagNum = writable(2);
 
 export const cheekyMessagePrinted = writable(false);

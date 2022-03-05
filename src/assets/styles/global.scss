@@ -1,6 +1,6 @@
 @import "/node_modules/hsluv-sass";
 
-$theme-hue: 246;
+$theme-hue: 255;
 $theme-saturation: 25%;
 
 @function theme-color($lightness) {
@@ -15,8 +15,8 @@ $org-hue: 135;
   $category-button-saturation: 74%;
   $category-button-lightness: 46%;
 
-  $marker-saturation: $category-button-saturation - 15;
-  $marker-lightness: $category-button-lightness + 15;
+  $marker-saturation: $category-button-saturation - 10;
+  $marker-lightness: $category-button-lightness + 10;
 
   --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
   --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
@@ -210,6 +210,7 @@ code {
   border: 1px solid var(--border);
   border-radius: 3px;
   padding: 0 3px;
+  display: inline-block;
 }
 
 a {

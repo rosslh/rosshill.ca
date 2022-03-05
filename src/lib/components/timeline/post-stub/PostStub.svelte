@@ -110,8 +110,7 @@
     }
 
     div.fade-in {
-      // easing function made with https://matthewlein.com/tools/ceaser
-      transition: opacity 0.3s ease-in, transform 0.6s cubic-bezier(0.440, 0.170, 0.375, 1.385);
+      transition: opacity 0.2s ease-in, transform 0.4s ease-out;
       opacity: 1;
       transform: rotateY(0deg);
 

@@ -33,14 +33,8 @@
     }],
     site_name: meta.siteName,
     title: meta.title,
-    type: "profile",
+    type: "website",
     url: meta.url,
-    profile: {
-      firstName: "Ross",
-      lastName: "Hill",
-      username: "ross@rosshill.ca",
-      gender: "male",
-    }
   }}
   twitter={{
     cardType: "summary_large_image",

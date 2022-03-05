@@ -155,7 +155,7 @@
     },
     {
       "id": "dodgeball",
-      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again. </p>\n",
+      "contents": "<p>For Human-Computer Interactions, a course at Queen&#39;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>\n<p>By using simple left and right movements, the player&#39;s physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again.</p>\n",
       "title": "Dodgeball: The Game",
       "eventType": "project",
       "date": "2018-01-02T00:00:00.000Z",
@@ -170,9 +170,9 @@
       "excerpt": "<p>For Human-Computer Interactions, a course at Queen&apos;s, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.</p>",
       "meta": {
         "relativePath": "dodgeball.html",
-        "createdAt": "2022-01-19T22:15:07.686Z",
-        "lastModified": "2022-01-19T22:15:07.686Z",
-        "size": 1548,
+        "createdAt": "2022-03-04T16:40:31.138Z",
+        "lastModified": "2022-03-04T16:40:31.138Z",
+        "size": 1547,
         "formattedSize": "1.5 KB"
       }
     },
@@ -427,10 +427,10 @@
       "excerpt": "<p>Our project is a voice enabled robotic car that writes down what you say to it. The AIY voice kit listens to what you say and parses the audio into text using Google Cloud Speech API. The Raspberry Pi takes the text and, using a Python script we&#x2019;ve written, converts each character into a list of curves to be drawn. For each curve, the robot positions itself at the starting point using wheels connected to two stepper motors with L393D drivers. Stepper motors were chosen because they can be controlled more precisely than regular DC motors. Once in position, the servo lowers the marker to touch the paper. The robot then follows the curve until it reaches the endpoint.</p>",
       "meta": {
         "relativePath": "robot.html",
-        "createdAt": "2022-01-19T22:15:07.821Z",
-        "lastModified": "2022-01-19T22:15:07.821Z",
-        "size": 939,
-        "formattedSize": "939 Bytes"
+        "createdAt": "2022-03-04T16:40:41.047Z",
+        "lastModified": "2022-03-04T16:40:41.047Z",
+        "size": 940,
+        "formattedSize": "940 Bytes"
       }
     },
     {

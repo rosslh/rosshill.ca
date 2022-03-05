@@ -2,6 +2,7 @@
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import type { BrandColors, PostItem } from "$lib/types";
+  import { tagLabels } from "$lib/constants";
 
   export let post: PostItem;
   export let brandColors: BrandColors = {};
@@ -17,6 +18,8 @@
     mainContent.scrollIntoView();
   });
 
+  const capitalize = (text: string) => text.replace(/\b\w/g, (m) => m.toUpperCase());
+
   const meta = {
     title: `${post.title} | Ross Hill`,
     description: post.blurb ?? post.title,
@@ -31,7 +34,7 @@
     },
     siteName: "Ross Hill",
     author: "Ross Hill",
-    tags: post.tags,
+    tags: post.tags.map((tagId) => tagLabels[tagId] ?? capitalize(tagId)),
   };
 </script>
 

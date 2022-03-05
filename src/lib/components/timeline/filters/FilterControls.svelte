@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { BrandColors, PostItem } from "$lib/types";
+  import { minTagNum } from "$lib/stores";
 
   export let showCategories: string[];
   export let showTags: string[];
@@ -32,7 +33,6 @@
   $: projectActive = showCategories.includes("project");
 
   let tagsOrdered = [];
-  let minTagNum = 2; // number of posts required for a tag to be shown
 
   $: {
     const tagCounts = {};
@@ -54,7 +54,7 @@
     });
 
     tagsOrdered = Object.entries(tagCounts)
-      .filter((tag) => tag[1] >= minTagNum)
+      .filter((tag) => tag[1] >= $minTagNum)
       .sort((a, b) => { // order by tag count then alphanumerically
         if (a[1] < b[1]) {
           return 1;
@@ -112,12 +112,12 @@
       foreground={brandColors[tag].foreground}
       onClick={() => toggleTag(tag)} />
   {/each}
-  {#if minTagNum !== 0}
+  {#if $minTagNum !== 0}
     <button
       data-test="show-more-tags"
       class="secondary-button do-transition"
       on:click={() => {
-        minTagNum = 0;
+        $minTagNum = 0;
       }}
     >
       Show more...

@@ -1,5 +1,4 @@
 import sizeOf from "image-size";
-// import type { RequestEvent } from "@sveltejs/kit";
 import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
@@ -44,9 +43,9 @@ posts
   .filter((post) => post.contents)
   .forEach((post) => lookup.set(post.slug, post));
 
-export function get(req) {
+export function get({ params }) {
   // the `slug` parameter is available because this file is called [slug].js
-  const slug = req.params.slug.toLowerCase();
+  const slug = params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
     return {
