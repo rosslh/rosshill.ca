@@ -135,7 +135,7 @@
       "date": "2020-11-30T00:00:00.000Z",
       "isOngoing": true,
       "thumbnail": "doctalk-thumb",
-      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations",
+      "blurb": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations. Responsibilities include UI and RESTful API development, software architecture, and cloud infrastructure.",
       "tags": [
         "react",
         "redux",
@@ -147,10 +147,10 @@
       "excerpt": "",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2022-02-17T18:25:48.794Z",
-        "lastModified": "2022-02-17T18:25:48.794Z",
-        "size": 654,
-        "formattedSize": "654 Bytes"
+        "createdAt": "2022-04-22T19:52:03.239Z",
+        "lastModified": "2022-04-22T19:52:03.239Z",
+        "size": 413,
+        "formattedSize": "413 Bytes"
       }
     },
     {

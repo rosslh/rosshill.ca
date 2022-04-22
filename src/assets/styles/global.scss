@@ -1,6 +1,6 @@
 @import "/node_modules/hsluv-sass";
 
-$theme-hue: 255;
+$theme-hue: 253;
 $theme-saturation: 25%;
 
 @function theme-color($lightness) {
@@ -31,7 +31,7 @@ $org-hue: 135;
   --link: #{hsluv($theme-hue, 90%, 40%)};
   --subtitle: #{theme-color(38%)};
   --focus-outline: #{theme-color(60%)};
-  --timeline: #{theme-color(60%)};
+  --timeline: #{hsluv($theme-hue, 16%, 65%)};
   --border: #{theme-color(85%)};
   --panel-background: #{theme-color(95%)};
   --background: #{theme-color(98%)};

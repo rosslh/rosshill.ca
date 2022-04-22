@@ -28,6 +28,7 @@ export default {
     },
     prerender: {
       crawl: true,
+      default: true,
       enabled: true,
       entries: ["*"],
     },

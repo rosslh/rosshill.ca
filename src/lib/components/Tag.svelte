@@ -6,8 +6,6 @@
   export let onClick: () => void = null;
   export let lazyLoad = false;
 
-  import { Div, Button } from "svelte-elements";
-
   import { tagLabels } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
 
@@ -36,13 +34,12 @@
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
-<!-- TODO: use svelte:element once that's available -->
-<svelte:component
-  this={onClick ? Button : Div}
-  on:click={handleClick}
+<svelte:element
   class="tag do-transition {active ? 'active' : ''}"
   data-test={onClick ? `skill-filter-${tagId}` : `skill-tag-${tagId}`}
+  on:click={handleClick}
   style={active ? `color: #${foreground};` : ""}
+  this={onClick ? "button" : "div"}
 >
   <span class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}" style="background-color: #{background};">
     <img
@@ -59,7 +56,7 @@
   >
     {tagString}
   </span>
-</svelte:component>
+</svelte:element>
 
 <style lang="scss">
   // TODO: :global won't be necessary once svelte:element is being used

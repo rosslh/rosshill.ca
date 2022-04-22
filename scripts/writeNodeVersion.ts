@@ -7,4 +7,4 @@ const getNodeVersion = (fileName: string): string => {
 };
 
 const nodeVersion = getNodeVersion("package.json");
-fs.writeFileSync(".node-version", nodeVersion);
+fs.writeFileSync(".nvmrc", nodeVersion);

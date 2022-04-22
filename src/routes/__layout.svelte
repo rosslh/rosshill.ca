@@ -35,6 +35,7 @@
 </div>
 
 <svelte:head>
+  <meta charset="utf-8">
   <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/source-sans-pro-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->
@@ -52,7 +53,6 @@
         url('/fonts/source-sans-pro-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
         url('/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
     }
-
     /* source-sans-pro-600 - latin */
     @font-face {
       font-family: 'Source Sans Pro';
@@ -66,18 +66,13 @@
         url('/fonts/source-sans-pro-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
         url('/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
     }
-
     html {
       font-weight: 400;
       font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;    
     }
-
     h1, h2, h3, h4 { font-weight: 700; }
   </style>
-
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
-
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -87,7 +82,6 @@
   <meta name="msapplication-TileColor" content="#20232e">
   <meta name="theme-color" content="#20232e">
 </svelte:head>
-
 <style>
   div.two-column {
     display: grid;
