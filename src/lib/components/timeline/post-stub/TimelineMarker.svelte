@@ -1,14 +1,15 @@
 <script lang="ts">
-  export let left: boolean;
-  export let eventType: string;
+  import type { PostType } from "$lib/types";
 
-  const typeString = ({ job: "Job", org: "Organization", project: "Project" })[eventType]
-    || "";
+  export let left: boolean;
+  export let eventType: PostType;
+
+  const typeString = ({ job: "Job", other: "Other", project: "Project" })[eventType];
 </script>
 
 <div
   aria-hidden="true"
-  title={typeString}
+  title={typeString ?? ""}
   class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? "other"}" />
 
 <style lang="scss">
@@ -20,8 +21,8 @@
     border-radius: 50%;
     overflow: hidden;
 
-    &.org {
-      background-color: var(--org-marker);
+    &.other {
+      background-color: var(--other-marker);
     }
 
     &.job {
@@ -30,10 +31,6 @@
 
     &.project {
       background-color: var(--project-marker);
-    }
-
-    &.other {
-      background-color: var(--timeline);
     }
 
     &.left {

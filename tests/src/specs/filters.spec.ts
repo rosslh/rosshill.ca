@@ -11,17 +11,17 @@ test("Event type filter works", async ({ page }) => {
   const jobFilter = getElement(page, "event-filter-job");
 
   // Before clicking the filter, the wtformat item should exist
-  await expectCount(page, "post-stub-wtformat.com", 1);
+  await expectCount(page, "post-stub-wtformat", 1);
 
   await jobFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
-  await expectCount(page, "post-stub-wtformat.com", 0);
+  await expectCount(page, "post-stub-wtformat", 0);
 
   await jobFilter.click();
 
   // After clicking the filter again, the wtformat item should exist
-  await expectCount(page, "post-stub-wtformat.com", 1);
+  await expectCount(page, "post-stub-wtformat", 1);
 });
 
 test("Skill tag filter works", async ({ page }) => {
@@ -29,12 +29,12 @@ test("Skill tag filter works", async ({ page }) => {
   const jsFilter = getElement(page, "skill-filter-javascript");
   
   // Before clicking the filter, the wtformat item should exist
-  await expectCount(page, "post-stub-wtformat.com", 1);
+  await expectCount(page, "post-stub-wtformat", 1);
 
   await svelteFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
-  await expectCount(page, "post-stub-wtformat.com", 0);
+  await expectCount(page, "post-stub-wtformat", 0);
 
   // But the reqwise item should exist
   await expectCount(page, "post-stub-reqwise", 1);
@@ -42,7 +42,7 @@ test("Skill tag filter works", async ({ page }) => {
   await jsFilter.click();
 
   // After clicking the filter, the wtformat item should now exist
-  await expectCount(page, "post-stub-wtformat.com", 1);
+  await expectCount(page, "post-stub-wtformat", 1);
 
   // And the reqwise item should exist
   await expectCount(page, "post-stub-reqwise", 1);
@@ -113,10 +113,10 @@ test("Clear filters button works", async ({ page }) => {
 });
 
 test("If no results, show confused travolta", async ({ page }) => {
-  const orgFilter = getElement(page, "event-filter-org");
+  const otherFilter = getElement(page, "event-filter-other");
   const typescriptFilter = getElement(page, "skill-filter-typescript");
 
-  await orgFilter.click();
+  await otherFilter.click();
   await typescriptFilter.click();
 
   await expectCount(page, "confused-travolta", 1);

@@ -36,7 +36,7 @@
 
 <svelte:element
   class="tag do-transition {active ? 'active' : ''}"
-  data-test={onClick ? `skill-filter-${tagId}` : `skill-tag-${tagId}`}
+  data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={handleClick}
   style={active ? `color: #${foreground};` : ""}
   this={onClick ? "button" : "div"}
@@ -59,8 +59,7 @@
 </svelte:element>
 
 <style lang="scss">
-  // TODO: :global won't be necessary once svelte:element is being used
-  :global(.tag) {
+  .tag {
     display: inline-flex;
     align-items: center;
     

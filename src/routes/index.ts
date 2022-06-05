@@ -1,19 +1,19 @@
 import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItem } from "$lib/types";
+import type { PostItem, PostType } from "$lib/types";
 
 const posts: PostItem[] = Object.values(timeline)
-  .filter((post) => !post.WIP)
+  .filter((post) => !post.isHidden)
   .map((post) => ({
-    blurb: post.blurb,
     date: {
       start: post.date,
       end: post.endDate,
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
     },
-    eventType: post.eventType,
+    eventType: (post.eventType ?? "other") as PostType,
+    excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
     repository: post.repository,
     slug: slugify(post.title),
@@ -27,6 +27,12 @@ const posts: PostItem[] = Object.values(timeline)
   }))
   .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));
 
-export function get() {
-  return { body: { posts, brandColors } };
+export function get({ locals }) {
+  return {
+    body: {
+      posts,
+      brandColors,
+      theme: locals.theme,
+    },
+  };
 }

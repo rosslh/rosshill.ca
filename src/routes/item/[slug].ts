@@ -11,9 +11,8 @@ const getDimensions = (imageName: string, extension: string) => {
 };
 
 const posts: PostItem[] = Object.values(timeline)
-  .filter(({ contents, WIP }) => contents && !WIP)
+  .filter(({ contents, isHidden }) => contents && !isHidden)
   .map((post) => ({
-    blurb: post.blurb,
     contents: post.contents,
     date: {
       start: post.date,
@@ -22,6 +21,7 @@ const posts: PostItem[] = Object.values(timeline)
       isSeasonal: post.isSeasonal ?? false,
     },
     embed: post.embed,
+    excerpt: post.excerpt,
     image: post.image && {
       name: post.image,
       extension: post.imageExt ?? "png",
@@ -43,16 +43,25 @@ posts
   .filter((post) => post.contents)
   .forEach((post) => lookup.set(post.slug, post));
 
-export function get({ params }) {
+export function get({ locals, params }) {
   // the `slug` parameter is available because this file is called [slug].js
   const slug = params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
     return {
-      body: { post: lookup.get(slug), brandColors },
+      body: {
+        post: lookup.get(slug),
+        brandColors,
+        theme: locals.theme,
+      },
     };
   }
   return {
-    body: { message: "Not found", post: null, brandColors },
+    body: {
+      message: "Not found",
+      post: null,
+      brandColors,
+      theme: locals.theme,
+    },
   };
 }

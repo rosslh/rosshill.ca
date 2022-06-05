@@ -53,7 +53,7 @@ async function readJsonFile(file: string) {
 }
 
 readJsonFile("../src/data/posts.json").then(({ data: timeline }) => {
-  const postsWithContent = timeline.filter(({ contents, WIP }) => contents && !WIP);
+  const postsWithContent = timeline.filter(({ contents, isHidden }) => contents && !isHidden);
 
   for (let i = 0; i < postsWithContent.length; i += 1) {
     const { title } = postsWithContent[i];

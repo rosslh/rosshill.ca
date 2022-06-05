@@ -30,7 +30,7 @@
   <div class="heading-and-tags">
     <h3>
       {#if post.hasContent}
-        <a sveltekit:prefetch data-test="post-stub-link-{post.slug}" href="item/{post.slug}">{post.title}</a>
+        <a sveltekit:prefetch data-testid="post-stub-link-{post.slug}" href="item/{post.slug}">{post.title}</a>
       {:else}{post.title}{/if}
     </h3>
     <div class="tags">
@@ -54,8 +54,8 @@
     div.picture-frame {
       border-radius: 50%;
       overflow: hidden;
-      width: 1.7rem;
-      height: 1.7rem;
+      width: 2rem;
+      height: 2rem;
       display: inline-block;
       flex-shrink: 0;
 
@@ -75,7 +75,7 @@
         font-size: 0.95rem;
         line-height: 1.2rem;
         display: inline-block;
-        margin: 0 0.5rem 0 1rem;
+        margin: 0 0.5rem 0 0.75rem;
         padding: 0;
 
         a {

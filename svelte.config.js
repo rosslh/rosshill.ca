@@ -2,14 +2,15 @@ import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import Icons from "unplugin-icons/vite";
 import preprocess from "svelte-preprocess";
-import staticAdapter from "@sveltejs/adapter-static";
+import netlifyAdapter from "@sveltejs/adapter-netlify";
 import { resolve } from "path";
  
 /** @type {import('@sveltejs/kit').Config} */
 export default {
   kit: {
-    adapter: staticAdapter(),
-    amp: false,
+    adapter: netlifyAdapter({
+      edge: false,
+    }),
     // appDir: '_app',
     files: {
       assets: "src/assets",
@@ -27,10 +28,10 @@ export default {
       base: "",
     },
     prerender: {
-      crawl: true,
-      default: true,
-      enabled: true,
-      entries: ["*"],
+      // crawl: true,
+      // default: true,
+      enabled: false,
+      // entries: ["*"],
     },
     vite: {
       plugins: [

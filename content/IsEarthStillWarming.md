@@ -6,7 +6,7 @@ website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/isearthstillwarming.com
 image: isearthstillwarming
 thumbnail: fire
-blurb: A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.
+excerpt: A website with up-to-date global warming information and data. It provides a high-level overview of what global warming is – how it's caused, how much the Earth has warmed, and its observed and predicted effects.
 tags: [react, nodedotjs]
 # , cypress
 ---

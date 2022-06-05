@@ -1,22 +1,51 @@
 <script lang="ts">
-  import { format } from "date-fns";
+  import { format, intervalToDuration, formatDuration } from "date-fns";
   import type { PostDate } from "$lib/types";
 
   export let date: PostDate;
 
-  const startDate = new Date(date.start);
-  const endDate = date.end && new Date(date.end);
+  const getDateFromString = (d: string): Date => {
+    const parts = d.slice(0, 10).split("-").map((part) => Number(part)) as [number, number, number];
+    parts[1] -= 1; // month is 0-indexed
+    return new Date(...parts);
+  };
+
+  const startDate = getDateFromString(date.start);
+  const endDate = date.end && getDateFromString(date.end);
+  
+  let duration: string;
+
+  const isDateRangeShown = endDate || date.isOngoing;
+  if (isDateRangeShown && !date.isSeasonal) {
+    const interval = intervalToDuration({ start: startDate, end: endDate ?? Date.now() });
+
+    if (interval.days >= 15) {
+      interval.months += 1;
+    }
+
+    duration = formatDuration(interval, { format: ["years", "months"] });
+  }
+
+  const isStartInFuture = startDate > new Date();
 </script>
 
 <div class="date-string do-transition">
   {#if date.isSeasonal}
     Seasonal:
   {/if}
+  {#if isStartInFuture}
+    Starting:
+  {/if}
   {date.isSeasonal ? format(startDate, "y") : format(startDate, "MMM y")}
-  {#if endDate}
-    - {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
-  {:else if date.isOngoing}
-    - Present
+  {#if !isStartInFuture}
+    {#if endDate}
+      &ndash; {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
+    {:else if date.isOngoing}
+      &ndash; Present
+    {/if}
+    {#if duration}
+      ({duration})
+    {/if}
   {/if}
 </div>
 

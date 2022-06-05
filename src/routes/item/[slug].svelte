@@ -22,7 +22,7 @@
 
   const meta = {
     title: `${post.title} | Ross Hill`,
-    description: post.blurb ?? post.title,
+    description: post.excerpt ?? post.title,
     url: `https://rosshill.ca/item/${post.slug}`,
     image: {
       url: post.image
@@ -64,10 +64,10 @@
     imageAlt: meta.image.alt,
   }}
 />
-<div bind:this={mainContent} class="content-wrapper main-content" data-test="main-content">
+<div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
-    <h2 data-test="post-title">{post.title}</h2>
+    <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
         <PostDate date={post.date} />

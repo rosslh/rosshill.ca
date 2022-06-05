@@ -1,13 +1,13 @@
 ---
 title: Software Developer – QHacks
-eventType: org
+eventType: other
 date: 2018-04-21
 endDate: 2019-03-20
 image: qhacks
 thumbnail: qhacks-crown
 website: https://2019.qhacks.io
 repository: https://github.com/qhacks/qhacks-website
-blurb: Built the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.
+excerpt: Built the landing page for the hackathon and a web portal which over 1800 students used to apply. The websites were built with React and used GraphQL to retrieve data for the user interface.
 tags: [gatsby, graphql, postgresql]
 # , cypress
 ---

@@ -22,7 +22,7 @@ export const tagLabels = {
   wordpress: "WordPress",
 };
 
-export const tagParents = {
+export const tagAncestors = {
   "backbonedotjs": ["javascript"],
   "cypress": ["javascript"],
   "django": ["python"],

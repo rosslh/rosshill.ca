@@ -3,7 +3,7 @@ import type { Page } from "playwright-core";
 // import { errors } from "playwright-core";
 
 export function getElement(page: Page, dataAttribute: string) {
-  return page.locator(`[data-test="${dataAttribute}"]`);
+  return page.locator(`[data-testid="${dataAttribute}"]`);
 }
 
 export async function expectCount(page: Page, dataAttribute: string, expectedCount: number) {

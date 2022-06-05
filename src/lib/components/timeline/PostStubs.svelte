@@ -1,20 +1,17 @@
 <script lang="ts">
-
-  import { format } from "date-fns";
-
   import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "$lib/types";
 
   export let posts: PostItem[];
   export let brandColors: BrandColors;
 
-  import { tagParents } from "$lib/constants";
+  import { tagAncestors } from "$lib/constants";
   import PostStub from "$lib/components/timeline/post-stub/PostStub.svelte";
   import YearLabel from "$lib/components/timeline/YearLabel.svelte";
   import FilterControls from "$lib/components/timeline/filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
-  const getYearFromDate = (date: string) => format(new Date(date), "yyyy");
+  const getYearFromDate = (date: string) => date.slice(0, 4);
 
   const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
     const output = post;
@@ -34,13 +31,13 @@
     return output;
   };
 
-  $: categoryFilter = (post: PostItem) => !$showCategories.length || $showCategories.includes(post.eventType);
+  $: categoryFilter = (post: PostItem) => !$showCategories.size || $showCategories.has(post.eventType);
 
-  $: parentTagShown = (tag: string) => tagParents[tag] && tagParents[tag].some((parentTag: string) => $showTags.includes(parentTag));
+  $: ancestorTagShown = (tag: string) => tagAncestors[tag] && tagAncestors[tag].some((ancestorTag: string) => $showTags.has(ancestorTag));
 
   $: tagFilter = (post: PostItem) => {
-    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.includes(tag) || parentTagShown(tag));
-    return !$showTags.length || postHasShownTag;
+    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
+    return !$showTags.size || postHasShownTag;
   };
 
   $: postsWithLabels = posts

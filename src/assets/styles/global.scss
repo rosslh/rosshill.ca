@@ -9,7 +9,7 @@ $theme-saturation: 25%;
 
 $job-hue: 12;
 $project-hue: 272;
-$org-hue: 135;
+$other-hue: 135;
 
 @mixin light-theme() {
   $category-button-saturation: 74%;
@@ -20,11 +20,11 @@ $org-hue: 135;
 
   --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
   --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
-  --org: #{hsluv($org-hue, $category-button-saturation, $category-button-lightness)};
+  --other: #{hsluv($other-hue, $category-button-saturation, $category-button-lightness)};
 
   --job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
   --project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
-  --org-marker: #{hsluv($org-hue, $marker-saturation, $marker-lightness)};
+  --other-marker: #{hsluv($other-hue, $marker-saturation, $marker-lightness)};
 
   --heading: #{theme-color(20%)};
   --foreground: #{theme-color(30%)};
@@ -43,11 +43,11 @@ $org-hue: 135;
 
   --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
   --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
-  --org: #{hsluv($org-hue, $category-button-saturation, $category-button-lightness)};
+  --other: #{hsluv($other-hue, $category-button-saturation, $category-button-lightness)};
 
   --job-marker: var(--job);
   --project-marker: var(--project);
-  --org-marker: var(--org);
+  --other-marker: var(--other);
 
   --heading: #{theme-color(95%)};
   --foreground: #{theme-color(87%)};
@@ -61,17 +61,17 @@ $org-hue: 135;
 }
 
 body,
-html body[data-theme="light"] {
+html body div.app-wrapper[data-theme="light"] {
   @include light-theme();
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  body div.app-wrapper {
     @include dark-theme();
   }
 }
 
-html body[data-theme="dark"] {
+html body div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }
 
@@ -89,10 +89,13 @@ html {
 body {
   line-height: 1.6;
   overflow-y: scroll;
-  color: var(--foreground);
-  background-color: var(--background);
   max-width: 100vw;
   overflow-x: hidden;
+}
+
+body div.app-wrapper {
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 @media (prefers-reduced-motion: reduce) {

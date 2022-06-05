@@ -1,40 +1,29 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import type { SiteTheme } from "$lib/types";
+
+  export let selectedTheme: SiteTheme;
+
+  import { theme } from "$lib/stores";
 
   import Moon from "~icons/ion/ios-moon";
   import Sunny from "~icons/ion/ios-sunny";
-  
-  import { theme as userTheme } from "$lib/stores";
-
-  onMount(() => {
-    if (!$userTheme) {
-      userTheme.set(
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light",
-      );
-    } else {
-      userTheme.set($userTheme); // to trigger side effect
-    }
-  });
-
-  $: nextTheme = $userTheme === "dark" ? "light" : "dark";
+    
+  $: nextTheme = selectedTheme === "dark" ? "light" : "dark";
 
   $: changeTheme = () => {
-    userTheme.set(nextTheme);
+    const next = selectedTheme === "dark" ? "light" : "dark";
+    $theme = next;
   };
-
-  const loading = typeof window === "undefined";
 </script>
 
 <div class="theme-switcher-wrapper">
   <button
-    data-test="theme-switcher"
+    data-testid="theme-switcher"
     title="Use {nextTheme} theme"
     class="do-transition"
     on:click={changeTheme}
   >
-    {#if !loading}
+    {#if selectedTheme}
       <span aria-hidden="true" class="icon">
         {#if nextTheme === "dark"}
           <Moon />

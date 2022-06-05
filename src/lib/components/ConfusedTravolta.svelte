@@ -5,7 +5,7 @@
 </script>
 
 <img
-  data-test="confused-travolta"
+  data-testid="confused-travolta"
   class="travolta"
   src="/travolta.gif"
   alt="John Travolta looking confused{reason ? ` because ${reason}` : ''}."

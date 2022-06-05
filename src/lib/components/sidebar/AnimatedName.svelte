@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { sineIn } from "svelte/easing";
   import { draw } from "svelte/transition";
+  import { browser } from "$app/env";
   
   import { reduceMotion } from "$lib/constants";
   import svgPath from "$lib/components/sidebar/NameSvg";
@@ -17,9 +18,8 @@
   const logoFillDelay = reduceMotion ? 0 : 1000;
 
   // Graceful degradation for name animation
-  const serverRendered = typeof window === "undefined";
   $: getPathClass = () => {
-    if (serverRendered) {
+    if (!browser) {
       return "server-rendered";
     }
     let className = logoHasFill ? "logo-has-fill" : "initial";
@@ -31,17 +31,17 @@
 </script>
 
 <svg
-  class={serverRendered ? "ssr-fade-in" : ""}
+  class={!browser ? "ssr-fade-in" : ""}
   aria-hidden="true"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 368.7 73.501"
 >
   <title>Ross Hill</title>
   <g>
-    {#if showTitle || serverRendered}
+    {#if showTitle || !browser}
       <path
         class={getPathClass()}
-        on:introstart={serverRendered ? null : () => {
+        on:introstart={!browser ? null : () => {
           setTimeout(
             () => {
               logoHasFill = true;
@@ -55,7 +55,7 @@
             logoFillDelay + 900,
           );
         }}
-        in:draw={serverRendered ? null : { duration: 3000, easing: sineIn }}
+        in:draw={!browser ? null : { duration: 3000, easing: sineIn }}
         d={svgPath}
       />
     {/if}

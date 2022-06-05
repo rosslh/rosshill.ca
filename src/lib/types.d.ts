@@ -5,12 +5,14 @@ export interface PostDate {
   isSeasonal: boolean;
 }
 
+export type PostType = "job" | "project" | "other";
+
 export interface PostItem {
-  blurb?: string;
   contents?: string;
   date: PostDate,
   embed?: string;
-  eventType?: string;
+  eventType?: PostType;
+  excerpt?: string;
   hasContent?: boolean;
   image?: {
     name: string;
@@ -35,3 +37,5 @@ export interface PostItem {
 export interface BrandColors {
   [brand: string]: { foreground: string, background: string }
 }
+
+export type SiteTheme = "light" | "dark" | undefined;

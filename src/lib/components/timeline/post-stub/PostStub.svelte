@@ -7,6 +7,7 @@
   export let isFirstPost: boolean;
   export let isLastPost: boolean;
 
+  import { browser } from "$app/env";
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
   import PostStubTriangle from "$lib/components/timeline/post-stub/PostStubTriangle.svelte";
@@ -21,9 +22,8 @@
   $: hasIntersected = reduceMotion || hasIntersected || intersecting;
 
   // Graceful degradation for fading in posts
-  const serverRendered = typeof window === "undefined";
   $: getFadeInClass = () => {
-    if (serverRendered) {
+    if (!browser) {
       return "ssr-fade-in";
     }
     return hasIntersected ? "fade-in" : "fade-in invisible";
@@ -42,7 +42,7 @@
   <div
     bind:this={element}
     id="timeline-{post.slug}"
-    data-test="post-stub-{post.slug}"
+    data-testid="post-stub-{post.slug}"
     class="post-wrapper do-transition {left ? 'left' : 'right'}"
   >
     <TimelineMarker
@@ -52,8 +52,8 @@
       <PostStubTriangle {left} />
       <div class="post do-transition">
         <PostStubHeading {post} {brandColors} />
-        {#if post.blurb}
-          <p class="post-text">{@html post.blurb}</p>
+        {#if post.excerpt}
+          <p class="post-text">{@html post.excerpt}</p>
         {/if}
         <PostStubFooter {post} />
       </div>
@@ -145,7 +145,7 @@
       position: relative;
 
       p.post-text {
-        padding: 0.1rem 0.75rem 0 calc(1.8rem + 0.75rem);
+        padding: 0.1rem 0.75rem 0 calc(1.8rem + 1rem);
       }
     }
   }

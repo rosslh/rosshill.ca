@@ -1,5 +1,5 @@
 <div class="content-wrapper intro">
-  <h2 data-test="main-heading">
+  <h2 data-testid="main-heading">
     Hey, I<span class="apostrophe">&rsquo;</span>m Ross
   </h2>
   <p>

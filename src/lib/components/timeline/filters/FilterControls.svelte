@@ -1,36 +1,38 @@
 <script lang="ts">
-  import type { BrandColors, PostItem } from "$lib/types";
+  import type { BrandColors, PostItem, PostType } from "$lib/types";
   import { minTagNum } from "$lib/stores";
 
-  export let showCategories: string[];
-  export let showTags: string[];
+  export let showCategories: Set<PostType>;
+  export let showTags: Set<string>;
   export let posts: PostItem[];
   export let brandColors: BrandColors;
 
   import Times from "~icons/fa-solid/times";
   
-  import { tagParents } from "$lib/constants";
+  import { tagAncestors } from "$lib/constants";
   import FilterButton from "$lib/components/timeline/filters/FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
 
-  const toggleItemInList = (list: string[], item: string) => {
-    if (list.includes(item)) {
-      return list.filter((x) => x !== item);
+  function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
+    if (set.has(item)) {
+      set.delete(item);
+    } else {
+      set.add(item);
     }
-    return [...list, item];
-  };
+    return set;
+  }
 
-  const toggleCategory = (category: string) => {
-    showCategories = toggleItemInList(showCategories, category);
+  const toggleCategory = (category: PostType) => {
+    showCategories = toggleItemInSet(showCategories, category);
   };
 
   const toggleTag = (tag: string) => {
-    showTags = toggleItemInList(showTags, tag);
+    showTags = toggleItemInSet(showTags, tag);
   };
 
-  $: jobActive = showCategories.includes("job");
-  $: orgActive = showCategories.includes("org");
-  $: projectActive = showCategories.includes("project");
+  $: jobActive = showCategories.has("job");
+  $: otherActive = showCategories.has("other");
+  $: projectActive = showCategories.has("project");
 
   let tagsOrdered = [];
 
@@ -43,13 +45,13 @@
         tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
       });
 
-      // get parent tags of each tag and remove duplicates
-      const parentTags = [...new Set(tags.map((tag) => tagParents[tag] ?? []).flat())];
+      // get ancestors of each tag and remove duplicates
+      const ancestorTags = [...new Set(tags.map((tag) => tagAncestors[tag] ?? []).flat())];
 
-      parentTags
-        .filter((parentTag) => !tags.includes(parentTag)) // remove parent tags if they already in post tags
-        .forEach((parentTag) => {
-          tagCounts[parentTag] = (tagCounts[parentTag] ?? 0) + 1; // add 1 to count for each parent tag
+      ancestorTags
+        .filter((ancestorTag) => !tags.includes(ancestorTag)) // remove ancestors if they are already in post tags
+        .forEach((ancestorTag) => {
+          tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
         });
     });
 
@@ -74,7 +76,7 @@
     classPrefix="job"
     onClick={() => toggleCategory("job")}
   >
-    Work Experience
+    Work
   </FilterButton>
   <FilterButton
     active={projectActive}
@@ -84,19 +86,23 @@
     Projects
   </FilterButton>
   <FilterButton
-    active={orgActive}
-    classPrefix="org"
-    onClick={() => toggleCategory("org")}
+    active={otherActive}
+    classPrefix="other"
+    onClick={() => toggleCategory("other")}
   >
-    Organizations
+    Other
   </FilterButton>
-  {#if showCategories.length || showTags.length}
+  {#if showCategories.size || showTags.size}
     <button
-      data-test="clear-filters"
+      data-testid="clear-filters"
       class="secondary-button do-transition"
       on:click={() => {
-        showCategories = [];
-        showTags = [];
+        showCategories.clear();
+        showTags.clear();
+
+        // Trigger reactive updates
+        showCategories = showCategories;
+        showTags = showTags;
       }}
     >
       <span class="symbol"><Times /></span> Clear filters
@@ -107,14 +113,14 @@
   {#each tagsOrdered as tag}
     <Tag
       tagId={tag}
-      active={showTags.includes(tag)}
+      active={showTags.has(tag)}
       background={brandColors[tag].background}
       foreground={brandColors[tag].foreground}
       onClick={() => toggleTag(tag)} />
   {/each}
   {#if $minTagNum !== 0}
     <button
-      data-test="show-more-tags"
+      data-testid="show-more-tags"
       class="secondary-button do-transition"
       on:click={() => {
         $minTagNum = 0;

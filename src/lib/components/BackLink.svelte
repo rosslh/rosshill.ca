@@ -4,7 +4,7 @@
   import LeftArrow from "~icons/feather/corner-up-left";
 </script>
 
-<a sveltekit:prefetch data-test="back-link" class="back-link" {href}>
+<a sveltekit:prefetch data-testid="back-link" class="back-link" {href}>
   <LeftArrow /> Back to Home
 </a>
 

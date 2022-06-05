@@ -34,6 +34,7 @@ SOFTWARE.
     onDestroy,
     afterUpdate,
   } from "svelte";
+  import { browser } from "$app/env";
   
   let prevElement = null;
   let observer: IntersectionObserver;
@@ -67,7 +68,7 @@ SOFTWARE.
   };
 
   $: {
-    if (!observer && !complete && typeof window !== "undefined") {
+    if (!observer && !complete && browser) {
       observer = new IntersectionObserver(handleIntersection, {
         root,
         rootMargin,

@@ -1,5 +1,20 @@
+<script context="module">
+
+  export async function load({ session }) {
+    return {
+      props: {
+        themeFromSession: session.theme,
+      },
+    };
+  }
+</script>
 <script lang="ts">
-  import { cheekyMessagePrinted } from "$lib/stores";
+  import type { SiteTheme } from "$lib/types";
+
+  export let themeFromSession: SiteTheme;
+
+  import { cheekyMessagePrinted, theme as themeStore } from "$lib/stores";
+  import { browser } from "$app/env";
 
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
   import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
@@ -14,7 +29,7 @@
   };
 
   $: {
-    if (typeof window !== "undefined" && !$cheekyMessagePrinted) {
+    if (browser && !$cheekyMessagePrinted) {
       $cheekyMessagePrinted = true;
       // eslint-disable-next-line no-console
       console.log(
@@ -23,17 +38,24 @@
       );
     }
   }
+
+  $: selectedTheme = browser ? $themeStore : themeFromSession;
 </script>
 
-<ThemeSwitcher />
-<div class="two-column">
-  <Sidebar />
-  <div>
-    <slot />
-    <CopyrightNotice />
+<div
+  class="app-wrapper do-transition"
+  data-theme={selectedTheme}
+  data-testid="app-wrapper"
+>
+  <ThemeSwitcher selectedTheme={selectedTheme} />
+  <div class="two-column">
+    <Sidebar />
+    <div>
+      <slot />
+      <CopyrightNotice />
+    </div>
   </div>
 </div>
-
 <svelte:head>
   <meta charset="utf-8">
   <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">

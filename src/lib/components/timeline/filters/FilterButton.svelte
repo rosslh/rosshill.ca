@@ -1,7 +1,9 @@
 <script lang="ts">
+  import type { PostType } from "$lib/types";
+
   export let active: boolean;
   export let onClick: () => void;
-  export let classPrefix: string;
+  export let classPrefix: PostType;
   export let extraClasses = "";
 
   import Circle from "~icons/fa-regular/circle";
@@ -19,7 +21,7 @@
 </script>
 
 <button
-  data-test="event-filter-{classPrefix}"
+  data-testid="event-filter-{classPrefix}"
   class="{classPrefix}-button {isToggling ? 'toggling' : 'do-transition'} {extraClasses} {active ? 'active' : 'inactive'}"
   on:click={handleClick}
 >
@@ -71,13 +73,13 @@
       }
     }
 
-    &.org-button {
-      color: var(--org);
+    &.other-button {
+      color: var(--other);
 
       &.active {
         color: var(--background);
-        background-color: var(--org);
-        border-color: var(--org);
+        background-color: var(--other);
+        border-color: var(--other);
       }
     }
 
