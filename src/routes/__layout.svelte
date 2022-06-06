@@ -3,7 +3,7 @@
   export async function load({ session }) {
     return {
       props: {
-        themeFromSession: session.theme,
+        themeFromSession: session.theme || "system",
       },
     };
   }
@@ -24,7 +24,7 @@
   import "../assets/styles/normalize.min.css";
 
   const getCssVariable = (variableName: string) => {
-    const style = getComputedStyle(document.querySelector("body"));
+    const style = getComputedStyle(document.querySelector(".app-wrapper"));
     return style.getPropertyValue(`--${variableName}`);
   };
 
@@ -57,7 +57,6 @@
   </div>
 </div>
 <svelte:head>
-  <meta charset="utf-8">
   <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/source-sans-pro-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->

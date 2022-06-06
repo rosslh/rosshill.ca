@@ -1,3 +1,27 @@
+<script context="module" lang="ts">
+  import { browser } from "$app/env";
+
+  const preloadImage = (src: string) => new Promise((r) => {
+    const image = new Image();
+    image.onload = r;
+    image.onerror = r;
+    image.src = src;
+  });
+
+  export async function load({ props }) {
+    const { post } = props;
+    if (browser && post.image) {
+      const originalImageSrc = `/timeline/${post.image.name}.${post.image.extension}`;
+      const webpImageSrc = `/timeline/${post.image.name}.webp`;
+      await Promise.all([
+        preloadImage(originalImageSrc),
+        preloadImage(webpImageSrc),
+      ]);
+    }
+    return { props };
+  }
+</script>
+
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
@@ -28,8 +52,6 @@
       url: post.image
         ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
         : "https://rosshill.ca/siteImage.png",
-      width: post.image ? post.image.width : 1000,
-      height: post.image ? post.image.height : 523,
       alt: post.title,
     },
     siteName: "Ross Hill",
@@ -96,11 +118,7 @@
       {/if}
     </div>
     {#if post.image}
-      <picture
-        style="aspect-ratio: {post.image.aspectRatio};"
-        width={post.image.width}
-        height={post.image.height}
-      >
+      <picture>
         <source
           srcset="/timeline/{post.image.name}.webp"
           type="image/webp"
@@ -111,9 +129,6 @@
         />
         <img
           class="do-transition"
-          style="aspect-ratio: {post.image.aspectRatio};"
-          width={post.image.width}
-          height={post.image.height}
           src="/timeline/{post.image.name}.{post.image.extension}"
           alt={post.title}
         />

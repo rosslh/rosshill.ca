@@ -60,18 +60,18 @@ $other-hue: 135;
   --background: #{theme-color(8%)};
 }
 
-body,
-html body div.app-wrapper[data-theme="light"] {
+div.app-wrapper,
+div.app-wrapper[data-theme="light"] {
   @include light-theme();
 }
 
 @media (prefers-color-scheme: dark) {
-  body div.app-wrapper {
+  div.app-wrapper {
     @include dark-theme();
   }
 }
 
-html body div.app-wrapper[data-theme="dark"] {
+div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }
 
@@ -93,7 +93,7 @@ body {
   overflow-x: hidden;
 }
 
-body div.app-wrapper {
+div.app-wrapper {
   color: var(--foreground);
   background-color: var(--background);
 }

@@ -9,8 +9,7 @@ export const minTagNum = writable(2);
 
 export const cheekyMessagePrinted = writable(false);
 
-const themeFromCookie = ((browser && Cookies.get("theme")) ?? undefined) as SiteTheme;
-const mediaQueryTheme = ((browser && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") ?? undefined) as SiteTheme;
+const themeFromCookie = ((browser && Cookies.get("theme")) ?? "system") as SiteTheme;
 const oneYear = 365;
 
 const cookieStore = (key: string, initial: SiteTheme) => {
@@ -29,5 +28,5 @@ const cookieStore = (key: string, initial: SiteTheme) => {
   };
 };
 
-export const theme = cookieStore("theme", themeFromCookie || mediaQueryTheme);
+export const theme = cookieStore("theme", themeFromCookie);
 

@@ -27,12 +27,11 @@ const posts: PostItem[] = Object.values(timeline)
   }))
   .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));
 
-export function get({ locals }) {
+export function get() {
   return {
     body: {
       posts,
       brandColors,
-      theme: locals.theme,
     },
   };
 }

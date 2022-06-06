@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { getElement, expectToHaveText } from "../commands.js";
+import chroma from "chroma-js";
+import { getElement, expectToHaveText, getCssVariable } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
@@ -15,28 +16,38 @@ test("Dark mode toggle works", async ({ page }) => {
   const appWrapper = getElement(page, "app-wrapper");
   const themeButton = getElement(page, "theme-switcher");
 
-  // Before clicking the button, the app wrapper should have no data-theme attribute
-  expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+  expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+  expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 
   await themeButton.click();
+  expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+  expect(await page.evaluate(() => document.cookie)).toBe("theme=light");
 
-  // After clicking the button, the app wrapper should have a data-theme attribute
+  await themeButton.click();
   expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
-
-  // user-theme in cookie should be set to dark
   expect(await page.evaluate(() => document.cookie)).toBe("theme=dark");
+
+  await themeButton.click();
+  expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+  expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 });
 
 test.describe("prefers-color-scheme: dark", () => {
   test.use({ colorScheme: "dark" });
 
   test("Color scheme media query works", async ({ page }) => {
-    // Check that the app wrapper has the data-theme attribute set to dark
-    await page.waitForSelector("div.app-wrapper[data-theme=dark]");
+    // Check that the app wrapper has the data-theme attribute set to system
+    await page.waitForSelector("div.app-wrapper[data-theme=system]");
     const appWrapper = getElement(page, "app-wrapper");
-    expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
 
-    expect(await page.evaluate(() => document.cookie)).toBe("theme=dark");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
+
+    // Check that background color is correct
+    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const contrastWithWhite = chroma.contrast(background, "white");
+    const contrastWithBlack = chroma.contrast(background, "black");
+    expect(contrastWithWhite).toBeGreaterThan(contrastWithBlack);
   });
 });
 
@@ -44,37 +55,42 @@ test.describe("prefers-color-scheme: light", () => {
   test.use({ colorScheme: "light" });
 
   test("Color scheme media query works", async ({ page }) => {
-    // Check that the app wrapper has the data-theme attribute set to light
-    await page.waitForSelector("div.app-wrapper[data-theme=light]");
+    // Check that the app wrapper has the data-theme attribute set to system
+    await page.waitForSelector("div.app-wrapper[data-theme=system]");
     const appWrapper = getElement(page, "app-wrapper");
-    expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
 
-    expect(await page.evaluate(() => document.cookie)).toBe("theme=light");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
+
+    // Check that background color is correct
+    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const contrastWithWhite = chroma.contrast(background, "white");
+    const contrastWithBlack = chroma.contrast(background, "black");
+    expect(contrastWithBlack).toBeGreaterThan(contrastWithWhite);
   });
 });
 
 test("User stored theme works", async ({ page }) => {
   const appWrapper = getElement(page, "app-wrapper");
 
-  // Set the user preference to dark mode
+  // User stored system theme works
   await page.evaluate(() => {
-    document.cookie = "theme=dark";
+    document.cookie = "theme=system";
   });
-
-  // Reload the page
   await page.reload();
+  expect(await appWrapper.getAttribute("data-theme")).toBe("system");
 
-  // Check that the app wrapper has the data-theme attribute set to dark
-  expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
-
-  // Set the user preference to light mode
+  // User stored light theme works
   await page.evaluate(() => {
     document.cookie = "theme=light";
   });
-
-  // Reload the page
   await page.reload();
-
-  // Check that the app wrapper has the data-theme attribute set to light
   expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+
+  // User stored dark theme works
+  await page.evaluate(() => {
+    document.cookie = "theme=dark";
+  });
+  await page.reload();
+  expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
 });

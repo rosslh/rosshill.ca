@@ -34,3 +34,14 @@ export async function elementIsAtTopOfViewport(page: Page, selector: string) {
   const elementIsAtTop = Math.abs(boundingBox.y) < bufferPx;
   return elementIsAtTop || userIsScrolledToBottom(page);
 }
+
+export async function getCssVariable(page: Page, dataAttribute: string, variableName: string) {
+  const locator = getElement(page, dataAttribute);
+  return locator.evaluate(
+    (elem, varName) => {
+      const style = getComputedStyle(elem);
+      return style.getPropertyValue(`--${varName}`);
+    },
+    variableName,
+  );
+}

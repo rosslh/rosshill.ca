@@ -10,11 +10,12 @@ export default {
   kit: {
     adapter: netlifyAdapter({
       edge: false,
+      split: false,
     }),
     // appDir: '_app',
     files: {
       assets: "src/assets",
-      // hooks: 'src/hooks',
+      hooks: "src/hooks",
       lib: "src/lib",
       routes: "src/routes",
       // serviceWorker: 'src/service-worker',

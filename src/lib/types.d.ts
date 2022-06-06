@@ -17,9 +17,6 @@ export interface PostItem {
   image?: {
     name: string;
     extension: string;
-    width: number;
-    height: number;
-    aspectRatio: number;
   };
   isLeftAligned?: boolean;
   repository?: string;
@@ -38,4 +35,4 @@ export interface BrandColors {
   [brand: string]: { foreground: string, background: string }
 }
 
-export type SiteTheme = "light" | "dark" | undefined;
+export type SiteTheme = "light" | "dark" | "system";

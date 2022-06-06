@@ -5,33 +5,40 @@
 
   import { theme } from "$lib/stores";
 
-  import Moon from "~icons/ion/ios-moon";
-  import Sunny from "~icons/ion/ios-sunny";
-    
-  $: nextTheme = selectedTheme === "dark" ? "light" : "dark";
+  import SystemTheme from "~icons/lucide/settings-2";
+  import LightTheme from "~icons/ion/ios-sunny";
+  import DarkTheme from "~icons/ion/ios-moon";
 
   $: changeTheme = () => {
-    const next = selectedTheme === "dark" ? "light" : "dark";
-    $theme = next;
+    let nextTheme: SiteTheme;
+    if (selectedTheme === "system") {
+      nextTheme = "light";
+    } else if (selectedTheme === "light") {
+      nextTheme = "dark";
+    } else {
+      nextTheme = "system";
+    }
+    $theme = nextTheme;
   };
 </script>
 
 <div class="theme-switcher-wrapper">
   <button
     data-testid="theme-switcher"
-    title="Use {nextTheme} theme"
+    title="Next theme"
     class="do-transition"
     on:click={changeTheme}
   >
-    {#if selectedTheme}
-      <span aria-hidden="true" class="icon">
-        {#if nextTheme === "dark"}
-          <Moon />
-        {:else}
-          <Sunny />
-        {/if}
-      </span>
-    {/if}
+    <span aria-hidden="true" class="icon">
+      {#if selectedTheme === "light"}
+        <LightTheme />
+      {:else if selectedTheme === "dark"}
+        <DarkTheme />
+      {:else}
+        <SystemTheme />
+      {/if}
+    </span>
+    <span class="description">{selectedTheme} theme</span>
   </button>
 </div>
 
@@ -43,15 +50,14 @@
     z-index: 100;
 
     button {
-      height: 2.1rem;
-      width: 2.1rem;
-      border-radius: 0.5rem;
+      height: 1.8rem;
+      width: 8.75rem;
+      border-radius: 0.9rem;
       display: flex;
       justify-content: center;
       align-items: center;
       color: var(--foreground);
       background-color: var(--panel-background);
-      padding: 0;
       font-size: 0.9rem;
       border: 1px solid var(--border);
 
@@ -59,14 +65,23 @@
         display: inline-flex;
         align-items: center;
         font-size: 0.75rem;
-        margin-right: 0;
+        margin-right: 0.3rem;
+      }
+
+      .description {
+        text-transform: capitalize;
       }
     }
   }
 
   @media (max-width: 699px) {
-    .theme-switcher-wrapper button {
-      transform: scale(0.8);
+    div.theme-switcher-wrapper {
+      padding: 1rem 1rem;
+
+      button {
+        transform: scale(0.8);
+        transform-origin: top right;
+      }
     }
   }
 
