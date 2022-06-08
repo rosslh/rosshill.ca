@@ -8,6 +8,8 @@
   export let isLastPost: boolean;
 
   import { browser } from "$app/env";
+  import { prefetch } from "$app/navigation";
+  
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
   import PostStubTriangle from "$lib/components/timeline/post-stub/PostStubTriangle.svelte";
@@ -50,7 +52,10 @@
       eventType={post.eventType} />
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
-      <div class="post do-transition">
+      <div
+        class="post do-transition"
+        on:mouseenter|once={() => prefetch(`item/${post.slug}`)}
+      >
         <PostStubHeading {post} {brandColors} />
         {#if post.excerpt}
           <p class="post-text">{@html post.excerpt}</p>

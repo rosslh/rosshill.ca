@@ -60,17 +60,27 @@ $other-hue: 135;
   --background: #{theme-color(8%)};
 }
 
-div.app-wrapper,
-div.app-wrapper[data-theme="light"] {
+// If prefers-color-scheme unsupported, default to light theme
+.app-wrapper {
   @include light-theme();
 }
 
+// Unless manually overridden, use system preferred theme
+@media (prefers-color-scheme: light) {
+  div.app-wrapper {
+    @include light-theme();
+  }
+}
 @media (prefers-color-scheme: dark) {
   div.app-wrapper {
     @include dark-theme();
   }
 }
 
+// If manually set, use that theme
+div.app-wrapper[data-theme="light"] {
+  @include light-theme();
+}
 div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }

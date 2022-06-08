@@ -5,13 +5,13 @@ export interface PostDate {
   isSeasonal: boolean;
 }
 
-export type PostType = "job" | "project" | "other";
+export type PostCategory = "job" | "project" | "other";
 
 export interface PostItem {
   contents?: string;
   date: PostDate,
   embed?: string;
-  eventType?: PostType;
+  eventType?: PostCategory;
   excerpt?: string;
   hasContent?: boolean;
   image?: {

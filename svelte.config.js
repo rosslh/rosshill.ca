@@ -9,30 +9,23 @@ import { resolve } from "path";
 export default {
   kit: {
     adapter: netlifyAdapter({
-      edge: false,
-      split: false,
+      edge: true, // use Netlify edge functions
+      split: false, // do not use a separate function for each route
     }),
-    // appDir: '_app',
     files: {
       assets: "src/assets",
       hooks: "src/hooks",
       lib: "src/lib",
       routes: "src/routes",
-      // serviceWorker: 'src/service-worker',
       template: "src/app.html",
     },
     inlineStyleThreshold: 100_000,
-    // host: null,
-    // hostHeader: null,
     paths: {
       assets: "",
       base: "",
     },
     prerender: {
-      // crawl: true,
-      // default: true,
       enabled: false,
-      // entries: ["*"],
     },
     vite: {
       plugins: [

@@ -3,7 +3,7 @@
   export async function load({ session }) {
     return {
       props: {
-        themeFromSession: session.theme || "system",
+        themeFromSession: session.theme ?? "system",
       },
     };
   }
@@ -13,7 +13,7 @@
 
   export let themeFromSession: SiteTheme;
 
-  import { cheekyMessagePrinted, theme as themeStore } from "$lib/stores";
+  import { consoleMessagePrinted, theme as themeStore } from "$lib/stores";
   import { browser } from "$app/env";
 
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
@@ -29,8 +29,8 @@
   };
 
   $: {
-    if (browser && !$cheekyMessagePrinted) {
-      $cheekyMessagePrinted = true;
+    if (browser && !$consoleMessagePrinted) {
+      $consoleMessagePrinted = true;
       // eslint-disable-next-line no-console
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",

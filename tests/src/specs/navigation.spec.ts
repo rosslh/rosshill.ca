@@ -27,12 +27,3 @@ test("Post page is scrolled to correct location", async ({ page }) => {
   expect(await elementIsAtTopOfViewport(page, "main-content")).toBe(true);
 });
 
-test("/item route redirects to root", async ({ page, baseURL }) => {
-  await page.goto("/item");
-
-  await expectCount(page, "main-heading", 1);
-
-  await expectCount(page, "error", 0);
-
-  expect(page.url()).toBe(`${baseURL}/`);
-});

@@ -37,7 +37,7 @@ export const tagAncestors = {
   "typescript": ["javascript"],
 };
 
-const isBrowser = typeof window !== "undefined";
+const isBrowser = typeof window !== "undefined" && !("Deno" in window);
 
 const isBot = isBrowser && isbot(window.navigator.userAgent);
 const prefersReducedMotion = isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches;

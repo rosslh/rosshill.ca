@@ -1,32 +1,32 @@
-import { browser } from "$app/env";
-import Cookies from "js-cookie";
+import Cookies from "universal-cookie";
 import { writable } from "svelte/store";
-import type { PostType, SiteTheme } from "./types";
+import type { Writable } from "svelte/store";
+import type { PostCategory, SiteTheme } from "./types";
 
-export const showCategories = writable(new Set<PostType>());
+export const showCategories = writable(new Set<PostCategory>());
 export const showTags = writable(new Set<string>());
 export const minTagNum = writable(2);
 
-export const cheekyMessagePrinted = writable(false);
+export const consoleMessagePrinted = writable(false);
 
-const themeFromCookie = ((browser && Cookies.get("theme")) ?? "system") as SiteTheme;
-const oneYear = 365;
+const cookies = new Cookies();
+const yearInSeconds = 60 * 60 * 24 * 365;
 
-const cookieStore = (key: string, initial: SiteTheme) => {
-  const { set: setStore, ...store } = writable(initial);
-  if (initial) {
-    Cookies.set(key, initial, { expires: oneYear });
+function cookieStore<T>(key: string, defaultValue: T = undefined, maxAge = yearInSeconds): Writable<T> {
+  const initialValue: T = cookies.get(key) ?? defaultValue;
+  const { set: setStore, ...store } = writable(initialValue);
+  if (initialValue) {
+    cookies.set(key, initialValue, { maxAge });
   }
+
   return {
     ...store,
-    set: (value: string) => {
-      setStore(value as SiteTheme);
-      if (browser) {
-        Cookies.set(key, value, { expires: oneYear });
-      }
+    set: (newValue: T) => {
+      setStore(newValue);
+      cookies.set(key, newValue, { maxAge });
     },
   };
-};
+}
 
-export const theme = cookieStore("theme", themeFromCookie);
+export const theme = cookieStore<SiteTheme>("theme", "system");
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostType } from "$lib/types";
+  import type { PostCategory } from "$lib/types";
 
   export let left: boolean;
-  export let eventType: PostType;
+  export let eventType: PostCategory;
 
   const typeString = ({ job: "Job", other: "Other", project: "Project" })[eventType];
 </script>

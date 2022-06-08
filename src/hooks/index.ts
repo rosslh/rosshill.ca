@@ -1,7 +1,15 @@
+import Cookies from "universal-cookie";
+
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event: e, resolve }) {
-  const event = e;
-  event.locals.theme = event.request.headers.get("cookie")?.split("=")[1].split(";")[0];
+  const event = e; // conform to no-param-reassign rule
+
+  const cookieHeader = event.request.headers.get("cookie");
+  if (cookieHeader) {
+    const cookies = new Cookies(cookieHeader);
+    event.locals.theme = cookies.get("theme");
+  }
+  
   return resolve(event);
 }
 

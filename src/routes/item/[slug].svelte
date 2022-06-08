@@ -11,21 +11,18 @@
   export async function load({ props }) {
     const { post } = props;
     if (browser && post.image) {
-      const originalImageSrc = `/timeline/${post.image.name}.${post.image.extension}`;
       const webpImageSrc = `/timeline/${post.image.name}.webp`;
-      await Promise.all([
-        preloadImage(originalImageSrc),
-        preloadImage(webpImageSrc),
-      ]);
+      await preloadImage(webpImageSrc);
     }
     return { props };
   }
 </script>
 
 <script lang="ts">
+  import type { BrandColors, PostItem } from "$lib/types";
+
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
-  import type { BrandColors, PostItem } from "$lib/types";
   import { tagLabels } from "$lib/constants";
 
   export let post: PostItem;
@@ -131,6 +128,8 @@
           class="do-transition"
           src="/timeline/{post.image.name}.{post.image.extension}"
           alt={post.title}
+          width={600}
+          height={400}
         />
       </picture>
     {/if}

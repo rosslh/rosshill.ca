@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { PostType } from "$lib/types";
+  import type { PostCategory } from "$lib/types";
 
   export let active: boolean;
   export let onClick: () => void;
-  export let classPrefix: PostType;
+  export let classPrefix: PostCategory;
   export let extraClasses = "";
 
   import Circle from "~icons/fa-regular/circle";

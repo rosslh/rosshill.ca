@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { BrandColors, PostItem, PostType } from "$lib/types";
+  import type { BrandColors, PostItem, PostCategory } from "$lib/types";
   import { minTagNum } from "$lib/stores";
 
-  export let showCategories: Set<PostType>;
+  export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
   export let posts: PostItem[];
   export let brandColors: BrandColors;
@@ -22,7 +22,7 @@
     return set;
   }
 
-  const toggleCategory = (category: PostType) => {
+  const toggleCategory = (category: PostCategory) => {
     showCategories = toggleItemInSet(showCategories, category);
   };
 

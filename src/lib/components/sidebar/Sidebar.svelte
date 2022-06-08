@@ -34,7 +34,7 @@
         LinkedIn
       </a>
       <InlineSeparator />
-      <a href="/Ross Hill.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer">
         Resume
       </a>
     </p>
