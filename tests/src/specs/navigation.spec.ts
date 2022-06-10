@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { expectCount, elementIsAtTopOfViewport } from "../commands.js";
+import { elementIsAtTopOfViewport } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 

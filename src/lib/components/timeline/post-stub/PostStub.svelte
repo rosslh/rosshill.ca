@@ -30,6 +30,10 @@
     }
     return hasIntersected ? "fade-in" : "fade-in invisible";
   };
+
+  const preloadPage = async () => {
+    await prefetch(`item/${post.slug}`);
+  };
 </script>
 
 {#if isFirstPost}
@@ -54,7 +58,7 @@
       <PostStubTriangle {left} />
       <div
         class="post do-transition"
-        on:mouseenter|once={() => prefetch(`item/${post.slug}`)}
+        on:mouseenter|once={post.hasContent && preloadPage}
       >
         <PostStubHeading {post} {brandColors} />
         {#if post.excerpt}

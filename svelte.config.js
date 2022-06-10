@@ -9,7 +9,7 @@ import { resolve } from "path";
 export default {
   kit: {
     adapter: netlifyAdapter({
-      edge: true, // use Netlify edge functions
+      edge: false, // do not use Netlify edge functions
       split: false, // do not use a separate function for each route
     }),
     files: {

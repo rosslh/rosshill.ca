@@ -14,6 +14,6 @@ export async function handle({ event: e, resolve }) {
 }
 
 /** @type {import('@sveltejs/kit').GetSession} */
-export function getSession(event) {
-  return { theme: event.locals.theme };
+export function getSession({ locals }) {
+  return { theme: locals.theme };
 }
