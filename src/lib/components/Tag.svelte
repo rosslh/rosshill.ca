@@ -6,6 +6,10 @@
   export let onClick: () => void = null;
   export let lazyLoad = false;
 
+  export let isPageBackgroundDark = false;
+  export let needsOutlineOnLightBg = false;
+  export let needsOutlineOnDarkBg = false;
+
   import { tagLabels } from "$lib/constants";
   import { remsToPixels } from "$lib/functions";
 
@@ -41,7 +45,11 @@
   style={active ? `color: #${foreground};` : ""}
   this={onClick ? "button" : "div"}
 >
-  <span class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}" style="background-color: #{background};">
+  <span
+    class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}"
+    style="background-color: #{background};"
+    class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
+  >
     <img
       src="/tags/{tagId}.svg"
       alt=""
@@ -107,12 +115,15 @@
     }
   }
 
-  :global(.tag.active .logo-wrapper) {
+  .tag.active .logo-wrapper {
     border-bottom-right-radius: 0.9rem;
-    border-color: var(--subtitle);
     border-top-right-radius: 0.9rem;
     /* 2px accounts for negative margin + border */
     width: calc(100% + 2px);
+
+    &.hasOutline {
+      border-color: var(--subtitle);
+    }
   }
 
   .tag-string {

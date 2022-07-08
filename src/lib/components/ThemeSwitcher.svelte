@@ -5,9 +5,9 @@
 
   import { theme } from "$lib/stores";
 
-  import SystemTheme from "~icons/lucide/settings-2";
-  import LightTheme from "~icons/ion/ios-sunny";
-  import DarkTheme from "~icons/ion/ios-moon";
+  import LightThemeIcon from "~icons/ion/ios-sunny";
+  import DarkThemeIcon from "~icons/ion/ios-moon";
+  import SystemThemeIcon from "~icons/lucide/settings-2";
 
   $: changeTheme = () => {
     let nextTheme: SiteTheme;
@@ -31,11 +31,11 @@
   >
     <span aria-hidden="true" class="icon">
       {#if selectedTheme === "light"}
-        <LightTheme />
+        <LightThemeIcon />
       {:else if selectedTheme === "dark"}
-        <DarkTheme />
+        <DarkThemeIcon />
       {:else}
-        <SystemTheme />
+        <SystemThemeIcon />
       {/if}
     </span>
     <span class="description">{selectedTheme} theme</span>
@@ -76,7 +76,7 @@
 
   @media (max-width: 699px) {
     div.theme-switcher-wrapper {
-      padding: 1rem 1rem;
+      padding: 1rem;
 
       button {
         transform: scale(0.8);

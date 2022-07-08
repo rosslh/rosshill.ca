@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BrandColors, PostItem, PostCategory } from "$lib/types";
-  import { minTagNum } from "$lib/stores";
+  import { minTagNum, theme } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
@@ -8,6 +8,7 @@
   export let brandColors: BrandColors;
 
   import Times from "~icons/fa-solid/times";
+  import { browser } from "$app/env";
   
   import { tagAncestors } from "$lib/constants";
   import FilterButton from "$lib/components/timeline/filters/FilterButton.svelte";
@@ -37,7 +38,7 @@
   let tagsOrdered = [];
 
   $: {
-    const tagCounts = {};
+    const tagCounts: { [tag: string]: number } = {};
 
     posts.forEach(({ tags }) => {
       // for each tag in post, add 1 to count
@@ -68,6 +69,9 @@
       })
       .map((tag) => tag[0]);
   }
+
+  $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  $: isPageBackgroundDark = $theme === "dark" || ($theme === "system" && mediaQueryThemeIsDark);
 </script>
 
 <div class="category-buttons">
@@ -114,8 +118,13 @@
     <Tag
       tagId={tag}
       active={showTags.has(tag)}
-      background={brandColors[tag].background}
-      foreground={brandColors[tag].foreground}
+      background={brandColors[tag].bg}
+      foreground={brandColors[tag].fg}
+
+      isPageBackgroundDark={isPageBackgroundDark}
+      needsOutlineOnLightBg={brandColors[tag].outlineOnLight}
+      needsOutlineOnDarkBg={brandColors[tag].outlineOnDark}
+
       onClick={() => toggleTag(tag)} />
   {/each}
   {#if $minTagNum !== 0}

@@ -109,7 +109,7 @@
     grid-template-columns: 3fr 8fr;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     div.two-column {
       grid-template-columns: 1fr;
     }

@@ -32,7 +32,12 @@ export interface PostItem {
 }
 
 export interface BrandColors {
-  [brand: string]: { foreground: string, background: string }
+  [brand: string]: {
+    fg: string,
+    bg: string
+    outlineOnLight: boolean,
+    outlineOnDark: boolean
+  }
 }
 
 export type SiteTheme = "light" | "dark" | "system";

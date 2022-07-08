@@ -110,7 +110,7 @@
      }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     svg path.initial {
       fill: var(--background);
     }

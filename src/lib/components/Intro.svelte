@@ -30,7 +30,7 @@
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     div.intro {
       padding-top: 0;
     }

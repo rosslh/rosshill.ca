@@ -1,4 +1,5 @@
 import chroma from "chroma-js";
+import { APCAcontrast, sRGBtoY } from "apca-w3";
 import fs from "fs";
 import { hsluvToHex } from "hsluv-ts";
 
@@ -53,23 +54,37 @@ function getForegroundColors() {
   return { light, dark };
 }
 
-function getBestContrast(color: string, light: string, dark: string) {
-  const contrastWithLight = chroma.contrast(color, light);
-  const contrastWithDark = chroma.contrast(color, dark);
+function getContrast(color1: string, color2: string): number {
+  const color1Luminance = sRGBtoY(chroma(color1).rgb());
+  const color2Luminance = sRGBtoY(chroma(color2).rgb());
+  return Math.abs(Number(APCAcontrast(color1Luminance, color2Luminance)));
+}
 
-  const contrastAdjust = 4.8; // light on dark is preferred
-  return contrastWithLight + contrastAdjust > contrastWithDark ? light : dark;
+function getBestForegroundForBackground(background: string, lightForeground: string, darkForeground: string) {
+  const contrastWithLight = getContrast(background, lightForeground);
+  const contrastWithDark = getContrast(background, darkForeground);
+
+  const contrastAdjust = 4; // light foreground is preferred
+  return contrastWithLight + contrastAdjust > contrastWithDark ? lightForeground : darkForeground;
 }
 
 function getColorsForTag(icon: SimpleIcon, light: string, dark: string) {
   const background = icon.hex;
-  const foreground = getBestContrast(background, light, dark);
-  return { foreground, background };
+  const foreground = getBestForegroundForBackground(background, light, dark);
+
+
+  return {
+    fg: foreground,
+    bg: background,
+    
+    outlineOnLight: getContrast(background, light) === 0,
+    outlineOnDark: getContrast(background, dark) === 0,
+  };
 }
 
 function createSvgForTag(tag: string, icon: SimpleIcon, brandColors: BrandColors, tagDirectory: string) {
-  const { foreground } = brandColors[tag];
-  const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${foreground}"><path d="${icon.path}"/></svg>`;
+  const { fg: iconColor } = brandColors[tag];
+  const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${iconColor}"><path d="${icon.path}"/></svg>`;
   fs.writeFile(`${tagDirectory}${tag}.svg`, svg, handleFileError);
 }
 
@@ -104,7 +119,7 @@ function getTagIconsAndColors(tagDirectory: string, light: string, dark: string)
 
     const uniqueTags = Array.from(new Set(tags));
 
-    let brandColors = {};
+    let brandColors: BrandColors = {};
     uniqueTags.forEach((tag) => {
       brandColors = getIconDataForTag(tag, brandColors, light, dark, tagDirectory);
     });
