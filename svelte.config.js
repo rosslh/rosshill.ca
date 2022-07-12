@@ -1,9 +1,7 @@
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import Icons from "unplugin-icons/vite";
 import preprocess from "svelte-preprocess";
 import netlifyAdapter from "@sveltejs/adapter-netlify";
-import { resolve } from "path";
  
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -26,18 +24,6 @@ export default {
     },
     prerender: {
       enabled: false,
-    },
-    vite: {
-      plugins: [
-        Icons({
-          compiler: "svelte",
-        }),
-      ],
-      resolve: {
-        alias: {
-          $data: resolve("./src/data"),
-        },
-      },
     },
   },
   preprocess: preprocess({
