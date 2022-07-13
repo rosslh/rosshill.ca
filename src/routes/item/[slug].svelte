@@ -108,8 +108,8 @@
           {#each post.tags as tagId}
             <Tag
               {tagId}
-              background={brandColors[tagId].background}
-              foreground={brandColors[tagId].foreground} />
+              background={brandColors[tagId].bg}
+              foreground={brandColors[tagId].fg} />
           {/each}
         </div>
       {/if}
