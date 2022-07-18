@@ -1,11 +1,13 @@
 <div class="content-wrapper intro">
   <h2 data-testid="main-heading">
-    Hey, I<span class="apostrophe">&rsquo;</span>m Ross
+    Welcome to my corner of the web!
   </h2>
   <p>
-    I am a software developer based in Toronto. I specialize in web development
-    and I'm always on the lookout for cool new technologies. I'm helping Doctalk
-    make the lives of doctors and medical professionals easier.
+    I hope you enjoy your stay. Here's a little bit about me:
+  <p>
+    I am a web developer and I'm always on the lookout for cool new technologies.
+    I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
+    For work I'm helping Doctalk make the lives of doctors and medical professionals easier.
   </p>
 </div>
 
@@ -17,12 +19,6 @@
 
     h2 {
       margin-top: 0;
-
-      span.apostrophe {
-        font-size: 0.85em;
-        position: relative;
-        top: -0.1em;
-      }
     }
 
     p {

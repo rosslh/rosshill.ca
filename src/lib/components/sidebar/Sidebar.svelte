@@ -85,7 +85,7 @@
         height: 10.5rem;
         min-width: 10.5rem;
         min-height: 10.5rem;
-        margin-top: -3.5rem;
+        margin-top: -4.5rem;
 
         * {
           display: block;
