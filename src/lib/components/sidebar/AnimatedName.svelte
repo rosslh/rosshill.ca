@@ -71,7 +71,7 @@
 
     &.ssr-fade-in {
       opacity: 0;
-      animation: fade-in-animation ease-in 0.5s;
+      animation: fade-in-animation ease-in 0.3s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-delay: 3s;
@@ -96,7 +96,7 @@
       }
 
       &.done-filling {
-        transition: fill 0.5s ease, stroke 0.5s ease !important;
+        transition: fill 0.3s ease, stroke 0.3s ease !important;
       }
     }
   }

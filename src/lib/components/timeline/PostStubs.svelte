@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { showCategories, showTags } from "$lib/stores";
   import type { BrandColors, PostItem } from "$lib/types";
+  import { browser } from "$app/env";
 
   export let posts: PostItem[];
   export let brandColors: BrandColors;
 
+  import { showCategories, showTags, theme } from "$lib/stores";
   import { tagAncestors } from "$lib/constants";
   import PostStub from "$lib/components/timeline/post-stub/PostStub.svelte";
   import YearLabel from "$lib/components/timeline/YearLabel.svelte";
@@ -43,6 +44,24 @@
   $: postsWithLabels = posts
     .filter((post: PostItem) => categoryFilter(post) && tagFilter(post))
     .map(setLabelVisibilityAndAlignment);
+
+  $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  $: isPageBackgroundDark = $theme === "dark" || ($theme === "system" && mediaQueryThemeIsDark);
+
+  let activeTags: Set<string>;
+
+  $: {
+    const tags = new Set<string>();
+    $showTags.forEach((tag) => {
+      tags.add(tag);
+      Object.entries(tagAncestors).forEach(([childTag, ancestorTags]) => {
+        if (ancestorTags.includes(tag)) {
+          tags.add(childTag);
+        }
+      });
+    });
+    activeTags = tags; // trigger reactivity
+  }
 </script>
 
 <div class="heading-wrapper content-wrapper ">
@@ -69,6 +88,8 @@
         <PostStub
           {post}
           {brandColors}
+          {isPageBackgroundDark}
+          {activeTags}
           isFirstPost={i === 0}
           isLastPost={i === postsWithLabels.length - 1}
           left={post.isLeftAligned}

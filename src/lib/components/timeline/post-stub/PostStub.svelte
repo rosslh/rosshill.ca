@@ -6,6 +6,8 @@
   export let left: boolean;
   export let isFirstPost: boolean;
   export let isLastPost: boolean;
+  export let isPageBackgroundDark: boolean;
+  export let activeTags: Set<string>;
 
   import { browser } from "$app/env";
   import { prefetch } from "$app/navigation";
@@ -60,7 +62,12 @@
         class="post do-transition"
         on:mouseenter|once={post.hasContent && preloadPage}
       >
-        <PostStubHeading {post} {brandColors} />
+        <PostStubHeading
+          {post}
+          {brandColors}
+          {isPageBackgroundDark}
+          {activeTags}
+        />
         {#if post.excerpt}
           <p class="post-text">{@html post.excerpt}</p>
         {/if}
@@ -112,7 +119,7 @@
     div.ssr-fade-in {
       opacity: 0;
       transform: scale(1);
-      animation: fade-in-animation ease-in 0.5s;
+      animation: fade-in-animation ease-in 0.3s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
       animation-delay: 3s;

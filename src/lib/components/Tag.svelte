@@ -25,28 +25,20 @@
 
   const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
 
-  let isToggling = false;
-  const handleClick = () => {
-    isToggling = true;
-    onClick();
-    setTimeout(() => {
-      isToggling = false;
-    }, 300);
-  };
-
   const getHexOpacity = (floatPercentage: number) => Math.round(255 * floatPercentage).toString(16);
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
 <svelte:element
-  class="tag do-transition {active ? 'active' : ''}"
+  class="tag do-transition"
+  class:active
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
-  on:click={handleClick}
+  on:click={onClick}
   style={active ? `color: #${foreground};` : ""}
   this={onClick ? "button" : "div"}
 >
   <span
-    class="logo-wrapper {isToggling ? 'toggling' : 'do-transition'}"
+    class="logo-wrapper do-transition"
     style="background-color: #{background};"
     class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
   >
@@ -97,13 +89,9 @@
     border-top-left-radius: 0.9rem;
     border-bottom-left-radius: 0.9rem;
 
-    &.toggling {
-      transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
-    }
-
     &.do-transition {
       /* taken from global.scss .do-transition */
-      transition: border-color 0.5s ease, width 0.5s ease, border-radius 0.5s ease;
+      transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
     }
 
     > img {
