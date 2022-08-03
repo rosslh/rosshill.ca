@@ -29,7 +29,7 @@ export const tagAncestors = {
   "django": ["python"],
   "fastify": ["nodedotjs", "javascript"],
   "flask": ["python"],
-  "gatsby": ["graphql", "react", "javascript"],
+  "gatsby": ["react", "javascript"],
   "nestjs": ["nodedotjs", "javascript"],
   "nodedotjs": ["javascript"],
   "nuxtdotjs": ["javascript"],
