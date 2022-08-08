@@ -4,7 +4,7 @@ export const tagLabels = {
   backbonedotjs: "Backbone.js",
   // fastify: "Fastify / Node",
   // gatsby: "Gatsby / React",
-  googlecloud: "GCP",
+  // googlecloud: "GCP",
   graphql: "GraphQL",
   javascript: "JavaScript",
   mongodb: "MongoDB",

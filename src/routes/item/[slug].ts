@@ -35,7 +35,7 @@ posts
   .filter((post) => post.contents)
   .forEach((post) => lookup.set(post.slug, post));
 
-export function get({ params }) {
+export function GET({ params }) {
   // the `slug` parameter is available because this file is called [slug].js
   const slug = params.slug.toLowerCase();
 

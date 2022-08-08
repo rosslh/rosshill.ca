@@ -27,7 +27,7 @@ const posts: PostItem[] = Object.values(timeline)
   }))
   .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));
 
-export function get() {
+export function GET() {
   return {
     body: {
       posts,

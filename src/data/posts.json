@@ -136,16 +136,15 @@
         "react",
         "redux",
         "django",
-        "postgresql",
-        "heroku"
+        "postgresql"
       ],
       "eventType": "job",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2022-06-05T22:41:36.860Z",
-        "lastModified": "2022-06-05T22:41:36.860Z",
-        "size": 415,
-        "formattedSize": "415 Bytes"
+        "createdAt": "2022-08-08T00:18:33.538Z",
+        "lastModified": "2022-08-08T00:18:33.538Z",
+        "size": 417,
+        "formattedSize": "417 Bytes"
       }
     },
     {
@@ -181,17 +180,16 @@
       "tags": [
         "svelte",
         "flask",
-        "postgresql",
-        "heroku"
+        "postgresql"
       ],
       "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
       "website": "https://folda.netlify.com/",
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2022-06-02T17:58:43.592Z",
-        "lastModified": "2022-06-02T17:58:43.592Z",
-        "size": 428,
-        "formattedSize": "428 Bytes"
+        "createdAt": "2022-08-08T00:18:37.848Z",
+        "lastModified": "2022-08-08T00:18:37.848Z",
+        "size": 429,
+        "formattedSize": "429 Bytes"
       }
     },
     {
@@ -357,16 +355,15 @@
       "tags": [
         "svelte",
         "fastify",
-        "postgresql",
-        "googlecloud"
+        "postgresql"
       ],
       "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/xrtc45-qvG0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
       "repository": "https://github.com/rosslh/ReqWise",
       "meta": {
         "relativePath": "reqwise.html",
-        "createdAt": "2022-06-02T17:58:43.583Z",
-        "lastModified": "2022-06-02T17:58:43.583Z",
-        "size": 2310,
+        "createdAt": "2022-08-08T00:19:01.627Z",
+        "lastModified": "2022-08-08T00:19:01.627Z",
+        "size": 2312,
         "formattedSize": "2.3 KB"
       }
     },
@@ -409,8 +406,8 @@
       ],
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2022-06-02T17:58:43.581Z",
-        "lastModified": "2022-06-02T17:58:43.581Z",
+        "createdAt": "2022-08-04T18:20:58.529Z",
+        "lastModified": "2022-08-04T18:20:58.529Z",
         "size": 405,
         "formattedSize": "405 Bytes"
       }
@@ -498,6 +495,29 @@
         "lastModified": "2022-06-02T17:58:43.579Z",
         "size": 356,
         "formattedSize": "356 Bytes"
+      }
+    },
+    {
+      "id": "webofdevs",
+      "contents": "",
+      "title": "Web of Devs",
+      "eventType": "project",
+      "date": "2022-08-07T00:00:00.000Z",
+      "website": "https://webofdevs.com",
+      "thumbnail": "webofdevs-thumb",
+      "excerpt": "Web of Devs is a community of developers with amazing personal websites. You can get inspiration by browsing developer websites, \"favorite\" the best ones you find, and also share your own.",
+      "tags": [
+        "typescript",
+        "svelte",
+        "nestjs",
+        "postgresql"
+      ],
+      "meta": {
+        "relativePath": "webofdevs.html",
+        "createdAt": "2022-08-08T00:18:49.260Z",
+        "lastModified": "2022-08-08T00:18:49.260Z",
+        "size": 392,
+        "formattedSize": "392 Bytes"
       }
     },
     {
