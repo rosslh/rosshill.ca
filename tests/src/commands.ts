@@ -11,10 +11,14 @@ export async function expectCount(page: Page, dataAttribute: string, expectedCou
   await expect(element).toHaveCount(expectedCount, { timeout: 10000 });
 }
 
-export async function expectToHaveText(page: Page, dataAttribute: string, text: string) {
+export async function expectToHaveText(page: Page, dataAttribute: string, text?: string) {
   const element = getElement(page, dataAttribute);
   const elementText = await element.evaluate((el) => el.textContent);
-  expect(elementText).toContain(text);
+  if (text) {
+    expect(elementText).toContain(text);
+  } else {
+    expect(elementText).toBeTruthy();
+  }
 }
 
 async function userIsScrolledToBottom(page: Page) {

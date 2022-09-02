@@ -2,9 +2,6 @@ import isbot from "isbot";
 
 export const tagLabels = {
   backbonedotjs: "Backbone.js",
-  // fastify: "Fastify / Node",
-  // gatsby: "Gatsby / React",
-  // googlecloud: "GCP",
   graphql: "GraphQL",
   javascript: "JavaScript",
   mongodb: "MongoDB",
@@ -15,7 +12,6 @@ export const tagLabels = {
   postgresql: "PostgreSQL",
   prosemirror: "ProseMirror",
   raspberrypi: "Raspberry Pi",
-  // svelte: "Svelte.js",
   tensorflow: "TensorFlow",
   typescript: "TypeScript",
   unity: "Unity 3D",
@@ -27,6 +23,7 @@ export const tagAncestors = {
   "backbonedotjs": ["javascript"],
   "cypress": ["javascript"],
   "django": ["python"],
+  "express": ["nodedotjs", "javascript"],
   "fastify": ["nodedotjs", "javascript"],
   "flask": ["python"],
   "gatsby": ["react", "javascript"],

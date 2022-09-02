@@ -8,7 +8,7 @@
   export let brandColors: BrandColors;
 
   import Times from "~icons/fa-solid/times";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
   
   import { tagAncestors } from "$lib/constants";
   import FilterButton from "$lib/components/timeline/filters/FilterButton.svelte";

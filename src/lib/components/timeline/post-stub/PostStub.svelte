@@ -9,7 +9,7 @@
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
 
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
   import { prefetch } from "$app/navigation";
   
   import { reduceMotion } from "$lib/constants";

@@ -1,20 +1,11 @@
-<script context="module">
 
-  export async function load({ session }) {
-    return {
-      props: {
-        themeFromSession: session.theme ?? "system",
-      },
-    };
-  }
-</script>
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
 
-  export let themeFromSession: SiteTheme;
+  export let data: { themeFromSession: SiteTheme};
 
   import { consoleMessagePrinted, theme as themeStore } from "$lib/stores";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
 
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
   import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
@@ -39,7 +30,7 @@
     }
   }
 
-  $: selectedTheme = browser ? $themeStore : themeFromSession;
+  $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
 
 <div

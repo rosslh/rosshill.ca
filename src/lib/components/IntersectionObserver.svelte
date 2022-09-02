@@ -34,7 +34,7 @@ SOFTWARE.
     onDestroy,
     afterUpdate,
   } from "svelte";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
   
   let prevElement = null;
   let observer: IntersectionObserver;

@@ -1,23 +1,3 @@
-<script context="module" lang="ts">
-  import { browser } from "$app/env";
-
-  const preloadImage = (src: string) => new Promise((r) => {
-    const image = new Image();
-    image.onload = r;
-    image.onerror = r;
-    image.src = src;
-  });
-
-  export async function load({ props }) {
-    const { post } = props;
-    if (browser && post.image) {
-      const webpImageSrc = `/timeline/${post.image.name}.webp`;
-      await preloadImage(webpImageSrc);
-    }
-    return { props };
-  }
-</script>
-
 <script lang="ts">
   import type { BrandColors, PostItem } from "$lib/types";
 
@@ -25,8 +5,8 @@
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/constants";
 
-  export let post: PostItem;
-  export let brandColors: BrandColors = {};
+  export let data: { post: PostItem, brandColors: BrandColors };
+  const { post, brandColors } = data;
   
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";

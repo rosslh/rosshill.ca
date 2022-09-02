@@ -7,7 +7,7 @@ import netlifyAdapter from "@sveltejs/adapter-netlify";
 export default {
   kit: {
     adapter: netlifyAdapter({
-      edge: false, // do not use Netlify edge functions
+      edge: true, // use Netlify edge functions
       split: false, // do not use a separate function for each route
     }),
     files: {

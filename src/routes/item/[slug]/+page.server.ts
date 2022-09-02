@@ -2,9 +2,11 @@ import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
 import type { PostItem } from "$lib/types";
+import { endOfToday } from "date-fns";
 
 const posts: PostItem[] = Object.values(timeline)
   .filter(({ contents, isHidden }) => contents && !isHidden)
+  .filter((post) => new Date(post.date) <= endOfToday())
   .map((post) => ({
     contents: post.contents,
     date: {
@@ -35,23 +37,19 @@ posts
   .filter((post) => post.contents)
   .forEach((post) => lookup.set(post.slug, post));
 
-export function GET({ params }) {
+export function load({ params }) {
   // the `slug` parameter is available because this file is called [slug].js
   const slug = params.slug.toLowerCase();
 
   if (lookup.has(slug)) {
     return {
-      body: {
-        post: lookup.get(slug),
-        brandColors,
-      },
+      post: lookup.get(slug),
+      brandColors,
     };
   }
   return {
-    body: {
-      message: "Not found",
-      post: null,
-      brandColors,
-    },
+    message: "Not found",
+    post: null,
+    brandColors,
   };
 }

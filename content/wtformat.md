@@ -3,10 +3,10 @@ title: WTFormat
 eventType: project
 date: 2021-08-01
 repository: https://github.com/rosslh/wtformat
-website: https://wtformat.com/
+website: https://wtformat.com
 image: wtformat
 thumbnail: moment
-excerpt: WTFormat is an online tool for generating date format codes. Originally created in 2018, I rewrote it in 2021 to support more formatting libraries.
+excerpt: An online tool for generating date format codes. Originally created in 2018, I rewrote it in 2021 to support more formatting libraries.
 tags: [nuxtdotjs, typescript]
 ---
 

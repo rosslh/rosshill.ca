@@ -2,8 +2,8 @@
   import { MetaTags } from "svelte-meta-tags";
   import type { BrandColors, PostItem } from "$lib/types";
 
-  export let posts: PostItem[] = [];
-  export let brandColors: BrandColors = {};
+  export let data: { posts: PostItem[], brandColors: BrandColors };
+  const { posts, brandColors } = data;
   
   import Intro from "$lib/components/Intro.svelte";
   import PostStubs from "$lib/components/timeline/PostStubs.svelte";

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BrandColors, PostItem } from "$lib/types";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
 
   export let posts: PostItem[];
   export let brandColors: BrandColors;

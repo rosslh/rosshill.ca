@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { sineIn } from "svelte/easing";
   import { draw } from "svelte/transition";
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
   
   import { reduceMotion } from "$lib/constants";
   import svgPath from "$lib/components/sidebar/NameSvg";

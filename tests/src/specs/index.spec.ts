@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Landing page has correct heading", async ({ page }) => {
-  await expectToHaveText(page, "main-heading", "corner");
+  await expectToHaveText(page, "main-heading");
 });
 
 test("Dark mode toggle works", async ({ page }) => {

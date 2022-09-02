@@ -15,9 +15,11 @@
   
   let duration: string;
 
-  const isDateRangeShown = endDate || date.isOngoing;
+  const currentDate = new Date();
+  const isStartInFuture = startDate > currentDate;
+  const isDateRangeShown = endDate || (date.isOngoing && !isStartInFuture);
   if (isDateRangeShown && !date.isSeasonal) {
-    const interval = intervalToDuration({ start: startDate, end: endDate ?? Date.now() });
+    const interval = intervalToDuration({ start: startDate, end: endDate ?? currentDate });
 
     if (interval.days >= 15) {
       interval.months += 1;
@@ -25,8 +27,6 @@
 
     duration = formatDuration(interval, { format: ["years", "months"] });
   }
-
-  const isStartInFuture = startDate > new Date();
 </script>
 
 <div class="date-string do-transition">

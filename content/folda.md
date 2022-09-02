@@ -7,5 +7,5 @@ excerpt: An online system for selling tickets and getting audience metrics for f
 tags: [svelte, flask, postgresql]
 # heroku
 repository: https://github.com/foldA-Kingston/foldA-Box-Office-System
-website: https://folda.netlify.com/
+website: https://folda.netlify.com
 ---

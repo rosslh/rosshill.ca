@@ -3,11 +3,8 @@
     Welcome to my corner of the web!
   </h2>
   <p>
-    I hope you enjoy your stay. Here's a little bit about me:
-  <p>
     I am a web developer and I'm always on the lookout for cool new technologies.
     I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
-    For work I'm helping Doctalk make the lives of doctors and medical professionals easier.
   </p>
 </div>
 

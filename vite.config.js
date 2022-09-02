@@ -15,4 +15,4 @@ export default {
       $data: resolve("./src/data"),
     },
   },
-}
+};

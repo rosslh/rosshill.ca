@@ -96,14 +96,37 @@
         "flask",
         "arduino"
       ],
-      "repository": "https://github.com/QVFT/",
-      "website": "https://www.qvft.ca/",
+      "repository": "https://github.com/QVFT",
+      "website": "https://www.qvft.ca",
       "meta": {
         "relativePath": "QVFT.html",
-        "createdAt": "2022-06-02T17:58:43.583Z",
-        "lastModified": "2022-06-02T17:58:43.583Z",
-        "size": 505,
-        "formattedSize": "505 Bytes"
+        "createdAt": "2022-08-24T19:01:42.584Z",
+        "lastModified": "2022-08-24T19:01:42.584Z",
+        "size": 503,
+        "formattedSize": "503 Bytes"
+      }
+    },
+    {
+      "id": "briza",
+      "contents": "",
+      "title": "Software Engineer – Briza",
+      "date": "2022-09-26T00:00:00.000Z",
+      "isOngoing": true,
+      "thumbnail": "briza-thumb",
+      "excerpt": "I'm helping Briza build an intuitive API for commercial insurance quoting, binding, and payment.",
+      "tags": [
+        "typescript",
+        "express",
+        "postgresql"
+      ],
+      "eventType": "job",
+      "website": "https://briza.com",
+      "meta": {
+        "relativePath": "briza.html",
+        "createdAt": "2022-08-24T19:01:42.590Z",
+        "lastModified": "2022-08-24T19:01:42.590Z",
+        "size": 297,
+        "formattedSize": "297 Bytes"
       }
     },
     {
@@ -129,9 +152,9 @@
       "contents": "",
       "title": "Full-Stack Developer – Doctalk",
       "date": "2020-11-23T00:00:00.000Z",
-      "isOngoing": true,
+      "endDate": "2022-09-16T00:00:00.000Z",
       "thumbnail": "doctalk-thumb",
-      "excerpt": "I'm helping Doctalk build an authenticated online space for physicians to collaborate with each other and organizations. Responsibilities include UI and RESTful API development, software architecture, and cloud infrastructure.",
+      "excerpt": "Built an application for medical residents to collaborate on study notes using a rich text editor and tracked changes. Created a custom email generator with drag-and-drop functionality, auto-save, and drafts. Rewrote the front end of MedAffairs Xchange, Doctalk’s flagship application.",
       "tags": [
         "react",
         "redux",
@@ -139,12 +162,13 @@
         "postgresql"
       ],
       "eventType": "job",
+      "website": "https://doctalk.com",
       "meta": {
         "relativePath": "doctalk.html",
-        "createdAt": "2022-08-08T00:18:33.538Z",
-        "lastModified": "2022-08-08T00:18:33.538Z",
-        "size": 417,
-        "formattedSize": "417 Bytes"
+        "createdAt": "2022-08-24T19:30:41.303Z",
+        "lastModified": "2022-08-24T19:30:41.303Z",
+        "size": 512,
+        "formattedSize": "512 Bytes"
       }
     },
     {
@@ -183,13 +207,13 @@
         "postgresql"
       ],
       "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
-      "website": "https://folda.netlify.com/",
+      "website": "https://folda.netlify.com",
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2022-08-08T00:18:37.848Z",
-        "lastModified": "2022-08-08T00:18:37.848Z",
-        "size": 429,
-        "formattedSize": "429 Bytes"
+        "createdAt": "2022-08-24T19:01:42.588Z",
+        "lastModified": "2022-08-24T19:01:42.588Z",
+        "size": 428,
+        "formattedSize": "428 Bytes"
       }
     },
     {
@@ -395,8 +419,8 @@
       "title": "Mandelbrot Set in Rust",
       "eventType": "project",
       "date": "2021-01-01T00:00:00.000Z",
-      "repository": "https://github.com/rosslh/rust-mandelbrot-set/",
-      "website": "https://rust-mandelbrot.netlify.app/",
+      "repository": "https://github.com/rosslh/rust-mandelbrot-set",
+      "website": "https://rust-mandelbrot.netlify.app",
       "thumbnail": "mandelbrot-thumb",
       "excerpt": "An interactive application that lets you explore the Mandelbrot set fractal. Built with Rust, compiled to WebAssembly, running on Web Workers.",
       "tags": [
@@ -406,10 +430,10 @@
       ],
       "meta": {
         "relativePath": "rust-fractals.html",
-        "createdAt": "2022-08-04T18:20:58.529Z",
-        "lastModified": "2022-08-04T18:20:58.529Z",
-        "size": 405,
-        "formattedSize": "405 Bytes"
+        "createdAt": "2022-08-24T19:01:42.584Z",
+        "lastModified": "2022-08-24T19:01:42.584Z",
+        "size": 403,
+        "formattedSize": "403 Bytes"
       }
     },
     {
@@ -468,12 +492,13 @@
         "postgresql",
         "backbonedotjs"
       ],
+      "website": "https://verafin.com",
       "meta": {
         "relativePath": "verafin.html",
-        "createdAt": "2022-06-02T17:58:43.579Z",
-        "lastModified": "2022-06-02T17:58:43.579Z",
-        "size": 450,
-        "formattedSize": "450 Bytes"
+        "createdAt": "2022-08-24T19:01:01.539Z",
+        "lastModified": "2022-08-24T19:01:01.539Z",
+        "size": 480,
+        "formattedSize": "480 Bytes"
       }
     },
     {
@@ -505,7 +530,7 @@
       "date": "2022-08-07T00:00:00.000Z",
       "website": "https://webofdevs.com",
       "thumbnail": "webofdevs-thumb",
-      "excerpt": "Web of Devs is a community of developers with amazing personal websites. You can get inspiration by browsing developer websites, \"favorite\" the best ones you find, and also share your own.",
+      "excerpt": "A community of developers with amazing personal websites. You can get inspiration by browsing developer websites, \"favorite\" the best ones you find, and also share your own.",
       "tags": [
         "typescript",
         "svelte",
@@ -514,10 +539,10 @@
       ],
       "meta": {
         "relativePath": "webofdevs.html",
-        "createdAt": "2022-08-08T00:18:49.260Z",
-        "lastModified": "2022-08-08T00:18:49.260Z",
-        "size": 392,
-        "formattedSize": "392 Bytes"
+        "createdAt": "2022-08-24T19:17:32.260Z",
+        "lastModified": "2022-08-24T19:17:32.260Z",
+        "size": 377,
+        "formattedSize": "377 Bytes"
       }
     },
     {
@@ -527,19 +552,19 @@
       "eventType": "project",
       "date": "2021-08-01T00:00:00.000Z",
       "repository": "https://github.com/rosslh/wtformat",
-      "website": "https://wtformat.com/",
+      "website": "https://wtformat.com",
       "image": "wtformat",
       "thumbnail": "moment",
-      "excerpt": "WTFormat is an online tool for generating date format codes. Originally created in 2018, I rewrote it in 2021 to support more formatting libraries.",
+      "excerpt": "An online tool for generating date format codes. Originally created in 2018, I rewrote it in 2021 to support more formatting libraries.",
       "tags": [
         "nuxtdotjs",
         "typescript"
       ],
       "meta": {
         "relativePath": "wtformat.html",
-        "createdAt": "2022-06-02T17:58:43.577Z",
-        "lastModified": "2022-06-02T17:58:43.577Z",
-        "size": 1158,
+        "createdAt": "2022-08-24T19:17:17.182Z",
+        "lastModified": "2022-08-24T19:17:17.182Z",
+        "size": 1145,
         "formattedSize": "1.1 KB"
       }
     }
