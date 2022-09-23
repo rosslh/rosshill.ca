@@ -12,10 +12,12 @@ export default {
     }),
     files: {
       assets: "src/assets",
-      hooks: "src/hooks",
+      hooks: {
+        server: "src/hooks",
+      },
       lib: "src/lib",
       routes: "src/routes",
-      template: "src/app.html",
+      appTemplate: "src/app.html",
     },
     inlineStyleThreshold: 100_000,
     paths: {
