@@ -25,6 +25,8 @@
       interval.months += 1;
     }
 
+    interval.months = Math.max(interval.months, 1);
+
     duration = formatDuration(interval, { format: ["years", "months"] });
   }
 </script>

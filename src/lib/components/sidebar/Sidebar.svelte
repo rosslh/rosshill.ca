@@ -1,7 +1,7 @@
 <script lang="ts">
   import { remsToPixels } from "$lib/functions";
-  import Separator from "$lib/components/sidebar/Separator.svelte";
-  import AnimatedName from "$lib/components/sidebar/AnimatedName.svelte";
+  import Separator from "./Separator.svelte";
+  import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 </script>
 

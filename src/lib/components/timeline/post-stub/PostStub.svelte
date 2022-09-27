@@ -14,9 +14,9 @@
   
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
-  import PostStubTriangle from "$lib/components/timeline/post-stub/PostStubTriangle.svelte";
-  import TimelineMarker from "$lib/components/timeline/post-stub/TimelineMarker.svelte";
-  import PostStubSpacer from "$lib/components/timeline/post-stub/PostStubSpacer.svelte";
+  import PostStubTriangle from "./PostStubTriangle.svelte";
+  import TimelineMarker from "./TimelineMarker.svelte";
+  import PostStubSpacer from "./PostStubSpacer.svelte";
   import PostStubHeading from "./PostStubHeading.svelte";
   import PostStubFooter from "./PostStubFooter.svelte";
 

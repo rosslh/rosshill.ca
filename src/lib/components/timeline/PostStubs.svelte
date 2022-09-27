@@ -7,9 +7,9 @@
 
   import { showCategories, showTags, theme } from "$lib/stores";
   import { tagAncestors } from "$lib/constants";
-  import PostStub from "$lib/components/timeline/post-stub/PostStub.svelte";
-  import YearLabel from "$lib/components/timeline/YearLabel.svelte";
-  import FilterControls from "$lib/components/timeline/filters/FilterControls.svelte";
+  import PostStub from "./post-stub/PostStub.svelte";
+  import YearLabel from "./YearLabel.svelte";
+  import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
   const getYearFromDate = (date: string) => date.slice(0, 4);

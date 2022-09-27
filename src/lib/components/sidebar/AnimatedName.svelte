@@ -5,7 +5,7 @@
   import { browser } from "$app/environment";
   
   import { reduceMotion } from "$lib/constants";
-  import svgPath from "$lib/components/sidebar/NameSvg";
+  import svgPath from "./NameSvg";
 
   let showTitle = false;
   let logoHasFill = false;
