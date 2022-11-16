@@ -3,7 +3,7 @@
     Welcome to my corner of the web!
   </h2>
   <p>
-    I am a web developer and I'm always on the lookout for cool new technologies.
+    I am a software developer and I'm always on the lookout for cool new technologies.
     I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
   </p>
 </div>
