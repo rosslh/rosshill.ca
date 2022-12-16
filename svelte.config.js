@@ -24,9 +24,6 @@ export default {
       assets: "",
       base: "",
     },
-    prerender: {
-      enabled: false,
-    },
   },
   preprocess: preprocess({
     postcss: {

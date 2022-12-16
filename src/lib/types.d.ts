@@ -1,5 +1,5 @@
 export interface PostDate {
-  start: string; // needs to be JSON serialized, not a JS object
+  start: string; // needs to be serialized as a string, not a Date object
   end?: string;
   isOngoing: boolean;
   isSeasonal: boolean;

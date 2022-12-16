@@ -3,7 +3,7 @@ import { APCAcontrast, sRGBtoY } from "apca-w3";
 import fs from "fs";
 import { hsluvToHex } from "hsluv-ts";
 
-import * as SimpleIcons from "simple-icons/icons";
+import SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
 import type { PostItem, BrandColors } from "$lib/types";
@@ -65,7 +65,9 @@ function getBestForegroundForBackground(background: string, lightForeground: str
   const contrastWithDark = getContrast(background, darkForeground);
 
   const contrastAdjust = 4; // light foreground is preferred
-  return contrastWithLight + contrastAdjust > contrastWithDark ? lightForeground : darkForeground;
+  return contrastWithLight + contrastAdjust > contrastWithDark
+    ? lightForeground
+    : darkForeground;
 }
 
 function getColorsForTag(icon: SimpleIcon, light: string, dark: string) {

@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import fs from "fs";
 import type { Page } from "playwright-core";
 import { slugify } from "../../../src/lib/functions.js";
-import { elementIsAtTopOfViewport, expectCount, getElement } from "../commands.js";
+import { isElementAtTopOfViewport, expectCount, getElement } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
@@ -29,7 +29,7 @@ const testPage = async (page: Page, baseURL: string, slug: string) => {
   expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
 
   // Main content should be at top of page, even on mobile
-  expect(await elementIsAtTopOfViewport(page, "main-content")).toBe(true);
+  expect(await isElementAtTopOfViewport(page, "main-content")).toBe(true);
 
   await backLink.click();
 
@@ -41,7 +41,7 @@ const testPage = async (page: Page, baseURL: string, slug: string) => {
   expect(page.url()).toBe(`${baseURL}/#timeline-${slug}`);
 
   // Element is at top
-  expect(await elementIsAtTopOfViewport(page, `post-stub-${slug}`)).toBe(true);
+  expect(await isElementAtTopOfViewport(page, `post-stub-${slug}`)).toBe(true);
 };
 
 test.beforeEach(async ({ page }) => {

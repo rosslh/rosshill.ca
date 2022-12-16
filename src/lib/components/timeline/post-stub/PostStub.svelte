@@ -10,7 +10,7 @@
   export let activeTags: Set<string>;
 
   import { browser } from "$app/environment";
-  import { prefetch } from "$app/navigation";
+  import { preloadData } from "$app/navigation";
   
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
@@ -34,7 +34,7 @@
   };
 
   const preloadPage = async () => {
-    await prefetch(`item/${post.slug}`);
+    await preloadData(`item/${post.slug}`);
   };
 </script>
 

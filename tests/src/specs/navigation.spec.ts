@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { elementIsAtTopOfViewport } from "../commands.js";
+import { isElementAtTopOfViewport } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
@@ -14,7 +14,7 @@ test("Anchor links work", async ({ page }) => {
   await page.goto(`/#timeline-${slug}`);
   
   // Element is at top
-  expect(await elementIsAtTopOfViewport(page, `post-stub-${slug}`)).toBe(true);
+  expect(await isElementAtTopOfViewport(page, `post-stub-${slug}`)).toBe(true);
 });
 
 test("Post page is scrolled to correct location", async ({ page }) => {
@@ -24,6 +24,6 @@ test("Post page is scrolled to correct location", async ({ page }) => {
   await page.goto(`/item/${slug}`);
   
   // Element is at top
-  expect(await elementIsAtTopOfViewport(page, "main-content")).toBe(true);
+  expect(await isElementAtTopOfViewport(page, "main-content")).toBe(true);
 });
 

@@ -14,7 +14,7 @@
   import "../assets/styles/global.scss";
   import "../assets/styles/normalize.min.css";
 
-  const getCssVariable = (variableName: string) => {
+  const getCssCustomProperty = (variableName: string) => {
     const style = getComputedStyle(document.querySelector(".app-wrapper"));
     return style.getPropertyValue(`--${variableName}`);
   };
@@ -25,7 +25,7 @@
       // eslint-disable-next-line no-console
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
-        `background-color: ${getCssVariable("panel-background")}; border-radius: 0.5rem; border: 1px solid ${getCssVariable("border")}; color: ${getCssVariable("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`,
+        `background-color: ${getCssCustomProperty("panel-background")}; border-radius: 0.5rem; border: 1px solid ${getCssCustomProperty("border")}; color: ${getCssCustomProperty("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`,
       );
     }
   }

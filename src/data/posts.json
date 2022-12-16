@@ -107,6 +107,34 @@
       }
     },
     {
+      "id": "_template",
+      "contents": "<p>Markdown content goes here.</p>\n",
+      "title": "Template",
+      "isHidden": true,
+      "eventType": "other",
+      "excerpt": "Short blurb goes here.",
+      "tags": [
+        "javascript"
+      ],
+      "website": "https://google.com",
+      "repository": "https://github.com/example/example",
+      "date": "2020-01-01T00:00:00.000Z",
+      "endDate": "2021-01-01T00:00:00.000Z",
+      "isOngoing": false,
+      "isSeasonal": false,
+      "thumbnail": "thumbnail",
+      "thumbnailExt": "png",
+      "image": "image",
+      "imageExt": "png",
+      "meta": {
+        "relativePath": "_template.html",
+        "createdAt": "2022-12-15T19:32:48.627Z",
+        "lastModified": "2022-12-15T19:32:48.627Z",
+        "size": 351,
+        "formattedSize": "351 Bytes"
+      }
+    },
+    {
       "id": "briza",
       "contents": "",
       "title": "Software Engineer – Briza",
@@ -123,8 +151,8 @@
       "website": "https://briza.com",
       "meta": {
         "relativePath": "briza.html",
-        "createdAt": "2022-09-27T02:09:54.009Z",
-        "lastModified": "2022-09-27T02:09:54.009Z",
+        "createdAt": "2022-12-16T19:57:59.339Z",
+        "lastModified": "2022-12-16T19:57:59.339Z",
         "size": 287,
         "formattedSize": "287 Bytes"
       }
@@ -139,12 +167,13 @@
       "isSeasonal": true,
       "thumbnail": "caledon",
       "excerpt": "Taught children how to ski – from their first time on skis to racing competitively in a team. Gained experience in leading a team and working closely with other employees.",
+      "isHidden": true,
       "meta": {
         "relativePath": "caledon.html",
-        "createdAt": "2022-09-06T23:48:20.500Z",
-        "lastModified": "2022-09-06T23:48:20.500Z",
-        "size": 321,
-        "formattedSize": "321 Bytes"
+        "createdAt": "2022-12-15T20:29:05.376Z",
+        "lastModified": "2022-12-15T20:29:05.376Z",
+        "size": 336,
+        "formattedSize": "336 Bytes"
       }
     },
     {
@@ -208,12 +237,13 @@
       ],
       "repository": "https://github.com/foldA-Kingston/foldA-Box-Office-System",
       "website": "https://folda.netlify.com",
+      "isHidden": true,
       "meta": {
         "relativePath": "folda.html",
-        "createdAt": "2022-09-06T23:48:20.501Z",
-        "lastModified": "2022-09-06T23:48:20.501Z",
-        "size": 428,
-        "formattedSize": "428 Bytes"
+        "createdAt": "2022-12-15T20:25:11.450Z",
+        "lastModified": "2022-12-15T20:25:11.450Z",
+        "size": 443,
+        "formattedSize": "443 Bytes"
       }
     },
     {
@@ -227,12 +257,13 @@
       "thumbnail": "hurontario",
       "thumbnailExt": "jpg",
       "excerpt": "Worked with many different age groups from six to fourteen years old, and gained experience in working with people of different ability levels and interests.",
+      "isHidden": true,
       "meta": {
         "relativePath": "hurontario.html",
-        "createdAt": "2022-09-06T23:48:20.501Z",
-        "lastModified": "2022-09-06T23:48:20.501Z",
-        "size": 321,
-        "formattedSize": "321 Bytes"
+        "createdAt": "2022-12-15T20:29:14.802Z",
+        "lastModified": "2022-12-15T20:29:14.802Z",
+        "size": 336,
+        "formattedSize": "336 Bytes"
       }
     },
     {
@@ -405,12 +436,13 @@
         "arduino",
         "raspberrypi"
       ],
+      "isHidden": true,
       "meta": {
         "relativePath": "robot.html",
-        "createdAt": "2022-09-06T23:48:20.501Z",
-        "lastModified": "2022-09-06T23:48:20.501Z",
-        "size": 942,
-        "formattedSize": "942 Bytes"
+        "createdAt": "2022-12-15T20:24:24.190Z",
+        "lastModified": "2022-12-15T20:24:24.190Z",
+        "size": 957,
+        "formattedSize": "957 Bytes"
       }
     },
     {
@@ -449,12 +481,13 @@
       "tags": [
         "python"
       ],
+      "isHidden": true,
       "meta": {
         "relativePath": "traffic.html",
-        "createdAt": "2022-09-06T23:48:20.501Z",
-        "lastModified": "2022-09-06T23:48:20.501Z",
-        "size": 372,
-        "formattedSize": "372 Bytes"
+        "createdAt": "2022-12-15T20:23:55.031Z",
+        "lastModified": "2022-12-15T20:23:55.031Z",
+        "size": 387,
+        "formattedSize": "387 Bytes"
       }
     },
     {

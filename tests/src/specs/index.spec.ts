@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import chroma from "chroma-js";
-import { getElement, expectToHaveText, getCssVariable } from "../commands.js";
+import { getElement, expectToHaveText, getCssCustomProperty } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
@@ -44,7 +44,7 @@ test.describe("prefers-color-scheme: dark", () => {
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 
     // Check that background color is correct
-    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const background = (await getCssCustomProperty(page, "app-wrapper", "background")).replace(/\s/g, "");
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithWhite).toBeGreaterThan(contrastWithBlack);
@@ -63,7 +63,7 @@ test.describe("prefers-color-scheme: light", () => {
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 
     // Check that background color is correct
-    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const background = (await getCssCustomProperty(page, "app-wrapper", "background")).replace(/\s/g, "");
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithBlack).toBeGreaterThan(contrastWithWhite);

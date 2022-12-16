@@ -8,4 +8,5 @@ tags: [svelte, flask, postgresql]
 # heroku
 repository: https://github.com/foldA-Kingston/foldA-Box-Office-System
 website: https://folda.netlify.com
+isHidden: true
 ---

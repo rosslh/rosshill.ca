@@ -20,6 +20,8 @@
       alt: "Ross Hill: About Me, Projects, and Contact",
     },
   };
+
+  const openToWork = !posts.some((p) => p.eventType === "job" && p.date.isOngoing);
 </script>
 
 <MetaTags
@@ -45,6 +47,8 @@
   }}
 />
 <div class="main-content">
-  <Intro />
+  <Intro
+    {openToWork}
+  />
   <PostStubs {posts} {brandColors} />
 </div>

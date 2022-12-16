@@ -29,6 +29,7 @@
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
+<!-- TODO: fix this: https://github.com/sveltejs/svelte/blob/670f4580568fe8ea31097981ba2d59c33daf0725/src/compiler/compile/nodes/Element.ts#L588 -->
 <svelte:element
   class="tag do-transition"
   class:active

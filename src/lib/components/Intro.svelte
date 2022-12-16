@@ -1,3 +1,7 @@
+<script lang="ts">
+  export let openToWork: boolean;
+</script>
+
 <div class="content-wrapper intro">
   <h2 data-testid="main-heading">
     Welcome to my corner of the web!
@@ -6,6 +10,13 @@
     I am a software developer and I'm always on the lookout for cool new technologies.
     I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
   </p>
+  {#if openToWork}
+    <p>
+      I am currently looking for a full-time software engineering position.
+      If you think we could be a good match,
+      <span class="wrap-together">please <a href="mailto:ross@rosshill.ca">reach out</a>!</span>
+    </p>
+  {/if}
 </div>
 
 <style lang="scss">
@@ -20,6 +31,10 @@
 
     p {
       margin: 1rem auto !important;
+
+      span.wrap-together {
+        white-space: nowrap;
+      }
     }
   }
 
