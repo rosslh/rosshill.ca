@@ -13,7 +13,7 @@
   import { preloadData } from "$app/navigation";
   
   import { reduceMotion } from "$lib/constants";
-  import IntersectionObserver from "$lib/components/IntersectionObserver.svelte";
+  import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostStubTriangle from "./PostStubTriangle.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
   import PostStubSpacer from "./PostStubSpacer.svelte";

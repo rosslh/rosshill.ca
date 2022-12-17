@@ -7,9 +7,9 @@
   import { consoleMessagePrinted, theme as themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
-  import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
-  import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
-  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
+  import ThemeSwitcher from "./_components/ThemeSwitcher.svelte";
+  import Sidebar from "./_components/sidebar/Sidebar.svelte";
+  import CopyrightNotice from "./_components/CopyrightNotice.svelte";
 
   import "../assets/styles/global.scss";
   import "../assets/styles/normalize.min.css";

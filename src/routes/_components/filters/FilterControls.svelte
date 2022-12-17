@@ -11,7 +11,7 @@
   import { browser } from "$app/environment";
   
   import { tagAncestors } from "$lib/constants";
-  import FilterButton from "$lib/components/timeline/filters/FilterButton.svelte";
+  import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {

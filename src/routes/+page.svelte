@@ -5,8 +5,7 @@
   export let data: { posts: PostItem[], brandColors: BrandColors };
   const { posts, brandColors } = data;
   
-  import Intro from "$lib/components/Intro.svelte";
-  import PostStubs from "$lib/components/timeline/PostStubs.svelte";
+  import PostStubs from "./_components/PostStubs.svelte";
 
   const meta = {
     title: "Website and Portfolio | Ross Hill",
@@ -20,8 +19,6 @@
       alt: "Ross Hill: About Me, Projects, and Contact",
     },
   };
-
-  const openToWork = !posts.some((p) => p.eventType === "job" && p.date.isOngoing);
 </script>
 
 <MetaTags
@@ -47,8 +44,36 @@
   }}
 />
 <div class="main-content">
-  <Intro
-    {openToWork}
-  />
+  <div class="content-wrapper intro">
+    <h2 data-testid="main-heading">
+      Welcome to my corner of the web!
+    </h2>
+    <p>
+      I am a software developer and I'm always on the lookout for cool new technologies.
+      I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
+    </p>
+  </div>
   <PostStubs {posts} {brandColors} />
 </div>
+
+<style lang="scss">
+  div.intro {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 1rem auto !important;
+    }
+  }
+
+  @media (max-width: 800px) {
+    div.intro {
+      padding-top: 0;
+    }
+  }
+</style>
