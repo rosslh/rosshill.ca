@@ -1,5 +1,6 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
+  import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItem } from "$lib/types";
 
   export let data: { posts: PostItem[], brandColors: BrandColors };
@@ -46,11 +47,13 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h2 data-testid="main-heading">
-      Welcome to my corner of the web!
+      <Balancer>Welcome to my corner of the web!</Balancer>
     </h2>
     <p>
-      I am a software developer and I'm always on the lookout for cool new technologies.
-      I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
+      <Balancer>
+        I am a software developer and I'm always on the lookout for cool new technologies.
+        I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
+      </Balancer>
     </p>
   </div>
   <PostStubs {posts} {brandColors} />
