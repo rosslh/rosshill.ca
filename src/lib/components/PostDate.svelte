@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { format, intervalToDuration, formatDuration } from "date-fns";
+  import {
+    format, intervalToDuration, formatDuration, startOfMonth, endOfMonth,
+  } from "date-fns";
   import type { PostDate } from "$lib/types";
 
   export let date: PostDate;
@@ -10,22 +12,28 @@
     return new Date(...parts);
   };
 
-  const startDate = getDateFromString(date.start);
-  const endDate = date.end && getDateFromString(date.end);
+  const startDate = startOfMonth(getDateFromString(date.start));
+  const endDate = date.end && endOfMonth(getDateFromString(date.end));
   
   let duration: string;
-
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
-  const isDateRangeShown = endDate || (date.isOngoing && !isStartInFuture);
-  if (isDateRangeShown && !date.isSeasonal) {
+
+  if (!date.isSeasonal && (endDate || (date.isOngoing && !isStartInFuture))) {
     const interval = intervalToDuration({ start: startDate, end: endDate ?? currentDate });
 
     if (interval.days >= 15) {
       interval.months += 1;
+
+      if (interval.months === 12) {
+        interval.years += 1;
+        interval.months -= 12;
+      }
     }
 
-    interval.months = Math.max(interval.months, 1);
+    if (!(interval.years || interval.months)) {
+      interval.months = 1;
+    }
 
     duration = formatDuration(interval, { format: ["years", "months"] });
   }
