@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { BrandColors, PostItem } from "$lib/types";
+  import type { BrandColors, PostItemPage } from "$lib/types";
 
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/constants";
 
-  export let data: { post: PostItem, brandColors: BrandColors };
+  export let data: { post: PostItemPage, brandColors: BrandColors };
   const { post, brandColors } = data;
   
   import PostDate from "$lib/components/PostDate.svelte";

@@ -1,9 +1,9 @@
 import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItem } from "$lib/types";
+import type { PostItemPage } from "$lib/types";
 
-const posts: PostItem[] = Object.values(timeline)
+const posts: PostItemPage[] = Object.values(timeline)
   .filter(({ contents, isHidden }) => contents && !isHidden)
   .map((post) => ({
     contents: post.contents,
@@ -22,18 +22,15 @@ const posts: PostItem[] = Object.values(timeline)
     repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
-    thumbnail: post.thumbnail && {
-      name: post.thumbnail ?? `timeline/${post.thumbnail}`,
-      extension: post.thumbnailExt ?? "png",
-    },
     title: post.title,
     website: post.website,
   }));
 
-const lookup: Map<string, PostItem> = new Map();
-posts
-  .filter((post) => post.contents)
-  .forEach((post) => lookup.set(post.slug, post));
+const lookup: Map<string, PostItemPage> = new Map(
+  posts
+    .filter((post) => post.contents)
+    .map((post) => ([post.slug, post])),
+);
 
 export function load({ params }) {
   const slug = params.slug.toLowerCase();

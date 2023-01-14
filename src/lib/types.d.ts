@@ -1,4 +1,4 @@
-export interface PostDate {
+export type PostDate = {
   start: string; // needs to be serialized as a string, not a Date object
   end?: string;
   isOngoing: boolean;
@@ -7,31 +7,37 @@ export interface PostDate {
 
 export type PostCategory = "job" | "project" | "other";
 
-export interface PostItem {
-  contents?: string;
-  date: PostDate,
-  embed?: string;
-  eventType?: PostCategory;
-  excerpt?: string;
-  hasContent?: boolean;
-  image?: {
-    name: string;
-    extension: string;
-  };
-  isLeftAligned?: boolean;
+type PostItemBase = {
+  date: PostDate;
+  excerpt: string;
   repository?: string;
-  showYearLabel?: boolean;
-  slug: string;
+  website?: string;
+  title: string;
   tags: string[];
+  slug: string;
+}
+
+export type PostItemStub = PostItemBase & {
+  eventType: PostCategory;
+  hasContent: boolean;
+  isLeftAligned?: boolean;
+  showYearLabel?: boolean;
   thumbnail: {
     name: string;
     extension: string;
   };
-  title: string;
-  website?: string;
 }
 
-export interface BrandColors {
+export type PostItemPage = PostItemBase & {
+  contents: string;
+  embed?: string;
+  image?: {
+    name: string;
+    extension: string;
+  };
+}
+
+export type BrandColors = {
   [brand: string]: {
     fg: string,
     bg: string

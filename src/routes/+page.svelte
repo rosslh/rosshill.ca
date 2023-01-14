@@ -1,16 +1,31 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
   import Balancer from "svelte-wrap-balancer";
-  import type { BrandColors, PostItem } from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
 
-  export let data: { posts: PostItem[], brandColors: BrandColors };
+  export let data: { posts: PostItemStub[], brandColors: BrandColors };
   const { posts, brandColors } = data;
   
   import PostStubs from "./_components/PostStubs.svelte";
 
+  const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
+
+  const maxDescLength = 155;
+  const description = intro
+    .split(".")
+    .filter((sentence) => sentence.trim())
+    .map((sentence) => `${sentence.trim()}.`)
+    .reduce((acc, sentence) => {
+      if (acc.length + sentence.length <= maxDescLength) {
+        return `${acc} ${sentence}`;
+      }
+      return acc;
+    }, "")
+    || `${intro.split(".")[0]}.`;
+
   const meta = {
     title: "Website and Portfolio | Ross Hill",
-    description: "I am a software developer based in Toronto. I specialize in web development and I'm always on the lookout for cool new technologies.",
+    description,
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
@@ -51,8 +66,7 @@
     </h2>
     <p>
       <Balancer>
-        I am a software developer and I'm always on the lookout for cool new technologies.
-        I like to spend my time reading, working on side projects, and exploring the great city of Toronto.
+        {intro}
       </Balancer>
     </p>
   </div>

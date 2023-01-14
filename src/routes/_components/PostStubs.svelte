@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { BrandColors, PostItem } from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
   import { browser } from "$app/environment";
 
-  export let posts: PostItem[];
+  export let posts: PostItemStub[];
   export let brandColors: BrandColors;
 
   import { showCategories, showTags, theme } from "$lib/stores";
@@ -14,7 +14,7 @@
 
   const getYearFromDate = (date: string) => date.slice(0, 4);
 
-  const setLabelVisibilityAndAlignment = (post: PostItem, i: number, postsArray: PostItem[]) => {
+  const setLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]) => {
     const output = post;
     const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
     const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date.start);
@@ -32,17 +32,17 @@
     return output;
   };
 
-  $: categoryFilter = (post: PostItem) => !$showCategories.size || $showCategories.has(post.eventType);
+  $: categoryFilter = (post: PostItemStub) => !$showCategories.size || $showCategories.has(post.eventType);
 
   $: ancestorTagShown = (tag: string) => tagAncestors[tag] && tagAncestors[tag].some((ancestorTag: string) => $showTags.has(ancestorTag));
 
-  $: tagFilter = (post: PostItem) => {
+  $: tagFilter = (post: PostItemStub) => {
     const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
     return !$showTags.size || postHasShownTag;
   };
 
   $: postsWithLabels = posts
-    .filter((post: PostItem) => categoryFilter(post) && tagFilter(post))
+    .filter((post: PostItemStub) => categoryFilter(post) && tagFilter(post))
     .map(setLabelVisibilityAndAlignment);
 
   $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;

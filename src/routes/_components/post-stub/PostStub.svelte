@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { PostItem, BrandColors } from "$lib/types";
+  import type { PostItemStub, BrandColors } from "$lib/types";
 
-  export let post: PostItem;
+  export let post: PostItemStub;
   export let brandColors: BrandColors;
   export let left: boolean;
   export let isFirstPost: boolean;

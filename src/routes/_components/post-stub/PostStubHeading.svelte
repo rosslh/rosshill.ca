@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { BrandColors, PostItem } from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
 
   import Tag from "$lib/components/Tag.svelte";
   
   export let brandColors: BrandColors;
-  export let post: PostItem;
+  export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
 

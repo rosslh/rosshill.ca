@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { PostItem } from "$lib/types";
+  import type { PostItemStub } from "$lib/types";
   
-  export let post: PostItem;
+  export let post: PostItemStub;
 
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";

@@ -10,7 +10,7 @@ const preloadImage = (src: string) => new Promise((r) => {
 
 export async function load({ data: props }) {
   const { post } = props;
-  if (browser && post.image) {
+  if (browser && post?.image) {
     const webpImageSrc = `/timeline/${post.image.name}.webp`;
     await preloadImage(webpImageSrc);
   }

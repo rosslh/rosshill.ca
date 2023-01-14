@@ -6,7 +6,7 @@ import { hsluvToHex } from "hsluv-ts";
 import SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
-import type { PostItem, BrandColors } from "$lib/types";
+import type { PostItemStub, BrandColors } from "$lib/types";
 import { tagAncestors } from "../src/lib/constants.js";
 
 const customIcons = {
@@ -105,8 +105,8 @@ function getTagIconsAndColors(tagDirectory: string, light: string, dark: string)
     const tags = [];
 
     data
-      .filter((post: PostItem) => post.tags?.length)
-      .forEach((post: PostItem) => {
+      .filter((post: PostItemStub) => post.tags?.length)
+      .forEach((post: PostItemStub) => {
         let postTags = [...post.tags];
 
         post.tags.forEach((tag) => {

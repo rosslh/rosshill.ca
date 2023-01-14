@@ -1,9 +1,9 @@
 import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItem, PostCategory } from "$lib/types";
+import type { PostItemStub, PostCategory } from "$lib/types";
 
-const posts: PostItem[] = Object.values(timeline)
+const posts: PostItemStub[] = Object.values(timeline)
   .filter((post) => !post.isHidden)
   .map((post) => ({
     date: {

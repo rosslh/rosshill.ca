@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { BrandColors, PostItem, PostCategory } from "$lib/types";
+  import type { BrandColors, PostItemStub, PostCategory } from "$lib/types";
   import { minTagNum, theme } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
-  export let posts: PostItem[];
+  export let posts: PostItemStub[];
   export let brandColors: BrandColors;
 
   import Times from "~icons/fa-solid/times";
