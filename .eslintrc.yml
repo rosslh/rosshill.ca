@@ -63,6 +63,8 @@
     "import/order": 0,
     "no-multiple-empty-lines": 0,
     "prefer-destructuring": 0,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 2,
   },
   settings: {
     "svelte3/typescript": true

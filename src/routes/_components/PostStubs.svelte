@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
+  import { SiteTheme } from "$lib/types";
   import { browser } from "$app/environment";
 
   export let posts: PostItemStub[];
@@ -46,7 +47,7 @@
     .map(setLabelVisibilityAndAlignment);
 
   $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  $: isPageBackgroundDark = $theme === "dark" || ($theme === "system" && mediaQueryThemeIsDark);
+  $: isPageBackgroundDark = $theme === SiteTheme.Dark || ($theme === SiteTheme.System && mediaQueryThemeIsDark);
 
   let activeTags: Set<string>;
 

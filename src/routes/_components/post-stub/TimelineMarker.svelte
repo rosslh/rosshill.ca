@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { PostCategory } from "$lib/types";
+  import { PostCategory } from "$lib/types";
 
   export let left: boolean;
   export let eventType: PostCategory;
 
-  const typeString = ({ job: "Job", other: "Other", project: "Project" })[eventType];
+  const typeString = eventType[0].toUpperCase() + eventType.slice(1);
 </script>
 
 <div
   aria-hidden="true"
   title={typeString ?? ""}
-  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? "other"}" />
+  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}" />
 
 <style lang="scss">
   div.timeline-marker {

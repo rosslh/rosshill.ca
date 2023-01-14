@@ -1,7 +1,8 @@
 import Cookies from "universal-cookie";
 import { writable } from "svelte/store";
 import type { Writable } from "svelte/store";
-import type { PostCategory, SiteTheme } from "./types";
+import type { PostCategory } from "./types";
+import { SiteTheme } from "./types";
 
 export const showCategories = writable(new Set<PostCategory>());
 export const showTags = writable(new Set<string>());
@@ -28,5 +29,5 @@ function cookieStore<T>(key: string, defaultValue: T = undefined, maxAge = yearI
   };
 }
 
-export const theme = cookieStore<SiteTheme>("theme", "system");
+export const theme = cookieStore<SiteTheme>("theme", SiteTheme.System);
 

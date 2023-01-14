@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SiteTheme } from "$lib/types";
+  import { SiteTheme } from "$lib/types";
 
   export let selectedTheme: SiteTheme;
 
@@ -11,12 +11,12 @@
 
   $: changeTheme = () => {
     let nextTheme: SiteTheme;
-    if (selectedTheme === "system") {
-      nextTheme = "light";
-    } else if (selectedTheme === "light") {
-      nextTheme = "dark";
+    if (selectedTheme === SiteTheme.System) {
+      nextTheme = SiteTheme.Light;
+    } else if (selectedTheme === SiteTheme.Light) {
+      nextTheme = SiteTheme.Dark;
     } else {
-      nextTheme = "system";
+      nextTheme = SiteTheme.System;
     }
     $theme = nextTheme;
   };
@@ -30,9 +30,9 @@
     on:click={changeTheme}
   >
     <span aria-hidden="true" class="icon">
-      {#if selectedTheme === "light"}
+      {#if selectedTheme === SiteTheme.Light}
         <LightThemeIcon />
-      {:else if selectedTheme === "dark"}
+      {:else if selectedTheme === SiteTheme.Dark}
         <DarkThemeIcon />
       {:else}
         <SystemThemeIcon />

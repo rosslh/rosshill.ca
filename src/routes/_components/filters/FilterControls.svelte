@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub, PostCategory } from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
+  import { PostCategory, SiteTheme } from "$lib/types";
   import { minTagNum, theme } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
@@ -31,9 +32,9 @@
     showTags = toggleItemInSet(showTags, tag);
   };
 
-  $: jobActive = showCategories.has("job");
-  $: otherActive = showCategories.has("other");
-  $: projectActive = showCategories.has("project");
+  $: jobActive = showCategories.has(PostCategory.Job);
+  $: otherActive = showCategories.has(PostCategory.Other);
+  $: projectActive = showCategories.has(PostCategory.Project);
 
   let tagsOrdered = [];
 
@@ -71,28 +72,28 @@
   }
 
   $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  $: isPageBackgroundDark = $theme === "dark" || ($theme === "system" && mediaQueryThemeIsDark);
+  $: isPageBackgroundDark = $theme === SiteTheme.Dark || ($theme === SiteTheme.System && mediaQueryThemeIsDark);
 </script>
 
 <div class="category-buttons">
   <FilterButton
     active={jobActive}
-    classPrefix="job"
-    onClick={() => toggleCategory("job")}
+    classPrefix={PostCategory.Job}
+    onClick={() => toggleCategory(PostCategory.Job)}
   >
     Work
   </FilterButton>
   <FilterButton
     active={projectActive}
-    classPrefix="project"
-    onClick={() => toggleCategory("project")}
+    classPrefix={PostCategory.Project}
+    onClick={() => toggleCategory(PostCategory.Project)}
   >
     Projects
   </FilterButton>
   <FilterButton
     active={otherActive}
-    classPrefix="other"
-    onClick={() => toggleCategory("other")}
+    classPrefix={PostCategory.Other}
+    onClick={() => toggleCategory(PostCategory.Other)}
   >
     Other
   </FilterButton>

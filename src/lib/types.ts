@@ -5,7 +5,11 @@ export type PostDate = {
   isSeasonal: boolean;
 }
 
-export type PostCategory = "job" | "project" | "other";
+export enum PostCategory {
+  Job = "job",
+  Project = "project",
+  Other = "other",
+}
 
 type PostItemBase = {
   date: PostDate;
@@ -46,4 +50,8 @@ export type BrandColors = {
   }
 }
 
-export type SiteTheme = "light" | "dark" | "system";
+export enum SiteTheme {
+  Light = "light",
+  Dark = "dark",
+  System = "system",
+}

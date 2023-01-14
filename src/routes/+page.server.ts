@@ -1,7 +1,8 @@
 import { data as timeline } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItemStub, PostCategory } from "$lib/types";
+import type { PostItemStub } from "$lib/types";
+import { PostCategory } from "$lib/types";
 
 const posts: PostItemStub[] = Object.values(timeline)
   .filter((post) => !post.isHidden)
@@ -12,7 +13,7 @@ const posts: PostItemStub[] = Object.values(timeline)
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
     },
-    eventType: (post.eventType ?? "other") as PostCategory,
+    eventType: Object.values(PostCategory).find((cat) => cat === post.eventType) ?? PostCategory.Other,
     excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
     repository: post.repository,
