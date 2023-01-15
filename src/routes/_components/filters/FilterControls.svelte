@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { PostCategory, SiteTheme } from "$lib/types";
-  import { minTagNum, theme } from "$lib/stores";
+  import { minTagNum, themeStore } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
@@ -9,9 +9,10 @@
   export let brandColors: BrandColors;
 
   import Times from "~icons/fa-solid/times";
-  import { browser } from "$app/environment";
   
+  import { browser } from "$app/environment";
   import { tagAncestors } from "$lib/constants";
+  import { prefersColorSchemeDark } from "$lib/functions";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
 
@@ -71,8 +72,7 @@
       .map((tag) => tag[0]);
   }
 
-  $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  $: isPageBackgroundDark = $theme === SiteTheme.Dark || ($theme === SiteTheme.System && mediaQueryThemeIsDark);
+  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">

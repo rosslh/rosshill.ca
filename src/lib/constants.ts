@@ -7,7 +7,7 @@ export const tagLabels = {
   mongodb: "MongoDB",
   dotnet: ".NET / C#",
   nestjs: "NestJS",
-  nodedotjs: "Node",
+  nodedotjs: "Node.js",
   nuxtdotjs: "NuxtJS / Vue",
   postgresql: "PostgreSQL",
   prosemirror: "ProseMirror",

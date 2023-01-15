@@ -12,26 +12,6 @@ test("Landing page has correct heading", async ({ page }) => {
   await expectToHaveText(page, "main-heading");
 });
 
-test("Dark mode toggle works", async ({ page }) => {
-  const appWrapper = getElement(page, "app-wrapper");
-  const themeButton = getElement(page, "theme-switcher");
-
-  expect(await appWrapper.getAttribute("data-theme")).toBe("system");
-  expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
-
-  await themeButton.click();
-  expect(await appWrapper.getAttribute("data-theme")).toBe("light");
-  expect(await page.evaluate(() => document.cookie)).toBe("theme=light");
-
-  await themeButton.click();
-  expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
-  expect(await page.evaluate(() => document.cookie)).toBe("theme=dark");
-
-  await themeButton.click();
-  expect(await appWrapper.getAttribute("data-theme")).toBe("system");
-  expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
-});
-
 test.describe("prefers-color-scheme: dark", () => {
   test.use({ colorScheme: "dark" });
 
@@ -48,6 +28,26 @@ test.describe("prefers-color-scheme: dark", () => {
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithWhite).toBeGreaterThan(contrastWithBlack);
+  });
+
+  test("Theme toggle works", async ({ page }) => {
+    const appWrapper = getElement(page, "app-wrapper");
+    const themeButton = getElement(page, "theme-switcher");
+  
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
+  
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=light");
+  
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=dark");
+  
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
   });
 });
 
@@ -67,6 +67,26 @@ test.describe("prefers-color-scheme: light", () => {
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithBlack).toBeGreaterThan(contrastWithWhite);
+  });
+
+  test("Theme toggle works", async ({ page }) => {
+    const appWrapper = getElement(page, "app-wrapper");
+    const themeButton = getElement(page, "theme-switcher");
+  
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
+  
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("dark");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=dark");
+
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("light");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=light");
+  
+    await themeButton.click();
+    expect(await appWrapper.getAttribute("data-theme")).toBe("system");
+    expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
   });
 });
 

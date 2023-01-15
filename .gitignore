@@ -16,3 +16,6 @@ tests/build
 build/
 .netlify/
 .wireit/
+src/data
+src/assets/**/*.webp
+src/assets/tags

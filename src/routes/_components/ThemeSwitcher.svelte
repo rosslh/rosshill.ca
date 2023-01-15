@@ -3,22 +3,23 @@
 
   export let selectedTheme: SiteTheme;
 
-  import { theme } from "$lib/stores";
+  import { themeStore } from "$lib/stores";
 
   import LightThemeIcon from "~icons/ion/ios-sunny";
   import DarkThemeIcon from "~icons/ion/ios-moon";
   import SystemThemeIcon from "~icons/lucide/settings-2";
+  import { browser } from "$app/environment";
+  import { prefersColorSchemeDark } from "$lib/functions";
+
+  const themes = prefersColorSchemeDark(browser)
+    ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark]
+    : [SiteTheme.System, SiteTheme.Dark, SiteTheme.Light];
+
+  let themeIndex = themes.indexOf(selectedTheme);
 
   $: changeTheme = () => {
-    let nextTheme: SiteTheme;
-    if (selectedTheme === SiteTheme.System) {
-      nextTheme = SiteTheme.Light;
-    } else if (selectedTheme === SiteTheme.Light) {
-      nextTheme = SiteTheme.Dark;
-    } else {
-      nextTheme = SiteTheme.System;
-    }
-    $theme = nextTheme;
+    themeIndex = (themeIndex + 1) % themes.length;
+    $themeStore = themes[themeIndex];
   };
 </script>
 

@@ -29,5 +29,4 @@ function cookieStore<T>(key: string, defaultValue: T = undefined, maxAge = yearI
   };
 }
 
-export const theme = cookieStore<SiteTheme>("theme", SiteTheme.System);
-
+export const themeStore = cookieStore("theme", SiteTheme.System);

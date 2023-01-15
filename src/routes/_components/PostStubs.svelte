@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { SiteTheme } from "$lib/types";
-  import { browser } from "$app/environment";
 
   export let posts: PostItemStub[];
   export let brandColors: BrandColors;
 
-  import { showCategories, showTags, theme } from "$lib/stores";
+  import { browser } from "$app/environment";
+  import { showCategories, showTags, themeStore } from "$lib/stores";
   import { tagAncestors } from "$lib/constants";
+  import { prefersColorSchemeDark } from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterControls.svelte";
@@ -46,8 +47,7 @@
     .filter((post: PostItemStub) => categoryFilter(post) && tagFilter(post))
     .map(setLabelVisibilityAndAlignment);
 
-  $: mediaQueryThemeIsDark = browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  $: isPageBackgroundDark = $theme === SiteTheme.Dark || ($theme === SiteTheme.System && mediaQueryThemeIsDark);
+  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 

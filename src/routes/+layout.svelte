@@ -4,7 +4,7 @@
 
   export let data: { themeFromSession: SiteTheme};
 
-  import { consoleMessagePrinted, theme as themeStore } from "$lib/stores";
+  import { consoleMessagePrinted, themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
   import ThemeSwitcher from "./_components/ThemeSwitcher.svelte";

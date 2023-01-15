@@ -24,12 +24,11 @@ function handleFileError(err: Error) {
   }
 }
 
-function deleteFilesInDirectory(directory: string) {
-  fs.readdir(directory, (_err, files) => {
-    files.forEach((file) => {
-      fs.unlink(`${directory}${file}`, handleFileError);
-    });
-  });
+function deleteDirectoryAndRecreate(directory: string) {
+  if (fs.existsSync(directory)) {
+    fs.rmdirSync(directory, { recursive: true });
+  }
+  fs.mkdirSync(directory);
 }
 
 function getNumbersFromSassProperty(fileLines: string[], propertyName: string) {
@@ -132,7 +131,7 @@ function getTagIconsAndColors(tagDirectory: string, light: string, dark: string)
 
 function main() {
   const tagDirectory = "src/assets/tags/";
-  deleteFilesInDirectory(tagDirectory);
+  deleteDirectoryAndRecreate(tagDirectory);
   const { light, dark } = getForegroundColors();
   getTagIconsAndColors(tagDirectory, light, dark);
 }
