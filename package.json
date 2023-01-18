@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "wireit",
+    "build:test": "APP_ENV=test npm run build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "dev": "vite dev --port 3000",
     "getIcons": "wireit",
