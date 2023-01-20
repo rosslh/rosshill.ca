@@ -12,6 +12,6 @@ const convertImages = async (dir: string) => {
 };
 
 (async () => {
-  await convertImages("src/assets");
-  await convertImages("src/assets/timeline");
+  await convertImages("assets");
+  await convertImages("assets/timeline");
 })();

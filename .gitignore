@@ -17,5 +17,5 @@ build/
 .netlify/
 .wireit/
 src/data
-src/assets/**/*.webp
-src/assets/tags
+assets/**/*.webp
+assets/tags

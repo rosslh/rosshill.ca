@@ -41,7 +41,7 @@ function getNumbersFromSassProperty(fileLines: string[], propertyName: string) {
 }
 
 function getForegroundColors() {
-  const cssFile = "src/assets/styles/global.scss";
+  const cssFile = "assets/styles/global.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromSassProperty(fileLines, "$theme-saturation");
@@ -130,7 +130,7 @@ function getTagIconsAndColors(tagDirectory: string, light: string, dark: string)
 }
 
 function main() {
-  const tagDirectory = "src/assets/tags/";
+  const tagDirectory = "assets/tags/";
   deleteDirectoryAndRecreate(tagDirectory);
   const { light, dark } = getForegroundColors();
   getTagIconsAndColors(tagDirectory, light, dark);

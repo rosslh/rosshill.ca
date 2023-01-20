@@ -1,12 +1,12 @@
 import { expect, test } from "@playwright/test";
 import fs from "fs";
 import type { Page } from "playwright-core";
-import { slugify } from "../../../src/lib/functions.js";
+import { slugify } from "../../src/lib/functions.js";
 import { isElementAtTopOfViewport, expectCount, getElement } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
-const testPage = async (page: Page, baseURL: string, slug: string) => {
+const testPage = async (page: Page, baseURL: string | undefined, slug: string) => {
   const postStubLink = getElement(page, `post-stub-link-${slug}`);
   const backLink = getElement(page, "back-link");
 
@@ -52,7 +52,7 @@ async function readJsonFile(file: string) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
-readJsonFile("../src/data/posts.json").then(({ data: timeline }) => {
+readJsonFile("src/data/posts.json").then(({ data: timeline }) => {
   const postsWithContent = timeline.filter(({ contents, isHidden }) => contents && !isHidden);
 
   for (let i = 0; i < postsWithContent.length; i += 1) {

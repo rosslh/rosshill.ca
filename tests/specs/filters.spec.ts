@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, Locator, test } from "@playwright/test";
 import { getElement, expectCount } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
@@ -70,6 +70,12 @@ test("Clear filters button works", async ({ page }) => {
   const jobFilter = getElement(page, "event-filter-job");
   const jsFilter = getElement(page, "skill-filter-javascript");
 
+  const getAttribute = async (locator: Locator, attribute: string): Promise<string> => {
+    const attr = await locator.getAttribute(attribute);
+    if (!attr) throw new Error(`Element does not have attribute ${attribute}`);
+    return attr;
+  };
+
   // clearFilters does not exist
   await expectCount(page, "clear-filters", 0);
 
@@ -80,22 +86,22 @@ test("Clear filters button works", async ({ page }) => {
   await expectCount(page, "skill-filter-javascript", 1);
 
   // jobFilter does not have class active
-  const jobFilterClasses = (await jobFilter.getAttribute("class")).split(" ");
+  const jobFilterClasses = (await getAttribute(jobFilter, "class")).split(" ");
   expect(jobFilterClasses).not.toContain("active");
 
   // jsFilter does not have class active
-  const jsFilterClasses = (await jsFilter.getAttribute("class")).split(" ");
+  const jsFilterClasses = (await getAttribute(jsFilter, "class")).split(" ");
   expect(jsFilterClasses).not.toContain("active");
 
   await jobFilter.click();
   await jsFilter.click();
 
   // jobFilter has class active
-  const jobFilterClassesAfterClick = (await jobFilter.getAttribute("class")).split(" ");
+  const jobFilterClassesAfterClick = (await getAttribute(jobFilter, "class")).split(" ");
   expect(jobFilterClassesAfterClick).toContain("active");
 
   // jsFilter has class active
-  const jsFilterClassesAfterClick = (await jsFilter.getAttribute("class")).split(" ");
+  const jsFilterClassesAfterClick = (await getAttribute(jsFilter, "class")).split(" ");
   expect(jsFilterClassesAfterClick).toContain("active");
 
   // clearFilters exists
@@ -104,11 +110,11 @@ test("Clear filters button works", async ({ page }) => {
   await clearFilters.click();
 
   // jobFilter does not have class active
-  const jobFilterClassesAfterClear = (await jobFilter.getAttribute("class")).split(" ");
+  const jobFilterClassesAfterClear = (await getAttribute(jobFilter, "class")).split(" ");
   expect(jobFilterClassesAfterClear).not.toContain("active");
 
   // jsFilter does not have class active
-  const jsFilterClassesAfterClear = (await jsFilter.getAttribute("class")).split(" ");
+  const jsFilterClassesAfterClear = (await getAttribute(jsFilter, "class")).split(" ");
   expect(jsFilterClassesAfterClear).not.toContain("active");
 });
 

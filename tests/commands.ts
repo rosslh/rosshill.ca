@@ -32,7 +32,10 @@ async function isUserScrolledToBottom(page: Page) {
 
 export async function isElementAtTopOfViewport(page: Page, selector: string) {
   const element = await getElement(page, selector).elementHandle();
-  const boundingBox = await element.boundingBox();
+  const boundingBox = element && await element.boundingBox();
+  if (!boundingBox) {
+    return false;
+  }
   const bufferPx = 5;
   const elementIsAtTop = Math.abs(boundingBox.y) < bufferPx;
   return elementIsAtTop || isUserScrolledToBottom(page);

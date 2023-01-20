@@ -1,9 +1,9 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import Icons from "unplugin-icons/vite";
 import { resolve } from "path";
+import type { UserConfig } from "vite";
 
-/** @type {import('vite').UserConfig} */
-export default {
+const config: UserConfig = {
   plugins: [
     sveltekit(),
     Icons({
@@ -16,3 +16,6 @@ export default {
     },
   },
 };
+
+
+export default config;

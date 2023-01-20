@@ -11,8 +11,8 @@
   import Sidebar from "./_components/sidebar/Sidebar.svelte";
   import CopyrightNotice from "./_components/CopyrightNotice.svelte";
 
-  import "../assets/styles/global.scss";
-  import "../assets/styles/normalize.min.css";
+  import "../../assets/styles/global.scss";
+  import "../../assets/styles/normalize.min.css";
 
   const getCssCustomProperty = (variableName: string) => {
     const style = getComputedStyle(document.querySelector(".app-wrapper"));
