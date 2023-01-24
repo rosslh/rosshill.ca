@@ -6,7 +6,7 @@
   export let data: { posts: PostItemStub[], brandColors: BrandColors };
   const { posts, brandColors } = data;
   
-  import PostStubs from "./_components/PostStubs.svelte";
+  import PostStubs from "./components/PostStubs.svelte";
 
   const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
