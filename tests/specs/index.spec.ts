@@ -1,6 +1,19 @@
-import { test, expect } from "@playwright/test";
+import {
+  test, expect, Page, Locator,
+} from "@playwright/test";
 import chroma from "chroma-js";
-import { getElement, expectToHaveText, getCssCustomProperty } from "../commands.js";
+import { getLocator, expectTextContent } from "../commands.js";
+
+async function getCssVariable(container: Page | Locator, testId: string, variableName: string) {
+  const locator = getLocator([container, testId]);
+  return locator.evaluate(
+    (elem, varName) => {
+      const style = getComputedStyle(elem);
+      return style.getPropertyValue(`--${varName}`);
+    },
+    variableName,
+  );
+}
 
 test.describe.configure({ mode: "parallel" });
 
@@ -9,7 +22,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Landing page has correct heading", async ({ page }) => {
-  await expectToHaveText(page, "main-heading");
+  await expectTextContent([page, "main-heading"]);
 });
 
 test.describe("prefers-color-scheme: dark", () => {
@@ -18,21 +31,21 @@ test.describe("prefers-color-scheme: dark", () => {
   test("Color scheme media query works", async ({ page }) => {
     // Check that the app wrapper has the data-theme attribute set to system
     await page.waitForSelector("div.app-wrapper[data-theme=system]");
-    const appWrapper = getElement(page, "app-wrapper");
+    const appWrapper = getLocator([page, "app-wrapper"]);
     expect(await appWrapper.getAttribute("data-theme")).toBe("system");
 
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 
     // Check that background color is correct
-    const background = (await getCssCustomProperty(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithWhite).toBeGreaterThan(contrastWithBlack);
   });
 
   test("Theme toggle works", async ({ page }) => {
-    const appWrapper = getElement(page, "app-wrapper");
-    const themeButton = getElement(page, "theme-switcher");
+    const appWrapper = getLocator([page, "app-wrapper"]);
+    const themeButton = getLocator([page, "theme-switcher"]);
   
     expect(await appWrapper.getAttribute("data-theme")).toBe("system");
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
@@ -57,21 +70,21 @@ test.describe("prefers-color-scheme: light", () => {
   test("Color scheme media query works", async ({ page }) => {
     // Check that the app wrapper has the data-theme attribute set to system
     await page.waitForSelector("div.app-wrapper[data-theme=system]");
-    const appWrapper = getElement(page, "app-wrapper");
+    const appWrapper = getLocator([page, "app-wrapper"]);
     expect(await appWrapper.getAttribute("data-theme")).toBe("system");
 
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
 
     // Check that background color is correct
-    const background = (await getCssCustomProperty(page, "app-wrapper", "background")).replace(/\s/g, "");
+    const background = (await getCssVariable(page, "app-wrapper", "background")).replace(/\s/g, "");
     const contrastWithWhite = chroma.contrast(background, "white");
     const contrastWithBlack = chroma.contrast(background, "black");
     expect(contrastWithBlack).toBeGreaterThan(contrastWithWhite);
   });
 
   test("Theme toggle works", async ({ page }) => {
-    const appWrapper = getElement(page, "app-wrapper");
-    const themeButton = getElement(page, "theme-switcher");
+    const appWrapper = getLocator([page, "app-wrapper"]);
+    const themeButton = getLocator([page, "theme-switcher"]);
   
     expect(await appWrapper.getAttribute("data-theme")).toBe("system");
     expect(await page.evaluate(() => document.cookie)).toBe("theme=system");
@@ -91,7 +104,7 @@ test.describe("prefers-color-scheme: light", () => {
 });
 
 test("User stored theme works", async ({ page }) => {
-  const appWrapper = getElement(page, "app-wrapper");
+  const appWrapper = getLocator([page, "app-wrapper"]);
 
   // User stored system theme works
   await page.evaluate(() => {

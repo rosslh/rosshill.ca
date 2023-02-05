@@ -1,18 +1,25 @@
 import { expect } from "@playwright/test";
-import type { Page } from "playwright-core";
+import type { Locator, Page } from "playwright-core";
 
-export function getElement(page: Page, dataAttribute: string) {
-  return page.locator(`[data-testid="${dataAttribute}"]`);
+type Container = Page | Locator;
+type Target = Locator | [Container, string];
+
+export function getLocator(target: Target): Locator {
+  if (Array.isArray(target)) {
+    const [container, testId] = target;
+    return container.locator(`[data-testid="${testId}"]`);
+  }
+  return target;
 }
 
-export async function expectCount(page: Page, dataAttribute: string, expectedCount: number) {
-  const element = getElement(page, dataAttribute);
-  await expect(element).toHaveCount(expectedCount, { timeout: 10000 });
+export async function expectCount(target: Target, expectedCount: number) {
+  const locator = getLocator(target);
+  await expect(locator).toHaveCount(expectedCount, { timeout: 10000 });
 }
 
-export async function expectToHaveText(page: Page, dataAttribute: string, text?: string) {
-  const element = getElement(page, dataAttribute);
-  const elementText = await element.evaluate((el) => el.textContent);
+export async function expectTextContent(target: Target, text?: string) {
+  const locator = getLocator(target);
+  const elementText = await locator.evaluate((el) => el.textContent);
   if (text) {
     expect(elementText).toContain(text);
   } else {
@@ -30,24 +37,13 @@ async function isUserScrolledToBottom(page: Page) {
   return evaluated.currentScrollPx + bufferPx > evaluated.documentHeightPx;
 }
 
-export async function isElementAtTopOfViewport(page: Page, selector: string) {
-  const element = await getElement(page, selector).elementHandle();
+export async function expectToBeAtTop(page: Page, selector: string) {
+  const element = await getLocator([page, selector]).elementHandle();
   const boundingBox = element && await element.boundingBox();
   if (!boundingBox) {
-    return false;
+    throw new Error(`Element ${selector} not found`);
   }
   const bufferPx = 5;
   const elementIsAtTop = Math.abs(boundingBox.y) < bufferPx;
-  return elementIsAtTop || isUserScrolledToBottom(page);
-}
-
-export async function getCssCustomProperty(page: Page, dataAttribute: string, variableName: string) {
-  const locator = getElement(page, dataAttribute);
-  return locator.evaluate(
-    (elem, varName) => {
-      const style = getComputedStyle(elem);
-      return style.getPropertyValue(`--${varName}`);
-    },
-    variableName,
-  );
+  expect(elementIsAtTop || await isUserScrolledToBottom(page)).toEqual(true);
 }

@@ -37,10 +37,10 @@
   $: otherActive = showCategories.has(PostCategory.Other);
   $: projectActive = showCategories.has(PostCategory.Project);
 
-  let tagsOrdered = [];
+  let tagsOrdered: string[] = [];
 
   $: {
-    const tagCounts: { [tag: string]: number } = {};
+    const tagCounts: Record<string, number> = {};
 
     posts.forEach(({ tags }) => {
       // for each tag in post, add 1 to count
@@ -119,12 +119,12 @@
     <Tag
       tagId={tag}
       active={showTags.has(tag)}
-      background={brandColors[tag].bg}
-      foreground={brandColors[tag].fg}
+      background={brandColors[tag]?.bg}
+      foreground={brandColors[tag]?.fg}
 
       isPageBackgroundDark={isPageBackgroundDark}
-      needsOutlineOnLightBg={brandColors[tag].outlineOnLight}
-      needsOutlineOnDarkBg={brandColors[tag].outlineOnDark}
+      needsOutlineOnLightBg={brandColors[tag]?.outlineOnLight ?? false}
+      needsOutlineOnDarkBg={brandColors[tag]?.outlineOnDark ?? false}
 
       onClick={() => toggleTag(tag)} />
   {/each}

@@ -1,9 +1,9 @@
 <script lang="ts">
   export let tagId: string;
   export let active = false;
-  export let background: string;
-  export let foreground: string;
-  export let onClick: () => void = null;
+  export let background: string = "000";
+  export let foreground: string = "FFF";
+  export let onClick: (() => void) | null = null;
   export let lazyLoad = false;
 
   export let isPageBackgroundDark = false;
@@ -15,8 +15,8 @@
 
   $: tagString = tagLabels[tagId] ?? tagId;
 
-  const iconOffsets = {
-    django: { y: "0.05rem", x: "-0.05rem" },
+  const iconOffsets: Record<string, { x?: string, y?: string }> = {
+    django: { y: "0.1rem", x: "-0.05rem" },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
@@ -29,7 +29,7 @@
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
-<!-- TODO: fix this: https://github.com/sveltejs/svelte/blob/670f4580568fe8ea31097981ba2d59c33daf0725/src/compiler/compile/nodes/Element.ts#L588 -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   class="tag do-transition"
   class:active

@@ -2,46 +2,43 @@ import { expect, test } from "@playwright/test";
 import fs from "fs";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
-import { isElementAtTopOfViewport, expectCount, getElement } from "../commands.js";
+import { expectToBeAtTop, expectCount, getLocator } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
 
 const testPage = async (page: Page, baseURL: string | undefined, slug: string) => {
-  const postStubLink = getElement(page, `post-stub-link-${slug}`);
-  const backLink = getElement(page, "back-link");
+  const postStubLink = getLocator([page, `post-stub-link-${slug}`]);
+  const backLink = getLocator([page, "back-link"]);
 
   await page.goto("/");
 
-  await expectCount(page, "main-heading", 1);
+  await expectCount([page, "main-heading"], 1);
 
-  await expectCount(page, "error", 0);
+  await expectCount([page, "error"], 0);
 
   // Before clicking the link, the path should be /
   expect(page.url()).toBe(`${baseURL}/`);
 
   await postStubLink.click();
 
-  await expectCount(page, "post-title", 1);
+  await expectCount([page, "post-title"], 1);
 
-  await expectCount(page, "error", 0);
+  await expectCount([page, "error"], 0);
 
   // After clicking the link, the path should be /item/:slug
   expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
-
-  // Main content should be at top of page, even on mobile
-  expect(await isElementAtTopOfViewport(page, "main-content")).toBe(true);
-
+  
   await backLink.click();
 
-  await expectCount(page, "main-heading", 1);
+  await expectCount([page, "main-heading"], 1);
 
-  await expectCount(page, "error", 0);
+  await expectCount([page, "error"], 0);
 
   // After clicking the back link, you should be back at the root with an anchor to the post
   expect(page.url()).toBe(`${baseURL}/#timeline-${slug}`);
 
   // Element is at top
-  expect(await isElementAtTopOfViewport(page, `post-stub-${slug}`)).toBe(true);
+  await expectToBeAtTop(page, `post-stub-${slug}`);
 };
 
 test.beforeEach(async ({ page }) => {

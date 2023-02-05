@@ -20,13 +20,13 @@
   const isStartInFuture = startDate > currentDate;
 
   if (!date.isSeasonal && (endDate || (date.isOngoing && !isStartInFuture))) {
-    const interval = intervalToDuration({ start: startDate, end: endDate ?? currentDate });
+    const interval = intervalToDuration({ start: startDate, end: endDate || currentDate });
 
-    if (interval.days >= 15) {
-      interval.months += 1;
+    if (interval.days && interval.days >= 15) {
+      interval.months = interval.months ? interval.months + 1 : 1;
 
       if (interval.months === 12) {
-        interval.years += 1;
+        interval.years = interval.years ? interval.years + 1 : 1;
         interval.months -= 12;
       }
     }

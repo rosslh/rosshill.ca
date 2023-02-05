@@ -11,7 +11,7 @@
   import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
 
-  const themes = prefersColorSchemeDark(browser)
+  const themes: [SiteTheme, SiteTheme, SiteTheme] = prefersColorSchemeDark(browser)
     ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark]
     : [SiteTheme.System, SiteTheme.Dark, SiteTheme.Light];
 
@@ -19,7 +19,7 @@
 
   $: changeTheme = () => {
     themeIndex = (themeIndex + 1) % themes.length;
-    $themeStore = themes[themeIndex];
+    $themeStore = themes[themeIndex as 0 | 1 | 2];
   };
 </script>
 

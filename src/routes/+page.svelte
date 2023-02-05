@@ -10,24 +10,29 @@
 
   const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
-  const truncateBySentence = (text: string) => {
-    const maxDescLength = 155;
-    return text
+  const truncateBySentence = (text: string, maxLength: number) => {
+    const truncated = text
       .split(".")
       .filter((sentence) => sentence.trim())
       .map((sentence) => `${sentence.trim()}.`)
-      .reduce((acc, sentence) => {
-        if (acc.length + sentence.length <= maxDescLength) {
-          return `${acc} ${sentence}`;
-        }
-        return acc;
-      }, "")
-      || `${intro.split(".")[0]}.`;
+      .reduce(
+        (acc, sentence) => {
+          if (acc.length + sentence.length <= maxLength) {
+            return `${acc} ${sentence}`;
+          }
+          return acc;
+        },
+        "",
+      );
+    
+    const firstSentence = `${intro.split(".")[0]}.`;
+
+    return truncated || firstSentence;
   };
 
   const meta = {
     title: "Website and Portfolio | Ross Hill",
-    description: truncateBySentence(intro),
+    description: truncateBySentence(intro, 155),
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {

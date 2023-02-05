@@ -1,6 +1,6 @@
 import isbot from "isbot";
 
-export const tagLabels = {
+export const tagLabels: Record<string, string> = {
   backbonedotjs: "Backbone.js",
   graphql: "GraphQL",
   javascript: "JavaScript",
@@ -19,7 +19,7 @@ export const tagLabels = {
   wordpress: "WordPress",
 };
 
-export const tagAncestors = {
+export const tagAncestors: Record<string, string[]> = {
   "backbonedotjs": ["javascript"],
   "cypress": ["javascript"],
   "django": ["python"],

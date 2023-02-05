@@ -5,13 +5,14 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 </script>
 
-<div class="sidebar do-transition">
+<div class="sidebar do-transition" data-testid="sidebar">
   <div class="sidebar-content">
     <div class="img-wrapper">
       <picture class="fixed-size">
         <source srcset="/headshot.webp" type="image/webp" />
         <source srcset="/headshot.png" type="image/png" />
         <img
+          data-testid="headshot-img"
           src="/headshot.png"
           alt="Ross Hill"
           width={remsToPixels(10)}
@@ -21,20 +22,20 @@
     <h1>
       <AnimatedName />
     </h1>
-    <p class="subtitle role do-transition">Software Developer</p>
+    <p class="subtitle role do-transition" data-testid="job-title">Software Developer</p>
     <p class="subtitle email">
-      <a href="mailto:ross@rosshill.ca">ross@rosshill.ca</a>
+      <a href="mailto:ross@rosshill.ca" data-testid="email-address">ross@rosshill.ca</a>
     </p>
     <p class="subtitle">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh" data-testid="github-link">
         GitHub
       </a>
       <InlineSeparator />
-      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh" data-testid="linkedin-link">
         LinkedIn
       </a>
       <InlineSeparator />
-      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer">
+      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer" data-testid="resume-link">
         Resume
       </a>
     </p>

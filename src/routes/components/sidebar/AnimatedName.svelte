@@ -55,7 +55,7 @@
             logoFillDelay + 900,
           );
         }}
-        in:draw={!browser ? null : { duration: 3000, easing: sineIn }}
+        in:draw={!browser ? undefined : { duration: 3000, easing: sineIn }}
         d={svgPath}
       />
     {/if}

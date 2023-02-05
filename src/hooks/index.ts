@@ -1,9 +1,8 @@
 import Cookies from "universal-cookie";
+import type { Handle } from "@sveltejs/kit";
 
-/** @type {import('@sveltejs/kit').Handle} */
-export async function handle({ event: e, resolve }) {
-  const event = e; // conform to no-param-reassign rule
-
+export const handle: Handle = async ({ event: e, resolve }) => {
+  const event = e;
   const cookieHeader = event.request.headers.get("cookie");
   if (cookieHeader) {
     const cookies = new Cookies(cookieHeader);
@@ -11,9 +10,4 @@ export async function handle({ event: e, resolve }) {
   }
   
   return resolve(event);
-}
-
-/** @type {import('@sveltejs/kit').GetSession} */
-export function getSession({ locals }) {
-  return { theme: locals.theme };
-}
+};

@@ -19,3 +19,4 @@ build/
 src/data
 assets/**/*.webp
 assets/tags
+.env

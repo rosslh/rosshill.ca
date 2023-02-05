@@ -23,7 +23,10 @@
   let element: HTMLElement;
   let intersecting: boolean;
 
-  $: hasIntersected = reduceMotion || hasIntersected || intersecting;
+  let hasIntersected = false;
+  $: {
+    hasIntersected ||= reduceMotion || intersecting;
+  }
 
   // Graceful degradation for fading in posts
   $: getFadeInClass = () => {
@@ -60,7 +63,7 @@
       <PostStubTriangle {left} />
       <div
         class="post do-transition"
-        on:mouseenter|once={post.hasContent && preloadPage}
+        on:mouseenter|once={post.hasContent ? preloadPage : null}
       >
         <PostStubHeading
           {post}

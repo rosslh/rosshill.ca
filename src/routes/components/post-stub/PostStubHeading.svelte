@@ -40,12 +40,12 @@
       {#each post.tags as tagId}
         <Tag
           {tagId}
-          background={brandColors[tagId].bg}
-          foreground={brandColors[tagId].fg}
+          background={brandColors[tagId]?.bg}
+          foreground={brandColors[tagId]?.fg}
           active={activeTags.has(tagId)}
           isPageBackgroundDark={isPageBackgroundDark}
-          needsOutlineOnLightBg={brandColors[tagId].outlineOnLight}
-          needsOutlineOnDarkBg={brandColors[tagId].outlineOnDark}
+          needsOutlineOnLightBg={brandColors[tagId]?.outlineOnLight}
+          needsOutlineOnDarkBg={brandColors[tagId]?.outlineOnDark}
           lazyLoad />
       {/each}
     </div>

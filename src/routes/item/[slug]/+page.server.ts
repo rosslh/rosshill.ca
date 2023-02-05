@@ -1,5 +1,5 @@
 import { data as timeline } from "$data/posts.json";
-import { slugify } from "$lib/functions";
+import { formatPostTitle, slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
 import type { PostItemPage } from "$lib/types";
 
@@ -15,14 +15,14 @@ const posts: PostItemPage[] = Object.values(timeline)
     },
     embed: post.embed,
     excerpt: post.excerpt,
-    image: post.image && {
+    image: post.image ? {
       name: post.image,
       extension: post.imageExt ?? "png",
-    },
+    } : undefined,
     repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
-    title: post.title,
+    title: formatPostTitle(post.title),
     website: post.website,
   }));
 
@@ -32,7 +32,7 @@ const lookup: Map<string, PostItemPage> = new Map(
     .map((post) => ([post.slug, post])),
 );
 
-export function load({ params }) {
+export function load({ params }: { params: { slug: string } }) {
   const slug = params.slug.toLowerCase();
   if (lookup.has(slug)) {
     return {

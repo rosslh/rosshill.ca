@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  -->
 <script lang="ts">
-  export let element = null;
-  export let root = null;
+  export let element: HTMLElement | null | undefined = null;
+  export let root: Element | Document | null | undefined = null;
   export let rootMargin = "0px";
   export let threshold = 0;
   export let intersecting = false;
@@ -36,7 +36,7 @@ SOFTWARE.
   } from "svelte";
   import { browser } from "$app/environment";
   
-  let prevElement = null;
+  let prevElement: Element | null = null;
   let observer: IntersectionObserver;
 
   afterUpdate(async () => {
@@ -63,8 +63,8 @@ SOFTWARE.
     }
   });
 
-  const handleIntersection = ([entry]) => {
-    intersecting = entry.isIntersecting;
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    intersecting = Boolean(entries[0]?.isIntersecting);
   };
 
   $: {

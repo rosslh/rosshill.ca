@@ -4,7 +4,6 @@
   export let active: boolean;
   export let onClick: () => void;
   export let classPrefix: PostCategory;
-  export let extraClasses = "";
 
   import Circle from "~icons/fa-regular/circle";
   import CheckCircle from "~icons/fa-solid/check-circle";
@@ -18,11 +17,17 @@
       isToggling = false;
     }, 300);
   };
+
+  $: classList = [
+    `${classPrefix}-button`,
+    isToggling ? "toggling" : "do-transition",
+    active ? "active" : "inactive",
+  ];
 </script>
 
 <button
   data-testid="event-filter-{classPrefix}"
-  class="{classPrefix}-button {isToggling ? 'toggling' : 'do-transition'} {extraClasses} {active ? 'active' : 'inactive'}"
+  class={classList.join(" ")}
   on:click={handleClick}
 >
   <span class="symbol">

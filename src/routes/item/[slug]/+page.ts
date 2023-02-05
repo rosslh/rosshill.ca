@@ -1,5 +1,6 @@
 
 import { browser } from "$app/environment";
+import type { Load } from "@sveltejs/kit";
 
 const preloadImage = (src: string) => new Promise((r) => {
   const image = new Image();
@@ -8,11 +9,10 @@ const preloadImage = (src: string) => new Promise((r) => {
   image.src = src;
 });
 
-export async function load({ data: props }) {
-  const { post } = props;
-  if (browser && post?.image) {
-    const webpImageSrc = `/timeline/${post.image.name}.webp`;
+export const load: Load = async ({ data }) => {
+  if (browser && data?.post?.image) {
+    const webpImageSrc = `/timeline/${data.post.image.name}.webp`;
     await preloadImage(webpImageSrc);
   }
-  return props;
-}
+  return data;
+};

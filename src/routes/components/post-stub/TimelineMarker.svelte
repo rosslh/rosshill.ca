@@ -4,7 +4,9 @@
   export let left: boolean;
   export let eventType: PostCategory;
 
-  const typeString = eventType[0].toUpperCase() + eventType.slice(1);
+  const typeString = eventType[0]
+    ? eventType[0].toUpperCase() + eventType.slice(1)
+    : "";
 </script>
 
 <div

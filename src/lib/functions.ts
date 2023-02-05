@@ -5,3 +5,5 @@ export const slugify = (str: string) => getSlug(str, { replacement: "-", lower: 
 export const remsToPixels = (rems: number) => Math.round(rems * 16);
 
 export const prefersColorSchemeDark = (isBrowser: boolean) => isBrowser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+export const formatPostTitle = (title: string) => title.replace(/\s[-–—]\s/g, " – ");

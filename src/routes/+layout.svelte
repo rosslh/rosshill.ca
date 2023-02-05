@@ -1,40 +1,51 @@
 
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
-
+  
   export let data: { themeFromSession: SiteTheme};
-
-  import { consoleMessagePrinted, themeStore } from "$lib/stores";
+  
+  import { onMount } from "svelte";
+  import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
   import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
   import Sidebar from "./components/sidebar/Sidebar.svelte";
   import CopyrightNotice from "./components/CopyrightNotice.svelte";
 
-  import "../../assets/styles/global.scss";
-  import "../../assets/styles/normalize.min.css";
+  import "$lib/styles/global.scss";
+  import "$lib/styles/normalize.min.css";
 
-  const getCssCustomProperty = (variableName: string) => {
-    const style = getComputedStyle(document.querySelector(".app-wrapper"));
+  const getCssVariable = (element: HTMLElement, variableName: string) => {
+    const style = getComputedStyle(element);
     return style.getPropertyValue(`--${variableName}`);
   };
 
-  $: {
-    if (browser && !$consoleMessagePrinted) {
-      $consoleMessagePrinted = true;
+  let appWrapper: HTMLDivElement;
+
+  onMount(() => {
+    if (appWrapper) {
       // eslint-disable-next-line no-console
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
-        `background-color: ${getCssCustomProperty("panel-background")}; border-radius: 0.5rem; border: 1px solid ${getCssCustomProperty("border")}; color: ${getCssCustomProperty("foreground")}; display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; font-weight: 700; padding: 0.75rem;`,
+        `
+        background-color: ${getCssVariable(appWrapper, "panel-background")};
+        border: 1px solid ${getCssVariable(appWrapper, "border")};
+        border-radius: 0.5rem;
+        color: ${getCssVariable(appWrapper, "foreground")};
+        display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        font-weight: 700;
+        padding: 0.75rem;
+        `,
       );
     }
-  }
+  });
 
   $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
 
 <div
   class="app-wrapper do-transition"
+  bind:this={appWrapper}
   data-theme={selectedTheme}
   data-testid="app-wrapper"
 >

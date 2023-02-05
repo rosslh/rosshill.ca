@@ -1,5 +1,5 @@
 import { data as timeline } from "$data/posts.json";
-import { slugify } from "$lib/functions";
+import { formatPostTitle, slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
 import type { PostItemStub } from "$lib/types";
 import { PostCategory } from "$lib/types";
@@ -19,11 +19,11 @@ const posts: PostItemStub[] = Object.values(timeline)
     repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
-    thumbnail: post.thumbnail && {
+    thumbnail: {
       name: post.thumbnail ?? `timeline/${post.thumbnail}`,
       extension: post.thumbnailExt ?? "png",
     },
-    title: post.title,
+    title: formatPostTitle(post.title),
     website: post.website,
   }))
   .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));

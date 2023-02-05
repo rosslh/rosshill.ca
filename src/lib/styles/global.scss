@@ -12,15 +12,15 @@ $project-hue: 272;
 $other-hue: 135;
 
 @mixin light-theme() {
-  $category-button-saturation: 74%;
-  $category-button-lightness: 46%;
+  $category-saturation: 74%;
+  $category-lightness: 46%;
 
-  $marker-saturation: $category-button-saturation - 10;
-  $marker-lightness: $category-button-lightness + 10;
+  $marker-saturation: $category-saturation - 10;
+  $marker-lightness: $category-lightness + 10;
 
-  --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
-  --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
-  --other: #{hsluv($other-hue, $category-button-saturation, $category-button-lightness)};
+  --job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
   --job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
   --project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
@@ -38,12 +38,12 @@ $other-hue: 135;
 }
 
 @mixin dark-theme() {
-  $category-button-saturation: 75%;
-  $category-button-lightness: 65%;
+  $category-saturation: 75%;
+  $category-lightness: 65%;
 
-  --job: #{hsluv($job-hue, $category-button-saturation, $category-button-lightness)};
-  --project: #{hsluv($project-hue, $category-button-saturation, $category-button-lightness)};
-  --other: #{hsluv($other-hue, $category-button-saturation, $category-button-lightness)};
+  --job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
   --job-marker: var(--job);
   --project-marker: var(--project);

@@ -13,7 +13,7 @@
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
 
-  let mainContent: HTMLElement;
+  let mainContent: HTMLDivElement;
   onMount(async () => {
     await tick();
     mainContent.scrollIntoView();
@@ -88,8 +88,8 @@
           {#each post.tags as tagId}
             <Tag
               {tagId}
-              background={brandColors[tagId].bg}
-              foreground={brandColors[tagId].fg} />
+              background={brandColors[tagId]?.bg}
+              foreground={brandColors[tagId]?.fg} />
           {/each}
         </div>
       {/if}

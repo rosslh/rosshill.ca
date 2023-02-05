@@ -16,10 +16,12 @@
 
   const getYearFromDate = (date: string) => date.slice(0, 4);
 
-  const setLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]) => {
+  const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]) => {
     const output = post;
-    const prevLeftAligned = i === 0 ? false : postsArray[i - 1].isLeftAligned;
-    const prevYear = i === 0 ? 0 : getYearFromDate(postsArray[i - 1].date.start);
+
+    const prevItem = postsArray[i - 1];
+    const prevLeftAligned = prevItem ? Boolean(prevItem.isLeftAligned) : false;
+    const prevYear = prevItem ? getYearFromDate(prevItem.date.start) : null;
 
     const year = getYearFromDate(output.date.start);
 
@@ -36,7 +38,7 @@
 
   $: categoryFilter = (post: PostItemStub) => !$showCategories.size || $showCategories.has(post.eventType);
 
-  $: ancestorTagShown = (tag: string) => tagAncestors[tag] && tagAncestors[tag].some((ancestorTag: string) => $showTags.has(ancestorTag));
+  $: ancestorTagShown = (tag: string) => tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag));
 
   $: tagFilter = (post: PostItemStub) => {
     const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
@@ -45,7 +47,7 @@
 
   $: postsWithLabels = posts
     .filter((post: PostItemStub) => categoryFilter(post) && tagFilter(post))
-    .map(setLabelVisibilityAndAlignment);
+    .map(getLabelVisibilityAndAlignment);
 
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
@@ -80,7 +82,7 @@
       {#if post.showYearLabel}
         <YearLabel
           isFirstLabel={i === 0}
-          isRightToLeft={post.isLeftAligned}
+          isRightToLeft={Boolean(post.isLeftAligned)}
           year={getYearFromDate(post.date.start)}
         />
       {/if}
@@ -93,7 +95,7 @@
           {activeTags}
           isFirstPost={i === 0}
           isLastPost={i === postsWithLabels.length - 1}
-          left={post.isLeftAligned}
+          left={Boolean(post.isLeftAligned)}
         />
       {/key}
     {/each}
