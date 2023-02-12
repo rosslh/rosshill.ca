@@ -1,12 +1,12 @@
 import { expect, test } from "@playwright/test";
-import fs from "fs";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
 import { expectToBeAtTop, expectCount, getLocator } from "../commands.js";
+import posts from "../../src/data/posts.json" assert { type: "json" };
 
 test.describe.configure({ mode: "parallel" });
 
-const testPage = async (page: Page, baseURL: string | undefined, slug: string) => {
+const testPage = async (page: Page, baseURL: string | undefined, slug: string): Promise<void> => {
   const postStubLink = getLocator([page, `post-stub-link-${slug}`]);
   const backLink = getLocator([page, "back-link"]);
 
@@ -41,22 +41,14 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string) =
   await expectToBeAtTop(page, `post-stub-${slug}`);
 };
 
-test.beforeEach(async ({ page }) => {
-  await page.goto("/");
-});
+test.describe("Exhaustive testing", () => {
+  const postSlugs = posts.data
+    .filter(({ contents, isHidden }) => contents && !isHidden)
+    .map(({ title }) => slugify(title));
 
-async function readJsonFile(file: string) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
-}
-
-readJsonFile("src/data/posts.json").then(({ data: timeline }) => {
-  const postsWithContent = timeline.filter(({ contents, isHidden }) => contents && !isHidden);
-
-  for (let i = 0; i < postsWithContent.length; i += 1) {
-    const { title } = postsWithContent[i];
-    const slug = slugify(title);
-    test(`You can navigate to and from ${slug} page`, async ({ page, baseURL }) => {
-      await testPage(page, baseURL, slug);
+  for (let i = 0; i < postSlugs.length; i += 1) {
+    test(`You can navigate to and from ${postSlugs[i]} page`, async ({ page, baseURL }) => {
+      await testPage(page, baseURL, postSlugs[i]);
     });
   }
 });

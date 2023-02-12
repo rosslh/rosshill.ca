@@ -17,7 +17,7 @@
 
   let themeIndex = themes.indexOf(selectedTheme);
 
-  $: changeTheme = () => {
+  $: changeTheme = (): void => {
     themeIndex = (themeIndex + 1) % themes.length;
     $themeStore = themes[themeIndex as 0 | 1 | 2];
   };

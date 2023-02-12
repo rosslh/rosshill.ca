@@ -25,13 +25,13 @@ const icons: Record<string, Icon> = keyBy(
   (icon) => icon.slug,
 );
 
-function handleFileError(err: Error | null) {
+function handleFileError(err: Error | null): void {
   if (err) {
     throw err;
   }
 }
 
-function getNumbersFromSassProperty(fileLines: string[], propertyName: string) {
+function getNumbersFromSassProperty(fileLines: string[], propertyName: string): number[] {
   const escapedPropertyName = propertyName.replace("$", "\\$");
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
@@ -39,7 +39,7 @@ function getNumbersFromSassProperty(fileLines: string[], propertyName: string) {
   return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
 }
 
-function getForegroundColors() {
+function getForegroundColors(): { light: string, dark: string } {
   const cssFile = "src/lib/styles/global.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
@@ -71,7 +71,7 @@ function getForegroundColors() {
   return { light, dark };
 }
 
-function getContrast(color1: string, color2: string) {
+function getContrast(color1: string, color2: string): number {
   const color1Luminance = sRGBtoY(chroma(color1).rgb());
   const color2Luminance = sRGBtoY(chroma(color2).rgb());
   return Math.abs(Number(APCAcontrast(color1Luminance, color2Luminance)));
@@ -81,7 +81,7 @@ function getBestContrastForeground(
   background: string,
   lightForeground: string,
   darkForeground: string,
-) {
+): string {
   const contrastWithLight = getContrast(background, lightForeground);
   const contrastWithDark = getContrast(background, darkForeground);
 
@@ -108,7 +108,7 @@ function createSvgsForTags(
   tags: string[],
   brandColors: BrandColors,
   tagDirectory: string,
-) {
+): void {
   if (!fs.existsSync(tagDirectory)) {
     fs.mkdirSync(tagDirectory);
   }
@@ -141,7 +141,7 @@ function getBrandColors(
   );
 }
 
-function getTags(data: PostItemStub[]) {
+function getTags(data: PostItemStub[]): string[] {
   return data
     .filter((post: PostItemStub) => post.tags?.length)
     .flatMap((post: PostItemStub) => {
@@ -158,11 +158,11 @@ function getTags(data: PostItemStub[]) {
     });
 }
 
-function getTagIconsAndColors(
+function writeTagIconsAndColors(
   tagDirectory: string,
   light: string,
   dark: string,
-) {
+): void {
   fs.readFile("src/data/posts.json", "utf8", (_err, file) => {
     const { data } = JSON.parse(file);
     const tags: string[] = getTags(data);
@@ -177,10 +177,10 @@ function getTagIconsAndColors(
   });
 }
 
-function main() {
+function main(): void {
   const tagDirectory = "assets/tags/";
   const { light, dark } = getForegroundColors();
-  getTagIconsAndColors(tagDirectory, light, dark);
+  writeTagIconsAndColors(tagDirectory, light, dark);
 }
 
 main();

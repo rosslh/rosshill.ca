@@ -1,7 +1,7 @@
 import imagemin from "imagemin";
 import imageminWebp from "imagemin-webp";
 
-const convertImages = async (dir: string) => {
+async function convertImages(dir: string): Promise<void> {
   await imagemin(
     [`${dir}/*.{png,jpg,jpeg}`],
     {
@@ -9,9 +9,9 @@ const convertImages = async (dir: string) => {
       plugins: [imageminWebp({ quality: 75 })],
     },
   );
-};
+}
 
-(async () => {
+(async (): Promise<void> => {
   await convertImages("assets");
   await convertImages("assets/timeline");
 })();

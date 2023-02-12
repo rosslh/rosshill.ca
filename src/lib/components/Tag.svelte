@@ -25,7 +25,7 @@
 
   const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
 
-  const getHexOpacity = (floatPercentage: number) => Math.round(255 * floatPercentage).toString(16);
+  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage).toString(16);
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 

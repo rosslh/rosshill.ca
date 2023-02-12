@@ -63,7 +63,7 @@ SOFTWARE.
     }
   });
 
-  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+  const handleIntersection = (entries: IntersectionObserverEntry[]): void => {
     intersecting = Boolean(entries[0]?.isIntersecting);
   };
 

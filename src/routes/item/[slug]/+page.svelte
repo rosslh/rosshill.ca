@@ -19,7 +19,7 @@
     mainContent.scrollIntoView();
   });
 
-  const capitalize = (text: string) => text.replace(/\b\w/g, (m) => m.toUpperCase());
+  const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
     title: `${post.title} | Ross Hill`,

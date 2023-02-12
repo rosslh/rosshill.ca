@@ -25,11 +25,11 @@
     return set;
   }
 
-  const toggleCategory = (category: PostCategory) => {
+  const toggleCategory = (category: PostCategory): void => {
     showCategories = toggleItemInSet(showCategories, category);
   };
 
-  const toggleTag = (tag: string) => {
+  const toggleTag = (tag: string): void => {
     showTags = toggleItemInSet(showTags, tag);
   };
 

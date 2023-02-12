@@ -10,7 +10,7 @@
 
   let isToggling = false;
 
-  const handleClick = () => {
+  const handleClick = (): void => {
     isToggling = true;
     onClick();
     setTimeout(() => {

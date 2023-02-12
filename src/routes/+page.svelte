@@ -10,7 +10,7 @@
 
   const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
-  const truncateBySentence = (text: string, maxLength: number) => {
+  const truncateBySentence = (text: string, maxLength: number): string => {
     const truncated = text
       .split(".")
       .filter((sentence) => sentence.trim())

@@ -2,10 +2,10 @@
 import { browser } from "$app/environment";
 import type { Load } from "@sveltejs/kit";
 
-const preloadImage = (src: string) => new Promise((r) => {
+const preloadImage = (src: string): Promise<unknown> => new Promise((resolve) => {
   const image = new Image();
-  image.onload = r;
-  image.onerror = r;
+  image.onload = resolve;
+  image.onerror = resolve;
   image.src = src;
 });
 

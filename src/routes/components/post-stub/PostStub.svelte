@@ -29,14 +29,14 @@
   }
 
   // Graceful degradation for fading in posts
-  $: getFadeInClass = () => {
+  $: getFadeInClass = (): string => {
     if (!browser) {
       return "ssr-fade-in";
     }
     return hasIntersected ? "fade-in" : "fade-in invisible";
   };
 
-  const preloadPage = async () => {
+  const preloadPage = async (): Promise<void> => {
     await preloadData(`item/${post.slug}`);
   };
 </script>

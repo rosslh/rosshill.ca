@@ -18,7 +18,7 @@
   const logoFillDelay = reduceMotion ? 0 : 1000;
 
   // Graceful degradation for name animation
-  $: getPathClass = () => {
+  $: getPathClass = (): string => {
     if (!browser) {
       return "server-rendered";
     }

@@ -15,7 +15,7 @@
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.min.css";
 
-  const getCssVariable = (element: HTMLElement, variableName: string) => {
+  const getCssVariable = (element: HTMLElement, variableName: string): string => {
     const style = getComputedStyle(element);
     return style.getPropertyValue(`--${variableName}`);
   };

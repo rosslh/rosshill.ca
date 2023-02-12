@@ -15,7 +15,7 @@
     "preview": "vite preview --port 3000",
     "test": "playwright test",
     "upgrade": "ncu -u --reject apca-w3 && npm i",
-    "writeNodeVersion": "node --loader ts-node/esm ./scripts/writeNodeVersion.ts"
+    "updateNvmrc": "node --loader ts-node/esm ./scripts/updateNvmrc.ts"
   },
   "wireit": {
     "getIcons": {
@@ -27,7 +27,7 @@
     "build": {
       "command": "vite build",
       "dependencies": [
-        "writeNodeVersion",
+        "updateNvmrc",
         "getIcons",
         "getWebp"
       ]
@@ -37,25 +37,25 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/eslint-parser": "^7.19.1",
-    "@iconify/json": "^2.2.16",
+    "@iconify/json": "^2.2.20",
     "@playwright/test": "^1.30.0",
-    "@sveltejs/adapter-netlify": "^1.0.5",
-    "@sveltejs/kit": "1.2.6",
+    "@sveltejs/adapter-netlify": "^2.0.3",
+    "@sveltejs/kit": "1.5.5",
     "@types/apca-w3": "^0.1.0",
-    "@types/chroma-js": "^2.1.4",
+    "@types/chroma-js": "^2.1.5",
     "@types/cssnano": "^5.0.0",
     "@types/dateformat": "^5.0.0",
-    "@types/imagemin": "^8.0.0",
+    "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.0",
     "@types/lodash-es": "^4.17.6",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "apca-w3": "0.1.2",
     "autoprefixer": "^10.4.13",
     "chroma-js": "^2.4.2",
     "cssnano": "^5.1.14",
     "date-fns": "^2.29.3",
-    "eslint": "^8.33.0",
+    "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
@@ -76,14 +76,13 @@
     "svelte-preprocess": "^5.0.1",
     "svelte-wrap-balancer": "^0.0.3",
     "ts-node": "^10.9.1",
-    "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.15.2",
     "vite": "4.1.1",
-    "wireit": "^0.9.4"
+    "wireit": "^0.9.5"
   },
   "engines": {
-    "node": ">= 16.13.2"
+    "node": ">= 18.14.0"
   }
 }

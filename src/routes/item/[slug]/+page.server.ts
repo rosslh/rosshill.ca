@@ -1,7 +1,7 @@
 import { data as timeline } from "$data/posts.json";
 import { formatPostTitle, slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItemPage } from "$lib/types";
+import type { BrandColors, PostItemPage } from "$lib/types";
 
 const posts: PostItemPage[] = Object.values(timeline)
   .filter(({ contents, isHidden }) => contents && !isHidden)
@@ -32,17 +32,23 @@ const lookup: Map<string, PostItemPage> = new Map(
     .map((post) => ([post.slug, post])),
 );
 
-export function load({ params }: { params: { slug: string } }) {
+type LoadResponse = {
+  post: PostItemPage;
+  brandColors: BrandColors;
+} | {
+  message: string;
+};
+
+export function load({ params }: { params: { slug: string } }): LoadResponse {
   const slug = params.slug.toLowerCase();
-  if (lookup.has(slug)) {
+  const post = lookup.get(slug);
+  if (post) {
     return {
-      post: lookup.get(slug),
+      post,
       brandColors,
     };
   }
   return {
     message: "Not found",
-    post: null,
-    brandColors,
   };
 }

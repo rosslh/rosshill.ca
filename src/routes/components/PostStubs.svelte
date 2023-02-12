@@ -14,9 +14,9 @@
   import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
-  const getYearFromDate = (date: string) => date.slice(0, 4);
+  const getYearFromDate = (date: string): string => date.slice(0, 4);
 
-  const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]) => {
+  const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]): PostItemStub => {
     const output = post;
 
     const prevItem = postsArray[i - 1];
@@ -36,11 +36,11 @@
     return output;
   };
 
-  $: categoryFilter = (post: PostItemStub) => !$showCategories.size || $showCategories.has(post.eventType);
+  $: categoryFilter = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
 
-  $: ancestorTagShown = (tag: string) => tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag));
+  $: ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
 
-  $: tagFilter = (post: PostItemStub) => {
+  $: tagFilter = (post: PostItemStub): boolean => {
     const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
     return !$showTags.size || postHasShownTag;
   };

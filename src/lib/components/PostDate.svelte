@@ -6,20 +6,25 @@
 
   export let date: PostDate;
 
-  const getDateFromString = (d: string): Date => {
-    const parts = d.slice(0, 10).split("-").map((part) => Number(part)) as [number, number, number];
-    parts[1] -= 1; // month is 0-indexed
-    return new Date(...parts);
-  };
-
-  const startDate = startOfMonth(getDateFromString(date.start));
-  const endDate = date.end && endOfMonth(getDateFromString(date.end));
+  const startDate = startOfMonth(Date.parse(date.start));
+  const endDate = date.end && endOfMonth(Date.parse(date.end));
   
-  let duration: string;
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
 
-  if (!date.isSeasonal && (endDate || (date.isOngoing && !isStartInFuture))) {
+  function getDuration(): string | null {
+    if (isStartInFuture) {
+      return null;
+    }
+
+    if (!(endDate || date.isOngoing)) {
+      return null;
+    }
+    
+    if (date.isSeasonal) {
+      return null;
+    }
+
     const interval = intervalToDuration({ start: startDate, end: endDate || currentDate });
 
     if (interval.days && interval.days >= 15) {
@@ -35,8 +40,10 @@
       interval.months = 1;
     }
 
-    duration = formatDuration(interval, { format: ["years", "months"] });
+    return formatDuration(interval, { format: ["years", "months"] });
   }
+
+  const duration = getDuration();
 </script>
 
 <div class="date-string do-transition">

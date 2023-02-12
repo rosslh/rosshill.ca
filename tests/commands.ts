@@ -12,12 +12,12 @@ export function getLocator(target: Target): Locator {
   return target;
 }
 
-export async function expectCount(target: Target, expectedCount: number) {
+export async function expectCount(target: Target, expectedCount: number): Promise<void> {
   const locator = getLocator(target);
   await expect(locator).toHaveCount(expectedCount, { timeout: 10000 });
 }
 
-export async function expectTextContent(target: Target, text?: string) {
+export async function expectTextContent(target: Target, text?: string): Promise<void> {
   const locator = getLocator(target);
   const elementText = await locator.evaluate((el) => el.textContent);
   if (text) {
@@ -27,7 +27,7 @@ export async function expectTextContent(target: Target, text?: string) {
   }
 }
 
-async function isUserScrolledToBottom(page: Page) {
+async function isUserScrolledToBottom(page: Page): Promise<boolean> {
   const evaluated = await page.evaluate(() => {
     const documentHeightPx = document.body.scrollHeight;
     const currentScrollPx = window.scrollY + window.innerHeight;
@@ -37,7 +37,7 @@ async function isUserScrolledToBottom(page: Page) {
   return evaluated.currentScrollPx + bufferPx > evaluated.documentHeightPx;
 }
 
-export async function expectToBeAtTop(page: Page, selector: string) {
+export async function expectToBeAtTop(page: Page, selector: string): Promise<void> {
   const element = await getLocator([page, selector]).elementHandle();
   const boundingBox = element && await element.boundingBox();
   if (!boundingBox) {

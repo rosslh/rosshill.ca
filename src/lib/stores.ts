@@ -20,7 +20,7 @@ function cookieStore<T>(key: string, defaultValue: T, maxAge = yearInSeconds): W
 
   return {
     ...store,
-    set: (newValue: T) => {
+    set: (newValue: T): void => {
       setStore(newValue);
       cookies.set(key, newValue, { maxAge });
     },

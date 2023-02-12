@@ -1,7 +1,7 @@
 import { data as timeline } from "$data/posts.json";
 import { formatPostTitle, slugify } from "$lib/functions";
 import brandColors from "$data/brandColors.json";
-import type { PostItemStub } from "$lib/types";
+import type { BrandColors, PostItemStub } from "$lib/types";
 import { PostCategory } from "$lib/types";
 
 const posts: PostItemStub[] = Object.values(timeline)
@@ -28,7 +28,7 @@ const posts: PostItemStub[] = Object.values(timeline)
   }))
   .sort((a, b) => Number(new Date(b.date.start)) - Number(new Date(a.date.start)));
 
-export function load() {
+export function load(): { posts: PostItemStub[]; brandColors: BrandColors } {
   return {
     posts,
     brandColors,
