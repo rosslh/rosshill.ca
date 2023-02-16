@@ -40,7 +40,7 @@
     "@iconify/json": "^2.2.20",
     "@playwright/test": "^1.30.0",
     "@sveltejs/adapter-netlify": "^2.0.3",
-    "@sveltejs/kit": "1.5.5",
+    "@sveltejs/kit": "1.7.1",
     "@types/apca-w3": "^0.1.0",
     "@types/chroma-js": "^2.1.5",
     "@types/cssnano": "^5.0.0",
