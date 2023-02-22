@@ -1,13 +1,20 @@
 <script lang="ts">
   import {
-    format, intervalToDuration, formatDuration, startOfMonth, endOfMonth,
+    format,
+    formatDuration,
+    intervalToDuration,
+    parse,
+    startOfMonth,
+    endOfMonth,
   } from "date-fns";
   import type { PostDate } from "$lib/types";
 
   export let date: PostDate;
 
-  const startDate = startOfMonth(Date.parse(date.start));
-  const endDate = date.end && endOfMonth(Date.parse(date.end));
+  const getDateFromString = (d: string): Date => parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
+
+  const startDate = startOfMonth(getDateFromString(date.start));
+  const endDate = date.end && endOfMonth(getDateFromString(date.end));
   
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;

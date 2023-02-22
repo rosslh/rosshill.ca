@@ -4,7 +4,7 @@ import fs from "fs";
 import { hsluvToHex } from "hsluv-ts";
 import { keyBy, merge } from "lodash-es";
 
-import SimpleIcons from "simple-icons";
+import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
 import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
