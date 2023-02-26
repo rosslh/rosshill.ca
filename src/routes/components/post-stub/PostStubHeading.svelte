@@ -33,7 +33,13 @@
   <div class="heading-and-tags">
     <h3>
       {#if post.hasContent}
-        <a data-sveltekit-preload-data data-testid="post-stub-link-{post.slug}" href="item/{post.slug}">{post.title}</a>
+        <a
+          data-sveltekit-preload-data
+          data-testid="post-stub-link-{post.slug}"
+          href="item/{post.slug}"
+        >
+          {post.title}
+        </a>
       {:else}{post.title}{/if}
     </h3>
     <div class="tags">

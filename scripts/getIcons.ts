@@ -21,8 +21,8 @@ const customIcons: Icon[] = [
 ];
 
 const icons: Record<string, Icon> = keyBy(
-  customIcons.concat(Object.values(SimpleIcons)),
-  (icon) => icon.slug,
+  [...customIcons, ...Object.values(SimpleIcons)],
+  "slug",
 );
 
 function handleFileError(err: Error | null): void {
@@ -31,15 +31,15 @@ function handleFileError(err: Error | null): void {
   }
 }
 
-function getNumbersFromSassProperty(fileLines: string[], propertyName: string): number[] {
-  const escapedPropertyName = propertyName.replace("$", "\\$");
-  const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
-  const matches = fileLines.filter((line) => pattern.test(line));
-
-  return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
-}
-
 function getForegroundColors(): { light: string, dark: string } {
+  const getNumbersFromSassProperty = (fileLines: string[], propertyName: string): number[] => {
+    const escapedPropertyName = propertyName.replace("$", "\\$");
+    const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
+    const matches = fileLines.filter((line) => pattern.test(line));
+  
+    return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
+  };
+
   const cssFile = "src/lib/styles/global.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
@@ -107,8 +107,8 @@ function getColorsForTag(icon: Icon, light: string, dark: string): BrandColor {
 function createSvgsForTags(
   tags: string[],
   brandColors: BrandColors,
-  tagDirectory: string,
 ): void {
+  const tagDirectory = "assets/tags/";
   if (!fs.existsSync(tagDirectory)) {
     fs.mkdirSync(tagDirectory);
   }
@@ -125,9 +125,8 @@ function createSvgsForTags(
 
 function getBrandColors(
   uniqueTags: string[],
-  light: string,
-  dark: string,
 ): BrandColors {
+  const { light, dark } = getForegroundColors();
   return merge(
     {},
     ...uniqueTags.map((tag) => {
@@ -158,16 +157,12 @@ function getTags(data: PostItemStub[]): string[] {
     });
 }
 
-function writeTagIconsAndColors(
-  tagDirectory: string,
-  light: string,
-  dark: string,
-): void {
+function main(): void {
   fs.readFile("src/data/posts.json", "utf8", (_err, file) => {
     const { data } = JSON.parse(file);
     const tags: string[] = getTags(data);
-    const brandColors = getBrandColors(tags, light, dark);
-    createSvgsForTags(tags, brandColors, tagDirectory);
+    const brandColors = getBrandColors(tags);
+    createSvgsForTags(tags, brandColors);
 
     fs.writeFile(
       "src/data/brandColors.json",
@@ -177,10 +172,5 @@ function writeTagIconsAndColors(
   });
 }
 
-function main(): void {
-  const tagDirectory = "assets/tags/";
-  const { light, dark } = getForegroundColors();
-  writeTagIconsAndColors(tagDirectory, light, dark);
-}
 
 main();
