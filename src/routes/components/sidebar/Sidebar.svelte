@@ -40,7 +40,6 @@
          target="_blank">
         Skype
       </a>
-      <InlineSeparator/>
     </p>
   </div>
   <Separator/>

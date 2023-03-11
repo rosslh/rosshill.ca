@@ -1,26 +1,24 @@
 <script lang="ts">
   import type { BrandColors, PostItemPage } from "$lib/types";
-
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/constants";
-
-  export let data: { post: PostItemPage, brandColors: BrandColors };
-  const { post, brandColors } = data;
-  
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
 
+  export let data: { post: PostItemPage, brandColors: BrandColors };
+  const {
+    post,
+    brandColors,
+  } = data;
   let mainContent: HTMLDivElement;
   onMount(async () => {
     await tick();
     mainContent.scrollIntoView();
   });
-
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
-
   const meta = {
     title: `${post.title} | Antoine Greuzard`,
     description: post.excerpt ?? post.title,
@@ -38,9 +36,8 @@
 </script>
 
 <MetaTags
-  title={meta.title}
-  description={meta.description}
   canonical={meta.url}
+  description={meta.description}
   openGraph={{
     article: {
       authors: [meta.author],
@@ -55,6 +52,7 @@
     type: "article",
     url: meta.url,
   }}
+  title={meta.title}
   twitter={{
     cardType: "summary_large_image",
     title: meta.title,
@@ -64,20 +62,20 @@
   }}
 />
 <div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
-  <BackLink href="/#timeline-{post.slug}" />
+  <BackLink href="/#timeline-{post.slug}"/>
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
-        <PostDate date={post.date} />
+        <PostDate date={post.date}/>
         {#if post.repository}
-          <InlineSeparator />
+          <InlineSeparator/>
           <a target="_blank" rel="noopener noreferrer" href={post.repository}>
             GitHub
           </a>
         {/if}
         {#if post.website}
-          <InlineSeparator />
+          <InlineSeparator/>
           <a target="_blank" rel="noopener noreferrer" href={post.website}>
             Site internet
           </a>
@@ -89,7 +87,7 @@
             <Tag
               {tagId}
               background={brandColors[tagId]?.bg}
-              foreground={brandColors[tagId]?.fg} />
+              foreground={brandColors[tagId]?.fg}/>
           {/each}
         </div>
       {/if}
@@ -137,16 +135,16 @@
 
     div.details {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
       margin-top: -0.75rem;
+      margin-bottom: 1.2rem;
 
       div.subtitle {
         font-size: 15px;
-        color: var(--subtitle);
         margin-top: 0.5rem;
         margin-right: 2rem;
+        color: var(--subtitle);
       }
 
       div.tags-wrapper {
@@ -155,15 +153,15 @@
         margin: 0.5rem 0 0;
       }
     }
-    
+
     img {
+      display: block;
+      width: auto;
       max-width: 600px;
       max-width: min(600px, 100%);
-      max-height: 400px;
-      width: auto;
       height: auto;
+      max-height: 400px;
       margin: 1.5rem auto 2rem;
-      display: block;
       border: 1px solid var(--border);
       border-radius: 0.5rem;
     }
@@ -175,8 +173,8 @@
 
       > div {
         position: relative;
-        padding-bottom: 56.25%;
         overflow: hidden;
+        padding-bottom: 56.25%;
         border: 1px solid var(--border);
         border-radius: 0.5rem;
       }
@@ -189,6 +187,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0; 
+    border: 0;
   }
 </style>

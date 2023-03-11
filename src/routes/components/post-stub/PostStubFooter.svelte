@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { PostItemStub } from "$lib/types";
-  
-  export let post: PostItemStub;
-
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+
+  export let post: PostItemStub;
 </script>
 
 <div class="footer">
@@ -15,24 +14,24 @@
       </a>
     {/if}
     {#if post.repository && post.website}
-      <InlineSeparator />
+      <InlineSeparator/>
     {/if}
     {#if post.website}
       <a target="_blank" rel="noopener noreferrer" href={post.website}>
-        Website
+        Site web
       </a>
     {/if}
   </div>
-  <PostDate date={post.date} />
+  <PostDate date={post.date}/>
 </div>
 
 <style lang="scss">
   div.footer {
     font-size: 0.8rem;
-    padding: 0.75rem 0.75rem 0 calc(1.8rem + 1rem);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.75rem 0 calc(1.8rem + 1rem);
 
     div.external-links {
       color: var(--subtitle);
