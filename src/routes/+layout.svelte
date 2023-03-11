@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
   
@@ -96,14 +95,14 @@
     h1, h2, h3, h4 { font-weight: 700; }
   </style>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#20232e">
-  <meta name="msapplication-TileColor" content="#20232e">
-  <meta name="theme-color" content="#20232e">
+  <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <meta content="#da532c" name="msapplication-TileColor">
+
+  <link href="/manifest.json" rel="manifest"/>
 </svelte:head>
 <style>
   div.two-column {

@@ -22,21 +22,21 @@
     <h1>
       <AnimatedName />
     </h1>
-    <p class="subtitle role do-transition" data-testid="job-title">Software Developer</p>
+    <p class="subtitle role do-transition" data-testid="job-title">Développeur web</p>
     <p class="subtitle email">
-      <a href="mailto:ross@rosshill.ca" data-testid="email-address">ross@rosshill.ca</a>
+      <a href="mailto:antoine@antoinegreuzard" data-testid="email-address">antoine@antoinegreuzard.fr</a>
     </p>
     <p class="subtitle">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh" data-testid="github-link">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/antoinegreuzard" data-testid="github-link">
         GitHub
       </a>
       <InlineSeparator />
-      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh" data-testid="linkedin-link">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/antoine-greuzard" data-testid="linkedin-link">
         LinkedIn
       </a>
       <InlineSeparator />
-      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer" data-testid="resume-link">
-        Resume
+      <a href="https://join.skype.com/invite/esIrFNeiMirt" target="_blank" rel="noopener noreferrer" data-testid="resume-link">
+        Skype
       </a>
     </p>
   </div>

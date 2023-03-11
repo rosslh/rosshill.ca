@@ -8,7 +8,7 @@
   
   import PostStubs from "./components/PostStubs.svelte";
 
-  const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
+  const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress.";
 
   const truncateBySentence = (text: string, maxLength: number): string => {
     const truncated = text
@@ -31,15 +31,15 @@
   };
 
   const meta = {
-    title: "Website and Portfolio | Ross Hill",
+    title: "Antoine Greuzard : Développeur Web Freelance",
     description: truncateBySentence(intro, 155),
-    url: "https://rosshill.ca",
-    siteName: "Ross Hill",
+    url: "https://antoinegreuzard.fr",
+    siteName: "Antoine Greuzard",
     image: {
-      url: "https://rosshill.ca/siteImage.png",
-      width: 1000,
-      height: 523,
-      alt: "Ross Hill: About Me, Projects, and Contact",
+      url: "https://rosshill.ca/antoine-greuzard.jpg",
+      width: 746,
+      height: 1020,
+      alt: "Antoine greuzard: A propos, Projets, et Contact",
     },
   };
 </script>
@@ -69,7 +69,7 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h2 data-testid="main-heading">
-      <Balancer>Welcome to my corner of the web!</Balancer>
+      <Balancer>Je suis un Développeur web Freelance</Balancer>
     </h2>
     <p>
       <Balancer>

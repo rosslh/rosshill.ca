@@ -1,5 +1,5 @@
 <footer class="content-wrapper do-transition">
-  Copyright &copy; 2015-{new Date().getFullYear()} Ross Hill. All Rights Reserved.
+  2022-{new Date().getFullYear()} Antoine Greuzard
 </footer>
 
 <style>
