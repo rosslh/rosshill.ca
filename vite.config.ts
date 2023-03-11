@@ -11,8 +11,8 @@ const config: UserConfig = {
     Icons({
       compiler: "svelte",
     }),
-    splitVendorChunkPlugin(),
-    VitePWA({
+    //splitVendorChunkPlugin(),
+    /*VitePWA({
             registerType: 'autoUpdate',
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
             manifest: {
@@ -32,7 +32,7 @@ const config: UserConfig = {
                 "theme_color": "#ffffff",
                 "background_color": "#ffffff"
             }
-        })
+        })*/
   ],
   resolve: {
     alias: {
