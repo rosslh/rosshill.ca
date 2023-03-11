@@ -95,7 +95,8 @@
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.15.3",
     "vite": "^4.1.4",
-    "wireit": "^0.9.5"
+    "wireit": "^0.9.5",
+    "vite-plugin-pwa": "^0.14.4"
   },
   "engines": {
     "node": ">= 18.14.0"
