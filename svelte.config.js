@@ -23,7 +23,7 @@ export default {
       },
       lib: "src/lib",
       routes: "src/routes",
-      appTemplate: "src/app.html",
+      appTemplate: "src/index.html",
     },
     inlineStyleThreshold: 100_000,
     paths: {
