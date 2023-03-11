@@ -108,7 +108,7 @@
         showTags = showTags;
       }}
     >
-      <span class="symbol"><Times /></span> Clear filters
+      <span class="symbol"><Times /></span> Effacer le filtre
     </button>
   {/if}
 </div>
@@ -168,8 +168,6 @@
 
   .secondary-button .symbol {
     position: static;
-    display: inline-flex;
-    align-items: center;
     margin-right: 0.2rem;
     font-size: 0.6rem;
     display: inline-flex;

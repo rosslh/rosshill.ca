@@ -6,5 +6,5 @@
 <div data-testid="error" class="content-wrapper main-content">
   <BackLink />
   <h2 data-testid="404-heading">404: Page introuvable</h2>
-  <ConfusedTravolta reason="the page wasn't found" />
+  <ConfusedTravolta reason="la page n'a pas été trouvée" />
 </div>
