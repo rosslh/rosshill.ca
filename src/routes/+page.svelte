@@ -36,7 +36,7 @@
     url: "https://antoinegreuzard.fr",
     siteName: "Antoine Greuzard",
     image: {
-      url: "https://rosshill.ca/antoine-greuzard.jpg",
+      url: "https://antoinegreuzard.fr/antoine-greuzard.jpg",
       width: 746,
       height: 1020,
       alt: "Antoine greuzard: A propos, Projets, et Contact",

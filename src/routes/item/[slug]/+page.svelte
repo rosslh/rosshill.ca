@@ -22,17 +22,17 @@
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
-    title: `${post.title} | Ross Hill`,
+    title: `${post.title} | Antoine Greuzard`,
     description: post.excerpt ?? post.title,
-    url: `https://rosshill.ca/item/${post.slug}`,
+    url: `https://antoinegreuzard.fr/item/${post.slug}`,
     image: {
       url: post.image
-        ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
-        : "https://rosshill.ca/siteImage.png",
+        ? `https://antoinegreuzard.fr/timeline/${post.image.name}.${post.image.extension}`
+        : "https://antoinegreuzard.fr/antoine-greuzard.jpg",
       alt: post.title,
     },
-    siteName: "Ross Hill",
-    author: "Ross Hill",
+    siteName: "Antoine Greuzard",
+    author: "Antoine greuzard",
     tags: post.tags.map((tagId) => tagLabels[tagId] ?? capitalize(tagId)),
   };
 </script>
