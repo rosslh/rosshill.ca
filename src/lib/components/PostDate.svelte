@@ -1,11 +1,6 @@
 <script lang="ts">
   import {
-    format,
-    formatDuration,
-    intervalToDuration,
-    parse,
-    startOfMonth,
-    endOfMonth,
+    endOfMonth, format, formatDuration, intervalToDuration, parse, startOfMonth,
   } from "date-fns";
   import type { PostDate } from "$lib/types";
 
@@ -15,7 +10,7 @@
 
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
-  
+
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
 
@@ -27,7 +22,7 @@
     if (!(endDate || date.isOngoing)) {
       return null;
     }
-    
+
     if (date.isSeasonal) {
       return null;
     }
@@ -47,7 +42,7 @@
       interval.months = 1;
     }
 
-    return formatDuration(interval, { format: ["years", "months"] });
+    return formatDuration(interval, { format: ["années  ", "mois"] });
   }
 
   const duration = getDuration();
@@ -65,7 +60,7 @@
     {#if endDate}
       &ndash; {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
     {:else if date.isOngoing}
-      &ndash; Present
+      &ndash; Présent
     {/if}
     {#if duration}
       ({duration})

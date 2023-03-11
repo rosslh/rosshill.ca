@@ -2,19 +2,17 @@
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { PostCategory, SiteTheme } from "$lib/types";
   import { minTagNum, themeStore } from "$lib/stores";
-
-  export let showCategories: Set<PostCategory>;
-  export let showTags: Set<string>;
-  export let posts: PostItemStub[];
-  export let brandColors: BrandColors;
-
   import Times from "~icons/fa-solid/times";
-  
   import { browser } from "$app/environment";
   import { tagAncestors } from "$lib/constants";
   import { prefersColorSchemeDark } from "$lib/functions";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
+
+  export let showCategories: Set<PostCategory>;
+  export let showTags: Set<string>;
+  export let posts: PostItemStub[];
+  export let brandColors: BrandColors;
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
     if (set.has(item)) {
@@ -81,21 +79,21 @@
     classPrefix={PostCategory.Job}
     onClick={() => toggleCategory(PostCategory.Job)}
   >
-    Work
+    Emplois
   </FilterButton>
   <FilterButton
     active={projectActive}
     classPrefix={PostCategory.Project}
     onClick={() => toggleCategory(PostCategory.Project)}
   >
-    Projects
+    Projets
   </FilterButton>
   <FilterButton
     active={otherActive}
     classPrefix={PostCategory.Other}
     onClick={() => toggleCategory(PostCategory.Other)}
   >
-    Other
+    Autres
   </FilterButton>
   {#if showCategories.size || showTags.size}
     <button
@@ -136,7 +134,7 @@
         $minTagNum = 0;
       }}
     >
-      Show more...
+      Voir plus...
     </button>
   {/if}
 </div>
