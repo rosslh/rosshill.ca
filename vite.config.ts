@@ -8,7 +8,7 @@ const config: UserConfig = {
     sveltekit(),
     Icons({
       compiler: "svelte",
-    })
+    }),
   ],
   resolve: {
     alias: {
@@ -16,5 +16,6 @@ const config: UserConfig = {
     },
   },
 };
+
 
 export default config;
