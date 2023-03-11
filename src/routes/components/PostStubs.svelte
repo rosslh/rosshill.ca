@@ -68,7 +68,7 @@
 </script>
 
 <div class="heading-wrapper content-wrapper ">
-  <h2>Experience</h2>
+  <h2>Expérience</h2>
   <FilterControls
     bind:showCategories={$showCategories}
     bind:showTags={$showTags}

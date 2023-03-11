@@ -79,7 +79,7 @@
         {#if post.website}
           <InlineSeparator />
           <a target="_blank" rel="noopener noreferrer" href={post.website}>
-            Website
+            Site internet
           </a>
         {/if}
       </div>
