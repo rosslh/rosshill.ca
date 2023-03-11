@@ -77,7 +77,7 @@
     "lodash-es": "^4.17.21",
     "markdown-json": "^1.6.1",
     "marked": "^4.0.10",
-    "minimist": "0.2.4",
+    "minimist": "^0.2.4",
     "npm-check-updates": "^16.7.9",
     "nth-check": "^2.0.1",
     "optimist": "^0.6.1",
@@ -85,7 +85,7 @@
     "semver-regex": "^4.0.5",
     "simple-icons": "^8.5.0",
     "slugify": "^1.6.5",
-    "svelte": "3.55.1",
+    "svelte": "^3.55.1",
     "svelte-check": "^3.0.4",
     "svelte-meta-tags": "^2.6.5",
     "svelte-preprocess": "^5.0.1",
@@ -94,7 +94,7 @@
     "typescript": "^4.9.5",
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.15.3",
-    "vite": "4.1.4",
+    "vite": "^4.1.4",
     "wireit": "^0.9.5"
   },
   "engines": {
