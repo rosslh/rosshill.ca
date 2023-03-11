@@ -15,7 +15,8 @@
     "preview": "vite preview --port 3000",
     "test": "playwright test",
     "upgrade": "ncu -u --reject apca-w3 && npm i",
-    "updateNvmrc": "node --loader ts-node/esm ./scripts/updateNvmrc.ts"
+    "updateNvmrc": "node --loader ts-node/esm ./scripts/updateNvmrc.ts",
+    "start": "node server.js"
   },
   "wireit": {
     "getIcons": {
@@ -45,6 +46,7 @@
     "@playwright/test": "^1.31.1",
     "@sveltejs/adapter-netlify": "^2.0.5",
     "@sveltejs/kit": "1.8.5",
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@types/apca-w3": "^0.1.0",
     "@types/chroma-js": "^2.4.0",
     "@types/cssnano": "^5.0.0",
