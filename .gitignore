@@ -20,3 +20,6 @@ src/data
 assets/**/*.webp
 assets/tags
 .env
+.idea
+.idea/
+.idea/*
