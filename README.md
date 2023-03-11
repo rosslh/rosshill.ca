@@ -1,5 +1,3 @@
-# rosshill.ca
+# antoinegreuzard.fr
 
-Built with SvelteKit.
-
-Copyright © 2015 Ross Hill. All Rights Reserved.
+Built with SvelteKit from Ross Hill.
