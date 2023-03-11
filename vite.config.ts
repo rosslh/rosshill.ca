@@ -2,6 +2,7 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import Icons from "unplugin-icons/vite";
 import { resolve } from "path";
 import type { UserConfig } from "vite";
+import { splitVendorChunkPlugin } from 'vite'
 
 const config: UserConfig = {
   plugins: [
@@ -9,6 +10,7 @@ const config: UserConfig = {
     Icons({
       compiler: "svelte",
     }),
+    splitVendorChunkPlugin()
   ],
   resolve: {
     alias: {
@@ -16,6 +18,5 @@ const config: UserConfig = {
     },
   },
 };
-
 
 export default config;
