@@ -78,6 +78,7 @@ export const tagAncestors: Record<string, string[]> = {
   "vite": ["javascript"],
   "elementor": ["wordpress"],
   "laravel": ["php"],
+  "sass": ["css3"],
 };
 
 const isBrowser = typeof window !== "undefined" && !("Deno" in window);

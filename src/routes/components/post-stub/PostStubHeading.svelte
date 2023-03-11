@@ -1,14 +1,12 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
-
   import Tag from "$lib/components/Tag.svelte";
-  
+  import { remsToPixels } from "$lib/functions";
+
   export let brandColors: BrandColors;
   export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
-
-  import { remsToPixels } from "$lib/functions";
 </script>
 
 <div class="post-heading">
@@ -61,21 +59,22 @@
 <style lang="scss">
   div.post-heading {
     display: flex;
-    min-height: 1.5rem;
     align-items: center;
+    min-height: 1.5rem;
 
     div.picture-frame {
-      border-radius: 50%;
+      display: inline-block;
       overflow: hidden;
+      flex-shrink: 0;
       width: 2rem;
       height: 2rem;
-      display: inline-block;
-      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: #ffffff;
 
       * {
-        height: 100%;
-        width: 100%;
         display: block;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -92,16 +91,16 @@
         padding: 0;
 
         a {
-          color: var(--heading);
           text-decoration: underline !important;
+          color: var(--heading);
         }
       }
 
       div.tags {
         display: flex;
-        padding: 0.3rem 0;
-        margin-left: 0.75rem;
         flex-wrap: wrap;
+        margin-left: 0.75rem;
+        padding: 0.3rem 0;
       }
     }
   }

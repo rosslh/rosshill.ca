@@ -11,10 +11,8 @@ date: 2022-10-01
 isOngoing: true
 isSeasonal: false
 
-thumbnail: thumbnail
-thumbnailExt: png
-image: image
-imageExt: png
+thumbnail: influactive
+thumbnailExt: jpeg
 ---
 
 Je suis ravi de vous parler de mon travail en tant que développeur web chez Influactive, une agence de communication qui

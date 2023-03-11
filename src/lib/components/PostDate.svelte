@@ -3,7 +3,6 @@
     endOfMonth, format, formatDuration, intervalToDuration, parse, startOfMonth,
   } from "date-fns";
   import type { PostDate } from "$lib/types";
-  import { fr } from "date-fns/locale";
 
   export let date: PostDate;
   const getDateFromString = (d: string): Date => parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
@@ -38,7 +37,6 @@
     }
     return formatDuration(interval, {
       format: ["années  ", "mois"],
-      locale: fr,
     });
   }
 
