@@ -33,7 +33,10 @@
       ]
     }
   },
-  "browserslist": "last 5 years or ie>=11 or >0.2%",
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
@@ -81,7 +84,8 @@
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.15.3",
     "vite": "4.1.4",
-    "wireit": "^0.9.5"
+    "wireit": "^0.9.5",
+    "@microsoft/eslint-formatter-sarif": "^3.0.0"
   },
   "engines": {
     "node": ">= 18.14.0"
