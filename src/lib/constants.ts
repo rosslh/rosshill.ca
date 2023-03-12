@@ -61,8 +61,8 @@ export const tagLabels: Record<string, string> = {
   webpack: "Webpack",
   scss: "SCSS",
   sql: "SQL",
-  html: "HTML",
-  css: "CSS",
+  html5: "HTML",
+  css3: "CSS",
   jquery: "jQuery",
 };
 
