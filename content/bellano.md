@@ -1,7 +1,7 @@
 ---
 title: Denis Bellano
 eventType: project
-tags: [wordpress]
+tags: [wordpress, css3, html5, javascript, php]
 website: https://www.psychologue-macon.fr/
 date: 2016-12-15
 isOngoing: false

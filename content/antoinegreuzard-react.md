@@ -2,7 +2,7 @@
 title: Antoine Greuzard (react)
 eventType: project
 excerpt: Site web réalisé avec Bootstrap, React et Jest pour Antoine Greuzard.
-tags: [html5, css3, jest, react]
+tags: [html5, css3, jest, react, tailwindcss, vite]
 website: https://antoinegreuzard.fr/
 
 date: 2022-08-15
