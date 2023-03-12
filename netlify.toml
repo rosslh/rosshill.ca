@@ -2,8 +2,6 @@
 command = "npm run build"
 publish = "build"
 [[plugins]]
-package = "netlify-plugin-debug-cache"
-[[plugins]]
 package = "netlify-plugin-minify-html"
 [plugins.inputs]
 contexts = [
