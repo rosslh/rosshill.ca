@@ -10,12 +10,12 @@
     <div class="img-wrapper">
       <picture class="fixed-size">
         <source srcset="/headshot.webp" type="image/webp"/>
-        <source srcset="/headshot.png" type="image/png"/>
+        <source srcset="/headshot.jpg" type="image/png"/>
         <img
           alt="Antoine Greuzard"
           data-testid="headshot-img"
           height={remsToPixels(10)}
-          src="/headshot.png"
+          src="/headshot.jpg"
           width={remsToPixels(10)}/>
       </picture>
     </div>
