@@ -3,5 +3,5 @@ command = "npm run build"
 publish = "build"
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-[plugins.inputs.settings]
-locale = "fr" # generates Lighthouse reports in Español
+[plugins.inputs.thresholds]
+performance = 0.8
