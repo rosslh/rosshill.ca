@@ -1,32 +1,28 @@
 <script lang="ts">
-  import type { SiteTheme } from "$lib/types";
-  
-  export let data: { themeFromSession: SiteTheme};
-  
-  import { onMount } from "svelte";
-  import { themeStore } from "$lib/stores";
-  import { browser } from "$app/environment";
+    import type { SiteTheme } from "$lib/types";
+    import { onMount } from "svelte";
+    import { themeStore } from "$lib/stores";
+    import { browser } from "$app/environment";
+    import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
+    import Sidebar from "./components/sidebar/Sidebar.svelte";
+    import CopyrightNotice from "./components/CopyrightNotice.svelte";
+    import "$lib/styles/global.scss";
+    import "$lib/styles/normalize.min.css";
 
-  import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
-  import Sidebar from "./components/sidebar/Sidebar.svelte";
-  import CopyrightNotice from "./components/CopyrightNotice.svelte";
+    export let data: { themeFromSession: SiteTheme};
+    const getCssVariable = (element: HTMLElement, variableName: string): string => {
+      const style = getComputedStyle(element);
+      return style.getPropertyValue(`--${variableName}`);
+};
 
-  import "$lib/styles/global.scss";
-  import "$lib/styles/normalize.min.css";
+let appWrapper: HTMLDivElement;
 
-  const getCssVariable = (element: HTMLElement, variableName: string): string => {
-    const style = getComputedStyle(element);
-    return style.getPropertyValue(`--${variableName}`);
-  };
-
-  let appWrapper: HTMLDivElement;
-
-  onMount(() => {
-    if (appWrapper) {
+onMount(() => {
+      if (appWrapper) {
       // eslint-disable-next-line no-console
-      console.log(
-        "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
-        `
+        console.log(
+          "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
+          `
         background-color: ${getCssVariable(appWrapper, "panel-background")};
         border: 1px solid ${getCssVariable(appWrapper, "border")};
         border-radius: 0.5rem;
@@ -35,18 +31,18 @@
         font-weight: 700;
         padding: 0.75rem;
         `,
-      );
-    }
-  });
+        );
+      }
+});
 
-  $: selectedTheme = browser ? $themeStore : data.themeFromSession;
+$: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
 
 <div
-  class="app-wrapper do-transition"
   bind:this={appWrapper}
-  data-theme={selectedTheme}
+  class="app-wrapper do-transition"
   data-testid="app-wrapper"
+  data-theme={selectedTheme}
 >
   <ThemeSwitcher selectedTheme={selectedTheme} />
   <div class="two-column">
@@ -58,8 +54,8 @@
   </div>
 </div>
 <svelte:head>
-  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link as="font" crossorigin="anonymous" href="/fonts/source-sans-pro-v18-latin-regular.woff2" rel="preload" type="font/woff2">
+  <link as="font" crossorigin="anonymous" href="/fonts/source-sans-pro-v18-latin-700.woff2" rel="preload" type="font/woff2">
   <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->
   <style>
     /* source-sans-pro-regular - latin */
@@ -89,12 +85,12 @@
         url('/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
     }
     html {
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
       font-weight: 400;
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;    
     }
     h1, h2, h3, h4 { font-weight: 700; }
   </style>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
+  <meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
   <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots"/>
   <meta content="#ffffff" name="theme-color"/>
   <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
@@ -102,7 +98,7 @@
   <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
   <meta content="#da532c" name="msapplication-TileColor">
 
-  <link href="/manifest.json" rel="manifest"/>
+  <link href="/site.manifest" rel="manifest"/>
 </svelte:head>
 <style>
   div.two-column {
