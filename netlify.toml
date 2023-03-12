@@ -25,5 +25,5 @@ providers = [
 package = "@netlify/plugin-sitemap"
 
 [plugins.inputs]
-buildDir = "assets"
+buildDir = "build"
 prettyURLs = true
