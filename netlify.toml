@@ -1,15 +1,24 @@
 [build]
 command = "npm run build"
 publish = "build"
-
 [[plugins]]
 package = "netlify-plugin-visual-diff"
+package = "netlify-plugin-debug-cache"
+package = "netlify-plugin-html-validate"
+package = "netlify-plugin-minify-html"
+[plugins.inputs]
+contexts = ['production',
+  'branch-deploy',
+  'deploy-preview']
+
+[plugins.inputs]
+ext = "html"
+config = ".htmlvalidate.json"
 [plugins.inputs]
 serverUrl = "https://antoinegreuzard.fr" # The public Eyes server
 ignoreSelector = "" # There is no null in TOML, but if there were, then it would be null
 failBuildOnDiff = true
 concurrency = 1
-
 [[plugins.inputs.browser]]
 name = "chrome"
 width = 1024
