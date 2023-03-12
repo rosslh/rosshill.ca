@@ -104,5 +104,8 @@
   },
   "engines": {
     "node": ">= 18.14.0"
+  },
+  "dependencies": {
+    "netlify-plugin-visual-diff": "^2.0.0"
   }
 }

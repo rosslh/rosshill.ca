@@ -1,3 +1,18 @@
 [build]
 command = "npm run build"
 publish = "build"
+
+[[plugins]]
+package = "netlify-plugin-visual-diff"
+[plugins.inputs]
+serverUrl = "https://antoinegreuzard.fr" # The public Eyes server
+ignoreSelector = "" # There is no null in TOML, but if there were, then it would be null
+failBuildOnDiff = true
+concurrency = 1
+
+[[plugins.inputs.browser]]
+name = "chrome"
+width = 1024
+height = 768
+[[plugins]]
+package = "netlify-plugin-visual-diff"
