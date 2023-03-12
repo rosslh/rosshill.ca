@@ -27,6 +27,8 @@ package = "@netlify/plugin-sitemap"
 [plugins.inputs]
 buildDir = "build"
 prettyURLs = true
+baseUrl = "https://antoinegreuzard.fr"
+
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
