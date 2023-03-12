@@ -8,9 +8,9 @@ website: https://antoinegreuzard.fr/
 date: 2022-08-15
 isOngoing: false
 
-thumbnail: antoinegreuzard-new
+thumbnail: antoinegreuzard
 thumbnailExt: jpg
-image: antoinegreuzard-new
+image: antoinegreuzard
 imageExt: jpg
 ---
 
