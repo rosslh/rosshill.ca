@@ -1,5 +1,5 @@
 ---
-title: Antoine Greuzard
+title: Antoine Greuzard (react)
 eventType: project
 excerpt: Site web réalisé avec Bootstrap, React et Jest pour Antoine Greuzard.
 tags: [html5, css3, jest, react]

@@ -1,5 +1,5 @@
 ---
-title: Antoine Greuzard
+title: Antoine Greuzard (svelte)
 eventType: project
 excerpt: Site web réalisé avec Svelte, Sass, Netflify, Vite et Typescript pour Antoine Greuzard.
 tags: [html5, css3, svelte, sass, netlify, vite, typescript]

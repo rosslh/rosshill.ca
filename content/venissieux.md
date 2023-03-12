@@ -1,6 +1,6 @@
 ---
 title: Site de Venissieux.fr
-isHidden: project
+isHidden: false
 eventType: project
 excerpt: Site internet de la ville de Vénissieux.
 tags: [wordpress]
