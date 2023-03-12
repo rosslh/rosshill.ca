@@ -8,5 +8,5 @@ test.beforeEach(async ({ page }) => {
 test("Missing page shows 404 error", async ({ page }) => {
   await expectCount([page, "error"], 1);
   await expectCount([page, "confused-travolta"], 1);
-  await expectTextContent([page, "404-heading"], "404: Page not found");
+  await expectTextContent([page, "404-heading"], "404: Page introuvable");
 });
