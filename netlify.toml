@@ -27,3 +27,9 @@ package = "@netlify/plugin-sitemap"
 [plugins.inputs]
 buildDir = "build"
 prettyURLs = true
+
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
+
+[plugins.inputs.settings]
+locale = "fr" # generates Lighthouse reports in Español
