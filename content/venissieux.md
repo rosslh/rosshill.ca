@@ -1,5 +1,5 @@
 ---
-title: Site de Venissieux.fr
+title: Ville de Venissieux
 isHidden: false
 eventType: project
 excerpt: Site internet de la ville de Vénissieux.
