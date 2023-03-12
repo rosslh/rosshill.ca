@@ -26,13 +26,13 @@ contexts = [
 removeComments = false
 collapseInlineTagWhitespace = false
 [[plugins]]
-package = "netlify-plugin-minify-html"
+package = "@netlify/plugin-lighthouse"
+[plugins.inputs.thresholds]
+performance = 0.9
+accessibility = 0.9
+best-practices = 0.9
+seo = 0.9
 [plugins.inputs]
-contexts = [
-    'production',
-    'branch-deploy',
-    'deploy-preview'
-]
-[plugins.inputs.minifierOptions]
-removeComments = false
-collapseInlineTagWhitespace = false
+output_path = "reports/lighthouse.html"
+[plugins.inputs.settings]
+locale = "fr"
