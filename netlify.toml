@@ -25,3 +25,14 @@ contexts = [
 [plugins.inputs.minifierOptions]
 removeComments = false
 collapseInlineTagWhitespace = false
+[[plugins]]
+package = "netlify-plugin-minify-html"
+[plugins.inputs]
+contexts = [
+    'production',
+    'branch-deploy',
+    'deploy-preview'
+]
+[plugins.inputs.minifierOptions]
+removeComments = false
+collapseInlineTagWhitespace = false
