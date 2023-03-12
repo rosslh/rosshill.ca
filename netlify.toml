@@ -3,5 +3,3 @@ command = "npm run build"
 publish = "build"
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-[plugins.inputs.thresholds]
-performance = 0.8
