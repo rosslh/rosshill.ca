@@ -3,6 +3,7 @@ import Icons from "unplugin-icons/vite";
 import { resolve } from "path";
 import type { UserConfig } from "vite";
 import netlifyPlugin from "@sveltejs/adapter-netlify";
+import { VitePWA } from "vite-plugin-pwa";
 
 const config: UserConfig = {
   plugins: [
@@ -13,6 +14,7 @@ const config: UserConfig = {
     netlifyPlugin({
       publish: "build",
     }),
+    VitePWA({ registerType: "autoUpdate" }),
   ],
   resolve: {
     alias: {
