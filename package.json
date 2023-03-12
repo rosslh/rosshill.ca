@@ -43,7 +43,6 @@
     "@babel/eslint-parser": "^7.19.1",
     "@iconify/json": "^2.2.27",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
-    "@netlify/plugin-lighthouse": "^4.0.7",
     "@playwright/test": "^1.31.1",
     "@sveltejs/adapter-netlify": "^2.0.5",
     "@sveltejs/kit": "^1.11.0",
