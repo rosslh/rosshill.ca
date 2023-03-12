@@ -15,12 +15,6 @@ height = 768
 [[plugins]]
 package = "netlify-plugin-debug-cache"
 [[plugins]]
-package = "netlify-plugin-html-validate"
-[plugins.inputs]
-ext = "html"
-config = ".htmlvalidate.json"
-# Config for the Netlify Build Plugin: netlify-plugin-minify-html
-[[plugins]]
 package = "netlify-plugin-minify-html"
 [plugins.inputs]
 contexts = [
