@@ -7,7 +7,7 @@ tags: [javascript, php, wordpress, css3, mysql, html5]
 website: https://ims-on-line.net
 
 date: 2016-11-01
-endDate: 2022-07-15
+endDate: 2020-07-15
 isOngoing: false
 isSeasonal: false
 
