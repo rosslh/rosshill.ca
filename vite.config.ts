@@ -14,7 +14,48 @@ const config: UserConfig = {
     netlifyPlugin({
       publish: "build",
     }),
-    VitePWA({ registerType: "autoUpdate" }),
+    VitePWA({
+      registerType: "autoUpdate",
+      injectRegister: "auto",
+      includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+      manifest: {
+        "name": "Antoine Greuzard",
+        "short_name": "Antoine Greuzard",
+        "start_url": "/",
+        "scope": "/",
+        "display": "standalone",
+        "orientation": "portrait",
+        "description": "Antoine Greuzard's personal website",
+        "lang": "fr",
+        "icons": [
+          {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+          },
+          {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+          },
+          {
+            "src": "/maskable-icon.png",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "maskable",
+          },
+        ],
+        "theme_color": "#ffffff",
+        "background_color": "#ffffff",
+        "prefer_related_applications": false,
+        "related_applications": [],
+        "serviceWorker": {
+          "src": "/sw.js",
+          "scope": "/",
+        },
+        "offline_access": true,
+      },
+    }),
   ],
   resolve: {
     alias: {
