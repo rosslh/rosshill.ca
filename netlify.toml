@@ -1,5 +1,5 @@
 [build]
-command = "curl -X POST -d {} https://api.netlify.com/build_hooks/640df7c7add6c00f0edead49 && npm run build"
+command = "npm run build"
 publish = "build"
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
