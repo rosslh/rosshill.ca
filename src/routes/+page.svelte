@@ -6,7 +6,7 @@
 
     export let data: { posts: PostItemStub[], brandColors: BrandColors };
 const { posts, brandColors } = data;
-    const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 and dans le domaine du développement web.";
+    const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
 
 const truncateBySentence = (text: string, maxLength: number): string => {
       const truncated = text
