@@ -11,7 +11,7 @@ date: 2022-04-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: emh
+thumbnail: emh_thumbnail
 thumbnailExt: jpg
 image: emh
 imageExt: jpg

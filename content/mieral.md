@@ -10,7 +10,7 @@ endDate:
 isOngoing: false
 isSeasonal: false
 
-thumbnail: mieral
+thumbnail: mieral_thumbnail
 thumbnailExt: jpg
 image: mieral
 imageExt: jpg

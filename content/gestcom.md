@@ -7,7 +7,7 @@ website: https://www.gest-com.fr
 date: 2019-09-15
 isOngoing: false
 isSeasonal: false
-thumbnail: marguin
+thumbnail: marguin_thumbnail
 thumbnailExt: jpg
 image: marguin
 imageExt: jpg

@@ -9,7 +9,7 @@ repository: https://github.com/antoinegreuzard/mywebsite-react
 date: 2022-08-15
 isOngoing: false
 
-thumbnail: antoinegreuzard
+thumbnail: antoinegreuzard_thumbnail
 thumbnailExt: jpg
 image: antoinegreuzard
 imageExt: jpg

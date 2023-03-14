@@ -7,7 +7,7 @@ website: https://www.localplus.fr/
 date: 2018-07-15
 isOngoing: false
 isSeasonal: false
-thumbnail: localplus
+thumbnail: localplus_thumbnail
 thumbnailExt: jpg
 image: localplus
 imageExt: jpg

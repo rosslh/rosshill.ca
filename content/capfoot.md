@@ -13,7 +13,7 @@ isSeasonal: false
 
 thumbnail: capfoot
 thumbnailExt: jpg
-image: capfoot
+image: capfoot_thumbnail
 imageExt: jpg
 ---
 

@@ -8,7 +8,7 @@ website: https://o-doo.fr/
 date: 2021-09-15
 isOngoing: false
 
-thumbnail: o-doo
+thumbnail: o-doo_thumbnail
 thumbnailExt: jpg
 image: o-doo
 imageExt: jpg

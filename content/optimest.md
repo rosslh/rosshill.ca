@@ -1,15 +1,15 @@
 ---
 title: Optim'est
-isHidden: true
+isHidden: false
 eventType: project
-excerpt: Short blurb goes here.
-tags: [wordpress, elementor, css3, html5, javascript]
+excerpt: Le site web Optim'est a été développé sous Wordpress et Woocommerce
+tags: [wordpress, elementor, css3, html5, javascript, woocommerce]
 
 date: 2022-06-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: optimest
+thumbnail: optimest_thumbnail
 thumbnailExt: jpg
 image: optimest
 imageExt: jpg

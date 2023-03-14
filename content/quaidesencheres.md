@@ -8,7 +8,7 @@ date: 2020-02-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: quaidesencheres
+thumbnail: quaidesencheres_thumbnail
 thumbnailExt: jpg
 image: quaidesencheres
 imageExt: jpg

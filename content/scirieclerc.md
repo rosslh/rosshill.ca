@@ -10,7 +10,7 @@ date: 2022-01-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: scierie-clerc
+thumbnail: scierie-clerc_thumbnail
 thumbnailExt: jpg
 image: scierie-clerc
 imageExt: jpg

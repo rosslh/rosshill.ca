@@ -8,7 +8,7 @@ date: 2022-05-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: cts
+thumbnail: cts_thumbnail
 thumbnailExt: jpg
 image: cts
 imageExt: jpg

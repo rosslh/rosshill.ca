@@ -8,7 +8,7 @@ isOngoing: false
 isSeasonal: false
 thumbnail: bellano
 thumbnailExt: jpg
-image: bellano
+image: bellano_thumbnail
 imageExt: jpg
 ---
 

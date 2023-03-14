@@ -8,7 +8,7 @@ website: https://dryade.fr/
 date: 2021-01-11
 isOngoing: false
 
-thumbnail: dryade
+thumbnail: dryade_thumbnail
 thumbnailExt: jpg
 image: dryade
 imageExt: jpg
