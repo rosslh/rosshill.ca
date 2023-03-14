@@ -3,7 +3,7 @@ title: CAP Foot
 isHidden: false
 eventType: project
 excerpt: Site web développé avec Wordpress et Elementor pour le club de football CAP Foot.
-tags: [wordpress, elementor]
+tags: [wordpress, elementor, html5, css3, javascript]
 website: https://capontarlierfoot.com/
 repository:
 
