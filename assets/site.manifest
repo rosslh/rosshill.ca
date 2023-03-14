@@ -21,11 +21,5 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "prefer_related_applications": false,
-  "related_applications": [],
-  "serviceWorker": {
-    "src": "/sw.js",
-    "scope": "/"
-  },
   "offline_access": true
 }
