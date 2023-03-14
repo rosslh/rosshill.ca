@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { remsToPixels } from "$lib/functions";
-    import Separator from "./Separator.svelte";
-    import AnimatedName from "./AnimatedName.svelte";
-    import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+  import { remsToPixels } from "$lib/functions";
+  import Separator from "./Separator.svelte";
+  import AnimatedName from "./AnimatedName.svelte";
+  import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
@@ -14,9 +14,9 @@
                 <img
                     alt="Antoine Greuzard"
                     data-testid="headshot-img"
-                    height={remsToPixels(10)}
+                    height={remsToPixels(13)}
                     src="/headshot.jpg"
-                    width={remsToPixels(10)}/>
+                    width={remsToPixels(13)}/>
             </picture>
         </div>
         <h1>
