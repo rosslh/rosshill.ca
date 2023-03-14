@@ -11,9 +11,9 @@ date: 2021-10-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: capfoot
+thumbnail: capfoot_thumbnail
 thumbnailExt: jpg
-image: capfoot_thumbnail
+image: capfoot
 imageExt: jpg
 ---
 
