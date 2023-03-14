@@ -5,7 +5,7 @@
   "background_color": "#ffffff",
   "display": "browser",
   "scope": "/",
-  "start_url": "/"
+  "start_url": "/",
   "description": "Antoine Greuzard's personal website",
   "icons": [
     {
