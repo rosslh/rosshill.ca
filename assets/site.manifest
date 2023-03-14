@@ -7,7 +7,6 @@
   "scope": "/",
   "start_url": "/"
   "description": "Antoine Greuzard's personal website",
-  "lang": "fr",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
