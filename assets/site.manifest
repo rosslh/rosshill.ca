@@ -1,12 +1,6 @@
 {
+  "short_name": "Antoine Greuzard",
   "name": "Antoine Greuzard",
-  "short_name": "Antoine greuzard",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "browser",
-  "scope": "/",
-  "start_url": "/",
-  "description": "Antoine Greuzard's personal website",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -18,5 +12,12 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff",
+  "description": "Site internet de Antoine Greuzard"
 }
