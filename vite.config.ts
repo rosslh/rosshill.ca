@@ -19,6 +19,17 @@ const config: UserConfig = {
       $data: resolve("./src/data"),
     },
   },
+  build: {
+    optimizeDeps: {
+      include: [
+        "svelte",
+        "svelte/transition",
+        "svelte/internal",
+        "svelte/store", // Add this for faster rebuilds
+      ],
+    },
+    brotliSize: true,
+  },
 };
 
 export default config;

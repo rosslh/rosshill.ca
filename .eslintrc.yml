@@ -1,7 +1,7 @@
 {
   env: {
     browser: true,
-    es6: true,
+    es2021: true,
     node: true
   },
   extends: [
@@ -22,7 +22,7 @@
     requireConfigFile: false,
     sourceType: "module",
     # project: ["./tsconfig.json", "./tests/tsconfig.json"],
-    # extraFileExtensions: ['.svelte'],
+    extraFileExtensions: ['.svelte'],
   },
   plugins: ["svelte3", "@typescript-eslint"],
   rules: {
