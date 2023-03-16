@@ -29,6 +29,16 @@ const config: UserConfig = {
       ],
     },
     brotliSize: true,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+          return undefined; // Add an explicit undefined return value here
+        },
+      },
+    },
   },
 };
 
