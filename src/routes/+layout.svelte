@@ -15,9 +15,19 @@
     return style.getPropertyValue(`--${variableName}`);
 };
 
-let appWrapper: HTMLDivElement;
+  const loadTarteaucitron = () => new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = "https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c";
+    script.defer = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
 
-onMount(() => {
+
+  let appWrapper: HTMLDivElement;
+
+onMount(async () => {
     if (appWrapper) {
       // eslint-disable-next-line no-console
       console.log(
@@ -32,6 +42,9 @@ onMount(() => {
         padding: 0.75rem;
         `,
       );
+    }
+    if (browser) {
+      await loadTarteaucitron();
     }
 });
 
@@ -99,7 +112,6 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   <meta content="#da532c" name="msapplication-TileColor">
 
   <link href="/site.manifest" rel="manifest"/>
-  <script src="https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c" defer></script>
 </svelte:head>
 <style>
   div.two-column {
