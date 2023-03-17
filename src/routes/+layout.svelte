@@ -15,16 +15,14 @@
     return style.getPropertyValue(`--${variableName}`);
 };
 
-  const loadTarteaucitron = () => new Promise((resolve, reject) => {
+  /* const loadTarteaucitron = () => new Promise((resolve, reject) => {
     const script = document.createElement("script");
     script.src = "https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c";
     script.defer = true;
     script.onload = resolve;
     script.onerror = reject;
     document.head.appendChild(script);
-  });
-
-
+  }); */
   let appWrapper: HTMLDivElement;
 
 onMount(async () => {
@@ -43,9 +41,9 @@ onMount(async () => {
         `,
       );
     }
-    if (browser) {
+    /* if (browser) {
       await loadTarteaucitron();
-    }
+    } */
 });
 
 $: selectedTheme = browser ? $themeStore : data.themeFromSession;
