@@ -99,7 +99,7 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   <meta content="#da532c" name="msapplication-TileColor">
 
   <link href="/site.manifest" rel="manifest"/>
-  <script src="https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c"></script>
+  <script src="https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c" defer></script>
 </svelte:head>
 <style>
   div.two-column {
