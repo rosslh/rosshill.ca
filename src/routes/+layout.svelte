@@ -45,38 +45,9 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   </div>
 </div>
 <svelte:head>
-  <link as="font" crossorigin="anonymous" href="/fonts/source-sans-pro-v18-latin-regular.woff2" rel="preload" type="font/woff2">
-  <link as="font" crossorigin="anonymous" href="/fonts/source-sans-pro-v18-latin-700.woff2" rel="preload" type="font/woff2">
-  <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->
   <style>
-    /* source-sans-pro-regular - latin */
-    @font-face {
-      font-family: 'Source Sans Pro';
-      font-weight: 100 400;
-      font-display: swap;
-      src: url('/fonts/source-sans-pro-v18-latin-regular.eot'); /* IE9 Compat Modes */
-      src: local('Source Sans Pro'),
-        url('/fonts/source-sans-pro-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/fonts/source-sans-pro-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
-    }
-    /* source-sans-pro-600 - latin */
-    @font-face {
-      font-family: 'Source Sans Pro';
-      font-weight: 500 900;
-      font-display: swap;
-      src: url('/fonts/source-sans-pro-v18-latin-700.eot'); /* IE9 Compat Modes */
-      src: local('Source Sans Pro'),
-        url('/fonts/source-sans-pro-v18-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/fonts/source-sans-pro-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-700.woff') format('woff'), /* Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
-    }
     html {
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
       font-weight: 400;
     }
     h1, h2, h3, h4 { font-weight: 700; }

@@ -2,15 +2,12 @@
   import { onMount } from "svelte";
   import {remsToPixels} from "$lib/functions";
   // import Separator from "./Separator.svelte";
-  // import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+  import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 
-  let Separator, InlineSeparator;
+  let Separator;
   onMount(async () => {
     const separatorModule = await import("./Separator.svelte");
     Separator = separatorModule.default;
-
-    const inlineSeparatorModule = await import("$lib/components/InlineSeparator.svelte");
-    InlineSeparator = inlineSeparatorModule.default;
   });
 </script>
 
@@ -40,16 +37,12 @@
          target="_blank">
         GitHub
       </a>
-      {#if InlineSeparator}
-        <svelte:component this={InlineSeparator} />
-      {/if}
+      <InlineSeparator />
       <a data-testid="linkedin-link" href="https://www.linkedin.com/in/antoine-greuzard" rel="noopener noreferrer"
          target="_blank">
         LinkedIn
       </a>
-      {#if InlineSeparator}
-        <svelte:component this={InlineSeparator} />
-      {/if}
+      <InlineSeparator />
       <a data-testid="resume-link" href="https://join.skype.com/invite/esIrFNeiMirt" rel="noopener noreferrer"
          target="_blank">
         Skype
