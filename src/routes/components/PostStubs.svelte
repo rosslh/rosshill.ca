@@ -1,11 +1,11 @@
 <script lang="ts">
-  import {onDestroy, onMount} from "svelte";
-  import type {BrandColors, PostItemStub} from "$lib/types";
-  import {SiteTheme} from "$lib/types";
-  import {browser} from "$app/environment";
-  import {showCategories, showTags, themeStore} from "$lib/stores";
-  import {tagAncestors} from "$lib/constants";
-  import {prefersColorSchemeDark} from "$lib/functions";
+  import { onDestroy, onMount } from "svelte";
+  import type { BrandColors, PostItemStub } from "$lib/types";
+  import { SiteTheme } from "$lib/types";
+  import { browser } from "$app/environment";
+  import { showCategories, showTags, themeStore } from "$lib/stores";
+  import { tagAncestors } from "$lib/constants";
+  import { prefersColorSchemeDark } from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterControls.svelte";
@@ -35,6 +35,31 @@
   const initialPostCount = 5;
   let sentinel: HTMLElement;
   let observer: IntersectionObserver;
+  let displayedPostCount = initialPostCount;
+  let previousCategories = new Set($showCategories);
+  let previousTags = new Set($showTags);
+
+  function areSetsEqual(setA, setB) {
+    if (setA.size !== setB.size) {
+      return false;
+    }
+    return Array.from(setA).every((item) => setB.has(item));
+  }
+
+  function loadAllPosts() {
+    showAll = true;
+  }
+
+  $: {
+    if (
+      !areSetsEqual($showCategories, previousCategories)
+      || !areSetsEqual($showTags, previousTags)
+    ) {
+      loadAllPosts();
+      previousCategories = new Set($showCategories);
+      previousTags = new Set($showTags);
+    }
+  }
 
   onMount(() => {
     if (browser) {
@@ -44,9 +69,8 @@
             showAll = true;
           }
         },
-        { rootMargin: "200px" } // Vous pouvez ajuster cette marge pour charger les posts avant que l'utilisateur atteigne réellement le bas de la page
+        { rootMargin: "200px" }, // Vous pouvez ajuster cette marge pour charger les posts avant que l'utilisateur atteigne réellement le bas de la page
       );
-
       observer.observe(sentinel);
     }
   });
@@ -67,10 +91,16 @@
       .map(getLabelVisibilityAndAlignment);
     if (!showAll) {
       postsWithLabels = postsWithLabels.slice(0, initialPostCount);
+      displayedPostCount = postsWithLabels.length;
+    } else {
+      displayedPostCount = posts.length;
     }
   }
+
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+
   let activeTags: Set<string>;
+
   $: {
     const tags = new Set<string>();
     $showTags.forEach((tag) => {
@@ -122,7 +152,7 @@
       {/if}
     {/each}
     {#if !postsWithLabels.length}
-      <ConfusedTravolta reason="there are no results" />
+      <ConfusedTravolta reason="there are no results"/>
     {/if}
   </div>
 </div>
