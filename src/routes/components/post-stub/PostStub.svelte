@@ -11,7 +11,7 @@
 
   import { browser } from "$app/environment";
   import { preloadData } from "$app/navigation";
-  
+
   import { reduceMotion } from "$lib/constants";
   import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostStubTriangle from "./PostStubTriangle.svelte";

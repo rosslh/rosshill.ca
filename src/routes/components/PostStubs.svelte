@@ -32,22 +32,22 @@
       output.showYearLabel = false;
       output.isLeftAligned = prevLeftAligned;
     }
-    
+
     return output;
   };
 
-  $: categoryFilter = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
+  const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
 
-  $: ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
+  let postsWithLabels: PostItemStub[];
 
-  $: tagFilter = (post: PostItemStub): boolean => {
-    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
-    return !$showTags.size || postHasShownTag;
-  };
-
-  $: postsWithLabels = posts
-    .filter((post: PostItemStub) => categoryFilter(post) && tagFilter(post))
-    .map(getLabelVisibilityAndAlignment);
+  $: {
+    postsWithLabels = posts
+      .filter((post: PostItemStub) => {
+        const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
+        return (!$showCategories.size || $showCategories.has(post.eventType)) && (!$showTags.size || postHasShownTag);
+      })
+      .map(getLabelVisibilityAndAlignment);
+  }
 
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
