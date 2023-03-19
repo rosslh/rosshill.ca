@@ -16,7 +16,6 @@
           height={remsToPixels(13)}
           src="/headshot.jpg"
           width={remsToPixels(13)}
-          loading="eager"
         />
       </picture>
     </div>
