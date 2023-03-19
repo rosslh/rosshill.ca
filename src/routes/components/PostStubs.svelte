@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { SiteTheme } from "$lib/types";
 
@@ -42,20 +42,27 @@
   let postsWithLabels: PostItemStub[] = [];
   let showAll = false;
 
-  onMount(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
-
   function handleScroll() {
     if (!showAll && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      showAll = true;
+      window.requestAnimationFrame(() => {
+        showAll = true;
+      });
     }
   }
 
-  $: {
+  onMount(() => {
+    if (browser) {
+      window.addEventListener("scroll", handleScroll);
+    }
+  });
+
+  onDestroy(() => {
+    if (browser) {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  });
+
+  function updatePostsWithLabels() {
     postsWithLabels = posts
       .filter((post: PostItemStub) => {
         const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
@@ -69,11 +76,12 @@
     }
   }
 
+  let isPageBackgroundDark: boolean;
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 
-  $: {
+  function updateActiveTags() {
     const tags = new Set<string>();
     $showTags.forEach((tag) => {
       tags.add(tag);
@@ -85,7 +93,14 @@
     });
     activeTags = tags; // trigger reactivity
   }
+
+  $: {
+    updatePostsWithLabels();
+    updateActiveTags();
+  }
 </script>
+
+<!-- The rest of your Svelte component code would be below -->
 
 <div class="heading-wrapper content-wrapper ">
   <h2>Expérience</h2>
