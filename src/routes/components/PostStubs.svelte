@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onDestroy, onMount } from "svelte";
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { SiteTheme } from "$lib/types";
 
@@ -44,15 +44,13 @@
 
   function handleScroll() {
     if (!showAll && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      window.requestAnimationFrame(() => {
-        showAll = true;
-      });
+      showAll = true;
     }
   }
 
   onMount(() => {
     if (browser) {
-      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll, { passive: true });
     }
   });
 
@@ -62,26 +60,25 @@
     }
   });
 
-  function updatePostsWithLabels() {
+  $: {
     postsWithLabels = posts
       .filter((post: PostItemStub) => {
         const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
         return (!$showCategories.size || $showCategories.has(post.eventType)) && (!$showTags.size || postHasShownTag);
       })
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // trier les posts par date décroissante
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .map(getLabelVisibilityAndAlignment);
 
     if (!showAll) {
-      postsWithLabels = postsWithLabels.slice(0, 5); // Afficher seulement les 4 derniers posts
+      postsWithLabels = postsWithLabels.slice(0, 5);
     }
   }
 
-  let isPageBackgroundDark: boolean;
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 
-  function updateActiveTags() {
+  $: {
     const tags = new Set<string>();
     $showTags.forEach((tag) => {
       tags.add(tag);
@@ -91,18 +88,12 @@
         }
       });
     });
-    activeTags = tags; // trigger reactivity
-  }
-
-  $: {
-    updatePostsWithLabels();
-    updateActiveTags();
+    activeTags = tags;
   }
 </script>
 
-<!-- The rest of your Svelte component code would be below -->
 
-<div class="heading-wrapper content-wrapper ">
+      <div class="heading-wrapper content-wrapper ">
   <h2>Expérience</h2>
   <FilterControls
     bind:showCategories={$showCategories}
