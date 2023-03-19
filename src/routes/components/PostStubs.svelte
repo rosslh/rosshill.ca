@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
-  import { onMount, onDestroy } from "svelte";
   import { SiteTheme } from "$lib/types";
 
   export let posts: PostItemStub[];
@@ -40,7 +39,6 @@
   const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
 
   let postsWithLabels: PostItemStub[];
-  let displayedPosts: PostItemStub[] = [];
 
   $: {
     postsWithLabels = posts
@@ -49,8 +47,6 @@
         return (!$showCategories.size || $showCategories.has(post.eventType)) && (!$showTags.size || postHasShownTag);
       })
       .map(getLabelVisibilityAndAlignment);
-
-    displayedPosts = postsWithLabels.slice(0, 4);
   }
 
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
@@ -69,38 +65,6 @@
     });
     activeTags = tags; // trigger reactivity
   }
-
-  async function loadMorePosts() {
-    const morePosts = postsWithLabels.slice(displayedPosts.length, displayedPosts.length + 4);
-    displayedPosts = displayedPosts.concat(morePosts);
-  }
-
-  if (browser) {
-    let observer;
-
-    onMount(() => {
-      const options = {
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      observer = new IntersectionObserver(async (entries) => {
-        const hasIntersectingEntry = entries.some((entry) => entry.isIntersecting);
-        if (hasIntersectingEntry) {
-          await loadMorePosts();
-          observer.disconnect();
-        }
-      }, options);
-
-      observer.observe(document.querySelector(".posts-wrapper"));
-    });
-
-    onDestroy(() => {
-      if (observer) {
-        observer.disconnect();
-      }
-    });
-  }
 </script>
 
 <div class="heading-wrapper content-wrapper ">
@@ -114,7 +78,7 @@
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
-    {#each displayedPosts as post, i (post.slug)}
+    {#each postsWithLabels as post, i (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
           isFirstLabel={i === 0}
@@ -122,6 +86,7 @@
           year={getYearFromDate(post.date.start)}
         />
       {/if}
+      <!-- Only transition if index or alignment changes -->
       {#key `${i}|${post.isLeftAligned}`}
         <PostStub
           {post}
@@ -129,15 +94,12 @@
           {isPageBackgroundDark}
           {activeTags}
           isFirstPost={i === 0}
-          isLastPost={i === displayedPosts.length - 1}
+          isLastPost={i === postsWithLabels.length - 1}
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
-      {#if i === displayedPosts.length - 1 && i !== postsWithLabels.length - 1}
-        <div on:intersect={loadMorePosts} class="lazy-post"></div>
-      {/if}
     {/each}
-    {#if !displayedPosts.length}
+    {#if !postsWithLabels.length}
       <ConfusedTravolta reason="there are no results" />
     {/if}
   </div>
