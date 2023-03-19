@@ -32,6 +32,7 @@
   const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
   let postsWithLabels: PostItemStub[];
   let showAll = false;
+  const initialPostCount = 5;
   let sentinel: HTMLElement;
   let observer: IntersectionObserver;
 
@@ -65,7 +66,7 @@
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .map(getLabelVisibilityAndAlignment);
     if (!showAll) {
-      postsWithLabels = postsWithLabels.slice(0, 5);
+      postsWithLabels = postsWithLabels.slice(0, initialPostCount);
     }
   }
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
@@ -116,10 +117,12 @@
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
+      {#if i === initialPostCount - 1}
+        <div bind:this={sentinel}></div>
+      {/if}
     {/each}
-    <div bind:this={sentinel}></div>
     {#if !postsWithLabels.length}
-      <ConfusedTravolta reason="there are no results"/>
+      <ConfusedTravolta reason="there are no results" />
     {/if}
   </div>
 </div>
