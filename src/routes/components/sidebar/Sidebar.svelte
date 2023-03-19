@@ -3,6 +3,14 @@
   import {remsToPixels} from "$lib/functions";
   import Separator from "./Separator.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+
+  let imgLoaded = false;
+  onMount(() => {
+    const imgElement = document.querySelector("img[data-testid='headshot-img']");
+    imgElement.addEventListener("load", () => {
+      imgLoaded = true;
+    });
+  });
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
@@ -16,7 +24,9 @@
           data-testid="headshot-img"
           height={remsToPixels(13)}
           src="/headshot.jpg"
-          width={remsToPixels(13)}/>
+          width={remsToPixels(13)}
+          loading="eager"
+        />
       </picture>
     </div>
     <h1>
