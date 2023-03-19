@@ -1,6 +1,46 @@
 [build]
-command = "npm run build"
+command = "npm run build && npm run compress-brotli"
 publish = "build"
+
+# Configuration de cache optimisée
+[[headers]]
+for = "/*.html"
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+for = "/*.js"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Configuration des en-têtes pour les fichiers Brotli
+[[headers]]
+for = "/*.html.br"
+[headers.values]
+Content-Encoding = "br"
+Content-Type = "text/html; charset=utf-8"
+
+[[headers]]
+for = "/*.css.br"
+[headers.values]
+Content-Encoding = "br"
+Content-Type = "text/css; charset=utf-8"
+
+[[headers]]
+for = "/*.js.br"
+[headers.values]
+Content-Encoding = "br"
+Content-Type = "application/javascript; charset=utf-8"
 
 [[plugins]]
 package = "netlify-plugin-submit-sitemap"
