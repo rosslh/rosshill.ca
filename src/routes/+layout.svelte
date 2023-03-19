@@ -3,48 +3,24 @@
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
-  import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
+  // import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
   import Sidebar from "./components/sidebar/Sidebar.svelte";
-  import CopyrightNotice from "./components/CopyrightNotice.svelte";
+  // import CopyrightNotice from "./components/CopyrightNotice.svelte";
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.min.css";
 
   export let data: { themeFromSession: SiteTheme};
-  const getCssVariable = (element: HTMLElement, variableName: string): string => {
-    const style = getComputedStyle(element);
-    return style.getPropertyValue(`--${variableName}`);
-};
-
-  /* const loadTarteaucitron = () => new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = "https://tarteaucitron.io/load.js?domain=antoinegreuzard.fr&uuid=295ae861820137ef5dc4c18eb079503543fa9b5c";
-    script.defer = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  }); */
   let appWrapper: HTMLDivElement;
+  let ThemeSwitcher;
+  let CopyrightNotice;
 
-onMount(async () => {
-    if (appWrapper) {
-      // eslint-disable-next-line no-console
-      console.log(
-        "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
-        `
-        background-color: ${getCssVariable(appWrapper, "panel-background")};
-        border: 1px solid ${getCssVariable(appWrapper, "border")};
-        border-radius: 0.5rem;
-        color: ${getCssVariable(appWrapper, "foreground")};
-        display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-        font-weight: 700;
-        padding: 0.75rem;
-        `,
-      );
-    }
-    /* if (browser) {
-      await loadTarteaucitron();
-    } */
-});
+  onMount(async () => {
+    const themeSwitcherModule = await import("./components/ThemeSwitcher.svelte");
+    ThemeSwitcher = themeSwitcherModule.default;
+
+    const copyrightNoticeModule = await import("./components/CopyrightNotice.svelte");
+    CopyrightNotice = copyrightNoticeModule.default;
+  });
 
 $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
@@ -55,12 +31,16 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   data-testid="app-wrapper"
   data-theme={selectedTheme}
 >
-  <ThemeSwitcher selectedTheme={selectedTheme} />
+  {#if ThemeSwitcher}
+    <svelte:component this={ThemeSwitcher} bind:selectedTheme={selectedTheme} />
+  {/if}
   <div class="two-column">
     <Sidebar />
     <div>
       <slot />
-      <CopyrightNotice />
+      {#if CopyrightNotice}
+        <svelte:component this={CopyrightNotice} />
+      {/if}
     </div>
   </div>
 </div>
