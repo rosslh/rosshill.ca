@@ -1,31 +1,25 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
-  import type { BrandColors, PostItemStub } from "$lib/types";
-  import { SiteTheme } from "$lib/types";
-
-  export let posts: PostItemStub[];
-  export let brandColors: BrandColors;
-
-  import { browser } from "$app/environment";
-  import { showCategories, showTags, themeStore } from "$lib/stores";
-  import { tagAncestors } from "$lib/constants";
-  import { prefersColorSchemeDark } from "$lib/functions";
+  import {onDestroy, onMount} from "svelte";
+  import type {BrandColors, PostItemStub} from "$lib/types";
+  import {SiteTheme} from "$lib/types";
+  import {browser} from "$app/environment";
+  import {showCategories, showTags, themeStore} from "$lib/stores";
+  import {tagAncestors} from "$lib/constants";
+  import {prefersColorSchemeDark} from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
+  export let posts: PostItemStub[];
+  export let brandColors: BrandColors;
   const getYearFromDate = (date: string): string => date.slice(0, 4);
-
   const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]): PostItemStub => {
     const output = post;
-
     const prevItem = postsArray[i - 1];
     const prevLeftAligned = prevItem ? Boolean(prevItem.isLeftAligned) : false;
     const prevYear = prevItem ? getYearFromDate(prevItem.date.start) : null;
-
     const year = getYearFromDate(output.date.start);
-
     if (year !== prevYear) {
       output.showYearLabel = true;
       output.isLeftAligned = !prevLeftAligned;
@@ -33,16 +27,13 @@
       output.showYearLabel = false;
       output.isLeftAligned = prevLeftAligned;
     }
-
     return output;
   };
-
   const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
-
   let postsWithLabels: PostItemStub[] = [];
   let showAll = false;
 
-  function handleScroll() {
+  function handleScroll () {
     if (!showAll && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       showAll = true;
     }
@@ -50,16 +41,16 @@
 
   onMount(() => {
     if (browser) {
-      window.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("scroll", handleScroll, {passive: true});
+      window.addEventListener("touchmove", handleScroll, {passive: true}); // Ajout de l'événement touchmove
     }
   });
-
   onDestroy(() => {
     if (browser) {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("touchmove", handleScroll); // Suppression de l'événement touchmove
     }
   });
-
   $: {
     postsWithLabels = posts
       .filter((post: PostItemStub) => {
@@ -68,16 +59,12 @@
       })
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .map(getLabelVisibilityAndAlignment);
-
     if (!showAll) {
       postsWithLabels = postsWithLabels.slice(0, 5);
     }
   }
-
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
-
   let activeTags: Set<string>;
-
   $: {
     const tags = new Set<string>();
     $showTags.forEach((tag) => {
@@ -93,7 +80,7 @@
 </script>
 
 
-      <div class="heading-wrapper content-wrapper ">
+<div class="heading-wrapper content-wrapper ">
   <h2>Expérience</h2>
   <FilterControls
     bind:showCategories={$showCategories}
@@ -126,7 +113,7 @@
       {/key}
     {/each}
     {#if !postsWithLabels.length}
-      <ConfusedTravolta reason="there are no results" />
+      <ConfusedTravolta reason="there are no results"/>
     {/if}
   </div>
 </div>
@@ -135,14 +122,16 @@
   div.content-wrapper.posts-wrapper {
     padding: 0;
   }
+
   div.posts {
-    padding: 0 1rem;
     margin: 2rem auto 0;
+    padding: 0 1rem;
   }
+
   @media (min-width: 700px) {
     div.content-wrapper.posts-wrapper {
-      padding-left: 7%;
       padding-right: 7%;
+      padding-left: 7%;
     }
   }
 
