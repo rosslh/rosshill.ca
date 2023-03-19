@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { SiteTheme } from "$lib/types";
 
@@ -38,7 +39,21 @@
 
   const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
 
-  let postsWithLabels: PostItemStub[];
+  let postsWithLabels: PostItemStub[] = [];
+  let showAll = false;
+
+  onMount(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
+  function handleScroll() {
+    if (!showAll && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      showAll = true;
+    }
+  }
 
   $: {
     postsWithLabels = posts
@@ -46,7 +61,12 @@
         const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
         return (!$showCategories.size || $showCategories.has(post.eventType)) && (!$showTags.size || postHasShownTag);
       })
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // trier les posts par date décroissante
       .map(getLabelVisibilityAndAlignment);
+
+    if (!showAll) {
+      postsWithLabels = postsWithLabels.slice(0, 4); // Afficher seulement les 4 derniers posts
+    }
   }
 
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
