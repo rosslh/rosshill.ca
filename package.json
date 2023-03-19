@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "UNLICENSED",
-  "author": "Ross Hill <ross@rosshill.ca> (https://rosshill.ca)",
+  "author": "Antoine Greuzard (fork Ross Hill)",
   "type": "module",
   "scripts": {
     "build": "wireit",
@@ -16,7 +16,8 @@
     "test": "playwright test",
     "upgrade": "ncu -u --reject apca-w3 && npm i",
     "updateNvmrc": "node --loader ts-node/esm ./scripts/updateNvmrc.ts",
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "compress-brotli": "find build -type f \\( -iname '*.css' -o -iname '*.js' -o -iname '*.html' \\) -exec brotli -Z -f -k {} \\;"
   },
   "wireit": {
     "getIcons": {
@@ -58,6 +59,7 @@
     "@typescript-eslint/parser": "^5.53.0",
     "apca-w3": "0.1.2",
     "autoprefixer": "^10.4.13",
+    "brotli": "^1.3.3",
     "chroma-js": "^2.4.2",
     "cssnano": "^5.1.15",
     "date-fns": "^2.29.3",
