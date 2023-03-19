@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
-  // import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
+  import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
   import Sidebar from "./components/sidebar/Sidebar.svelte";
   // import CopyrightNotice from "./components/CopyrightNotice.svelte";
   import "$lib/styles/global.scss";
@@ -11,13 +11,9 @@
 
   export let data: { themeFromSession: SiteTheme};
   let appWrapper: HTMLDivElement;
-  let ThemeSwitcher;
   let CopyrightNotice;
 
   onMount(async () => {
-    const themeSwitcherModule = await import("./components/ThemeSwitcher.svelte");
-    ThemeSwitcher = themeSwitcherModule.default;
-
     const copyrightNoticeModule = await import("./components/CopyrightNotice.svelte");
     CopyrightNotice = copyrightNoticeModule.default;
   });
@@ -31,9 +27,7 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   data-testid="app-wrapper"
   data-theme={selectedTheme}
 >
-  {#if ThemeSwitcher}
-    <svelte:component this={ThemeSwitcher} bind:selectedTheme={selectedTheme} />
-  {/if}
+  <ThemeSwitcher selectedTheme={selectedTheme} />
   <div class="two-column">
     <Sidebar />
     <div>
