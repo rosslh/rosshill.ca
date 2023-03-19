@@ -1,16 +1,7 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { remsToPixels } from "$lib/functions";
   import Separator from "./Separator.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
-
-  let imgLoaded = false;
-  onMount(() => {
-    const imgElement = document.querySelector("img[data-testid='headshot-img']");
-    imgElement.addEventListener("load", () => {
-      imgLoaded = true;
-    });
-  });
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
