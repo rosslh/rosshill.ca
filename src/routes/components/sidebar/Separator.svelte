@@ -4,11 +4,11 @@
 
 <div class="content-wrapper">
   <div aria-hidden="true" class="separator">
-    <div class="line do-transition" />
+    <div class="line do-transition"></div>
     <div class="symbol do-transition">
       <Code />
     </div>
-    <div class="line do-transition" />
+    <div class="line do-transition"></div>
   </div>
 </div>
 
@@ -17,26 +17,24 @@
     display: none;
 
     div.separator {
-      width: 75%;
-      margin: 0 auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      width: 75%;
       height: 3rem;
+      margin: 0 auto;
 
       .symbol {
         font-size: 1.2rem;
-        display: inline-flex;
-        align-items: center;
-        color: var(--border);
         display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--border);
       }
 
       .line {
-        height: 1px;
         width: calc(50% - 1.5rem);
+        height: 1px;
         border-bottom: 3px dotted var(--border);
       }
     }

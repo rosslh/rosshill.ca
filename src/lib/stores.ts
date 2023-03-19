@@ -6,12 +6,16 @@ import { SiteTheme } from "./types";
 
 export const showCategories = writable(new Set<PostCategory>());
 export const showTags = writable(new Set<string>());
-export const minTagNum = writable(2);
+export const minTagNum = writable(5);
 
 const cookies = new Cookies();
 const yearInSeconds = 60 * 60 * 24 * 365;
 
-function cookieStore<T>(key: string, defaultValue: T, maxAge = yearInSeconds): Writable<T> {
+function cookieStore<T>(
+  key: string,
+  defaultValue: T,
+  maxAge = yearInSeconds,
+): Writable<T> {
   const initialValue: T = cookies.get(key) ?? defaultValue;
   const { set: setStore, ...store } = writable(initialValue);
   if (initialValue) {

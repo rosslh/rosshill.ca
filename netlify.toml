@@ -34,7 +34,6 @@ baseUrl = "https://antoinegreuzard.fr"
 package = "@netlify/plugin-lighthouse"
 
 [plugins.inputs.settings]
-preset = "desktop" # Optionally run Lighthouse using a desktop configuration
 locale = "fr" # generates Lighthouse reports in fr
 
 # to audit a specific absolute url

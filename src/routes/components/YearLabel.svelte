@@ -2,6 +2,7 @@
   export let year: string;
   export let isRightToLeft: boolean;
   export let isFirstLabel: boolean;
+
 </script>
 
 <div class="label-wrapper do-transition">
@@ -36,14 +37,14 @@
 
       &.ltr {
         > div:first-child {
-          border-left: 3px solid var(--timeline);
           border-bottom: 3px solid var(--timeline);
+          border-left: 3px solid var(--timeline);
           border-bottom-left-radius: 100%;
         }
 
         > div:last-child {
-          border-right: 3px solid var(--timeline);
           border-top: 3px solid var(--timeline);
+          border-right: 3px solid var(--timeline);
           border-top-right-radius: 100%;
         }
       }
@@ -56,24 +57,24 @@
         }
 
         > div:nth-child(3) {
-          border-left: 3px solid var(--timeline);
           border-top: 3px solid var(--timeline);
+          border-left: 3px solid var(--timeline);
           border-top-left-radius: 100%;
         }
       }
     }
 
     span.year-label {
-      color: var(--heading);
-      background-color: var(--panel-background);
-      height: 2.2rem;
-      border-radius: 0.5rem;
-      width: 4.5rem;
-      border: 1px solid var(--border);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.5rem;
+      height: 2.2rem;
+      color: var(--heading);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      background-color: var(--panel-background);
 
       &.centered-label {
         position: absolute;
@@ -83,9 +84,9 @@
       }
 
       &.first-label {
+        position: absolute;
         z-index: 4;
         margin-left: 25%;
-        position: absolute;
         transform: translate(-50%, 0);
       }
     }
