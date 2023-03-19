@@ -1,14 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import {remsToPixels} from "$lib/functions";
-  // import Separator from "./Separator.svelte";
+  import Separator from "./Separator.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
-
-  let Separator;
-  onMount(async () => {
-    const separatorModule = await import("./Separator.svelte");
-    Separator = separatorModule.default;
-  });
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
@@ -49,9 +43,7 @@
       </a>
     </p>
   </div>
-  {#if Separator}
-    <svelte:component this={Separator} />
-  {/if}
+  <Separator />
 </div>
 
 <style lang="scss">
