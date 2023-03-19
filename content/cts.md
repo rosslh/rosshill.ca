@@ -1,6 +1,6 @@
 ---
 title: CTS France
-isHidden: true
+isHidden: false
 eventType: project
 excerpt: Découvrez le site internet de CTS France, leader européen en solutions de stockage industriel, pour des solutions de qualité, adaptées à tous les secteurs d'activité.
 tags: [wordpress, elementor]

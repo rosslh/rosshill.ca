@@ -1,6 +1,6 @@
 ---
 title: O-doo
-isHidden: true
+isHidden: false
 eventType: project
 excerpt: Site web réalisé avec Wordpress et Elementor pour O-doo.
 tags: [wordpress, elementor, css3, html5, javascript]
