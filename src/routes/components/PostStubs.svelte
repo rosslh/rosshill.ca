@@ -38,6 +38,8 @@
   let displayedPostCount = initialPostCount;
   let previousCategories = new Set($showCategories);
   let previousTags = new Set($showTags);
+  let clickCount = 0;
+
 
   function areSetsEqual(setA, setB) {
     if (setA.size !== setB.size) {
@@ -50,6 +52,10 @@
     showAll = true;
   }
 
+  function handleButtonClick() {
+    clickCount += 1;
+  }
+
   $: {
     if (
       !areSetsEqual($showCategories, previousCategories)
@@ -58,6 +64,10 @@
       loadAllPosts();
       previousCategories = new Set($showCategories);
       previousTags = new Set($showTags);
+    }
+
+    if (clickCount === 1) {
+      loadAllPosts();
     }
   }
 
@@ -72,12 +82,22 @@
         { rootMargin: "200px" }, // Vous pouvez ajuster cette marge pour charger les posts avant que l'utilisateur atteigne réellement le bas de la page
       );
       observer.observe(sentinel);
+
+      const button = document.querySelector("button");
+      if (button) {
+        button.addEventListener("click", handleButtonClick);
+      }
     }
   });
 
   onDestroy(() => {
     if (browser) {
       observer.disconnect();
+
+      const button = document.querySelector("button");
+      if (button) {
+        button.removeEventListener("click", handleButtonClick);
+      }
     }
   });
 
