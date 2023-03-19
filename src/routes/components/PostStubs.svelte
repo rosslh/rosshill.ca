@@ -33,8 +33,11 @@
   let postsWithLabels: PostItemStub[] = [];
   let showAll = false;
 
-  function handleScroll () {
-    if (!showAll && (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  function handleScroll() {
+    const scrollPos = Math.max(window.scrollY, document.documentElement.scrollTop);
+    const maxScroll = Math.max(document.body.offsetHeight, document.documentElement.offsetHeight) - window.innerHeight;
+
+    if (!showAll && scrollPos >= maxScroll) {
       showAll = true;
     }
   }
