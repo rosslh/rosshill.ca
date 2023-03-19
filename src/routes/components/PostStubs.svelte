@@ -65,7 +65,7 @@
       .map(getLabelVisibilityAndAlignment);
 
     if (!showAll) {
-      postsWithLabels = postsWithLabels.slice(0, 4); // Afficher seulement les 4 derniers posts
+      postsWithLabels = postsWithLabels.slice(0, 5); // Afficher seulement les 4 derniers posts
     }
   }
 
