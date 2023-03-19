@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import {remsToPixels} from "$lib/functions";
+  import { remsToPixels } from "$lib/functions";
   import Separator from "./Separator.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 
