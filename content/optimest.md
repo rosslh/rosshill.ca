@@ -1,6 +1,6 @@
 ---
 title: Optim'est
-isHidden: false
+isHidden: true
 eventType: project
 excerpt: Le site web Optim'est a été développé sous Wordpress et Woocommerce
 tags: [wordpress, elementor, css3, html5, javascript, woocommerce]

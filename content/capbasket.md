@@ -1,5 +1,6 @@
 ---
 title: CAP Basket
+isHidden: false
 eventType: project
 excerpt: Site web réalisé avec Wordpress et Elementor pour CAP Basket.
 tags: [wordpress, elementor, css3, html5, javascript]

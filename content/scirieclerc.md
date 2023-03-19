@@ -1,5 +1,6 @@
 ---
 title: Scierie Clerc
+isHidden: true
 eventType: project
 excerpt: Site vitrine pour la Scierie Clerc, réalisé avec Wordpress et le thème Avada.
 tags: [wordpress, css3, html5, javascript]
