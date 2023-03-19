@@ -30,30 +30,32 @@
     return output;
   };
   const ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
-  let postsWithLabels: PostItemStub[] = [];
+  let postsWithLabels: PostItemStub[];
   let showAll = false;
-
-  function handleScroll() {
-    const scrollPos = Math.max(window.scrollY, document.documentElement.scrollTop);
-    const maxScroll = Math.max(document.body.offsetHeight, document.documentElement.offsetHeight) - window.innerHeight;
-
-    if (!showAll && scrollPos >= maxScroll) {
-      showAll = true;
-    }
-  }
+  let sentinel: HTMLElement;
+  let observer: IntersectionObserver;
 
   onMount(() => {
     if (browser) {
-      window.addEventListener("scroll", handleScroll, {passive: true});
-      window.addEventListener("touchmove", handleScroll, {passive: true}); // Ajout de l'événement touchmove
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            showAll = true;
+          }
+        },
+        { rootMargin: "200px" } // Vous pouvez ajuster cette marge pour charger les posts avant que l'utilisateur atteigne réellement le bas de la page
+      );
+
+      observer.observe(sentinel);
     }
   });
+
   onDestroy(() => {
     if (browser) {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("touchmove", handleScroll); // Suppression de l'événement touchmove
+      observer.disconnect();
     }
   });
+
   $: {
     postsWithLabels = posts
       .filter((post: PostItemStub) => {
@@ -115,6 +117,7 @@
         />
       {/key}
     {/each}
+    <div bind:this={sentinel}></div>
     {#if !postsWithLabels.length}
       <ConfusedTravolta reason="there are no results"/>
     {/if}
