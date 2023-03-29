@@ -14,7 +14,7 @@
 <div class="post-heading">
   <div class="picture-frame">
     {#if post.thumbnail}
-      <picture class="fixed-size">
+      <picture>
         <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp" />
         <source
           srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
@@ -64,18 +64,25 @@
     min-height: 1.5rem;
     align-items: center;
 
-    div.picture-frame {
-      border-radius: 50%;
-      overflow: hidden;
+    .picture-frame {
       width: 2rem;
       height: 2rem;
-      display: inline-block;
       flex-shrink: 0;
 
-      * {
-        height: 100%;
+      picture {
         width: 100%;
-        display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
 

@@ -4,7 +4,7 @@
   import { draw } from "svelte/transition";
   import { browser } from "$app/environment";
   
-  import { reduceMotion } from "$lib/constants";
+  import { reduceMotion } from "$lib/reduceMotion";
   import svgPath from "./NameSvg";
 
   let showTitle = false;

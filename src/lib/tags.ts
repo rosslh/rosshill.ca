@@ -1,5 +1,3 @@
-import isbot from "isbot";
-
 export const tagLabels: Record<string, string> = {
   backbonedotjs: "Backbone.js",
   graphql: "GraphQL",
@@ -8,13 +6,13 @@ export const tagLabels: Record<string, string> = {
   dotnet: ".NET / C#",
   nestjs: "NestJS",
   nodedotjs: "Node.js",
-  nuxtdotjs: "NuxtJS / Vue",
   postgresql: "PostgreSQL",
   prosemirror: "ProseMirror",
   raspberrypi: "Raspberry Pi",
   tensorflow: "TensorFlow",
   typescript: "TypeScript",
   unity: "Unity 3D",
+  vuedotjs: "Vue.js",
   webassembly: "WebAssembly",
   wordpress: "WordPress",
 };
@@ -29,17 +27,9 @@ export const tagAncestors: Record<string, string[]> = {
   "gatsby": ["react", "javascript"],
   "nestjs": ["nodedotjs", "javascript"],
   "nodedotjs": ["javascript"],
-  "nuxtdotjs": ["javascript"],
   "react": ["javascript"],
   "redux": ["javascript"],
   "svelte": ["javascript"],
   "typescript": ["javascript"],
+  "vuedotjs": ["javascript"],
 };
-
-const isBrowser = typeof window !== "undefined" && !("Deno" in window);
-
-const isBot = isBrowser && isbot(window.navigator.userAgent);
-const prefersReducedMotion = isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const intersectionObserverSupported = isBrowser && "IntersectionObserver" in window;
-
-export const reduceMotion = isBrowser && (isBot || prefersReducedMotion || !intersectionObserverSupported);

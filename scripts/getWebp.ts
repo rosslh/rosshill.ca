@@ -14,4 +14,5 @@ async function convertImages(dir: string): Promise<void> {
 (async (): Promise<void> => {
   await convertImages("assets");
   await convertImages("assets/timeline");
+  await convertImages("assets/occasions");
 })();

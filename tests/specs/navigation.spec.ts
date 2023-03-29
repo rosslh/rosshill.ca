@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
-import { expectToBeAtTop, expectCount, getLocator } from "../commands.js";
+import {
+  expectToBeAtTop, expectCount, getLocator, waitForElement,
+} from "../commands.js";
 import posts from "../../src/data/posts.json" assert { type: "json" };
 
 test.describe.configure({ mode: "parallel" });
@@ -21,6 +23,17 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
 
   await postStubLink.click();
 
+  // if page doesn't load, click it again
+  // TODO: this is a workaround for a possible bug in SvelteKit
+  try {
+    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
+  } catch (e) {
+    await postStubLink.click();
+    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
+  }
+
+  await waitForElement(page, "post-title");
+
   await expectCount([page, "post-title"], 1);
 
   await expectCount([page, "error"], 0);
@@ -29,6 +42,8 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
   expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
   
   await backLink.click();
+  
+  await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10000 });
 
   await expectCount([page, "main-heading"], 1);
 

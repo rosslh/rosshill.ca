@@ -12,6 +12,10 @@ export function getLocator(target: Target): Locator {
   return target;
 }
 
+export async function waitForElement(page: Page, testId: string): Promise<void> {
+  await page.waitForSelector(`[data-testid="${testId}"]`, { timeout: 10000 });
+}
+
 export async function expectCount(target: Target, expectedCount: number): Promise<void> {
   const locator = getLocator(target);
   await expect(locator).toHaveCount(expectedCount, { timeout: 10000 });
@@ -38,7 +42,7 @@ async function isUserScrolledToBottom(page: Page): Promise<boolean> {
 }
 
 export async function expectToBeAtTop(page: Page, selector: string): Promise<void> {
-  const element = await getLocator([page, selector]).elementHandle();
+  const element = await getLocator([page, selector]).first().elementHandle();
   const boundingBox = element && await element.boundingBox();
   if (!boundingBox) {
     throw new Error(`Element ${selector} not found`);

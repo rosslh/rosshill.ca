@@ -7,7 +7,7 @@
 
   import { browser } from "$app/environment";
   import { showCategories, showTags, themeStore } from "$lib/stores";
-  import { tagAncestors } from "$lib/constants";
+  import { tagAncestors } from "$lib/tags";
   import { prefersColorSchemeDark } from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";

@@ -3,22 +3,76 @@
   import Separator from "./Separator.svelte";
   import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+  import { addDays, endOfDay, startOfDay } from "date-fns";
+  import Balancer from "svelte-wrap-balancer";
+
+  import { occasions } from "$lib/occasions";
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentOccasion = occasions.find(
+    ({ startDay, startMonth, durationDays }) => (
+      [currentYear - 1, currentYear]
+        .some((year: number) => {
+          const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
+          const endDate = endOfDay(addDays(startDate, durationDays - 1));
+          return today >= startDate && today <= endDate;
+        })),
+  );
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
   <div class="sidebar-content">
-    <div class="img-wrapper">
-      <picture class="fixed-size">
-        <source srcset="/headshot.webp" type="image/webp" />
-        <source srcset="/headshot.png" type="image/png" />
-        <img
-          data-testid="headshot-img"
-          src="/headshot.png"
-          alt="Ross Hill"
-          width={remsToPixels(10)}
-          height={remsToPixels(10)} />
-      </picture>
-    </div>
+    {#if !currentOccasion || currentOccasion.imageName}
+      <div
+        class="img-wrapper"
+        class:rounded={!currentOccasion}
+      >
+        {#if currentOccasion?.imageName}
+          <picture data-testid="occasion-image-{currentOccasion.name}">
+            <source srcset="/occasions/{currentOccasion.imageName}.webp" type="image/webp" />
+            <source srcset="/occasions/{currentOccasion.imageName}.png" type="image/png" />
+            <img
+              data-testid="headshot-img"
+              src="/occasions/{currentOccasion.imageName}.png"
+              alt={currentOccasion.name}
+              title={currentOccasion.name}
+              width={remsToPixels(10)}
+              height={remsToPixels(10)} />
+          </picture>
+        {:else}
+          <picture>
+            <source srcset="/headshot.webp" type="image/webp" />
+            <source srcset="/headshot.png" type="image/png" />
+            <img
+              data-testid="headshot-img"
+              src="/headshot.png"
+              alt="Ross Hill"
+              width={remsToPixels(10)}
+              height={remsToPixels(10)} />
+          </picture>
+        {/if}
+      </div>
+    {/if}
+      {#if currentOccasion?.blurb}
+      <p
+        class="occasion-blurb"
+        data-testid="occasion-blurb-{currentOccasion.name}"
+      >
+        <Balancer>
+          {currentOccasion.blurb}
+          {#if currentOccasion.learnMoreUrl}
+            <a
+              href={currentOccasion.learnMoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn more.
+            </a>
+          {/if}
+        </Balancer>
+      </p>
+    {/if}
     <h1>
       <AnimatedName />
     </h1>
@@ -59,6 +113,13 @@
       position: sticky;
       top: 0;
 
+      .occasion-blurb {
+        text-align: center;
+        padding: 1rem 2rem;
+        width: 100%;
+        color: var(--subtitle);
+      }
+
       h1 {
         margin-top: 0.8rem;
         margin-bottom: -1rem;
@@ -80,18 +141,31 @@
       }
 
       div.img-wrapper {
-        overflow: hidden;
-        border-radius: 50%;
         width: 10.5rem;
         height: 10.5rem;
         min-width: 10.5rem;
         min-height: 10.5rem;
         margin-top: -4.5rem;
 
-        * {
+        &.rounded {
+          overflow: hidden;
+          border-radius: 50%;
+        }
+
+        picture {
+          position: relative;
           display: block;
           width: 100%;
           height: 100%;
+
+          * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }

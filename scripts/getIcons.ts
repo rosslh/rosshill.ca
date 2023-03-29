@@ -8,7 +8,7 @@ import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
 import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
-import { tagAncestors } from "../src/lib/constants.js";
+import { tagAncestors } from "../src/lib/tags.js";
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
 

@@ -11,8 +11,8 @@
 
   import { browser } from "$app/environment";
   import { preloadData } from "$app/navigation";
-  
-  import { reduceMotion } from "$lib/constants";
+  import { reduceMotion } from "$lib/reduceMotion";
+
   import IntersectionObserver from "./IntersectionObserver.svelte";
   import PostStubTriangle from "./PostStubTriangle.svelte";
   import TimelineMarker from "./TimelineMarker.svelte";
@@ -39,6 +39,8 @@
   const preloadPage = async (): Promise<void> => {
     await preloadData(`item/${post.slug}`);
   };
+
+  let showTooltip = false;
 </script>
 
 {#if isFirstPost}
@@ -55,8 +57,16 @@
     id="timeline-{post.slug}"
     data-testid="post-stub-{post.slug}"
     class="post-wrapper do-transition {left ? 'left' : 'right'}"
+
+    on:mouseenter={() => {
+      showTooltip = true;
+    }}
+    on:mouseleave={() => {
+      showTooltip = false;
+    }}
   >
     <TimelineMarker
+      {showTooltip}
       {left}
       eventType={post.eventType} />
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
@@ -80,7 +90,7 @@
   </div>
 </IntersectionObserver>
 {#if isLastPost}
-  <PostStubSpacer {left} showBottomMarker />
+  <PostStubSpacer {left} showBottomBorder />
 {/if}
 
 <style lang="scss">

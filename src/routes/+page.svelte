@@ -72,9 +72,7 @@
       <Balancer>Welcome to my corner of the web!</Balancer>
     </h2>
     <p>
-      <Balancer>
-        {intro}
-      </Balancer>
+      <Balancer>{intro}</Balancer>
     </p>
   </div>
   <PostStubs {posts} {brandColors} />

@@ -1,17 +1,12 @@
 @import "/node_modules/hsluv-sass";
 
 $theme-hue: 253;
-$theme-saturation: 25%;
-
-@function theme-color($lightness) {
-  @return hsluv($theme-hue, $theme-saturation, $lightness);
-}
-
 $job-hue: 12;
 $project-hue: 272;
 $other-hue: 135;
 
 @mixin light-theme() {
+  $theme-saturation: 20%;
   $category-saturation: 74%;
   $category-lightness: 46%;
 
@@ -26,18 +21,19 @@ $other-hue: 135;
   --project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
   --other-marker: #{hsluv($other-hue, $marker-saturation, $marker-lightness)};
 
-  --heading: #{theme-color(20%)};
-  --foreground: #{theme-color(30%)};
+  --heading: #{hsluv($theme-hue, $theme-saturation, 20%)};
+  --foreground: #{hsluv($theme-hue, $theme-saturation, 30%)};
   --link: #{hsluv($theme-hue, 90%, 40%)};
-  --subtitle: #{theme-color(38%)};
-  --focus-outline: #{theme-color(60%)};
-  --timeline: #{hsluv($theme-hue, 16%, 65%)};
-  --border: #{theme-color(85%)};
-  --panel-background: #{theme-color(95%)};
-  --background: #{theme-color(98%)};
+  --subtitle: #{hsluv($theme-hue, $theme-saturation, 38%)};
+  --focus-outline: #{hsluv($theme-hue, $theme-saturation, 60%)};
+  --timeline: #{hsluv($theme-hue, $theme-saturation, 65%)};
+  --border: #{hsluv($theme-hue, $theme-saturation, 88%)};
+  --panel-background: #{hsluv($theme-hue, $theme-saturation, 95%)};
+  --background: #{hsluv($theme-hue, $theme-saturation, 98%)};
 }
 
 @mixin dark-theme() {
+  $theme-saturation: 25%;
   $category-saturation: 75%;
   $category-lightness: 65%;
 
@@ -49,15 +45,15 @@ $other-hue: 135;
   --project-marker: var(--project);
   --other-marker: var(--other);
 
-  --heading: #{theme-color(95%)};
-  --foreground: #{theme-color(87%)};
+  --heading: #{hsluv($theme-hue, $theme-saturation, 95%)};
+  --foreground: #{hsluv($theme-hue, $theme-saturation, 87%)};
   --link: #{hsluv($theme-hue, 90%, 77%)};
-  --subtitle: #{theme-color(75%)};
-  --focus-outline: #{theme-color(35%)};
-  --timeline: #{theme-color(35%)};
-  --border: #{theme-color(23%)};
-  --panel-background: #{theme-color(14%)};
-  --background: #{theme-color(8%)};
+  --subtitle: #{hsluv($theme-hue, $theme-saturation, 75%)};
+  --focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
+  --timeline: #{hsluv($theme-hue, $theme-saturation, 35%)};
+  --border: #{hsluv($theme-hue, $theme-saturation, 21%)};
+  --panel-background: #{hsluv($theme-hue, $theme-saturation, 14%)};
+  --background: #{hsluv($theme-hue, $theme-saturation, 8%)};
 }
 
 // If prefers-color-scheme unsupported, default to light theme
@@ -228,18 +224,4 @@ code {
 a {
   color: var(--link);
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline !important;
-  }
-}
-
-picture.fixed-size {
-  position: relative;
-
-  * {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 }

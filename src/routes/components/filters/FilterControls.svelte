@@ -11,7 +11,7 @@
   import Times from "~icons/fa-solid/times";
   
   import { browser } from "$app/environment";
-  import { tagAncestors } from "$lib/constants";
+  import { tagAncestors } from "$lib/tags";
   import { prefersColorSchemeDark } from "$lib/functions";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";

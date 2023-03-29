@@ -1,13 +1,13 @@
 <script lang="ts">
   export let left: boolean;
-  export let showBottomMarker = false;
+  export let showBottomBorder = false;
 </script>
 
 <div
   aria-hidden="true"
   class="post-spacer do-transition {left ? 'left' : 'right'}"
 />
-{#if showBottomMarker}
+{#if showBottomBorder}
   <div
     aria-hidden="true"
     class="bottom-marker do-transition {left ? 'left' : 'right'}"

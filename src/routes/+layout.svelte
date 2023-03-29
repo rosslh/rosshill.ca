@@ -32,7 +32,8 @@
         border: 1px solid ${getCssVariable(appWrapper, "border")};
         border-radius: 0.5rem;
         color: ${getCssVariable(appWrapper, "foreground")};
-        display: inline-block; font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        display: inline-block;
+        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
         font-weight: 700;
         padding: 0.75rem;
         `,

@@ -10,7 +10,7 @@
   export let needsOutlineOnLightBg = false;
   export let needsOutlineOnDarkBg = false;
 
-  import { tagLabels } from "$lib/constants";
+  import { tagLabels } from "$lib/tags";
   import { remsToPixels } from "$lib/functions";
 
   $: tagString = tagLabels[tagId] ?? tagId;
@@ -21,6 +21,7 @@
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
+    vuedotjs: { y: "0.1rem" },
   };
 
   const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };

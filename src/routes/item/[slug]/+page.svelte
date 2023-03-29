@@ -3,7 +3,7 @@
 
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
-  import { tagLabels } from "$lib/constants";
+  import { tagLabels } from "$lib/tags";
 
   export let data: { post: PostItemPage, brandColors: BrandColors };
   const { post, brandColors } = data;
