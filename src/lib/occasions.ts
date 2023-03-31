@@ -27,6 +27,8 @@ const getAmericanThanksgivingDate = (): { startDay: number; startMonth: number; 
   return { startDay, startMonth, durationDays };
 };
 
+const currentYear = new Date().getFullYear();
+
 export const occasions = [
   {
     name: "Valentine's Day",
@@ -102,8 +104,8 @@ export const occasions = [
     name: "Remembrance Day",
     blurb: "Let us remember those who have fallen in service to their country.",
     startMonth: 11,
-    startDay: 10,
-    durationDays: 3,
+    startDay: 11,
+    durationDays: 1,
     imageName: "remembrance",
   },
   {
@@ -131,11 +133,18 @@ export const occasions = [
   },
   {
     name: "New Year's Eve",
-    blurb: "Happy New Year! I hope you have a wonderful {YEAR}."
-      .replace("{YEAR}", addMonths(new Date(), 1).getFullYear().toString()),
+    blurb: `Happy New Year! I hope you have a wonderful ${currentYear}.`,
     startMonth: 12,
-    startDay: 30,
-    durationDays: 3,
-    imageName: "nye",
+    startDay: 31,
+    durationDays: 1,
+    imageName: "new-years-eve",
   },
+  {
+    name: "New Year's Day",
+    blurb: `Happy New Year! I hope you have a wonderful ${currentYear}.`,
+    startMonth: 1,
+    startDay: 1,
+    durationDays: 1,
+    imageName: "new-years-day",
+  }
 ];

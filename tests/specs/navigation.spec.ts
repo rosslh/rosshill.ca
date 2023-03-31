@@ -45,6 +45,8 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
   
   await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10000 });
 
+  await waitForElement(page, "main-heading");
+
   await expectCount([page, "main-heading"], 1);
 
   await expectCount([page, "error"], 0);

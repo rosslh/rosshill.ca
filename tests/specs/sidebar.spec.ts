@@ -43,11 +43,12 @@ const occasions = {
   "National Day for Truth and Reconciliation": ["2023-09-29", "2023-09-30", "2023-10-01"],
   "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
   "Halloween": ["2023-10-30", "2023-10-31", "2023-11-01"],
-  "Remembrance Day": ["2023-11-10", "2023-11-11", "2023-11-12"],
+  "Remembrance Day": ["2023-11-11"],
   "Transgender Awareness Week": ["2023-11-13", "2023-11-16", "2023-11-19"],
   "American Thanksgiving": ["2023-11-23"],
   "Holidays 2023": ["2023-12-10", "2023-12-20", "2023-12-28"],
-  "New Year's Eve": ["2023-12-30", "2023-12-31", "2024-01-01"],
+  "New Year's Eve": ["2023-12-31"],
+  "New Year's Day": ["2024-01-01"],
 };
 
 for (let i = 0; i < Object.keys(occasions).length; i += 1) {

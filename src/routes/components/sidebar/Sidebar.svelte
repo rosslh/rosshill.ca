@@ -5,6 +5,7 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
   import Balancer from "svelte-wrap-balancer";
+  import { browser } from "$app/environment";
 
   import { occasions } from "$lib/occasions";
 
@@ -28,7 +29,7 @@
         class="img-wrapper"
         class:rounded={!currentOccasion}
       >
-        {#if currentOccasion?.imageName}
+        {#if browser && currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
             <source srcset="/occasions/{currentOccasion.imageName}.webp" type="image/webp" />
             <source srcset="/occasions/{currentOccasion.imageName}.png" type="image/png" />
@@ -54,7 +55,7 @@
         {/if}
       </div>
     {/if}
-      {#if currentOccasion?.blurb}
+    {#if browser && currentOccasion?.blurb}
       <p
         class="occasion-blurb"
         data-testid="occasion-blurb-{currentOccasion.name}"
