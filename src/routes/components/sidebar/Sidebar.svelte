@@ -4,7 +4,6 @@
   import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
-  import Balancer from "svelte-wrap-balancer";
   import { browser } from "$app/environment";
 
   import { occasions } from "$lib/occasions";
@@ -46,7 +45,7 @@
             <source srcset="/headshot.webp" type="image/webp" />
             <source srcset="/headshot.png" type="image/png" />
             <img
-              data-testid="headshot-img"
+              data-testid="headshot-image"
               src="/headshot.png"
               alt="Ross Hill"
               width={remsToPixels(10)}
@@ -59,19 +58,18 @@
       <p
         class="occasion-blurb"
         data-testid="occasion-blurb-{currentOccasion.name}"
+        style:max-width={currentOccasion.blurbMaxWidth}
       >
-        <Balancer>
-          {currentOccasion.blurb}
-          {#if currentOccasion.learnMoreUrl}
-            <a
-              href={currentOccasion.learnMoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more.
-            </a>
-          {/if}
-        </Balancer>
+        {currentOccasion.blurb}
+        {#if currentOccasion.learnMoreUrl}
+          <a
+            href={currentOccasion.learnMoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more.
+          </a>
+        {/if}
       </p>
     {/if}
     <h1>
@@ -116,7 +114,8 @@
 
       .occasion-blurb {
         text-align: center;
-        padding: 1rem 2rem;
+        padding: 1rem 0;
+        max-width: 20rem;
         width: 100%;
         color: var(--subtitle);
       }

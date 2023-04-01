@@ -35,7 +35,7 @@
   },
   "browserslist": "last 5 years or ie>=11 or >0.2%",
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
     "@iconify/json": "^2.2.42",
     "@playwright/test": "^1.32.1",

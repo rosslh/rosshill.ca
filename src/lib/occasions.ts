@@ -1,7 +1,7 @@
 import { addMonths } from "date-fns";
 
 const getNthDayOfWeekInMonth = (month: number, dayOfWeek: number, n: number): number => {
-  const date = new Date();
+  const date = new Date(2023, 10, 23);
   date.setMonth(month - 1);
   date.setDate(1);
   while (date.getDay() !== dayOfWeek) {
@@ -28,6 +28,7 @@ const getAmericanThanksgivingDate = (): { startDay: number; startMonth: number; 
 };
 
 const currentYear = new Date().getFullYear();
+const newYear = addMonths(new Date(), 1).getFullYear();
 
 export const occasions = [
   {
@@ -46,6 +47,7 @@ export const occasions = [
     startDay: 1,
     durationDays: 28,
     imageName: "black-history",
+    blurbMaxWidth: "18rem",
   },
   {
     name: "International Women's Day",
@@ -56,7 +58,7 @@ export const occasions = [
   },
   {
     name: "Trans Day of Visibility",
-    blurb: "Join me in celebrating our transgender friends, colleagues, and neighbors!",
+    blurb: "Join me in celebrating our transgender friends, colleagues, and neighbours!",
     learnMoreUrl: "https://www.glaad.org/tdov",
     startMonth: 3,
     startDay: 31,
@@ -70,6 +72,7 @@ export const occasions = [
     startDay: 1,
     durationDays: 30,
     imageName: "pride",
+    blurbMaxWidth: "15rem",
   },
   {
     name: "Canada Day",
@@ -81,11 +84,13 @@ export const occasions = [
   },
   {
     name: "National Day for Truth and Reconciliation",
-    blurb: "Never forget the victims of the residential school system",
+    blurb: "Never forget the victims of the residential school system.",
     startMonth: 9,
     startDay: 29,
     durationDays: 3,
     imageName: "reconciliation",
+    blurbMaxWidth: "16rem",
+    learnMoreUrl: "https://www.rcaanc-cirnac.gc.ca/eng/1631130192216/1631130220404",
   },
   {
     name: "Canadian Thanksgiving",
@@ -107,6 +112,7 @@ export const occasions = [
     startDay: 11,
     durationDays: 1,
     imageName: "remembrance",
+    blurbMaxWidth: "15rem",
   },
   {
     name: "Transgender Awareness Week",
@@ -124,7 +130,7 @@ export const occasions = [
     ...getAmericanThanksgivingDate(),
   },
   {
-    name: "Holidays {YEAR}".replace("{YEAR}", (new Date().getFullYear().toString())),
+    name: `Holidays ${currentYear}`,
     blurb: "I hope you have a wonderful holiday season!",
     startMonth: 12,
     startDay: 10,
@@ -133,18 +139,20 @@ export const occasions = [
   },
   {
     name: "New Year's Eve",
-    blurb: `Happy New Year! I hope you have a wonderful ${currentYear}.`,
+    blurb: `Happy New Year! I hope you have a wonderful ${newYear}.`,
     startMonth: 12,
     startDay: 31,
     durationDays: 1,
     imageName: "new-years-eve",
+    blurbMaxWidth: "12rem",
   },
   {
     name: "New Year's Day",
-    blurb: `Happy New Year! I hope you have a wonderful ${currentYear}.`,
+    blurb: `Happy New Year! I hope you have a wonderful ${newYear}.`,
     startMonth: 1,
     startDay: 1,
     durationDays: 1,
     imageName: "new-years-day",
-  }
+    blurbMaxWidth: "12rem",
+  },
 ];

@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, Page } from "@playwright/test";
 import { parse } from "date-fns";
 import {
   getLocator, expectTextContent, expectCount, waitForElement,
@@ -10,8 +10,34 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/");
 });
 
+async function setBrowserDate(page: Page, occasionDate: string) {
+  const fakeNow = parse(occasionDate, "yyyy-MM-dd", new Date()).getTime();
+  await page.addInitScript(`{
+        // Extend Date constructor to default to fakeNow
+        Date = class extends Date {
+          constructor(...args) {
+            if (args.length === 0) {
+              super(${fakeNow});
+            } else {
+              super(...args);
+            }
+          }
+        }
+        // Override Date.now() to start from fakeNow
+        const __DateNowOffset = ${fakeNow} - Date.now();
+        const __DateNow = Date.now;
+        Date.now = () => __DateNow() + __DateNowOffset;
+      }`);
+  page.reload();
+}
+
 test("Sidebar information is displayed", async ({ page }) => {
+  await setBrowserDate(page, "2023-01-05");
+
   const sidebar = getLocator([page, "sidebar"]);
+
+  const headshotImage = getLocator([sidebar, "headshot-image"]);
+  await expectCount(headshotImage, 1);
 
   const jobTitle = getLocator([sidebar, "job-title"]);
   await expectTextContent(jobTitle, "Software Developer");
@@ -58,25 +84,7 @@ for (let i = 0; i < Object.keys(occasions).length; i += 1) {
   for (let j = 0; j < occasionDates.length; j += 1) {
     const occasionDate = occasionDates[j];
     test(`Sidebar displays ${occasionName} on ${occasionDate}`, async ({ page }) => {
-      const fakeNow = parse(occasionDate, "yyyy-MM-dd", new Date()).getTime();
-      await page.addInitScript(`{
-        // Extend Date constructor to default to fakeNow
-        Date = class extends Date {
-          constructor(...args) {
-            if (args.length === 0) {
-              super(${fakeNow});
-            } else {
-              super(...args);
-            }
-          }
-        }
-        // Override Date.now() to start from fakeNow
-        const __DateNowOffset = ${fakeNow} - Date.now();
-        const __DateNow = Date.now;
-        Date.now = () => __DateNow() + __DateNowOffset;
-      }`);
-
-      page.reload();
+      await setBrowserDate(page, occasionDate);
       
       const sidebar = getLocator([page, "sidebar"]);
 
@@ -86,3 +94,4 @@ for (let i = 0; i < Object.keys(occasions).length; i += 1) {
     });
   }
 }
+

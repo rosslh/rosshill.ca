@@ -13,7 +13,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: Boolean(process.env.CI),
   retries,
   maxFailures: retries + 1,
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   reporter: "list",
 
   use: {
