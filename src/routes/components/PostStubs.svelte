@@ -110,8 +110,8 @@
     padding: 0;
   }
   div.posts {
-    padding: 0 1rem;
-    margin: 2rem auto 0;
+    padding: 0 var(--spacing-m);
+    margin: var(--spacing-2xl) auto 0;
   }
   @media (min-width: 700px) {
     div.content-wrapper.posts-wrapper {
@@ -121,7 +121,7 @@
   }
 
   div.heading-wrapper {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
   }
 </style>

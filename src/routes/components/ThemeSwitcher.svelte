@@ -45,28 +45,28 @@
 
 <style lang="scss">
   div.theme-switcher-wrapper {
-    padding: 1.5rem 5%;
+    padding: var(--spacing-xl) 5%;
     position: absolute;
     right: 0;
     z-index: 100;
 
     button {
-      height: 1.8rem;
-      width: 8.75rem;
-      border-radius: 0.9rem;
+      width: 8.5rem;
+      padding: var(--spacing-xs) 0;
+      border-radius: var(--border-radius-m);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: var(--foreground);
-      background-color: var(--panel-background);
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
+      color: var(--color-foreground);
+      background-color: var(--color-panel-background);
+      font-size: var(--font-size-xs);
+      border: 1px solid var(--color-border);
 
       .icon {
         display: inline-flex;
         align-items: center;
-        font-size: 0.75rem;
-        margin-right: 0.3rem;
+        font-size: var(--font-size-xs);
+        margin-right: var(--spacing-2xs);
       }
 
       .description {
@@ -77,7 +77,7 @@
 
   @media (max-width: 699px) {
     div.theme-switcher-wrapper {
-      padding: 1rem;
+      padding: var(--spacing-m);
 
       button {
         transform: scale(0.8);
@@ -88,7 +88,7 @@
 
   @media (min-width: 700px) {
     .theme-switcher-wrapper {
-      padding: 1.5rem 7%;
+      padding: var(--spacing-xl) 7%;
     }
   }
 </style>

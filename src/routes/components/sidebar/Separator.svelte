@@ -25,10 +25,10 @@
       height: 3rem;
 
       .symbol {
-        font-size: 1.2rem;
+        font-size: var(--font-size-m);
         display: inline-flex;
         align-items: center;
-        color: var(--border);
+        color: var(--color-border);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -37,7 +37,7 @@
       .line {
         height: 1px;
         width: calc(50% - 1.5rem);
-        border-bottom: 3px dotted var(--border);
+        border-bottom: 3px dotted var(--color-border);
       }
     }
   }

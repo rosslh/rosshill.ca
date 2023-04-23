@@ -98,8 +98,8 @@
 
 <style lang="scss">
   div.sidebar {
-    border-right: 1px solid var(--border);
-    background-color: var(--panel-background);
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-panel-background);
     z-index: 10;
 
     div.sidebar-content {
@@ -114,15 +114,15 @@
 
       .occasion-blurb {
         text-align: center;
-        padding: 1rem 0;
+        padding: var(--spacing-m) 0;
         max-width: 20rem;
         width: 100%;
-        color: var(--subtitle);
+        color: var(--color-subtitle);
       }
 
       h1 {
-        margin-top: 0.8rem;
-        margin-bottom: -1rem;
+        margin-top: var(--spacing-s);
+        margin-bottom: calc(var(--spacing-m) * -1);
         padding-bottom: 0;
         height: 5.5rem;
         max-width: 100%;
@@ -132,11 +132,12 @@
       }
 
       p.subtitle {
-        margin-top: 1rem;
+        margin-top: var(--spacing-m);
 
         &.role {
-          font-size: 1.3rem;
-          color: var(--heading);
+          margin-top: var(--spacing-s);
+          font-size: var(--font-size-m);
+          color: var(--color-foreground);
         }
       }
 
@@ -145,7 +146,7 @@
         height: 10.5rem;
         min-width: 10.5rem;
         min-height: 10.5rem;
-        margin-top: -4.5rem;
+        margin-top: calc(-1 * var(--spacing-3xl));
 
         &.rounded {
           overflow: hidden;
@@ -174,12 +175,12 @@
   @media (max-width: 800px) {
     div.sidebar {
       border-width: 0;
-      padding: 1.5rem 1.5rem 0;
-      background-color: var(--background);
+      padding: var(--spacing-xl) var(--spacing-xl) 0;
+      background-color: var(--color-background);
 
       div.sidebar-content {
         height: unset !important;
-        padding: 2rem 0 3.5rem;
+        padding: var(--spacing-2xl) 0 var(--spacing-3xl);
         position: initial !important;
 
         div.img-wrapper {

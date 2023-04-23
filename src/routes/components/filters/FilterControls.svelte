@@ -114,7 +114,10 @@
     </button>
   {/if}
 </div>
-<div class="tag-buttons">
+<div
+  class="tag-buttons"
+  class:truncated={$minTagNum !== 0}
+>
   {#each tagsOrdered as tag}
     <Tag
       tagId={tag}
@@ -149,7 +152,7 @@
   }
 
   .tag-buttons {
-    margin-top: 0.75rem;
+    margin-top: var(--spacing-s);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,13 +160,13 @@
 
   .secondary-button {
     background: none;
-    padding: 0 0 0.1rem;
+    padding: 0 0 var(--spacing-3xs);
     border: none;
-    border-bottom: 1px solid var(--subtitle);
+    border-bottom: 1px solid var(--color-subtitle);
     border-radius: 0;
-    color: var(--subtitle);
-    font-size: 0.75rem;
-    margin: 0.3rem 0.35rem;
+    color: var(--color-subtitle);
+    font-size: var(--font-size-2xs);
+    margin: var(--spacing-2xs) var(--spacing-xs) var(--spacing-2xs) 0;
     display: inline-flex;
     align-items: center;
   }
@@ -172,9 +175,13 @@
     position: static;
     display: inline-flex;
     align-items: center;
-    margin-right: 0.2rem;
-    font-size: 0.6rem;
+    margin-right: var(--spacing-2xs);
+    font-size: var(--font-size-3xs);
     display: inline-flex;
     align-items: center;
+  }
+
+  .tag-buttons.truncated :global(.tag:nth-last-child(2)) {
+    margin-right: var(--spacing-s);
   }
 </style>

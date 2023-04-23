@@ -6,6 +6,7 @@ repository: https://github.com/rosslh/wtformat
 website: https://wtformat.com
 image: wtformat
 thumbnail: moment
+thumbnailBorder: true
 excerpt: An online tool for generating date format codes. Originally created in 2018, I rewrote it in 2021 to support more formatting libraries.
 tags: [vuedotjs, typescript]
 ---

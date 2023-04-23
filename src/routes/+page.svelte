@@ -80,16 +80,16 @@
 
 <style lang="scss">
   div.intro {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-top: 3rem;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-top: var(--spacing-3xl);
 
     h2 {
       margin-top: 0;
     }
 
     p {
-      margin: 1rem auto !important;
+      margin: var(--spacing-m) auto !important;
     }
   }
 

@@ -75,7 +75,7 @@
 
 <style>
   div.date-string {
-    color: var(--subtitle);
+    color: var(--color-subtitle);
     display: inline-block;
   }
 </style>

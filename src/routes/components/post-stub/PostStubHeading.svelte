@@ -14,7 +14,10 @@
 <div class="post-heading">
   <div class="picture-frame">
     {#if post.thumbnail}
-      <picture>
+      <picture
+        class="do-transition"
+        class:border={post.thumbnail.showBorder}
+      >
         <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp" />
         <source
           srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
@@ -77,6 +80,9 @@
         justify-content: center;
         border-radius: 50%;
         overflow: hidden;
+        &.border {
+          border: 1px solid var(--color-border);
+        }
 
         img {
           width: 100%;
@@ -92,22 +98,21 @@
       flex-wrap: wrap;
 
       h3 {
-        font-size: 0.95rem;
-        line-height: 1.2rem;
+        font-size: var(--font-size-s);
         display: inline-block;
-        margin: 0 0.5rem 0 0.75rem;
+        margin: 0 var(--spacing-2xs) 0 var(--spacing-s);
         padding: 0;
 
         a {
-          color: var(--heading);
+          color: var(--color-heading);
           text-decoration: underline !important;
         }
       }
 
       div.tags {
         display: flex;
-        padding: 0.3rem 0;
-        margin-left: 0.75rem;
+        padding: var(--spacing-2xs) 0;
+        margin-left: var(--spacing-xs);
         flex-wrap: wrap;
       }
     }

@@ -22,13 +22,13 @@
     }
 
     div.bottom-marker.left {
-      margin-left: calc(-1rem + 3px) !important;
-      margin-right: calc(100% - 1rem) !important;
+      margin-left: calc(-var(--spacing-m) + 3px) !important;
+      margin-right: calc(100% - var(--spacing-m)) !important;
     }
 
     div.bottom-marker.right {
-      margin-left: calc(100% - 1rem) !important;
-      margin-right: calc(-1rem + 3px) !important;
+      margin-left: calc(100% - var(--spacing-m)) !important;
+      margin-right: calc(-var(--spacing-m) + 3px) !important;
     }
   }
 
@@ -36,27 +36,27 @@
     height: 3rem !important;
 
     &.left {
-      border-left: 3px solid var(--timeline);
+      border-left: 3px solid var(--color-timeline);
       margin-left: 25%;
     }
 
     &.right {
-      border-right: 3px solid var(--timeline);
+      border-right: 3px solid var(--color-timeline);
       margin-right: 25%;
     }
   }
 
   div.bottom-marker {
-    border-bottom: 3px solid var(--timeline);
+    border-bottom: 3px solid var(--color-timeline);
 
     &.left {
-      margin-right: calc(75% - 1rem);
-      margin-left: calc(25% - 1rem + 3px);
+      margin-right: calc(75% - var(--spacing-m));
+      margin-left: calc(25% - var(--spacing-m) + 3px);
     }
 
     &.right {
-      margin-right: calc(25% - 1rem + 3px);
-      margin-left: calc(75% - 1rem);
+      margin-right: calc(25% - var(--spacing-m) + 3px);
+      margin-left: calc(75% - var(--spacing-m));
     }
   }
 </style>

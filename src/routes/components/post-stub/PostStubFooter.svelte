@@ -28,14 +28,18 @@
 
 <style lang="scss">
   div.footer {
-    font-size: 0.8rem;
-    padding: 0.75rem 0.75rem 0 calc(1.8rem + 1rem);
+    font-size: var(--font-size-2xs);
+    padding:
+      var(--spacing-s)
+      var(--spacing-s)
+      0
+      calc(var(--spacing-3xl) - var(--spacing-2xs));
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     div.external-links {
-      color: var(--subtitle);
+      color: var(--color-subtitle);
     }
   }
 </style>

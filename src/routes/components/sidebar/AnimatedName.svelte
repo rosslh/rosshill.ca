@@ -78,21 +78,21 @@
     }
 
     path {
-      stroke: var(--heading);
+      stroke: var(--color-heading);
       stroke-width: 1px;
       transition: fill 0.9s ease, stroke 0.9s ease;
 
       &.initial {
-        fill: var(--panel-background);
+        fill: var(--color-panel-background);
       }
 
       &.server-rendered {
-        fill: var(--heading);
+        fill: var(--color-heading);
       }
 
       &.logo-has-fill {
-        fill: var(--heading);
-        stroke: var(--panel-background);
+        fill: var(--color-heading);
+        stroke: var(--color-panel-background);
       }
 
       &.done-filling {
@@ -112,7 +112,7 @@
 
   @media (max-width: 800px) {
     svg path.initial {
-      fill: var(--background);
+      fill: var(--color-background);
     }
   }
 </style>

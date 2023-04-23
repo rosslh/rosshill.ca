@@ -30,12 +30,12 @@
         `
         background-color: ${getCssVariable(appWrapper, "panel-background")};
         border: 1px solid ${getCssVariable(appWrapper, "border")};
-        border-radius: 0.5rem;
+        border-radius: ${getCssVariable(appWrapper, "border-radius-m")};
         color: ${getCssVariable(appWrapper, "foreground")};
         display: inline-block;
         font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
         font-weight: 700;
-        padding: 0.75rem;
+        padding: ${getCssVariable(appWrapper, "spacing-s")};
         `,
       );
     }

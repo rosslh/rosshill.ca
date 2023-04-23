@@ -35,15 +35,15 @@
     border-radius: 50%;
 
     &.other {
-      background-color: var(--other-marker);
+      background-color: var(--color-other-marker);
     }
 
     &.job {
-      background-color: var(--job-marker);
+      background-color: var(--color-job-marker);
     }
 
     &.project {
-      background-color: var(--project-marker);
+      background-color: var(--color-project-marker);
     }
 
     &.left {
@@ -66,15 +66,15 @@
     white-space: nowrap;
 
     &.other {
-      color: var(--other-marker);
+      color: var(--color-other-marker);
     }
 
     &.job {
-      color: var(--job-marker);
+      color: var(--color-job-marker);
     }
 
     &.project {
-      color: var(--project-marker);
+      color: var(--color-project-marker);
     }
 
     &.left {

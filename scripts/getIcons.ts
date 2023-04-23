@@ -40,7 +40,7 @@ function getForegroundColors(): { light: string, dark: string } {
     return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
   };
 
-  const cssFile = "src/lib/styles/global.scss";
+  const cssFile = "src/lib/styles/design-system.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromSassProperty(
@@ -49,7 +49,7 @@ function getForegroundColors(): { light: string, dark: string } {
   );
   const [darkColorLightness, lightColorLightness] = getNumbersFromSassProperty(
     fileLines,
-    "--heading",
+    "--color-heading",
   );
 
   if (
@@ -58,7 +58,7 @@ function getForegroundColors(): { light: string, dark: string } {
     || typeof darkColorLightness !== "number"
     || typeof lightColorLightness !== "number"
   ) {
-    throw new Error("Could not parse theme colors from global.scss");
+    throw new Error("Could not parse theme colors");
   }
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])

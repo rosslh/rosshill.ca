@@ -1,12 +1,12 @@
 <footer class="content-wrapper do-transition">
-  Copyright &copy; 2015-{new Date().getFullYear()} Ross Hill. All Rights Reserved.
+  Copyright &copy Ross Hill. All Rights Reserved.
 </footer>
 
 <style>
   footer {
     text-align: right;
-    color: var(--subtitle);
-    margin: 1rem auto;
-    font-size: 0.8rem;
+    color: var(--color-subtitle);
+    margin: var(--spacing-2xl) auto var(--spacing-m);
+    font-size: var(--font-size-2xs);
   }
 </style>

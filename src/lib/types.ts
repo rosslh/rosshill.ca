@@ -29,6 +29,7 @@ export type PostItemStub = PostItemBase & {
   thumbnail: {
     name: string;
     extension: string;
+    showBorder: boolean;
   };
 }
 

@@ -6,6 +6,7 @@ website: https://2021.metaprojection.ca
 repository: https://github.com/rosslh/metaprojection
 image: metaprojection
 thumbnail: metaprojection-thumb
+thumbnailBorder: true
 excerpt: An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district. Updated for 2021.
 tags: [gatsby, graphql, nodedotjs]
 ---

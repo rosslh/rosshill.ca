@@ -1,0 +1,117 @@
+@import "/node_modules/hsluv-sass";
+
+// Colors
+
+$theme-hue: 253;
+$job-hue: 12;
+$project-hue: 272;
+$other-hue: 135;
+
+@mixin light-theme() {
+  $theme-saturation: 20%;
+  $category-saturation: 74%;
+  $category-lightness: 46%;
+
+  $marker-saturation: $category-saturation - 10;
+  $marker-lightness: $category-lightness + 10;
+
+  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+
+  --color-job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
+  --color-project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
+  --color-other-marker: #{hsluv($other-hue, $marker-saturation, $marker-lightness)};
+
+  --color-heading: #{hsluv($theme-hue, $theme-saturation, 20%)};
+  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 30%)};
+  --color-link: #{hsluv($theme-hue, 90%, 40%)};
+  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 38%)};
+  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 60%)};
+  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 65%)};
+  --color-border: #{hsluv($theme-hue, $theme-saturation, 90%)};
+  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 95%)};
+  --color-background: #{hsluv($theme-hue, $theme-saturation, 98%)};
+}
+
+@mixin dark-theme() {
+  $theme-saturation: 25%;
+  $category-saturation: 75%;
+  $category-lightness: 65%;
+
+  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+
+  --color-job-marker: var(--color-job);
+  --color-project-marker: var(--color-project);
+  --color-other-marker: var(--color-other);
+
+  --color-heading: #{hsluv($theme-hue, $theme-saturation, 95%)};
+  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 87%)};
+  --color-link: #{hsluv($theme-hue, 90%, 77%)};
+  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 75%)};
+  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
+  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 35%)};
+  --color-border: #{hsluv($theme-hue, $theme-saturation, 21%)};
+  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 14%)};
+  --color-background: #{hsluv($theme-hue, $theme-saturation, 8%)};
+}
+
+// If prefers-color-scheme unsupported, default to light theme
+.app-wrapper {
+  @include light-theme();
+}
+
+// Unless manually overridden, use system preferred theme
+@media (prefers-color-scheme: light) {
+  div.app-wrapper {
+    @include light-theme();
+  }
+}
+@media (prefers-color-scheme: dark) {
+  div.app-wrapper {
+    @include dark-theme();
+  }
+}
+
+// If manually set, use that theme
+div.app-wrapper[data-theme="light"] {
+  @include light-theme();
+}
+div.app-wrapper[data-theme="dark"] {
+  @include dark-theme();
+}
+
+// Font sizes
+
+.app-wrapper {
+  --font-size-3xs: 0.7rem;
+  --font-size-2xs: 0.8rem;
+  --font-size-xs: 0.9rem;
+  --font-size-s: 1rem;
+  --font-size-m: 1.2rem;
+  --font-size-l: 1.4rem;
+  --font-size-xl: 1.6rem;
+}
+
+// Spacing (padding and margin)
+
+.app-wrapper {
+  --spacing-3xs: 0.125rem;
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+}
+
+// Border radius
+
+.app-wrapper {
+  --border-radius-s: 0.25rem;
+  --border-radius-m: 0.5rem;
+}

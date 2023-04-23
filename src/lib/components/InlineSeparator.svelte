@@ -2,7 +2,7 @@
 
 <style>
   span.inline-separator {
-    padding: 0 1px;
+    padding: 0 var(--spacing-3xs);
     display: inline-block;
   }
 </style>

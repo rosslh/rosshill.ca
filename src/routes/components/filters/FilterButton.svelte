@@ -44,47 +44,47 @@
 
 <style lang="scss">
   button {
-    background-color: var(--panel-background);
-    border: 1px solid var(--border);
-    border-radius: 0.9rem;
+    background-color: var(--color-panel-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-m);
     height: 1.8rem;
-    font-size: 0.9rem;
+    font-size: var(--font-size-xs);
     display: inline-flex;
     align-items: center;
-    padding: 0 0.75rem;
-    margin: 0.3rem 0.35rem 0.3rem 0;
+    padding: var(--spacing-2xs) var(--spacing-s);
+    margin: var(--spacing-2xs) var(--spacing-xs) var(--spacing-2xs) 0;
 
     &.toggling {
       transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
     }
 
     &.job-button {
-      color: var(--job);
+      color: var(--color-job);
 
       &.active {
-        color: var(--background);
-        background-color: var(--job);
-        border-color: var(--job);
+        color: var(--color-background);
+        background-color: var(--color-job);
+        border-color: var(--color-job);
       }
     }
 
     &.project-button {
-      color: var(--project);
+      color: var(--color-project);
 
       &.active {
-        color: var(--background);
-        background-color: var(--project);
-        border-color: var(--project);
+        color: var(--color-background);
+        background-color: var(--color-project);
+        border-color: var(--color-project);
       }
     }
 
     &.other-button {
-      color: var(--other);
+      color: var(--color-other);
 
       &.active {
-        color: var(--background);
-        background-color: var(--other);
-        border-color: var(--other);
+        color: var(--color-background);
+        background-color: var(--color-other);
+        border-color: var(--color-other);
       }
     }
 
@@ -92,14 +92,10 @@
       position: static;
       display: inline-flex;
       align-items: center;
-      margin-right: 0.3rem;
-      font-size: 0.65rem;
+      margin-right: var(--spacing-2xs);
+      font-size: var(--font-size-3xs);
       display: inline-flex;
       align-items: center;
-    }
-
-    .text {
-      line-height: 1.2rem;
     }
   } 
 

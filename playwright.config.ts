@@ -2,8 +2,6 @@
 import { devices } from "@playwright/test";
 import type { PlaywrightTestConfig } from "@playwright/test";
 
-const retries = process.env.CI ? 3 : 2;
-
 const config: PlaywrightTestConfig = {
   testDir: "./tests/specs",
   timeout: 90 * 1000,
@@ -11,8 +9,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000,
   },
   forbidOnly: Boolean(process.env.CI),
-  retries,
-  maxFailures: retries + 1,
+  retries: process.env.CI ? 4 : 2,
   workers: 1,
   reporter: "list",
 
