@@ -111,8 +111,8 @@
 
       div.tags {
         display: flex;
-        padding: var(--spacing-2xs) 0;
-        margin-left: var(--spacing-xs);
+        padding: var(--spacing-3xs) 0;
+        margin-left: var(--spacing-s);
         flex-wrap: wrap;
       }
     }

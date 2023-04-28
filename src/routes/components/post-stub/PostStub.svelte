@@ -4,7 +4,6 @@
   export let post: PostItemStub;
   export let brandColors: BrandColors;
   export let left: boolean;
-  export let isFirstPost: boolean;
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
@@ -46,7 +45,7 @@
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={isFirstPost ? 0 : 0.5}
+  threshold={0.5}
   bind:intersecting
 >
   <div

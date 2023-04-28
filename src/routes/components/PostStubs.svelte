@@ -93,7 +93,6 @@
           {brandColors}
           {isPageBackgroundDark}
           {activeTags}
-          isFirstPost={i === 0}
           isLastPost={i === postsWithLabels.length - 1}
           left={Boolean(post.isLeftAligned)}
         />

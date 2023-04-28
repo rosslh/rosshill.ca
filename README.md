@@ -2,4 +2,4 @@
 
 Built with SvelteKit.
 
-Copyright © 2015 Ross Hill. All Rights Reserved.
+Copyright © Ross Hill. All Rights Reserved.
