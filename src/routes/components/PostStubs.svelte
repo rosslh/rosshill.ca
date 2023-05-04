@@ -63,7 +63,7 @@
         }
       });
     });
-    activeTags = tags; // trigger reactivity
+    activeTags = tags;
   }
 </script>
 

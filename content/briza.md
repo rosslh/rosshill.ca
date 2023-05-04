@@ -1,9 +1,9 @@
 ---
 title: Software Engineer – Briza
 date: 2022-09-26
-isOngoing: true
+endDate: 2023-05-04
 thumbnail: briza-thumb
-excerpt: I'm helping Briza build an intuitive API for commercial insurance quoting, binding, and payment.
+excerpt: I contributed to Briza's API development by adding features, configuring insurance carriers, and improving internal tools.
 tags: [typescript, express, postgresql]
 eventType: job
 website: https://briza.com
