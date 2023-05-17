@@ -22,13 +22,13 @@
     }
 
     div.bottom-marker.left {
-      margin-left: calc(-var(--spacing-m) + 3px) !important;
+      margin-left: calc((-1 * var(--spacing-m)) + 3px) !important;
       margin-right: calc(100% - var(--spacing-m)) !important;
     }
 
     div.bottom-marker.right {
       margin-left: calc(100% - var(--spacing-m)) !important;
-      margin-right: calc(-var(--spacing-m) + 3px) !important;
+      margin-right: calc((-1 * var(--spacing-m)) + 3px) !important;
     }
   }
 
