@@ -46,7 +46,7 @@
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@playwright/test": "^1.31.1",
     "@sveltejs/adapter-netlify": "^2.0.5",
-    "@sveltejs/kit": "^1.11.0",
+    "@sveltejs/kit": "^1.15.2",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@types/apca-w3": "^0.1.0",
     "@types/chroma-js": "^2.4.0",
