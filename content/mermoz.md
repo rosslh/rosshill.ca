@@ -7,7 +7,7 @@ tags: [javascript, html5, css3, php, vite, git, github, sass, wordpress]
 website: https://mermoz-academy.com/
 
 date: 2023-01-04
-endDate: 2021-04-24
+endDate: 2023-04-24
 isOngoing: false
 isSeasonal: false
 
