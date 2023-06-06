@@ -80,7 +80,7 @@
     "typescript": "^5.0.4",
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.16.1",
-    "vite": "4.3.7",
+    "vite": "4.3.9",
     "wireit": "^0.9.5"
   },
   "engines": {
