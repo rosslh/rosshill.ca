@@ -1,4 +1,4 @@
-<footer class="content-wrapper do-transition">
+<footer class="do-transition">
   Copyright &copy Ross Hill. All Rights Reserved.
 </footer>
 

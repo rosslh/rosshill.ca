@@ -16,7 +16,11 @@
 
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
-  const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]): PostItemStub => {
+  const getLabelVisibilityAndAlignment = (
+    post: PostItemStub,
+    i: number,
+    postsArray: PostItemStub[],
+  ): PostItemStub => {
     const output = post;
 
     const prevItem = postsArray[i - 1];
@@ -32,24 +36,31 @@
       output.showYearLabel = false;
       output.isLeftAligned = prevLeftAligned;
     }
-    
+
     return output;
   };
 
-  $: categoryFilter = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
+  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
 
-  $: ancestorTagShown = (tag: string): boolean => Boolean(tagAncestors[tag] && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)));
+  $: isAncestorTagSelected = (tag: string): boolean => Boolean(
+    tagAncestors[tag]
+        && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)),
+  );
 
-  $: tagFilter = (post: PostItemStub): boolean => {
-    const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
+  $: isTagOfPostSelected = (post: PostItemStub): boolean => {
+    const postHasShownTag = typeof post.tags !== "undefined"
+      && post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
     return !$showTags.size || postHasShownTag;
   };
 
-  $: postsWithLabels = posts
-    .filter((post: PostItemStub) => categoryFilter(post) && tagFilter(post))
+  $: displayedPosts = posts
+    .filter(
+      (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
+    )
     .map(getLabelVisibilityAndAlignment);
 
-  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark
+    || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 
@@ -67,7 +78,7 @@
   }
 </script>
 
-<div class="heading-wrapper content-wrapper ">
+<div class="heading-wrapper content-wrapper">
   <h2>Experience</h2>
   <FilterControls
     bind:showCategories={$showCategories}
@@ -78,7 +89,7 @@
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
-    {#each postsWithLabels as post, i (post.slug)}
+    {#each displayedPosts as post, i (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
           isFirstLabel={i === 0}
@@ -93,12 +104,12 @@
           {brandColors}
           {isPageBackgroundDark}
           {activeTags}
-          isLastPost={i === postsWithLabels.length - 1}
+          isLastPost={i === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
     {/each}
-    {#if !postsWithLabels.length}
+    {#if !displayedPosts.length}
       <ConfusedTravolta reason="there are no results" />
     {/if}
   </div>

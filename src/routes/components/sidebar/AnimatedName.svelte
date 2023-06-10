@@ -3,7 +3,7 @@
   import { sineIn } from "svelte/easing";
   import { draw } from "svelte/transition";
   import { browser } from "$app/environment";
-  
+
   import { reduceMotion } from "$lib/reduceMotion";
   import svgPath from "./NameSvg";
 
@@ -22,52 +22,54 @@
     if (!browser) {
       return "server-rendered";
     }
-    let className = logoHasFill ? "logo-has-fill" : "initial";
+    const classNames = [logoHasFill ? "logo-has-fill" : "initial"];
     if (doneFilling) {
-      className += " done-filling";
+      classNames.push("done-filling");
     }
-    return className;
+    return classNames.join(" ");
   };
 </script>
 
-<svg
-  class={!browser ? "ssr-fade-in" : ""}
-  aria-hidden="true"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 368.7 73.501"
->
-  <title>Ross Hill</title>
-  <g>
-    {#if showTitle || !browser}
-      <path
-        class={getPathClass()}
-        on:introstart={!browser ? null : () => {
-          setTimeout(
-            () => {
-              logoHasFill = true;
-            },
-            logoFillDelay,
-          );
-          setTimeout(
-            () => {
-              doneFilling = true;
-            },
-            logoFillDelay + 900,
-          );
-        }}
-        in:draw={!browser ? undefined : { duration: 3000, easing: sineIn }}
-        d={svgPath}
-      />
-    {/if}
-  </g>
-</svg>
+<div class="name-wrapper do-transition">
+  <div class="name-background do-transition" />
+  <svg
+    class:ssr-fade-in={!browser}
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 368.7 73.501"
+
+  >
+    <g>
+      {#if showTitle || !browser}
+        <path
+          class={getPathClass()}
+          on:introstart={!browser
+            ? null
+            : () => {
+                setTimeout(() => {
+                  logoHasFill = true;
+                }, logoFillDelay);
+                setTimeout(() => {
+                  doneFilling = true;
+                }, logoFillDelay + 900);
+              }}
+          in:draw={!browser ? undefined : { duration: 3000, easing: sineIn }}
+          d={svgPath}
+        />
+      {/if}
+    </g>
+  </svg>
+  <h1>Ross Hill</h1>
+</div>
 
 <style lang="scss">
   svg {
-    height: 60%;
-    width: 60%;
+    height: 100%;
+    width: 100%;
     pointer-events: none;
     transition: fill 0.9s ease, stroke 0.9s ease;
+    position: relative;
+    z-index: 10;
 
     &.ssr-fade-in {
       opacity: 0;
@@ -101,13 +103,36 @@
     }
   }
 
+  .name-background {
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    background-color: var(--color-panel-background);
+  }
+
+  .name-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: var(--spacing-2xl) auto var(--spacing-s);
+  }
+
+  h1 {
+    position: absolute;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+  }
+
   @keyframes fade-in-animation {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
-     }
+      opacity: 1;
+    }
   }
 
   @media (max-width: 800px) {

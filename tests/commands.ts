@@ -16,6 +16,10 @@ export async function waitForElement(page: Page, testId: string): Promise<void> 
   await page.waitForSelector(`[data-testid="${testId}"]`, { timeout: 10000 });
 }
 
+export async function waitForNoElement(page: Page, testId: string): Promise<void> {
+  await page.waitForSelector(`[data-testid="${testId}"]`, { state: "detached", timeout: 10000 });
+}
+
 export async function expectCount(target: Target, expectedCount: number): Promise<void> {
   const locator = getLocator(target);
   await expect(locator).toHaveCount(expectedCount, { timeout: 10000 });

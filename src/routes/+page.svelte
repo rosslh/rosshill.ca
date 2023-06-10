@@ -3,35 +3,17 @@
   import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItemStub } from "$lib/types";
 
-  export let data: { posts: PostItemStub[], brandColors: BrandColors };
+  export let data: { posts: PostItemStub[]; brandColors: BrandColors };
   const { posts, brandColors } = data;
-  
+
   import PostStubs from "./components/PostStubs.svelte";
+  import { truncateBySentence } from "$lib/functions";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
-  const truncateBySentence = (text: string, maxLength: number): string => {
-    const truncated = text
-      .split(".")
-      .filter((sentence) => sentence.trim())
-      .map((sentence) => `${sentence.trim()}.`)
-      .reduce(
-        (acc, sentence) => {
-          if (acc.length + sentence.length <= maxLength) {
-            return `${acc} ${sentence}`;
-          }
-          return acc;
-        },
-        "",
-      );
-    
-    const firstSentence = `${intro.split(".")[0]}.`;
-
-    return truncated || firstSentence;
-  };
-
   const meta = {
-    title: "Website and Portfolio | Ross Hill",
+    title: "Ross Hill: Website and Portfolio",
     description: truncateBySentence(intro, 155),
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
@@ -50,9 +32,11 @@
   canonical={meta.url}
   openGraph={{
     description: meta.description,
-    images: [{
-      ...meta.image,
-    }],
+    images: [
+      {
+        ...meta.image,
+      },
+    ],
     site_name: meta.siteName,
     title: meta.title,
     type: "website",
@@ -76,6 +60,9 @@
     </p>
   </div>
   <PostStubs {posts} {brandColors} />
+  <div class="content-wrapper">
+    <CopyrightNotice />
+  </div>
 </div>
 
 <style lang="scss">

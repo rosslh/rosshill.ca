@@ -39,6 +39,7 @@
     align-items: center;
 
     div.external-links {
+      flex-shrink: 0;
       color: var(--color-subtitle);
     }
   }

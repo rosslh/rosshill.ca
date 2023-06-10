@@ -4,6 +4,7 @@
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/tags";
+  import { truncateBySentence } from "$lib/functions";
 
   export let data: { post: PostItemPage, brandColors: BrandColors };
   const { post, brandColors } = data;
@@ -12,6 +13,7 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   let mainContent: HTMLDivElement;
   onMount(async () => {
@@ -22,8 +24,8 @@
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
-    title: `${post.title} | Ross Hill`,
-    description: post.excerpt ?? post.title,
+    title: post.title,
+    description: truncateBySentence(post.excerpt, 155) ?? post.title,
     url: `https://rosshill.ca/item/${post.slug}`,
     image: {
       url: post.image
@@ -125,6 +127,7 @@
       {@html post.contents}
     </div>
   </article>
+  <CopyrightNotice />
 </div>
 
 <style lang="scss">

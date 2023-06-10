@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
+  import cubicBezier from "bezier-easing";
+
   import type { PostCategory } from "$lib/types";
 
   export let active: boolean;
@@ -18,25 +21,30 @@
     }, 300);
   };
 
-  $: classList = [
-    `${classPrefix}-button`,
-    isToggling ? "toggling" : "do-transition",
-    active ? "active" : "inactive",
-  ];
+  const ease = [0.25, 0.1, 0.25, 1.0] as const;
+  const transitionOptions = {
+    duration: 300,
+    easing: cubicBezier(...ease),
+  };
 </script>
 
 <button
   data-testid="event-filter-{classPrefix}"
-  class={classList.join(" ")}
+  class="{classPrefix}-button"
+  class:toggling={isToggling}
+  class:do-transition={!isToggling}
+  class:active
   on:click={handleClick}
 >
-  <span class="symbol">
-    {#if active}
+  {#if active}
+    <span class="symbol" transition:fade={transitionOptions}>
       <CheckCircle />
-    {:else}
+    </span>
+  {:else}
+    <span class="symbol" transition:fade={transitionOptions}>
       <Circle />
-    {/if}
-  </span>
+    </span>
+  {/if}
   <span class="text">
     <slot />
   </span>
@@ -44,6 +52,7 @@
 
 <style lang="scss">
   button {
+    position: relative;
     background-color: var(--color-panel-background);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-m);
@@ -55,7 +64,8 @@
     margin: var(--spacing-2xs) var(--spacing-xs) var(--spacing-2xs) 0;
 
     &.toggling {
-      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+      transition: color 0.3s ease, background-color 0.3s ease,
+        border-color 0.3s ease, opacity 0.3s ease;
     }
 
     &.job-button {
@@ -89,15 +99,18 @@
     }
 
     .symbol {
-      position: static;
+      position: absolute;
       display: inline-flex;
       align-items: center;
-      margin-right: var(--spacing-2xs);
       font-size: var(--font-size-3xs);
       display: inline-flex;
-      align-items: center;
+      left: var(--spacing-s);
     }
-  } 
+
+    .text {
+      margin-left: var(--spacing-l);
+    }
+  }
 
   button > .symbol > :global(svg) {
     overflow: visible;

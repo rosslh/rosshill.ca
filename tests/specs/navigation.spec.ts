@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
 import {
-  expectToBeAtTop, expectCount, getLocator, waitForElement,
+  expectToBeAtTop, expectCount, getLocator, waitForElement, waitForNoElement,
 } from "../commands.js";
 import posts from "../../src/data/posts.json" assert { type: "json" };
 
@@ -41,6 +41,8 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
   // After clicking the link, the path should be /item/:slug
   expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
   
+  await waitForNoElement(page, "main-heading");
+
   await backLink.click();
   
   await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10000 });

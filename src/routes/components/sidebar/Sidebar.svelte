@@ -72,9 +72,9 @@
         {/if}
       </p>
     {/if}
-    <h1>
+    <div class="name-wrapper">
       <AnimatedName />
-    </h1>
+    </div>
     <p class="subtitle role do-transition" data-testid="job-title">Software Developer</p>
     <p class="subtitle email">
       <a href="mailto:ross@rosshill.ca" data-testid="email-address">ross@rosshill.ca</a>
@@ -120,15 +120,15 @@
         color: var(--color-subtitle);
       }
 
-      h1 {
-        margin-top: var(--spacing-s);
-        margin-bottom: calc(var(--spacing-m) * -1);
+      .name-wrapper {
         padding-bottom: 0;
         height: 5.5rem;
         max-width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        max-width: 10rem;
+        overflow: hidden;
       }
 
       p.subtitle {
