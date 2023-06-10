@@ -110,6 +110,12 @@
     background-color: var(--color-panel-background);
   }
 
+  @media (max-width: 800px) {
+    .name-background {
+      background-color: var(--color-background);
+    }
+  }
+
   .name-wrapper {
     position: relative;
     display: flex;
