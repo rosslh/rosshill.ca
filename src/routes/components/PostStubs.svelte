@@ -115,7 +115,9 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.content-wrapper.posts-wrapper {
     padding: 0;
   }
@@ -123,7 +125,7 @@
     padding: 0 var(--spacing-m);
     margin: var(--spacing-2xl) auto 0;
   }
-  @media (min-width: 700px) {
+  @media (min-width: $breakpoint-s-min) {
     div.content-wrapper.posts-wrapper {
       padding-left: 7%;
       padding-right: 7%;

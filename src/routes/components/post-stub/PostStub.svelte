@@ -90,7 +90,9 @@
 {/if}
 
 <style lang="scss">
-  @media (max-width: 1200px) {
+  @import "src/lib/styles/media-queries.scss";
+
+  @media (max-width: $breakpoint-m-max) {
     div.post-wrapper {
       margin-left: 0 !important;
       margin-right: 0 !important;
@@ -179,7 +181,7 @@
     }
   }
 
-  @media (max-width: 699px) {
+  @media (max-width: $breakpoint-xs-max) {
     div.post p.post-text,
     div.post :global(div.footer) {
       padding-left: var(--spacing-2xs) !important;

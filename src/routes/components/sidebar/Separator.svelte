@@ -13,6 +13,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.content-wrapper {
     display: none;
 
@@ -42,7 +44,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.content-wrapper {
       display: block;
     }

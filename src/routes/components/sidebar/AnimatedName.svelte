@@ -63,6 +63,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   svg {
     height: 100%;
     width: 100%;
@@ -110,7 +112,7 @@
     background-color: var(--color-panel-background);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     .name-background {
       background-color: var(--color-background);
     }
@@ -141,7 +143,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     svg path.initial {
       fill: var(--color-background);
     }

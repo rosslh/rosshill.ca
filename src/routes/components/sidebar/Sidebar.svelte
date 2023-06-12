@@ -97,6 +97,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.sidebar {
     border-right: 1px solid var(--color-border);
     background-color: var(--color-panel-background);
@@ -172,7 +174,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.sidebar {
       border-width: 0;
       padding: var(--spacing-xl) var(--spacing-xl) 0;

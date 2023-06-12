@@ -2,6 +2,7 @@
 title: ReqWise
 eventType: project
 date: 2020-04-01
+lastModified: 2023-04-23
 thumbnail: reqwise
 thumbnailBorder: true
 excerpt: An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.

@@ -24,7 +24,7 @@
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
-    title: post.title,
+    title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
     url: `https://rosshill.ca/item/${post.slug}`,
     image: {

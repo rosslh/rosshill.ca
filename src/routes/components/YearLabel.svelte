@@ -33,6 +33,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.label-wrapper {
     position: relative;
     color: var(--color-heading);
@@ -98,14 +100,14 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $breakpoint-m-max) {
     div.line,
     span.year-label {
       margin: 0 !important;
     }
   }
 
-  @media (max-width: 699px) {
+  @media (max-width: $breakpoint-xs-max) {
     .label-wrapper :global(.post-spacer) {
       display: none;
     }
@@ -122,7 +124,7 @@
       border-top-left-radius: 100%;
     }
   }
-  @media (min-width: 700px) {
+  @media (min-width: $breakpoint-s-min) {
     .first-label {
         z-index: 4;
         margin-left: 25%;

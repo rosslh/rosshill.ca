@@ -26,7 +26,7 @@
         <img
           src="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
           loading="lazy"
-          alt=""
+          alt={post.title}
           width={remsToPixels(1.7)}
           height={remsToPixels(1.7)}
         />

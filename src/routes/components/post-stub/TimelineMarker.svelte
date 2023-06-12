@@ -27,6 +27,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.timeline-marker {
     position: absolute;
     top: 50%;
@@ -86,7 +88,7 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $breakpoint-m-max) {
     .tooltip {
       display: none;
     }

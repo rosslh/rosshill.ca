@@ -46,7 +46,7 @@
   >
     <img
       src="/tags/{tagId}.svg"
-      alt=""
+      alt="{tagString} logo"
       loading={lazyLoad ? "lazy" : null}
       style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
       height={remsToPixels(0.85)}

@@ -2,6 +2,7 @@
 title: WTFormat
 eventType: project
 date: 2021-08-01
+lastModified: 2023-04-23
 repository: https://github.com/rosslh/wtformat
 website: https://wtformat.com
 image: wtformat

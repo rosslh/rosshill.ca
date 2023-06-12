@@ -103,6 +103,8 @@
   <meta name="theme-color" content="#20232e">
 </svelte:head>
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.two-column {
     display: flex;
 
@@ -121,7 +123,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.two-column {
       flex-direction: column;
 
@@ -134,7 +136,7 @@
     }
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $breakpoint-m-max) {
     div.two-column {
       :global(> *:first-child) {
         width: 18rem;
@@ -143,7 +145,7 @@
   }
 
 
-  @media (min-width: 1800px) {
+  @media (min-width: $breakpoint-xl-min) {
     div.two-column {
       :global(> *:first-child) {
         width: 30rem;

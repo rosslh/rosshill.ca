@@ -44,6 +44,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.theme-switcher-wrapper {
     padding: var(--spacing-xl) 5%;
     position: absolute;
@@ -75,7 +77,7 @@
     }
   }
 
-  @media (max-width: 699px) {
+  @media (max-width: $breakpoint-xs-max) {
     div.theme-switcher-wrapper {
       padding: var(--spacing-m);
 
@@ -86,7 +88,7 @@
     }
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: $breakpoint-s-min) {
     .theme-switcher-wrapper {
       padding: var(--spacing-xl) 7%;
     }

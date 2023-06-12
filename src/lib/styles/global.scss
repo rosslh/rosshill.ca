@@ -1,4 +1,5 @@
 @import "./design-system.scss";
+@import "./media-queries.scss";
 
 html,
 body {
@@ -33,7 +34,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: $breakpoint-xs-min) {
   html {
     font-size: 17px;
   }
@@ -126,7 +127,7 @@ h3 {
   padding: 0 5%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakpoint-s-min) {
   .content-wrapper {
     padding: 0 7%;
   }

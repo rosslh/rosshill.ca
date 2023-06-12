@@ -2,6 +2,7 @@
 title: MetaProjection
 eventType: project
 date: 2019-08-20
+lastModified: 2023-04-23
 website: https://2021.metaprojection.ca
 repository: https://github.com/rosslh/metaprojection
 image: metaprojection

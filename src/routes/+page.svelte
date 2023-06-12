@@ -66,6 +66,8 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.intro {
     margin-top: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);
@@ -80,7 +82,7 @@
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.intro {
       padding-top: 0;
     }
