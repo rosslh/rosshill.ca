@@ -30,7 +30,7 @@
     image: {
       url: post.image
         ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
-        : "https://rosshill.ca/siteImage.png",
+        : "https://rosshill.ca/site-image.png",
       alt: post.title,
     },
     siteName: "Ross Hill",

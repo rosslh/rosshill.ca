@@ -18,7 +18,7 @@
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
-      url: "https://rosshill.ca/siteImage.png",
+      url: "https://rosshill.ca/site-image.png",
       width: 1000,
       height: 523,
       alt: "Ross Hill: About Me, Projects, and Contact",

@@ -26,7 +26,10 @@
         "getWebp"
       ],
       "files": [
-        "src"
+        "src",
+        "svelte.config.js",
+        "vite.config.ts",
+        "tsconfig.json"
       ],
       "output": [
         "build"
@@ -41,13 +44,14 @@
         "src/data/posts.json"
       ],
       "output": [
-        "src/data/brandColors.json"
+        "src/data/brandColors.json",
+        "assets/tags"
       ]
     },
     "getPosts": {
       "command": "markdown-json -c content/.mdconfig.json",
       "files": [
-        "content/**/*.md"
+        "content"
       ],
       "output": [
         "src/data/posts.json"

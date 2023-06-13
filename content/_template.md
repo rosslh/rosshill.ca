@@ -1,6 +1,7 @@
 ---
-title: Template
 isHidden: true
+
+title: Template
 eventType: other
 excerpt: Short blurb goes here.
 tags: [javascript]

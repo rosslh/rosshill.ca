@@ -23,14 +23,7 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
 
   await postStubLink.click();
 
-  // if page doesn't load, click it again
-  // TODO: this is a workaround for a possible bug in SvelteKit
-  try {
-    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
-  } catch (e) {
-    await postStubLink.click();
-    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
-  }
+  await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
 
   await waitForElement(page, "post-title");
 
