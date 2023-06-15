@@ -5,6 +5,8 @@
   export let data: { themeFromSession: SiteTheme };
   
   import { onMount } from "svelte";
+  import LogRocket from "logrocket";
+
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
@@ -37,6 +39,10 @@
         padding: ${getCssVariable(appWrapper, "spacing-s")};
         `,
       );
+    }
+
+    if (browser && import.meta.env.VITE_ENV === "production") {
+      LogRocket.init("personal-rpsz0/rosshillca");
     }
   });
 
@@ -102,6 +108,7 @@
   <meta name="msapplication-TileColor" content="#20232e">
   <meta name="theme-color" content="#20232e">
 </svelte:head>
+
 <style lang="scss">
   @import "src/lib/styles/media-queries.scss";
 
