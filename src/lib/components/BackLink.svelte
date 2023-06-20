@@ -5,17 +5,17 @@
 </script>
 
 <a data-sveltekit-preload-data data-testid="back-link" class="back-link" {href}>
-  <LeftArrow /> Retour au site
+  <LeftArrow /> Back to Home
 </a>
 
 <style>
   a.back-link {
     display: inline-flex;
     align-items: center;
-    margin: 1.5rem 0;
+    margin: var(--spacing-2xl) 0 var(--spacing-xl);
   }
 
   a.back-link > :global(svg) {
-    margin-right: 0.5rem;
+    margin-right: var(--spacing-xs);
   }
 </style>

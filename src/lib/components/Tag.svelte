@@ -10,7 +10,7 @@
   export let needsOutlineOnLightBg = false;
   export let needsOutlineOnDarkBg = false;
 
-  import { tagLabels } from "$lib/constants";
+  import { tagLabels } from "$lib/tags";
   import { remsToPixels } from "$lib/functions";
 
   $: tagString = tagLabels[tagId] ?? tagId;
@@ -21,6 +21,7 @@
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
+    vuedotjs: { y: "0.1rem" },
   };
 
   const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
@@ -45,7 +46,7 @@
   >
     <img
       src="/tags/{tagId}.svg"
-      alt=""
+      alt="{tagString} logo"
       loading={lazyLoad ? "lazy" : null}
       style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
       height={remsToPixels(0.85)}
@@ -65,15 +66,15 @@
     align-items: center;
     
     height: 1.5rem;
-    margin: 0.3rem 0.25rem 0.3rem 0;
-    padding: 0 0.2rem 0 0;
+    margin: var(--spacing-2xs) var(--spacing-2xs) var(--spacing-2xs) 0;
+    padding: 0 var(--spacing-3xs) 0 0;
     position: relative;
 
-    background-color: var(--panel-background);
-    color: var(--subtitle);
-    border-radius: 0.9rem;
-    border: 1px solid var(--border);
-    font-size: 0.8rem;
+    background-color: var(--color-panel-background);
+    color: var(--color-subtitle);
+    border-radius: var(--border-radius-m);
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-2xs);
   }
 
   .logo-wrapper {
@@ -86,9 +87,9 @@
     display: flex;
     align-items: center;
 
-    border: 1px solid var(--border);
-    border-top-left-radius: 0.9rem;
-    border-bottom-left-radius: 0.9rem;
+    border: 1px solid var(--color-border);
+    border-top-left-radius: var(--border-radius-m);
+    border-bottom-left-radius: var(--border-radius-m);
 
     &.do-transition {
       /* taken from global.scss .do-transition */
@@ -97,21 +98,21 @@
 
     > img {
       display: block;
-      fill: var(--subtitle);
+      fill: var(--color-subtitle);
       height: 0.85rem;
       width: 0.85rem;
-      transform: translateX(0.41rem);
+      transform: translateX(0.35rem);
     }
   }
 
   .tag.active .logo-wrapper {
-    border-bottom-right-radius: 0.9rem;
-    border-top-right-radius: 0.9rem;
+    border-bottom-right-radius: var(--border-radius-m);
+    border-top-right-radius: var(--border-radius-m);
     /* 2px accounts for negative margin + border */
     width: calc(100% + 2px);
 
     &.hasOutline {
-      border-color: var(--subtitle);
+      border-color: var(--color-subtitle);
     }
   }
 
@@ -121,8 +122,8 @@
     justify-content: center;
 
     height: calc(100% - 0.4rem);
-    margin-left: 1.5rem;
-    padding: 0 0.25rem 0 0.2rem;
+    margin-left: var(--spacing-xl);
+    padding: 0 var(--spacing-2xs);
 
     position: relative;
     transition: border-color 0.3s ease;

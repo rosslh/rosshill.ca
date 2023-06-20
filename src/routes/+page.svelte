@@ -2,59 +2,46 @@
   import { MetaTags } from "svelte-meta-tags";
   import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItemStub } from "$lib/types";
-  import PostStubs from "./components/PostStubs.svelte";
 
-  export let data: { posts: PostItemStub[], brandColors: BrandColors };
-  const {
-    posts,
-    brandColors,
-  } = data;
-  const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
-  const truncateBySentence = (text: string, maxLength: number): string => {
-    const truncated = text
-      .split(".")
-      .filter((sentence) => sentence.trim())
-      .map((sentence) => `${sentence.trim()}.`)
-      .reduce(
-        (acc, sentence) => {
-          if (acc.length + sentence.length <= maxLength) {
-            return `${acc} ${sentence}`;
-          }
-          return acc;
-        },
-        "",
-      );
-    const firstSentence = `${intro.split(".")[0]}.`;
-    return truncated || firstSentence;
-  };
+  export let data: { posts: PostItemStub[]; brandColors: BrandColors };
+  const { posts, brandColors } = data;
+
+  import PostStubs from "./components/PostStubs.svelte";
+  import { truncateBySentence } from "$lib/functions";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
+
+  const intro = "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
+
   const meta = {
-    title: "Antoine Greuzard : Développeur Web Freelance",
+    title: "Ross Hill: Website and Portfolio",
     description: truncateBySentence(intro, 155),
-    url: "https://antoinegreuzard.fr",
-    siteName: "Antoine Greuzard",
+    url: "https://rosshill.ca",
+    siteName: "Ross Hill",
     image: {
-      url: "https://antoinegreuzard.fr/antoine-greuzard.jpg",
-      width: 746,
-      height: 1020,
-      alt: "Antoine greuzard: A propos, Projets, et Contact",
+      url: "https://rosshill.ca/site-image.png",
+      width: 1000,
+      height: 523,
+      alt: "Ross Hill: About Me, Projects, and Contact",
     },
   };
 </script>
 
 <MetaTags
-  canonical={meta.url}
+  title={meta.title}
   description={meta.description}
+  canonical={meta.url}
   openGraph={{
     description: meta.description,
-    images: [{
-      ...meta.image,
-    }],
+    images: [
+      {
+        ...meta.image,
+      },
+    ],
     site_name: meta.siteName,
     title: meta.title,
     type: "website",
     url: meta.url,
   }}
-  title={meta.title}
   twitter={{
     cardType: "summary_large_image",
     title: meta.title,
@@ -66,33 +53,36 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h2 data-testid="main-heading">
-      <Balancer>Je suis un Développeur web Freelance</Balancer>
+      <Balancer>Welcome to my corner of the web!</Balancer>
     </h2>
     <p>
-      <Balancer>
-        {intro}
-      </Balancer>
+      <Balancer>{intro}</Balancer>
     </p>
   </div>
-  <PostStubs {brandColors} {posts}/>
+  <PostStubs {posts} {brandColors} />
+  <div class="content-wrapper">
+    <CopyrightNotice />
+  </div>
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.intro {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-top: 3rem;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-top: var(--spacing-3xl);
 
     h2 {
       margin-top: 0;
     }
 
     p {
-      margin: 1rem auto !important;
+      margin: var(--spacing-m) auto !important;
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.intro {
       padding-top: 0;
     }

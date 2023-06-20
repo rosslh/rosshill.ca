@@ -43,7 +43,7 @@
     }],
     "no-constant-condition": 2,
     "no-implicit-coercion": 2,
-    "no-param-reassign": 1,
+    "no-param-reassign": 0,
     "no-trailing-spaces": [1, { "skipBlankLines": true }],
     "no-unused-vars": 1,
     "no-var": 2,
@@ -65,7 +65,7 @@
     "prefer-destructuring": 0,
     "no-shadow": 0,
     "@typescript-eslint/no-shadow": 2,
-    # "@typescript-eslint/explicit-function-return-type": 2
+    # "@typescript-eslint/explicit-function-return-type": 2,
   },
   settings: {
     "svelte3/typescript": true

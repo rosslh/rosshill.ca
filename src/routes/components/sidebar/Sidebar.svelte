@@ -1,46 +1,95 @@
 <script lang="ts">
   import { remsToPixels } from "$lib/functions";
   import Separator from "./Separator.svelte";
+  import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+  import { addDays, endOfDay, startOfDay } from "date-fns";
+  import { browser } from "$app/environment";
+
+  import { occasions } from "$lib/occasions";
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const currentOccasion = occasions.find(
+    ({ startDay, startMonth, durationDays }) => (
+      [currentYear - 1, currentYear]
+        .some((year: number) => {
+          const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
+          const endDate = endOfDay(addDays(startDate, durationDays - 1));
+          return today >= startDate && today <= endDate;
+        })),
+  );
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
   <div class="sidebar-content">
-    <div class="img-wrapper">
-      <picture class="fixed-size">
-        <source srcset="/headshot.webp" type="image/webp"/>
-        <source srcset="/headshot.jpg" type="image/png"/>
-        <img
-          alt="Antoine Greuzard"
-          data-testid="headshot-img"
-          height={remsToPixels(13)}
-          src="/headshot.jpg"
-          width={remsToPixels(13)}
-          loading="eager"
-        />
-      </picture>
+    {#if !currentOccasion || currentOccasion.imageName}
+      <div
+        class="img-wrapper"
+        class:rounded={!currentOccasion}
+      >
+        {#if browser && currentOccasion?.imageName}
+          <picture data-testid="occasion-image-{currentOccasion.name}">
+            <source srcset="/occasions/{currentOccasion.imageName}.webp" type="image/webp" />
+            <source srcset="/occasions/{currentOccasion.imageName}.png" type="image/png" />
+            <img
+              data-testid="headshot-img"
+              src="/occasions/{currentOccasion.imageName}.png"
+              alt={currentOccasion.name}
+              title={currentOccasion.name}
+              width={remsToPixels(10)}
+              height={remsToPixels(10)} />
+          </picture>
+        {:else}
+          <picture>
+            <source srcset="/headshot.webp" type="image/webp" />
+            <source srcset="/headshot.png" type="image/png" />
+            <img
+              data-testid="headshot-image"
+              src="/headshot.png"
+              alt="Ross Hill"
+              width={remsToPixels(10)}
+              height={remsToPixels(10)} />
+          </picture>
+        {/if}
+      </div>
+    {/if}
+    {#if browser && currentOccasion?.blurb}
+      <p
+        class="occasion-blurb"
+        data-testid="occasion-blurb-{currentOccasion.name}"
+        style:max-width={currentOccasion.blurbMaxWidth}
+      >
+        {currentOccasion.blurb}
+        {#if currentOccasion.learnMoreUrl}
+          <a
+            href={currentOccasion.learnMoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn more.
+          </a>
+        {/if}
+      </p>
+    {/if}
+    <div class="name-wrapper">
+      <AnimatedName />
     </div>
-    <h1>
-      Antoine Greuzard
-    </h1>
-    <p class="subtitle role do-transition" data-testid="job-title">Développeur web</p>
+    <p class="subtitle role do-transition" data-testid="job-title">Software Developer</p>
     <p class="subtitle email">
-      <a data-testid="email-address" href="mailto:antoine@antoinegreuzard">antoine@antoinegreuzard.fr</a>
+      <a href="mailto:ross@rosshill.ca" data-testid="email-address">ross@rosshill.ca</a>
     </p>
     <p class="subtitle">
-      <a data-testid="github-link" href="https://github.com/antoinegreuzard" rel="noopener noreferrer"
-         target="_blank">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh" data-testid="github-link">
         GitHub
       </a>
       <InlineSeparator />
-      <a data-testid="linkedin-link" href="https://www.linkedin.com/in/antoine-greuzard" rel="noopener noreferrer"
-         target="_blank">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh" data-testid="linkedin-link">
         LinkedIn
       </a>
       <InlineSeparator />
-      <a data-testid="resume-link" href="https://join.skype.com/invite/esIrFNeiMirt" rel="noopener noreferrer"
-         target="_blank">
-        Skype
+      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer" data-testid="resume-link">
+        Resume
       </a>
     </p>
   </div>
@@ -48,70 +97,93 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.sidebar {
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-panel-background);
     z-index: 10;
-    border-right: 1px solid var(--border);
-    background-color: var(--panel-background);
 
     div.sidebar-content {
-      position: sticky;
-      top: 0;
       display: flex;
       align-items: center;
-      flex-direction: column;
       justify-content: center;
+      flex-direction: column;
       width: 100%;
       height: 100vh;
+      position: sticky;
+      top: 0;
 
-      h1 {
+      .occasion-blurb {
+        text-align: center;
+        padding: var(--spacing-m) 0;
+        max-width: 20rem;
+        width: 100%;
+        color: var(--color-subtitle);
+      }
+
+      .name-wrapper {
+        padding-bottom: 0;
+        height: 5.5rem;
+        max-width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 100%;
-        height: 5.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: -1rem;
-        padding-bottom: 0;
-        text-align: center;
+        max-width: 10rem;
+        overflow: hidden;
       }
 
       p.subtitle {
-        margin-top: 1rem;
+        margin-top: var(--spacing-m);
 
         &.role {
-          font-size: 1.3rem;
-          color: var(--heading);
+          margin-top: var(--spacing-s);
+          font-size: var(--font-size-m);
+          color: var(--color-foreground);
         }
       }
 
       div.img-wrapper {
-        overflow: hidden;
         width: 10.5rem;
-        min-width: 10.5rem;
         height: 10.5rem;
+        min-width: 10.5rem;
         min-height: 10.5rem;
-        margin-top: -4.5rem;
-        border-radius: 50%;
+        margin-top: calc(-1 * var(--spacing-3xl));
 
-        * {
+        &.rounded {
+          overflow: hidden;
+          border-radius: 50%;
+        }
+
+        picture {
+          position: relative;
           display: block;
           width: 100%;
           height: 100%;
+
+          * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.sidebar {
-      padding: 1.5rem 1.5rem 0;
       border-width: 0;
-      background-color: var(--background);
+      padding: var(--spacing-xl) var(--spacing-xl) 0;
+      background-color: var(--color-background);
 
       div.sidebar-content {
-        position: initial !important;
         height: unset !important;
-        padding: 2rem 0 3.5rem;
+        padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+        position: initial !important;
 
         div.img-wrapper {
           margin-top: 0 !important;

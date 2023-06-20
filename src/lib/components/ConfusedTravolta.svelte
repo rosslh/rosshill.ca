@@ -17,6 +17,6 @@
     width: 20rem;
     height: 20rem;
     display: block;
-    margin: 1.5rem auto 2rem;
+    margin: var(--spacing-xl) auto var(--spacing-2xl);
   }
 </style>
