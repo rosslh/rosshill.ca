@@ -81,21 +81,21 @@
     classPrefix={PostCategory.Job}
     onClick={() => toggleCategory(PostCategory.Job)}
   >
-    Work
+    Emplois
   </FilterButton>
   <FilterButton
     active={projectActive}
     classPrefix={PostCategory.Project}
     onClick={() => toggleCategory(PostCategory.Project)}
   >
-    Projects
+    Projets
   </FilterButton>
   <FilterButton
     active={otherActive}
     classPrefix={PostCategory.Other}
     onClick={() => toggleCategory(PostCategory.Other)}
   >
-    Other
+    Autres
   </FilterButton>
   {#if showCategories.size || showTags.size}
     <button
