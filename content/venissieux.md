@@ -9,7 +9,7 @@ date: 2023-01-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: venissieux_thumbnail
+thumbnail: venissieuxlogo
 thumbnailExt: jpg
 image: venissieux
 imageExt: png
