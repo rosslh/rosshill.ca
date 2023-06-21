@@ -22,7 +22,6 @@ const posts: PostItemStub[] = Object.values(timeline)
     thumbnail: {
       name: post.thumbnail ?? `timeline/${post.thumbnail}`,
       extension: post.thumbnailExt ?? "png",
-      showBorder: post.thumbnailBorder ?? false,
     },
     title: formatPostTitle(post.title),
     website: post.website,

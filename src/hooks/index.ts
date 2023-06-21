@@ -1,7 +1,8 @@
 import Cookies from "universal-cookie";
 import type { Handle } from "@sveltejs/kit";
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const handle: Handle = async ({ event: e, resolve }) => {
+  const event = e;
   const cookieHeader = event.request.headers.get("cookie");
   if (cookieHeader) {
     const cookies = new Cookies(cookieHeader);
