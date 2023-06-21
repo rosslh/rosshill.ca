@@ -8,7 +8,7 @@ import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
 import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
-import { tagAncestors } from "../src/lib/constants.js";
+import { tagAncestors } from "../src/lib/tags.js";
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
 
@@ -33,14 +33,14 @@ function handleFileError(err: Error | null): void {
 
 function getForegroundColors(): { light: string, dark: string } {
   const getNumbersFromSassProperty = (fileLines: string[], propertyName: string): number[] => {
-    const escapedPropertyName = propertyName.replace(/[$\\]/g, "\\$&");
+    const escapedPropertyName = propertyName.replace("$", "\\$");
     const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
     const matches = fileLines.filter((line) => pattern.test(line));
 
     return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
   };
 
-  const cssFile = "src/lib/styles/global.scss";
+  const cssFile = "src/lib/styles/design-system.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromSassProperty(
@@ -49,7 +49,7 @@ function getForegroundColors(): { light: string, dark: string } {
   );
   const [darkColorLightness, lightColorLightness] = getNumbersFromSassProperty(
     fileLines,
-    "--heading",
+    "--color-heading",
   );
 
   if (
@@ -58,7 +58,7 @@ function getForegroundColors(): { light: string, dark: string } {
     || typeof darkColorLightness !== "number"
     || typeof lightColorLightness !== "number"
   ) {
-    throw new Error("Could not parse theme colors from global.scss");
+    throw new Error("Could not parse theme colors");
   }
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
@@ -171,5 +171,6 @@ function main(): void {
     );
   });
 }
+
 
 main();

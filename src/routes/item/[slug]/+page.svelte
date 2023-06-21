@@ -1,43 +1,48 @@
 <script lang="ts">
   import type { BrandColors, PostItemPage } from "$lib/types";
+
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
-  import { tagLabels } from "$lib/constants";
+  import { tagLabels } from "$lib/tags";
+  import { truncateBySentence } from "$lib/functions";
+
+  export let data: { post: PostItemPage, brandColors: BrandColors };
+  const { post, brandColors } = data;
+
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
-  export let data: { post: PostItemPage, brandColors: BrandColors };
-  const {
-    post,
-    brandColors,
-  } = data;
   let mainContent: HTMLDivElement;
   onMount(async () => {
     await tick();
     mainContent.scrollIntoView();
   });
+
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
+
   const meta = {
-    title: `${post.title} | Antoine Greuzard`,
-    description: post.excerpt ?? post.title,
-    url: `https://antoinegreuzard.fr/item/${post.slug}`,
+    title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
+    description: truncateBySentence(post.excerpt, 155) ?? post.title,
+    url: `https://rosshill.ca/item/${post.slug}`,
     image: {
       url: post.image
-        ? `https://antoinegreuzard.fr/timeline/${post.image.name}.${post.image.extension}`
-        : "https://antoinegreuzard.fr/antoine-greuzard.jpg",
+        ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
+        : "https://rosshill.ca/site-image.png",
       alt: post.title,
     },
-    siteName: "Antoine Greuzard",
-    author: "Antoine greuzard",
+    siteName: "Ross Hill",
+    author: "Ross Hill",
     tags: post.tags.map((tagId) => tagLabels[tagId] ?? capitalize(tagId)),
   };
 </script>
 
 <MetaTags
-  canonical={meta.url}
+  title={meta.title}
   description={meta.description}
+  canonical={meta.url}
   openGraph={{
     article: {
       authors: [meta.author],
@@ -52,7 +57,6 @@
     type: "article",
     url: meta.url,
   }}
-  title={meta.title}
   twitter={{
     cardType: "summary_large_image",
     title: meta.title,
@@ -62,22 +66,22 @@
   }}
 />
 <div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
-  <BackLink href="/#timeline-{post.slug}"/>
+  <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
-        <PostDate date={post.date}/>
+        <PostDate date={post.date} />
         {#if post.repository}
-          <InlineSeparator/>
+          <InlineSeparator />
           <a target="_blank" rel="noopener noreferrer" href={post.repository}>
             GitHub
           </a>
         {/if}
         {#if post.website}
-          <InlineSeparator/>
+          <InlineSeparator />
           <a target="_blank" rel="noopener noreferrer" href={post.website}>
-            Site internet
+            Website
           </a>
         {/if}
       </div>
@@ -87,7 +91,7 @@
             <Tag
               {tagId}
               background={brandColors[tagId]?.bg}
-              foreground={brandColors[tagId]?.fg}/>
+              foreground={brandColors[tagId]?.fg} />
           {/each}
         </div>
       {/if}
@@ -108,7 +112,6 @@
           alt={post.title}
           width={600}
           height={400}
-          loading="lazy"
         />
       </picture>
     {/if}
@@ -124,60 +127,61 @@
       {@html post.contents}
     </div>
   </article>
+  <CopyrightNotice />
 </div>
 
 <style lang="scss">
   article.post-full {
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-3xl);
 
     h2 {
-      margin-top: 1rem;
+      margin-top: var(--spacing-m);
     }
 
     div.details {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      margin-top: -0.75rem;
-      margin-bottom: 1.2rem;
+      align-items: center;
+      margin-bottom: var(--spacing-l);
+      margin-top: calc(var(--spacing-s) * -1);
 
       div.subtitle {
-        font-size: 15px;
-        margin-top: 0.5rem;
-        margin-right: 2rem;
-        color: var(--subtitle);
+        font-size: var(--font-size-xs);
+        color: var(--color-subtitle);
+        margin-top: var(--spacing-xs);
+        margin-right: var(--spacing-2xl);
       }
 
       div.tags-wrapper {
         display: flex;
         flex-wrap: wrap;
-        margin: 0.5rem 0 0;
+        margin: var(--spacing-xs) 0 0;
       }
     }
 
     img {
-      display: block;
-      width: auto;
       max-width: 600px;
       max-width: min(600px, 100%);
-      height: auto;
       max-height: 400px;
-      margin: 1.5rem auto 2rem;
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
+      width: auto;
+      height: auto;
+      margin: var(--spacing-2xl) auto;
+      display: block;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-m);
     }
 
     div.embed-wrapper {
       width: 100%;
       max-width: 600px;
-      margin: 1.5rem auto 2rem;
+      margin: var(--spacing-2xl) auto;
 
       > div {
         position: relative;
-        overflow: hidden;
         padding-bottom: 56.25%;
-        border: 1px solid var(--border);
-        border-radius: 0.5rem;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-m);
       }
     }
   }

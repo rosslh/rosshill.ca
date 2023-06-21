@@ -1,89 +1,5 @@
-@import "/node_modules/hsluv-sass";
-
-$theme-hue: 253;
-$theme-saturation: 25%;
-
-@function theme-color($lightness) {
-  @return hsluv($theme-hue, $theme-saturation, $lightness);
-}
-
-$job-hue: 12;
-$project-hue: 272;
-$other-hue: 135;
-
-@mixin light-theme() {
-  $category-saturation: 74%;
-  $category-lightness: 46%;
-
-  $marker-saturation: $category-saturation - 10;
-  $marker-lightness: $category-lightness + 10;
-
-  --job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
-  --project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
-  --other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
-
-  --job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
-  --project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
-  --other-marker: #{hsluv($other-hue, $marker-saturation, $marker-lightness)};
-
-  --heading: #{theme-color(20%)};
-  --foreground: #{theme-color(30%)};
-  --link: #{hsluv($theme-hue, 90%, 40%)};
-  --subtitle: #{theme-color(38%)};
-  --focus-outline: #{theme-color(60%)};
-  --timeline: #{hsluv($theme-hue, 16%, 65%)};
-  --border: #{theme-color(85%)};
-  --panel-background: #{theme-color(95%)};
-  --background: #{theme-color(98%)};
-}
-
-@mixin dark-theme() {
-  $category-saturation: 75%;
-  $category-lightness: 65%;
-
-  --job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
-  --project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
-  --other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
-
-  --job-marker: var(--job);
-  --project-marker: var(--project);
-  --other-marker: var(--other);
-
-  --heading: #{theme-color(95%)};
-  --foreground: #{theme-color(87%)};
-  --link: #{hsluv($theme-hue, 90%, 77%)};
-  --subtitle: #{theme-color(75%)};
-  --focus-outline: #{theme-color(35%)};
-  --timeline: #{theme-color(35%)};
-  --border: #{theme-color(23%)};
-  --panel-background: #{theme-color(14%)};
-  --background: #{theme-color(8%)};
-}
-
-// If prefers-color-scheme unsupported, default to light theme
-.app-wrapper {
-  @include light-theme();
-}
-
-// Unless manually overridden, use system preferred theme
-@media (prefers-color-scheme: light) {
-  div.app-wrapper {
-    @include light-theme();
-  }
-}
-@media (prefers-color-scheme: dark) {
-  div.app-wrapper {
-    @include dark-theme();
-  }
-}
-
-// If manually set, use that theme
-div.app-wrapper[data-theme="light"] {
-  @include light-theme();
-}
-div.app-wrapper[data-theme="dark"] {
-  @include dark-theme();
-}
+@import "./design-system.scss";
+@import "./media-queries.scss";
 
 html,
 body {
@@ -104,8 +20,8 @@ body {
 }
 
 div.app-wrapper {
-  color: var(--foreground);
-  background-color: var(--background);
+  color: var(--color-foreground);
+  background-color: var(--color-background);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -118,7 +34,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: $breakpoint-xs-min) {
   html {
     font-size: 17px;
   }
@@ -147,7 +63,7 @@ button {
 }
 
 @mixin focus-styles() {
-  outline: 2px dotted var(--focus-outline) !important;
+  outline: 2px dotted var(--color-focus-outline) !important;
   outline-offset: 1px !important;
 }
 
@@ -166,13 +82,13 @@ button {
 
 article.post-full p,
 .intro p {
-  margin: 1rem auto !important;
+  margin: var(--spacing-m) auto !important;
 }
 
 p {
   margin: 0;
   padding: 0;
-  color: var(--foreground);
+  color: var(--color-foreground);
 }
 
 .do-transition,
@@ -190,18 +106,18 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--heading);
+  color: var(--color-heading);
   font-weight: 700 !important;
 }
 
 h2 {
-  font-size: 1.65rem;
-  margin: 2rem 0 1rem;
+  font-size: var(--font-size-xl);
+  margin: var(--spacing-2xl) 0 var(--spacing-m);
 }
 
 h3 {
-  font-size: 1.4rem;
-  margin: 1.697rem 0 0.848rem;
+  font-size: var(--font-size-l);
+  margin: var(--spacing-xl) 0 var(--spacing-s);
 }
 
 .content-wrapper {
@@ -211,35 +127,22 @@ h3 {
   padding: 0 5%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: $breakpoint-s-min) {
   .content-wrapper {
     padding: 0 7%;
   }
 }
 
 code {
-  background-color: var(--panel-background) !important;
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 0 3px;
+  background-color: var(--color-panel-background) !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-s);
+  padding: 0 var(--spacing-2xs);
   display: inline-block;
+  font-size: var(--font-size-2xs) !important;
 }
 
 a {
-  color: var(--link);
+  color: var(--color-link);
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline !important;
-  }
-}
-
-picture.fixed-size {
-  position: relative;
-
-  * {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 }

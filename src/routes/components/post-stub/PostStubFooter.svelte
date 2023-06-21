@@ -34,6 +34,7 @@
     padding: 0.75rem 0.75rem 0 calc(1.8rem + 1rem);
 
     div.external-links {
+      flex-shrink: 0;
       color: var(--subtitle);
     }
   }

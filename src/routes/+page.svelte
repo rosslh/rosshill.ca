@@ -3,30 +3,15 @@
   import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItemStub } from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
+  import { truncateBySentence } from "$lib/functions";
 
-  export let data: { posts: PostItemStub[], brandColors: BrandColors };
+  export let data: { posts: PostItemStub[]; brandColors: BrandColors };
   const {
     posts,
     brandColors,
   } = data;
   const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
-  const truncateBySentence = (text: string, maxLength: number): string => {
-    const truncated = text
-      .split(".")
-      .filter((sentence) => sentence.trim())
-      .map((sentence) => `${sentence.trim()}.`)
-      .reduce(
-        (acc, sentence) => {
-          if (acc.length + sentence.length <= maxLength) {
-            return `${acc} ${sentence}`;
-          }
-          return acc;
-        },
-        "",
-      );
-    const firstSentence = `${intro.split(".")[0]}.`;
-    return truncated || firstSentence;
-  };
   const meta = {
     title: "Antoine Greuzard : Développeur Web Freelance",
     description: truncateBySentence(intro, 155),
@@ -75,24 +60,29 @@
     </p>
   </div>
   <PostStubs {brandColors} {posts}/>
+  <div class="content-wrapper">
+    <CopyrightNotice />
+  </div>
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.intro {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-top: 3rem;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    padding-top: var(--spacing-3xl);
 
     h2 {
       margin-top: 0;
     }
 
     p {
-      margin: 1rem auto !important;
+      margin: var(--spacing-m) auto !important;
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.intro {
       padding-top: 0;
     }

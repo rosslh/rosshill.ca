@@ -4,8 +4,8 @@
   $: positionString = left ? "left" : "right";
 </script>
 
-<div aria-hidden="true" class="arrow arrow-{positionString} do-transition" />
-<div aria-hidden="true" class="arrow-border arrow-{positionString}-border do-transition" />
+<div aria-hidden="true" class="arrow arrow-{positionString} do-transition"></div>
+<div aria-hidden="true" class="arrow-border arrow-{positionString}-border do-transition"></div>
 
 <style lang="scss">
   .arrow {
@@ -20,13 +20,13 @@
     &.arrow-left {
       transform: translate(-50%, -50%);
       left: -0.2rem;
-      border-right: 16px solid var(--panel-background);
+      border-right: 16px solid var(--color-panel-background);
     }
 
     &.arrow-right {
       transform: translate(50%, -50%);
       right: -0.2rem;
-      border-left: 16px solid var(--panel-background);
+      border-left: 16px solid var(--color-panel-background);
     }
   }
 
@@ -42,13 +42,13 @@
     &.arrow-left-border {
       transform: translate(-50%, -50%);
       left: -0.2rem;
-      border-right: 18.5px solid var(--border);
+      border-right: 18.5px solid var(--color-border);
     }
 
     &.arrow-right-border {
       transform: translate(50%, -50%);
       right: -0.2rem;
-      border-left: 18.5px solid var(--border);
+      border-left: 18.5px solid var(--color-border);
     }
   }
 </style>

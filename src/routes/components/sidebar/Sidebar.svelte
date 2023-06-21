@@ -20,9 +20,9 @@
         />
       </picture>
     </div>
-    <h1>
+    <div class="name-wrapper">
       Antoine Greuzard
-    </h1>
+    </div>
     <p class="subtitle role do-transition" data-testid="job-title">Développeur web</p>
     <p class="subtitle email">
       <a data-testid="email-address" href="mailto:antoine@antoinegreuzard">antoine@antoinegreuzard.fr</a>
@@ -48,70 +48,79 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.sidebar {
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-panel-background);
     z-index: 10;
-    border-right: 1px solid var(--border);
-    background-color: var(--panel-background);
 
     div.sidebar-content {
-      position: sticky;
-      top: 0;
       display: flex;
       align-items: center;
-      flex-direction: column;
       justify-content: center;
+      flex-direction: column;
       width: 100%;
       height: 100vh;
+      position: sticky;
+      top: 0;
 
-      h1 {
+      .name-wrapper {
+        padding-bottom: 0;
+        height: 5.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 100%;
-        height: 5.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: -1rem;
-        padding-bottom: 0;
-        text-align: center;
+        max-width: 10rem;
+        overflow: hidden;
       }
 
       p.subtitle {
-        margin-top: 1rem;
+        margin-top: var(--spacing-m);
 
         &.role {
-          font-size: 1.3rem;
-          color: var(--heading);
+          margin-top: var(--spacing-s);
+          font-size: var(--font-size-m);
+          color: var(--color-foreground);
         }
       }
 
       div.img-wrapper {
-        overflow: hidden;
         width: 10.5rem;
-        min-width: 10.5rem;
         height: 10.5rem;
+        min-width: 10.5rem;
         min-height: 10.5rem;
-        margin-top: -4.5rem;
-        border-radius: 50%;
+        margin-top: calc(-1 * var(--spacing-3xl));
 
-        * {
+        picture {
+          position: relative;
           display: block;
           width: 100%;
           height: 100%;
+
+          * {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.sidebar {
-      padding: 1.5rem 1.5rem 0;
       border-width: 0;
-      background-color: var(--background);
+      padding: var(--spacing-xl) var(--spacing-xl) 0;
+      background-color: var(--color-background);
 
       div.sidebar-content {
-        position: initial !important;
         height: unset !important;
-        padding: 2rem 0 3.5rem;
+        padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+        position: initial !important;
 
         div.img-wrapper {
           margin-top: 0 !important;

@@ -13,34 +13,36 @@
 </div>
 
 <style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.content-wrapper {
     display: none;
 
     div.separator {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       width: 75%;
-      height: 3rem;
       margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 3rem;
 
       .symbol {
-        font-size: 1.2rem;
+        font-size: var(--font-size-m);
+        color: var(--color-border);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--border);
       }
 
       .line {
-        width: calc(50% - 1.5rem);
         height: 1px;
-        border-bottom: 3px dotted var(--border);
+        width: calc(50% - 1.5rem);
+        border-bottom: 3px dotted var(--color-border);
       }
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.content-wrapper {
       display: block;
     }

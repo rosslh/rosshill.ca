@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
   import { onMount } from "svelte";
+
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
   import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
@@ -9,16 +10,16 @@
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.min.css";
 
-  export let data: { themeFromSession: SiteTheme};
+  export let data: { themeFromSession: SiteTheme };
   let appWrapper: HTMLDivElement;
   let CopyrightNotice;
 
   onMount(async () => {
-    const copyrightNoticeModule = await import("./components/CopyrightNotice.svelte");
+    const copyrightNoticeModule = await import("$lib/components/CopyrightNotice.svelte");
     CopyrightNotice = copyrightNoticeModule.default;
   });
 
-$: selectedTheme = browser ? $themeStore : data.themeFromSession;
+  $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
 
 <div
@@ -27,13 +28,13 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
   data-testid="app-wrapper"
   data-theme={selectedTheme}
 >
-  <ThemeSwitcher selectedTheme={selectedTheme} />
+  <ThemeSwitcher selectedTheme={selectedTheme}/>
   <div class="two-column">
-    <Sidebar />
+    <Sidebar/>
     <div>
-      <slot />
+      <slot/>
       {#if CopyrightNotice}
-        <svelte:component this={CopyrightNotice} />
+        <svelte:component this={CopyrightNotice}/>
       {/if}
     </div>
   </div>
@@ -44,9 +45,12 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
       font-weight: 400;
     }
-    h1, h2, h3, h4 { font-weight: 700; }
+
+    h1, h2, h3, h4 {
+      font-weight: 700;
+    }
   </style>
-  <meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
+  <meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
   <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots"/>
   <meta content="#ffffff" name="theme-color"/>
   <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
@@ -56,15 +60,54 @@ $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 
   <link href="/site.manifest" rel="manifest"/>
 </svelte:head>
-<style>
+<style lang="scss">
+  @import "src/lib/styles/media-queries.scss";
+
   div.two-column {
-    display: grid;
-    grid-template-columns: 3fr 8fr;
+    display: flex;
+
+    :global(> *:first-child) {
+      margin-right: var(--spacing-m);
+      width: 23rem;
+      flex-shrink: 0;
+    }
+
+    :global(> *:last-child) {
+      width: 100%;
+    }
+
+    :global(> *:not(:first-child):not(:last-child)) {
+      display: none;
+    }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint-s-max) {
     div.two-column {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+
+      :global(> *:first-child) {
+        margin-right: 0;
+        width: 100% !important;
+        min-width: 0;
+        max-width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-m-max) {
+    div.two-column {
+      :global(> *:first-child) {
+        width: 18rem;
+      }
+    }
+  }
+
+
+  @media (min-width: $breakpoint-xl-min) {
+    div.two-column {
+      :global(> *:first-child) {
+        width: 30rem;
+      }
     }
   }
 </style>

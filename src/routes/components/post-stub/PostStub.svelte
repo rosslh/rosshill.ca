@@ -4,7 +4,6 @@
   export let post: PostItemStub;
   export let brandColors: BrandColors;
   export let left: boolean;
-  export let isFirstPost: boolean;
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
@@ -41,13 +40,10 @@
   };
 </script>
 
-{#if isFirstPost}
-  <PostStubSpacer {left} />
-{/if}
 <IntersectionObserver
   {element}
   complete={hasIntersected}
-  threshold={isFirstPost ? 0 : 0.5}
+  threshold={0.5}
   bind:intersecting
 >
   <div
@@ -84,7 +80,9 @@
 {/if}
 
 <style lang="scss">
-  @media (max-width: 1200px) {
+  @import "src/lib/styles/media-queries.scss";
+
+  @media (max-width: $breakpoint-m-max) {
     div.post-wrapper {
       margin-left: 0 !important;
       margin-right: 0 !important;
@@ -93,28 +91,28 @@
 
   @keyframes fade-in-animation {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
-     }
+      opacity: 1;
+    }
   }
 
   div.post-wrapper {
     padding: 0;
     position: relative;
     display: flex;
-    border-color: var(--timeline) !important;
+    border-color: var(--color-timeline) !important;
     perspective: 500px;
 
     &.left {
-      padding-left: 2rem;
-      border-left: 3px solid var(--timeline);
+      padding-left: var(--spacing-2xl);
+      border-left: 3px solid var(--color-timeline);
       margin-left: 25%;
     }
     &.right {
-      padding-right: 2rem;
-      border-right: 3px solid var(--timeline);
+      padding-right: var(--spacing-2xl);
+      border-right: 3px solid var(--color-timeline);
       justify-content: flex-end;
       margin-right: 25%;
     }
@@ -142,7 +140,7 @@
       }
 
       &.invisible {
-      opacity: 0;
+        opacity: 0;
 
         &.left {
           transform: rotateY(60deg);
@@ -156,24 +154,28 @@
 
     div.post {
       z-index: 4;
-      padding: 0.8rem;
-      background-color: var(--panel-background);
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      margin: 0.8rem 0;
+      padding: var(--spacing-s);
+      background-color: var(--color-panel-background);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-m);
+      margin: var(--spacing-s) 0;
       position: relative;
 
       p.post-text {
-        padding: 0.1rem 0.75rem 0 calc(1.8rem + 1rem);
+        padding:
+          var(--spacing-2xs)
+          var(--spacing-s)
+          0
+          calc(var(--spacing-3xl) - var(--spacing-2xs));
       }
     }
   }
 
-  @media (max-width: 699px) {
+  @media (max-width: $breakpoint-xs-max) {
     div.post p.post-text,
     div.post :global(div.footer) {
-      padding-left: 0.2rem !important;
-      padding-right: 0.2rem !important;
+      padding-left: var(--spacing-2xs) !important;
+      padding-right: var(--spacing-2xs) !important;
     }
   }
 </style>

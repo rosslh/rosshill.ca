@@ -66,6 +66,6 @@
 <style>
   div.date-string {
     display: inline-block;
-    color: var(--subtitle);
+    color: var(--color-subtitle);
   }
 </style>
