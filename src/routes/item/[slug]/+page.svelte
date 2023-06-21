@@ -33,8 +33,8 @@
         : "https://rosshill.ca/site-image.png",
       alt: post.title,
     },
-    siteName: "Ross Hill",
-    author: "Ross Hill",
+    siteName: "Antoine Greuzard",
+    author: "Antoine Greuzard",
     tags: post.tags.map((tagId) => tagLabels[tagId] ?? capitalize(tagId)),
   };
 </script>
