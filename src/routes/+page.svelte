@@ -60,9 +60,6 @@
     </p>
   </div>
   <PostStubs {brandColors} {posts}/>
-  <div class="content-wrapper">
-    <CopyrightNotice />
-  </div>
 </div>
 
 <style lang="scss">
