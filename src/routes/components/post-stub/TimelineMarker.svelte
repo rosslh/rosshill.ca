@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { scale } from "svelte/transition";
   import { PostCategory } from "$lib/types";
 
   export let left: boolean;
   export let eventType: PostCategory;
+  export let showTooltip: boolean;
 
   const typeString = eventType[0]
     ? eventType[0].toUpperCase() + eventType.slice(1)
@@ -11,8 +13,18 @@
 
 <div
   aria-hidden="true"
-  title={typeString ?? ""}
-  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}"></div>
+  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}"
+
+>
+  {#if showTooltip}
+    <span
+      transition:scale={{ duration: 200 }}
+      class="tooltip {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}"
+    >
+      {typeString}
+    </span>
+  {/if}
+</div>
 
 <style lang="scss">
   @import "src/lib/styles/media-queries.scss";
