@@ -8,7 +8,12 @@ import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
 import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
-import { tagAncestors } from "../src/lib/constants.js";
+import { tagAncestors } from "../src/lib/tags.js";
+
+const inputFiles = {
+  brandColors: "src/data/brandColors.json",
+  posts: "src/data/posts.json",
+};
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
 
@@ -31,16 +36,19 @@ function handleFileError(err: Error | null): void {
   }
 }
 
-function getForegroundColors(): { light: string, dark: string } {
-  const getNumbersFromSassProperty = (fileLines: string[], propertyName: string): number[] => {
-    const escapedPropertyName = propertyName.replace(/[$\\]/g, "\\$&");
+function getForegroundColors(): { light: string; dark: string } {
+  const getNumbersFromSassProperty = (
+    fileLines: string[],
+    propertyName: string,
+  ): number[] => {
+    const escapedPropertyName = propertyName.replace("$", "\\$");
     const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
     const matches = fileLines.filter((line) => pattern.test(line));
 
     return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
   };
 
-  const cssFile = "src/lib/styles/global.scss";
+  const cssFile = "src/lib/styles/design-system.scss";
   const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromSassProperty(
@@ -49,7 +57,7 @@ function getForegroundColors(): { light: string, dark: string } {
   );
   const [darkColorLightness, lightColorLightness] = getNumbersFromSassProperty(
     fileLines,
-    "--heading",
+    "--color-heading",
   );
 
   if (
@@ -58,7 +66,7 @@ function getForegroundColors(): { light: string, dark: string } {
     || typeof darkColorLightness !== "number"
     || typeof lightColorLightness !== "number"
   ) {
-    throw new Error("Could not parse theme colors from global.scss");
+    throw new Error("Could not parse theme colors");
   }
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
@@ -104,10 +112,7 @@ function getColorsForTag(icon: Icon, light: string, dark: string): BrandColor {
   };
 }
 
-function createSvgsForTags(
-  tags: string[],
-  brandColors: BrandColors,
-): void {
+function createSvgsForTags(tags: string[], brandColors: BrandColors): void {
   const tagDirectory = "assets/tags/";
   if (!fs.existsSync(tagDirectory)) {
     fs.mkdirSync(tagDirectory);
@@ -123,9 +128,7 @@ function createSvgsForTags(
   });
 }
 
-function getBrandColors(
-  uniqueTags: string[],
-): BrandColors {
+function getBrandColors(uniqueTags: string[]): BrandColors {
   const { light, dark } = getForegroundColors();
   return merge(
     {},
@@ -158,14 +161,14 @@ function getTags(data: PostItemStub[]): string[] {
 }
 
 function main(): void {
-  fs.readFile("src/data/posts.json", "utf8", (_err, file) => {
+  fs.readFile(inputFiles.posts, "utf8", (_err, file) => {
     const { data } = JSON.parse(file);
     const tags: string[] = getTags(data);
     const brandColors = getBrandColors(tags);
     createSvgsForTags(tags, brandColors);
 
     fs.writeFile(
-      "src/data/brandColors.json",
+      inputFiles.brandColors,
       JSON.stringify(brandColors),
       handleFileError,
     );

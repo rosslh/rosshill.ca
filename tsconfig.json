@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "compilerOptions": {
         "moduleResolution": "node",
@@ -65,6 +66,4 @@
         "./build",
         "./svelte-kit",
         "./node_modules",
-        "svelte.config.js"
-    ]
-}
+        "svelte.config
