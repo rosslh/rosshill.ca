@@ -1,18 +1,23 @@
 <script lang="ts">
   import type { BrandColors, PostItemStub } from "$lib/types";
+
   import Tag from "$lib/components/Tag.svelte";
-  import { remsToPixels } from "$lib/functions";
 
   export let brandColors: BrandColors;
   export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
+
+  import { remsToPixels } from "$lib/functions";
 </script>
 
 <div class="post-heading">
   <div class="picture-frame">
     {#if post.thumbnail}
-      <picture class="fixed-size">
+      <picture
+        class="do-transition"
+        class:border={post.thumbnail.showBorder}
+      >
         <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp" />
         <source
           srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
@@ -59,22 +64,31 @@
 <style lang="scss">
   div.post-heading {
     display: flex;
-    align-items: center;
     min-height: 1.5rem;
+    align-items: center;
 
-    div.picture-frame {
-      display: inline-block;
-      overflow: hidden;
-      flex-shrink: 0;
+    .picture-frame {
       width: 2rem;
       height: 2rem;
-      border-radius: 50%;
-      background-color: #ffffff;
+      flex-shrink: 0;
 
-      * {
-        display: block;
+      picture {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
+        &.border {
+          border: 1px solid var(--color-border);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
 
@@ -84,23 +98,22 @@
       flex-wrap: wrap;
 
       h3 {
-        font-size: 0.95rem;
-        line-height: 1.2rem;
+        font-size: var(--font-size-s);
         display: inline-block;
-        margin: 0 0.5rem 0 0.75rem;
+        margin: 0 var(--spacing-2xs) 0 var(--spacing-s);
         padding: 0;
 
         a {
+          color: var(--color-heading);
           text-decoration: underline !important;
-          color: var(--heading);
         }
       }
 
       div.tags {
         display: flex;
+        padding: var(--spacing-3xs) 0;
+        margin-left: var(--spacing-s);
         flex-wrap: wrap;
-        margin-left: 0.75rem;
-        padding: 0.3rem 0;
       }
     }
   }
