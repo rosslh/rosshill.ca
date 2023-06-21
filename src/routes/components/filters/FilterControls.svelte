@@ -139,7 +139,7 @@
         $minTagNum = 0;
       }}
     >
-      Show more...
+      Afficher la suite...
     </button>
   {/if}
 </div>
