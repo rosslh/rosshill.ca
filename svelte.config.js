@@ -3,15 +3,7 @@ import cssnano from "cssnano";
 import preprocess from "svelte-preprocess";
 import netlifyAdapter from "@sveltejs/adapter-netlify";
 
-<<<<<<< HEAD
 const testIdRegex = [/data-testid\s?=\s?".*?"/g, /data-testid\s?=\s?'.*?'/g, /data-testid\s?=\s?\{.*?}/g];
-=======
-const testIdReplacements = [
-  /data-testid\s?=\s?".*?"/g,
-  /data-testid\s?=\s?'.*?'/g,
-  /data-testid\s?=\s?\{.*?\}/g,
-].map((regex) => [regex, ""]);
->>>>>>> upstream/main
 
 /** @type {import("@sveltejs/kit").Config} */
 export default {
@@ -36,5 +28,11 @@ export default {
     },
   },
   preprocess: preprocess({
-<<<<<<< HEAD
-    
+    replace: process.env.APP_ENV === "test" ? undefined : testIdRegex.map((regex) => ([regex, ""])),
+    postcss: {
+      plugins: [autoprefixer(), cssnano({
+        preset: "default",
+      })],
+    },
+  }),
+};
