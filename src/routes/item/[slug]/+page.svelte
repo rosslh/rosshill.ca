@@ -127,7 +127,6 @@
       {@html post.contents}
     </div>
   </article>
-  <CopyrightNotice />
 </div>
 
 <style lang="scss">
