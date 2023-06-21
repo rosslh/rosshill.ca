@@ -24,13 +24,13 @@
   const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
-    title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
+    title: post.title.length < 50 ? `${post.title} | Antoine Greuzard` : post.title,
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
-    url: `https://rosshill.ca/item/${post.slug}`,
+    url: `https://antoinegreuzard.fr/item/${post.slug}`,
     image: {
       url: post.image
-        ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
-        : "https://rosshill.ca/site-image.png",
+        ? `https://antoinegreuzard.fr/timeline/${post.image.name}.${post.image.extension}`
+        : "https://antoinegreuzard.fr/timeline/antoinegreuzard-new.png",
       alt: post.title,
     },
     siteName: "Antoine Greuzard",
