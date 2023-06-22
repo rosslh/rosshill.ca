@@ -15,7 +15,7 @@ image: antoinegreuzard-new
 imageExt: jpg
 ---
 
-Mon site web a été réalisé avec Svelte, Sass, Netflify, Vite et Typescript. Le projet a été conçu pour fournir à M. Greuzard une présence en ligne professionnelle pour ses activités et services.
+Mon site web a été réalisé avec Svelte, Sass, Netlify, Vite et Typescript. Le projet a été conçu pour me fournir une présence en ligne professionnelle pour ses activités et services.
 
 Le projet a été réalisé en utilisant des technologies modernes telles que Svelte, Sass, Netflify, Vite et Typescript pour créer un site web réactif et performant.
 
