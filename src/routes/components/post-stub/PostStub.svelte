@@ -40,7 +40,11 @@
 
   let showTooltip = false;
 
-  function determineEventType(postEvent) {
+  interface PostEvent {
+    eventType: string;
+  }
+
+  function determineEventType(postEvent: PostEvent) {
     if (postEvent.eventType === "job") {
       return "emploi";
     }
@@ -49,6 +53,7 @@
     }
     return "autre";
   }
+
 </script>
 
 <IntersectionObserver

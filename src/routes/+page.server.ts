@@ -9,20 +9,20 @@ const posts: PostItemStub[] = Object.values(timeline)
   .map((post) => ({
     date: {
       start: post.date,
-      end: post.endDate,
+      end: post.endDate ?? undefined, // assign undefined if post.endDate is null
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
     },
-    eventType: Object.values(PostCategory).find((cat) => cat === post.eventType) ?? PostCategory.Other,
+    eventType: Object.values(PostCategory)
+      .find((cat) => cat === post.eventType) ?? PostCategory.Other,
     excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
-    repository: post.repository,
+    repository: post.repository ?? undefined, // assign undefined if post.repository is null
     slug: slugify(post.title),
     tags: post.tags ?? [],
     thumbnail: {
       name: post.thumbnail ?? `timeline/${post.thumbnail}`,
       extension: post.thumbnailExt ?? "png",
-      showBorder: post.thumbnailBorder ?? false,
     },
     title: formatPostTitle(post.title),
     website: post.website,

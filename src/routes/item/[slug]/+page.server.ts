@@ -13,7 +13,6 @@ const posts: PostItemPage[] = Object.values(timeline)
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
     },
-    embed: post.embed,
     excerpt: post.excerpt,
     image: post.image ? {
       name: post.image,

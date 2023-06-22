@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
   import { onMount } from "svelte";
+  import type { SvelteComponent } from "svelte";
 
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
@@ -12,7 +13,7 @@
 
   export let data: { themeFromSession: SiteTheme };
   let appWrapper: HTMLDivElement;
-  let CopyrightNotice;
+  let CopyrightNotice: typeof SvelteComponent;
 
   onMount(async () => {
     const copyrightNoticeModule = await import("$lib/components/CopyrightNotice.svelte");
