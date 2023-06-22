@@ -45,7 +45,8 @@
     if (setA.size !== setB.size) {
       return false;
     }
-    return Array.from(setA).every((item) => setB.has(item));
+    return Array.from(setA)
+      .every((item) => setB.has(item));
   }
 
   function loadAllPosts() {
@@ -125,11 +126,12 @@
     const tags = new Set<string>();
     $showTags.forEach((tag) => {
       tags.add(tag);
-      Object.entries(tagAncestors).forEach(([childTag, ancestorTags]) => {
-        if (ancestorTags.includes(tag)) {
-          tags.add(childTag);
-        }
-      });
+      Object.entries(tagAncestors)
+        .forEach(([childTag, ancestorTags]) => {
+          if (ancestorTags.includes(tag)) {
+            tags.add(childTag);
+          }
+        });
     });
     activeTags = tags;
   }
@@ -183,10 +185,12 @@
   div.content-wrapper.posts-wrapper {
     padding: 0;
   }
+
   div.posts {
     padding: 0 var(--spacing-m);
     margin: var(--spacing-2xl) auto 0;
   }
+
   @media (min-width: $breakpoint-s-min) {
     div.content-wrapper.posts-wrapper {
       padding-left: 7%;
