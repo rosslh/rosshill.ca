@@ -14,7 +14,7 @@ export async function GET() {
   const urls = data
     .filter(({ contents, isHidden }) => contents && !isHidden)
     .map((post) => ({
-      loc: `https://rosshill.ca/item/${slugify(post.title)}`,
+      loc: `https://antoinegreuzard.fr/item/${slugify(post.title)}`,
       lastmod: post.lastModified && formatDate(parseDate(post.lastModified)),
       changefreq: "monthly",
       priority: 0.8,
@@ -27,7 +27,7 @@ export async function GET() {
     .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
 
   urls.unshift({
-    loc: "https://rosshill.ca/",
+    loc: "https://antoinegreuzard.fr/",
     lastmod: formatDate(max([mostRecentPostModified, firstDayOfMonth])),
     changefreq: "monthly",
     priority: 1,
