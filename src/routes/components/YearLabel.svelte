@@ -15,7 +15,7 @@
     {year}
   </span>
   {#if isFirstLabel}
-    <div aria-hidden="true" class="first-label-line" />
+    <div aria-hidden="true" class="first-label-line"></div>
     <PostStubSpacer left />
   {:else}
     <div
@@ -24,10 +24,10 @@
       class:rtl={isRightToLeft}
       class:ltr={!isRightToLeft}
     >
-      <div class="do-transition" />
-      <div class="do-transition" />
-      <div class="do-transition" />
-      <div class="do-transition" />
+      <div class="do-transition"></div>
+      <div class="do-transition"></div>
+      <div class="do-transition"></div>
+      <div class="do-transition"></div>
     </div>
   {/if}
 </div>
