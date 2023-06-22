@@ -103,7 +103,6 @@
       display: inline-flex;
       align-items: center;
       font-size: var(--font-size-3xs);
-      display: inline-flex;
       left: var(--spacing-s);
     }
 
