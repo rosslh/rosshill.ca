@@ -15,15 +15,15 @@ export async function GET() {
     .filter(({ contents, isHidden }) => contents && !isHidden)
     .map((post) => ({
       loc: `https://antoinegreuzard.fr/item/${slugify(post.title)}`,
-      lastmod: post.lastModified && formatDate(parseDate(post.lastModified)),
+      lastmod: post.date && formatDate(parseDate(post.date)),
       changefreq: "monthly",
       priority: 0.8,
     }));
 
   const mostRecentPostModified = data
-    .filter((post) => post.contents && !post.isHidden && post.lastModified)
+    .filter((post) => post.contents && !post.isHidden && post.date)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    .map((post) => parseDate(post.lastModified!))
+    .map((post) => parseDate(post.date!))
     .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
 
   urls.unshift({
