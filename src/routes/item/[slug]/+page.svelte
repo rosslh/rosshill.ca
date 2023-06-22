@@ -13,7 +13,6 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
-  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   let mainContent: HTMLDivElement;
   onMount(async () => {

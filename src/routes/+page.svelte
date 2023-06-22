@@ -3,7 +3,6 @@
   import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItemStub } from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
-  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
   import { truncateBySentence } from "$lib/functions";
 
   export let data: { posts: PostItemStub[]; brandColors: BrandColors };
