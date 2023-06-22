@@ -50,7 +50,7 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h1 data-testid="main-heading">
-      <Balancer>Je suis un Développeur web Freelance</Balancer>
+      Je suis un Développeur web Freelance
     </h1>
     <p>
       <Balancer>
