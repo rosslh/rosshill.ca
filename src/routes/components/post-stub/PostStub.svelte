@@ -1,5 +1,15 @@
 <script lang="ts">
-  import type { PostItemStub, BrandColors } from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
+  import { browser } from "$app/environment";
+  import { preloadData } from "$app/navigation";
+  import { reduceMotion } from "$lib/reduceMotion";
+
+  import IntersectionObserver from "./IntersectionObserver.svelte";
+  import PostStubTriangle from "./PostStubTriangle.svelte";
+  import TimelineMarker from "./TimelineMarker.svelte";
+  import PostStubSpacer from "./PostStubSpacer.svelte";
+  import PostStubHeading from "./PostStubHeading.svelte";
+  import PostStubFooter from "./PostStubFooter.svelte";
 
   export let post: PostItemStub;
   export let brandColors: BrandColors;
@@ -7,17 +17,6 @@
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
-
-  import { browser } from "$app/environment";
-  import { preloadData } from "$app/navigation";
-
-  import { reduceMotion } from "$lib/constants";
-  import IntersectionObserver from "./IntersectionObserver.svelte";
-  import PostStubTriangle from "./PostStubTriangle.svelte";
-  import TimelineMarker from "./TimelineMarker.svelte";
-  import PostStubSpacer from "./PostStubSpacer.svelte";
-  import PostStubHeading from "./PostStubHeading.svelte";
-  import PostStubFooter from "./PostStubFooter.svelte";
 
   let element: HTMLElement;
   let intersecting: boolean;
@@ -38,45 +37,65 @@
   const preloadPage = async (): Promise<void> => {
     await preloadData(`item/${post.slug}`);
   };
+
+  let showTooltip = false;
+
+  function determineEventType(postEvent) {
+    if (postEvent.eventType === "job") {
+      return "emploi";
+    }
+    if (postEvent.eventType === "project") {
+      return "projet";
+    }
+    return "autre";
+  }
 </script>
 
 <IntersectionObserver
-  {element}
-  complete={hasIntersected}
-  threshold={0.5}
   bind:intersecting
+  complete={hasIntersected}
+  {element}
+  threshold={0.5}
 >
   <div
     bind:this={element}
-    id="timeline-{post.slug}"
-    data-testid="post-stub-{post.slug}"
     class="post-wrapper do-transition {left ? 'left' : 'right'}"
+    data-testid="post-stub-{post.slug}"
+    id="timeline-{post.slug}"
+
+    on:mouseenter={() => {
+      showTooltip = true;
+    }}
+    on:mouseleave={() => {
+      showTooltip = false;
+    }}
   >
     <TimelineMarker
+      eventType={determineEventType(post)}
       {left}
-      eventType={post.eventType} />
+      {showTooltip}/>
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
-      <PostStubTriangle {left} />
+      <PostStubTriangle {left}/>
       <div
         class="post do-transition"
         on:mouseenter|once={post.hasContent ? preloadPage : null}
       >
         <PostStubHeading
-          {post}
+          {activeTags}
           {brandColors}
           {isPageBackgroundDark}
-          {activeTags}
+          {post}
         />
         {#if post.excerpt}
           <p class="post-text">{@html post.excerpt}</p>
         {/if}
-        <PostStubFooter {post} />
+        <PostStubFooter {post}/>
       </div>
     </div>
   </div>
 </IntersectionObserver>
 {#if isLastPost}
-  <PostStubSpacer {left} showBottomMarker />
+  <PostStubSpacer {left} showBottomBorder/>
 {/if}
 
 <style lang="scss">
@@ -110,6 +129,7 @@
       border-left: 3px solid var(--color-timeline);
       margin-left: 25%;
     }
+
     &.right {
       padding-right: var(--spacing-2xl);
       border-right: 3px solid var(--color-timeline);
@@ -162,11 +182,7 @@
       position: relative;
 
       p.post-text {
-        padding:
-          var(--spacing-2xs)
-          var(--spacing-s)
-          0
-          calc(var(--spacing-3xl) - var(--spacing-2xs));
+        padding: var(--spacing-2xs) var(--spacing-s) 0 calc(var(--spacing-3xl) - var(--spacing-2xs));
       }
     }
   }

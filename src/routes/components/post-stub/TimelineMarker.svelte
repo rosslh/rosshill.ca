@@ -67,15 +67,15 @@
     transform: translateY(-50%);
     white-space: nowrap;
 
-    &.other {
+    &.autre {
       color: var(--color-other-marker);
     }
 
-    &.job {
+    &.emploi {
       color: var(--color-job-marker);
     }
 
-    &.project {
+    &.projet {
       color: var(--color-project-marker);
     }
 
