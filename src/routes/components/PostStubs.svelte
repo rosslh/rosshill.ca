@@ -110,7 +110,7 @@
       {/key}
     {/each}
     {#if !displayedPosts.length}
-      <ConfusedTravolta reason="there are no results" />
+      <ConfusedTravolta reason="il n'y a pas de résultat" />
     {/if}
   </div>
 </div>
