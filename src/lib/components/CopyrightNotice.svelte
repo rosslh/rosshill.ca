@@ -5,8 +5,8 @@
 <style>
   footer {
     text-align: right;
-    color: var(--subtitle);
-    margin: 1rem auto;
-    font-size: 0.8rem;
+    color: var(--color-subtitle);
+    margin: var(--spacing-2xl) auto var(--spacing-m);
+    font-size: var(--font-size-2xs);
   }
 </style>
