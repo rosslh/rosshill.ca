@@ -68,7 +68,7 @@
 <div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
-    <h2 data-testid="post-title">{post.title}</h2>
+    <h1 data-testid="post-title">{post.title}</h1>
     <div class="details">
       <div class="subtitle do-transition">
         <PostDate date={post.date} />
@@ -133,7 +133,7 @@
   article.post-full {
     margin-bottom: var(--spacing-3xl);
 
-    h2 {
+    h1 {
       margin-top: var(--spacing-m);
     }
 
@@ -159,7 +159,6 @@
     }
 
     img {
-      max-width: 600px;
       max-width: min(600px, 100%);
       max-height: 400px;
       width: auto;
