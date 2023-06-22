@@ -50,12 +50,10 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h1 data-testid="main-heading">
-      Je suis un Développeur web Freelance
+      <Balancer>Je suis un Développeur web Freelance</Balancer>
     </h1>
     <p>
-      <Balancer>
         {intro}
-      </Balancer>
     </p>
   </div>
   <PostStubs {brandColors} {posts}/>
