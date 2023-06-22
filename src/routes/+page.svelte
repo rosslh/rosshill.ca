@@ -50,9 +50,9 @@
 />
 <div class="main-content">
   <div class="content-wrapper intro">
-    <h2 data-testid="main-heading">
+    <h1 data-testid="main-heading">
       <Balancer>Je suis un Développeur web Freelance</Balancer>
-    </h2>
+    </h1>
     <p>
       <Balancer>
         {intro}
@@ -70,7 +70,7 @@
     margin-bottom: var(--spacing-3xl);
     padding-top: var(--spacing-3xl);
 
-    h2 {
+    h1 {
       margin-top: 0;
     }
 

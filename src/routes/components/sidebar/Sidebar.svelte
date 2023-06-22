@@ -71,8 +71,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 10rem;
         overflow: hidden;
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.2;
       }
 
       p.subtitle {
