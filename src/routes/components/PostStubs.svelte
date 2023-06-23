@@ -9,7 +9,7 @@
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
 
   export let posts: PostItemStub[] = [];
   export let brandColors: BrandColors;
@@ -98,6 +98,12 @@
     });
     if (loadMoreTrigger) {
       observer.observe(loadMoreTrigger);
+    }
+  });
+
+  onDestroy(() => {
+    if (loadMoreTrigger) {
+      loadMoreTrigger.remove();
     }
   });
 </script>
