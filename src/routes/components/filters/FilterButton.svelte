@@ -67,7 +67,7 @@
       border-color 0.3s ease, opacity 0.3s ease;
     }
 
-    &.job-button {
+    &.emploi-button {
       color: var(--color-job);
 
       &.active {
@@ -77,7 +77,7 @@
       }
     }
 
-    &.project-button {
+    &.projet-button {
       color: var(--color-project);
 
       &.active {
@@ -87,7 +87,7 @@
       }
     }
 
-    &.other-button {
+    &.autre-button {
       color: var(--color-other);
 
       &.active {

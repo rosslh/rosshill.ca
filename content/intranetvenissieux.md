@@ -1,7 +1,7 @@
 ---
 title: Intranet de la ville de Vénissieux
 isHidden: false
-eventType: project
+eventType: projet
 excerpt: Site internet de l'intranet de la ville de Vénissieux.
 tags: [javascript, wordpress, php, css3, html5, openid]
 website: https://intranet.venissieux.fr

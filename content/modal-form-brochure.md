@@ -1,7 +1,7 @@
 ---
 title: Modal Form Brochure pour WordPress
 isHidden: false
-eventType: project
+eventType: projet
 excerpt: Modal Form Brochure is a simple plugin that displays a modal with a form when the user clicks on a link with the ID #brochure and a parameter ?file=FILEID.
 tags: [javascript, css3, html5, wordpress, vite, git, php]
 repository: https://github.com/Influactive360/modal-form-brochure

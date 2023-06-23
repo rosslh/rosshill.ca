@@ -1,6 +1,6 @@
 ---
 title: Goloa
-eventType: project
+eventType: projet
 excerpt: Site e-commerce réalisé avec Wordpress, Elementor et Dokan.
 tags: [wordpress, elementor, woocommerce, css3, html5, javascript]
 website: https://goloa.fr/

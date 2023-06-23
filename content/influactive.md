@@ -1,7 +1,7 @@
 ---
 title: Développeur web - Influactive
 isHidden: false
-eventType: job
+eventType: emploi
 excerpt: Je suis un développeur web spécialisé dans Typo3, Wordpress, ViteJS, NodeJS, SASS, Divi et Git. Je crée des sites internet pour aider les clients à atteindre leurs objectifs en ligne et je fournis un excellent service après-vente en résolvant les problèmes techniques.
 tags: [vite, typo3, laravel, wordpress, sass, git, typescript, mysql, nodedotjs, rootsbedrock]
 website: https://influactive.com

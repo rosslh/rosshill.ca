@@ -6,9 +6,9 @@ export type PostDate = {
 }
 
 export enum PostCategory {
-  Job = "job",
-  Project = "project",
-  Other = "other",
+  Job = "emploi",
+  Project = "projet",
+  Other = "autre",
 }
 
 type PostItemBase = {

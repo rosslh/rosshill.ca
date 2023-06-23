@@ -44,16 +44,6 @@
     eventType: string;
   }
 
-  function determineEventType(postEvent: PostEvent) {
-    if (postEvent.eventType === "job") {
-      return "emploi";
-    }
-    if (postEvent.eventType === "project") {
-      return "projet";
-    }
-    return "autre";
-  }
-
 </script>
 
 <IntersectionObserver
@@ -76,7 +66,7 @@
     }}
   >
     <TimelineMarker
-      eventType={determineEventType(post)}
+      eventType={post.eventType}
       {left}
       {showTooltip}/>
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
@@ -100,7 +90,7 @@
   </div>
 </IntersectionObserver>
 {#if isLastPost}
-  <PostStubSpacer {left} showBottomBorder/>
+  <PostStubSpacer {left}/>
 {/if}
 
 <style lang="scss">

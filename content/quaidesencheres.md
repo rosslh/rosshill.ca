@@ -1,6 +1,6 @@
 ---
 title: Quai des enchères
-eventType: project
+eventType: projet
 tags: [wordpress, css3, html5, javascript, php]
 website: https://www.quaidesencheres.fr/
 
