@@ -27,9 +27,8 @@
 </script>
 
 <MetaTags
-  title={meta.title}
-  description={meta.description}
   canonical={meta.url}
+  description={meta.description}
   openGraph={{
     article: {
       authors: [meta.author],
@@ -44,6 +43,7 @@
     type: "article",
     url: meta.url,
   }}
+  title={meta.title}
   twitter={{
     cardType: "summary_large_image",
     title: meta.title,
@@ -52,8 +52,8 @@
     imageAlt: meta.image.alt,
   }}
 />
-<div data-testid="error" class="content-wrapper main-content">
-  <BackLink />
+<div class="content-wrapper main-content" data-testid="error">
+  <BackLink/>
   <h1 data-testid="error-heading">{code}: {message}</h1>
-  <ConfusedTravolta reason="la page n'a pas été trouvée" />
+  <ConfusedTravolta reason="la page n'a pas été trouvée"/>
 </div>

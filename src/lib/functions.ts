@@ -1,6 +1,11 @@
 import getSlug from "slugify";
 
-export const slugify = (str: string): string => getSlug(str, { replacement: "-", lower: true, remove: /[:]/ }).replace(/-+/g, "-");
+export const slugify = (str: string): string => getSlug(str, {
+  replacement: "-",
+  lower: true,
+  remove: /[:]/,
+})
+  .replace(/-+/g, "-");
 
 export const remsToPixels = (rems: number): number => Math.round(rems * 16);
 

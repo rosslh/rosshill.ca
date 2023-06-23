@@ -4,10 +4,10 @@ import fs from "fs";
 import { hsluvToHex } from "hsluv-ts";
 import { keyBy, merge } from "lodash-es";
 
-import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
+import * as SimpleIcons from "simple-icons";
 
-import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
+import type { BrandColor, BrandColors, PostItemStub } from "$lib/types";
 import { tagAncestors } from "../src/lib/tags.js";
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
@@ -33,7 +33,7 @@ function handleFileError(err: Error | null): void {
 
 function getForegroundColors(): { light: string, dark: string } {
   const getNumbersFromSassProperty = (fileLines: string[], propertyName: string): number[] => {
-    const escapedPropertyName = propertyName.replace(/[\\^$.*+?()[\]{}|]/g, '\\$&');
+    const escapedPropertyName = propertyName.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
     const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
     const matches = fileLines.filter((line) => pattern.test(line));
 
@@ -41,7 +41,8 @@ function getForegroundColors(): { light: string, dark: string } {
   };
 
   const cssFile = "src/lib/styles/design-system.scss";
-  const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
+  const fileLines = fs.readFileSync(cssFile, "utf8")
+    .split(/\r?\n/);
   const [themeHue] = getNumbersFromSassProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromSassProperty(
     fileLines,
@@ -68,12 +69,17 @@ function getForegroundColors(): { light: string, dark: string } {
     .replace(/^#/, "")
     .toUpperCase();
 
-  return { light, dark };
+  return {
+    light,
+    dark,
+  };
 }
 
 function getContrast(color1: string, color2: string): number {
-  const color1Luminance = sRGBtoY(chroma(color1).rgb());
-  const color2Luminance = sRGBtoY(chroma(color2).rgb());
+  const color1Luminance = sRGBtoY(chroma(color1)
+    .rgb());
+  const color2Luminance = sRGBtoY(chroma(color2)
+    .rgb());
   return Math.abs(Number(APCAcontrast(color1Luminance, color2Luminance)));
 }
 
@@ -126,7 +132,10 @@ function createSvgsForTags(
 function getBrandColors(
   uniqueTags: string[],
 ): BrandColors {
-  const { light, dark } = getForegroundColors();
+  const {
+    light,
+    dark,
+  } = getForegroundColors();
   return merge(
     {},
     ...uniqueTags.map((tag) => {

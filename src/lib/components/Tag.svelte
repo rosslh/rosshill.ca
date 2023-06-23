@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let tagId: string;
+  export let tagId: string = "default";
   export let active = false;
   export let background: string = "000";
   export let foreground: string = "FFF";
@@ -16,43 +16,51 @@
   $: tagString = tagLabels[tagId] ?? tagId;
 
   const iconOffsets: Record<string, { x?: string, y?: string }> = {
-    django: { y: "0.1rem", x: "-0.05rem" },
+    django: {
+      y: "0.1rem",
+      x: "-0.05rem",
+    },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
   };
 
-  const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
+  const iconOffset = {
+    x: 0,
+    y: 0,
+    ...iconOffsets[tagId],
+  };
 
-  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage).toString(16);
+  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage)
+    .toString(16);
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   class="tag do-transition"
-  class:active
+  class:active = {active}
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
   style={active ? `color: #${foreground};` : ""}
   this={onClick ? "button" : "div"}>
   <span
     class="logo-wrapper do-transition"
-    style="background-color: #{background};"
     class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
+    style="background-color: #{background};"
   >
     <img
-      src="/tags/{tagId}.svg"
       alt="{tagString} logo"
-      loading={lazyLoad ? "lazy" : null}
-      style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
       height={remsToPixels(0.85)}
-      width={remsToPixels(0.85)} />
+      loading={lazyLoad ? "lazy" : null}
+      src="/tags/{tagId}.svg"
+      style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
+      width={remsToPixels(0.85)}/>
   </span>
   <span
-    style={`border-left: 1px solid ${dividerColor};`}
     class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
+    style={`border-left: 1px solid ${dividerColor};`}
   >
     {tagString}
   </span>

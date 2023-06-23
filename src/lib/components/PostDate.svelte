@@ -4,7 +4,12 @@
   } from "date-fns";
   import type { PostDate } from "$lib/types";
 
-  export let date: PostDate;
+  export let date: PostDate = {
+    start: "",
+    end: "",
+    isOngoing: false,
+    isSeasonal: false,
+  };
   const getDateFromString = (d: string): Date => parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));

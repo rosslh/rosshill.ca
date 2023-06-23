@@ -1,4 +1,4 @@
-<!-- 
+<!--
 MIT License
 
 Copyright (c) 2020-present Eric Liu
@@ -29,13 +29,9 @@ SOFTWARE.
   export let intersecting = false;
   export let complete = false;
 
-  import {
-    tick,
-    onDestroy,
-    afterUpdate,
-  } from "svelte";
+  import { afterUpdate, onDestroy, tick } from "svelte";
   import { browser } from "$app/environment";
-  
+
   let prevElement: Element | null = null;
   let observer: IntersectionObserver;
 
@@ -78,4 +74,4 @@ SOFTWARE.
   }
 </script>
 
-<slot {intersecting} />
+<slot {intersecting}/>

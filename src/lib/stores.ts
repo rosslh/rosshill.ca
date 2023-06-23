@@ -1,6 +1,6 @@
 import Cookies from "universal-cookie";
-import { writable } from "svelte/store";
 import type { Writable } from "svelte/store";
+import { writable } from "svelte/store";
 import type { PostCategory } from "./types";
 import { SiteTheme } from "./types";
 
@@ -17,7 +17,10 @@ function cookieStore<T>(
   maxAge = yearInSeconds,
 ): Writable<T> {
   const initialValue: T = cookies.get(key) ?? defaultValue;
-  const { set: setStore, ...store } = writable(initialValue);
+  const {
+    set: setStore,
+    ...store
+  } = writable(initialValue);
   if (initialValue) {
     cookies.set(key, initialValue, { maxAge });
   }

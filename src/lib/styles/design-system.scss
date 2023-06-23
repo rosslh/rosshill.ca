@@ -69,6 +69,7 @@ $other-hue: 135;
     @include light-theme();
   }
 }
+
 @media (prefers-color-scheme: dark) {
   div.app-wrapper {
     @include dark-theme();
@@ -79,6 +80,7 @@ $other-hue: 135;
 div.app-wrapper[data-theme="light"] {
   @include light-theme();
 }
+
 div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }

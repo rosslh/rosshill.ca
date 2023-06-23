@@ -2,12 +2,6 @@
   import type { BrandColors, PostItemStub } from "$lib/types";
   import { PostCategory, SiteTheme } from "$lib/types";
   import { minTagNum, themeStore } from "$lib/stores";
-
-  export let showCategories: Set<PostCategory>;
-  export let showTags: Set<string>;
-  export let posts: PostItemStub[];
-  export let brandColors: BrandColors;
-
   import Times from "~icons/fa-solid/times";
 
   import { browser } from "$app/environment";
@@ -15,6 +9,11 @@
   import { prefersColorSchemeDark } from "$lib/functions";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
+
+  export let showCategories: Set<PostCategory>;
+  export let showTags: Set<string>;
+  export let posts: PostItemStub[] = [];
+  export let brandColors: BrandColors;
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
     if (set.has(item)) {
@@ -37,7 +36,7 @@
   $: otherActive = showCategories.has(PostCategory.Other);
   $: projectActive = showCategories.has(PostCategory.Project);
 
-  let tagsOrdered: string[] = [];
+  let tagsOrdered: string[];
 
   $: {
     const tagCounts: Record<string, number> = {};
@@ -49,7 +48,8 @@
       });
 
       // get ancestors of each tag and remove duplicates
-      const ancestorTags = [...new Set(tags.map((tag) => tagAncestors[tag] ?? []).flat())];
+      const ancestorTags = [...new Set(tags.map((tag) => tagAncestors[tag] ?? [])
+        .flat())];
 
       ancestorTags
         .filter((ancestorTag) => !tags.includes(ancestorTag)) // remove ancestors if they are already in post tags
@@ -110,7 +110,7 @@
         showTags = showTags;
       }}
     >
-      <span class="symbol"><Times /></span> Clear filters
+      <span class="symbol"><Times/></span> Clear filters
     </button>
   {/if}
 </div>
@@ -129,7 +129,7 @@
       needsOutlineOnLightBg={brandColors[tag]?.outlineOnLight ?? false}
       needsOutlineOnDarkBg={brandColors[tag]?.outlineOnDark ?? false}
 
-      onClick={() => toggleTag(tag)} />
+      onClick={() => toggleTag(tag)}/>
   {/each}
   {#if $minTagNum !== 0}
     <button

@@ -2,13 +2,12 @@
   import type { BrandColors, PostItemStub } from "$lib/types";
 
   import Tag from "$lib/components/Tag.svelte";
+  import { remsToPixels } from "$lib/functions";
 
   export let brandColors: BrandColors;
   export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
-
-  import { remsToPixels } from "$lib/functions";
 </script>
 
 <div class="post-heading">
@@ -18,7 +17,7 @@
         class="do-transition"
         class:border={post.thumbnail.showBorder}
       >
-        <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp" />
+        <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp"/>
         <source
           srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
           type="image/{post.thumbnail.extension}"
@@ -55,7 +54,7 @@
           isPageBackgroundDark={isPageBackgroundDark}
           needsOutlineOnLightBg={brandColors[tagId]?.outlineOnLight}
           needsOutlineOnDarkBg={brandColors[tagId]?.outlineOnDark}
-          lazyLoad />
+          lazyLoad/>
       {/each}
     </div>
   </div>
@@ -80,6 +79,7 @@
         justify-content: center;
         border-radius: 50%;
         overflow: hidden;
+
         &.border {
           border: 1px solid var(--color-border);
         }
