@@ -11,7 +11,7 @@
   import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
-  export let posts: PostItemStub[];
+  export let posts: PostItemStub[] = [];
   export let brandColors: BrandColors;
   const getYearFromDate = (date: string): string => date.slice(0, 4);
   const getLabelVisibilityAndAlignment = (post: PostItemStub, i: number, postsArray: PostItemStub[]): PostItemStub => {
@@ -35,7 +35,7 @@
   const initialPostCount = 5;
   let sentinel: HTMLElement;
   let observer: IntersectionObserver;
-  let displayedPostCount = initialPostCount;
+  let displayedPostCount: number;
   let previousCategories = new Set($showCategories);
   let previousTags = new Set($showTags);
   let clickCount = 0;
@@ -80,14 +80,11 @@
             showAll = true;
           }
         },
-        { rootMargin: "200px" }, // Vous pouvez ajuster cette marge pour charger les posts avant que l'utilisateur atteigne réellement le bas de la page
+        { rootMargin: "200px" },
       );
       observer.observe(sentinel);
 
-      const button = document.querySelector("button");
-      if (button) {
-        button.addEventListener("click", handleButtonClick);
-      }
+      document.addEventListener("click", handleButtonClick);
     }
   });
 
@@ -95,10 +92,7 @@
     if (browser) {
       observer.disconnect();
 
-      const button = document.querySelector("button");
-      if (button) {
-        button.removeEventListener("click", handleButtonClick);
-      }
+      document.removeEventListener("click", handleButtonClick);
     }
   });
 
@@ -108,7 +102,7 @@
         const postHasShownTag = typeof post.tags !== "undefined" && post.tags.some((tag) => $showTags.has(tag) || ancestorTagShown(tag));
         return (!$showCategories.size || $showCategories.has(post.eventType)) && (!$showTags.size || postHasShownTag);
       })
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .sort((a, b) => new Date(b.date.start).getTime() - new Date(a.date.start).getTime())
       .map(getLabelVisibilityAndAlignment);
     if (!showAll) {
       postsWithLabels = postsWithLabels.slice(0, initialPostCount);
