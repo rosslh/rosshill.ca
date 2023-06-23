@@ -39,11 +39,6 @@
   };
 
   let showTooltip = false;
-
-  interface PostEvent {
-    eventType: string;
-  }
-
 </script>
 
 <IntersectionObserver
@@ -72,8 +67,8 @@
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left}/>
       <div
-        class="post do-transition"
-        on:mouseenter|once={post.hasContent ? preloadPage : null}
+        class="post do-transition" data-testid="post-stub-{post.slug}"
+        on:mouseenter={post.hasContent ? preloadPage : null}
       >
         <PostStubHeading
           {activeTags}

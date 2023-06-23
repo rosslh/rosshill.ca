@@ -9,7 +9,7 @@ const posts: PostItemStub[] = Object.values(timeline)
   .map((post) => ({
     date: {
       start: post.date,
-      end: post.endDate ?? undefined, // assign undefined if post.endDate is null
+      end: post.endDate,
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
     },
@@ -17,7 +17,7 @@ const posts: PostItemStub[] = Object.values(timeline)
       .find((cat) => cat === post.eventType) ?? PostCategory.Other,
     excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
-    repository: post.repository ?? undefined, // assign undefined if post.repository is null
+    repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
     thumbnail: {

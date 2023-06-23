@@ -141,13 +141,6 @@
         />
       </picture>
     {/if}
-    {#if post.embed}
-      <div class="embed-wrapper">
-        <div class="do-transition">
-          {@html post.embed}
-        </div>
-      </div>
-    {/if}
 
     <div class="content">
       {@html post.contents}
