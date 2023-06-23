@@ -14,23 +14,6 @@
   export let posts: PostItemStub[] = [];
   export let brandColors: BrandColors;
 
-  let initialPosts = [];
-  let loadMoreTrigger;
-  let initialLoadComplete = false;
-
-  onMount(() => {
-    initialPosts = posts.slice(0, 5);
-    initialLoadComplete = true; // Indicate that initial load is complete
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        const currentLength = initialPosts.length;
-        const additionalPosts = posts.slice(currentLength, currentLength + 5);
-        initialPosts = [...initialPosts, ...additionalPosts];
-      }
-    });
-    observer.observe(loadMoreTrigger);
-  });
-
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
   const getLabelVisibilityAndAlignment = (
@@ -70,11 +53,6 @@
     return !$showTags.size || postHasShownTag;
   };
 
-  $: displayedPosts = posts
-    .filter(
-      (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
-    )
-    .map(getLabelVisibilityAndAlignment);
 
   $: isPageBackgroundDark = $themeStore === SiteTheme.Dark
     || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
@@ -94,6 +72,34 @@
     });
     activeTags = tags;
   }
+
+  let loadMoreTrigger;
+  let initialLoadComplete = false;
+  let filteredPosts: PostItemStub[] = [];
+  let displayedPosts: PostItemStub[] = [];
+
+  $: {
+    filteredPosts = posts
+      .filter(
+        (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
+      )
+      .map(getLabelVisibilityAndAlignment);
+    displayedPosts = filteredPosts.slice(0, 5);
+  }
+
+  onMount(() => {
+    initialLoadComplete = true; // Indicate that initial load is complete
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const currentLength = displayedPosts.length;
+        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 5);
+        displayedPosts = [...displayedPosts, ...additionalPosts];
+      }
+    });
+    if (loadMoreTrigger) {
+      observer.observe(loadMoreTrigger);
+    }
+  });
 </script>
 
 <div class="heading-wrapper content-wrapper">
@@ -107,7 +113,7 @@
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
-    {#each initialPosts as post, i (post.slug)}
+    {#each displayedPosts as post, i (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
           isFirstLabel={i === 0}
@@ -122,17 +128,16 @@
           {brandColors}
           {isPageBackgroundDark}
           {activeTags}
-          isLastPost={i === initialPosts.length - 1}
+          isLastPost={i === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
     {/each}
-    {#if !initialPosts.length && initialLoadComplete}
+    {#if !displayedPosts.length && initialLoadComplete}
       <ConfusedTravolta reason="there are no results"/>
     {/if}
-    {#if initialPosts.length < posts.length}
-      <div bind:this={loadMoreTrigger}>
-      </div>
+    {#if displayedPosts.length < posts.length}
+      <div bind:this={loadMoreTrigger}></div>
     {/if}
   </div>
 </div>
