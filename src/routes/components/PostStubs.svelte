@@ -9,9 +9,25 @@
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterControls.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
+  import { onMount } from "svelte";
 
-  export let posts: PostItemStub[];
+  export let posts: PostItemStub[] = [];
   export let brandColors: BrandColors;
+
+  let initialPosts = [];
+  let loadMoreTrigger;
+
+  onMount(() => {
+    initialPosts = posts.slice(0, 5);
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        const currentLength = initialPosts.length;
+        const additionalPosts = posts.slice(currentLength, currentLength + 5);
+        initialPosts = [...initialPosts, ...additionalPosts];
+      }
+    });
+    observer.observe(loadMoreTrigger);
+  });
 
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
@@ -89,7 +105,7 @@
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
-    {#each displayedPosts as post, i (post.slug)}
+    {#each initialPosts as post, i (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
           isFirstLabel={i === 0}
@@ -104,13 +120,17 @@
           {brandColors}
           {isPageBackgroundDark}
           {activeTags}
-          isLastPost={i === displayedPosts.length - 1}
+          isLastPost={i === initialPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
     {/each}
-    {#if !displayedPosts.length}
+    {#if !initialPosts.length}
       <ConfusedTravolta reason="there are no results"/>
+    {/if}
+    {#if initialPosts.length < posts.length}
+      <div bind:this={loadMoreTrigger}>
+      </div>
     {/if}
   </div>
 </div>
