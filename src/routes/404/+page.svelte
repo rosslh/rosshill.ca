@@ -6,8 +6,8 @@
   const original404ErrorMessage = "Page non trouvée";
   const code = $page.error?.message === original404ErrorMessage ? 404 : 500;
   const message = $page.error?.message === original404ErrorMessage
-    ? "Page not found"
-    : "That's an error";
+    ? "Page non trouvée"
+    : "Il y a une erreur";
 </script>
 
 <div data-testid="error" class="content-wrapper main-content">
