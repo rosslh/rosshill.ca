@@ -4,7 +4,10 @@ import brandColors from "$data/brandColors.json";
 import type { BrandColors, PostItemPage } from "$lib/types";
 
 const posts: PostItemPage[] = Object.values(timeline)
-  .filter(({ contents, isHidden }) => contents && !isHidden)
+  .filter(({
+    contents,
+    isHidden,
+  }) => contents && !isHidden)
   .map((post) => ({
     contents: post.contents,
     date: {
