@@ -4,8 +4,9 @@
   import LeftArrow from "~icons/feather/corner-up-left";
 </script>
 
-<a data-sveltekit-preload-data data-testid="back-link" class="back-link" {href}>
-  <LeftArrow /> Retour au site
+<a class="back-link" data-sveltekit-preload-data data-testid="back-link" {href}>
+  <LeftArrow/>
+  Retour au site
 </a>
 
 <style>

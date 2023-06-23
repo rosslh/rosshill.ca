@@ -5,7 +5,10 @@
   import PostStubs from "./components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
 
-  export let data: { posts: PostItemStub[]; brandColors: BrandColors };
+  export let data: { posts: PostItemStub[]; brandColors: BrandColors } = {
+    posts: [],
+    brandColors: {},
+  };
   const {
     posts,
     brandColors,
@@ -53,7 +56,7 @@
       <Balancer>Je suis un Développeur web Freelance</Balancer>
     </h1>
     <p>
-        {intro}
+      {intro}
     </p>
   </div>
   <PostStubs {brandColors} {posts}/>

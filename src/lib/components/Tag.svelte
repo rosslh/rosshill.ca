@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let tagId: string;
+  export let tagId: string = "default";
   export let active = false;
   export let background: string = "000";
   export let foreground: string = "FFF";
@@ -32,7 +32,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   class="tag do-transition"
-  class:active
+  class:active={active}
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
   style={active ? `color: #${foreground};` : ""}

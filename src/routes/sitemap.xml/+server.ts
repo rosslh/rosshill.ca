@@ -1,7 +1,7 @@
 import { data } from "$data/posts.json";
 import { slugify } from "$lib/functions";
 import {
-  startOfMonth, format, max, parse,
+  format, max, parse, startOfMonth,
 } from "date-fns";
 import xmlFormat from "xml-formatter";
 
@@ -12,7 +12,10 @@ export async function GET() {
   const firstDayOfMonth = startOfMonth(new Date());
 
   const urls = data
-    .filter(({ contents, isHidden }) => contents && !isHidden)
+    .filter(({
+      contents,
+      isHidden,
+    }) => contents && !isHidden)
     .map((post) => ({
       loc: `https://antoinegreuzard.fr/item/${slugify(post.title)}`,
       lastmod: post.date && formatDate(parseDate(post.date)),

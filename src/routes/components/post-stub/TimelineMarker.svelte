@@ -3,7 +3,7 @@
   import { PostCategory } from "$lib/types";
 
   export let left: boolean;
-  export let eventType: PostCategory;
+  export let eventType: PostCategory = PostCategory.Other;
   export let showTooltip: boolean;
 
   const typeString = eventType[0]

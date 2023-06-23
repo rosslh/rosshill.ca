@@ -5,12 +5,12 @@
 </script>
 
 <img
-  data-testid="confused-travolta"
-  class="travolta"
-  src="/travolta.gif"
   alt="John Travolta est confu{reason ? ` car ${reason}` : ''}."
-  width={remsToPixels(20)}
-  height={remsToPixels(20)} />
+  class="travolta"
+  data-testid="confused-travolta"
+  height={remsToPixels(20)}
+  src="/travolta.gif"
+  width={remsToPixels(20)}/>
 
 <style>
   img.travolta {
