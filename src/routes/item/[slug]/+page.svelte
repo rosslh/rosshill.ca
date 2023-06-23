@@ -11,7 +11,15 @@
   import BackLink from "$lib/components/BackLink.svelte";
 
   export let data: {
-    post: { date: string; contents: string; title: string; excerpt: string; slug: string; tags: any[] };
+    post: {
+      date: string;
+      image: { extension: string; name: string };
+      contents: string;
+      title: string;
+      excerpt: string;
+      slug: string;
+      tags: any[]
+    };
     brandColors: { [key: string]: BrandColors }
   } = {
     post: {
@@ -21,6 +29,10 @@
       excerpt: "",
       contents: "",
       tags: [],
+      image: {
+        name: "",
+        extension: "",
+      },
     },
     brandColors: {},
   };
