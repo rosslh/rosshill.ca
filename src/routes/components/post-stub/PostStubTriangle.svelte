@@ -1,7 +1,7 @@
 <script lang="ts">
   export let left: boolean;
 
-  $: positionString = left ? "left" : "right";
+  export let positionString = left ? "left" : "right";
 </script>
 
 <div aria-hidden="true" class="arrow arrow-{positionString} do-transition"></div>

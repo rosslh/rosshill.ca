@@ -9,14 +9,14 @@
 <div class="label-wrapper do-transition">
   <span
     class="year-label do-transition"
-    class:first-label={isFirstLabel}
     class:centered-label={!isFirstLabel}
+    class:first-label={isFirstLabel}
   >
     {year}
   </span>
   {#if isFirstLabel}
     <div aria-hidden="true" class="first-label-line"></div>
-    <PostStubSpacer left />
+    <PostStubSpacer left/>
   {:else}
     <div
       aria-hidden="true"
@@ -124,6 +124,7 @@
       border-top-left-radius: 100%;
     }
   }
+
   @media (min-width: $breakpoint-s-min) {
     .first-label {
       z-index: 4;

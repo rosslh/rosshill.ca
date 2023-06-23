@@ -14,9 +14,9 @@
           alt="Antoine Greuzard"
           data-testid="headshot-img"
           height={remsToPixels(13)}
+          loading="eager"
           src="/headshot.jpg"
           width={remsToPixels(13)}
-          loading="eager"
         />
       </picture>
     </div>
@@ -32,19 +32,19 @@
          target="_blank">
         GitHub
       </a>
-      <InlineSeparator />
+      <InlineSeparator/>
       <a data-testid="linkedin-link" href="https://www.linkedin.com/in/antoine-greuzard" rel="noopener noreferrer"
          target="_blank">
         LinkedIn
       </a>
-      <InlineSeparator />
+      <InlineSeparator/>
       <a data-testid="resume-link" href="https://join.skype.com/invite/esIrFNeiMirt" rel="noopener noreferrer"
          target="_blank">
         Skype
       </a>
     </p>
   </div>
-  <Separator />
+  <Separator/>
 </div>
 
 <style lang="scss">

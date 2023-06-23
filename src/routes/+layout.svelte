@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
-  import { onMount } from "svelte";
   import type { SvelteComponent } from "svelte";
+  import { onMount } from "svelte";
 
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";

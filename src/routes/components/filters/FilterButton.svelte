@@ -3,13 +3,12 @@
   import cubicBezier from "bezier-easing";
 
   import type { PostCategory } from "$lib/types";
+  import Circle from "~icons/fa-regular/circle";
+  import CheckCircle from "~icons/fa-solid/check-circle";
 
   export let active: boolean;
   export let onClick: () => void;
   export let classPrefix: PostCategory;
-
-  import Circle from "~icons/fa-regular/circle";
-  import CheckCircle from "~icons/fa-solid/check-circle";
 
   let isToggling = false;
 
@@ -29,24 +28,24 @@
 </script>
 
 <button
-  data-testid="event-filter-{classPrefix}"
   class="{classPrefix}-button"
-  class:toggling={isToggling}
-  class:do-transition={!isToggling}
   class:active
+  class:do-transition={!isToggling}
+  class:toggling={isToggling}
+  data-testid="event-filter-{classPrefix}"
   on:click={handleClick}
 >
   {#if active}
     <span class="symbol" transition:fade={transitionOptions}>
-      <CheckCircle />
+      <CheckCircle/>
     </span>
   {:else}
     <span class="symbol" transition:fade={transitionOptions}>
-      <Circle />
+      <Circle/>
     </span>
   {/if}
   <span class="text">
-    <slot />
+    <slot/>
   </span>
 </button>
 

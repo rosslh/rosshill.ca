@@ -1,18 +1,45 @@
 <script lang="ts">
-  import type { BrandColors, PostItemPage } from "$lib/types";
+  import type { BrandColors } from "$lib/types";
 
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/tags";
   import { truncateBySentence } from "$lib/functions";
-
-  export let data: { post: PostItemPage, brandColors: BrandColors };
-  const { post, brandColors } = data;
-
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+
+  export let data: {
+    post: {
+      date: string;
+      image: { extension: string; name: string };
+      contents: string;
+      title: string;
+      excerpt: string;
+      slug: string;
+      tags: any[]
+    };
+    brandColors: { [key: string]: BrandColors }
+  } = {
+    post: {
+      title: "",
+      slug: "",
+      excerpt: "",
+      date: "",
+      contents: "",
+      tags: [],
+      image: {
+        name: "",
+        extension: "",
+      }, // Define image here
+    },
+    brandColors: {},
+  };
+  const {
+    post,
+    brandColors,
+  } = data;
 
   let mainContent: HTMLDivElement;
   onMount(async () => {
@@ -39,9 +66,8 @@
 </script>
 
 <MetaTags
-  title={meta.title}
-  description={meta.description}
   canonical={meta.url}
+  description={meta.description}
   openGraph={{
     article: {
       authors: [meta.author],
@@ -56,6 +82,7 @@
     type: "article",
     url: meta.url,
   }}
+  title={meta.title}
   twitter={{
     cardType: "summary_large_image",
     title: meta.title,
@@ -65,20 +92,20 @@
   }}
 />
 <div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
-  <BackLink href="/#timeline-{post.slug}" />
+  <BackLink href="/#timeline-{post.slug}"/>
   <article class="post-full">
     <h1 data-testid="post-title">{post.title}</h1>
     <div class="details">
       <div class="subtitle do-transition">
-        <PostDate date={post.date} />
+        <PostDate date={post.date}/>
         {#if post.repository}
-          <InlineSeparator />
+          <InlineSeparator/>
           <a target="_blank" rel="noopener noreferrer" href={post.repository}>
             GitHub
           </a>
         {/if}
         {#if post.website}
-          <InlineSeparator />
+          <InlineSeparator/>
           <a target="_blank" rel="noopener noreferrer" href={post.website}>
             Site web
           </a>
@@ -90,7 +117,7 @@
             <Tag
               {tagId}
               background={brandColors[tagId]?.bg}
-              foreground={brandColors[tagId]?.fg} />
+              foreground={brandColors[tagId]?.fg}/>
           {/each}
         </div>
       {/if}

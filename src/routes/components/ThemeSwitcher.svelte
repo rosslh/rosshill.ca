@@ -1,8 +1,5 @@
 <script lang="ts">
   import { SiteTheme } from "$lib/types";
-
-  export let selectedTheme: SiteTheme;
-
   import { themeStore } from "$lib/stores";
 
   import LightThemeIcon from "~icons/ion/ios-sunny";
@@ -10,6 +7,8 @@
   import SystemThemeIcon from "~icons/lucide/settings-2";
   import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
+
+  export let selectedTheme: SiteTheme = SiteTheme.Dark;
 
   const themes: [SiteTheme, SiteTheme, SiteTheme] = prefersColorSchemeDark(browser)
     ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark]
@@ -25,18 +24,18 @@
 
 <div class="theme-switcher-wrapper">
   <button
-    data-testid="theme-switcher"
-    title="Next theme"
     class="do-transition"
+    data-testid="theme-switcher"
     on:click={changeTheme}
+    title="Next theme"
   >
     <span aria-hidden="true" class="icon">
       {#if selectedTheme === SiteTheme.Light}
-        <LightThemeIcon />
+        <LightThemeIcon/>
       {:else if selectedTheme === SiteTheme.Dark}
-        <DarkThemeIcon />
+        <DarkThemeIcon/>
       {:else}
-        <SystemThemeIcon />
+        <SystemThemeIcon/>
       {/if}
     </span>
     <span class="description">{selectedTheme} theme</span>

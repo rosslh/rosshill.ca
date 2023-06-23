@@ -6,7 +6,7 @@
   <div aria-hidden="true" class="separator">
     <div class="line do-transition"></div>
     <div class="symbol do-transition">
-      <Code />
+      <Code/>
     </div>
     <div class="line do-transition"></div>
   </div>
