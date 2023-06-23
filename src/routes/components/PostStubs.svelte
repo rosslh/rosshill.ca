@@ -16,9 +16,11 @@
 
   let initialPosts = [];
   let loadMoreTrigger;
+  let initialLoadComplete = false;
 
   onMount(() => {
     initialPosts = posts.slice(0, 5);
+    initialLoadComplete = true; // Indicate that initial load is complete
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         const currentLength = initialPosts.length;
@@ -125,7 +127,7 @@
         />
       {/key}
     {/each}
-    {#if !initialPosts.length}
+    {#if !initialPosts.length && initialLoadComplete}
       <ConfusedTravolta reason="there are no results"/>
     {/if}
     {#if initialPosts.length < posts.length}
