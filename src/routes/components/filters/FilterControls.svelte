@@ -12,7 +12,7 @@
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
-  export let posts: PostItemStub[];
+  export let posts: PostItemStub[] = [];
   export let brandColors: BrandColors;
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
@@ -36,7 +36,7 @@
   $: otherActive = showCategories.has(PostCategory.Other);
   $: projectActive = showCategories.has(PostCategory.Project);
 
-  let tagsOrdered: string[] = [];
+  let tagsOrdered: string[];
 
   $: {
     const tagCounts: Record<string, number> = {};
