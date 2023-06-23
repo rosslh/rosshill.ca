@@ -3,7 +3,7 @@ title: Mermoz Academy
 isHidden:
 eventType: project
 excerpt: En tant que développeur web à Influactive, j'ai créé Mermoz Academy, une plateforme d'éducation en ligne, en utilisant des technologies comme JavaScript, HTML5, CSS3 et PHP. Cela a nécessité une maîtrise de divers outils, dont Vite, Git, GitHub, SASS, et Wordpress. Chaque défi a été l'occasion d'apprendre et de grandir.
-tags: [javascript, html5, css3, php, vite, git, github, sass, wordpress]
+tags: [javascript, html5, css3, php, vite, git, sass, wordpress]
 website: https://mermoz-academy.com/
 
 date: 2023-01-04
