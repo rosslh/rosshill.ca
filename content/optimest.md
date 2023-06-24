@@ -10,7 +10,7 @@ date: 2022-06-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: optimest_thumbnail
+thumbnail: optimest_logo
 thumbnailExt: png
 image: optimest
 imageExt: jpg
