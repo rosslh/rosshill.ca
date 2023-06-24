@@ -9,7 +9,7 @@ website: https://capbasket.fr/
 date: 2021-09-01
 isOngoing: false
 
-thumbnail: capbasket_thumbnail
+thumbnail: capbasket_logo
 thumbnailExt: png
 image: capbasket
 imageExt: jpg

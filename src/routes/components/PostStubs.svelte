@@ -74,46 +74,56 @@
   }
 
   let loadMoreTrigger;
-  let initialLoadComplete = false;
-  let filteredPosts: PostItemStub[] = [];
-  let displayedPosts: PostItemStub[] = [];
-  let displayedPostsLength: number = 7;
+  const initialLoadComplete = false;
+  let displayedPosts: PostItemStub[];
+  let displayedPostsLength: number = 5;
+  let initialDisplayedPostsLength = displayedPostsLength;
+
+  const MAX_POSTS_LENGTH = 1000;
+  const POSTS_INCREMENT = 10;
+
   $: {
-    filteredPosts = posts
-      .filter(
-        (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
-      )
+    const filteredPosts = posts
+      .filter((post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post))
       .map(getLabelVisibilityAndAlignment);
 
     displayedPosts = filteredPosts.slice(0, displayedPostsLength);
   }
 
-  $: {
-    // Reset the length of displayedPosts when the filters change
-    if ($showCategories.size || $showTags.size) {
-      displayedPostsLength = 1000;
+  $: if ($showCategories.size || $showTags.size) {
+    displayedPostsLength = MAX_POSTS_LENGTH;
+  }
+
+  let observer: IntersectionObserver | null = null;
+
+  function initialiseObserver() {
+    if (observer === null) {
+      observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting || entry.boundingClientRect?.bottom <= entry.rootBounds?.bottom) {
+          displayedPostsLength += POSTS_INCREMENT;
+        }
+      });
+    }
+
+    if (loadMoreTrigger) {
+      observer.observe(loadMoreTrigger);
     }
   }
 
   onMount(() => {
-    initialLoadComplete = true;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        displayedPostsLength += 15;
-      }
-
-      if (entry.rootBounds && entry.boundingClientRect.bottom <= entry.rootBounds.bottom) {
-        displayedPostsLength += 15;
-      }
-    });
-    if (loadMoreTrigger) {
-      observer.observe(loadMoreTrigger);
-    }
+    initialiseObserver();
   });
 
+  $: {
+    if (displayedPostsLength > initialDisplayedPostsLength) {
+      initialiseObserver();
+      initialDisplayedPostsLength = displayedPostsLength;
+    }
+  }
+
   onDestroy(() => {
-    if (loadMoreTrigger) {
-      loadMoreTrigger = null;
+    if (observer) {
+      observer.disconnect();
     }
   });
 </script>
@@ -153,7 +163,11 @@
       <ConfusedTravolta reason="there are no results"/>
     {/if}
     {#if displayedPosts.length < posts.length}
-      <div bind:this={loadMoreTrigger}></div>
+      <div bind:this={loadMoreTrigger}>
+        <div class="load-more-trigger">
+          <div class="load-more-trigger__text">Charger plus</div>
+        </div>
+      </div>
     {/if}
   </div>
 </div>

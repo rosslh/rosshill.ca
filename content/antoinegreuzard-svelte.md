@@ -9,7 +9,7 @@ repository: https://github.com/antoinegreuzard/mywebsite-svelte
 date: 2023-03-12
 isOngoing: false
 
-thumbnail: headshot
+thumbnail: freelance
 thumbnailExt: jpeg
 image: antoinegreuzard-new
 imageExt: jpg

@@ -10,7 +10,7 @@ repository: https://github.com/antoinegreuzard/mywebsite-react
 date: 2022-08-15
 isOngoing: false
 
-thumbnail: headshot
+thumbnail: freelance
 thumbnailExt: jpeg
 image: antoinegreuzard
 imageExt: jpg

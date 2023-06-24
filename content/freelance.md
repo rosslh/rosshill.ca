@@ -11,7 +11,7 @@ date: 2021-09-21
 isOngoing: true
 isSeasonal: false
 
-thumbnail: headshot
+thumbnail: freelance
 thumbnailExt: jpeg
 ---
 

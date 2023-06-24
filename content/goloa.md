@@ -10,7 +10,7 @@ date: 2022-02-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: goloa_logo
+thumbnail: goloa_logo_thumbnail
 thumbnailExt: jpeg
 image: goloa
 imageExt: jpg
