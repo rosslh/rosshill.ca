@@ -3,14 +3,14 @@ title: Dryade
 isHidden: false
 eventType: projet
 excerpt: Site web réalisé avec Wordpress et Elementor pour Dryade.
-tags: [wordpress, elementor, css3, html5, javascript]
+tags: [ wordpress, elementor, css3, html5, javascript ]
 website: https://dryade.fr/
 
 date: 2021-01-11
 isOngoing: false
 
-thumbnail: dryade_thumbnail
-thumbnailExt: jpg
+thumbnail: dryade_logo
+thumbnailExt: png
 image: dryade
 imageExt: jpg
 ---

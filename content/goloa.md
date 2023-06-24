@@ -2,7 +2,7 @@
 title: Goloa
 eventType: projet
 excerpt: Site e-commerce réalisé avec Wordpress, Elementor et Dokan.
-tags: [wordpress, elementor, woocommerce, css3, html5, javascript]
+tags: [ wordpress, elementor, woocommerce, css3, html5, javascript ]
 website: https://goloa.fr/
 repository:
 
@@ -10,7 +10,7 @@ date: 2022-02-15
 isOngoing: false
 isSeasonal: false
 
-thumbnail: goloa_thumbnail
+thumbnail: goloa_logo
 thumbnailExt: jpg
 image: goloa
 imageExt: jpg

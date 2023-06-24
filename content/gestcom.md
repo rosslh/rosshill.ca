@@ -2,13 +2,13 @@
 title: Gest'Com
 eventType: projet
 excerpt: GEST'COM propose des formations en développement commercial, marketing/communication, web/réseaux sociaux, bureautique et logiciels, basées sur une alternance de cours théoriques et d’exercices de mise en situation adaptés à votre entreprise pour des résultats rapides.
-tags: [wordpress, css3, html5, javascript, php]
+tags: [ wordpress, css3, html5, javascript, php ]
 website: https://www.gest-com.fr
 date: 2019-09-15
 isOngoing: false
 isSeasonal: false
-thumbnail: marguin_thumbnail
-thumbnailExt: jpg
+thumbnail: gestcom_thumbnail
+thumbnailExt: png
 image: marguin
 imageExt: jpg
 ---
