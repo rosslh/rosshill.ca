@@ -187,28 +187,5 @@
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius-m);
     }
-
-    div.embed-wrapper {
-      width: 100%;
-      max-width: 600px;
-      margin: var(--spacing-2xl) auto;
-
-      > div {
-        position: relative;
-        padding-bottom: 56.25%;
-        overflow: hidden;
-        border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-m);
-      }
-    }
-  }
-
-  div.embed-wrapper :global(iframe) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
   }
 </style>
