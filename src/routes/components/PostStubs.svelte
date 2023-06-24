@@ -77,10 +77,10 @@
   const initialLoadComplete = false;
   let displayedPosts: PostItemStub[];
   let displayedPostsLength: number = 5;
-  let initialDisplayedPostsLength = displayedPostsLength;
+  let initialDisplayedPostsLength: number = displayedPostsLength;
 
-  const MAX_POSTS_LENGTH = 1000;
-  const POSTS_INCREMENT = 10;
+  const MAX_POSTS_LENGTH: number = 1000;
+  const POSTS_INCREMENT: number = 10;
 
   $: {
     const filteredPosts = posts
