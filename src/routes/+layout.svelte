@@ -25,7 +25,9 @@
   <ThemeSwitcher selectedTheme={selectedTheme}/>
   <div class="two-column">
     <Sidebar/>
-    <slot/>
+    <div>
+      <slot/>
+    </div>
   </div>
 </div>
 <svelte:head>
