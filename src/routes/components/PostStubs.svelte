@@ -77,14 +77,7 @@
   let initialLoadComplete = false;
   let filteredPosts: PostItemStub[] = [];
   let displayedPosts: PostItemStub[] = [];
-  let displayedPostsLength: number = 5;
-
-  function loadMorePosts() {
-    const currentLength = displayedPosts.length;
-    const additionalPosts = filteredPosts.slice(currentLength, currentLength + 10);
-    displayedPosts = [...displayedPosts, ...additionalPosts];
-  }
-
+  let displayedPostsLength: number = 7;
   $: {
     filteredPosts = posts
       .filter(
