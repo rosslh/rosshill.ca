@@ -98,7 +98,7 @@
   $: {
     // Reset the length of displayedPosts when the filters change
     if ($showCategories.size || $showTags.size) {
-      displayedPostsLength = 5;
+      displayedPostsLength = 1000;
     }
   }
 
