@@ -92,7 +92,7 @@
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         const currentLength = displayedPosts.length;
-        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 15);
+        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 30);
         displayedPosts = [...displayedPosts, ...additionalPosts];
       }
     });
