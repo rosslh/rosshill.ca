@@ -84,7 +84,7 @@
         (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
       )
       .map(getLabelVisibilityAndAlignment);
-    displayedPosts = filteredPosts.slice(0, 5);
+    displayedPosts = filteredPosts.slice(0, 10);
   }
 
   onMount(() => {
@@ -92,7 +92,7 @@
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         const currentLength = displayedPosts.length;
-        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 5);
+        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 10);
         displayedPosts = [...displayedPosts, ...additionalPosts];
       }
     });
