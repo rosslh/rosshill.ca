@@ -15,6 +15,14 @@ const config: UserConfig = {
   resolve: {
     alias: {
       $data: resolve("./src/data"),
+      $components: resolve("./src/routes/components"),
+    },
+  },
+  build: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
     },
   },
   optimizeDeps: {
