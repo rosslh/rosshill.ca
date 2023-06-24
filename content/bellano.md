@@ -6,7 +6,7 @@ website: https://www.psychologue-macon.fr/
 date: 2016-12-15
 isOngoing: false
 isSeasonal: false
-thumbnail: bellano_thumbnail
+thumbnail: bellano_logo
 thumbnailExt: png
 image: bellano
 imageExt: jpg

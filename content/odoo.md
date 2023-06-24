@@ -3,14 +3,14 @@ title: O-doo
 isHidden: false
 eventType: projet
 excerpt: Site web réalisé avec Wordpress et Elementor pour O-doo.
-tags: [wordpress, elementor, css3, html5, javascript]
+tags: [ wordpress, elementor, css3, html5, javascript ]
 website: https://o-doo.fr/
 
 date: 2021-09-15
 isOngoing: false
 
-thumbnail: o-doo_thumbnail
-thumbnailExt: jpg
+thumbnail: odoo_logo
+thumbnailExt: png
 image: o-doo
 imageExt: jpg
 ---
