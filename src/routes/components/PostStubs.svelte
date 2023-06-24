@@ -162,7 +162,7 @@
     {#if !displayedPosts.length && initialLoadComplete}
       <ConfusedTravolta reason="there are no results"/>
     {/if}
-    {#if displayedPosts.length < posts.length}
+    {#if displayedPosts.length < posts.length && $showCategories.size === 0 && $showTags.size === 0}
       <div bind:this={loadMoreTrigger}>
         <div class="load-more-trigger">
           <div class="load-more-trigger__text">Charger plus</div>
