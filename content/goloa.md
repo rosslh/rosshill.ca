@@ -11,7 +11,7 @@ isOngoing: false
 isSeasonal: false
 
 thumbnail: goloa_logo
-thumbnailExt: jpg
+thumbnailExt: jpeg
 image: goloa
 imageExt: jpg
 ---
