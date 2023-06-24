@@ -18,7 +18,7 @@ export async function GET() {
     }) => contents && !isHidden)
     .map((post) => ({
       loc: `https://antoinegreuzard.fr/item/${slugify(post.title)}`,
-      lastmod: post.date && formatDate(parseDate(post.date)),
+      lastmod: post.endDate ? formatDate(parseDate(post.endDate)) : formatDate(parseDate(post.date)),
       changefreq: "monthly",
       priority: 0.8,
     }));
