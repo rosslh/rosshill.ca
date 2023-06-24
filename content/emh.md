@@ -3,7 +3,7 @@ title: Eco Metal Habitat
 isHidden: false
 eventType: projet
 excerpt: Découvrez le site internet d'Eco Metal Habitat pour trouver des solutions de construction en métal sur-mesure, respectueuses de l'environnement.
-tags: [wordpress, css3, html5, javascript, php]
+tags: [ wordpress, css3, html5, javascript, php ]
 website: https://eco-metal-habitat.fr/
 repository:
 
@@ -12,7 +12,7 @@ isOngoing: false
 isSeasonal: false
 
 thumbnail: emh_thumbnail
-thumbnailExt: jpg
+thumbnailExt: png
 image: emh
 imageExt: jpg
 

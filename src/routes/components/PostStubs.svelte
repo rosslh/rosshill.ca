@@ -84,7 +84,7 @@
         (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
       )
       .map(getLabelVisibilityAndAlignment);
-    displayedPosts = filteredPosts.slice(0, 6);
+    displayedPosts = filteredPosts.slice(0, 10);
   }
 
   onMount(() => {

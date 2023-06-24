@@ -7,7 +7,7 @@ date: 2016-12-15
 isOngoing: false
 isSeasonal: false
 thumbnail: bellano_thumbnail
-thumbnailExt: jpg
+thumbnailExt: png
 image: bellano
 imageExt: jpg
 ---

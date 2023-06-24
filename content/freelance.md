@@ -3,7 +3,7 @@ title: Développeur web - Freelance
 isHidden: false
 eventType: emploi
 excerpt: Je me lance dans le monde de l'entrepreneuriat en travaillant pour des agences web.
-tags: [javascript, svelte, vite, typescript, laravel, react, php, mysql, plesk, sass, wordpress, elementor, git, nodedotjs, bootstrap, tailwindcss, phpstorm, roots, netlify, cloudflare]
+tags: [ javascript, svelte, vite, typescript, laravel, react, php, mysql, plesk, sass, wordpress, elementor, git, nodedotjs, bootstrap, tailwindcss, phpstorm, roots, netlify, cloudflare ]
 website: https://antoinegreuzard.fr
 repository: https://github.com/antoinegreuzard
 
@@ -11,8 +11,8 @@ date: 2021-09-21
 isOngoing: true
 isSeasonal: false
 
-thumbnail: freelance
-thumbnailExt: jpg
+thumbnail: headshot
+thumbnailExt: jpeg
 ---
 
 Je suis Antoine Greuzard, un développeur web freelance basé en France. Depuis plusieurs années maintenant, je travaille

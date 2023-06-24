@@ -3,14 +3,14 @@ title: Ville de Venissieux
 isHidden: false
 eventType: projet
 excerpt: Découvrez le site internet de la ville de Vénissieux pour accéder à toutes les informations sur cette charmante commune de la région lyonnaise.
-tags: [wordpress, css3, html5, javascript, php]
+tags: [ wordpress, css3, html5, javascript, php ]
 
 date: 2023-01-15
 isOngoing: false
 isSeasonal: false
 
 thumbnail: venissieuxlogo
-thumbnailExt: jpg
+thumbnailExt: jpeg
 image: venissieux
 imageExt: png
 
