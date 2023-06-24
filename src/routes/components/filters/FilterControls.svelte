@@ -110,7 +110,7 @@
         showTags = showTags;
       }}
     >
-      <span class="symbol"><Times/></span> Clear filters
+      <span class="symbol"><Times/></span> Vider les filtres
     </button>
   {/if}
 </div>

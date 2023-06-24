@@ -77,6 +77,13 @@
   let initialLoadComplete = false;
   let filteredPosts: PostItemStub[] = [];
   let displayedPosts: PostItemStub[] = [];
+  let displayedPostsLength: number = 5;
+
+  function loadMorePosts() {
+    const currentLength = displayedPosts.length;
+    const additionalPosts = filteredPosts.slice(currentLength, currentLength + 10);
+    displayedPosts = [...displayedPosts, ...additionalPosts];
+  }
 
   $: {
     filteredPosts = posts
@@ -84,16 +91,26 @@
         (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
       )
       .map(getLabelVisibilityAndAlignment);
-    displayedPosts = filteredPosts.slice(0, 10);
+
+    displayedPosts = filteredPosts.slice(0, displayedPostsLength);
+  }
+
+  $: {
+    // Reset the length of displayedPosts when the filters change
+    if ($showCategories.size || $showTags.size) {
+      displayedPostsLength = 5;
+    }
   }
 
   onMount(() => {
-    initialLoadComplete = true; // Indicate that initial load is complete
+    initialLoadComplete = true;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        const currentLength = displayedPosts.length;
-        const additionalPosts = filteredPosts.slice(currentLength, currentLength + 30);
-        displayedPosts = [...displayedPosts, ...additionalPosts];
+        displayedPostsLength += 15;
+      }
+
+      if (entry.rootBounds && entry.boundingClientRect.bottom <= entry.rootBounds.bottom) {
+        displayedPostsLength += 15;
       }
     });
     if (loadMoreTrigger) {
@@ -103,7 +120,7 @@
 
   onDestroy(() => {
     if (loadMoreTrigger) {
-      loadMoreTrigger.remove();
+      loadMoreTrigger = null;
     }
   });
 </script>
