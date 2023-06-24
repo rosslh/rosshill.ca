@@ -2,7 +2,7 @@
 isHidden: false
 
 title: Groupe LEFEVRE
-eventType: project
+eventType: projet
 excerpt: Site intrnet du groupe LEFEVRE, Vente de poids lourds et d’utilitaires neufs et d’occasion dans le Grand Est.
 tags: [ javascript, wordpress, elementor, php, html5, css3, mysql ]
 website: https://groupelefevre.fr
