@@ -74,7 +74,6 @@
   }
 
   let loadMoreTrigger;
-  const initialLoadComplete = false;
   let displayedPosts: PostItemStub[];
   let displayedPostsLength: number = 5;
   let initialDisplayedPostsLength: number = displayedPostsLength;
@@ -159,7 +158,7 @@
         />
       {/key}
     {/each}
-    {#if !displayedPosts.length && initialLoadComplete}
+    {#if !displayedPosts.length}
       <ConfusedTravolta reason="there are no results"/>
     {/if}
     {#if displayedPosts.length < posts.length && $showCategories.size === 0 && $showTags.size === 0}
