@@ -61,7 +61,7 @@
     {#if endDate}
       &ndash; {date.isSeasonal ? format(endDate, "y", { locale: fr }) : format(endDate, "MMM y", { locale: fr })}
     {:else if date.isOngoing}
-      &ndash; Présent
+      &ndash; Aujourd'hui
     {/if}
     {#if duration}
       ({duration})
