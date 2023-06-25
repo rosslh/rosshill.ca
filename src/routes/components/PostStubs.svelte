@@ -94,14 +94,20 @@
   }
 
   let observer: IntersectionObserver | null = null;
+  const options: { rootMargin: string, threshold: number } = {
+    rootMargin: "200px",
+    threshold: 0,
+  };
 
   function initialiseObserver() {
     if (observer === null) {
-      observer = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting || entry.boundingClientRect?.bottom <= entry.rootBounds?.bottom) {
-          displayedPostsLength += POSTS_INCREMENT;
-        }
-      });
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            displayedPostsLength += POSTS_INCREMENT;
+          }
+        });
+      }, options);
     }
 
     if (loadMoreTrigger) {

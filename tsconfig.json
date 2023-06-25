@@ -1,70 +1,71 @@
 {
-    "compilerOptions": {
-        "moduleResolution": "node",
-        "module": "es2020",
-        "lib": [
-            "es2020",
-            "DOM"
-        ],
-        "target": "es2020",
-        /**
-            svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
-            to enforce using \`import type\` instead of \`import\` for Types.
-            */
-        "importsNotUsedAsValues": "error",
-        "isolatedModules": true,
-        "resolveJsonModule": true,
-        /**
-            To have warnings/errors of the Svelte compiler at the correct position,
-            enable source maps by default.
-            */
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "baseUrl": ".",
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitAny": true,
-        "noImplicitOverride": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noPropertyAccessFromIndexSignature": false,
-        "noUncheckedIndexedAccess": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "strict": true,
-        "strictBindCallApply": true,
-        "strictFunctionTypes": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
-        "allowJs": true,
-        "checkJs": false,
-        "paths": {
-            "$data": [
-                "src/data"
-            ],
-            "$data/*": [
-                "src/data/*"
-            ],
-            "$lib": [
-                "src/lib"
-            ],
-            "$lib/*": [
-                "src/lib/*"
-            ]
-        }
-    },
-    "include": [
-        "src/**/*.d.ts",
-        "src/**/*.js",
-        "src/**/*.ts",
-        "src/**/*.svelte",
-        "scripts/**/*.ts"
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "DOM",
+      "esnext"
     ],
-    "exclude": [
-        "./build",
-        "./svelte-kit",
-        "./node_modules",
-        "svelte.config.js"
-    ]
+    "target": "es2020",
+    /**
+        svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
+        to enforce using \`import type\` instead of \`import\` for Types.
+        */
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    /**
+        To have warnings/errors of the Svelte compiler at the correct position,
+        enable source maps by default.
+        */
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "allowJs": true,
+    "checkJs": false,
+    "paths": {
+      "$data": [
+        "src/data"
+      ],
+      "$data/*": [
+        "src/data/*"
+      ],
+      "$lib": [
+        "src/lib"
+      ],
+      "$lib/*": [
+        "src/lib/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "scripts/**/*.ts"
+  ],
+  "exclude": [
+    "./build",
+    "./svelte-kit",
+    "./node_modules",
+    "svelte.config.js"
+  ]
 }
