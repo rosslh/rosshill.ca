@@ -2,6 +2,7 @@
   import {
     endOfMonth, format, formatDuration, intervalToDuration, parse, startOfMonth,
   } from "date-fns";
+  import { fr } from "date-fns/locale";
   import type { PostDate } from "$lib/types";
 
   export let date: PostDate = {
@@ -55,10 +56,10 @@
   {#if isStartInFuture}
     Début:
   {/if}
-  {date.isSeasonal ? format(startDate, "y") : format(startDate, "MMM y")}
+  {date.isSeasonal ? format(startDate, "y", { locale: fr }) : format(startDate, "MMM y", { locale: fr })}
   {#if !isStartInFuture}
     {#if endDate}
-      &ndash; {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
+      &ndash; {date.isSeasonal ? format(endDate, "y", { locale: fr }) : format(endDate, "MMM y", { locale: fr })}
     {:else if date.isOngoing}
       &ndash; Présent
     {/if}
