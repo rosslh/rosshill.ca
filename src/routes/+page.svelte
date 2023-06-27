@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { MetaTags } from "svelte-meta-tags";
+  import {MetaTags} from "svelte-meta-tags";
   import Balancer from "svelte-wrap-balancer";
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type {BrandColors, PostItemStub} from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
-  import { truncateBySentence } from "$lib/functions";
+  import {truncateBySentence} from "$lib/functions";
 
   export let data: { posts: PostItemStub[]; brandColors: BrandColors } = {
     posts: [],
@@ -13,7 +13,7 @@
     posts,
     brandColors,
   } = data;
-  const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
+  const intro = "Bonjour, je suis Antoine Greuzard, un développeur web freelance passionné et spécialiste de l'intégration Wordpress. J'ai consacré 7 ans à transformer les visions en réalités numériques pour des agences web, avec plus de 100 projets réussis à mon actif. Parallèlement, j'ai la chance de faire partie de l'équipe Influactive, une expérience qui enrichit continuellement ma connaissance des tendances actuelles du web. Néanmoins, mon dévouement au travail freelance reste intact, toujours déterminé à offrir un service exceptionnel à mes clients. Prêt à travailler ensemble pour créer quelque chose de grand ?";
   const meta = {
     title: "Antoine Greuzard : Développeur Web Freelance",
     description: truncateBySentence(intro, 155),
