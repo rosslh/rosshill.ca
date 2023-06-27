@@ -1,5 +1,5 @@
 ---
-title: Ville de Venissieux
+title: Espace culture de Vénissieux
 isHidden: false
 eventType: projet
 excerpt: Découvrez le site internet de l'Espace culture de Vénissieux pour accéder à toutes ses actualités culturelles.
