@@ -1,9 +1,9 @@
 <script lang="ts">
-  import {MetaTags} from "svelte-meta-tags";
+  import { MetaTags } from "svelte-meta-tags";
   import Balancer from "svelte-wrap-balancer";
-  import type {BrandColors, PostItemStub} from "$lib/types";
+  import type { BrandColors, PostItemStub } from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
-  import {truncateBySentence} from "$lib/functions";
+  import { truncateBySentence } from "$lib/functions";
 
   export let data: { posts: PostItemStub[]; brandColors: BrandColors } = {
     posts: [],
