@@ -23,7 +23,7 @@
       url: "https://antoinegreuzard.fr/antoine-greuzard.jpg",
       width: 746,
       height: 1020,
-      alt: "Antoine greuzard: A propos, Projets, et Contact",
+      alt: "Antoine greuzard: Développeur web freelance",
     },
   };
 </script>
