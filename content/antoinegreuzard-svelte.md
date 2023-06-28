@@ -12,7 +12,7 @@ isOngoing: false
 thumbnail: freelance
 thumbnailExt: jpeg
 image: antoinegreuzard-new
-imageExt: jpg
+imageExt: png
 ---
 
 Mon site web a été réalisé avec Svelte, Sass, Netlify, Vite et Typescript. Le projet a été conçu pour me fournir une
