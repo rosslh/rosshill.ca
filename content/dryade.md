@@ -6,7 +6,7 @@ excerpt: Site web réalisé avec Wordpress et Elementor pour Dryade.
 tags: [ wordpress, elementor, css3, html5, javascript ]
 website: https://dryade.fr/
 
-date: 2021-01-11
+date: 2021-11-01
 isOngoing: false
 
 thumbnail: dryade_logo
