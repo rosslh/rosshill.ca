@@ -48,6 +48,20 @@
   <meta content="#da532c" name="msapplication-TileColor">
 
   <link href="/site.manifest" rel="manifest"/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-GZK9KNG1BD');
+  </script>
 </svelte:head>
 
 <style lang="scss">
