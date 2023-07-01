@@ -4,11 +4,11 @@
   import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
-  import { browser } from "$app/environment";
-
+  import { utcToZonedTime } from "date-fns-tz";
   import { occasions } from "$lib/occasions";
 
-  const today = new Date();
+  const dateToTorontoTz = (date: Date) => utcToZonedTime(date.toISOString(), "America/Toronto");
+  const today = dateToTorontoTz(new Date());
   const currentYear = today.getFullYear();
   const currentOccasion = occasions.find(
     ({ startDay, startMonth, durationDays }) => (
@@ -16,7 +16,7 @@
         .some((year: number) => {
           const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
           const endDate = endOfDay(addDays(startDate, durationDays - 1));
-          return today >= startDate && today <= endDate;
+          return today >= dateToTorontoTz(startDate) && today <= dateToTorontoTz(endDate);
         })),
   );
 </script>
@@ -28,7 +28,7 @@
         class="img-wrapper"
         class:rounded={!currentOccasion}
       >
-        {#if browser && currentOccasion?.imageName}
+        {#if currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
             <source srcset="/occasions/{currentOccasion.imageName}.webp" type="image/webp" />
             <source srcset="/occasions/{currentOccasion.imageName}.png" type="image/png" />
@@ -54,7 +54,7 @@
         {/if}
       </div>
     {/if}
-    {#if browser && currentOccasion?.blurb}
+    {#if currentOccasion?.blurb}
       <p
         class="occasion-blurb"
         data-testid="occasion-blurb-{currentOccasion.name}"
@@ -116,7 +116,7 @@
 
       .occasion-blurb {
         text-align: center;
-        padding: var(--spacing-m) 0;
+        padding: var(--spacing-m) 0 0;
         max-width: 20rem;
         width: 100%;
         color: var(--color-subtitle);

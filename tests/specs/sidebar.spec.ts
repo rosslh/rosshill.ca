@@ -1,5 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
-import { parse } from "date-fns";
+import { toDate } from "date-fns-tz";
+
 import {
   getLocator, expectTextContent, expectCount, waitForElement,
 } from "../commands.js";
@@ -11,24 +12,28 @@ test.beforeEach(async ({ page }) => {
 });
 
 async function setBrowserDate(page: Page, occasionDate: string) {
-  const fakeNow = parse(occasionDate, "yyyy-MM-dd", new Date()).getTime();
-  await page.addInitScript(`{
-        // Extend Date constructor to default to fakeNow
-        Date = class extends Date {
-          constructor(...args) {
-            if (args.length === 0) {
-              super(${fakeNow});
-            } else {
-              super(...args);
-            }
+  const torontoDateString = `${occasionDate}T12:00:00-05:00`;
+  const fakeNow = toDate(torontoDateString).getTime();
+  await page.addInitScript(
+    `{
+      Date = class extends Date {
+        constructor(...args) {
+          if (args.length === 0) {
+            super(${fakeNow});
+          } else {
+            super(...args);
           }
         }
-        // Override Date.now() to start from fakeNow
-        const __DateNowOffset = ${fakeNow} - Date.now();
-        const __DateNow = Date.now;
-        Date.now = () => __DateNow() + __DateNowOffset;
-      }`);
-  page.reload();
+      }
+      const __DateNowOffset = ${fakeNow} - Date.now();
+      const __DateNow = Date.now;
+      Date.now = () => __DateNow() + __DateNowOffset;
+    }`,
+  );
+
+  await waitForElement(page, "sidebar");
+
+  await page.reload();
 }
 
 test("Sidebar information is displayed", async ({ page }) => {
