@@ -18,13 +18,6 @@ const config: UserConfig = {
       $components: resolve("./src/routes/components"),
     },
   },
-  build: {
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
-  },
   optimizeDeps: {
     include: [
       "svelte",
