@@ -18,7 +18,7 @@ ignorePeriod = 0
 
 # Enabled providers to submit sitemap to (optional, default = 'google', 'yandex'). Possible providers are currently only 'google', 'yandex'.
 providers = [
-    "google",
+  "google",
 ]
 
 [[plugins]]
@@ -42,3 +42,8 @@ url = "https://antoinegreuzard.fr/"
 
 [[plugins]]
 package = "netlify-plugin-image-optim"
+
+[[headers]]
+for = "/*"
+[headers.values]
+Content-Security-Policy = "default-src 'self';"
