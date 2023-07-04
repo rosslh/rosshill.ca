@@ -50,7 +50,7 @@
   <link href="/site.manifest" rel="manifest"/>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD"></script>
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -77,10 +77,11 @@
       ],
       "worksFor": {
         "@type": "Organization",
-          "name": "Antoine Greuzard"
+        "name": "Antoine Greuzard"
       }
     }
   </script>
+
 </svelte:head>
 
 <style lang="scss">
