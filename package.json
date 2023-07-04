@@ -95,7 +95,7 @@
     "@types/lodash-es": "^4.17.7",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.60.1",
-    "apca-w3": "0.1.2",
+    "apca-w3": "0.1.9",
     "autoprefixer": "^10.4.14",
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
