@@ -22,8 +22,7 @@
       "dependencies": [
         "updateNvmrc",
         "getIcons",
-        "getWebp",
-        "PublishHeaders"
+        "getWebp"
       ],
       "files": [
         "src",
@@ -73,15 +72,6 @@
       ],
       "output": [
         ".nvmrc"
-      ]
-    },
-    "PublishHeaders": {
-      "command": "cp _headers build/_headers",
-      "files": [
-        "_headers"
-      ],
-      "output": [
-        "build/_headers"
       ]
     }
   },
