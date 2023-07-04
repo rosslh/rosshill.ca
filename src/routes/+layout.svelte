@@ -49,31 +49,6 @@
 
   <link href="/site.manifest" rel="manifest"/>
 
-  <!-- Google tag (gtag.js) -->
-  <script>
-    function loadGTM() {
-      const gtmScript = document.createElement('script');
-      gtmScript.defer = true;
-      gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD';
-      document.head.appendChild(gtmScript);
-
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
-      gtag('config', 'G-GZK9KNG1BD');
-    }
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadGTM);
-    } else {
-      window.addEventListener('load', loadGTM);
-    }
-  </script>
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
