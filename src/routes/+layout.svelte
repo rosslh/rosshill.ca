@@ -50,17 +50,28 @@
   <link href="/site.manifest" rel="manifest"/>
 
   <!-- Google tag (gtag.js) -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    function loadGTM() {
+      const gtmScript = document.createElement('script');
+      gtmScript.defer = true;
+      gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-GZK9KNG1BD';
+      document.head.appendChild(gtmScript);
 
-    function gtag() {
-      dataLayer.push(arguments);
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-GZK9KNG1BD');
     }
 
-    gtag('js', new Date());
-
-    gtag('config', 'G-GZK9KNG1BD');
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadGTM);
+    } else {
+      window.addEventListener('load', loadGTM);
+    }
   </script>
 
   <script type="application/ld+json">
