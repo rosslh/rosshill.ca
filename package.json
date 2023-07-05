@@ -93,7 +93,7 @@
     "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.0",
     "@types/lodash-es": "^4.17.7",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.60.1",
     "apca-w3": "0.1.2",
     "autoprefixer": "^10.4.14",
