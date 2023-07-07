@@ -119,7 +119,7 @@
     "simple-icons": "^9.4.0",
     "slugify": "^1.6.6",
     "svelte": "3.59.2",
-    "svelte-check": "^3.4.4",
+    "svelte-check": "^3.4.5",
     "svelte-meta-tags": "^2.8.0",
     "svelte-preprocess": "^5.0.4",
     "svelte-wrap-balancer": "^0.0.3",
