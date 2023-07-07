@@ -80,7 +80,7 @@
     "maintained node versions"
   ],
   "devDependencies": {
-    "@babel/core": "^7.22.7",
+    "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@iconify/json": "^2.2.87",
     "@playwright/test": "^1.35.1",
