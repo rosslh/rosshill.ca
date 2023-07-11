@@ -128,7 +128,7 @@
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.16.3",
     "vite": "4.4.2",
-    "wireit": "^0.9.5",
+    "wireit": "^0.10.0",
     "xml-formatter": "^3.4.1"
   },
   "engines": {
