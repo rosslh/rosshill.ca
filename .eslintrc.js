@@ -1,34 +1,34 @@
-{
+module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
   },
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
-    # "airbnb-typescript/base"
+    // "airbnb-typescript/base"
   ],
   ignorePatterns: ["*.cjs"],
   overrides: [{
     files: ["*.svelte"],
-    processor: "svelte3/svelte3"
+    processor: "svelte3/svelte3",
   }],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    # tsconfigRootDir: __dirname,
+    // tsconfigRootDir: __dirname,
     ecmaVersion: 2019,
     requireConfigFile: false,
     sourceType: "module",
-    # project: ["./tsconfig.json", "./tests/tsconfig.json"],
-    extraFileExtensions: ['.svelte'],
+    // project: ["./tsconfig.json", "./tests/tsconfig.json"],
+    extraFileExtensions: [".svelte"],
   },
   plugins: ["svelte3", "@typescript-eslint"],
   rules: {
     "@typescript-eslint/no-inferrable-types": 0,
     "@typescript-eslint/no-unused-vars": [1, {
-      argsIgnorePattern: "^_"
+      argsIgnorePattern: "^_",
     }],
     "brace-style": [1, "1tbs"],
     "camelcase": 1,
@@ -36,10 +36,10 @@
     "curly": [1, "multi-line"],
     "eol-last": 1,
     "eqeqeq": [2, "always", {
-      "null": "ignore"
+      "null": "ignore",
     }],
     "no-console": [1, {
-      allow: ["warn", "error"]
+      allow: ["warn", "error"],
     }],
     "no-constant-condition": 2,
     "no-implicit-coercion": 2,
@@ -65,9 +65,9 @@
     "prefer-destructuring": 0,
     "no-shadow": 0,
     "@typescript-eslint/no-shadow": 2,
-    # "@typescript-eslint/explicit-function-return-type": 2,
+    // "@typescript-eslint/explicit-function-return-type": 2,
   },
   settings: {
-    "svelte3/typescript": true
-  }
-}
+    "svelte3/typescript": true,
+  },
+};
