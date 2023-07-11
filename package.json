@@ -133,5 +133,8 @@
   },
   "engines": {
     "node": ">= 18.14.0"
+  },
+  "dependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.0.0"
   }
 }
