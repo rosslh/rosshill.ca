@@ -83,7 +83,7 @@
     "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@iconify/json": "^2.2.88",
-    "@playwright/test": "^1.35.1",
+    "@playwright/test": "^1.36.0",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.22.1",
     "@types/apca-w3": "^0.1.0",
