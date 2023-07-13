@@ -112,7 +112,7 @@
     "imagemin-webp": "^8.0.0",
     "isbot": "^3.6.10",
     "lodash-es": "^4.17.21",
-    "logrocket": "^4.0.3",
+    "logrocket": "^4.0.4",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.10.15",
     "sass": "^1.63.6",
