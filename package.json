@@ -82,7 +82,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/eslint-parser": "^7.22.7",
-    "@iconify/json": "^2.2.89",
+    "@iconify/json": "^2.2.90",
     "@playwright/test": "^1.36.0",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.22.3",
