@@ -92,7 +92,7 @@
     "@types/dateformat": "^5.0.0",
     "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.0",
-    "@types/lodash-es": "^4.17.7",
+    "@types/lodash-es": "^4.17.8",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.62.0",
     "apca-w3": "0.1.9",
