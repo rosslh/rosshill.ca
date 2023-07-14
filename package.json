@@ -103,7 +103,7 @@
     "date-fns": "^2.30.0",
     "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-svelte3": "^4.0.0",
     "hsluv-sass": "^2.0.1",
