@@ -10,6 +10,7 @@ export const tagLabels: Record<string, string> = {
   postgresql: "PostgreSQL",
   prosemirror: "ProseMirror",
   raspberrypi: "Raspberry Pi",
+  rubyonrails: "Ruby on Rails",
   tensorflow: "TensorFlow",
   typescript: "TypeScript",
   unity: "Unity 3D",

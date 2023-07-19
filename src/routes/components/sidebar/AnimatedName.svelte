@@ -67,6 +67,7 @@
 
   svg {
     height: 100%;
+    overflow: visible;
     width: 100%;
     pointer-events: none;
     transition: fill 0.9s ease, stroke 0.9s ease;
@@ -132,6 +133,8 @@
     z-index: -1;
     padding: 0;
     margin: 0;
+    font-size: var(--font-size-3xs);
+    white-space: nowrap;
   }
 
   @keyframes fade-in-animation {

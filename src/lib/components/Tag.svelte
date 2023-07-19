@@ -15,16 +15,27 @@
 
   $: tagString = tagLabels[tagId] ?? tagId;
 
-  const iconOffsets: Record<string, { x?: string, y?: string }> = {
+  type IconPosition = {
+    x?: string | 0;
+    y?: string | 0;
+    scale?: number;
+  };
+  const iconPositions: Record<string, IconPosition> = {
     django: { y: "0.1rem", x: "-0.05rem" },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
     vuedotjs: { y: "0.1rem" },
+    rubyonrails: { scale: 1.25 },
   };
 
-  const iconOffset = { x: 0, y: 0, ...iconOffsets[tagId] };
+  const iconPosition: IconPosition = {
+    x: 0,
+    y: 0,
+    scale: 1,
+    ...iconPositions[tagId],
+  };
 
   const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage).toString(16);
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
@@ -48,7 +59,7 @@
       src="/tags/{tagId}.svg"
       alt="{tagString} logo"
       loading={lazyLoad ? "lazy" : null}
-      style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
+      style:transform={`translate(${iconPosition.x}, ${iconPosition.y}) scale(${iconPosition.scale})`}
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)} />
   </span>
@@ -64,7 +75,7 @@
   .tag {
     display: inline-flex;
     align-items: center;
-    
+
     height: 1.5rem;
     margin: var(--spacing-2xs) var(--spacing-2xs) var(--spacing-2xs) 0;
     padding: 0 var(--spacing-3xs) 0 0;
@@ -101,7 +112,7 @@
       fill: var(--color-subtitle);
       height: 0.85rem;
       width: 0.85rem;
-      transform: translateX(0.35rem);
+      margin-left: 0.35rem;
     }
   }
 
