@@ -40,7 +40,8 @@
         "getPosts"
       ],
       "files": [
-        "src/data/posts.json"
+        "src/data/posts.json",
+        "scripts/getIcons.ts"
       ],
       "output": [
         "src/data/brandColors.json",
@@ -59,7 +60,8 @@
     "getWebp": {
       "command": "node --loader ts-node/esm ./scripts/getWebp.ts",
       "files": [
-        "assets/**/*.{png,jpg,jpeg}"
+        "assets/**/*.{png,jpg,jpeg}",
+        "scripts/getWebp.ts"
       ],
       "output": [
         "assets/**/*.webp"
@@ -68,7 +70,8 @@
     "updateNvmrc": {
       "command": "node --loader ts-node/esm ./scripts/updateNvmrc.ts",
       "files": [
-        "package.json"
+        "package.json",
+        "scripts/updateNvmrc.ts"
       ],
       "output": [
         ".nvmrc"
