@@ -18,7 +18,7 @@
       title: string;
       excerpt: string;
       slug: string;
-      tags: any[]
+      tags: string[];
     };
     brandColors: { [key: string]: BrandColors }
   } = {
