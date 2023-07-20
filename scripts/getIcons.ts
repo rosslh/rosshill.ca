@@ -46,7 +46,7 @@ function getForegroundColors(): { light: string; dark: string } {
     fileLines: string[],
     propertyName: string,
   ): number[] => {
-    const escapedPropertyName = propertyName.replace("$", "\\$");
+    const escapedPropertyName = propertyName.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
     const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
     const matches = fileLines.filter((line) => pattern.test(line));
 
