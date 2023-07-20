@@ -115,7 +115,7 @@
     "logrocket": "^4.0.4",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.10.16",
-    "sass": "^1.63.6",
+    "sass": "^1.64.0",
     "simple-icons": "^9.6.0",
     "slugify": "^1.6.6",
     "svelte": "3.59.2",
