@@ -113,7 +113,7 @@
     "hsluv-ts": "^1.0.1",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
-    "isbot": "^3.6.10",
+    "isbot": "^3.6.13",
     "lodash-es": "^4.17.21",
     "logrocket": "^4.0.4",
     "markdown-json": "^1.6.1",
