@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let tagId: string = "default";
+  export let tagId: string;
   export let active = false;
   export let background: string = "000";
   export let foreground: string = "FFF";
@@ -10,57 +10,62 @@
   export let needsOutlineOnLightBg = false;
   export let needsOutlineOnDarkBg = false;
 
-  import { tagLabels } from "$lib/constants";
+  import { tagLabels } from "$lib/tags";
   import { remsToPixels } from "$lib/functions";
 
   $: tagString = tagLabels[tagId] ?? tagId;
 
-  const iconOffsets: Record<string, { x?: string, y?: string }> = {
-    django: {
-      y: "0.1rem",
-      x: "-0.05rem",
-    },
+  type IconPosition = {
+    x?: string | 0;
+    y?: string | 0;
+    scale?: number;
+  };
+  const iconPositions: Record<string, IconPosition> = {
+    django: { y: "0.1rem", x: "-0.05rem" },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
+    vuedotjs: { y: "0.1rem" },
+    rubyonrails: { scale: 1.25 },
   };
 
-  const iconOffset = {
+  const iconPosition: IconPosition = {
     x: 0,
     y: 0,
-    ...iconOffsets[tagId],
+    scale: 1,
+    ...iconPositions[tagId],
   };
 
-  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage)
-    .toString(16);
+  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage).toString(16);
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   class="tag do-transition"
-  class:active = {active}
+  class:active={active}
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
   style={active ? `color: #${foreground};` : ""}
-  this={onClick ? "button" : "div"}>
+  this={onClick ? "button" : "div"}
+>
   <span
     class="logo-wrapper do-transition"
-    class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
     style="background-color: #{background};"
+    class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
   >
     <img
-      alt="{tagString} logo"
-      height={remsToPixels(0.85)}
-      loading={lazyLoad ? "lazy" : null}
       src="/tags/{tagId}.svg"
-      style="margin-left: {iconOffset.x}; margin-top: {iconOffset.y};"
-      width={remsToPixels(0.85)}/>
+      alt="{tagString} logo"
+      loading={lazyLoad ? "lazy" : null}
+      style:transform={`translate(${iconPosition.x}, ${iconPosition.y}) scale(${iconPosition.scale})`}
+      height={remsToPixels(0.85)}
+      width={remsToPixels(0.85)} />
   </span>
   <span
-    class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
     style={`border-left: 1px solid ${dividerColor};`}
+    class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
   >
     {tagString}
   </span>
@@ -107,7 +112,7 @@
       fill: var(--color-subtitle);
       height: 0.85rem;
       width: 0.85rem;
-      transform: translateX(0.35rem);
+      margin-left: 0.35rem;
     }
   }
 

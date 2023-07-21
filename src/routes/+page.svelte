@@ -1,6 +1,5 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
-  import Balancer from "svelte-wrap-balancer";
   import type { BrandColors, PostItemStub } from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
@@ -62,7 +61,7 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h1 data-testid="main-heading">
-      <Balancer>Je suis un Développeur web Freelance</Balancer>
+      Je suis un Développeur web Freelance
     </h1>
     <p>
       {@html introHTML}
