@@ -93,4 +93,10 @@
       padding: var(--spacing-xl) 7%;
     }
   }
+
+  @media (min-width: $breakpoint-l-min) {
+    .theme-switcher-wrapper {
+      padding: var(--spacing-xl) var(--spacing-4xl);
+    }
+  }
 </style>
