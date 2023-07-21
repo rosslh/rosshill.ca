@@ -191,8 +191,13 @@
 
   @media (min-width: $breakpoint-s-min) {
     div.content-wrapper.posts-wrapper {
-      padding-left: 7%;
-      padding-right: 7%;
+      padding: 0 7%;
+    }
+  }
+
+  @media (min-width: $breakpoint-l-min) {
+    div.content-wrapper.posts-wrapper {
+      padding: 0 var(--spacing-4xl);
     }
   }
 

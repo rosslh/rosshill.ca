@@ -1,4 +1,4 @@
-@import "/node_modules/hsluv-sass";
+@import "/node_modules/hsluv-sass/src/hsluv";
 
 // Colors
 
@@ -109,6 +109,7 @@ div.app-wrapper[data-theme="dark"] {
   --spacing-xl: 1.5rem;
   --spacing-2xl: 2rem;
   --spacing-3xl: 3rem;
+  --spacing-4xl: 5rem;
 }
 
 // Border radius
