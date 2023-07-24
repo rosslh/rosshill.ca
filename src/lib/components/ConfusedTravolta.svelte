@@ -8,7 +8,7 @@
   data-testid="confused-travolta"
   class="travolta"
   src="/travolta.gif"
-  alt="John Travolta looking confused{reason ? ` because ${reason}` : ''}."
+  alt="John Travolta looking confused{reason ? ` because ${reason}` : ""}."
   width={remsToPixels(20)}
   height={remsToPixels(20)} />
 

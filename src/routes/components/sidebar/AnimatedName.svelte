@@ -46,13 +46,13 @@
           on:introstart={!browser
             ? null
             : () => {
-                setTimeout(() => {
-                  logoHasFill = true;
-                }, logoFillDelay);
-                setTimeout(() => {
-                  doneFilling = true;
-                }, logoFillDelay + 900);
-              }}
+              setTimeout(() => {
+                logoHasFill = true;
+              }, logoFillDelay);
+              setTimeout(() => {
+                doneFilling = true;
+              }, logoFillDelay + 900);
+            }}
           in:draw={!browser ? undefined : { duration: 3000, easing: sineIn }}
           d={svgPath}
         />

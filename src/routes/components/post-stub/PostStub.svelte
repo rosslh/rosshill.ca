@@ -52,24 +52,25 @@
     bind:this={element}
     id="timeline-{post.slug}"
     data-testid="post-stub-{post.slug}"
-    class="post-wrapper do-transition {left ? 'left' : 'right'}"
-
+    class="post-wrapper do-transition {left ? "left" : "right"}"
     on:mouseenter={() => {
       showTooltip = true;
     }}
     on:mouseleave={() => {
       showTooltip = false;
     }}
+    role="listitem"
   >
     <TimelineMarker
       {showTooltip}
       {left}
       eventType={post.eventType} />
-    <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
+    <div class="{getFadeInClass()} {left ? "left" : "right"}">
       <PostStubTriangle {left} />
       <div
         class="post do-transition"
         on:mouseenter|once={post.hasContent ? preloadPage : null}
+        role="article"
       >
         <PostStubHeading
           {post}
@@ -78,6 +79,7 @@
           {activeTags}
         />
         {#if post.excerpt}
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           <p class="post-text">{@html post.excerpt}</p>
         {/if}
         <PostStubFooter {post} />

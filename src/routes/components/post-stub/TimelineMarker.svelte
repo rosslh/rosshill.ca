@@ -13,13 +13,13 @@
 
 <div
   aria-hidden="true"
-  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}"
+  class="timeline-marker do-transition {left ? "left" : "right"} {eventType ?? PostCategory.Other}"
 
 >
   {#if showTooltip}
     <span
       transition:scale={{ duration: 200 }}
-      class="tooltip {left ? 'left' : 'right'} {eventType ?? PostCategory.Other}"
+      class="tooltip {left ? "left" : "right"} {eventType ?? PostCategory.Other}"
     >
       {typeString}
     </span>

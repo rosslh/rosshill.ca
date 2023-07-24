@@ -8,7 +8,7 @@
 
   export let data: { post: PostItemPage, brandColors: BrandColors };
   const { post, brandColors } = data;
-  
+
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
@@ -118,12 +118,14 @@
     {#if post.embed}
       <div class="embed-wrapper">
         <div class="do-transition">
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html post.embed}
         </div>
       </div>
     {/if}
 
     <div class="content">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
       {@html post.contents}
     </div>
   </article>
@@ -158,7 +160,7 @@
         margin: var(--spacing-xs) 0 0;
       }
     }
-    
+
     img {
       max-width: 600px;
       max-width: min(600px, 100%);
@@ -192,6 +194,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0; 
+    border: 0;
   }
 </style>
