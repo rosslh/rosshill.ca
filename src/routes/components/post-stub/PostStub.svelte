@@ -77,6 +77,7 @@
           {post}
         />
         {#if post.excerpt}
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           <p class="post-text">{@html post.excerpt}</p>
         {/if}
         <PostStubFooter {post}/>

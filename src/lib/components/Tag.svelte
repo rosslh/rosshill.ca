@@ -41,14 +41,14 @@
   $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   class="tag do-transition"
-  class:active={active}
+  class:active = { active }
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
   style={active ? `color: #${foreground};` : ""}
   this={onClick ? "button" : "div"}
+  role={onClick ? "button" : undefined}
 >
   <span
     class="logo-wrapper do-transition"

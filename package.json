@@ -4,6 +4,7 @@
   "author": "Antoine Greuzard (fork Ross Hill)",
   "type": "module",
   "scripts": {
+    "prepare": "svelte-kit sync",
     "build": "wireit",
     "build:test": "APP_ENV=test npm run build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -137,6 +138,7 @@
     "node": ">= 18.14.0"
   },
   "dependencies": {
-    "@microsoft/eslint-formatter-sarif": "^3.0.0"
+    "@microsoft/eslint-formatter-sarif": "^3.0.0",
+    "eslint-plugin-svelte": "^2.32.4"
   }
 }

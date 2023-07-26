@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BrandColors } from "$lib/types";
+  import type { BrandColors, PostItemPage } from "$lib/types";
 
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
@@ -9,37 +9,10 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
+  import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
-  export let data: {
-    post: {
-      date: string;
-      image: { extension: string; name: string };
-      contents: string;
-      title: string;
-      excerpt: string;
-      slug: string;
-      tags: string[];
-    };
-    brandColors: { [key: string]: BrandColors }
-  } = {
-    post: {
-      title: "",
-      slug: "",
-      date: "",
-      excerpt: "",
-      contents: "",
-      tags: [],
-      image: {
-        name: "",
-        extension: "",
-      },
-    },
-    brandColors: {},
-  };
-  const {
-    post,
-    brandColors,
-  } = data;
+  export let data: { post: PostItemPage, brandColors: BrandColors };
+  const { post, brandColors } = data;
 
   let mainContent: HTMLDivElement;
   onMount(async () => {
@@ -94,7 +67,7 @@
 <div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
   <BackLink href="/#timeline-{post.slug}"/>
   <article class="post-full">
-    <h1 data-testid="post-title">{post.title}</h1>
+    <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
       <div class="subtitle do-transition">
         <PostDate date={post.date}/>
@@ -107,7 +80,7 @@
         {#if post.website}
           <InlineSeparator/>
           <a target="_blank" rel="noopener noreferrer" href={post.website}>
-            Site web
+            Website
           </a>
         {/if}
       </div>
@@ -141,18 +114,28 @@
         />
       </picture>
     {/if}
+    {#if post.embed}
+      <div class="embed-wrapper">
+        <div class="do-transition">
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          {@html post.embed}
+        </div>
+      </div>
+    {/if}
 
     <div class="content">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
       {@html post.contents}
     </div>
   </article>
+  <CopyrightNotice/>
 </div>
 
 <style lang="scss">
   article.post-full {
     margin-bottom: var(--spacing-3xl);
 
-    h1 {
+    h2 {
       margin-top: var(--spacing-m);
     }
 
@@ -187,5 +170,28 @@
       border: 1px solid var(--color-border);
       border-radius: var(--border-radius-m);
     }
+
+    div.embed-wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: var(--spacing-2xl) auto;
+
+      > div {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-m);
+      }
+    }
+  }
+
+  div.embed-wrapper :global(iframe) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 </style>

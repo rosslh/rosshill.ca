@@ -8,12 +8,16 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
+    "plugin:svelte/recommended",
     // "airbnb-typescript/base"
   ],
   ignorePatterns: ["*.cjs"],
   overrides: [{
     files: ["*.svelte"],
-    processor: "svelte3/svelte3",
+    parser: "svelte-eslint-parser",
+    parserOptions: {
+      parser: "@typescript-eslint/parser",
+    },
   }],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -24,7 +28,7 @@ module.exports = {
     // project: ["./tsconfig.json", "./tests/tsconfig.json"],
     extraFileExtensions: [".svelte"],
   },
-  plugins: ["svelte3", "@typescript-eslint"],
+  plugins: ["@typescript-eslint"],
   rules: {
     "@typescript-eslint/no-inferrable-types": 0,
     "@typescript-eslint/no-unused-vars": [1, {
@@ -44,13 +48,13 @@ module.exports = {
     "no-constant-condition": 2,
     "no-implicit-coercion": 2,
     "no-param-reassign": 0,
-    "no-trailing-spaces": [1, { "skipBlankLines": true }],
+    "no-trailing-spaces": [1, {"skipBlankLines": true}],
     "no-unused-vars": 1,
     "no-var": 2,
     "prefer-const": 1,
     "quote-props": [1, "consistent"],
-    "quotes": [1, "double"],
-    "@typescript-eslint/quotes": [1, "double"],
+    "quotes": 0,
+    "@typescript-eslint/quotes": 0,
     "semi": 1,
     "linebreak-style": 0,
     "import/no-extraneous-dependencies": 0,
