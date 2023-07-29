@@ -27,7 +27,7 @@ test("Event type filter works", async ({ page }) => {
 test("Skill tag filter works", async ({ page }) => {
   const svelteFilter = getLocator([page, "skill-filter-svelte"]);
   const jsFilter = getLocator([page, "skill-filter-javascript"]);
-  
+
   // Before clicking the filter, the wtformat item should exist
   await expectCount([page, "post-stub-wtformat"], 1);
 
@@ -65,16 +65,16 @@ test("Show more tags button works", async ({ page }) => {
   await expectCount([page, "show-more-tags"], 0);
 });
 
+const getAttribute = async (locator: Locator, attribute: string): Promise<string> => {
+  const attributeValue = await locator.getAttribute(attribute);
+  if (!attributeValue) throw new Error(`Element does not have attribute ${attribute}`);
+  return attributeValue;
+};
+
 test("Clear filters button works", async ({ page }) => {
   const clearFilters = getLocator([page, "clear-filters"]);
   const jobFilter = getLocator([page, "event-filter-job"]);
   const jsFilter = getLocator([page, "skill-filter-javascript"]);
-
-  const getAttribute = async (locator: Locator, attribute: string): Promise<string> => {
-    const attr = await locator.getAttribute(attribute);
-    if (!attr) throw new Error(`Element does not have attribute ${attribute}`);
-    return attr;
-  };
 
   // clearFilters does not exist
   await expectCount([page, "clear-filters"], 0);
@@ -86,23 +86,23 @@ test("Clear filters button works", async ({ page }) => {
   await expectCount([page, "skill-filter-javascript"], 1);
 
   // jobFilter does not have class active
-  const jobFilterClasses = (await getAttribute(jobFilter, "class")).split(" ");
-  expect(jobFilterClasses).not.toContain("active");
+  const jobFilterClasses = (await getAttribute(jobFilter, "class"));
+  expect(jobFilterClasses.split(" ")).not.toContain("active");
 
   // jsFilter does not have class active
-  const jsFilterClasses = (await getAttribute(jsFilter, "class")).split(" ");
-  expect(jsFilterClasses).not.toContain("active");
+  const jsFilterClasses = (await getAttribute(jsFilter, "class"));
+  expect(jsFilterClasses.split(" ")).not.toContain("active");
 
   await jobFilter.click();
   await jsFilter.click();
 
   // jobFilter has class active
-  const jobFilterClassesAfterClick = (await getAttribute(jobFilter, "class")).split(" ");
-  expect(jobFilterClassesAfterClick).toContain("active");
+  const jobFilterClassesAfterClick = (await getAttribute(jobFilter, "class"));
+  expect(jobFilterClassesAfterClick.split(" ")).toContain("active");
 
   // jsFilter has class active
-  const jsFilterClassesAfterClick = (await getAttribute(jsFilter, "class")).split(" ");
-  expect(jsFilterClassesAfterClick).toContain("active");
+  const jsFilterClassesAfterClick = (await getAttribute(jsFilter, "class"));
+  expect(jsFilterClassesAfterClick.split(" ")).toContain("active");
 
   // clearFilters exists
   await expectCount([page, "clear-filters"], 1);
@@ -110,12 +110,12 @@ test("Clear filters button works", async ({ page }) => {
   await clearFilters.click();
 
   // jobFilter does not have class active
-  const jobFilterClassesAfterClear = (await getAttribute(jobFilter, "class")).split(" ");
-  expect(jobFilterClassesAfterClear).not.toContain("active");
+  const jobFilterClassesAfterClear = (await getAttribute(jobFilter, "class"));
+  expect(jobFilterClassesAfterClear.split(" ")).not.toContain("active");
 
   // jsFilter does not have class active
-  const jsFilterClassesAfterClear = (await getAttribute(jsFilter, "class")).split(" ");
-  expect(jsFilterClassesAfterClear).not.toContain("active");
+  const jsFilterClassesAfterClear = (await getAttribute(jsFilter, "class"));
+  expect(jsFilterClassesAfterClear.split(" ")).not.toContain("active");
 });
 
 test("If no results, show confused travolta", async ({ page }) => {

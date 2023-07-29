@@ -21,7 +21,7 @@
     }, 300);
   };
 
-  const ease = [0.25, 0.1, 0.25, 1.0] as const;
+  const ease = [0.25, 0.1, 0.25, 1] as const;
   const transitionOptions = {
     duration: 300,
     easing: cubicBezier(...ease),

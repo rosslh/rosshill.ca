@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PostItemStub, BrandColors } from "$lib/types";
+  import type { PostItemStub, TagColors } from "$lib/types";
 
   export let post: PostItemStub;
-  export let brandColors: BrandColors;
+  export let tagColors: TagColors;
   export let left: boolean;
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
@@ -74,7 +74,7 @@
       >
         <PostStubHeading
           {post}
-          {brandColors}
+          {tagColors}
           {isPageBackgroundDark}
           {activeTags}
         />

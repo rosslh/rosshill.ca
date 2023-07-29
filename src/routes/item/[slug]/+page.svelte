@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { BrandColors, PostItemPage } from "$lib/types";
+  import type { TagColors, PostItemPage } from "$lib/types";
 
   import { MetaTags } from "svelte-meta-tags";
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/tags";
   import { truncateBySentence } from "$lib/functions";
 
-  export let data: { post: PostItemPage, brandColors: BrandColors };
-  const { post, brandColors } = data;
+  export let data: { post: PostItemPage, tagColors: TagColors };
+  const { post, tagColors } = data;
 
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
@@ -21,7 +21,7 @@
     mainContent.scrollIntoView();
   });
 
-  const capitalize = (text: string): string => text.replace(/\b\w/g, (m) => m.toUpperCase());
+  const capitalize = (text: string): string => text.replaceAll(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
     title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
@@ -90,8 +90,8 @@
           {#each post.tags as tagId}
             <Tag
               {tagId}
-              background={brandColors[tagId]?.bg}
-              foreground={brandColors[tagId]?.fg} />
+              background={tagColors[tagId]?.bg}
+              foreground={tagColors[tagId]?.fg} />
           {/each}
         </div>
       {/if}

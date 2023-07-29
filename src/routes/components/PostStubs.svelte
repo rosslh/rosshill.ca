@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { TagColors, PostItemStub } from "$lib/types";
   import { SiteTheme } from "$lib/types";
 
   export let posts: PostItemStub[];
-  export let brandColors: BrandColors;
+  export let tagColors: TagColors;
 
   import { browser } from "$app/environment";
   import { showCategories, showTags, themeStore } from "$lib/stores";
@@ -18,29 +18,29 @@
 
   const getLabelVisibilityAndAlignment = (
     post: PostItemStub,
-    i: number,
+    index: number,
     postsArray: PostItemStub[],
   ): PostItemStub => {
     const output = post;
 
-    const prevItem = postsArray[i - 1];
-    const prevLeftAligned = prevItem ? Boolean(prevItem.isLeftAligned) : false;
-    const prevYear = prevItem ? getYearFromDate(prevItem.date.start) : null;
+    const previousItem = postsArray[index - 1];
+    const previousLeftAligned = previousItem ? Boolean(previousItem.isLeftAligned) : false;
+    const previousYear = previousItem ? getYearFromDate(previousItem.date.start) : null;
 
     const year = getYearFromDate(output.date.start);
 
-    if (year !== prevYear) {
-      output.showYearLabel = true;
-      output.isLeftAligned = !prevLeftAligned;
-    } else {
+    if (year === previousYear) {
       output.showYearLabel = false;
-      output.isLeftAligned = prevLeftAligned;
+      output.isLeftAligned = previousLeftAligned;
+    } else {
+      output.showYearLabel = true;
+      output.isLeftAligned = !previousLeftAligned;
     }
 
     return output;
   };
 
-  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
+  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => $showCategories.size === 0 || $showCategories.has(post.eventType);
 
   $: isAncestorTagSelected = (tag: string): boolean => Boolean(
     tagAncestors[tag]
@@ -48,9 +48,9 @@
   );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
-    const postHasShownTag = typeof post.tags !== "undefined"
+    const postHasShownTag = post.tags !== undefined
       && post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
-    return !$showTags.size || postHasShownTag;
+    return $showTags.size === 0 || postHasShownTag;
   };
 
   $: displayedPosts = posts
@@ -66,14 +66,14 @@
 
   $: {
     const tags = new Set<string>();
-    $showTags.forEach((tag) => {
+    for (const tag of $showTags) {
       tags.add(tag);
-      Object.entries(tagAncestors).forEach(([childTag, ancestorTags]) => {
+      for (const [childTag, ancestorTags] of Object.entries(tagAncestors)) {
         if (ancestorTags.includes(tag)) {
           tags.add(childTag);
         }
-      });
-    });
+      }
+    }
     activeTags = tags;
   }
 </script>
@@ -83,33 +83,33 @@
   <FilterControls
     bind:showCategories={$showCategories}
     bind:showTags={$showTags}
-    {brandColors}
+    {tagColors}
     {posts}
   />
 </div>
 <div class="content-wrapper posts-wrapper">
   <div class="posts">
-    {#each displayedPosts as post, i (post.slug)}
+    {#each displayedPosts as post, index (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
-          isFirstLabel={i === 0}
+          isFirstLabel={index === 0}
           isRightToLeft={Boolean(post.isLeftAligned)}
           year={getYearFromDate(post.date.start)}
         />
       {/if}
       <!-- Only transition if index or alignment changes -->
-      {#key `${i}|${post.isLeftAligned}`}
+      {#key `${index}|${post.isLeftAligned}`}
         <PostStub
           {post}
-          {brandColors}
+          {tagColors}
           {isPageBackgroundDark}
           {activeTags}
-          isLastPost={i === displayedPosts.length - 1}
+          isLastPost={index === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
         />
       {/key}
     {/each}
-    {#if !displayedPosts.length}
+    {#if displayedPosts.length === 0}
       <ConfusedTravolta reason="there are no results" />
     {/if}
   </div>

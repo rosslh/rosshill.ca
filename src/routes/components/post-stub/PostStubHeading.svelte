@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { TagColors, PostItemStub } from "$lib/types";
 
   import Tag from "$lib/components/Tag.svelte";
-  
-  export let brandColors: BrandColors;
+
+  export let tagColors: TagColors;
   export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
@@ -49,12 +49,12 @@
       {#each post.tags as tagId}
         <Tag
           {tagId}
-          background={brandColors[tagId]?.bg}
-          foreground={brandColors[tagId]?.fg}
+          background={tagColors[tagId]?.bg}
+          foreground={tagColors[tagId]?.fg}
           active={activeTags.has(tagId)}
           isPageBackgroundDark={isPageBackgroundDark}
-          needsOutlineOnLightBg={brandColors[tagId]?.outlineOnLight}
-          needsOutlineOnDarkBg={brandColors[tagId]?.outlineOnDark}
+          needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
+          needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
           lazyLoad />
       {/each}
     </div>

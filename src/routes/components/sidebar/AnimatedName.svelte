@@ -43,17 +43,17 @@
       {#if showTitle || !browser}
         <path
           class={getPathClass()}
-          on:introstart={!browser
-            ? null
-            : () => {
+          on:introstart={browser
+            ? () => {
               setTimeout(() => {
                 logoHasFill = true;
               }, logoFillDelay);
               setTimeout(() => {
                 doneFilling = true;
               }, logoFillDelay + 900);
-            }}
-          in:draw={!browser ? undefined : { duration: 3000, easing: sineIn }}
+            }
+            : null}
+          in:draw={browser ? { duration: 3000, easing: sineIn } : undefined}
           d={svgPath}
         />
       {/if}

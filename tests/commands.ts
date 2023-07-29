@@ -19,7 +19,7 @@ export async function waitForElement(
   options?: WaitForSelectorOptions,
 ): Promise<void> {
   await page.waitForSelector(`[data-testid="${testId}"]`, {
-    timeout: 10000,
+    timeout: 10_000,
     state: "attached",
     ...options,
   });
@@ -27,7 +27,7 @@ export async function waitForElement(
 
 export async function expectCount(target: Target, expectedCount: number): Promise<void> {
   const locator = getLocator(target);
-  await expect(locator).toHaveCount(expectedCount, { timeout: 10000 });
+  await expect(locator).toHaveCount(expectedCount, { timeout: 10_000 });
 }
 
 export async function expectTextContent(
@@ -35,7 +35,7 @@ export async function expectTextContent(
   text?: string,
 ): Promise<void> {
   const locator = getLocator(target);
-  const elementText = await locator.evaluate((el) => el.textContent);
+  const elementText = await locator.evaluate((element) => element.textContent);
   if (text) {
     expect(elementText).toContain(text);
   } else {

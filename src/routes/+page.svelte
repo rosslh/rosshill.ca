@@ -1,10 +1,10 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
   import Balancer from "svelte-wrap-balancer";
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { TagColors, PostItemStub } from "$lib/types";
 
-  export let data: { posts: PostItemStub[]; brandColors: BrandColors };
-  const { posts, brandColors } = data;
+  export let data: { posts: PostItemStub[]; tagColors: TagColors };
+  const { posts, tagColors } = data;
 
   import PostStubs from "./components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
@@ -59,7 +59,7 @@
       <Balancer>{intro}</Balancer>
     </p>
   </div>
-  <PostStubs {posts} {brandColors} />
+  <PostStubs {posts} {tagColors} />
   <div class="content-wrapper">
     <CopyrightNotice />
   </div>

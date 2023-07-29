@@ -1,11 +1,11 @@
 import imagemin from "imagemin";
 import imageminWebp from "imagemin-webp";
 
-async function convertImages(dir: string): Promise<void> {
+async function convertImages(directory: string): Promise<void> {
   await imagemin(
-    [`${dir}/*.{png,jpg,jpeg}`],
+    [`${directory}/*.{png,jpg,jpeg}`],
     {
-      destination: dir,
+      destination: directory,
       plugins: [imageminWebp({ quality: 75 })],
     },
   );

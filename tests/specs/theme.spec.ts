@@ -9,9 +9,9 @@ type SiteTheme = "light" | "dark" | "system";
 async function getCssVariable(page: Page, variableName: string): Promise<string> {
   const locator = getLocator([page, "app-wrapper"]);
   return locator.evaluate(
-    (elem, varName) => {
-      const style = getComputedStyle(elem);
-      return style.getPropertyValue(`--${varName}`);
+    (element, variableName_) => {
+      const style = getComputedStyle(element);
+      return style.getPropertyValue(`--${variableName_}`);
     },
     variableName,
   );
@@ -25,7 +25,7 @@ async function getPreferredColorScheme(page: Page): Promise<"light" | "dark"> {
 
 async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   await page.waitForSelector(`[data-testid="app-wrapper"][data-theme="${theme}"]`);
-  expect(await getLocator([page, "app-wrapper"]).getAttribute("data-theme")).toBe(theme);
+  expect(await getLocator([page, "app-wrapper"]).getAttribute('data-theme')).toBe(theme);
   expect(await page.evaluate(() => document.cookie)).toBe(`theme=${theme}`);
 
   const computedTheme = theme === "system" ? await getPreferredColorScheme(page) : theme;
@@ -33,7 +33,7 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   const background = (await getCssVariable(page, "color-background")).replace(/\s/g, "");
   const contrastWithWhite = chroma.contrast(background, "white");
   const contrastWithBlack = chroma.contrast(background, "black");
-  
+
   if (computedTheme === "light") {
     expect(contrastWithBlack).toBeGreaterThan(contrastWithWhite);
   } else {
@@ -48,8 +48,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 const colorSchemes = ["light", "dark"] as const;
-for (let i = 0; i < colorSchemes.length; i += 1) {
-  const preferredColorScheme = colorSchemes[i];
+for (const preferredColorScheme of colorSchemes) {
   test.describe(`prefers-color-scheme: ${preferredColorScheme}`, () => {
     test.use({ colorScheme: preferredColorScheme });
 
@@ -63,15 +62,15 @@ for (let i = 0; i < colorSchemes.length; i += 1) {
         : ["system", "light", "dark"];
 
       await expectTheme(page, themeOrder[0]);
-    
+
       const themeButton = getLocator([page, "theme-switcher"]);
 
       await themeButton.click();
       await expectTheme(page, themeOrder[1]);
-    
+
       await themeButton.click();
       await expectTheme(page, themeOrder[2]);
-    
+
       await themeButton.click();
       await expectTheme(page, themeOrder[0]);
     });

@@ -82,12 +82,11 @@ const occasions = {
   "New Year's Day": ["2024-01-01"],
 };
 
-for (let i = 0; i < Object.keys(occasions).length; i += 1) {
-  const occasionName = Object.keys(occasions)[i];
-  const occasionDates = Object.values(occasions)[i];
+for (let index = 0; index < Object.keys(occasions).length; index += 1) {
+  const occasionName = Object.keys(occasions)[index];
+  const occasionDates = Object.values(occasions)[index];
 
-  for (let j = 0; j < occasionDates.length; j += 1) {
-    const occasionDate = occasionDates[j];
+  for (const occasionDate of occasionDates) {
     test(`Sidebar displays ${occasionName} on ${occasionDate}`, async ({ page }) => {
       await setBrowserDate(page, occasionDate);
       

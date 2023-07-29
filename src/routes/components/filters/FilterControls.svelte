@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { TagColors, PostItemStub } from "$lib/types";
   import { PostCategory, SiteTheme } from "$lib/types";
-  import { minTagNum, themeStore } from "$lib/stores";
+  import { minTagNumber, themeStore } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
   export let posts: PostItemStub[];
-  export let brandColors: BrandColors;
+  export let tagColors: TagColors;
 
   import Times from "~icons/fa-solid/times";
-  
+
   import { browser } from "$app/environment";
   import { tagAncestors } from "$lib/tags";
   import { prefersColorSchemeDark } from "$lib/functions";
@@ -42,24 +42,22 @@
   $: {
     const tagCounts: Record<string, number> = {};
 
-    posts.forEach(({ tags }) => {
+    for (const { tags: postTags } of posts) {
       // for each tag in post, add 1 to count
-      tags.forEach((tag) => {
+      for (const tag of postTags) {
         tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
-      });
+      }
 
       // get ancestors of each tag and remove duplicates
-      const ancestorTags = [...new Set(tags.map((tag) => tagAncestors[tag] ?? []).flat())];
+      const ancestorTags = [...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? []))];
 
-      ancestorTags
-        .filter((ancestorTag) => !tags.includes(ancestorTag)) // remove ancestors if they are already in post tags
-        .forEach((ancestorTag) => {
-          tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
-        });
-    });
+      for (const ancestorTag of ancestorTags.filter((tag) => !postTags.includes(tag))) {
+        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
+      }
+    }
 
     tagsOrdered = Object.entries(tagCounts)
-      .filter((tag) => tag[1] >= $minTagNum)
+      .filter((tag) => tag[1] >= $minTagNumber)
       .sort((a, b) => { // order by tag count then alphanumerically
         if (a[1] < b[1]) {
           return 1;
@@ -116,27 +114,27 @@
 </div>
 <div
   class="tag-buttons"
-  class:truncated={$minTagNum !== 0}
+  class:truncated={$minTagNumber !== 0}
 >
   {#each tagsOrdered as tag}
     <Tag
       tagId={tag}
       active={showTags.has(tag)}
-      background={brandColors[tag]?.bg}
-      foreground={brandColors[tag]?.fg}
+      background={tagColors[tag]?.bg}
+      foreground={tagColors[tag]?.fg}
 
       isPageBackgroundDark={isPageBackgroundDark}
-      needsOutlineOnLightBg={brandColors[tag]?.outlineOnLight ?? false}
-      needsOutlineOnDarkBg={brandColors[tag]?.outlineOnDark ?? false}
+      needsOutlineOnLightBg={tagColors[tag]?.outlineOnLight ?? false}
+      needsOutlineOnDarkBg={tagColors[tag]?.outlineOnDark ?? false}
 
       onClick={() => toggleTag(tag)} />
   {/each}
-  {#if $minTagNum !== 0}
+  {#if $minTagNumber !== 0}
     <button
       data-testid="show-more-tags"
       class="secondary-button do-transition"
       on:click={() => {
-        $minTagNum = 0;
+        $minTagNumber = 0;
       }}
     >
       Show more...

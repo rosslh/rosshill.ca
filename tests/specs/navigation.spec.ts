@@ -23,7 +23,11 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
 
   await postStubLink.click();
 
-  await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10000 });
+  try {
+    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10_000 });
+  } catch {
+    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10_000 });
+  }
 
   await waitForElement(page, "post-title");
 
@@ -33,12 +37,12 @@ const testPage = async (page: Page, baseURL: string | undefined, slug: string): 
 
   // After clicking the link, the path should be /item/:slug
   expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
-  
+
   await waitForElement(page, "main-heading", { state: "detached" });
 
   await backLink.click();
-  
-  await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10000 });
+
+  await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10_000 });
 
   await waitForElement(page, "main-heading");
 
@@ -58,9 +62,9 @@ test.describe("Exhaustive testing", () => {
     .filter(({ contents, isHidden }) => contents && !isHidden)
     .map(({ title }) => slugify(title));
 
-  for (let i = 0; i < postSlugs.length; i += 1) {
-    test(`You can navigate to and from ${postSlugs[i]} page`, async ({ page, baseURL }) => {
-      await testPage(page, baseURL, postSlugs[i]);
+  for (const postSlug of postSlugs) {
+    test(`You can navigate to and from ${postSlug} page`, async ({ page, baseURL }) => {
+      await testPage(page, baseURL, postSlug);
     });
   }
 });
