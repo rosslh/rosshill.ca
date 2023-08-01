@@ -26,7 +26,7 @@ export async function GET() {
   const mostRecentPostModified = data
     .filter((post) => post.contents && !post.isHidden && post.date)
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    .map((post) => parseDate(!post.date ? "" : post.endDate ?? post.date))
+    .map((post) => parseDate(post.date ?? post.endDate ?? ""))
     .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
 
   urls.unshift({
