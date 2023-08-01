@@ -45,7 +45,7 @@
         "scripts/getIcons.ts"
       ],
       "output": [
-        "src/data/brandColors.json",
+        "src/data/tagColors.json",
         "assets/tags"
       ]
     },
@@ -109,7 +109,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-svelte3": "^4.0.0",
+    "eslint-plugin-svelte": "^2.32.4",
+    "eslint-plugin-unicorn": "^48.0.1",
     "hsluv-sass": "^2.0.1",
     "hsluv-ts": "^1.0.1",
     "imagemin": "^8.0.1",
