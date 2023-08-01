@@ -1,17 +1,13 @@
 import getSlug from "slugify";
 
-export const slugify = (str: string): string => getSlug(str, {
-  replacement: "-",
-  lower: true,
-  remove: /[:]/,
-})
-  .replace(/-+/g, "-");
+export const slugify = (stringToSlugify: string): string => getSlug(stringToSlugify, { replacement: "-", lower: true, remove: /:/ }).replaceAll(/-+/g, "-");
+
 
 export const remsToPixels = (rems: number): number => Math.round(rems * 16);
 
 export const prefersColorSchemeDark = (isBrowser: boolean): boolean => isBrowser && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-export const formatPostTitle = (title: string): string => title.replace(/\s[-–—]\s/g, " – ");
+export const formatPostTitle = (title: string): string => title.replaceAll(/\s[–—-]\s/g, " – ");
 
 export const truncateBySentence = (text: string, maxLength: number): string => {
   const sentences: string[] = text
@@ -25,8 +21,8 @@ export const truncateBySentence = (text: string, maxLength: number): string => {
 
   let truncated: string = sentences[0];
 
-  for (let i = 1; i < sentences.length; i += 1) {
-    const sentence = sentences[i];
+  for (let index = 1; index < sentences.length; index += 1) {
+    const sentence = sentences[index];
     if (truncated.length + (sentence?.length ?? 0) > maxLength) {
       break;
     }

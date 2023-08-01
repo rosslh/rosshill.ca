@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { PostItemStub, TagColors } from "$lib/types";
   import { SiteTheme } from "$lib/types";
   import { browser } from "$app/environment";
   import { showCategories, showTags, themeStore } from "$lib/stores";
@@ -12,35 +12,35 @@
   import { onDestroy, onMount } from "svelte";
 
   export let posts: PostItemStub[] = [];
-  export let brandColors: BrandColors;
+  export let tagColors: TagColors;
 
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
   const getLabelVisibilityAndAlignment = (
     post: PostItemStub,
-    i: number,
+    index: number,
     postsArray: PostItemStub[],
   ): PostItemStub => {
     const output = post;
 
-    const prevItem = postsArray[i - 1];
-    const prevLeftAligned = prevItem ? Boolean(prevItem.isLeftAligned) : false;
-    const prevYear = prevItem ? getYearFromDate(prevItem.date.start) : null;
+    const previousItem = postsArray[index - 1];
+    const previousLeftAligned = previousItem ? Boolean(previousItem.isLeftAligned) : false;
+    const previousYear = previousItem ? getYearFromDate(previousItem.date.start) : null;
 
     const year = getYearFromDate(output.date.start);
 
-    if (year !== prevYear) {
-      output.showYearLabel = true;
-      output.isLeftAligned = !prevLeftAligned;
-    } else {
+    if (year === previousYear) {
       output.showYearLabel = false;
-      output.isLeftAligned = prevLeftAligned;
+      output.isLeftAligned = previousLeftAligned;
+    } else {
+      output.showYearLabel = true;
+      output.isLeftAligned = !previousLeftAligned;
     }
 
     return output;
   };
 
-  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => !$showCategories.size || $showCategories.has(post.eventType);
+  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => $showCategories.size === 0 || $showCategories.has(post.eventType);
 
   $: isAncestorTagSelected = (tag: string): boolean => Boolean(
     tagAncestors[tag]
@@ -48,9 +48,9 @@
   );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
-    const postHasShownTag = typeof post.tags !== "undefined"
+    const postHasShownTag = post.tags !== undefined
       && post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
-    return !$showTags.size || postHasShownTag;
+    return $showTags.size === 0 || postHasShownTag;
   };
 
 
@@ -61,15 +61,14 @@
 
   $: {
     const tags = new Set<string>();
-    $showTags.forEach((tag) => {
+    for (const tag of $showTags) {
       tags.add(tag);
-      Object.entries(tagAncestors)
-        .forEach(([childTag, ancestorTags]) => {
-          if (ancestorTags.includes(tag)) {
-            tags.add(childTag);
-          }
-        });
-    });
+      for (const [childTag, ancestorTags] of Object.entries(tagAncestors)) {
+        if (ancestorTags.includes(tag)) {
+          tags.add(childTag);
+        }
+      }
+    }
     activeTags = tags;
   }
 
@@ -94,7 +93,10 @@
   }
 
   let observer: IntersectionObserver | null = null;
-  const options: { rootMargin: string, threshold: number } = {
+  const options: {
+    rootMargin: string,
+    threshold: number
+  } = {
     rootMargin: "200px",
     threshold: 0,
   };
@@ -102,11 +104,11 @@
   function initialiseObserver() {
     if (observer === null) {
       observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             displayedPostsLength += POSTS_INCREMENT;
           }
-        });
+        }
       }, options);
     }
 
@@ -134,47 +136,47 @@
 </script>
 
 <div class="heading-wrapper content-wrapper">
-  <h2>Expérience</h2>
-  <FilterControls
-    bind:showCategories={$showCategories}
-    bind:showTags={$showTags}
-    {brandColors}
-    {posts}
-  />
+    <h2>Expérience</h2>
+    <FilterControls
+            bind:showCategories={$showCategories}
+            bind:showTags={$showTags}
+            {posts}
+            {tagColors}
+    />
 </div>
 <div class="content-wrapper posts-wrapper">
-  <div class="posts">
-    {#each displayedPosts as post, i (post.slug)}
-      {#if post.showYearLabel}
-        <YearLabel
-          isFirstLabel={i === 0}
-          isRightToLeft={Boolean(post.isLeftAligned)}
-          year={getYearFromDate(post.date.start)}
-        />
-      {/if}
-      <!-- Only transition if index or alignment changes -->
-      {#key `${i}|${post.isLeftAligned}`}
-        <PostStub
-          {post}
-          {brandColors}
-          {isPageBackgroundDark}
-          {activeTags}
-          isLastPost={i === displayedPosts.length - 1}
-          left={Boolean(post.isLeftAligned)}
-        />
-      {/key}
-    {/each}
-    {#if !displayedPosts.length}
-      <ConfusedTravolta reason="there are no results"/>
-    {/if}
-    {#if displayedPosts.length < posts.length && $showCategories.size === 0 && $showTags.size === 0}
-      <div bind:this={loadMoreTrigger}>
-        <div class="load-more-trigger">
-          <div class="load-more-trigger__text">Charger plus</div>
-        </div>
-      </div>
-    {/if}
-  </div>
+    <div class="posts">
+        {#each displayedPosts as post, index (post.slug)}
+            {#if post.showYearLabel}
+                <YearLabel
+                        isFirstLabel={index === 0}
+                        isRightToLeft={Boolean(post.isLeftAligned)}
+                        year={getYearFromDate(post.date.start)}
+                />
+            {/if}
+            <!-- Only transition if index or alignment changes -->
+            {#key `${index}|${post.isLeftAligned}`}
+                <PostStub
+                        {post}
+                        {tagColors}
+                        {isPageBackgroundDark}
+                        {activeTags}
+                        isLastPost={index === displayedPosts.length - 1}
+                        left={Boolean(post.isLeftAligned)}
+                />
+            {/key}
+        {/each}
+        {#if displayedPosts.length === 0}
+            <ConfusedTravolta reason="there are no results"/>
+        {/if}
+        {#if displayedPosts.length < posts.length && $showCategories.size === 0 && $showTags.size === 0}
+            <div bind:this={loadMoreTrigger}>
+                <div class="load-more-trigger">
+                    <div class="load-more-trigger__text">Charger plus</div>
+                </div>
+            </div>
+        {/if}
+    </div>
 </div>
 
 <style lang="scss">

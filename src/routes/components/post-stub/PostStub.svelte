@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { PostItemStub, TagColors } from "$lib/types";
   import { browser } from "$app/environment";
   import { preloadData } from "$app/navigation";
   import { reduceMotion } from "$lib/reduceMotion";
@@ -12,7 +12,7 @@
   import PostStubFooter from "./PostStubFooter.svelte";
 
   export let post: PostItemStub;
-  export let brandColors: BrandColors;
+  export let tagColors: TagColors;
   export let left: boolean;
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
@@ -42,51 +42,51 @@
 </script>
 
 <IntersectionObserver
-  bind:intersecting
-  complete={hasIntersected}
-  {element}
-  threshold={0.5}
+        bind:intersecting
+        complete={hasIntersected}
+        {element}
+        threshold={0.5}
 >
-  <div
-    bind:this={element}
-    class="post-wrapper do-transition {left ? 'left' : 'right'}"
-    data-testid="post-stub-{post.slug}"
-    id="timeline-{post.slug}"
+    <div
+            bind:this={element}
+            class="post-wrapper do-transition {left ? 'left' : 'right'}"
+            data-testid="post-stub-{post.slug}"
+            id="timeline-{post.slug}"
 
-    on:mouseenter={() => {
-      showTooltip = true;
-    }}
-    on:mouseleave={() => {
-      showTooltip = false;
-    }}
-  >
-    <TimelineMarker
-      eventType={post.eventType}
-      {left}
-      {showTooltip}/>
-    <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
-      <PostStubTriangle {left}/>
-      <div
-        class="post do-transition" data-testid="post-stub-{post.slug}"
-        on:mouseenter={post.hasContent ? preloadPage : null}
-      >
-        <PostStubHeading
-          {activeTags}
-          {brandColors}
-          {isPageBackgroundDark}
-          {post}
-        />
-        {#if post.excerpt}
-          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-          <p class="post-text">{@html post.excerpt}</p>
-        {/if}
-        <PostStubFooter {post}/>
-      </div>
+            on:mouseenter={() => {
+              showTooltip = true;
+            }}
+            on:mouseleave={() => {
+              showTooltip = false;
+            }}
+    >
+        <TimelineMarker
+                eventType={post.eventType}
+                {left}
+                {showTooltip}/>
+        <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
+            <PostStubTriangle {left}/>
+            <div
+                    class="post do-transition" data-testid="post-stub-{post.slug}"
+                    on:mouseenter={post.hasContent ? preloadPage : null}
+            >
+                <PostStubHeading
+                        {activeTags}
+                        {isPageBackgroundDark}
+                        {post}
+                        {tagColors}
+                />
+                {#if post.excerpt}
+                    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                    <p class="post-text">{@html post.excerpt}</p>
+                {/if}
+                <PostStubFooter {post}/>
+            </div>
+        </div>
     </div>
-  </div>
 </IntersectionObserver>
 {#if isLastPost}
-  <PostStubSpacer {left}/>
+    <PostStubSpacer {left}/>
 {/if}
 
 <style lang="scss">

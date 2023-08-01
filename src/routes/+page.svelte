@@ -1,17 +1,15 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
-  import type { BrandColors, PostItemStub } from "$lib/types";
+  import type { PostItemStub, TagColors } from "$lib/types";
   import PostStubs from "./components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
 
-  export let data: { posts: PostItemStub[]; brandColors: BrandColors } = {
-    posts: [],
-    brandColors: {},
-  };
+  export let data: { posts: PostItemStub[]; tagColors: TagColors };
   const {
     posts,
-    brandColors,
+    tagColors,
   } = data;
+
   const intro = "Je suis Antoine Greuzard, un développeur web freelance passionné et spécialiste de l'intégration Wordpress. J'ai consacré 7 ans à transformer les visions en réalités numériques pour des agences web, avec plus de 100 projets réussis à mon actif.\n"
     + "\n"
     + "Tout au long de ma carrière, j'ai eu l'occasion de travailler sur des projets de toutes tailles et de toutes complexités, chacun avec ses propres défis et récompenses. Cette expérience m'a permis de développer une approche polyvalente et adaptable, capable de répondre aux exigences spécifiques de chaque client et de chaque projet.\n"
@@ -67,7 +65,7 @@
       {@html introHTML}
     </p>
   </div>
-  <PostStubs {brandColors} {posts}/>
+  <PostStubs {posts} {tagColors}/>
 </div>
 
 <style lang="scss">

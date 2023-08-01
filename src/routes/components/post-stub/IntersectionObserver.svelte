@@ -32,7 +32,7 @@ SOFTWARE.
   import { afterUpdate, onDestroy, tick } from "svelte";
   import { browser } from "$app/environment";
 
-  let prevElement: Element | null = null;
+  let previousElement: Element | null = null;
   let observer: IntersectionObserver;
 
   afterUpdate(async () => {
@@ -44,12 +44,12 @@ SOFTWARE.
     }
 
     await tick();
-    if (observer && element != null && element !== prevElement) {
+    if (observer && element) {
       observer.observe(element);
-      if (prevElement != null) {
-        observer.unobserve(prevElement);
+      if (previousElement) {
+        observer.unobserve(previousElement);
       }
-      prevElement = element;
+      previousElement = element;
     }
   });
 

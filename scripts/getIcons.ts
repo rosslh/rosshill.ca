@@ -1,18 +1,23 @@
 import chroma from "chroma-js";
 import { APCAcontrast, sRGBtoY } from "apca-w3";
-import fs from "fs";
+import fs from "node:fs";
 import { hsluvToHex } from "hsluv-ts";
 import { keyBy, merge } from "lodash-es";
 
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
-import type { PostItemStub, BrandColors, BrandColor } from "$lib/types";
+import type { PostItemStub, TagColors, TagColor } from "$lib/types";
 import { tagAncestors } from "../src/lib/tags.js";
 
-const inputFiles = {
-  brandColors: "src/data/brandColors.json",
+const inputPaths = {
   posts: "src/data/posts.json",
+  stylesheet: "src/lib/styles/design-system.scss",
+};
+
+const outputPaths = {
+  tagSvgs: "assets/tags/",
+  tagColors: "src/data/tagColors.json",
 };
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
@@ -40,32 +45,31 @@ const icons: Record<string, Icon> = keyBy(
   "slug",
 );
 
-function handleFileError(err: Error | null): void {
-  if (err) {
-    throw err;
+function handleFileError(error: Error | null): void {
+  if (error) {
+    throw error;
   }
 }
 
+const getNumbersFromStylesheetProperty = (
+  fileLines: string[],
+  propertyName: string,
+): number[] => {
+  const escapedPropertyName = propertyName.replace("$", "\\$");
+  const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
+  const matches = fileLines.filter((line) => pattern.test(line));
+
+  return matches.map((m) => Number.parseFloat(m.replaceAll(/[^\d.]*/g, "")));
+};
+
 function getForegroundColors(): { light: string; dark: string } {
-  const getNumbersFromCssProperty = (
-    fileLines: string[],
-    propertyName: string,
-  ): number[] => {
-    const escapedPropertyName = propertyName.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
-    const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
-    const matches = fileLines.filter((line) => pattern.test(line));
-
-    return matches.map((m) => parseFloat(m.replace(/[^\d.]*/g, "")));
-  };
-
-  const cssFile = "src/lib/styles/design-system.scss";
-  const fileLines = fs.readFileSync(cssFile, "utf8").split(/\r?\n/);
-  const [themeHue] = getNumbersFromCssProperty(fileLines, "$theme-hue");
-  const [themeSaturation] = getNumbersFromCssProperty(
+  const fileLines = fs.readFileSync(inputPaths.stylesheet, "utf8").split(/\r?\n/);
+  const [themeHue] = getNumbersFromStylesheetProperty(fileLines, "$theme-hue");
+  const [themeSaturation] = getNumbersFromStylesheetProperty(
     fileLines,
     "$theme-saturation",
   );
-  const [darkColorLightness, lightColorLightness] = getNumbersFromCssProperty(
+  const [darkColorLightness, lightColorLightness] = getNumbersFromStylesheetProperty(
     fileLines,
     "--color-heading",
   );
@@ -76,7 +80,7 @@ function getForegroundColors(): { light: string; dark: string } {
     || typeof darkColorLightness !== "number"
     || typeof lightColorLightness !== "number"
   ) {
-    throw new Error("Could not parse theme colors");
+    throw new TypeError("Could not parse theme colors");
   }
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
@@ -109,7 +113,7 @@ function getBestContrastForeground(
     : darkForeground;
 }
 
-function getColorsForTag(icon: Icon, light: string, dark: string): BrandColor {
+function getColorsForTag(icon: Icon, light: string, dark: string): TagColor {
   const background = icon.hex;
   const foreground = getBestContrastForeground(background, light, dark);
 
@@ -122,64 +126,63 @@ function getColorsForTag(icon: Icon, light: string, dark: string): BrandColor {
   };
 }
 
-function createSvgsForTags(tags: string[], brandColors: BrandColors): void {
-  const tagDirectory = "assets/tags/";
-  if (!fs.existsSync(tagDirectory)) {
-    fs.mkdirSync(tagDirectory);
+function createSvgsForTags(tags: string[], tagColors: TagColors): void {
+  if (!fs.existsSync(outputPaths.tagSvgs)) {
+    fs.mkdirSync(outputPaths.tagSvgs);
   }
-  tags.forEach((tag) => {
-    const brandColor = brandColors[tag];
+  for (const tag of tags) {
+    const tagColor = tagColors[tag];
     const icon = icons[tag];
-    if (!(brandColor && icon)) {
+    if (!(tagColor && icon)) {
       throw new Error(`No icon or brand color found for tag ${tag}`);
     }
-    const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${brandColor.fg}"><path d="${icon.path}"/></svg>`;
-    fs.writeFile(`${tagDirectory}${tag}.svg`, svg, handleFileError);
-  });
+    const svg = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#${tagColor.fg}"><path d="${icon.path}"/></svg>`;
+    fs.writeFile(`${outputPaths.tagSvgs}${tag}.svg`, svg, handleFileError);
+  }
 }
 
-function getBrandColors(uniqueTags: string[]): BrandColors {
+function getTagColors(tags: string[]): TagColors {
   const { light, dark } = getForegroundColors();
   return merge(
     {},
-    ...uniqueTags.map((tag) => {
+    ...tags.map((tag) => {
       const icon = icons[tag];
       if (!icon) {
         throw new Error(`No icon found for tag ${tag}`);
       }
-      const brandColor = getColorsForTag(icon, light, dark);
-      return { [tag]: brandColor };
+      const tagColor = getColorsForTag(icon, light, dark);
+      return { [tag]: tagColor };
     }),
   );
 }
 
-function getTags(data: PostItemStub[]): string[] {
-  return data
+function getTags(posts: PostItemStub[]): string[] {
+  return posts
     .filter((post: PostItemStub) => post.tags?.length)
     .flatMap((post: PostItemStub) => {
       const postTags: string[] = [...post.tags];
 
-      post.tags.forEach((tag) => {
+      for (const tag of post.tags) {
         const ancestors = tagAncestors[tag];
         if (ancestors?.length) {
           postTags.push(...ancestors);
         }
-      });
+      }
 
-      return Array.from(new Set(postTags));
+      return [...new Set(postTags)];
     });
 }
 
 function main(): void {
-  fs.readFile(inputFiles.posts, "utf8", (_err, file) => {
-    const { data } = JSON.parse(file);
-    const tags: string[] = getTags(data);
-    const brandColors = getBrandColors(tags);
-    createSvgsForTags(tags, brandColors);
+  fs.readFile(inputPaths.posts, "utf8", (_error, file) => {
+    const { data: posts } = JSON.parse(file);
+    const tags = getTags(posts);
+    const tagColors = getTagColors(tags);
+    createSvgsForTags(tags, tagColors);
 
     fs.writeFile(
-      inputFiles.brandColors,
-      JSON.stringify(brandColors),
+      outputPaths.tagColors,
+      JSON.stringify(tagColors),
       handleFileError,
     );
   });

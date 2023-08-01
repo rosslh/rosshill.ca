@@ -42,14 +42,14 @@ export type PostItemPage = PostItemBase & {
   };
 }
 
-export type BrandColor = {
+export type TagColor = {
   fg: string,
   bg: string
   outlineOnLight: boolean,
   outlineOnDark: boolean
 }
 
-export type BrandColors = Record<string, BrandColor>
+export type TagColors = Record<string, TagColors>
 
 export enum SiteTheme {
   Light = "light",

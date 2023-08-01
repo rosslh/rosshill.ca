@@ -20,7 +20,7 @@
     }, 300);
   };
 
-  const ease = [0.25, 0.1, 0.25, 1.0] as const;
+  const ease = [0.25, 0.1, 0.25, 1] as const;
   const transitionOptions = {
     duration: 300,
     easing: cubicBezier(...ease),
@@ -28,23 +28,23 @@
 </script>
 
 <button
-  class="{classPrefix}-button"
-  class:active
-  class:do-transition={!isToggling}
-  class:toggling={isToggling}
-  data-testid="event-filter-{classPrefix}"
-  on:click={handleClick}
+        class="{classPrefix}-button"
+        class:active
+        class:do-transition={!isToggling}
+        class:toggling={isToggling}
+        data-testid="event-filter-{classPrefix}"
+        on:click={handleClick}
 >
-  {#if active}
+    {#if active}
     <span class="symbol" transition:fade={transitionOptions}>
       <CheckCircle/>
     </span>
-  {:else}
+    {:else}
     <span class="symbol" transition:fade={transitionOptions}>
       <Circle/>
     </span>
-  {/if}
-  <span class="text">
+    {/if}
+    <span class="text">
     <slot/>
   </span>
 </button>
