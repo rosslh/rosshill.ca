@@ -72,7 +72,7 @@
     activeTags = tags;
   }
 
-  let loadMoreTrigger;
+  let loadMoreTrigger: HTMLDivElement | null = null;
   let displayedPosts: PostItemStub[];
   let displayedPostsLength: number = 5;
   let initialDisplayedPostsLength: number = displayedPostsLength;
