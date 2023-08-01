@@ -4,7 +4,7 @@
   import Tag from "$lib/components/Tag.svelte";
   import { remsToPixels } from "$lib/functions";
 
-  export let TagColors: TagColors;
+  export let tagColors: TagColors;
   export let post: PostItemStub;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
@@ -48,12 +48,12 @@
             {#each post.tags as tagId}
                 <Tag
                         {tagId}
-                        background={TagColors[tagId]?.bg}
-                        foreground={TagColors[tagId]?.fg}
+                        background={tagColors[tagId]?.bg}
+                        foreground={tagColors[tagId]?.fg}
                         active={activeTags.has(tagId)}
                         isPageBackgroundDark={isPageBackgroundDark}
-                        needsOutlineOnLightBg={TagColors[tagId]?.outlineOnLight}
-                        needsOutlineOnDarkBg={TagColors[tagId]?.outlineOnDark}
+                        needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
+                        needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
                         lazyLoad/>
             {/each}
         </div>
