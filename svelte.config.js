@@ -6,10 +6,10 @@ import netlifyAdapter from "@sveltejs/adapter-netlify";
 const testIdReplacements = [
   /data-testid\s?=\s?".*?"/g,
   /data-testid\s?=\s?'.*?'/g,
-  /data-testid\s?=\s?\{.*?}/g,
+  /data-testid\s?=\s?{.*?}/g,
 ].map((regex) => [regex, ""]);
 
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import("@sveltejs/kit").Config} */
 export default {
   kit: {
     adapter: netlifyAdapter({
