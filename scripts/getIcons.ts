@@ -55,7 +55,7 @@ const getNumbersFromStylesheetProperty = (
   fileLines: string[],
   propertyName: string,
 ): number[] => {
-  const escapedPropertyName = propertyName.replace(/\$/g, "\\$");
+  const escapedPropertyName = propertyName.replace(/\\/g, "\\\\").replace(/\$/g, "\\$");
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
 
