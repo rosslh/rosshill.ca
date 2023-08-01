@@ -49,7 +49,7 @@ export type TagColor = {
   outlineOnDark: boolean
 }
 
-export type TagColors = Record<string, TagColors>
+export type TagColors = Record<string, TagColor>
 
 export enum SiteTheme {
   Light = "light",
