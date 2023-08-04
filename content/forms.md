@@ -1,11 +1,11 @@
 ---
 isHidden: false
 
-title: Forms pour WordPress
+title: Forms by Influactive
 eventType: projet
-excerpt: A plugin to create custom forms and display them anywhere on your website.
-tags: [ javascript, php, wordpress, css3, html5 ]
-repository: https://github.com/Influactive360/forms
+excerpt: Un plugin WordPress pour créer des formulaires personnalisés et les afficher n'importe où sur votre site Web.
+tags: [ javascript, php, wordpress, css3, html5, vite, git, composer, eslint ]
+repository: https://github.com/Influactive360/influactive-forms
 
 date: 2023-06-30
 isOngoing: true
