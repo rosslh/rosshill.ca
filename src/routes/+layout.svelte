@@ -3,8 +3,8 @@
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
-  import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
-  import Sidebar from "./components/sidebar/Sidebar.svelte";
+  import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+  import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
 
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.min.css";

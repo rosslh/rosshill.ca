@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PostStubSpacer from "./post-stub/PostStubSpacer.svelte";
+  import PostStubSpacer from "$lib/components/post-stub/PostStubSpacer.svelte";
 
   export let year: string;
   export let isRightToLeft: boolean;

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { MetaTags } from "svelte-meta-tags";
   import type { PostItemStub, TagColors } from "$lib/types";
-  import PostStubs from "./components/PostStubs.svelte";
+  import PostStubs from "$lib/components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
 
   export let data: { posts: PostItemStub[]; tagColors: TagColors };

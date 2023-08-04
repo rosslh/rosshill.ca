@@ -11,13 +11,13 @@ import type { PostItemStub, TagColors, TagColor } from "$lib/types";
 import { tagAncestors } from "../src/lib/tags.js";
 
 const inputPaths = {
-  posts: "src/data/posts.json",
+  posts: "data/posts.json",
   stylesheet: "src/lib/styles/design-system.scss",
 };
 
 const outputPaths = {
   tagSvgs: "assets/tags/",
-  tagColors: "src/data/tagColors.json",
+  tagColors: "data/tagColors.json",
 };
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;

@@ -41,11 +41,11 @@
         "getPosts"
       ],
       "files": [
-        "src/data/posts.json",
+        "data/posts.json",
         "scripts/getIcons.ts"
       ],
       "output": [
-        "src/data/tagColors.json",
+        "data/tagColors.json",
         "assets/tags"
       ]
     },
@@ -55,7 +55,7 @@
         "content"
       ],
       "output": [
-        "src/data/posts.json"
+        "data/posts.json"
       ]
     },
     "getWebp": {
@@ -97,8 +97,8 @@
     "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.0",
     "@types/lodash-es": "^4.17.8",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
     "apca-w3": "0.1.9",
     "autoprefixer": "^10.4.14",
     "bezier-easing": "^2.1.0",
@@ -117,7 +117,6 @@
     "imagemin-webp": "^8.0.0",
     "isbot": "^3.6.13",
     "lodash-es": "^4.17.21",
-    "logrocket": "^5.0.1",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.10.17",
     "sass": "^1.64.2",

@@ -1,75 +1,75 @@
 <script lang="ts">
-  import type { PostItemStub, TagColors } from "$lib/types";
-  import { PostCategory, SiteTheme } from "$lib/types";
-  import { minTagNumber, themeStore } from "$lib/stores";
-  import Times from "~icons/fa-solid/times";
+    import type { PostItemStub, TagColors } from "$lib/types";
+    import { PostCategory, SiteTheme } from "$lib/types";
+    import { minTagNumber, themeStore } from "$lib/stores";
+    import Times from "~icons/fa-solid/times";
 
-  import { browser } from "$app/environment";
-  import { tagAncestors } from "$lib/tags";
-  import { prefersColorSchemeDark } from "$lib/functions";
-  import FilterButton from "./FilterButton.svelte";
-  import Tag from "$lib/components/Tag.svelte";
+    import { browser } from "$app/environment";
+    import { tagAncestors } from "$lib/tags";
+    import { prefersColorSchemeDark } from "$lib/functions";
+    import FilterButton from "$lib/components/filters/FilterButton.svelte";
+    import Tag from "$lib/components/Tag.svelte";
 
-  export let showCategories: Set<PostCategory>;
-  export let showTags: Set<string>;
-  export let posts: PostItemStub[] = [];
-  export let tagColors: TagColors;
+    export let showCategories: Set<PostCategory>;
+    export let showTags: Set<string>;
+    export let posts: PostItemStub[] = [];
+    export let tagColors: TagColors;
 
-  function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
-    if (set.has(item)) {
-      set.delete(item);
-    } else {
-      set.add(item);
-    }
-    return set;
-  }
-
-  const toggleCategory = (category: PostCategory): void => {
-    showCategories = toggleItemInSet(showCategories, category);
-  };
-
-  const toggleTag = (tag: string): void => {
-    showTags = toggleItemInSet(showTags, tag);
-  };
-
-  $: jobActive = showCategories.has(PostCategory.Job);
-  $: otherActive = showCategories.has(PostCategory.Other);
-  $: projectActive = showCategories.has(PostCategory.Project);
-
-  let tagsOrdered: string[];
-
-  $: {
-    const tagCounts: Record<string, number> = {};
-
-    for (const { tags: postTags } of posts) {
-      // for each tag in post, add 1 to count
-      for (const tag of postTags) {
-        tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+    function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
+      if (set.has(item)) {
+        set.delete(item);
+      } else {
+        set.add(item);
       }
-
-      // get ancestors of each tag and remove duplicates
-      const ancestorTags = [...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? []))];
-
-      for (const ancestorTag of ancestorTags.filter((tag) => !postTags.includes(tag))) {
-        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
-      }
+      return set;
     }
 
-    tagsOrdered = Object.entries(tagCounts)
-      .filter((tag) => tag[1] >= $minTagNumber)
-      .sort((a, b) => { // order by tag count then alphanumerically
-        if (a[1] < b[1]) {
-          return 1;
-        }
-        if (a[1] > b[1]) {
-          return -1;
-        }
-        return a[0] < b[0] ? -1 : 1;
-      })
-      .map((tag) => tag[0]);
-  }
+    const toggleCategory = (category: PostCategory): void => {
+      showCategories = toggleItemInSet(showCategories, category);
+    };
 
-  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+    const toggleTag = (tag: string): void => {
+      showTags = toggleItemInSet(showTags, tag);
+    };
+
+    $: jobActive = showCategories.has(PostCategory.Job);
+    $: otherActive = showCategories.has(PostCategory.Other);
+    $: projectActive = showCategories.has(PostCategory.Project);
+
+    let tagsOrdered: string[];
+
+    $: {
+      const tagCounts: Record<string, number> = {};
+
+      for (const { tags: postTags } of posts) {
+        // for each tag in post, add 1 to count
+        for (const tag of postTags) {
+          tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+        }
+
+        // get ancestors of each tag and remove duplicates
+        const ancestorTags = [...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? []))];
+
+        for (const ancestorTag of ancestorTags.filter((tag) => !postTags.includes(tag))) {
+          tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
+        }
+      }
+
+      tagsOrdered = Object.entries(tagCounts)
+        .filter((tag) => tag[1] >= $minTagNumber)
+        .sort((a, b) => { // order by tag count then alphanumerically
+          if (a[1] < b[1]) {
+            return 1;
+          }
+          if (a[1] > b[1]) {
+            return -1;
+          }
+          return a[0] < b[0] ? -1 : 1;
+        })
+        .map((tag) => tag[0]);
+    }
+
+    $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">

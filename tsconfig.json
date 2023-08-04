@@ -43,10 +43,10 @@ enable source maps by default.
     "checkJs": false,
     "paths": {
       "$data": [
-        "src/data"
+        "data"
       ],
       "$data/*": [
-        "src/data/*"
+        "data/*"
       ],
       "$lib": [
         "src/lib"
