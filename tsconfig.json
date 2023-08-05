@@ -37,8 +37,8 @@
 		"allowJs": true,
 		"checkJs": false,
 		"paths": {
-      "$data": ["src/data"],
-      "$data/*": ["src/data/*"],
+      "$data": ["data"],
+      "$data/*": ["data/*"],
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"]
     }

@@ -12,7 +12,7 @@ const config: UserConfig = {
   ],
   resolve: {
     alias: {
-      $data: resolve("./src/data"),
+      $data: resolve("./data"),
     },
   },
 };

@@ -15,7 +15,7 @@
     "lint": "eslint . --ignore-path .gitignore",
     "preview": "vite preview --port 3000",
     "test": "playwright test",
-    "upgrade": "ncu -u --reject apca-w3 && npm i",
+    "upgrade": "ncu -u && npm i",
     "updateNvmrc": "wireit"
   },
   "wireit": {
@@ -30,7 +30,8 @@
         "src",
         "svelte.config.js",
         "vite.config.ts",
-        "tsconfig.json"
+        "tsconfig.json",
+        "package.json"
       ],
       "output": [
         "build"
@@ -42,11 +43,11 @@
         "getPosts"
       ],
       "files": [
-        "src/data/posts.json",
+        "data/posts.json",
         "scripts/getIcons.ts"
       ],
       "output": [
-        "src/data/tagColors.json",
+        "data/tagColors.json",
         "assets/tags"
       ]
     },
@@ -56,7 +57,7 @@
         "content"
       ],
       "output": [
-        "src/data/posts.json"
+        "data/posts.json"
       ]
     },
     "getWebp": {
@@ -84,10 +85,10 @@
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/eslint-parser": "^7.22.9",
-    "@iconify/json": "^2.2.95",
+    "@iconify/json": "^2.2.98",
     "@playwright/test": "^1.36.2",
     "@sveltejs/adapter-netlify": "^2.0.8",
-    "@sveltejs/kit": "1.22.3",
+    "@sveltejs/kit": "1.22.4",
     "@types/apca-w3": "^0.1.0",
     "@types/chroma-js": "^2.4.0",
     "@types/cssnano": "^5.0.0",
@@ -95,9 +96,9 @@
     "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.0",
     "@types/lodash-es": "^4.17.8",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
-    "apca-w3": "0.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "apca-w3": "0.1.9",
     "autoprefixer": "^10.4.14",
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
@@ -116,13 +117,13 @@
     "imagemin-webp": "^8.0.0",
     "isbot": "^3.6.13",
     "lodash-es": "^4.17.21",
-    "logrocket": "^4.0.4",
+    "logrocket": "^5.0.1",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.10.17",
-    "sass": "^1.64.1",
-    "simple-icons": "^9.7.0",
+    "sass": "^1.64.2",
+    "simple-icons": "^9.8.0",
     "slugify": "^1.6.6",
-    "svelte": "4.1.1",
+    "svelte": "4.1.2",
     "svelte-check": "^3.4.6",
     "svelte-meta-tags": "^2.8.0",
     "svelte-preprocess": "^5.0.4",
@@ -131,7 +132,7 @@
     "typescript": "^5.1.6",
     "universal-cookie": "^4.0.4",
     "unplugin-icons": "^0.16.5",
-    "vite": "4.4.7",
+    "vite": "4.4.8",
     "wireit": "^0.10.0",
     "xml-formatter": "^3.4.1"
   },

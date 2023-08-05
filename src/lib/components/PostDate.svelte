@@ -15,7 +15,7 @@
 
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
-  
+
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
 
@@ -23,11 +23,9 @@
     if (isStartInFuture) {
       return null;
     }
-
     if (!(endDate || date.isOngoing)) {
       return null;
     }
-    
     if (date.isSeasonal) {
       return null;
     }
@@ -36,17 +34,14 @@
 
     if (interval.days && interval.days >= 15) {
       interval.months = interval.months ? interval.months + 1 : 1;
-
       if (interval.months === 12) {
         interval.years = interval.years ? interval.years + 1 : 1;
         interval.months -= 12;
       }
     }
-
     if (!(interval.years || interval.months)) {
       interval.months = 1;
     }
-
     return formatDuration(interval, { format: ["years", "months"] });
   }
 

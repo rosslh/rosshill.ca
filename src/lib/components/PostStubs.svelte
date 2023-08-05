@@ -11,7 +11,7 @@
   import { prefersColorSchemeDark } from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";
-  import FilterControls from "./filters/FilterControls.svelte";
+  import FilterControls from "./filters/FilterButtons.svelte";
   import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
   const getYearFromDate = (date: string): string => date.slice(0, 4);

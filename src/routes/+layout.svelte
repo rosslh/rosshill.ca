@@ -1,27 +1,27 @@
 
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
-  
+
   export let data: { themeFromSession: SiteTheme };
-  
+
   import { onMount } from "svelte";
   import LogRocket from "logrocket";
 
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
 
-  import ThemeSwitcher from "./components/ThemeSwitcher.svelte";
-  import Sidebar from "./components/sidebar/Sidebar.svelte";
+  import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+  import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
 
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.min.css";
 
-  const getCssVariable = (element: HTMLElement, variableName: string): string => {
-    const style = getComputedStyle(element);
+  let appWrapper: HTMLDivElement;
+  const getCssVariable = (variableName: string): string => {
+    const style = getComputedStyle(appWrapper);
     return style.getPropertyValue(`--${variableName}`);
   };
 
-  let appWrapper: HTMLDivElement;
 
   onMount(() => {
     if (appWrapper) {
@@ -29,14 +29,14 @@
       console.log(
         "%cLike the site? Check out the source code here: https://github.com/rosslh/rosshill.ca",
         `
-        background-color: ${getCssVariable(appWrapper, "color-panel-background")};
-        border: 1px solid ${getCssVariable(appWrapper, "color-border")};
-        border-radius: ${getCssVariable(appWrapper, "border-radius-m")};
-        color: ${getCssVariable(appWrapper, "color-foreground")};
+        background-color: ${getCssVariable("color-panel-background")};
+        border: 1px solid ${getCssVariable("color-border")};
+        border-radius: ${getCssVariable("border-radius-m")};
+        color: ${getCssVariable("color-foreground")};
         display: inline-block;
         font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
         font-weight: 700;
-        padding: ${getCssVariable(appWrapper, "spacing-s")};
+        padding: ${getCssVariable("spacing-s")};
         `,
       );
     }

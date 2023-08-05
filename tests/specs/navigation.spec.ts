@@ -4,7 +4,7 @@ import { slugify } from "../../src/lib/functions.js";
 import {
   expectToBeAtTop, expectCount, getLocator, waitForElement,
 } from "../commands.js";
-import posts from "../../src/data/posts.json" assert { type: "json" };
+import posts from "../../data/posts.json" assert { type: "json" };
 
 test.describe.configure({ mode: "parallel" });
 

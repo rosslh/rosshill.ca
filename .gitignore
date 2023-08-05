@@ -16,6 +16,7 @@ tests/build
 build/
 .netlify/
 .wireit/
+data
 src/data
 assets/**/*.webp
 assets/tags

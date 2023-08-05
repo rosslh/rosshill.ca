@@ -6,7 +6,7 @@
   export let data: { posts: PostItemStub[]; tagColors: TagColors };
   const { posts, tagColors } = data;
 
-  import PostStubs from "./components/PostStubs.svelte";
+  import PostStubs from "$lib/components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 

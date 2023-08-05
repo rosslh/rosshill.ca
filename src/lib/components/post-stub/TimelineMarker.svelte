@@ -6,7 +6,7 @@
   export let eventType: PostCategory;
   export let showTooltip: boolean;
 
-  const typeString = eventType[0]
+  const typeString: string = eventType[0]
     ? eventType[0].toUpperCase() + eventType.slice(1)
     : "";
 </script>

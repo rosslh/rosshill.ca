@@ -4,7 +4,7 @@
   "src": "content/",
   "filePattern": "**/*.md",
   "ignore": "",
-  "dist": "src/data/posts.json",
+  "dist": "data/posts.json",
   "metadata": true,
   "server": false,
   "deterministicOrder": true
