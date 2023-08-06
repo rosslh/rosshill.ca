@@ -12,7 +12,7 @@ embed: <iframe width="560" height="315" src="https://www.youtube-nocookie.com/em
 repository: https://github.com/rosslh/ReqWise
 ---
 
-I made ReqWise for one reason: Building websites is fun. Collaborating with clients is *hard*.
+I made ReqWise for one reason: Building websites is fun. Collaborating with clients is _hard_.
 
 I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client's expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.
 

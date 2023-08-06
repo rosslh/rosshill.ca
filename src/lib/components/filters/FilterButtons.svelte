@@ -49,16 +49,21 @@
       }
 
       // get ancestors of each tag and remove duplicates
-      const ancestorTags = [...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? []))];
+      const ancestorTags = [
+        ...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? [])),
+      ];
 
-      for (const ancestorTag of ancestorTags.filter((tag) => !postTags.includes(tag))) {
+      for (const ancestorTag of ancestorTags.filter(
+        (tag) => !postTags.includes(tag),
+      )) {
         tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
       }
     }
 
     tagsOrdered = Object.entries(tagCounts)
       .filter((tag) => tag[1] >= $minTagNumber)
-      .sort((a, b) => { // order by tag count then alphanumerically
+      .sort((a, b) => {
+        // order by tag count then alphanumerically
         if (a[1] < b[1]) {
           return 1;
         }
@@ -70,7 +75,9 @@
       .map((tag) => tag[0]);
   }
 
-  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+  $: isPageBackgroundDark =
+    $themeStore === SiteTheme.Dark ||
+    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">
@@ -112,22 +119,18 @@
     </button>
   {/if}
 </div>
-<div
-  class="tag-buttons"
-  class:truncated={$minTagNumber !== 0}
->
+<div class="tag-buttons" class:truncated={$minTagNumber !== 0}>
   {#each tagsOrdered as tag}
     <Tag
       tagId={tag}
       active={showTags.has(tag)}
       background={tagColors[tag]?.bg}
       foreground={tagColors[tag]?.fg}
-
-      isPageBackgroundDark={isPageBackgroundDark}
+      {isPageBackgroundDark}
       needsOutlineOnLightBg={tagColors[tag]?.outlineOnLight ?? false}
       needsOutlineOnDarkBg={tagColors[tag]?.outlineOnDark ?? false}
-
-      onClick={() => toggleTag(tag)} />
+      onClick={() => toggleTag(tag)}
+    />
   {/each}
   {#if $minTagNumber !== 0}
     <button

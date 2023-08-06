@@ -1,13 +1,12 @@
 import { data } from "$data/posts.json";
 import { slugify } from "$lib/functions";
-import {
-  startOfMonth, format, max, parse,
-} from "date-fns";
+import { startOfMonth, format, max, parse } from "date-fns";
 import xmlFormat from "xml-formatter";
 
 export async function GET() {
   const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
-  const parseDate = (date: string) => parse(date.slice(0, 10), "yyyy-MM-dd", new Date());
+  const parseDate = (date: string) =>
+    parse(date.slice(0, 10), "yyyy-MM-dd", new Date());
 
   const firstDayOfMonth = startOfMonth(new Date());
 
@@ -20,11 +19,12 @@ export async function GET() {
       priority: 0.8,
     }));
 
-  const mostRecentPostModified = data
-    .filter((post) => post.contents && !post.isHidden && post.lastModified)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    .map((post) => parseDate(post.lastModified!))
-    .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
+  const mostRecentPostModified =
+    data
+      .filter((post) => post.contents && !post.isHidden && post.lastModified)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      .map((post) => parseDate(post.lastModified!))
+      .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
 
   urls.unshift({
     loc: "https://rosshill.ca/",

@@ -5,7 +5,10 @@
 </script>
 
 <div aria-hidden="true" class="arrow arrow-{positionString} do-transition" />
-<div aria-hidden="true" class="arrow-border arrow-{positionString}-border do-transition" />
+<div
+  aria-hidden="true"
+  class="arrow-border arrow-{positionString}-border do-transition"
+/>
 
 <style lang="scss">
   .arrow {

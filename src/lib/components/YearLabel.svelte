@@ -111,7 +111,7 @@
     .label-wrapper :global(.post-spacer) {
       display: none;
     }
-    
+
     .first-label {
       transform: translate(1.25rem, 1.3rem);
     }
@@ -126,11 +126,11 @@
   }
   @media (min-width: $breakpoint-s-min) {
     .first-label {
-        z-index: 4;
-        margin-left: 25%;
-        position: absolute;
-        transform: translate(-50%, 0);
-      }
+      z-index: 4;
+      margin-left: 25%;
+      position: absolute;
+      transform: translate(-50%, 0);
+    }
 
     .first-label-line {
       display: none;

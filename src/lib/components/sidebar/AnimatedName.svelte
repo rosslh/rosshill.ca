@@ -37,7 +37,6 @@
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 368.7 73.501"
-
   >
     <g>
       {#if showTitle || !browser}
@@ -45,13 +44,13 @@
           class={getPathClass()}
           on:introstart={browser
             ? () => {
-              setTimeout(() => {
-                logoHasFill = true;
-              }, logoFillDelay);
-              setTimeout(() => {
-                doneFilling = true;
-              }, logoFillDelay + 900);
-            }
+                setTimeout(() => {
+                  logoHasFill = true;
+                }, logoFillDelay);
+                setTimeout(() => {
+                  doneFilling = true;
+                }, logoFillDelay + 900);
+              }
             : null}
           in:draw={browser ? { duration: 3000, easing: sineIn } : undefined}
           d={svgPath}
@@ -70,7 +69,9 @@
     overflow: visible;
     width: 100%;
     pointer-events: none;
-    transition: fill 0.9s ease, stroke 0.9s ease;
+    transition:
+      fill 0.9s ease,
+      stroke 0.9s ease;
     position: relative;
     z-index: 10;
 
@@ -85,7 +86,9 @@
     path {
       stroke: var(--color-heading);
       stroke-width: 1px;
-      transition: fill 0.9s ease, stroke 0.9s ease;
+      transition:
+        fill 0.9s ease,
+        stroke 0.9s ease;
 
       &.initial {
         fill: var(--color-panel-background);
@@ -101,7 +104,9 @@
       }
 
       &.done-filling {
-        transition: fill 0.3s ease, stroke 0.3s ease !important;
+        transition:
+          fill 0.3s ease,
+          stroke 0.3s ease !important;
       }
     }
   }

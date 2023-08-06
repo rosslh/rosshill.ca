@@ -1,12 +1,19 @@
 import getSlug from "slugify";
 
-export const slugify = (stringToSlugify: string): string => getSlug(stringToSlugify, { replacement: "-", lower: true, remove: /:/ }).replaceAll(/-+/g, "-");
+export const slugify = (stringToSlugify: string): string =>
+  getSlug(stringToSlugify, {
+    replacement: "-",
+    lower: true,
+    remove: /:/,
+  }).replaceAll(/-+/g, "-");
 
 export const remsToPixels = (rems: number): number => Math.round(rems * 16);
 
-export const prefersColorSchemeDark = (isBrowser: boolean): boolean => isBrowser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+export const prefersColorSchemeDark = (isBrowser: boolean): boolean =>
+  isBrowser && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-export const formatPostTitle = (title: string): string => title.replaceAll(/\s[–—-]\s/g, " – ");
+export const formatPostTitle = (title: string): string =>
+  title.replaceAll(/\s[–—-]\s/g, " – ");
 
 export const truncateBySentence = (text: string, maxLength: number): string => {
   const sentences: string[] = text

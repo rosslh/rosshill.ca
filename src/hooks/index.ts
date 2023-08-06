@@ -7,6 +7,6 @@ export const handle: Handle = async ({ event, resolve }) => {
     const cookies = new Cookies(cookieHeader);
     event.locals.theme = cookies.get("theme");
   }
-  
+
   return resolve(event);
 };

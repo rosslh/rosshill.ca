@@ -14,11 +14,11 @@
 <div class="post-heading">
   <div class="picture-frame">
     {#if post.thumbnail}
-      <picture
-        class="do-transition"
-        class:border={post.thumbnail.showBorder}
-      >
-        <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp" />
+      <picture class="do-transition" class:border={post.thumbnail.showBorder}>
+        <source
+          srcset="/timeline/{post.thumbnail.name}.webp"
+          type="image/webp"
+        />
         <source
           srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
           type="image/{post.thumbnail.extension}"
@@ -52,10 +52,11 @@
           background={tagColors[tagId]?.bg}
           foreground={tagColors[tagId]?.fg}
           active={activeTags.has(tagId)}
-          isPageBackgroundDark={isPageBackgroundDark}
+          {isPageBackgroundDark}
           needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
           needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
-          lazyLoad />
+          lazyLoad
+        />
       {/each}
     </div>
   </div>

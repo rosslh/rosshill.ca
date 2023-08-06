@@ -7,38 +7,45 @@
   import { utcToZonedTime } from "date-fns-tz";
   import { occasions } from "$lib/occasions";
 
-  const dateToTorontoTz = (date: Date) => utcToZonedTime(date.toISOString(), "America/Toronto");
+  const dateToTorontoTz = (date: Date) =>
+    utcToZonedTime(date.toISOString(), "America/Toronto");
   const today = dateToTorontoTz(new Date());
   const currentYear = today.getFullYear();
   const currentOccasion = occasions.find(
-    ({ startDay, startMonth, durationDays }) => (
-      [currentYear - 1, currentYear]
-        .some((year: number) => {
-          const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
-          const endDate = endOfDay(addDays(startDate, durationDays - 1));
-          return today >= dateToTorontoTz(startDate) && today <= dateToTorontoTz(endDate);
-        })),
+    ({ startDay, startMonth, durationDays }) =>
+      [currentYear - 1, currentYear].some((year: number) => {
+        const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
+        const endDate = endOfDay(addDays(startDate, durationDays - 1));
+        return (
+          today >= dateToTorontoTz(startDate) &&
+          today <= dateToTorontoTz(endDate)
+        );
+      }),
   );
 </script>
 
 <div class="sidebar do-transition" data-testid="sidebar">
   <div class="sidebar-content">
     {#if !currentOccasion || currentOccasion.imageName}
-      <div
-        class="img-wrapper"
-        class:rounded={!currentOccasion}
-      >
+      <div class="img-wrapper" class:rounded={!currentOccasion}>
         {#if currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
-            <source srcset="/occasions/{currentOccasion.imageName}.webp" type="image/webp" />
-            <source srcset="/occasions/{currentOccasion.imageName}.png" type="image/png" />
+            <source
+              srcset="/occasions/{currentOccasion.imageName}.webp"
+              type="image/webp"
+            />
+            <source
+              srcset="/occasions/{currentOccasion.imageName}.png"
+              type="image/png"
+            />
             <img
               data-testid="headshot-img"
               src="/occasions/{currentOccasion.imageName}.png"
               alt={currentOccasion.name}
               title={currentOccasion.name}
               width={remsToPixels(10)}
-              height={remsToPixels(10)} />
+              height={remsToPixels(10)}
+            />
           </picture>
         {:else}
           <picture>
@@ -49,7 +56,8 @@
               src="/headshot.png"
               alt="Ross Hill"
               width={remsToPixels(10)}
-              height={remsToPixels(10)} />
+              height={remsToPixels(10)}
+            />
           </picture>
         {/if}
       </div>
@@ -75,20 +83,39 @@
     <div class="name-wrapper">
       <AnimatedName />
     </div>
-    <p class="subtitle role do-transition" data-testid="job-title">Software Developer</p>
+    <p class="subtitle role do-transition" data-testid="job-title">
+      Software Developer
+    </p>
     <p class="subtitle email">
-      <a href="mailto:ross@rosshill.ca" data-testid="email-address">ross@rosshill.ca</a>
+      <a href="mailto:ross@rosshill.ca" data-testid="email-address"
+        >ross@rosshill.ca</a
+      >
     </p>
     <p class="subtitle">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/rosslh" data-testid="github-link">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/rosslh"
+        data-testid="github-link"
+      >
         GitHub
       </a>
       <InlineSeparator />
-      <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/rosslh" data-testid="linkedin-link">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/rosslh"
+        data-testid="linkedin-link"
+      >
         LinkedIn
       </a>
       <InlineSeparator />
-      <a href="/Ross%20Hill.pdf" target="_blank" rel="noopener noreferrer" data-testid="resume-link">
+      <a
+        href="/Ross%20Hill.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-testid="resume-link"
+      >
         Resume
       </a>
     </p>

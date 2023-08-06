@@ -2,13 +2,20 @@ import { expect, test } from "@playwright/test";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
 import {
-  expectToBeAtTop, expectCount, getLocator, waitForElement,
+  expectToBeAtTop,
+  expectCount,
+  getLocator,
+  waitForElement,
 } from "../commands.js";
 import posts from "../../data/posts.json" assert { type: "json" };
 
 test.describe.configure({ mode: "parallel" });
 
-const testPage = async (page: Page, baseURL: string | undefined, slug: string): Promise<void> => {
+const testPage = async (
+  page: Page,
+  baseURL: string | undefined,
+  slug: string,
+): Promise<void> => {
   const postStubLink = getLocator([page, `post-stub-link-${slug}`]);
   const backLink = getLocator([page, "back-link"]);
 
@@ -63,7 +70,10 @@ test.describe("Exhaustive testing", () => {
     .map(({ title }) => slugify(title));
 
   for (const postSlug of postSlugs) {
-    test(`You can navigate to and from ${postSlug} page`, async ({ page, baseURL }) => {
+    test(`You can navigate to and from ${postSlug} page`, async ({
+      page,
+      baseURL,
+    }) => {
       await testPage(page, baseURL, postSlug);
     });
   }

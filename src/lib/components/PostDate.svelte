@@ -11,7 +11,8 @@
 
   export let date: PostDate;
 
-  const getDateFromString = (d: string): Date => parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
+  const getDateFromString = (d: string): Date =>
+    parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
 
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
@@ -30,7 +31,10 @@
       return null;
     }
 
-    const interval = intervalToDuration({ start: startDate, end: endDate || currentDate });
+    const interval = intervalToDuration({
+      start: startDate,
+      end: endDate || currentDate,
+    });
 
     if (interval.days && interval.days >= 15) {
       interval.months = interval.months ? interval.months + 1 : 1;
@@ -58,7 +62,9 @@
   {date.isSeasonal ? format(startDate, "y") : format(startDate, "MMM y")}
   {#if !isStartInFuture}
     {#if endDate}
-      &ndash; {date.isSeasonal ? format(endDate, "y") : format(endDate, "MMM y")}
+      &ndash; {date.isSeasonal
+        ? format(endDate, "y")
+        : format(endDate, "MMM y")}
     {:else if date.isOngoing}
       &ndash; Present
     {/if}

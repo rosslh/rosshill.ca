@@ -25,7 +25,10 @@ export async function waitForElement(
   });
 }
 
-export async function expectCount(target: Target, expectedCount: number): Promise<void> {
+export async function expectCount(
+  target: Target,
+  expectedCount: number,
+): Promise<void> {
   const locator = getLocator(target);
   await expect(locator).toHaveCount(expectedCount, { timeout: 10_000 });
 }

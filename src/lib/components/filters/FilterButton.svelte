@@ -63,8 +63,11 @@
     margin: var(--spacing-2xs) var(--spacing-xs) var(--spacing-2xs) 0;
 
     &.toggling {
-      transition: color 0.3s ease, background-color 0.3s ease,
-        border-color 0.3s ease, opacity 0.3s ease;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
     }
 
     &.job-button {

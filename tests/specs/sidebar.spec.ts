@@ -2,7 +2,10 @@ import { test, expect, Page } from "@playwright/test";
 import { toDate } from "date-fns-tz";
 
 import {
-  getLocator, expectTextContent, expectCount, waitForElement,
+  getLocator,
+  expectTextContent,
+  expectCount,
+  waitForElement,
 } from "../commands.js";
 
 test.describe.configure({ mode: "parallel" });
@@ -53,11 +56,15 @@ test("Sidebar information is displayed", async ({ page }) => {
 
   const githubLink = getLocator([sidebar, "github-link"]);
   await expectTextContent(githubLink, "GitHub");
-  expect(await githubLink.getAttribute("href")).toMatch(/https:\/\/github\.com\/.+/);
+  expect(await githubLink.getAttribute("href")).toMatch(
+    /https:\/\/github\.com\/.+/,
+  );
 
   const linkedinLink = getLocator([sidebar, "linkedin-link"]);
   await expectTextContent(linkedinLink, "LinkedIn");
-  expect(await linkedinLink.getAttribute("href")).toMatch(/https:\/\/www\.linkedin\.com\/in\/.+/);
+  expect(await linkedinLink.getAttribute("href")).toMatch(
+    /https:\/\/www\.linkedin\.com\/in\/.+/,
+  );
 
   const resumeLink = getLocator([sidebar, "resume-link"]);
   await expectTextContent(resumeLink, "Resume");
@@ -71,9 +78,13 @@ const occasions = {
   "Trans Day of Visibility": ["2023-03-31"],
   "Pride Month": ["2023-06-01", "2023-06-15", "2023-06-30"],
   "Canada Day": ["2023-07-01"],
-  "National Day for Truth and Reconciliation": ["2023-09-29", "2023-09-30", "2023-10-01"],
+  "National Day for Truth and Reconciliation": [
+    "2023-09-29",
+    "2023-09-30",
+    "2023-10-01",
+  ],
   "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
-  "Halloween": ["2023-10-30", "2023-10-31", "2023-11-01"],
+  Halloween: ["2023-10-30", "2023-10-31", "2023-11-01"],
   "Remembrance Day": ["2023-11-11"],
   "Transgender Awareness Week": ["2023-11-13", "2023-11-16", "2023-11-19"],
   "American Thanksgiving": ["2023-11-23"],
@@ -87,15 +98,19 @@ for (let index = 0; index < Object.keys(occasions).length; index += 1) {
   const occasionDates = Object.values(occasions)[index];
 
   for (const occasionDate of occasionDates) {
-    test(`Sidebar displays ${occasionName} on ${occasionDate}`, async ({ page }) => {
+    test(`Sidebar displays ${occasionName} on ${occasionDate}`, async ({
+      page,
+    }) => {
       await setBrowserDate(page, occasionDate);
-      
+
       const sidebar = getLocator([page, "sidebar"]);
 
       await waitForElement(page, `occasion-image-${occasionName}`);
-      const occasionImage = getLocator([sidebar, `occasion-image-${occasionName}`]);
+      const occasionImage = getLocator([
+        sidebar,
+        `occasion-image-${occasionName}`,
+      ]);
       await expectCount(occasionImage, 1);
     });
   }
 }
-

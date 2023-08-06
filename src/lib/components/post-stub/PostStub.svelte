@@ -52,7 +52,7 @@
     bind:this={element}
     id="timeline-{post.slug}"
     data-testid="post-stub-{post.slug}"
-    class="post-wrapper do-transition {left ? "left" : "right"}"
+    class="post-wrapper do-transition {left ? 'left' : 'right'}"
     on:mouseenter={() => {
       showTooltip = true;
     }}
@@ -61,11 +61,8 @@
     }}
     role="listitem"
   >
-    <TimelineMarker
-      {showTooltip}
-      {left}
-      eventType={post.eventType} />
-    <div class="{getFadeInClass()} {left ? "left" : "right"}">
+    <TimelineMarker {showTooltip} {left} eventType={post.eventType} />
+    <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
       <div
         class="post do-transition"
@@ -103,11 +100,11 @@
 
   @keyframes fade-in-animation {
     0% {
-        opacity: 0;
+      opacity: 0;
     }
     100% {
-        opacity: 1;
-     }
+      opacity: 1;
+    }
   }
 
   div.post-wrapper {
@@ -139,7 +136,9 @@
     }
 
     div.fade-in {
-      transition: opacity 0.2s ease-in, transform 0.4s ease-out;
+      transition:
+        opacity 0.2s ease-in,
+        transform 0.4s ease-out;
       opacity: 1;
       transform: rotateY(0deg);
 
@@ -152,7 +151,7 @@
       }
 
       &.invisible {
-      opacity: 0;
+        opacity: 0;
 
         &.left {
           transform: rotateY(60deg);
@@ -174,10 +173,7 @@
       position: relative;
 
       p.post-text {
-        padding:
-          var(--spacing-2xs)
-          var(--spacing-s)
-          0
+        padding: var(--spacing-2xs) var(--spacing-s) 0
           calc(var(--spacing-3xl) - var(--spacing-2xs));
       }
     }

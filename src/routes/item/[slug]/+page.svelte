@@ -6,7 +6,7 @@
   import { tagLabels } from "$lib/tags";
   import { truncateBySentence } from "$lib/functions";
 
-  export let data: { post: PostItemPage, tagColors: TagColors };
+  export let data: { post: PostItemPage; tagColors: TagColors };
   const { post, tagColors } = data;
 
   import PostDate from "$lib/components/PostDate.svelte";
@@ -21,7 +21,8 @@
     mainContent.scrollIntoView();
   });
 
-  const capitalize = (text: string): string => text.replaceAll(/\b\w/g, (m) => m.toUpperCase());
+  const capitalize = (text: string): string =>
+    text.replaceAll(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
     title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
@@ -49,9 +50,11 @@
       tags: meta.tags,
     },
     description: meta.description,
-    images: [{
-      ...meta.image,
-    }],
+    images: [
+      {
+        ...meta.image,
+      },
+    ],
     site_name: meta.siteName,
     title: meta.title,
     type: "article",
@@ -65,7 +68,11 @@
     imageAlt: meta.image.alt,
   }}
 />
-<div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
+<div
+  bind:this={mainContent}
+  class="content-wrapper main-content"
+  data-testid="main-content"
+>
   <BackLink href="/#timeline-{post.slug}" />
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
@@ -91,17 +98,15 @@
             <Tag
               {tagId}
               background={tagColors[tagId]?.bg}
-              foreground={tagColors[tagId]?.fg} />
+              foreground={tagColors[tagId]?.fg}
+            />
           {/each}
         </div>
       {/if}
     </div>
     {#if post.image}
       <picture>
-        <source
-          srcset="/timeline/{post.image.name}.webp"
-          type="image/webp"
-        />
+        <source srcset="/timeline/{post.image.name}.webp" type="image/webp" />
         <source
           srcset="/timeline/{post.image.name}.{post.image.extension}"
           type="image/{post.image.extension}"

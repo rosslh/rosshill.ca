@@ -15,10 +15,12 @@ const posts: PostItemPage[] = Object.values(timeline)
     },
     embed: post.embed,
     excerpt: post.excerpt,
-    image: post.image ? {
-      name: post.image,
-      extension: post.imageExt ?? "png",
-    } : undefined,
+    image: post.image
+      ? {
+          name: post.image,
+          extension: post.imageExt ?? "png",
+        }
+      : undefined,
     repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
@@ -27,17 +29,17 @@ const posts: PostItemPage[] = Object.values(timeline)
   }));
 
 const lookup: Map<string, PostItemPage> = new Map(
-  posts
-    .filter((post) => post.contents)
-    .map((post) => ([post.slug, post])),
+  posts.filter((post) => post.contents).map((post) => [post.slug, post]),
 );
 
-type LoadResponse = {
-  post: PostItemPage;
-  tagColors: TagColors;
-} | {
-  message: string;
-};
+type LoadResponse =
+  | {
+      post: PostItemPage;
+      tagColors: TagColors;
+    }
+  | {
+      message: string;
+    };
 
 export function load({ params }: { params: { slug: string } }): LoadResponse {
   const slug = params.slug.toLowerCase();

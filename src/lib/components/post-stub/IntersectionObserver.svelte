@@ -29,11 +29,7 @@ SOFTWARE.
   export let intersecting = false;
   export let complete = false;
 
-  import {
-    tick,
-    onDestroy,
-    afterUpdate,
-  } from "svelte";
+  import { tick, onDestroy, afterUpdate } from "svelte";
   import { browser } from "$app/environment";
 
   let previousElement: Element | null = null;

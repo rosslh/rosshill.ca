@@ -24,8 +24,12 @@
     const output = post;
 
     const previousItem = postsArray[index - 1];
-    const previousLeftAligned = previousItem ? Boolean(previousItem.isLeftAligned) : false;
-    const previousYear = previousItem ? getYearFromDate(previousItem.date.start) : null;
+    const previousLeftAligned = previousItem
+      ? Boolean(previousItem.isLeftAligned)
+      : false;
+    const previousYear = previousItem
+      ? getYearFromDate(previousItem.date.start)
+      : null;
 
     const year = getYearFromDate(output.date.start);
 
@@ -40,27 +44,34 @@
     return output;
   };
 
-  $: isCategoryOfPostSelected = (post: PostItemStub): boolean => $showCategories.size === 0 || $showCategories.has(post.eventType);
+  $: isCategoryOfPostSelected = (post: PostItemStub): boolean =>
+    $showCategories.size === 0 || $showCategories.has(post.eventType);
 
-  $: isAncestorTagSelected = (tag: string): boolean => Boolean(
-    tagAncestors[tag]
-        && tagAncestors[tag]?.some((ancestorTag: string) => $showTags.has(ancestorTag)),
-  );
+  $: isAncestorTagSelected = (tag: string): boolean =>
+    Boolean(
+      tagAncestors[tag] &&
+        tagAncestors[tag]?.some((ancestorTag: string) =>
+          $showTags.has(ancestorTag),
+        ),
+    );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
-    const postHasShownTag = post.tags !== undefined
-      && post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
+    const postHasShownTag =
+      post.tags !== undefined &&
+      post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
     return $showTags.size === 0 || postHasShownTag;
   };
 
   $: displayedPosts = posts
     .filter(
-      (post: PostItemStub) => isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
+      (post: PostItemStub) =>
+        isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
     )
     .map(getLabelVisibilityAndAlignment);
 
-  $: isPageBackgroundDark = $themeStore === SiteTheme.Dark
-    || ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+  $: isPageBackgroundDark =
+    $themeStore === SiteTheme.Dark ||
+    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 

@@ -1,36 +1,44 @@
-import {
-  test, expect, Page,
-} from "@playwright/test";
+import { test, expect, Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
 type SiteTheme = "light" | "dark" | "system";
 
-async function getCssVariable(page: Page, variableName: string): Promise<string> {
+async function getCssVariable(
+  page: Page,
+  variableName: string,
+): Promise<string> {
   const locator = getLocator([page, "app-wrapper"]);
-  return locator.evaluate(
-    (element, variableName_) => {
-      const style = getComputedStyle(element);
-      return style.getPropertyValue(`--${variableName_}`);
-    },
-    variableName,
-  );
+  return locator.evaluate((element, variableName_) => {
+    const style = getComputedStyle(element);
+    return style.getPropertyValue(`--${variableName_}`);
+  }, variableName);
 }
 
 async function getPreferredColorScheme(page: Page): Promise<"light" | "dark"> {
-  return await page.evaluate(() => window.matchMedia("(prefers-color-scheme: dark)").matches)
+  return (await page.evaluate(
+    () => window.matchMedia("(prefers-color-scheme: dark)").matches,
+  ))
     ? "dark"
     : "light";
 }
 
 async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
-  await page.waitForSelector(`[data-testid="app-wrapper"][data-theme="${theme}"]`);
-  expect(await getLocator([page, "app-wrapper"]).getAttribute('data-theme')).toBe(theme);
+  await page.waitForSelector(
+    `[data-testid="app-wrapper"][data-theme="${theme}"]`,
+  );
+  expect(
+    await getLocator([page, "app-wrapper"]).getAttribute("data-theme"),
+  ).toBe(theme);
   expect(await page.evaluate(() => document.cookie)).toBe(`theme=${theme}`);
 
-  const computedTheme = theme === "system" ? await getPreferredColorScheme(page) : theme;
+  const computedTheme =
+    theme === "system" ? await getPreferredColorScheme(page) : theme;
 
-  const background = (await getCssVariable(page, "color-background")).replace(/\s/g, "");
+  const background = (await getCssVariable(page, "color-background")).replace(
+    /\s/g,
+    "",
+  );
   const contrastWithWhite = chroma.contrast(background, "white");
   const contrastWithBlack = chroma.contrast(background, "black");
 
@@ -57,9 +65,10 @@ for (const preferredColorScheme of colorSchemes) {
     });
 
     test("Theme toggle works", async ({ page }) => {
-      const themeOrder: SiteTheme[] = preferredColorScheme === "light"
-        ? ["system", "dark", "light"]
-        : ["system", "light", "dark"];
+      const themeOrder: SiteTheme[] =
+        preferredColorScheme === "light"
+          ? ["system", "dark", "light"]
+          : ["system", "light", "dark"];
 
       await expectTheme(page, themeOrder[0]);
 

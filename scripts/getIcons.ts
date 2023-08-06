@@ -63,22 +63,19 @@ const getNumbersFromStylesheetProperty = (
 };
 
 function getForegroundColors(): { light: string; dark: string } {
-  const fileLines = fs.readFileSync(inputPaths.stylesheet, "utf8").split(/\r?\n/);
+  const fileLines = fs
+    .readFileSync(inputPaths.stylesheet, "utf8")
+    .split(/\r?\n/);
   const [themeHue] = getNumbersFromStylesheetProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromStylesheetProperty(
     fileLines,
     "$theme-saturation",
   );
-  const [darkColorLightness, lightColorLightness] = getNumbersFromStylesheetProperty(
-    fileLines,
-    "--color-heading",
-  );
+  const [darkColorLightness, lightColorLightness] =
+    getNumbersFromStylesheetProperty(fileLines, "--color-heading");
 
   if (
-    typeof themeHue !== "number"
-    || typeof themeSaturation !== "number"
-    || typeof darkColorLightness !== "number"
-    || typeof lightColorLightness !== "number"
+    !(themeHue && themeSaturation && darkColorLightness && lightColorLightness)
   ) {
     throw new TypeError("Could not parse theme colors");
   }
@@ -86,6 +83,7 @@ function getForegroundColors(): { light: string; dark: string } {
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
     .replace(/^#/, "")
     .toUpperCase();
+
   const dark = hsluvToHex([themeHue, themeSaturation, darkColorLightness])
     .replace(/^#/, "")
     .toUpperCase();
@@ -173,18 +171,21 @@ function getTags(posts: PostItemStub[]): string[] {
     });
 }
 
+function outputTagColors(tagColors: TagColors) {
+  fs.writeFile(
+    outputPaths.tagColors,
+    JSON.stringify(tagColors),
+    handleFileError,
+  );
+}
+
 function main(): void {
   fs.readFile(inputPaths.posts, "utf8", (_error, file) => {
     const { data: posts } = JSON.parse(file);
     const tags = getTags(posts);
     const tagColors = getTagColors(tags);
     createSvgsForTags(tags, tagColors);
-
-    fs.writeFile(
-      outputPaths.tagColors,
-      JSON.stringify(tagColors),
-      handleFileError,
-    );
+    outputTagColors(tagColors);
   });
 }
 

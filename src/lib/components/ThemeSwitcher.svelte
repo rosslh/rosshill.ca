@@ -11,7 +11,9 @@
   import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
 
-  const themes: [SiteTheme, SiteTheme, SiteTheme] = prefersColorSchemeDark(browser)
+  const themes: [SiteTheme, SiteTheme, SiteTheme] = prefersColorSchemeDark(
+    browser,
+  )
     ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark]
     : [SiteTheme.System, SiteTheme.Dark, SiteTheme.Light];
 

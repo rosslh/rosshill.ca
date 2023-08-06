@@ -1,25 +1,25 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
-	"compilerOptions": {
-		"moduleResolution": "node",
-		"module": "es2020",
-		"lib": ["es2023", "DOM"],
-		"target": "es2020",
-		/**
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "es2020",
+    "lib": ["es2023", "DOM"],
+    "target": "es2020",
+    /**
 			svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
 			to enforce using \`import type\` instead of \`import\` for Types.
 			*/
-		"isolatedModules": true,
-		"resolveJsonModule": true,
-		/**
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    /**
 			To have warnings/errors of the Svelte compiler at the correct position,
 			enable source maps by default.
 			*/
-		"sourceMap": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"baseUrl": ".",
-		"forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitOverride": true,
@@ -34,15 +34,21 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-		"allowJs": true,
-		"checkJs": false,
-		"paths": {
+    "allowJs": true,
+    "checkJs": false,
+    "paths": {
       "$data": ["data"],
       "$data/*": ["data/*"],
       "$lib": ["src/lib"],
       "$lib/*": ["src/lib/*"]
     }
-	},
-	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "scripts/**/*.ts"],
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "scripts/**/*.ts"
+  ],
   "exclude": ["./build", "./svelte-kit", "./node_modules", "svelte.config.js"]
 }

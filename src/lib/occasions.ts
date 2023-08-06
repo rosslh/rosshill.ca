@@ -1,6 +1,10 @@
 import { addMonths } from "date-fns";
 
-const getNthDayOfWeekInMonth = (month: number, dayOfWeek: number, n: number): number => {
+const getNthDayOfWeekInMonth = (
+  month: number,
+  dayOfWeek: number,
+  n: number,
+): number => {
   const date = new Date(2023, 10, 23);
   date.setMonth(month - 1);
   date.setDate(1);
@@ -11,7 +15,11 @@ const getNthDayOfWeekInMonth = (month: number, dayOfWeek: number, n: number): nu
   return date.getDate();
 };
 
-const getCanadianThanksgivingDate = (): { startDay: number; startMonth: number; durationDays: number } => {
+const getCanadianThanksgivingDate = (): {
+  startDay: number;
+  startMonth: number;
+  durationDays: number;
+} => {
   const startMonth = 10;
   const startDay = getNthDayOfWeekInMonth(startMonth, 1, 2) - 1;
   const durationDays = 3;
@@ -19,7 +27,11 @@ const getCanadianThanksgivingDate = (): { startDay: number; startMonth: number; 
   return { startDay, startMonth, durationDays };
 };
 
-const getAmericanThanksgivingDate = (): { startDay: number; startMonth: number; durationDays: number } => {
+const getAmericanThanksgivingDate = (): {
+  startDay: number;
+  startMonth: number;
+  durationDays: number;
+} => {
   const startMonth = 11;
   const startDay = getNthDayOfWeekInMonth(startMonth, 4, 4);
   const durationDays = 1;
@@ -33,7 +45,8 @@ const newYear = addMonths(new Date(), 1).getFullYear();
 export const occasions = [
   {
     name: "Valentine's Day",
-    blurb: "Happy Valentine's Day! I hope you have a wonderful day with your loved ones.",
+    blurb:
+      "Happy Valentine's Day! I hope you have a wonderful day with your loved ones.",
     startMonth: 2,
     startDay: 14,
     durationDays: 1,
@@ -41,8 +54,10 @@ export const occasions = [
   },
   {
     name: "Black History Month",
-    blurb: "Join me in celebrating the achievements of Black Canadians and their communities!",
-    learnMoreUrl: "https://www.thecanadianencyclopedia.ca/en/collection/black-history-in-canada",
+    blurb:
+      "Join me in celebrating the achievements of Black Canadians and their communities!",
+    learnMoreUrl:
+      "https://www.thecanadianencyclopedia.ca/en/collection/black-history-in-canada",
     startMonth: 2,
     startDay: 1,
     durationDays: 28,
@@ -58,7 +73,8 @@ export const occasions = [
   },
   {
     name: "Trans Day of Visibility",
-    blurb: "Join me in celebrating our transgender friends, colleagues, and neighbours!",
+    blurb:
+      "Join me in celebrating our transgender friends, colleagues, and neighbours!",
     learnMoreUrl: "https://www.glaad.org/tdov",
     startMonth: 3,
     startDay: 31,
@@ -90,11 +106,13 @@ export const occasions = [
     durationDays: 3,
     imageName: "reconciliation",
     blurbMaxWidth: "16rem",
-    learnMoreUrl: "https://www.rcaanc-cirnac.gc.ca/eng/1631130192216/1631130220404",
+    learnMoreUrl:
+      "https://www.rcaanc-cirnac.gc.ca/eng/1631130192216/1631130220404",
   },
   {
     name: "Canadian Thanksgiving",
-    blurb: "Feeling grateful for all the blessings in my life. Happy Thanksgiving!",
+    blurb:
+      "Feeling grateful for all the blessings in my life. Happy Thanksgiving!",
     ...getCanadianThanksgivingDate(),
     imageName: "thanksgiving",
   },
@@ -116,7 +134,8 @@ export const occasions = [
   },
   {
     name: "Transgender Awareness Week",
-    blurb: "Join me in celebrating our transgender friends, colleagues, and neighbors!",
+    blurb:
+      "Join me in celebrating our transgender friends, colleagues, and neighbors!",
     startMonth: 11,
     startDay: 13,
     durationDays: 7,

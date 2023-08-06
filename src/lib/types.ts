@@ -3,7 +3,7 @@ export type PostDate = {
   end?: string;
   isOngoing: boolean;
   isSeasonal: boolean;
-}
+};
 
 export enum PostCategory {
   Job = "job",
@@ -19,7 +19,7 @@ type PostItemBase = {
   title: string;
   tags: string[];
   slug: string;
-}
+};
 
 export type PostItemStub = PostItemBase & {
   eventType: PostCategory;
@@ -31,7 +31,7 @@ export type PostItemStub = PostItemBase & {
     extension: string;
     showBorder: boolean;
   };
-}
+};
 
 export type PostItemPage = PostItemBase & {
   contents: string;
@@ -40,16 +40,16 @@ export type PostItemPage = PostItemBase & {
     name: string;
     extension: string;
   };
-}
+};
 
 export type TagColor = {
-  fg: string,
-  bg: string
-  outlineOnLight: boolean,
-  outlineOnDark: boolean
-}
+  fg: string;
+  bg: string;
+  outlineOnLight: boolean;
+  outlineOnDark: boolean;
+};
 
-export type TagColors = Record<string, TagColor>
+export type TagColors = Record<string, TagColor>;
 
 export enum SiteTheme {
   Light = "light",

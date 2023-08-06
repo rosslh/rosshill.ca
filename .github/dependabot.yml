@@ -4,4 +4,4 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 0  # only security updates
+    open-pull-requests-limit: 0 # only security updates

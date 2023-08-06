@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PostItemStub } from "$lib/types";
-  
+
   export let post: PostItemStub;
 
   import PostDate from "$lib/components/PostDate.svelte";
@@ -29,10 +29,7 @@
 <style lang="scss">
   div.footer {
     font-size: var(--font-size-2xs);
-    padding:
-      var(--spacing-s)
-      var(--spacing-s)
-      0
+    padding: var(--spacing-s) var(--spacing-s) 0
       calc(var(--spacing-3xl) - var(--spacing-2xs));
     display: flex;
     justify-content: space-between;

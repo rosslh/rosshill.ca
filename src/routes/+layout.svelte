@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
 
@@ -21,7 +20,6 @@
     const style = getComputedStyle(appWrapper);
     return style.getPropertyValue(`--${variableName}`);
   };
-
 
   onMount(() => {
     if (appWrapper) {
@@ -55,58 +53,102 @@
   data-theme={selectedTheme}
   data-testid="app-wrapper"
 >
-  <ThemeSwitcher selectedTheme={selectedTheme} />
+  <ThemeSwitcher {selectedTheme} />
   <div class="two-column">
     <Sidebar />
     <slot />
   </div>
 </div>
 <svelte:head>
-  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/fonts/source-sans-pro-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <!-- Fonts set here to avoid Flash of Unstyled Text on Firefox -->
+  <link
+    rel="preload"
+    href="/fonts/source-sans-pro-v18-latin-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/source-sans-pro-v18-latin-700.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
   <style>
     /* source-sans-pro-regular - latin */
     @font-face {
-      font-family: 'Source Sans Pro';
+      font-family: "Source Sans Pro";
       font-weight: 100 400;
       font-display: block;
-      src: url('/fonts/source-sans-pro-v18-latin-regular.eot'); /* IE9 Compat Modes */
-      src: local('Source Sans Pro'),
-        url('/fonts/source-sans-pro-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/fonts/source-sans-pro-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+      src: url("/fonts/source-sans-pro-v18-latin-regular.eot"); /* IE9 Compat Modes */
+      src:
+        local("Source Sans Pro"),
+        url("/fonts/source-sans-pro-v18-latin-regular.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("/fonts/source-sans-pro-v18-latin-regular.woff2")
+          format("woff2"),
+        /* Super Modern Browsers */
+          url("/fonts/source-sans-pro-v18-latin-regular.woff") format("woff"),
+        /* Modern Browsers */
+          url("/fonts/source-sans-pro-v18-latin-regular.ttf") format("truetype"),
+        /* Safari, Android, iOS */
+          url("/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro")
+          format("svg"); /* Legacy iOS */
     }
     /* source-sans-pro-600 - latin */
     @font-face {
-      font-family: 'Source Sans Pro';
+      font-family: "Source Sans Pro";
       font-weight: 500 900;
       font-display: block;
-      src: url('/fonts/source-sans-pro-v18-latin-700.eot'); /* IE9 Compat Modes */
-      src: local('Source Sans Pro'),
-        url('/fonts/source-sans-pro-v18-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/fonts/source-sans-pro-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-700.woff') format('woff'), /* Modern Browsers */
-        url('/fonts/source-sans-pro-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+      src: url("/fonts/source-sans-pro-v18-latin-700.eot"); /* IE9 Compat Modes */
+      src:
+        local("Source Sans Pro"),
+        url("/fonts/source-sans-pro-v18-latin-700.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("/fonts/source-sans-pro-v18-latin-700.woff2")
+          format("woff2"),
+        /* Super Modern Browsers */
+          url("/fonts/source-sans-pro-v18-latin-700.woff") format("woff"),
+        /* Modern Browsers */ url("/fonts/source-sans-pro-v18-latin-700.ttf")
+          format("truetype"),
+        /* Safari, Android, iOS */
+          url("/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro")
+          format("svg"); /* Legacy iOS */
     }
     html {
       font-weight: 400;
-      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+      font-family:
+        "Source Sans Pro",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol" !important;
     }
-    h1, h2, h3, h4 { font-weight: 700; }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+    }
   </style>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=5.0"
+  />
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#20232e">
-  <meta name="msapplication-TileColor" content="#20232e">
-  <meta name="theme-color" content="#20232e">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#20232e" />
+  <meta name="msapplication-TileColor" content="#20232e" />
+  <meta name="theme-color" content="#20232e" />
 </svelte:head>
 
 <style lang="scss">
@@ -150,7 +192,6 @@
       }
     }
   }
-
 
   @media (min-width: $breakpoint-xl-min) {
     div.two-column {
