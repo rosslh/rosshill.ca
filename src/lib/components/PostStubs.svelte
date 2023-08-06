@@ -127,7 +127,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.content-wrapper.posts-wrapper {
     padding: 0;

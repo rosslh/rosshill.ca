@@ -178,8 +178,6 @@
     align-items: center;
     margin-right: var(--spacing-2xs);
     font-size: var(--font-size-3xs);
-    display: inline-flex;
-    align-items: center;
   }
 
   .tag-buttons.truncated :global(.tag:nth-last-child(2)) {

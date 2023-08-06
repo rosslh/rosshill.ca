@@ -99,9 +99,8 @@ div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }
 
-// Font sizes
-
 .app-wrapper {
+  // Font sizes
   --font-size-3xs: 0.7rem;
   --font-size-2xs: 0.8rem;
   --font-size-xs: 0.9rem;
@@ -109,11 +108,8 @@ div.app-wrapper[data-theme="dark"] {
   --font-size-m: 1.2rem;
   --font-size-l: 1.4rem;
   --font-size-xl: 1.6rem;
-}
 
-// Spacing (padding and margin)
-
-.app-wrapper {
+  // Spacing (padding and margin)
   --spacing-3xs: 0.125rem;
   --spacing-2xs: 0.25rem;
   --spacing-xs: 0.5rem;
@@ -124,11 +120,8 @@ div.app-wrapper[data-theme="dark"] {
   --spacing-2xl: 2rem;
   --spacing-3xl: 3rem;
   --spacing-4xl: 5rem;
-}
 
-// Border radius
-
-.app-wrapper {
+  // Border radius
   --border-radius-s: 0.25rem;
   --border-radius-m: 0.5rem;
 }

@@ -13,7 +13,7 @@
   import Sidebar from "$lib/components/sidebar/Sidebar.svelte";
 
   import "$lib/styles/global.scss";
-  import "$lib/styles/normalize.min.css";
+  import "$lib/styles/normalize.css";
 
   let appWrapper: HTMLDivElement;
   const getCssVariable = (variableName: string): string => {
@@ -152,7 +152,7 @@
 </svelte:head>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.two-column {
     display: flex;

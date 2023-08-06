@@ -15,7 +15,7 @@
 {/if}
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   @media (max-width: $breakpoint-m-max) {
     div.post-spacer {

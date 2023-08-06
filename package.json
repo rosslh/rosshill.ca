@@ -12,7 +12,9 @@
     "getIcons": "wireit",
     "getPosts": "wireit",
     "getWebp": "wireit",
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "wireit",
+    "lint:ts-svelte": "wireit",
+    "lint:styles": "wireit",
     "prepare": "svelte-kit sync",
     "preview": "vite preview --port 3000",
     "test": "playwright test",
@@ -60,11 +62,15 @@
     "logrocket": "^5.0.1",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.10.17",
+    "postcss-html": "^1.5.0",
     "prettier": "^3.0.1",
     "prettier-plugin-svelte": "^3.0.3",
     "sass": "^1.64.2",
     "simple-icons": "^9.9.0",
     "slugify": "^1.6.6",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "sugarss": "^4.0.1",
     "svelte": "4.1.2",
     "svelte-check": "^3.4.6",
     "svelte-meta-tags": "^2.8.0",
@@ -142,6 +148,32 @@
       "output": [
         ".nvmrc"
       ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:ts-svelte",
+        "lint:styles"
+      ]
+    },
+    "lint:styles": {
+      "command": "stylelint \"**/*.{css,scss,svelte}\" --ignore-path .gitignore",
+      "files": [
+        "**/*.{css,scss,svelte}",
+        ".stylelintrc.json"
+      ],
+      "output": []
+    },
+    "lint:ts-svelte": {
+      "command": "eslint \"**/*.{js,ts,svelte}\" --ignore-path .gitignore",
+      "files": [
+        "src/**/*.{js,ts,svelte}",
+        "scripts/**/*.{js,ts,svelte}",
+        "svelte.config.js",
+        "vite.config.ts",
+        "tsconfig.json",
+        ".eslintrc.json"
+      ],
+      "output": []
     }
   }
 }

@@ -13,7 +13,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.content-wrapper {
     display: none;
@@ -28,11 +28,9 @@
 
       .symbol {
         font-size: var(--font-size-m);
-        display: inline-flex;
         align-items: center;
         color: var(--color-border);
         display: flex;
-        align-items: center;
         justify-content: center;
       }
 

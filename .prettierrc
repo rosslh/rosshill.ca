@@ -1,3 +1,4 @@
 {
+  "quoteProps": "consistent",
   "plugins": ["prettier-plugin-svelte"]
 }

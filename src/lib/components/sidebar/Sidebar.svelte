@@ -124,7 +124,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.sidebar {
     border-right: 1px solid var(--color-border);
@@ -152,7 +152,6 @@
       .name-wrapper {
         padding-bottom: 0;
         height: 5.5rem;
-        max-width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
