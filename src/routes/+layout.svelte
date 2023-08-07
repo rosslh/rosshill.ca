@@ -11,13 +11,10 @@
 
   export let data: { themeFromSession: SiteTheme };
 
-  let appWrapper: HTMLDivElement;
-
   $: selectedTheme = browser ? $themeStore : data.themeFromSession;
 </script>
 
 <div
-  bind:this={appWrapper}
   class="app-wrapper do-transition"
   data-testid="app-wrapper"
   data-theme={selectedTheme}
