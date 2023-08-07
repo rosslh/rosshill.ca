@@ -12,8 +12,8 @@
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   export let data: {
-    post: PostItemPage,
-    tagColors: TagColors
+    post: PostItemPage;
+    tagColors: TagColors;
   };
   const { post, tagColors } = data;
 
@@ -23,10 +23,12 @@
     mainContent.scrollIntoView();
   });
 
-  const capitalize = (text: string): string => text.replaceAll(/\b\w/g, (m) => m.toUpperCase());
+  const capitalize = (text: string): string =>
+    text.replaceAll(/\b\w/g, (m) => m.toUpperCase());
 
   const meta = {
-    title: post.title.length < 50 ? `${post.title} | Antoine Greuzard` : post.title,
+    title:
+      post.title.length < 50 ? `${post.title} | Antoine Greuzard` : post.title,
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
     url: `https://antoinegreuzard.fr/item/${post.slug}`,
     image: {
@@ -42,96 +44,100 @@
 </script>
 
 <MetaTags
-        canonical={meta.url}
-        description={meta.description}
-        openGraph={{
-          article: {
-            authors: [meta.author],
-            tags: meta.tags,
-          },
-          description: meta.description,
-          images: [{
-            ...meta.image,
-          }],
-          site_name: meta.siteName,
-          title: meta.title,
-          type: "article",
-          url: meta.url,
-        }}
-        title={meta.title}
-        twitter={{
-          cardType: "summary_large_image",
-          title: meta.title,
-          description: meta.description,
-          image: meta.image.url,
-          imageAlt: meta.image.alt,
-        }}
+  canonical={meta.url}
+  description={meta.description}
+  openGraph={{
+    article: {
+      authors: [meta.author],
+      tags: meta.tags,
+    },
+    description: meta.description,
+    images: [
+      {
+        ...meta.image,
+      },
+    ],
+    site_name: meta.siteName,
+    title: meta.title,
+    type: "article",
+    url: meta.url,
+  }}
+  title={meta.title}
+  twitter={{
+    cardType: "summary_large_image",
+    title: meta.title,
+    description: meta.description,
+    image: meta.image.url,
+    imageAlt: meta.image.alt,
+  }}
 />
-<div bind:this={mainContent} class="content-wrapper main-content" data-testid="main-content">
-    <BackLink href="/#timeline-{post.slug}"/>
-    <article class="post-full">
-        <h2 data-testid="post-title">{post.title}</h2>
-        <div class="details">
-            <div class="subtitle do-transition">
-                <PostDate date={post.date}/>
-                {#if post.repository}
-                    <InlineSeparator/>
-                    <a target="_blank" rel="noopener noreferrer" href={post.repository}>
-                        GitHub
-                    </a>
-                {/if}
-                {#if post.website}
-                    <InlineSeparator/>
-                    <a target="_blank" rel="noopener noreferrer" href={post.website}>
-                        Website
-                    </a>
-                {/if}
-            </div>
-            {#if post.tags.length}
-                <div class="tags-wrapper">
-                    {#each post.tags as tagId}
-                        <Tag
-                                {tagId}
-                                background={tagColors[tagId]?.bg}
-                                foreground={tagColors[tagId]?.fg}/>
-                    {/each}
-                </div>
-            {/if}
+<div
+  bind:this={mainContent}
+  class="content-wrapper main-content"
+  data-testid="main-content"
+>
+  <BackLink href="/#timeline-{post.slug}" />
+  <article class="post-full">
+    <h2 data-testid="post-title">{post.title}</h2>
+    <div class="details">
+      <div class="subtitle do-transition">
+        <PostDate date={post.date} />
+        {#if post.repository}
+          <InlineSeparator />
+          <a target="_blank" rel="noopener noreferrer" href={post.repository}>
+            GitHub
+          </a>
+        {/if}
+        {#if post.website}
+          <InlineSeparator />
+          <a target="_blank" rel="noopener noreferrer" href={post.website}>
+            Website
+          </a>
+        {/if}
+      </div>
+      {#if post.tags.length}
+        <div class="tags-wrapper">
+          {#each post.tags as tagId}
+            <Tag
+              {tagId}
+              background={tagColors[tagId]?.bg}
+              foreground={tagColors[tagId]?.fg}
+            />
+          {/each}
         </div>
-        {#if post.image}
-            <picture>
-                <source
-                        srcset="/timeline/{post.image.name}.webp"
-                        type="image/webp"
-                />
-                <source
-                        srcset="/timeline/{post.image.name}.{post.image.extension}"
-                        type="image/{post.image.extension}"
-                />
-                <img
-                        class="do-transition"
-                        src="/timeline/{post.image.name}.{post.image.extension}"
-                        alt={post.title}
-                        width={600}
-                        height={400}
-                />
-            </picture>
-        {/if}
-        {#if post.embed}
-            <div class="embed-wrapper">
-                <div class="do-transition">
-                    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-                    {@html post.embed}
-                </div>
-            </div>
-        {/if}
+      {/if}
+    </div>
+    {#if post.image}
+      <picture>
+        <source srcset="/timeline/{post.image.name}.webp" type="image/webp" />
+        <source
+          srcset="/timeline/{post.image.name}.{post.image.extension}"
+          type="image/{post.image.extension}"
+        />
+        <img
+          class="do-transition"
+          src="/timeline/{post.image.name}.{post.image.extension}"
+          alt={post.title}
+          width={600}
+          height={400}
+        />
+      </picture>
+    {/if}
+    {#if post.embed}
+      <div class="embed-wrapper">
+        <div class="do-transition">
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          {@html post.embed}
+        </div>
+      </div>
+    {/if}
 
-        <div class="content">
-            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-            {@html post.contents}
-        </div>
-    </article>
-    <CopyrightNotice/>
+    <div class="content">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html post.contents}
+    </div>
+  </article>
+  <CopyrightNotice />
 </div>
 
 <style lang="scss">

@@ -17,10 +17,7 @@ function cookieStore<T>(
   maxAge = yearInSeconds,
 ): Writable<T> {
   const initialValue: T = cookies.get(key) ?? defaultValue;
-  const {
-    set: setStore,
-    ...store
-  } = writable(initialValue);
+  const { set: setStore, ...store } = writable(initialValue);
   if (initialValue) {
     cookies.set(key, initialValue, { maxAge });
   }

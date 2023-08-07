@@ -28,24 +28,24 @@
 </script>
 
 <button
-        class="{classPrefix}-button"
-        class:active
-        class:do-transition={!isToggling}
-        class:toggling={isToggling}
-        data-testid="event-filter-{classPrefix}"
-        on:click={handleClick}
+  class="{classPrefix}-button"
+  class:active
+  class:do-transition={!isToggling}
+  class:toggling={isToggling}
+  data-testid="event-filter-{classPrefix}"
+  on:click={handleClick}
 >
-    {#if active}
+  {#if active}
     <span class="symbol" transition:fade={transitionOptions}>
-      <CheckCircle/>
+      <CheckCircle />
     </span>
-    {:else}
+  {:else}
     <span class="symbol" transition:fade={transitionOptions}>
-      <Circle/>
+      <Circle />
     </span>
-    {/if}
-    <span class="text">
-    <slot/>
+  {/if}
+  <span class="text">
+    <slot />
   </span>
 </button>
 
@@ -63,8 +63,11 @@
     margin: var(--spacing-2xs) var(--spacing-xs) var(--spacing-2xs) 0;
 
     &.toggling {
-      transition: color 0.3s ease, background-color 0.3s ease,
-      border-color 0.3s ease, opacity 0.3s ease;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
     }
 
     &.emploi-button {

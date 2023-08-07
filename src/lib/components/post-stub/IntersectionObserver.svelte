@@ -74,4 +74,4 @@ SOFTWARE.
   }
 </script>
 
-<slot {intersecting}/>
+<slot {intersecting} />

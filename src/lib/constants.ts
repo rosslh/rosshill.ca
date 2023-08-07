@@ -67,24 +67,28 @@ export const tagLabels: Record<string, string> = {
 };
 
 export const tagAncestors: Record<string, string[]> = {
-  "nestjs": ["nodedotjs", "javascript"],
-  "react": ["javascript", "typescript", "nodedotjs"],
-  "svelte": ["javascript", "typescript", "nodedotjs"],
-  "typescript": ["javascript"],
-  "wordpress": ["php"],
-  "acf": ["wordpress"],
-  "docker": ["javascript"],
-  "drupal": ["php"],
-  "vite": ["javascript"],
-  "elementor": ["wordpress"],
-  "laravel": ["php"],
-  "sass": ["css3"],
+  nestjs: ["nodedotjs", "javascript"],
+  react: ["javascript", "typescript", "nodedotjs"],
+  svelte: ["javascript", "typescript", "nodedotjs"],
+  typescript: ["javascript"],
+  wordpress: ["php"],
+  acf: ["wordpress"],
+  docker: ["javascript"],
+  drupal: ["php"],
+  vite: ["javascript"],
+  elementor: ["wordpress"],
+  laravel: ["php"],
+  sass: ["css3"],
 };
 
 const isBrowser = typeof window !== "undefined" && !("Deno" in window);
 
 const isBot = isBrowser && isbot(window.navigator.userAgent);
-const prefersReducedMotion = isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const intersectionObserverSupported = isBrowser && "IntersectionObserver" in window;
+const prefersReducedMotion =
+  isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const intersectionObserverSupported =
+  isBrowser && "IntersectionObserver" in window;
 
-export const reduceMotion = isBrowser && (isBot || prefersReducedMotion || !intersectionObserverSupported);
+export const reduceMotion =
+  isBrowser &&
+  (isBot || prefersReducedMotion || !intersectionObserverSupported);

@@ -14,7 +14,7 @@
       </a>
     {/if}
     {#if post.repository && post.website}
-      <InlineSeparator/>
+      <InlineSeparator />
     {/if}
     {#if post.website}
       <a target="_blank" rel="noopener noreferrer" href={post.website}>
@@ -22,7 +22,7 @@
       </a>
     {/if}
   </div>
-  <PostDate date={post.date}/>
+  <PostDate date={post.date} />
 </div>
 
 <style lang="scss">

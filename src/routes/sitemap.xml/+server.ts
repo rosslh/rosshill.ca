@@ -1,33 +1,32 @@
 import { data } from "$data/posts.json";
 import { slugify } from "$lib/functions";
-import {
-  format, max, parse, startOfMonth,
-} from "date-fns";
+import { format, max, parse, startOfMonth } from "date-fns";
 import xmlFormat from "xml-formatter";
 
 export async function GET() {
   const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
-  const parseDate = (date: string) => parse(date.slice(0, 10), "yyyy-MM-dd", new Date());
+  const parseDate = (date: string) =>
+    parse(date.slice(0, 10), "yyyy-MM-dd", new Date());
 
   const firstDayOfMonth = startOfMonth(new Date());
 
   const urls = data
-    .filter(({
-      contents,
-      isHidden,
-    }) => contents && !isHidden)
+    .filter(({ contents, isHidden }) => contents && !isHidden)
     .map((post) => ({
       loc: `https://antoinegreuzard.fr/item/${slugify(post.title)}`,
-      lastmod: post.endDate ? formatDate(parseDate(post.endDate)) : formatDate(parseDate(post.date)),
+      lastmod: post.endDate
+        ? formatDate(parseDate(post.endDate))
+        : formatDate(parseDate(post.date)),
       changefreq: "monthly",
       priority: 0.8,
     }));
 
-  const mostRecentPostModified = data
-    .filter((post) => post.contents && !post.isHidden && post.date)
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    .map((post) => parseDate(post.date ?? post.endDate ?? ""))
-    .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
+  const mostRecentPostModified =
+    data
+      .filter((post) => post.contents && !post.isHidden && post.date)
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      .map((post) => parseDate(post.date ?? post.endDate ?? ""))
+      .sort((a, b) => b.getTime() - a.getTime())[0] ?? firstDayOfMonth;
 
   urls.unshift({
     loc: "https://antoinegreuzard.fr/",

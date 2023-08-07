@@ -37,23 +37,28 @@
     ...iconPositions[tagId],
   };
 
-  const getHexOpacity = (floatPercentage: number): string => Math.round(255 * floatPercentage).toString(16);
-  $: dividerColor = active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent";
+  const getHexOpacity = (floatPercentage: number): string =>
+    Math.round(255 * floatPercentage).toString(16);
+  $: dividerColor = active
+    ? `#${foreground}${getHexOpacity(0.35)}`
+    : "transparent";
 </script>
 
 <svelte:element
+  this={onClick ? "button" : "div"}
   class="tag do-transition"
-  class:active = { active }
+  class:active
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
   style={active ? `color: #${foreground};` : ""}
-  this={onClick ? "button" : "div"}
   role={onClick ? "button" : undefined}
 >
   <span
     class="logo-wrapper do-transition"
     style="background-color: #{background};"
-    class:hasOutline={isPageBackgroundDark ? needsOutlineOnDarkBg : needsOutlineOnLightBg}
+    class:hasOutline={isPageBackgroundDark
+      ? needsOutlineOnDarkBg
+      : needsOutlineOnLightBg}
   >
     <img
       src="/tags/{tagId}.svg"
@@ -61,7 +66,8 @@
       loading={lazyLoad ? "lazy" : null}
       style:transform={`translate(${iconPosition.x}, ${iconPosition.y}) scale(${iconPosition.scale})`}
       height={remsToPixels(0.85)}
-      width={remsToPixels(0.85)} />
+      width={remsToPixels(0.85)}
+    />
   </span>
   <span
     style={`border-left: 1px solid ${dividerColor};`}
@@ -104,7 +110,10 @@
 
     &.do-transition {
       /* taken from global.scss .do-transition */
-      transition: border-color 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+      transition:
+        border-color 0.3s ease,
+        width 0.3s ease,
+        border-radius 0.3s ease;
     }
 
     > img {

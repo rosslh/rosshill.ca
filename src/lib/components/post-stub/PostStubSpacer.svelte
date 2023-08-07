@@ -5,11 +5,13 @@
 
 <div
   aria-hidden="true"
-  class="post-spacer do-transition {left ? 'left' : 'right'}"></div>
+  class="post-spacer do-transition {left ? 'left' : 'right'}"
+></div>
 {#if showBottomMarker}
   <div
     aria-hidden="true"
-    class="bottom-marker do-transition {left ? 'left' : 'right'}"></div>
+    class="bottom-marker do-transition {left ? 'left' : 'right'}"
+  ></div>
 {/if}
 
 <style lang="scss">

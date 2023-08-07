@@ -68,14 +68,12 @@
     role="button"
     tabindex="0"
   >
-    <TimelineMarker
-      eventType={post.eventType}
-      {left}
-      {showTooltip}/>
+    <TimelineMarker eventType={post.eventType} {left} {showTooltip} />
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
-      <PostStubTriangle {left}/>
+      <PostStubTriangle {left} />
       <div
-        class="post do-transition" data-testid="post-stub-{post.slug}"
+        class="post do-transition"
+        data-testid="post-stub-{post.slug}"
         on:mouseenter={post.hasContent ? preloadPage : null}
         role="link"
         tabindex="0"
@@ -90,13 +88,13 @@
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           <p class="post-text">{@html post.excerpt}</p>
         {/if}
-        <PostStubFooter {post}/>
+        <PostStubFooter {post} />
       </div>
     </div>
   </div>
 </IntersectionObserver>
 {#if isLastPost}
-  <PostStubSpacer {left}/>
+  <PostStubSpacer {left} />
 {/if}
 
 <style lang="scss">
@@ -148,7 +146,9 @@
     }
 
     div.fade-in {
-      transition: opacity 0.2s ease-in, transform 0.4s ease-out;
+      transition:
+        opacity 0.2s ease-in,
+        transform 0.4s ease-out;
       opacity: 1;
       transform: rotateY(0deg);
 
@@ -183,7 +183,8 @@
       position: relative;
 
       p.post-text {
-        padding: var(--spacing-2xs) var(--spacing-s) 0 calc(var(--spacing-3xl) - var(--spacing-2xs));
+        padding: var(--spacing-2xs) var(--spacing-s) 0
+          calc(var(--spacing-3xl) - var(--spacing-2xs));
       }
     }
   }

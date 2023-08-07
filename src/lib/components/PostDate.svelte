@@ -1,6 +1,11 @@
 <script lang="ts">
   import {
-    endOfMonth, format, formatDuration, intervalToDuration, parse, startOfMonth,
+    endOfMonth,
+    format,
+    formatDuration,
+    intervalToDuration,
+    parse,
+    startOfMonth,
   } from "date-fns";
   import { fr } from "date-fns/locale";
   import type { PostDate } from "$lib/types";
@@ -11,7 +16,8 @@
     isOngoing: false,
     isSeasonal: false,
   };
-  const getDateFromString = (d: string): Date => parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
+  const getDateFromString = (d: string): Date =>
+    parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
   const currentDate = new Date();
@@ -56,10 +62,14 @@
   {#if isStartInFuture}
     Début:
   {/if}
-  {date.isSeasonal ? format(startDate, "y", { locale: fr }) : format(startDate, "MMM y", { locale: fr })}
+  {date.isSeasonal
+    ? format(startDate, "y", { locale: fr })
+    : format(startDate, "MMM y", { locale: fr })}
   {#if !isStartInFuture}
     {#if endDate}
-      &ndash; {date.isSeasonal ? format(endDate, "y", { locale: fr }) : format(endDate, "MMM y", { locale: fr })}
+      &ndash; {date.isSeasonal
+        ? format(endDate, "y", { locale: fr })
+        : format(endDate, "MMM y", { locale: fr })}
     {:else if date.isOngoing}
       &ndash; Aujourd'hui
     {/if}

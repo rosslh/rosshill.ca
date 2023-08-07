@@ -4,7 +4,7 @@
   "author": "Antoine Greuzard (fork Ross Hill)",
   "type": "module",
   "scripts": {
-    "prepare": "svelte-kit sync",
+    "format": "prettier --write  --plugin prettier-plugin-svelte .",
     "build": "wireit",
     "build:test": "APP_ENV=test npm run build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -13,6 +13,7 @@
     "getPosts": "wireit",
     "getWebp": "wireit",
     "lint": "eslint . --ignore-path .gitignore",
+    "prepare": "svelte-kit sync",
     "preview": "vite preview --port 3000",
     "upgrade": "ncu -u --reject apca-w3 && npm i",
     "updateNvmrc": "wireit"
@@ -139,6 +140,10 @@
   },
   "dependencies": {
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
-    "eslint-plugin-svelte": "^2.32.4"
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-svelte": "^2.32.4",
+    "prettier": "^3.0.1",
+    "prettier-plugin-svelte": "^3.0.3"
   }
 }

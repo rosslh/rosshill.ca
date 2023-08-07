@@ -7,11 +7,13 @@
 
   const original404ErrorMessage = "Page non trouvée";
   const code = $page.error?.message === original404ErrorMessage ? 404 : 500;
-  const message = $page.error?.message === original404ErrorMessage
-    ? "Page non trouvée"
-    : "Il y a une erreur";
+  const message =
+    $page.error?.message === original404ErrorMessage
+      ? "Page non trouvée"
+      : "Il y a une erreur";
 
-  const intro = "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
+  const intro =
+    "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
   const meta = {
     title: `${code}: ${message} | Antoine Greuzard`,
     description: truncateBySentence(intro, 155),
@@ -35,9 +37,11 @@
       tags: meta.tags,
     },
     description: meta.description,
-    images: [{
-      ...meta.image,
-    }],
+    images: [
+      {
+        ...meta.image,
+      },
+    ],
     site_name: meta.siteName,
     title: meta.title,
     type: "article",
@@ -53,7 +57,7 @@
   }}
 />
 <div class="content-wrapper main-content" data-testid="error">
-  <BackLink/>
+  <BackLink />
   <h1 data-testid="error-heading">{code}: {message}</h1>
-  <ConfusedTravolta reason="la page n'a pas été trouvée"/>
+  <ConfusedTravolta reason="la page n'a pas été trouvée" />
 </div>

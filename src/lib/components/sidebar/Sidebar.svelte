@@ -8,8 +8,8 @@
   <div class="sidebar-content">
     <div class="img-wrapper">
       <picture class="fixed-size">
-        <source srcset="/headshot.webp" type="image/webp"/>
-        <source srcset="/headshot.jpg" type="image/png"/>
+        <source srcset="/headshot.webp" type="image/webp" />
+        <source srcset="/headshot.jpg" type="image/png" />
         <img
           alt="Antoine Greuzard"
           data-testid="headshot-img"
@@ -20,31 +20,45 @@
         />
       </picture>
     </div>
-    <div class="name-wrapper">
-      Antoine Greuzard
-    </div>
-    <p class="subtitle role do-transition" data-testid="job-title">Développeur web</p>
+    <div class="name-wrapper">Antoine Greuzard</div>
+    <p class="subtitle role do-transition" data-testid="job-title">
+      Développeur web
+    </p>
     <p class="subtitle email">
-      <a data-testid="email-address" href="mailto:antoine@antoinegreuzard">antoine@antoinegreuzard.fr</a>
+      <a data-testid="email-address" href="mailto:antoine@antoinegreuzard"
+        >antoine@antoinegreuzard.fr</a
+      >
     </p>
     <p class="subtitle">
-      <a data-testid="github-link" href="https://github.com/antoinegreuzard" rel="noopener noreferrer"
-         target="_blank">
+      <a
+        data-testid="github-link"
+        href="https://github.com/antoinegreuzard"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         GitHub
       </a>
-      <InlineSeparator/>
-      <a data-testid="linkedin-link" href="https://www.linkedin.com/in/antoine-greuzard" rel="noopener noreferrer"
-         target="_blank">
+      <InlineSeparator />
+      <a
+        data-testid="linkedin-link"
+        href="https://www.linkedin.com/in/antoine-greuzard"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         LinkedIn
       </a>
-      <InlineSeparator/>
-      <a data-testid="resume-link" href="https://join.skype.com/invite/esIrFNeiMirt" rel="noopener noreferrer"
-         target="_blank">
+      <InlineSeparator />
+      <a
+        data-testid="resume-link"
+        href="https://join.skype.com/invite/esIrFNeiMirt"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         Skype
       </a>
     </p>
   </div>
-  <Separator/>
+  <Separator />
 </div>
 
 <style lang="scss">

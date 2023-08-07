@@ -4,10 +4,7 @@ import tagColors from "$data/tagColors.json";
 import type { TagColors, PostItemPage } from "$lib/types";
 
 const posts: PostItemPage[] = Object.values(timeline)
-  .filter(({
-    contents,
-    isHidden,
-  }) => contents && !isHidden)
+  .filter(({ contents, isHidden }) => contents && !isHidden)
   .map((post) => ({
     contents: post.contents,
     date: {
@@ -17,10 +14,12 @@ const posts: PostItemPage[] = Object.values(timeline)
       isSeasonal: post.isSeasonal ?? false,
     },
     excerpt: post.excerpt,
-    image: post.image ? {
-      name: post.image,
-      extension: post.imageExt ?? "png",
-    } : undefined,
+    image: post.image
+      ? {
+          name: post.image,
+          extension: post.imageExt ?? "png",
+        }
+      : undefined,
     repository: post.repository,
     slug: slugify(post.title),
     tags: post.tags ?? [],
@@ -29,17 +28,17 @@ const posts: PostItemPage[] = Object.values(timeline)
   }));
 
 const lookup: Map<string, PostItemPage> = new Map(
-  posts
-    .filter((post) => post.contents)
-    .map((post) => ([post.slug, post])),
+  posts.filter((post) => post.contents).map((post) => [post.slug, post]),
 );
 
-type LoadResponse = {
-  post: PostItemPage;
-  tagColors: TagColors;
-} | {
-  message: string;
-};
+type LoadResponse =
+  | {
+      post: PostItemPage;
+      tagColors: TagColors;
+    }
+  | {
+      message: string;
+    };
 
 export function load({ params }: { params: { slug: string } }): LoadResponse {
   const slug = params.slug.toLowerCase();

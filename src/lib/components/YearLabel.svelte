@@ -16,7 +16,7 @@
   </span>
   {#if isFirstLabel}
     <div aria-hidden="true" class="first-label-line"></div>
-    <PostStubSpacer left/>
+    <PostStubSpacer left />
   {:else}
     <div
       aria-hidden="true"

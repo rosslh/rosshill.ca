@@ -10,7 +10,8 @@
   data-testid="confused-travolta"
   height={remsToPixels(20)}
   src="/travolta.gif"
-  width={remsToPixels(20)}/>
+  width={remsToPixels(20)}
+/>
 
 <style>
   img.travolta {

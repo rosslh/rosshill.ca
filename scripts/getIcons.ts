@@ -55,7 +55,9 @@ const getNumbersFromStylesheetProperty = (
   fileLines: string[],
   propertyName: string,
 ): number[] => {
-  const escapedPropertyName = propertyName.replace(/\\/g, "\\\\").replace(/\$/g, "\\$");
+  const escapedPropertyName = propertyName
+    .replace(/\\/g, "\\\\")
+    .replace(/\$/g, "\\$");
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
 
@@ -63,22 +65,19 @@ const getNumbersFromStylesheetProperty = (
 };
 
 function getForegroundColors(): { light: string; dark: string } {
-  const fileLines = fs.readFileSync(inputPaths.stylesheet, "utf8").split(/\r?\n/);
+  const fileLines = fs
+    .readFileSync(inputPaths.stylesheet, "utf8")
+    .split(/\r?\n/);
   const [themeHue] = getNumbersFromStylesheetProperty(fileLines, "$theme-hue");
   const [themeSaturation] = getNumbersFromStylesheetProperty(
     fileLines,
     "$theme-saturation",
   );
-  const [darkColorLightness, lightColorLightness] = getNumbersFromStylesheetProperty(
-    fileLines,
-    "--color-heading",
-  );
+  const [darkColorLightness, lightColorLightness] =
+    getNumbersFromStylesheetProperty(fileLines, "--color-heading");
 
   if (
-    typeof themeHue !== "number"
-    || typeof themeSaturation !== "number"
-    || typeof darkColorLightness !== "number"
-    || typeof lightColorLightness !== "number"
+    !(themeHue && themeSaturation && darkColorLightness && lightColorLightness)
   ) {
     throw new TypeError("Could not parse theme colors");
   }
@@ -173,18 +172,21 @@ function getTags(posts: PostItemStub[]): string[] {
     });
 }
 
+function outputTagColors(tagColors: TagColors) {
+  fs.writeFile(
+    outputPaths.tagColors,
+    JSON.stringify(tagColors),
+    handleFileError,
+  );
+}
+
 function main(): void {
   fs.readFile(inputPaths.posts, "utf8", (_error, file) => {
     const { data: posts } = JSON.parse(file);
     const tags = getTags(posts);
     const tagColors = getTagColors(tags);
     createSvgsForTags(tags, tagColors);
-
-    fs.writeFile(
-      outputPaths.tagColors,
-      JSON.stringify(tagColors),
-      handleFileError,
-    );
+    outputTagColors(tagColors);
   });
 }
 

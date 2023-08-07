@@ -5,7 +5,7 @@
 </script>
 
 <a class="back-link" data-sveltekit-preload-data data-testid="back-link" {href}>
-  <LeftArrow/>
+  <LeftArrow />
   Retour au site
 </a>
 

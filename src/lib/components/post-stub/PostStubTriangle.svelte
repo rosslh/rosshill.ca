@@ -4,8 +4,14 @@
   export let positionString = left ? "left" : "right";
 </script>
 
-<div aria-hidden="true" class="arrow arrow-{positionString} do-transition"></div>
-<div aria-hidden="true" class="arrow-border arrow-{positionString}-border do-transition"></div>
+<div
+  aria-hidden="true"
+  class="arrow arrow-{positionString} do-transition"
+></div>
+<div
+  aria-hidden="true"
+  class="arrow-border arrow-{positionString}-border do-transition"
+></div>
 
 <style lang="scss">
   .arrow {

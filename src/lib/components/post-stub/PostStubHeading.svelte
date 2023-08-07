@@ -11,53 +11,54 @@
 </script>
 
 <div class="post-heading">
-    <div class="picture-frame">
-        {#if post.thumbnail}
-            <picture
-                    class="do-transition"
-                    class:border={post.thumbnail.showBorder}
-            >
-                <source srcset="/timeline/{post.thumbnail.name}.webp" type="image/webp"/>
-                <source
-                        srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
-                        type="image/{post.thumbnail.extension}"
-                />
-                <img
-                        src="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
-                        loading="lazy"
-                        alt={post.title}
-                        width={remsToPixels(1.7)}
-                        height={remsToPixels(1.7)}
-                />
-            </picture>
-        {/if}
+  <div class="picture-frame">
+    {#if post.thumbnail}
+      <picture class="do-transition" class:border={post.thumbnail.showBorder}>
+        <source
+          srcset="/timeline/{post.thumbnail.name}.webp"
+          type="image/webp"
+        />
+        <source
+          srcset="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
+          type="image/{post.thumbnail.extension}"
+        />
+        <img
+          src="/timeline/{post.thumbnail.name}.{post.thumbnail.extension}"
+          loading="lazy"
+          alt={post.title}
+          width={remsToPixels(1.7)}
+          height={remsToPixels(1.7)}
+        />
+      </picture>
+    {/if}
+  </div>
+  <div class="heading-and-tags">
+    <h3>
+      {#if post.hasContent}
+        <a
+          data-sveltekit-preload-data
+          data-testid="post-stub-link-{post.slug}"
+          href="item/{post.slug}"
+        >
+          {post.title}
+        </a>
+      {:else}{post.title}{/if}
+    </h3>
+    <div class="tags">
+      {#each post.tags as tagId}
+        <Tag
+          {tagId}
+          background={tagColors[tagId]?.bg}
+          foreground={tagColors[tagId]?.fg}
+          active={activeTags.has(tagId)}
+          {isPageBackgroundDark}
+          needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
+          needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
+          lazyLoad
+        />
+      {/each}
     </div>
-    <div class="heading-and-tags">
-        <h3>
-            {#if post.hasContent}
-                <a
-                        data-sveltekit-preload-data
-                        data-testid="post-stub-link-{post.slug}"
-                        href="item/{post.slug}"
-                >
-                    {post.title}
-                </a>
-            {:else}{post.title}{/if}
-        </h3>
-        <div class="tags">
-            {#each post.tags as tagId}
-                <Tag
-                        {tagId}
-                        background={tagColors[tagId]?.bg}
-                        foreground={tagColors[tagId]?.fg}
-                        active={activeTags.has(tagId)}
-                        isPageBackgroundDark={isPageBackgroundDark}
-                        needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
-                        needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
-                        lazyLoad/>
-            {/each}
-        </div>
-    </div>
+  </div>
 </div>
 
 <style lang="scss">
