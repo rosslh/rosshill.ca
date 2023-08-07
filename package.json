@@ -12,7 +12,9 @@
     "getIcons": "wireit",
     "getPosts": "wireit",
     "getWebp": "wireit",
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "wireit",
+    "lint:ts-svelte": "wireit",
+    "lint:styles": "wireit",
     "prepare": "svelte-kit sync",
     "preview": "vite preview --port 3000",
     "upgrade": "ncu -u --reject apca-w3 && npm i",
@@ -78,6 +80,32 @@
       "output": [
         ".nvmrc"
       ]
+    },
+    "lint": {
+      "dependencies": [
+        "lint:ts-svelte",
+        "lint:styles"
+      ]
+    },
+    "lint:styles": {
+      "command": "stylelint \"**/*.{css,scss,svelte}\" --ignore-path .gitignore",
+      "files": [
+        "**/*.{css,scss,svelte}",
+        ".stylelintrc.json"
+      ],
+      "output": []
+    },
+    "lint:ts-svelte": {
+      "command": "eslint \"**/*.{js,ts,svelte}\" --ignore-path .gitignore",
+      "files": [
+        "src/**/*.{js,ts,svelte}",
+        "scripts/**/*.{js,ts,svelte}",
+        "svelte.config.js",
+        "vite.config.ts",
+        "tsconfig.json",
+        ".eslintrc.json"
+      ],
+      "output": []
     }
   },
   "browserslist": [
@@ -143,7 +171,11 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-svelte": "^2.32.4",
+    "postcss-html": "^1.5.0",
     "prettier": "^3.0.1",
-    "prettier-plugin-svelte": "^3.0.3"
+    "prettier-plugin-svelte": "^3.0.3",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "sugarss": "^4.0.1"
   }
 }

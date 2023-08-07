@@ -7,46 +7,887 @@
         "driver": {
           "name": "ESLint",
           "informationUri": "https://eslint.org",
-          "rules": [],
+          "rules": [
+            {
+              "id": "no-unused-expressions",
+              "helpUri": "https://eslint.org/docs/latest/rules/no-unused-expressions",
+              "properties": {},
+              "shortDescription": {
+                "text": "Disallow unused expressions"
+              }
+            },
+            {
+              "id": "comma-dangle",
+              "helpUri": "https://eslint.org/docs/latest/rules/comma-dangle",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require or disallow trailing commas"
+              }
+            },
+            {
+              "id": "prettier/prettier",
+              "helpUri": "https://github.com/prettier/eslint-plugin-prettier#options",
+              "properties": {}
+            },
+            {
+              "id": "semi",
+              "helpUri": "https://eslint.org/docs/latest/rules/semi",
+              "properties": {},
+              "shortDescription": {
+                "text": "Require or disallow semicolons instead of ASI"
+              }
+            }
+          ],
           "version": "8.45.0"
         }
       },
       "artifacts": [
         {
           "location": {
-            "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.yml"
+            "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json"
           }
         }
       ],
-      "results": [],
-      "invocations": [
+      "results": [
         {
-          "toolConfigurationNotifications": [
+          "level": "error",
+          "message": {
+            "text": "Expected an assignment or function call and instead saw an expression."
+          },
+          "locations": [
             {
-              "level": "error",
-              "message": {
-                "text": "Parsing error: ';' expected."
-              },
-              "locations": [
-                {
-                  "physicalLocation": {
-                    "artifactLocation": {
-                      "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.yml",
-                      "index": 0
-                    },
-                    "region": {
-                      "startLine": 1,
-                      "startColumn": 30
-                    }
-                  }
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 124,
+                  "endColumn": 2
                 }
-              ],
-              "descriptor": {
-                "id": "ESL0999"
               }
             }
           ],
-          "executionSuccessful": false
+          "ruleId": "no-unused-expressions",
+          "ruleIndex": 0
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 17,
+                  "endLine": 6,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 34,
+                  "endLine": 14,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎····\"*.cjs\"⏎··` with `\"*.cjs\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 22,
+                  "endLine": 17,
+                  "endColumn": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 12,
+                  "endLine": 17,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎········\"*.svelte\"⏎······` with `\"*.svelte\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 17,
+                  "endLine": 22,
+                  "endColumn": 7
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 19,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 46,
+                  "endLine": 26,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 8,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 6,
+                  "endLine": 28,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 33,
+                  "startColumn": 27,
+                  "endLine": 34,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎····\"@typescript-eslint\",⏎····\"unicorn\"⏎··` with `\"@typescript-eslint\",·\"unicorn\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 15,
+                  "endLine": 38,
+                  "endColumn": 3
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 14,
+                  "endLine": 38,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 34,
+                  "endLine": 46,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 46,
+                  "startColumn": 8,
+                  "endLine": 47,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎······1,⏎······\"1tbs\"⏎····` with `1,·\"1tbs\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 21,
+                  "endLine": 52,
+                  "endColumn": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 13,
+                  "endLine": 52,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎······1,⏎······\"always-multiline\"⏎····` with `1,·\"always-multiline\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 22,
+                  "endLine": 57,
+                  "endColumn": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 25,
+                  "endLine": 57,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎······1,⏎······\"multi-line\"⏎····` with `1,·\"multi-line\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 15,
+                  "endLine": 61,
+                  "endColumn": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 60,
+                  "startColumn": 19,
+                  "endLine": 61,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 25,
+                  "endLine": 68,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 68,
+                  "startColumn": 8,
+                  "endLine": 69,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎··········\"warn\",⏎··········\"error\"⏎········` with `\"warn\",·\"error\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 19,
+                  "endLine": 85,
+                  "endColumn": 9
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 18,
+                  "endLine": 85,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 10,
+                  "endLine": 86,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 8,
+                  "endLine": 87,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 31,
+                  "endLine": 98,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 98,
+                  "startColumn": 8,
+                  "endLine": 99,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "error",
+          "message": {
+            "text": "Replace `⏎······1,⏎······\"consistent\"⏎····` with `1,·\"consistent\"`"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 21,
+                  "endLine": 107,
+                  "endColumn": 5
+                }
+              }
+            }
+          ],
+          "ruleId": "prettier/prettier",
+          "ruleIndex": 2
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 106,
+                  "startColumn": 19,
+                  "endLine": 107,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 40,
+                  "endLine": 120,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 31,
+                  "endLine": 123,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing trailing comma."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 4,
+                  "endLine": 124,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "comma-dangle",
+          "ruleIndex": 1
+        },
+        {
+          "level": "warning",
+          "message": {
+            "text": "Missing semicolon."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///Users/antoine/PhpstormProjects/mywebsite-svelte/.eslintrc.json",
+                  "index": 0
+                },
+                "region": {
+                  "startLine": 124,
+                  "startColumn": 2,
+                  "endLine": 125,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "ruleId": "semi",
+          "ruleIndex": 3
         }
       ]
     }
