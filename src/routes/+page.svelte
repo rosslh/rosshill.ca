@@ -67,7 +67,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.intro {
     margin-top: var(--spacing-3xl);

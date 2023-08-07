@@ -76,7 +76,7 @@
 </svelte:head>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.two-column {
     display: flex;

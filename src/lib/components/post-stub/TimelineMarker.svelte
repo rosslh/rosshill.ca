@@ -28,7 +28,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.timeline-marker {
     position: absolute;

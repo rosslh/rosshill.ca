@@ -62,7 +62,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.sidebar {
     border-right: 1px solid var(--color-border);

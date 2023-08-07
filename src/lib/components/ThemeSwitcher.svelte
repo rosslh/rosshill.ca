@@ -45,7 +45,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries.scss";
+  @import "src/lib/styles/media-queries";
 
   div.theme-switcher-wrapper {
     padding: var(--spacing-xl) 5%;
