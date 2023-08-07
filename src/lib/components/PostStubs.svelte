@@ -109,8 +109,8 @@
     rootMargin: string;
     threshold: number;
   } = {
-    rootMargin: "200px",
-    threshold: 0,
+    rootMargin: "100px",
+    threshold: 0.5,
   };
 
   function initialiseObserver() {

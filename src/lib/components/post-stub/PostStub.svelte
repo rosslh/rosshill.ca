@@ -13,15 +13,15 @@
 
   export let post: PostItemStub;
   export let tagColors: TagColors;
-  export let left: boolean;
+  export let left: boolean = false;
   export let isLastPost: boolean;
   export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
 
   let element: HTMLElement;
-  let intersecting: boolean;
+  let intersecting: boolean = false;
 
-  let hasIntersected = false;
+  let hasIntersected: boolean = false;
   $: {
     hasIntersected ||= reduceMotion || intersecting;
   }
@@ -45,7 +45,7 @@
   bind:intersecting
   complete={hasIntersected}
   {element}
-  threshold={0.5}
+  threshold={0}
 >
   <div
     aria-roledescription="post stub"
