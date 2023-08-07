@@ -32,7 +32,8 @@ export default {
     },
   },
   preprocess: preprocess({
-    replace: process.env.APP_ENV === "test" ? undefined : testIdReplacements,
+    replace:
+      process.env.VITE_ENV === "production" ? testIdReplacements : undefined,
     postcss: {
       plugins: [
         autoprefixer(),
