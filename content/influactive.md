@@ -30,7 +30,7 @@ que je suis toujours disponible pour répondre à leurs questions et à leurs pr
 
 En plus de mes compétences en développement web, je suis également très attentif aux détails. Je crois que chaque site
 internet doit être unique et refléter la personnalité de l'entreprise. C'est pourquoi je m'assure de personnaliser
-chaque site web que je crée pour répondre aux besoins spécifiques de chaque client. Je suis également très méticuleux
+chaque site web que je crée pour répondre aux besoins spécifiques de chaque client. Je suis aussi très méticuleux
 dans mon travail, ce qui signifie que je ne laisse aucun détail inaperçu.
 
 En conclusion, je suis fier de travailler pour Influactive et de faire partie d'une équipe qui crée des sites internet

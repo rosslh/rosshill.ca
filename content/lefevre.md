@@ -25,7 +25,7 @@ Le site est réalisé avec Wordpress et Elementor.
 ## Technologies
 
 - Javascript
-- Wordpress
+- WordPress
 - Elementor
 - PHP
 - HTML5

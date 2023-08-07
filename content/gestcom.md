@@ -16,7 +16,7 @@ imageExt: jpg
 Développer ses performances commerciales et améliorer ses techniques de vente est vital pour toute entreprise qui
 souhaite croître et prospérer. C'est là que Gest'Com intervient, avec ses 20 années d'expérience dans l'industrie
 automobile et son expertise en développement commercial, marketing, communication, web et réseaux sociaux, bureautique
-et logiciels.
+et logiciel.
 
 Les formations de Gest'Com sont adaptées à votre entreprise et se concentrent sur l'aspect humain, en enseignant les
 comportements gagnants du vendeur, les outils digitaux du vendeur, les techniques de vente 2.0 et les outils supports à

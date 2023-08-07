@@ -19,7 +19,7 @@ Je suis Antoine Greuzard, un développeur web freelance basé en France. Depuis 
 en tant que développeur pour des agences web, mais j'ai décidé de franchir le pas et de me lancer dans l'entrepreneuriat
 en proposant mes services en tant que développeur web indépendant.
 
-Mon expérience en tant que développeur web m'a permis de travailler sur une grande variété de projets pour des clients
+Mon expérience en tant que développeur web m'a permise de travailler sur une grande variété de projets pour des clients
 dans différents secteurs d'activités. Je suis spécialisé dans les technologies telles que JavaScript, Svelte,
 TypeScript, Laravel, React, PHP, MySQL, Plesk, Sass, WordPress, Elementor, Git, et Node.js.
 
@@ -36,7 +36,7 @@ développer mes compétences. J'ai travaillé sur des projets allant de la créa
 entreprises jusqu'à des projets plus complexes comme des applications de gestion pour des grandes entreprises.
 
 En plus de mes compétences en développement web, je suis également capable de fournir des services de maintenance et de
-support pour les sites Web et les applications que j'ai développés. Je suis passionné par mon travail et j'aime aider
+support pour les sites Web et les applications que j'ai développées. Je suis passionné par mon travail et j'aime aider
 mes clients à atteindre leurs objectifs en leur fournissant des solutions de qualité.
 
 Si vous êtes à la recherche d'un développeur web freelance pour votre prochain projet, n'hésitez pas à me contacter pour

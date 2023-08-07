@@ -38,7 +38,7 @@ faire le choix le plus pertinent pour votre entreprise.
 
 ## Langages utilisés
 
-- Wordpress
+- WordPress
 - Elementor
 
 ## Lien vers le site web

@@ -24,7 +24,7 @@ Un site internet fait sur Wordpress pour une entreprise spécialiste des éléme
 
 ## Technologies utilisées
 
-- Wordpress
+- WordPress
 - PHP
 - MySQL
 - HTML5

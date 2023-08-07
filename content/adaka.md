@@ -16,7 +16,7 @@ thumbnailExt: png
 ---
 
 Pendant deux mois, j'ai eu la chance de travailler en tant que développeur web et intégrateur web dans l'agence ADaKa,
-spécialisée en web design et communication digitale. Cette expérience a été très enrichissante pour moi car j'ai eu l'
+spécialisée en web design et communication digitale. Cette expérience a été très enrichissante pour moi, car j'ai eu l'
 opportunité de travailler sur plusieurs projets web variés.
 
 Au sein de l'agence, j'ai travaillé avec différentes technologies telles que WordPress, Elementor, Bootstrap, Git et
@@ -27,7 +27,7 @@ Mon travail consistait à réaliser les maquettes graphiques en code HTML et CSS
 cette expérience, j'ai amélioré mes compétences en développement web et en intégration de sites internet.
 
 Travailler dans une agence de communication m'a également permis de comprendre l'importance de l'expérience utilisateur
-et de l'optimisation de la vitesse de chargement des sites. J'ai également eu la chance de travailler en étroite
+et de l'optimisation de la vitesse de chargement des sites. J'ai aussi eu la chance de travailler en étroite
 collaboration avec les autres membres de l'équipe, notamment les designers et les chefs de projet.
 
 En conclusion, cette expérience m'a permis de découvrir de nouvelles technologies et de travailler sur des projets
