@@ -17,7 +17,7 @@
     "Cependant, malgré ces engagements, mon engagement envers le travail freelance reste indéfectible. J'apprécie l'indépendance et la liberté qu'offre ce mode de travail, ainsi que l'occasion de nouer des relations plus personnelles avec mes clients. Je suis déterminé à fournir un service exceptionnel, à répondre à vos besoins de manière précise et efficace, et à transformer vos visions en réalités impressionnantes et fonctionnelles.\n" +
     "\n" +
     "Que vous ayez besoin d'une refonte de site web complète, d'une simple page d'accueil ou d'un e-commerce complexe, je suis prêt à vous aider à réaliser vos objectifs numériques. Chaque projet est une nouvelle aventure et je suis toujours enthousiaste à l'idée de commencer un nouveau voyage. Alors, êtes-vous prêt à travailler ensemble pour créer quelque chose de grand ? Je suis toujours disponible pour discuter de vos idées, de vos visions et de la manière dont nous pouvons les transformer en une présence en ligne puissante et réussie.";
-  const introHTML = intro.replace(/\n/g, "<br/>");
+  const introLines = intro.split("\n").filter((line) => line.trim() !== "");
   const meta = {
     title: "Antoine Greuzard : Développeur Web Freelance",
     description: truncateBySentence(intro, 155),
@@ -59,9 +59,9 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h1 data-testid="main-heading">Je suis un Développeur web Freelance</h1>
-    <p>
-      {@html introHTML}
-    </p>
+    {#each introLines as line}
+      <p>{line}</p>
+    {/each}
   </div>
   <PostStubs {posts} {tagColors} />
 </div>
