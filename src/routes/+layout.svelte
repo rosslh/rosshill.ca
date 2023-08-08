@@ -54,25 +54,6 @@
   <meta content="#da532c" name="msapplication-TileColor" />
 
   <link href="/site.manifest" rel="manifest" />
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Person",
-      "name": "Antoine Greuzard",
-      "jobTitle": "Développeur web",
-      "url": "https://antoinegreuzard.fr/",
-      "image": "https://antoinegreuzard.fr/headshot.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/antoine-greuzard/",
-        "https://github.com/antoinegreuzard"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Antoine Greuzard"
-      }
-    }
-  </script>
 </svelte:head>
 
 <style lang="scss">
