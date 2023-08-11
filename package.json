@@ -117,7 +117,7 @@
     "@iconify/json": "^2.2.100",
     "@playwright/test": "^1.36.2",
     "@sveltejs/adapter-netlify": "^2.0.8",
-    "@sveltejs/kit": "1.22.4",
+    "@sveltejs/kit": "1.22.5",
     "@types/apca-w3": "^0.1.0",
     "@types/chroma-js": "^2.4.0",
     "@types/cssnano": "^5.0.0",
