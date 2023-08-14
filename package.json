@@ -128,7 +128,7 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "apca-w3": "0.1.9",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.15",
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
     "cssnano": "^6.0.1",
