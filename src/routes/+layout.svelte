@@ -74,8 +74,21 @@
     type="font/woff2"
     crossorigin="anonymous"
   />
+  <link
+    rel="preload"
+    href="/fonts/ibm-plex-mono-v19-latin-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/ibm-plex-mono-v19-latin-700.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
   <style>
-    /* source-sans-pro-regular - latin */
     @font-face {
       font-family: "Source Sans Pro";
       font-weight: 100 400;
@@ -95,7 +108,6 @@
           url("/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro")
           format("svg"); /* Legacy iOS */
     }
-    /* source-sans-pro-600 - latin */
     @font-face {
       font-family: "Source Sans Pro";
       font-weight: 500 900;
@@ -115,6 +127,44 @@
           url("/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro")
           format("svg"); /* Legacy iOS */
     }
+    @font-face {
+      font-display: block;
+      font-family: "IBM Plex Mono";
+      font-weight: 100 400;
+      src: url("../fonts/ibm-plex-mono-v19-latin-regular.eot"); /* IE9 Compat Modes */
+      src:
+        url("../fonts/ibm-plex-mono-v19-latin-regular.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/ibm-plex-mono-v19-latin-regular.woff2")
+          format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+          url("../fonts/ibm-plex-mono-v19-latin-regular.woff") format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+          url("../fonts/ibm-plex-mono-v19-latin-regular.ttf") format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+          url("../fonts/ibm-plex-mono-v19-latin-regular.svg#IBMPlexMono")
+          format("svg"); /* Legacy iOS */
+    }
+
+    @font-face {
+      font-display: block;
+      font-family: "IBM Plex Mono";
+      font-weight: 500 900;
+      src: url("../fonts/ibm-plex-mono-v19-latin-700.eot"); /* IE9 Compat Modes */
+      src:
+        url("../fonts/ibm-plex-mono-v19-latin-700.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("../fonts/ibm-plex-mono-v19-latin-700.woff2")
+          format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+          url("../fonts/ibm-plex-mono-v19-latin-700.woff") format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+          url("../fonts/ibm-plex-mono-v19-latin-700.ttf") format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+          url("../fonts/ibm-plex-mono-v19-latin-700.svg#IBMPlexMono")
+          format("svg"); /* Legacy iOS */
+    }
+
     html {
       font-weight: 400;
       font-family:

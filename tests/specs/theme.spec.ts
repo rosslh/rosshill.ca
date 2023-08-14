@@ -2,7 +2,7 @@ import { test, expect, Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
-type SiteTheme = "light" | "dark" | "system";
+type SiteTheme = "light" | "dark" | "system" | "cyberpunk";
 
 async function getCssVariable(
   page: Page,
@@ -67,8 +67,8 @@ for (const preferredColorScheme of colorSchemes) {
     test("Theme toggle works", async ({ page }) => {
       const themeOrder: SiteTheme[] =
         preferredColorScheme === "light"
-          ? ["system", "dark", "light"]
-          : ["system", "light", "dark"];
+          ? ["system", "dark", "light", "cyberpunk"]
+          : ["system", "light", "dark", "cyberpunk"];
 
       await expectTheme(page, themeOrder[0]);
 
@@ -79,6 +79,9 @@ for (const preferredColorScheme of colorSchemes) {
 
       await themeButton.click();
       await expectTheme(page, themeOrder[2]);
+
+      await themeButton.click();
+      await expectTheme(page, themeOrder[3]);
 
       await themeButton.click();
       await expectTheme(page, themeOrder[0]);

@@ -55,4 +55,5 @@ export enum SiteTheme {
   Light = "light",
   Dark = "dark",
   System = "system",
+  Cyberpunk = "cyberpunk",
 }

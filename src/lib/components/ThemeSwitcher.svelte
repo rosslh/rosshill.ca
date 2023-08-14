@@ -8,14 +8,20 @@
   import LightThemeIcon from "~icons/ion/ios-sunny";
   import DarkThemeIcon from "~icons/ion/ios-moon";
   import SystemThemeIcon from "~icons/lucide/settings-2";
+  import CyberpunkThemeIcon from "~icons/ph/circle-half-bold";
+
   import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
 
-  const themes: [SiteTheme, SiteTheme, SiteTheme] = prefersColorSchemeDark(
-    browser,
-  )
-    ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark]
-    : [SiteTheme.System, SiteTheme.Dark, SiteTheme.Light];
+  const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
+    prefersColorSchemeDark(browser)
+      ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark, SiteTheme.Cyberpunk]
+      : [
+          SiteTheme.System,
+          SiteTheme.Dark,
+          SiteTheme.Light,
+          SiteTheme.Cyberpunk,
+        ];
 
   let themeIndex = themes.indexOf(selectedTheme);
 
@@ -25,7 +31,7 @@
   };
 </script>
 
-<div class="theme-switcher-wrapper">
+<div class="theme-switcher-wrapper theme-{selectedTheme}">
   <button
     data-testid="theme-switcher"
     title="Next theme"
@@ -37,11 +43,19 @@
         <LightThemeIcon />
       {:else if selectedTheme === SiteTheme.Dark}
         <DarkThemeIcon />
+      {:else if selectedTheme === SiteTheme.Cyberpunk}
+        <CyberpunkThemeIcon />
       {:else}
         <SystemThemeIcon />
       {/if}
     </span>
-    <span class="description">{selectedTheme} theme</span>
+    <span class="description">
+      {selectedTheme}
+      {#if selectedTheme !== SiteTheme.Cyberpunk}
+        {" "}
+        theme
+      {/if}
+    </span>
   </button>
 </div>
 
@@ -75,6 +89,12 @@
 
       .description {
         text-transform: capitalize;
+      }
+    }
+
+    &.theme-cyberpunk {
+      .icon {
+        transform: rotate(90deg);
       }
     }
   }

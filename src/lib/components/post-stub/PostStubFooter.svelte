@@ -34,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-s);
 
     div.external-links {
       flex-shrink: 0;
