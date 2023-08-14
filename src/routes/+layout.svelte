@@ -131,6 +131,7 @@
       font-display: block;
       font-family: "IBM Plex Mono";
       font-weight: 100 400;
+      size-adjust: 90%;
       src: url("../fonts/ibm-plex-mono-v19-latin-regular.eot"); /* IE9 Compat Modes */
       src:
         url("../fonts/ibm-plex-mono-v19-latin-regular.eot?#iefix")
@@ -150,6 +151,7 @@
       font-display: block;
       font-family: "IBM Plex Mono";
       font-weight: 500 900;
+      size-adjust: 90%;
       src: url("../fonts/ibm-plex-mono-v19-latin-700.eot"); /* IE9 Compat Modes */
       src:
         url("../fonts/ibm-plex-mono-v19-latin-700.eot?#iefix")

@@ -103,25 +103,40 @@ $other-hue: 135;
 @mixin cyberpunk-theme() {
   $yellow: hsluv(75, 82%, 85%);
   $pink-hue: 320;
-  $purple-hue: 270;
+  $blue-hue: 270;
 
-  --color-job: #{hsluv($pink-hue, 100%, 77.7%)};
-  --color-project: #{hsluv($pink-hue, 100%, 77.7%)};
-  --color-other: #{hsluv($pink-hue, 100%, 77.7%)};
+  $job-hue: 40;
+  $project-hue: 190;
+  $other-hue: 130;
+
+  $background-saturation: 45%;
+  $foreground-saturation: 100%;
+  $border-saturation: 55%;
+
+  $category-lightness: 75%;
+  $category-saturation: 75%;
+
+  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv(
+      $project-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
   --color-job-marker: var(--color-job);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
   --color-heading: #{$yellow};
-  --color-foreground: #{hsluv($purple-hue, 100%, 80%)};
+  --color-foreground: #{hsluv($blue-hue, $foreground-saturation, 80%)};
   --color-link: #{$yellow};
-  --color-subtitle: #{hsluv($purple-hue, 100%, 70%)};
-  --color-focus-outline: #{hsluv($pink-hue, 55.6%, 35.1%)};
-  --color-timeline: #{hsluv($pink-hue, 55.6%, 35.1%)};
-  --color-border: #{hsluv($pink-hue, 55.6%, 35.1%)};
-  --color-panel-background: #{hsluv($purple-hue, 40.2%, 5.9%)};
-  --color-background: #{hsluv($purple-hue, 39%, 3.1%)};
+  --color-subtitle: #{hsluv($blue-hue, $foreground-saturation, 70%)};
+  --color-focus-outline: #{hsluv($pink-hue, $border-saturation, 35%)};
+  --color-timeline: #{hsluv($blue-hue, $background-saturation, 28%)};
+  --color-border: #{hsluv($pink-hue, $border-saturation, 35%)};
+  --color-panel-background: #{hsluv($blue-hue, $background-saturation, 6%)};
+  --color-background: #{hsluv($blue-hue, $background-saturation, 3.5%)};
 
   font-family: "IBM Plex Mono", monospace;
 }
