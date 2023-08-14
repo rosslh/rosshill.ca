@@ -157,7 +157,7 @@
   />
 </div>
 <div class="content-wrapper posts-wrapper">
-  <div class="posts">
+  <div class="posts" role="list">
     {#each displayedPosts as post, index (post.slug)}
       {#if post.showYearLabel}
         <YearLabel
