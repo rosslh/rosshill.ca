@@ -31,8 +31,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 1em;
 }
 small {

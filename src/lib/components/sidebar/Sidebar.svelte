@@ -50,10 +50,10 @@
         {:else}
           <picture>
             <source srcset="/headshot.webp" type="image/webp" />
-            <source srcset="/headshot.png" type="image/png" />
+            <source srcset="/headshot.jpg" type="image/jpeg" />
             <img
               data-testid="headshot-image"
-              src="/headshot.png"
+              src="/headshot.jpg"
               alt="Ross Hill"
               width={remsToPixels(10)}
               height={remsToPixels(10)}
@@ -84,7 +84,7 @@
       <AnimatedName />
     </div>
     <p class="subtitle role do-transition" data-testid="job-title">
-      Software Developer
+      Software Engineer
     </p>
     <p class="subtitle email">
       <a href="mailto:ross@rosshill.ca" data-testid="email-address"

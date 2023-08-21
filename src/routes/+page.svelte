@@ -11,7 +11,7 @@
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
   const intro =
-    "I am a software developer and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
+    "I develop software and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
   const meta = {
     title: "Ross Hill: Website and Portfolio",
