@@ -159,7 +159,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "universal-cookie": "^6.1.0",
-    "unplugin-icons": "^0.16.5",
+    "unplugin-icons": "^0.16.6",
     "vite": "4.4.9",
     "wireit": "^0.10.0",
     "xml-formatter": "^3.5.0"
