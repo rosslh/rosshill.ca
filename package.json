@@ -121,7 +121,7 @@
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.24.0",
     "@types/apca-w3": "^0.1.0",
-    "@types/chroma-js": "^2.4.0",
+    "@types/chroma-js": "^2.4.1",
     "@types/cssnano": "^5.0.0",
     "@types/dateformat": "^5.0.0",
     "@types/imagemin": "^8.0.1",
