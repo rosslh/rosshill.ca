@@ -5,7 +5,7 @@
   import { browser } from "$app/environment";
 
   import { reduceMotion } from "$lib/reduceMotion";
-  import svgPath from "./NameSvg";
+  import { regular, cyberpunk } from "./NameSvg";
 
   let showTitle = false;
   let logoHasFill = false;
@@ -30,8 +30,8 @@
   };
 </script>
 
-<div class="name-wrapper do-transition">
-  <div class="name-background do-transition" />
+<div class="name-wrapper transition-colors">
+  <div class="name-background transition-colors" />
   <svg
     class:ssr-fade-in={!browser}
     aria-hidden="true"
@@ -41,7 +41,7 @@
     <g>
       {#if showTitle || !browser}
         <path
-          class={getPathClass()}
+          class="name-cyberpunk {getPathClass()}"
           on:introstart={browser
             ? () => {
                 setTimeout(() => {
@@ -53,7 +53,22 @@
               }
             : null}
           in:draw={browser ? { duration: 3000, easing: sineIn } : undefined}
-          d={svgPath}
+          d={cyberpunk}
+        />
+        <path
+          class="name-regular {getPathClass()}"
+          on:introstart={browser
+            ? () => {
+                setTimeout(() => {
+                  logoHasFill = true;
+                }, logoFillDelay);
+                setTimeout(() => {
+                  doneFilling = true;
+                }, logoFillDelay + 900);
+              }
+            : null}
+          in:draw={browser ? { duration: 3000, easing: sineIn } : undefined}
+          d={regular}
         />
       {/if}
     </g>
@@ -63,6 +78,19 @@
 
 <style lang="scss">
   @import "src/lib/styles/media-queries";
+
+  :global(.app-wrapper[data-theme="cyberpunk"]) .name-regular {
+    display: none;
+  }
+
+  :global(.app-wrapper:not([data-theme="cyberpunk"])) .name-cyberpunk {
+    display: none;
+  }
+
+  .name-cyberpunk {
+    transform: scale(110%) translateY(var(--spacing-s));
+    transform-origin: center;
+  }
 
   svg {
     height: 100%;

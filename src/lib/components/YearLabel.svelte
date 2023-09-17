@@ -6,9 +6,9 @@
   export let isFirstLabel: boolean;
 </script>
 
-<div class="label-wrapper do-transition">
+<div class="label-wrapper transition-colors">
   <span
-    class="year-label do-transition"
+    class="year-label transition-colors"
     class:first-label={isFirstLabel}
     class:centered-label={!isFirstLabel}
   >
@@ -24,10 +24,10 @@
       class:rtl={isRightToLeft}
       class:ltr={!isRightToLeft}
     >
-      <div class="do-transition" />
-      <div class="do-transition" />
-      <div class="do-transition" />
-      <div class="do-transition" />
+      <div class="transition-colors" />
+      <div class="transition-colors" />
+      <div class="transition-colors" />
+      <div class="transition-colors" />
     </div>
   {/if}
 </div>

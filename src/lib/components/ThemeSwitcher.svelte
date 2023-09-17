@@ -35,7 +35,7 @@
   <button
     data-testid="theme-switcher"
     title="Next theme"
-    class="do-transition"
+    class="transition-colors"
     on:click={changeTheme}
   >
     <span aria-hidden="true" class="icon">

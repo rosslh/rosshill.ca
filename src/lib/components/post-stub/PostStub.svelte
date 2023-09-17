@@ -52,7 +52,7 @@
     bind:this={element}
     id="timeline-{post.slug}"
     data-testid="post-stub-{post.slug}"
-    class="post-wrapper do-transition {left ? 'left' : 'right'}"
+    class="post-wrapper transition-colors {left ? 'left' : 'right'}"
     on:mouseenter={() => {
       showTooltip = true;
     }}
@@ -65,7 +65,7 @@
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
       <div
-        class="post do-transition"
+        class="post transition-colors"
         on:mouseenter|once={post.hasContent ? preloadPage : null}
         role="article"
       >

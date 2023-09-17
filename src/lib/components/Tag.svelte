@@ -46,7 +46,7 @@
 
 <svelte:element
   this={onClick ? "button" : "div"}
-  class="tag do-transition"
+  class="tag transition-colors"
   class:active
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
   on:click={onClick}
@@ -54,7 +54,7 @@
   role={onClick ? "button" : undefined}
 >
   <span
-    class="logo-wrapper do-transition"
+    class="logo-wrapper transition-colors"
     style="background-color: #{background};"
     class:hasOutline={isPageBackgroundDark
       ? needsOutlineOnDarkBg
@@ -108,8 +108,8 @@
     border-top-left-radius: var(--border-radius-m);
     border-bottom-left-radius: var(--border-radius-m);
 
-    &.do-transition {
-      /* taken from global.scss .do-transition */
+    &.transition-colors {
+      /* taken from global.scss .transition-colors */
       transition:
         border-color 0.3s ease,
         width 0.3s ease,

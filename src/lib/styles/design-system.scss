@@ -105,7 +105,7 @@ $other-hue: 135;
   $pink-hue: 310;
   $blue-hue: 270;
 
-  $job-hue: 40;
+  $job-hue: 45;
   $project-hue: 190;
   $other-hue: 130;
 
@@ -134,8 +134,8 @@ $other-hue: 135;
   --color-subtitle: #{hsluv($blue-hue, $foreground-saturation, 70%)};
   --color-focus-outline: #{hsluv($pink-hue, $border-saturation, 37%)};
   --color-timeline: #{hsluv($blue-hue, $background-saturation, 28%)};
-  --color-border: #{hsluv($pink-hue, $border-saturation, 37%)};
-  --color-panel-background: #{hsluv($blue-hue, $background-saturation, 6%)};
+  --color-border: #{hsluv($pink-hue, $border-saturation, 32%)};
+  --color-panel-background: #{hsluv($blue-hue, $background-saturation, 7%)};
   --color-background: #{hsluv($blue-hue, $background-saturation, 3%)};
 
   font-family: "IBM Plex Mono", monospace;

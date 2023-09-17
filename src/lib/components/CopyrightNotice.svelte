@@ -1,5 +1,5 @@
-<footer class="do-transition">
-  Copyright &copy Ross Hill. All Rights Reserved.
+<footer class="transition-colors">
+  Copyright &copy; Ross Hill. All Rights Reserved.
 </footer>
 
 <style>

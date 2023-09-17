@@ -48,7 +48,7 @@
 </script>
 
 <div
-  class="app-wrapper do-transition"
+  class="app-wrapper transition-colors"
   bind:this={appWrapper}
   data-theme={selectedTheme}
   data-testid="app-wrapper"

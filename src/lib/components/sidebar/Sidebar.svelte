@@ -24,10 +24,13 @@
   );
 </script>
 
-<div class="sidebar do-transition" data-testid="sidebar">
+<div class="sidebar transition-colors" data-testid="sidebar">
   <div class="sidebar-content">
     {#if !currentOccasion || currentOccasion.imageName}
-      <div class="img-wrapper" class:rounded={!currentOccasion}>
+      <div
+        class="img-wrapper transition-colors"
+        class:rounded={!currentOccasion}
+      >
         {#if currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
             <source
@@ -83,13 +86,13 @@
     <div class="name-wrapper">
       <AnimatedName />
     </div>
-    <p class="subtitle role do-transition" data-testid="job-title">
+    <p class="subtitle role transition-colors" data-testid="job-title">
       Software Engineer
     </p>
     <p class="subtitle email">
-      <a href="mailto:ross@rosshill.ca" data-testid="email-address"
-        >ross@rosshill.ca</a
-      >
+      <a href="mailto:ross@rosshill.ca" data-testid="email-address">
+        ross@rosshill.ca
+      </a>
     </p>
     <p class="subtitle">
       <a
@@ -130,6 +133,7 @@
     border-right: 1px solid var(--color-border);
     background-color: var(--color-panel-background);
     z-index: 10;
+    text-align: center;
 
     div.sidebar-content {
       display: flex;
@@ -156,7 +160,7 @@
         align-items: center;
         justify-content: center;
         max-width: 10rem;
-        overflow: hidden;
+        // overflow: hidden;
       }
 
       p.subtitle {
@@ -179,6 +183,7 @@
         &.rounded {
           overflow: hidden;
           border-radius: 50%;
+          border: 3px solid var(--color-border);
         }
 
         picture {

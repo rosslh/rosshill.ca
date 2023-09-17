@@ -52,7 +52,7 @@
   const duration = getDuration();
 </script>
 
-<div class="date-string do-transition">
+<div class="date-string transition-colors">
   {#if date.isSeasonal}
     Seasonal:
   {/if}

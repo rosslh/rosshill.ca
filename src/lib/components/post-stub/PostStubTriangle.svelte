@@ -4,10 +4,13 @@
   $: positionString = left ? "left" : "right";
 </script>
 
-<div aria-hidden="true" class="arrow arrow-{positionString} do-transition" />
 <div
   aria-hidden="true"
-  class="arrow-border arrow-{positionString}-border do-transition"
+  class="arrow arrow-{positionString} transition-colors"
+/>
+<div
+  aria-hidden="true"
+  class="arrow-border arrow-{positionString}-border transition-colors"
 />
 
 <style lang="scss">

@@ -4,11 +4,11 @@
 
 <div class="content-wrapper">
   <div aria-hidden="true" class="separator">
-    <div class="line do-transition" />
-    <div class="symbol do-transition">
+    <div class="line transition-colors" />
+    <div class="symbol transition-colors">
       <Code />
     </div>
-    <div class="line do-transition" />
+    <div class="line transition-colors" />
   </div>
 </div>
 

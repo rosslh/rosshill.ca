@@ -31,7 +31,7 @@
   data-testid="event-filter-{classPrefix}"
   class="{classPrefix}-button"
   class:toggling={isToggling}
-  class:do-transition={!isToggling}
+  class:transition-colors={!isToggling}
   class:active
   on:click={handleClick}
 >
