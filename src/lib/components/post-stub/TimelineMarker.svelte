@@ -13,8 +13,9 @@
 
 <div
   aria-hidden="true"
-  class="timeline-marker do-transition {left ? 'left' : 'right'} {eventType ??
-    PostCategory.Other}"
+  class="timeline-marker transition-colors {left
+    ? 'left'
+    : 'right'} {eventType ?? PostCategory.Other}"
 >
   {#if showTooltip}
     <span

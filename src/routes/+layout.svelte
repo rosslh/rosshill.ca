@@ -15,7 +15,7 @@
 </script>
 
 <div
-  class="app-wrapper do-transition"
+  class="app-wrapper transition-colors"
   data-testid="app-wrapper"
   data-theme={selectedTheme}
 >

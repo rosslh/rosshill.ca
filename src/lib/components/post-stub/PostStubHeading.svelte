@@ -13,7 +13,10 @@
 <div class="post-heading">
   <div class="picture-frame">
     {#if post.thumbnail}
-      <picture class="do-transition" class:border={post.thumbnail.showBorder}>
+      <picture
+        class="transition-colors"
+        class:border={post.thumbnail.showBorder}
+      >
         <source
           srcset="/timeline/{post.thumbnail.name}.webp"
           type="image/webp"

@@ -26,7 +26,7 @@
 
 <div class="theme-switcher-wrapper">
   <button
-    class="do-transition"
+    class="transition-colors"
     data-testid="theme-switcher"
     on:click={changeTheme}
     title="Next theme"

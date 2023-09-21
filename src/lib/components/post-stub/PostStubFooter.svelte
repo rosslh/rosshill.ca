@@ -7,7 +7,7 @@
 </script>
 
 <div class="footer">
-  <div class="external-links do-transition">
+  <div class="external-links transition-colors">
     {#if post.repository}
       <a target="_blank" rel="noopener noreferrer" href={post.repository}>
         GitHub

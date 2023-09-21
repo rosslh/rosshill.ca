@@ -104,7 +104,7 @@
   {#if showCategories.size || showTags.size}
     <button
       data-testid="clear-filters"
-      class="secondary-button do-transition"
+      class="secondary-button transition-colors"
       on:click={() => {
         showCategories.clear();
         showTags.clear();
@@ -134,7 +134,7 @@
   {#if $minTagNumber !== 0}
     <button
       data-testid="show-more-tags"
-      class="secondary-button do-transition"
+      class="secondary-button transition-colors"
       on:click={() => {
         $minTagNumber = 0;
       }}

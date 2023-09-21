@@ -6,11 +6,11 @@
 
 <div
   aria-hidden="true"
-  class="arrow arrow-{positionString} do-transition"
+  class="arrow arrow-{positionString} transition-colors"
 ></div>
 <div
   aria-hidden="true"
-  class="arrow-border arrow-{positionString}-border do-transition"
+  class="arrow-border arrow-{positionString}-border transition-colors"
 ></div>
 
 <style lang="scss">

@@ -4,7 +4,7 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
 </script>
 
-<div class="sidebar do-transition" data-testid="sidebar">
+<div class="sidebar transition-colors" data-testid="sidebar">
   <div class="sidebar-content">
     <div class="img-wrapper">
       <picture class="fixed-size">
@@ -21,13 +21,13 @@
       </picture>
     </div>
     <div class="name-wrapper">Antoine Greuzard</div>
-    <p class="subtitle role do-transition" data-testid="job-title">
+    <p class="subtitle role transition-colors" data-testid="job-title">
       Développeur web
     </p>
     <p class="subtitle email">
-      <a data-testid="email-address" href="mailto:antoine@antoinegreuzard"
-        >antoine@antoinegreuzard.fr</a
-      >
+      <a data-testid="email-address" href="mailto:antoine@antoinegreuzard">
+        antoine@antoinegreuzard.fr
+      </a>
     </p>
     <p class="subtitle">
       <a
@@ -68,6 +68,7 @@
     border-right: 1px solid var(--color-border);
     background-color: var(--color-panel-background);
     z-index: 10;
+    text-align: center;
 
     div.sidebar-content {
       display: flex;
@@ -85,7 +86,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
         font-size: var(--font-size-xl);
         font-weight: 700;
         text-align: center;
@@ -110,6 +110,7 @@
         min-width: 10.5rem;
         min-height: 10.5rem;
         margin-top: calc(-1 * var(--spacing-3xl));
+        overflow: hidden;
 
         picture {
           position: relative;
@@ -125,6 +126,7 @@
             width: 100%;
             height: 100%;
             border-radius: var(--border-radius-m);
+            border: 3px solid var(--color-border);
           }
         }
       }

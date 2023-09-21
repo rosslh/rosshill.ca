@@ -50,7 +50,7 @@
   <div
     aria-roledescription="post stub"
     bind:this={element}
-    class="post-wrapper do-transition {left ? 'left' : 'right'}"
+    class="post-wrapper transition-colors {left ? 'left' : 'right'}"
     data-testid="post-stub-{post.slug}"
     id="timeline-{post.slug}"
     on:blur={() => {
@@ -72,7 +72,7 @@
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
       <div
-        class="post do-transition"
+        class="post transition-colors"
         data-testid="post-stub-{post.slug}"
         on:mouseenter={post.hasContent ? preloadPage : null}
         role="link"

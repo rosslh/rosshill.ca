@@ -30,8 +30,8 @@
 <button
   class="{classPrefix}-button"
   class:active
-  class:do-transition={!isToggling}
   class:toggling={isToggling}
+  class:transition-colors={!isToggling}
   data-testid="event-filter-{classPrefix}"
   on:click={handleClick}
 >

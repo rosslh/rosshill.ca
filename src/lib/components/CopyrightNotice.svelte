@@ -1,4 +1,4 @@
-<footer class="content-wrapper do-transition">
+<footer class="transition-colors">
   2022-{new Date().getFullYear()} Antoine Greuzard
 </footer>
 

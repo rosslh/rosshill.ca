@@ -80,7 +80,7 @@
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
-      <div class="subtitle do-transition">
+      <div class="subtitle transition-colors">
         <PostDate date={post.date} />
         {#if post.repository}
           <InlineSeparator />
@@ -115,7 +115,7 @@
           type="image/{post.image.extension}"
         />
         <img
-          class="do-transition"
+          class="transition-colors"
           src="/timeline/{post.image.name}.{post.image.extension}"
           alt={post.title}
           width={600}
@@ -125,7 +125,7 @@
     {/if}
     {#if post.embed}
       <div class="embed-wrapper">
-        <div class="do-transition">
+        <div class="transition-colors">
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html post.embed}
         </div>
