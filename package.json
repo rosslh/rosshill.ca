@@ -145,7 +145,7 @@
     "hsluv-ts": "^1.0.1",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
-    "isbot": "^3.6.13",
+    "isbot": "^3.7.0",
     "lodash-es": "^4.17.21",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.14.4",
