@@ -120,7 +120,7 @@
     "@playwright/test": "^1.38.1",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.25.0",
-    "@types/apca-w3": "^0.1.0",
+    "@types/apca-w3": "^0.1.1",
     "@types/chroma-js": "^2.4.1",
     "@types/cssnano": "^5.0.0",
     "@types/dateformat": "^5.0.0",
