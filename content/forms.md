@@ -8,7 +8,8 @@ tags: [ javascript, php, wordpress, css3, html5, vite, git, composer, eslint ]
 repository: https://github.com/Influactive360/influactive-forms
 
 date: 2023-06-30
-isOngoing: true
+endDate: 2023-10-11
+isOngoing: false
 isSeasonal: false
 
 thumbnail: wordpress

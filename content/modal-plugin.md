@@ -7,7 +7,8 @@ tags: [ javascript, css3, html5, wordpress, git, php ]
 repository: https://github.com/Influactive360/influactive-modal
 
 date: 2023-06-22
-isOngoing: true
+endDate: 2023-10-11
+isOngoing: false
 isSeasonal: false
 
 thumbnail: wordpress
