@@ -14,6 +14,9 @@
   export let posts: PostItemStub[] = [];
   export let tagColors: TagColors;
 
+  const MAX_POSTS_LENGTH: number = 1000;
+  const POSTS_INCREMENT: number = 10;
+
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
   const getLabelVisibilityAndAlignment = (
@@ -86,9 +89,6 @@
   let displayedPostsLength: number = 5;
   let initialDisplayedPostsLength: number = displayedPostsLength;
 
-  const MAX_POSTS_LENGTH: number = 1000;
-  const POSTS_INCREMENT: number = 10;
-
   $: {
     const filteredPosts = posts
       .filter(
@@ -135,14 +135,31 @@
 
   $: {
     if (displayedPostsLength > initialDisplayedPostsLength) {
-      initialiseObserver();
-      initialDisplayedPostsLength = displayedPostsLength;
+      if (loadMoreTrigger) {
+        if (observer) {
+          observer.disconnect();
+        }
+
+        observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              displayedPostsLength += POSTS_INCREMENT;
+            }
+          }
+        }, options);
+
+        observer.observe(loadMoreTrigger);
+        initialDisplayedPostsLength = displayedPostsLength;
+      } else {
+        displayedPostsLength = initialDisplayedPostsLength;
+      }
     }
   }
 
   onDestroy(() => {
     if (observer) {
       observer.disconnect();
+      observer = null;
     }
   });
 </script>
