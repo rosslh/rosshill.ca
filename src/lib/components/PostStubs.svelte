@@ -88,7 +88,6 @@
   let displayedPosts: PostItemStub[];
   let displayedPostsLength: number = 5;
   let initialDisplayedPostsLength: number = displayedPostsLength;
-  let isHashInUrl = false;
 
   $: {
     const filteredPosts = posts
@@ -101,11 +100,10 @@
     displayedPosts = filteredPosts.slice(0, displayedPostsLength);
   }
 
-  $: isHashInUrl =
-    typeof window !== "undefined" && window.location.href.includes("#");
-
   $: {
-    if (isHashInUrl || $showCategories.size || $showTags.size) {
+    if (typeof window !== "undefined" && window.location.href.includes("#")) {
+      displayedPostsLength = MAX_POSTS_LENGTH;
+    } else if ($showCategories.size || $showTags.size) {
       displayedPostsLength = MAX_POSTS_LENGTH;
     }
   }
