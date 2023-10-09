@@ -88,6 +88,7 @@
   let displayedPosts: PostItemStub[];
   let displayedPostsLength: number = 5;
   let initialDisplayedPostsLength: number = displayedPostsLength;
+  let isHashInUrl = false;
 
   $: {
     const filteredPosts = posts
@@ -100,8 +101,13 @@
     displayedPosts = filteredPosts.slice(0, displayedPostsLength);
   }
 
-  $: if ($showCategories.size || $showTags.size) {
-    displayedPostsLength = MAX_POSTS_LENGTH;
+  $: isHashInUrl =
+    typeof window !== "undefined" && window.location.href.includes("#");
+
+  $: {
+    if (isHashInUrl || $showCategories.size || $showTags.size) {
+      displayedPostsLength = MAX_POSTS_LENGTH;
+    }
   }
 
   let observer: IntersectionObserver | null = null;
@@ -109,7 +115,7 @@
     rootMargin: string;
     threshold: number;
   } = {
-    rootMargin: "100px",
+    rootMargin: "24px",
     threshold: 0.5,
   };
 
