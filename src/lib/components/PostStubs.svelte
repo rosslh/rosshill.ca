@@ -101,9 +101,7 @@
   }
 
   $: {
-    if (typeof window !== "undefined" && window.location.href.includes("#")) {
-      displayedPostsLength = MAX_POSTS_LENGTH;
-    } else if ($showCategories.size || $showTags.size) {
+    if ($showCategories.size || $showTags.size) {
       displayedPostsLength = MAX_POSTS_LENGTH;
     }
   }
