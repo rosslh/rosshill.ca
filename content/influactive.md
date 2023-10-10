@@ -9,7 +9,7 @@ repository: https://github.com/Influactive360
 
 date: 2022-10-01
 endDate: 2023-10-11
-isOngoing: true
+isOngoing: false
 isSeasonal: false
 
 thumbnail: influactive
