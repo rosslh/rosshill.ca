@@ -65,8 +65,7 @@
     on:mouseover={() => {
       showTooltip = true;
     }}
-    role="button"
-    tabindex="0"
+    role="listitem"
   >
     <TimelineMarker eventType={post.eventType} {left} {showTooltip} />
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
