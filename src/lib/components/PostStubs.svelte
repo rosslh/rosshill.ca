@@ -106,6 +106,12 @@
     }
   }
 
+  onMount(async () => {
+    if (window.location.href.includes("#")) {
+      displayedPostsLength = MAX_POSTS_LENGTH;
+    }
+  });
+
   let observer: IntersectionObserver | null = null;
   const options: {
     rootMargin: string;
