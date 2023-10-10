@@ -127,7 +127,7 @@
     "@types/imagemin": "^8.0.1",
     "@types/imagemin-webp": "^7.0.1",
     "@types/lodash-es": "^4.17.9",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "apca-w3": "0.1.9",
     "autoprefixer": "^10.4.16",
