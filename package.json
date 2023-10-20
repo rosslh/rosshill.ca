@@ -117,7 +117,7 @@
     "@babel/core": "^7.23.0",
     "@babel/eslint-parser": "^7.22.15",
     "@iconify/json": "^2.2.130",
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.39.0",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.25.2",
     "@types/apca-w3": "^0.1.2",
