@@ -123,7 +123,7 @@
     "@types/apca-w3": "^0.1.2",
     "@types/chroma-js": "^2.4.2",
     "@types/cssnano": "^5.0.0",
-    "@types/dateformat": "^5.0.0",
+    "@types/dateformat": "^5.0.1",
     "@types/imagemin": "^8.0.3",
     "@types/imagemin-webp": "^7.0.2",
     "@types/lodash-es": "^4.17.9",
