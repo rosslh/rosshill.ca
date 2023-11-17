@@ -1,5 +1,15 @@
 import { addMonths } from "date-fns";
 
+/**
+ * Returns the nth day of the week in the given month.
+ *
+ * For example, if you want to know the date of the 3rd Monday in November, you would call `getNthDayOfWeekInMonth(11, 1, 3)`.
+ *
+ * @param month
+ * @param dayOfWeek
+ * @param n
+ * @returns
+ */
 const getNthDayOfWeekInMonth = (
   month: number,
   dayOfWeek: number,

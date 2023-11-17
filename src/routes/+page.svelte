@@ -38,7 +38,7 @@
         ...meta.image,
       },
     ],
-    site_name: meta.siteName,
+    siteName: meta.siteName,
     title: meta.title,
     type: "website",
     url: meta.url,
