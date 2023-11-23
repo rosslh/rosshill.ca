@@ -2,7 +2,7 @@ import chroma from "chroma-js";
 import { APCAcontrast, sRGBtoY } from "apca-w3";
 import fs from "node:fs";
 import { hsluvToHex } from "hsluv-ts";
-import { keyBy, merge } from "lodash-es";
+import { keyBy, merge, escapeRegExp } from "lodash-es";
 
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
@@ -55,9 +55,7 @@ const getNumbersFromStylesheetProperty = (
   fileLines: string[],
   propertyName: string,
 ): number[] => {
-  const escapedPropertyName = propertyName
-    .replace(/\\/g, "\\\\")
-    .replace(/\$/g, "\\$");
+  const escapedPropertyName = escapeRegExp(propertyName);
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
 
