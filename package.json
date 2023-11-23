@@ -94,12 +94,12 @@
         "getWebp"
       ],
       "files": [
-        "src",
+        "src/**/*",
         "svelte.config.js",
         "vite.config.ts",
         "tsconfig.json",
         "package.json",
-        "assets"
+        "assets/**/*"
       ],
       "output": [
         "build"
@@ -122,7 +122,7 @@
     "getPosts": {
       "command": "markdown-json -c content/.mdconfig.json",
       "files": [
-        "content"
+        "content/**/*"
       ],
       "output": [
         "data/posts.json"

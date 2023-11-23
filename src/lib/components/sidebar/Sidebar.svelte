@@ -4,22 +4,19 @@
   import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
-  import { utcToZonedTime } from "date-fns-tz";
+
   import { occasions } from "$lib/occasions";
 
-  const dateToTorontoTz = (date: Date) =>
-    utcToZonedTime(date.toISOString(), "America/Toronto");
-  const today = dateToTorontoTz(new Date());
+  const today = new Date(
+    new Date().toLocaleString(undefined, { timeZone: "America/Toronto" }),
+  );
   const currentYear = today.getFullYear();
   const currentOccasion = occasions.find(
     ({ startDay, startMonth, durationDays }) =>
       [currentYear - 1, currentYear].some((year: number) => {
         const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
         const endDate = endOfDay(addDays(startDate, durationDays - 1));
-        return (
-          today >= dateToTorontoTz(startDate) &&
-          today <= dateToTorontoTz(endDate)
-        );
+        return today >= startDate && today <= endDate;
       }),
   );
 </script>
