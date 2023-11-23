@@ -16,7 +16,7 @@
     "lint:styles": "wireit",
     "prepare": "svelte-kit sync",
     "preview": "vite preview --port 3000",
-    "upgrade": "ncu -u --reject apca-w3 && npm i",
+    "upgrade": "ncu -u -x universal-cookie && npm i",
     "updateNvmrc": "wireit"
   },
   "wireit": {
@@ -28,7 +28,7 @@
         "getWebp"
       ],
       "files": [
-        "src",
+        "src/**/*",
         "svelte.config.js",
         "vite.config.ts",
         "tsconfig.json",
@@ -56,7 +56,7 @@
     "getPosts": {
       "command": "markdown-json -c content/.mdconfig.json",
       "files": [
-        "content"
+        "content/**/*"
       ],
       "output": [
         "data/posts.json"
