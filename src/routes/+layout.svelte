@@ -32,7 +32,7 @@
         border-radius: ${getCssVariable("border-radius-m")};
         color: ${getCssVariable("color-foreground")};
         display: inline-block;
-        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
         font-weight: 700;
         padding: ${getCssVariable("spacing-s")};
         `,
@@ -62,20 +62,6 @@
 <svelte:head>
   <link
     rel="preload"
-    href="/fonts/source-sans-pro-v18-latin-regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/fonts/source-sans-pro-v18-latin-700.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
     href="/fonts/ibm-plex-mono-v19-latin-regular.woff2"
     as="font"
     type="font/woff2"
@@ -88,44 +74,55 @@
     type="font/woff2"
     crossorigin="anonymous"
   />
+  <link
+    rel="preload"
+    href="/fonts/inter-v13-latin-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/inter-v13-latin-600.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
   <style>
     @font-face {
-      font-family: "Source Sans Pro";
-      font-weight: 100 400;
       font-display: block;
-      src: url("/fonts/source-sans-pro-v18-latin-regular.eot"); /* IE9 Compat Modes */
+      font-family: "Inter";
+      font-weight: 100 400;
+      size-adjust: 90%;
+      src: url("../fonts/inter-v13-latin-regular.eot"); /* IE9 Compat Modes */
       src:
-        local("Source Sans Pro"),
-        url("/fonts/source-sans-pro-v18-latin-regular.eot?#iefix")
+        url("../fonts/inter-v13-latin-regular.eot?#iefix")
           format("embedded-opentype"),
-        /* IE6-IE8 */ url("/fonts/source-sans-pro-v18-latin-regular.woff2")
+        /* IE6-IE8 */ url("../fonts/inter-v13-latin-regular.woff2")
           format("woff2"),
-        /* Super Modern Browsers */
-          url("/fonts/source-sans-pro-v18-latin-regular.woff") format("woff"),
-        /* Modern Browsers */
-          url("/fonts/source-sans-pro-v18-latin-regular.ttf") format("truetype"),
-        /* Safari, Android, iOS */
-          url("/fonts/source-sans-pro-v18-latin-regular.svg#SourceSansPro")
-          format("svg"); /* Legacy iOS */
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+          url("../fonts/inter-v13-latin-regular.woff") format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+          url("../fonts/inter-v13-latin-regular.ttf") format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+          url("../fonts/inter-v13-latin-regular.svg#Inter") format("svg"); /* Legacy iOS */
     }
     @font-face {
-      font-family: "Source Sans Pro";
-      font-weight: 500 900;
       font-display: block;
-      src: url("/fonts/source-sans-pro-v18-latin-700.eot"); /* IE9 Compat Modes */
+      font-family: "Inter";
+      font-weight: 500 900;
+      size-adjust: 90%;
+      src: url("../fonts/inter-v13-latin-600.eot"); /* IE9 Compat Modes */
       src:
-        local("Source Sans Pro"),
-        url("/fonts/source-sans-pro-v18-latin-700.eot?#iefix")
+        url("../fonts/inter-v13-latin-600.eot?#iefix")
           format("embedded-opentype"),
-        /* IE6-IE8 */ url("/fonts/source-sans-pro-v18-latin-700.woff2")
-          format("woff2"),
-        /* Super Modern Browsers */
-          url("/fonts/source-sans-pro-v18-latin-700.woff") format("woff"),
-        /* Modern Browsers */ url("/fonts/source-sans-pro-v18-latin-700.ttf")
-          format("truetype"),
-        /* Safari, Android, iOS */
-          url("/fonts/source-sans-pro-v18-latin-700.svg#SourceSansPro")
-          format("svg"); /* Legacy iOS */
+        /* IE6-IE8 */ url("../fonts/inter-v13-latin-600.woff2") format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+          url("../fonts/inter-v13-latin-600.woff") format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+          url("../fonts/inter-v13-latin-600.ttf") format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+          url("../fonts/inter-v13-latin-600.svg#Inter") format("svg"); /* Legacy iOS */
     }
     @font-face {
       font-display: block;
@@ -146,7 +143,6 @@
           url("../fonts/ibm-plex-mono-v19-latin-regular.svg#IBMPlexMono")
           format("svg"); /* Legacy iOS */
     }
-
     @font-face {
       font-display: block;
       font-family: "IBM Plex Mono";
@@ -165,28 +161,6 @@
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
           url("../fonts/ibm-plex-mono-v19-latin-700.svg#IBMPlexMono")
           format("svg"); /* Legacy iOS */
-    }
-
-    html {
-      font-weight: 400;
-      font-family:
-        "Source Sans Pro",
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol" !important;
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-weight: 700;
     }
   </style>
   <meta

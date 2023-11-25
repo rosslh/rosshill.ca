@@ -75,8 +75,10 @@
       .map((tag) => tag[0]);
   }
 
+  const darkThemes = [SiteTheme.Dark, SiteTheme.Cyberpunk, SiteTheme.Black];
+
   $: isPageBackgroundDark =
-    $themeStore === SiteTheme.Dark ||
+    darkThemes.includes($themeStore) ||
     ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 </script>
 

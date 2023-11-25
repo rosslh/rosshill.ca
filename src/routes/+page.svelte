@@ -9,6 +9,7 @@
   import PostStubs from "$lib/components/PostStubs.svelte";
   import { truncateBySentence } from "$lib/functions";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
+  import { themeStore } from "$lib/stores";
 
   const intro =
     "I develop software and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
@@ -54,10 +55,14 @@
 <div class="main-content">
   <div class="content-wrapper intro">
     <h2 data-testid="main-heading">
-      <Balancer>Welcome to my corner of the web!</Balancer>
+      {#key $themeStore}
+        <Balancer>Welcome to my corner of the web!</Balancer>
+      {/key}
     </h2>
     <p>
-      <Balancer>{intro}</Balancer>
+      {#key $themeStore}
+        <Balancer>{intro}</Balancer>
+      {/key}
     </p>
   </div>
   <PostStubs {posts} {tagColors} />

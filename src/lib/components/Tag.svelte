@@ -21,12 +21,12 @@
     scale?: number;
   };
   const iconPositions: Record<string, IconPosition> = {
-    django: { y: "0.1rem", x: "-0.05rem" },
+    django: { y: "0.05rem", x: "-0.05rem" },
     flask: { x: "0.05rem" },
     java: { y: "-0.05rem" },
     postgresql: { y: "0.05rem" },
     redux: { y: "-0.05rem" },
-    vuedotjs: { y: "0.1rem" },
+    vuedotjs: { y: "0.05rem" },
     rubyonrails: { scale: 1.25 },
   };
 

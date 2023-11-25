@@ -13,21 +13,28 @@
   import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
 
-  const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
+  const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
     prefersColorSchemeDark(browser)
-      ? [SiteTheme.System, SiteTheme.Light, SiteTheme.Dark, SiteTheme.Cyberpunk]
+      ? [
+          SiteTheme.System,
+          SiteTheme.Light,
+          SiteTheme.Dark,
+          SiteTheme.Black,
+          SiteTheme.Cyberpunk,
+        ]
       : [
           SiteTheme.System,
           SiteTheme.Dark,
           SiteTheme.Light,
           SiteTheme.Cyberpunk,
+          SiteTheme.Black,
         ];
 
   let themeIndex = themes.indexOf(selectedTheme);
 
   $: changeTheme = (): void => {
     themeIndex = (themeIndex + 1) % themes.length;
-    $themeStore = themes[themeIndex as 0 | 1 | 2];
+    $themeStore = themes[themeIndex as 0 | 1 | 2 | 3 | 4];
   };
 </script>
 
@@ -45,6 +52,8 @@
         <DarkThemeIcon />
       {:else if selectedTheme === SiteTheme.Cyberpunk}
         <CyberpunkThemeIcon />
+      {:else if selectedTheme === SiteTheme.Black}
+        <DarkThemeIcon />
       {:else}
         <SystemThemeIcon />
       {/if}

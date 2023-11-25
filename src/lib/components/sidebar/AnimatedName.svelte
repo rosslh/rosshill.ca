@@ -36,7 +36,7 @@
     class:ssr-fade-in={!browser}
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 368.7 73.501"
+    viewBox="0 0 399.29 77.31"
   >
     <g>
       {#if showTitle || !browser}
@@ -88,7 +88,8 @@
   }
 
   .name-cyberpunk {
-    transform: scale(110%) translateY(var(--spacing-s));
+    transform: scale(120%) translateY(var(--spacing-s))
+      translateX(var(--spacing-m));
     transform-origin: center;
   }
 

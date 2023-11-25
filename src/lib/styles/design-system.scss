@@ -46,7 +46,7 @@ $other-hue: 135;
   --color-background: #{hsluv($theme-hue, $theme-saturation, 98%)};
 
   font-family:
-    "Source Sans Pro",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -87,7 +87,7 @@ $other-hue: 135;
   --color-background: #{hsluv($theme-hue, $theme-saturation, 8%)};
 
   font-family:
-    "Source Sans Pro",
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -141,6 +141,47 @@ $other-hue: 135;
   font-family: "IBM Plex Mono", monospace;
 }
 
+@mixin black-theme() {
+  $theme-saturation: 0%;
+  $category-saturation: 75%;
+  $category-lightness: 65%;
+
+  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv(
+      $project-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+
+  --color-job-marker: var(--color-job);
+  --color-project-marker: var(--color-project);
+  --color-other-marker: var(--color-other);
+
+  --color-heading: #{hsluv($theme-hue, $theme-saturation, 100%)};
+  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 85%)};
+  --color-link: #{hsluv($theme-hue, $theme-saturation, 100%)};
+  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 67%)};
+  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
+  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 21%)};
+  --color-border: #{hsluv($theme-hue, $theme-saturation, 21%)};
+  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 0%)};
+  --color-background: #{hsluv($theme-hue, $theme-saturation, 0%)};
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
 .app-wrapper {
   @include light-theme();
 }
@@ -164,6 +205,9 @@ div.app-wrapper[data-theme="dark"] {
 }
 div.app-wrapper[data-theme="cyberpunk"] {
   @include cyberpunk-theme();
+}
+div.app-wrapper[data-theme="black"] {
+  @include black-theme();
 }
 
 .app-wrapper {
