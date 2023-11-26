@@ -64,6 +64,7 @@ export const tagLabels: Record<string, string> = {
   html5: "HTML",
   css3: "CSS",
   jquery: "jQuery",
+  microsoftexcel: "Excel",
 };
 
 export const tagAncestors: Record<string, string[]> = {
