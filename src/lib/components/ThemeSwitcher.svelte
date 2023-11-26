@@ -26,8 +26,8 @@
           SiteTheme.System,
           SiteTheme.Dark,
           SiteTheme.Light,
-          SiteTheme.Cyberpunk,
           SiteTheme.Black,
+          SiteTheme.Cyberpunk,
         ];
 
   let themeIndex = themes.indexOf(selectedTheme);

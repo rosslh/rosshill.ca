@@ -2,7 +2,7 @@ import { test, expect, Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
-type SiteTheme = "light" | "dark" | "system" | "cyberpunk";
+type SiteTheme = "light" | "dark" | "system" | "cyberpunk" | "black";
 
 async function getCssVariable(
   page: Page,
@@ -67,8 +67,8 @@ for (const preferredColorScheme of colorSchemes) {
     test("Theme toggle works", async ({ page }) => {
       const themeOrder: SiteTheme[] =
         preferredColorScheme === "light"
-          ? ["system", "dark", "light", "cyberpunk"]
-          : ["system", "light", "dark", "cyberpunk"];
+          ? ["system", "dark", "light", "black", "cyberpunk"]
+          : ["system", "light", "dark", "black", "cyberpunk"];
 
       await expectTheme(page, themeOrder[0]);
 
@@ -82,6 +82,9 @@ for (const preferredColorScheme of colorSchemes) {
 
       await themeButton.click();
       await expectTheme(page, themeOrder[3]);
+
+      await themeButton.click();
+      await expectTheme(page, themeOrder[4]);
 
       await themeButton.click();
       await expectTheme(page, themeOrder[0]);
@@ -110,4 +113,18 @@ test("User stored theme works", async ({ page }) => {
   });
   await page.reload();
   await expectTheme(page, "dark");
+
+  // User stored black theme works
+  await page.evaluate(() => {
+    document.cookie = "theme=black";
+  });
+  await page.reload();
+  await expectTheme(page, "black");
+
+  // User stored cyberpunk theme works
+  await page.evaluate(() => {
+    document.cookie = "theme=cyberpunk";
+  });
+  await page.reload();
+  await expectTheme(page, "cyberpunk");
 });

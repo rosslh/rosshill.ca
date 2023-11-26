@@ -1,7 +1,6 @@
 <script lang="ts">
   import { remsToPixels } from "$lib/functions";
   import Separator from "./Separator.svelte";
-  import AnimatedName from "./AnimatedName.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
 
@@ -12,12 +11,13 @@
   );
   const currentYear = today.getFullYear();
   const currentOccasion = occasions.find(
-    ({ startDay, startMonth, durationDays }) =>
-      [currentYear - 1, currentYear].some((year: number) => {
-        const startDate = startOfDay(new Date(year, startMonth - 1, startDay));
-        const endDate = endOfDay(addDays(startDate, durationDays - 1));
-        return today >= startDate && today <= endDate;
-      }),
+    ({ startDay, startMonth, durationDays }) => {
+      const startDate = startOfDay(
+        new Date(currentYear, startMonth - 1, startDay),
+      );
+      const endDate = endOfDay(addDays(startDate, durationDays - 1));
+      return today >= startDate && today <= endDate;
+    },
   );
 </script>
 
@@ -81,7 +81,7 @@
       </p>
     {/if}
     <div class="name-wrapper">
-      <AnimatedName />
+      <h1 class="transition-colors">Ross Hill</h1>
     </div>
     <p class="subtitle role transition-colors" data-testid="job-title">
       Software Engineer
@@ -141,6 +141,7 @@
       height: 100vh;
       position: sticky;
       top: 0;
+      gap: var(--spacing-xl);
 
       .occasion-blurb {
         text-align: center;
@@ -151,20 +152,19 @@
       }
 
       .name-wrapper {
-        padding-bottom: 0;
-        height: 5.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 10rem;
-        // overflow: hidden;
+
+        h1 {
+          letter-spacing: 0.05rem;
+          margin: 0;
+          line-height: 1;
+        }
       }
 
       p.subtitle {
-        margin-top: var(--spacing-m);
-
         &.role {
-          margin-top: var(--spacing-s);
           font-size: var(--font-size-m);
           color: var(--color-foreground);
         }
@@ -175,7 +175,6 @@
         height: 10.5rem;
         min-width: 10.5rem;
         min-height: 10.5rem;
-        margin-top: calc(-1 * var(--spacing-3xl));
 
         &.rounded {
           overflow: hidden;
@@ -212,10 +211,6 @@
         height: unset !important;
         padding: var(--spacing-2xl) 0 var(--spacing-3xl);
         position: initial !important;
-
-        div.img-wrapper {
-          margin-top: 0 !important;
-        }
       }
     }
   }

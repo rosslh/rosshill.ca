@@ -34,7 +34,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: $breakpoint-xs-min) {
+@media (min-width: $breakpoint-s-min) {
   html {
     font-size: 17px;
   }
@@ -114,6 +114,11 @@ h4,
 h5 {
   color: var(--color-heading);
   font-weight: 600 !important;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  margin: var(--spacing-3xl) 0 var(--spacing-l);
 }
 
 h2 {

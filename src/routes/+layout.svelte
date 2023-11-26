@@ -94,53 +94,52 @@
       font-family: "Inter";
       font-weight: 100 400;
       size-adjust: 90%;
-      src: url("../fonts/inter-v13-latin-regular.eot"); /* IE9 Compat Modes */
+      src: url("/fonts/inter-v13-latin-regular.eot"); /* IE9 Compat Modes */
       src:
-        url("../fonts/inter-v13-latin-regular.eot?#iefix")
+        url("/fonts/inter-v13-latin-regular.eot?#iefix")
           format("embedded-opentype"),
-        /* IE6-IE8 */ url("../fonts/inter-v13-latin-regular.woff2")
+        /* IE6-IE8 */ url("/fonts/inter-v13-latin-regular.woff2")
           format("woff2"),
         /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-          url("../fonts/inter-v13-latin-regular.woff") format("woff"),
+          url("/fonts/inter-v13-latin-regular.woff") format("woff"),
         /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-          url("../fonts/inter-v13-latin-regular.ttf") format("truetype"),
+          url("/fonts/inter-v13-latin-regular.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-          url("../fonts/inter-v13-latin-regular.svg#Inter") format("svg"); /* Legacy iOS */
+          url("/fonts/inter-v13-latin-regular.svg#Inter") format("svg"); /* Legacy iOS */
     }
     @font-face {
       font-display: block;
       font-family: "Inter";
       font-weight: 500 900;
       size-adjust: 90%;
-      src: url("../fonts/inter-v13-latin-600.eot"); /* IE9 Compat Modes */
+      src: url("/fonts/inter-v13-latin-600.eot"); /* IE9 Compat Modes */
       src:
-        url("../fonts/inter-v13-latin-600.eot?#iefix")
-          format("embedded-opentype"),
-        /* IE6-IE8 */ url("../fonts/inter-v13-latin-600.woff2") format("woff2"),
+        url("/fonts/inter-v13-latin-600.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */ url("/fonts/inter-v13-latin-600.woff2") format("woff2"),
         /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-          url("../fonts/inter-v13-latin-600.woff") format("woff"),
+          url("/fonts/inter-v13-latin-600.woff") format("woff"),
         /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-          url("../fonts/inter-v13-latin-600.ttf") format("truetype"),
+          url("/fonts/inter-v13-latin-600.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-          url("../fonts/inter-v13-latin-600.svg#Inter") format("svg"); /* Legacy iOS */
+          url("/fonts/inter-v13-latin-600.svg#Inter") format("svg"); /* Legacy iOS */
     }
     @font-face {
       font-display: block;
       font-family: "IBM Plex Mono";
       font-weight: 100 400;
       size-adjust: 90%;
-      src: url("../fonts/ibm-plex-mono-v19-latin-regular.eot"); /* IE9 Compat Modes */
+      src: url("/fonts/ibm-plex-mono-v19-latin-regular.eot"); /* IE9 Compat Modes */
       src:
-        url("../fonts/ibm-plex-mono-v19-latin-regular.eot?#iefix")
+        url("/fonts/ibm-plex-mono-v19-latin-regular.eot?#iefix")
           format("embedded-opentype"),
-        /* IE6-IE8 */ url("../fonts/ibm-plex-mono-v19-latin-regular.woff2")
+        /* IE6-IE8 */ url("/fonts/ibm-plex-mono-v19-latin-regular.woff2")
           format("woff2"),
         /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-          url("../fonts/ibm-plex-mono-v19-latin-regular.woff") format("woff"),
+          url("/fonts/ibm-plex-mono-v19-latin-regular.woff") format("woff"),
         /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-          url("../fonts/ibm-plex-mono-v19-latin-regular.ttf") format("truetype"),
+          url("/fonts/ibm-plex-mono-v19-latin-regular.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-          url("../fonts/ibm-plex-mono-v19-latin-regular.svg#IBMPlexMono")
+          url("/fonts/ibm-plex-mono-v19-latin-regular.svg#IBMPlexMono")
           format("svg"); /* Legacy iOS */
     }
     @font-face {
@@ -148,18 +147,18 @@
       font-family: "IBM Plex Mono";
       font-weight: 500 900;
       size-adjust: 90%;
-      src: url("../fonts/ibm-plex-mono-v19-latin-700.eot"); /* IE9 Compat Modes */
+      src: url("/fonts/ibm-plex-mono-v19-latin-700.eot"); /* IE9 Compat Modes */
       src:
-        url("../fonts/ibm-plex-mono-v19-latin-700.eot?#iefix")
+        url("/fonts/ibm-plex-mono-v19-latin-700.eot?#iefix")
           format("embedded-opentype"),
-        /* IE6-IE8 */ url("../fonts/ibm-plex-mono-v19-latin-700.woff2")
+        /* IE6-IE8 */ url("/fonts/ibm-plex-mono-v19-latin-700.woff2")
           format("woff2"),
         /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-          url("../fonts/ibm-plex-mono-v19-latin-700.woff") format("woff"),
+          url("/fonts/ibm-plex-mono-v19-latin-700.woff") format("woff"),
         /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
-          url("../fonts/ibm-plex-mono-v19-latin-700.ttf") format("truetype"),
+          url("/fonts/ibm-plex-mono-v19-latin-700.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-          url("../fonts/ibm-plex-mono-v19-latin-700.svg#IBMPlexMono")
+          url("/fonts/ibm-plex-mono-v19-latin-700.svg#IBMPlexMono")
           format("svg"); /* Legacy iOS */
     }
   </style>
