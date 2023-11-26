@@ -3,7 +3,7 @@ title: Accompagnateur Pédagogique technique - Epitech Digital
 isHidden: false
 eventType: emploi
 excerpt: Je travaille actuellement en tant qu'Accompagnateur Pédagogique Technique au sein d'Epitech Digital School Lyon, où je suis chargé de guider les étudiants dans leur développement de compétences technologiques. Mon rôle consiste à les aider à maîtriser un large éventail de technologies, du développement web à la gestion de données en passant par l'intelligence artificielle (IA) et l'Internet des objets (IoT).
-tags: [ html5, css3, javascript, php, python, ruby, laravel, django, sqlite, mysql, postgresql, git, solidity, powerbi ]
+tags: [ html5, css3, javascript, php, python, ruby, laravel, django, sqlite, mysql, postgresql, git, solidity, powerbi, nextdotjs, react, symfony, flask, postman, strapi, dotenv, microsoftexcel ]
 website: https://www.epitech.digital/
 
 date: 2023-10-12
