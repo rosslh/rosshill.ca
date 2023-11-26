@@ -66,6 +66,7 @@ export const tagLabels: Record<string, string> = {
   jquery: "jQuery",
   microsoftexcel: "Excel",
   visualstudiocode: "VS code",
+  dotenv: ".ENV",
 };
 
 export const tagAncestors: Record<string, string[]> = {
