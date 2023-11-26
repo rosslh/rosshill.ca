@@ -79,6 +79,7 @@
       height: 100vh;
       position: sticky;
       top: 0;
+      gap: var(--spacing-xl);
 
       .name-wrapper {
         padding-bottom: 0;
@@ -91,14 +92,13 @@
         text-align: center;
         text-overflow: ellipsis;
         white-space: nowrap;
-        line-height: 1.2;
+        letter-spacing: 0.05rem;
+        margin: 0;
+        line-height: 1;
       }
 
       p.subtitle {
-        margin-top: var(--spacing-m);
-
         &.role {
-          margin-top: var(--spacing-s);
           font-size: var(--font-size-m);
           color: var(--color-foreground);
         }
@@ -143,10 +143,6 @@
         height: unset !important;
         padding: var(--spacing-2xl) 0 var(--spacing-3xl);
         position: initial !important;
-
-        div.img-wrapper {
-          margin-top: 0 !important;
-        }
       }
     }
   }
