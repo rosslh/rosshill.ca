@@ -125,7 +125,7 @@
     "@types/cssnano": "^5.0.0",
     "@types/dateformat": "^5.0.1",
     "@types/imagemin": "^8.0.5",
-    "@types/imagemin-webp": "^7.0.2",
+    "@types/imagemin-webp": "^7.0.3",
     "@types/lodash-es": "^4.17.11",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.12.0",
