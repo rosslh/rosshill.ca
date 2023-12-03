@@ -3,11 +3,12 @@
 
   export let selectedTheme: SiteTheme;
 
+  import Select from "svelte-select";
   import { themeStore } from "$lib/stores";
 
   import LightThemeIcon from "~icons/ion/ios-sunny";
   import DarkThemeIcon from "~icons/ion/ios-moon";
-  import SystemThemeIcon from "~icons/lucide/settings-2";
+  import AutoThemeIcon from "~icons/lucide/settings-2";
   import CyberpunkThemeIcon from "~icons/ph/circle-half-bold";
 
   import { browser } from "$app/environment";
@@ -16,90 +17,112 @@
   const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
     prefersColorSchemeDark(browser)
       ? [
-          SiteTheme.System,
+          SiteTheme.Auto,
           SiteTheme.Light,
           SiteTheme.Dark,
           SiteTheme.Black,
           SiteTheme.Cyberpunk,
         ]
       : [
-          SiteTheme.System,
+          SiteTheme.Auto,
           SiteTheme.Dark,
           SiteTheme.Light,
           SiteTheme.Black,
           SiteTheme.Cyberpunk,
         ];
 
-  let themeIndex = themes.indexOf(selectedTheme);
-
-  $: changeTheme = (): void => {
-    themeIndex = (themeIndex + 1) % themes.length;
-    $themeStore = themes[themeIndex as 0 | 1 | 2 | 3 | 4];
+  $: changeTheme = (theme: SiteTheme): void => {
+    $themeStore = theme;
   };
+
+  const listOffsetPx = 8; // equivalent to spacing-xs
 </script>
 
 <div class="theme-switcher-wrapper theme-{selectedTheme}">
-  <button
-    data-testid="theme-switcher"
-    title="Next theme"
-    class="transition-colors"
-    on:click={changeTheme}
+  <Select
+    items={themes}
+    value={selectedTheme || $themeStore}
+    on:change={(event) => changeTheme(event.detail.value)}
+    clearable={false}
+    showChevron
+    listAutoWidth={false}
+    floatingConfig={{
+      placement: "bottom-end",
+    }}
+    searchable={false}
+    listOffset={listOffsetPx}
+    --background="var(--color-panel-background)"
+    --border-focused="1px solid var(--color-border)"
+    --border-hover="1px solid var(--color-border)"
+    --border-radius="var(--border-radius-m)"
+    --border="1px solid var(--color-border)"
+    --font-size="var(--font-size-xs)"
+    --height="var(--spacing-2xl)"
+    --chevron-height="var(--spacing-2xl)"
+    --chevron-width="var(--spacing-2xl)"
+    --item-color="var(--color-subtitle)"
+    --item-hover-bg="var(--color-panel-background)"
+    --item-is-active-bg="var(--color-panel-background)"
+    --item-is-active-color="var(--color-foreground)"
+    --list-background="var(--color-background)"
+    --list-border-radius="var(--border-radius-m)"
+    --list-border="1px solid var(--color-border)"
+    --chevron-color="var(--color-subtitle)"
+    --padding="0"
+    --internal-padding="0"
+    --value-container-padding="0"
+    --selected-item-padding="0 0 0 var(--spacing-s)"
+    --item-padding="0 var(--spacing-m)"
   >
-    <span aria-hidden="true" class="icon">
-      {#if selectedTheme === SiteTheme.Light}
-        <LightThemeIcon />
-      {:else if selectedTheme === SiteTheme.Dark}
-        <DarkThemeIcon />
-      {:else if selectedTheme === SiteTheme.Cyberpunk}
-        <CyberpunkThemeIcon />
-      {:else if selectedTheme === SiteTheme.Black}
-        <DarkThemeIcon />
-      {:else}
-        <SystemThemeIcon />
-      {/if}
-    </span>
-    <span class="description">
-      {selectedTheme}
-      {#if selectedTheme !== SiteTheme.Cyberpunk}
-        {" "}
-        theme
-      {/if}
-    </span>
-  </button>
+    <div slot="selection" class="label-wrapper" let:selection>
+      <span aria-hidden="true" class="icon">
+        {#if selection.value === SiteTheme.Light}
+          <LightThemeIcon />
+        {:else if selection.value === SiteTheme.Dark}
+          <DarkThemeIcon />
+        {:else if selection.value === SiteTheme.Cyberpunk}
+          <CyberpunkThemeIcon />
+        {:else if selection.value === SiteTheme.Black}
+          <DarkThemeIcon />
+        {:else}
+          <AutoThemeIcon />
+        {/if}
+      </span>
+      <span class="description">
+        <span class="item-name">{selection.value}</span>
+        {#if selection.value === SiteTheme.Auto}
+          <span class="item-auto-light">(light)</span>
+          <span class="item-auto-dark">(dark)</span>
+        {/if}
+      </span>
+    </div>
+    <div slot="item" let:item>
+      <span class="description">
+        <span class="item-name">{item.value}</span>
+        {#if item.value === SiteTheme.Auto}
+          <span class="item-auto-light">(light)</span>
+          <span class="item-auto-dark">(dark)</span>
+        {/if}
+      </span>
+    </div>
+  </Select>
 </div>
 
 <style lang="scss">
   @import "src/lib/styles/media-queries";
 
+  @media (max-width: $breakpoint-xs-max) {
+    div.theme-switcher-wrapper {
+      transform: scale(0.8);
+      transform-origin: top right;
+    }
+  }
+
   div.theme-switcher-wrapper {
-    padding: var(--spacing-xl) 5%;
+    margin: var(--spacing-xl) 5%;
     position: absolute;
     right: 0;
     z-index: 100;
-
-    button {
-      width: 8.5rem;
-      padding: var(--spacing-xs) 0;
-      border-radius: var(--border-radius-m);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--color-foreground);
-      background-color: var(--color-panel-background);
-      font-size: var(--font-size-xs);
-      border: 1px solid var(--color-border);
-
-      .icon {
-        display: inline-flex;
-        align-items: center;
-        font-size: var(--font-size-xs);
-        margin-right: var(--spacing-2xs);
-      }
-
-      .description {
-        text-transform: capitalize;
-      }
-    }
 
     &.theme-cyberpunk {
       .icon {
@@ -110,24 +133,61 @@
 
   @media (max-width: $breakpoint-xs-max) {
     div.theme-switcher-wrapper {
-      padding: var(--spacing-m);
-
-      button {
-        transform: scale(0.8);
-        transform-origin: top right;
-      }
+      margin: var(--spacing-m);
     }
   }
 
-  @media (min-width: $breakpoint-s-min) {
+  @media (min-width: $breakpoint-xs-min) {
     .theme-switcher-wrapper {
-      padding: var(--spacing-xl) 7%;
+      margin: var(--spacing-xl) 7%;
     }
   }
 
   @media (min-width: $breakpoint-l-min) {
     .theme-switcher-wrapper {
-      padding: var(--spacing-xl) var(--spacing-4xl);
+      margin: var(--spacing-xl) var(--spacing-4xl);
+    }
+  }
+
+  :global(.theme-switcher-wrapper *) {
+    cursor: pointer !important;
+  }
+
+  :global(.svelte-select) {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    caret-color: transparent;
+
+    .label-wrapper {
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+      gap: calc(var(--spacing-2xs) + var(--spacing-3xs));
+
+      .icon {
+        display: flex;
+        // margin-left: calc(var(--spacing-2xs) * -1);
+      }
+    }
+  }
+
+  .description {
+    .item-name {
+      text-transform: capitalize;
+    }
+
+    .item-auto-dark {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .item-auto-light {
+        display: none;
+      }
+      .item-auto-dark {
+        display: inline;
+      }
     }
   }
 </style>

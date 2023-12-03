@@ -71,7 +71,7 @@
 
   $: isPageBackgroundDark =
     $themeStore === SiteTheme.Dark ||
-    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+    ($themeStore === SiteTheme.Auto && prefersColorSchemeDark(browser));
 
   let activeTags: Set<string>;
 
@@ -135,7 +135,7 @@
     padding: 0 var(--spacing-m);
     margin: var(--spacing-2xl) auto 0;
   }
-  @media (min-width: $breakpoint-s-min) {
+  @media (min-width: $breakpoint-xs-min) {
     div.content-wrapper.posts-wrapper {
       padding: 0 7%;
     }

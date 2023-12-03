@@ -54,7 +54,7 @@ export type TagColors = Record<string, TagColor>;
 export enum SiteTheme {
   Light = "light",
   Dark = "dark",
-  System = "system",
+  Auto = "auto",
   Cyberpunk = "cyberpunk",
   Black = "black",
 }

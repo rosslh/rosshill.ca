@@ -100,7 +100,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: $breakpoint-l-max) {
     div.line,
     span.year-label {
       margin: 0 !important;
@@ -124,7 +124,7 @@
       border-top-left-radius: 100%;
     }
   }
-  @media (min-width: $breakpoint-s-min) {
+  @media (min-width: $breakpoint-xs-min) {
     .first-label {
       z-index: 4;
       margin-left: 25%;

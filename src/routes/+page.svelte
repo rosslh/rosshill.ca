@@ -88,7 +88,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-s-max) {
+  @media (max-width: $breakpoint-m-max) {
     div.intro {
       padding-top: 0;
     }

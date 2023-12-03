@@ -90,7 +90,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: $breakpoint-l-max) {
     .tooltip {
       display: none;
     }

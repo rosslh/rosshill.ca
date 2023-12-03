@@ -17,7 +17,7 @@
 <style lang="scss">
   @import "src/lib/styles/media-queries";
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: $breakpoint-l-max) {
     div.post-spacer {
       margin-left: 0 !important;
       margin-right: 0 !important;

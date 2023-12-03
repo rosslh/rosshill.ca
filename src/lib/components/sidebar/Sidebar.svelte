@@ -39,7 +39,7 @@
               type="image/png"
             />
             <img
-              data-testid="headshot-img"
+              data-testid="headshot-image"
               src="/occasions/{currentOccasion.imageName}.png"
               alt={currentOccasion.name}
               title={currentOccasion.name}
@@ -201,7 +201,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-s-max) {
+  @media (max-width: $breakpoint-m-max) {
     div.sidebar {
       border-width: 0;
       padding: var(--spacing-xl) var(--spacing-xl) 0;

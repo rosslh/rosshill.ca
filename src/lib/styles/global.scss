@@ -34,7 +34,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: $breakpoint-s-min) {
+@media (min-width: $breakpoint-xs-min) {
   html {
     font-size: 17px;
   }
@@ -138,7 +138,7 @@ h3 {
   padding: 0 5%;
 }
 
-@media (min-width: $breakpoint-s-min) {
+@media (min-width: $breakpoint-xs-min) {
   .content-wrapper {
     padding: 0 7%;
   }

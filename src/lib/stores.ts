@@ -31,4 +31,4 @@ function cookieStore<T>(
   };
 }
 
-export const themeStore = cookieStore("theme", SiteTheme.System);
+export const themeStore = cookieStore("theme", SiteTheme.Auto);

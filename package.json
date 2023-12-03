@@ -22,21 +22,21 @@
   },
   "browserslist": "last 5 years or ie>=11 or >0.2%",
   "devDependencies": {
-    "@babel/core": "^7.23.3",
+    "@babel/core": "^7.23.5",
     "@babel/eslint-parser": "^7.23.3",
-    "@iconify/json": "^2.2.143",
-    "@playwright/test": "^1.40.0",
+    "@iconify/json": "^2.2.150",
+    "@playwright/test": "^1.40.1",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.27.6",
     "@types/apca-w3": "^0.1.3",
     "@types/chroma-js": "^2.4.3",
     "@types/cssnano": "^5.0.0",
     "@types/dateformat": "^5.0.2",
-    "@types/imagemin": "^8.0.4",
+    "@types/imagemin": "^8.0.5",
     "@types/imagemin-webp": "^7.0.3",
-    "@types/lodash-es": "^4.17.11",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
+    "@types/lodash-es": "^4.17.12",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
     "apca-w3": "0.1.9",
     "autoprefixer": "^10.4.16",
     "bezier-easing": "^2.1.0",
@@ -44,13 +44,13 @@
     "cssnano": "^6.0.1",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
-    "eslint": "^8.54.0",
+    "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-svelte": "^2.35.0",
+    "eslint-plugin-svelte": "^2.35.1",
     "eslint-plugin-unicorn": "^49.0.0",
     "hsluv-sass": "^2.0.1",
     "hsluv-ts": "^1.0.1",
@@ -60,24 +60,25 @@
     "lodash-es": "^4.17.21",
     "logrocket": "^7.0.0",
     "markdown-json": "^1.6.1",
-    "npm-check-updates": "^16.14.6",
+    "npm-check-updates": "^16.14.11",
     "postcss-html": "^1.5.0",
     "prettier": "^3.1.0",
-    "prettier-plugin-svelte": "^3.1.0",
+    "prettier-plugin-svelte": "^3.1.2",
     "sass": "^1.69.5",
-    "simple-icons": "^9.20.0",
+    "simple-icons": "^10.0.0",
     "slugify": "^1.6.6",
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.1.0",
-    "svelte": "4.2.5",
-    "svelte-check": "^3.6.0",
+    "svelte": "4.2.8",
+    "svelte-check": "^3.6.2",
     "svelte-meta-tags": "^3.1.0",
-    "svelte-preprocess": "^5.1.0",
+    "svelte-preprocess": "^5.1.1",
+    "svelte-select": "^5.8.1",
     "svelte-wrap-balancer": "^0.0.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "universal-cookie": "^4.0.4",
-    "unplugin-icons": "^0.17.4",
+    "unplugin-icons": "^0.18.0",
     "vite": "4.5.0",
     "wireit": "^0.14.1",
     "xml-formatter": "^3.6.0"
@@ -94,11 +95,11 @@
         "getWebp"
       ],
       "files": [
-        "src/**/*",
-        "svelte.config.js",
-        "vite.config.ts",
         "tsconfig.json",
         "package.json",
+        "svelte.config.js",
+        "vite.config.ts",
+        "src/**/*",
         "assets/**/*"
       ],
       "output": [
@@ -111,6 +112,8 @@
         "getPosts"
       ],
       "files": [
+        "tsconfig.json",
+        "package.json",
         "data/posts.json",
         "scripts/getIcons.ts"
       ],
@@ -122,6 +125,8 @@
     "getPosts": {
       "command": "markdown-json -c content/.mdconfig.json",
       "files": [
+        "tsconfig.json",
+        "package.json",
         "content/**/*"
       ],
       "output": [
@@ -131,6 +136,8 @@
     "getWebp": {
       "command": "node --loader ts-node/esm ./scripts/getWebp.ts",
       "files": [
+        "tsconfig.json",
+        "package.json",
         "assets/**/*.{png,jpg,jpeg}",
         "scripts/getWebp.ts"
       ],
@@ -141,6 +148,7 @@
     "updateNvmrc": {
       "command": "node --loader ts-node/esm ./scripts/updateNvmrc.ts",
       "files": [
+        "tsconfig.json",
         "package.json",
         "scripts/updateNvmrc.ts"
       ],
@@ -157,6 +165,8 @@
     "lint:styles": {
       "command": "stylelint \"**/*.{css,scss,svelte}\" --ignore-path .gitignore",
       "files": [
+        "tsconfig.json",
+        "package.json",
         "**/*.{css,scss,svelte}",
         ".stylelintrc.json"
       ],
@@ -165,11 +175,12 @@
     "lint:ts-svelte": {
       "command": "eslint \"**/*.{js,ts,svelte}\" --ignore-path .gitignore",
       "files": [
+        "tsconfig.json",
+        "package.json",
         "src/**/*.{js,ts,svelte}",
         "scripts/**/*.{js,ts,svelte}",
         "svelte.config.js",
         "vite.config.ts",
-        "tsconfig.json",
         ".eslintrc.json"
       ],
       "output": []

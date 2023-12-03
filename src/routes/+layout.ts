@@ -6,6 +6,6 @@ export async function load({
   data: { theme?: SiteTheme };
 }): Promise<{ themeFromSession: SiteTheme }> {
   return {
-    themeFromSession: data.theme ?? SiteTheme.System,
+    themeFromSession: data.theme ?? SiteTheme.Auto,
   };
 }

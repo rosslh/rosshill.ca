@@ -79,7 +79,7 @@
 
   $: isPageBackgroundDark =
     darkThemes.includes($themeStore) ||
-    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+    ($themeStore === SiteTheme.Auto && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">

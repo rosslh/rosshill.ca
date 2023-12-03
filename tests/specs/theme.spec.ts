@@ -2,7 +2,7 @@ import { test, expect, Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
-type SiteTheme = "light" | "dark" | "system" | "cyberpunk" | "black";
+type SiteTheme = "light" | "dark" | "auto" | "cyberpunk" | "black";
 
 async function getCssVariable(
   page: Page,
@@ -33,7 +33,7 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   expect(await page.evaluate(() => document.cookie)).toBe(`theme=${theme}`);
 
   const computedTheme =
-    theme === "system" ? await getPreferredColorScheme(page) : theme;
+    theme === "auto" ? await getPreferredColorScheme(page) : theme;
 
   const background = (await getCssVariable(page, "color-background")).replace(
     /\s/g,
@@ -61,14 +61,14 @@ for (const preferredColorScheme of colorSchemes) {
     test.use({ colorScheme: preferredColorScheme });
 
     test("Color scheme media query works", async ({ page }) => {
-      await expectTheme(page, "system");
+      await expectTheme(page, "auto");
     });
 
     test("Theme toggle works", async ({ page }) => {
       const themeOrder: SiteTheme[] =
         preferredColorScheme === "light"
-          ? ["system", "dark", "light", "black", "cyberpunk"]
-          : ["system", "light", "dark", "black", "cyberpunk"];
+          ? ["auto", "dark", "light", "black", "cyberpunk"]
+          : ["auto", "light", "dark", "black", "cyberpunk"];
 
       await expectTheme(page, themeOrder[0]);
 
@@ -93,12 +93,12 @@ for (const preferredColorScheme of colorSchemes) {
 }
 
 test("User stored theme works", async ({ page }) => {
-  // User stored system theme works
+  // User stored auto theme works
   await page.evaluate(() => {
-    document.cookie = "theme=system";
+    document.cookie = "theme=auto";
   });
   await page.reload();
-  await expectTheme(page, "system");
+  await expectTheme(page, "auto");
 
   // User stored light theme works
   await page.evaluate(() => {

@@ -197,7 +197,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-s-max) {
+  @media (max-width: $breakpoint-m-max) {
     div.two-column {
       flex-direction: column;
 
@@ -210,7 +210,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: $breakpoint-l-max) {
     div.two-column {
       :global(> *:first-child) {
         width: 18rem;

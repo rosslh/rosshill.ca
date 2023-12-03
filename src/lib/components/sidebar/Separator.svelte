@@ -42,7 +42,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-s-max) {
+  @media (max-width: $breakpoint-m-max) {
     div.content-wrapper {
       display: block;
     }
