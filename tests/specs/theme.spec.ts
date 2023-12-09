@@ -72,21 +72,26 @@ for (const preferredColorScheme of colorSchemes) {
 
       await expectTheme(page, themeOrder[0]);
 
-      const themeButton = getLocator([page, "theme-switcher"]);
+      const themeSwitcher = getLocator([page, "theme-switcher"]);
 
-      await themeButton.click();
+      await themeSwitcher.click();
+      await page.getByText(themeOrder[1], { exact: true }).click();
       await expectTheme(page, themeOrder[1]);
 
-      await themeButton.click();
+      await themeSwitcher.click();
+      await page.getByText(themeOrder[2], { exact: true }).click();
       await expectTheme(page, themeOrder[2]);
 
-      await themeButton.click();
+      await themeSwitcher.click();
+      await page.getByText(themeOrder[3], { exact: true }).click();
       await expectTheme(page, themeOrder[3]);
 
-      await themeButton.click();
+      await themeSwitcher.click();
+      await page.getByText(themeOrder[4], { exact: true }).click();
       await expectTheme(page, themeOrder[4]);
 
-      await themeButton.click();
+      await themeSwitcher.click();
+      await page.getByText(themeOrder[0], { exact: true }).click();
       await expectTheme(page, themeOrder[0]);
     });
   });

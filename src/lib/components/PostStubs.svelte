@@ -1,14 +1,11 @@
 <script lang="ts">
   import type { TagColors, PostItemStub } from "$lib/types";
-  import { SiteTheme } from "$lib/types";
 
   export let posts: PostItemStub[];
   export let tagColors: TagColors;
 
-  import { browser } from "$app/environment";
-  import { showCategories, showTags, themeStore } from "$lib/stores";
+  import { showCategories, showTags } from "$lib/stores";
   import { tagAncestors } from "$lib/tags";
-  import { prefersColorSchemeDark } from "$lib/functions";
   import PostStub from "./post-stub/PostStub.svelte";
   import YearLabel from "./YearLabel.svelte";
   import FilterControls from "./filters/FilterButtons.svelte";
@@ -69,10 +66,6 @@
     )
     .map(getLabelVisibilityAndAlignment);
 
-  $: isPageBackgroundDark =
-    $themeStore === SiteTheme.Dark ||
-    ($themeStore === SiteTheme.Auto && prefersColorSchemeDark(browser));
-
   let activeTags: Set<string>;
 
   $: {
@@ -112,7 +105,6 @@
         <PostStub
           {post}
           {tagColors}
-          {isPageBackgroundDark}
           {activeTags}
           isLastPost={index === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}

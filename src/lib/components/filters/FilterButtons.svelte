@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { TagColors, PostItemStub } from "$lib/types";
-  import { PostCategory, SiteTheme } from "$lib/types";
-  import { minTagNumber, themeStore } from "$lib/stores";
+  import { PostCategory } from "$lib/types";
+  import { minTagNumber } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
@@ -10,9 +10,7 @@
 
   import Times from "~icons/fa-solid/times";
 
-  import { browser } from "$app/environment";
   import { tagAncestors } from "$lib/tags";
-  import { prefersColorSchemeDark } from "$lib/functions";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
 
@@ -74,12 +72,6 @@
       })
       .map((tag) => tag[0]);
   }
-
-  const darkThemes = [SiteTheme.Dark, SiteTheme.Cyberpunk, SiteTheme.Black];
-
-  $: isPageBackgroundDark =
-    darkThemes.includes($themeStore) ||
-    ($themeStore === SiteTheme.Auto && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">
@@ -128,7 +120,6 @@
       active={showTags.has(tag)}
       background={tagColors[tag]?.bg}
       foreground={tagColors[tag]?.fg}
-      {isPageBackgroundDark}
       needsOutlineOnLightBg={tagColors[tag]?.outlineOnLight ?? false}
       needsOutlineOnDarkBg={tagColors[tag]?.outlineOnDark ?? false}
       onClick={() => toggleTag(tag)}

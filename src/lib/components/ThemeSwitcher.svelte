@@ -11,8 +11,8 @@
   import AutoThemeIcon from "~icons/lucide/settings-2";
   import CyberpunkThemeIcon from "~icons/ph/circle-half-bold";
 
-  import { browser } from "$app/environment";
   import { prefersColorSchemeDark } from "$lib/functions";
+  import { browser } from "$app/environment";
 
   const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
     prefersColorSchemeDark(browser)
@@ -38,7 +38,10 @@
   const listOffsetPx = 8; // equivalent to spacing-xs
 </script>
 
-<div class="theme-switcher-wrapper theme-{selectedTheme}">
+<div
+  class="theme-switcher-wrapper theme-{selectedTheme}"
+  data-testid="theme-switcher"
+>
   <Select
     items={themes}
     value={selectedTheme || $themeStore}
@@ -56,23 +59,23 @@
     --border-hover="1px solid var(--color-border)"
     --border-radius="var(--border-radius-m)"
     --border="1px solid var(--color-border)"
-    --font-size="var(--font-size-xs)"
-    --height="var(--spacing-2xl)"
+    --chevron-color="var(--color-subtitle)"
     --chevron-height="var(--spacing-2xl)"
     --chevron-width="var(--spacing-2xl)"
+    --font-size="var(--font-size-xs)"
+    --height="var(--spacing-2xl)"
+    --internal-padding="0"
     --item-color="var(--color-subtitle)"
     --item-hover-bg="var(--color-panel-background)"
     --item-is-active-bg="var(--color-panel-background)"
     --item-is-active-color="var(--color-foreground)"
+    --item-padding="0 var(--spacing-m)"
     --list-background="var(--color-background)"
     --list-border-radius="var(--border-radius-m)"
     --list-border="1px solid var(--color-border)"
-    --chevron-color="var(--color-subtitle)"
     --padding="0"
-    --internal-padding="0"
-    --value-container-padding="0"
     --selected-item-padding="0 0 0 var(--spacing-s)"
-    --item-padding="0 var(--spacing-m)"
+    --value-container-padding="0"
   >
     <div slot="selection" class="label-wrapper" let:selection>
       <span aria-hidden="true" class="icon">
@@ -112,9 +115,10 @@
   @import "src/lib/styles/media-queries";
 
   @media (max-width: $breakpoint-xs-max) {
-    div.theme-switcher-wrapper {
-      transform: scale(0.8);
-      transform-origin: top right;
+    .icon,
+    .item-auto-light,
+    .item-auto-dark {
+      display: none !important;
     }
   }
 
@@ -162,12 +166,10 @@
     .label-wrapper {
       display: flex;
       align-items: center;
-      // justify-content: center;
       gap: calc(var(--spacing-2xs) + var(--spacing-3xs));
 
       .icon {
         display: flex;
-        // margin-left: calc(var(--spacing-2xs) * -1);
       }
     }
   }

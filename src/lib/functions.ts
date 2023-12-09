@@ -1,4 +1,5 @@
 import getSlug from "slugify";
+import { SiteTheme } from "./types";
 
 export const slugify = (stringToSlugify: string): string =>
   getSlug(stringToSlugify, {
@@ -9,8 +10,20 @@ export const slugify = (stringToSlugify: string): string =>
 
 export const remsToPixels = (rems: number): number => Math.round(rems * 16);
 
-export const prefersColorSchemeDark = (isBrowser: boolean): boolean =>
-  isBrowser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+export const prefersColorSchemeDark = (browser: boolean): boolean =>
+  browser && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+export const isPageBackgroundDark = (
+  browser: boolean,
+  currentTheme: SiteTheme,
+) => {
+  const darkThemes = [SiteTheme.Dark, SiteTheme.Cyberpunk, SiteTheme.Black];
+
+  return (
+    darkThemes.includes(currentTheme) ||
+    (currentTheme === SiteTheme.Auto && prefersColorSchemeDark(browser))
+  );
+};
 
 export const formatPostTitle = (title: string): string =>
   title.replaceAll(/\s[–—-]\s/g, " – ");

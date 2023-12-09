@@ -5,7 +5,6 @@
   export let tagColors: TagColors;
   export let left: boolean;
   export let isLastPost: boolean;
-  export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
 
   import { browser } from "$app/environment";
@@ -69,12 +68,7 @@
         on:mouseenter|once={post.hasContent ? preloadPage : null}
         role="article"
       >
-        <PostStubHeading
-          {post}
-          {tagColors}
-          {isPageBackgroundDark}
-          {activeTags}
-        />
+        <PostStubHeading {post} {tagColors} {activeTags} />
         {#if post.excerpt}
           <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           <p class="post-text">{@html post.excerpt}</p>

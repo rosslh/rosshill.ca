@@ -6,12 +6,13 @@
   export let onClick: (() => void) | null = null;
   export let lazyLoad = false;
 
-  export let isPageBackgroundDark = false;
   export let needsOutlineOnLightBg = false;
   export let needsOutlineOnDarkBg = false;
 
   import { tagLabels } from "$lib/tags";
-  import { remsToPixels } from "$lib/functions";
+  import { isPageBackgroundDark, remsToPixels } from "$lib/functions";
+  import { themeStore } from "$lib/stores";
+  import { browser } from "$app/environment";
 
   $: tagString = tagLabels[tagId] ?? tagId;
 
@@ -39,9 +40,16 @@
 
   const getHexOpacity = (floatPercentage: number): string =>
     Math.round(255 * floatPercentage).toString(16);
+
   $: dividerColor = active
     ? `#${foreground}${getHexOpacity(0.35)}`
     : "transparent";
+
+  const hasOutline =
+    (needsOutlineOnDarkBg || needsOutlineOnLightBg) &&
+    isPageBackgroundDark(browser, $themeStore)
+      ? needsOutlineOnDarkBg
+      : needsOutlineOnLightBg;
 </script>
 
 <svelte:element
@@ -56,9 +64,7 @@
   <span
     class="logo-wrapper transition-colors"
     style="background-color: #{background};"
-    class:hasOutline={isPageBackgroundDark
-      ? needsOutlineOnDarkBg
-      : needsOutlineOnLightBg}
+    class:hasOutline
   >
     <img
       src="/tags/{tagId}.svg"

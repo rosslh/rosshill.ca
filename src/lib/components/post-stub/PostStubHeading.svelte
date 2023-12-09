@@ -5,7 +5,6 @@
 
   export let tagColors: TagColors;
   export let post: PostItemStub;
-  export let isPageBackgroundDark: boolean;
   export let activeTags: Set<string>;
 
   import { remsToPixels } from "$lib/functions";
@@ -55,7 +54,6 @@
           background={tagColors[tagId]?.bg}
           foreground={tagColors[tagId]?.fg}
           active={activeTags.has(tagId)}
-          {isPageBackgroundDark}
           needsOutlineOnLightBg={tagColors[tagId]?.outlineOnLight}
           needsOutlineOnDarkBg={tagColors[tagId]?.outlineOnDark}
           lazyLoad
