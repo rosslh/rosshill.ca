@@ -145,7 +145,7 @@
 
       .occasion-blurb {
         text-align: center;
-        padding: var(--spacing-m) 0 0;
+        margin-top: calc(var(--spacing-s) * -1);
         max-width: 20rem;
         width: 100%;
         color: var(--color-subtitle);
