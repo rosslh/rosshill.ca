@@ -148,7 +148,7 @@
     "isbot": "^3.7.1",
     "lodash-es": "^4.17.21",
     "markdown-json": "^1.6.1",
-    "npm-check-updates": "^16.14.11",
+    "npm-check-updates": "^16.14.12",
     "sass": "^1.69.5",
     "simple-icons": "^10.2.0",
     "slugify": "^1.6.6",
