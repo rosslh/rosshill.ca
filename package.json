@@ -165,7 +165,7 @@
     "xml-formatter": "^3.6.0"
   },
   "engines": {
-    "node": ">= 18.14.0"
+    "node": ">=18.19.0"
   },
   "dependencies": {
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
