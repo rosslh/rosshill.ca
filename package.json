@@ -133,7 +133,7 @@
     "autoprefixer": "^10.4.16",
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
-    "cssnano": "^6.0.1",
+    "cssnano": "^6.0.2",
     "date-fns": "^3.0.1",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
