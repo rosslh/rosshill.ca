@@ -134,7 +134,7 @@
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
     "cssnano": "^6.0.2",
-    "date-fns": "^3.0.3",
+    "date-fns": "^3.0.5",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
