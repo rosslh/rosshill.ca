@@ -18,7 +18,6 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -35,13 +34,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "allowJs": true,
-    "checkJs": false,
-    "paths": {
-      "$data": ["data"],
-      "$data/*": ["data/*"],
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"]
-    }
+    "checkJs": false
   },
   "include": [
     "src/**/*.d.ts",

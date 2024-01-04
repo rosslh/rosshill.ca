@@ -1,5 +1,4 @@
 import { test, expect, Page } from "@playwright/test";
-import { toDate } from "date-fns-tz";
 
 import {
   getLocator,
@@ -16,7 +15,7 @@ test.beforeEach(async ({ page }) => {
 
 async function setBrowserDate(page: Page, occasionDate: string) {
   const torontoDateString = `${occasionDate}T12:00:00-05:00`;
-  const fakeNow = toDate(torontoDateString).getTime();
+  const fakeNow = Date.parse(torontoDateString);
   await page.addInitScript(
     `{
       Date = class extends Date {

@@ -30,6 +30,12 @@ export default {
       assets: "",
       base: "",
     },
+    alias: {
+      "$data": "data",
+      "$data/*": "data/*",
+      "$lib": "src/lib",
+      "$lib/*": "src/lib/*",
+    },
   },
   preprocess: preprocess({
     replace:
