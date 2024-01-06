@@ -1,7 +1,7 @@
 ---
 title: Software Engineer - Doormat
 eventType: job
-excerpt: I am leading front-end development for Doormat and am focused on building a delightful user experience.
+excerpt: I'm helping build a seamless and intuitive user experience, contributing to Doormat's mission of making real estate law simple.
 tags: [nextdotjs, typescript, graphql, rubyonrails, postgresql]
 website: https://doormat.ca
 
