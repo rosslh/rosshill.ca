@@ -173,7 +173,7 @@
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-svelte": "^2.35.1",
     "postcss-html": "^1.6.0",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.4",
     "prettier-plugin-svelte": "^3.1.2",
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.1.0",
