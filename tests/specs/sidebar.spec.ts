@@ -71,25 +71,25 @@ test("Sidebar information is displayed", async ({ page }) => {
 });
 
 const occasions = {
+  "New Year's Day": ["2024-01-01"],
   "Valentine's Day": ["2023-02-14"],
-  "Black History Month": ["2023-02-01", "2023-02-15", "2023-02-28"],
   "International Women's Day": ["2023-03-08"],
   "Trans Day of Visibility": ["2023-03-31"],
   "Pride Month": ["2023-06-01", "2023-06-15", "2023-06-30"],
   "Canada Day": ["2023-07-01"],
+  "Emancipation Day": ["2023-08-01"],
   "National Day for Truth and Reconciliation": [
     "2023-09-29",
     "2023-09-30",
     "2023-10-01",
   ],
-  "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
   "Halloween": ["2023-10-30", "2023-10-31", "2023-11-01"],
+  "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
   "Remembrance Day": ["2023-11-11"],
   "Transgender Awareness Week": ["2023-11-13", "2023-11-16", "2023-11-19"],
   "American Thanksgiving": ["2023-11-23"],
   "Holidays 2023": ["2023-12-10", "2023-12-20", "2023-12-28"],
   "New Year's Eve": ["2023-12-31"],
-  "New Year's Day": ["2024-01-01"],
 };
 
 for (let index = 0; index < Object.keys(occasions).length; index += 1) {

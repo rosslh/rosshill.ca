@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { differenceInMonths } from "date-fns";
   import type { TagColors, PostItemStub } from "$lib/types";
   import { PostCategory } from "$lib/types";
   import { minTagNumber } from "$lib/stores";
@@ -40,13 +41,19 @@
   $: {
     const tagCounts: Record<string, number> = {};
 
-    for (const { tags: postTags } of posts) {
-      // for each tag in post, add 1 to count
-      for (const tag of postTags) {
-        tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+    for (const { tags: postTags, date, eventType } of posts) {
+      let tagCountToAdd = 1;
+
+      const computedEndDate = date.isOngoing ? new Date() : date.end;
+
+      if (eventType === PostCategory.Job && computedEndDate) {
+        tagCountToAdd = differenceInMonths(computedEndDate, date.start);
       }
 
-      // get ancestors of each tag and remove duplicates
+      for (const tag of postTags) {
+        tagCounts[tag] = (tagCounts[tag] ?? 0) + tagCountToAdd;
+      }
+
       const ancestorTags = [
         ...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? [])),
       ];
@@ -54,7 +61,7 @@
       for (const ancestorTag of ancestorTags.filter(
         (tag) => !postTags.includes(tag),
       )) {
-        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
+        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + tagCountToAdd;
       }
     }
 

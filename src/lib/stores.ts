@@ -6,7 +6,7 @@ import { SiteTheme } from "./types";
 
 export const showCategories = writable(new Set<PostCategory>());
 export const showTags = writable(new Set<string>());
-export const minTagNumber = writable(2);
+export const minTagNumber = writable(4);
 
 const cookies = new Cookies();
 const yearInSeconds = 60 * 60 * 24 * 365;

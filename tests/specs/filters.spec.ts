@@ -25,27 +25,27 @@ test("Event type filter works", async ({ page }) => {
 });
 
 test("Skill tag filter works", async ({ page }) => {
-  const svelteFilter = getLocator([page, "skill-filter-svelte"]);
+  const djangoFilter = getLocator([page, "skill-filter-django"]);
   const jsFilter = getLocator([page, "skill-filter-javascript"]);
 
   // Before clicking the filter, the wtformat item should exist
   await expectCount([page, "post-stub-wtformat"], 1);
 
-  await svelteFilter.click();
+  await djangoFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
   await expectCount([page, "post-stub-wtformat"], 0);
 
-  // But the reqwise item should exist
-  await expectCount([page, "post-stub-reqwise"], 1);
+  // But the doctalk item should exist
+  await expectCount([page, "post-stub-full-stack-developer-doctalk"], 1);
 
   await jsFilter.click();
 
   // After clicking the filter, the wtformat item should now exist
   await expectCount([page, "post-stub-wtformat"], 1);
 
-  // And the reqwise item should exist
-  await expectCount([page, "post-stub-reqwise"], 1);
+  // And the doctalk item should exist
+  await expectCount([page, "post-stub-full-stack-developer-doctalk"], 1);
 });
 
 test("Show more tags button works", async ({ page }) => {

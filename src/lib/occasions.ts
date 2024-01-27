@@ -54,6 +54,15 @@ const newYear = addMonths(new Date(), 1).getFullYear();
 
 export const occasions = [
   {
+    name: "New Year's Day",
+    blurb: `Happy New Year! I hope you have a wonderful ${newYear}.`,
+    startMonth: 1,
+    startDay: 1,
+    durationDays: 1,
+    imageName: "new-years-day",
+    blurbMaxWidth: "12rem",
+  },
+  {
     name: "Valentine's Day",
     blurb:
       "Happy Valentine's Day! I hope you have a wonderful day with your loved ones.",
@@ -61,18 +70,6 @@ export const occasions = [
     startDay: 14,
     durationDays: 1,
     imageName: "valentines",
-  },
-  {
-    name: "Black History Month",
-    blurb:
-      "Join me in celebrating the achievements of Black Canadians and their communities!",
-    learnMoreUrl:
-      "https://www.thecanadianencyclopedia.ca/en/collection/black-history-in-canada",
-    startMonth: 2,
-    startDay: 1,
-    durationDays: 28,
-    imageName: "black-history",
-    blurbMaxWidth: "18rem",
   },
   {
     name: "International Women's Day",
@@ -109,6 +106,15 @@ export const occasions = [
     imageName: "canada",
   },
   {
+    name: "Emancipation Day",
+    blurb:
+      "Happy Emancipation Day! Let us honor the journey and contributions of the Black community in our shared history.",
+    startMonth: 8,
+    startDay: 1,
+    durationDays: 1,
+    imageName: "emancipation",
+  },
+  {
     name: "National Day for Truth and Reconciliation",
     blurb: "Never forget the victims of the residential school system.",
     startMonth: 9,
@@ -120,18 +126,18 @@ export const occasions = [
       "https://www.rcaanc-cirnac.gc.ca/eng/1631130192216/1631130220404",
   },
   {
-    name: "Canadian Thanksgiving",
-    blurb:
-      "Feeling grateful for all the blessings in my life. Happy Thanksgiving!",
-    ...getCanadianThanksgivingDate(),
-    imageName: "thanksgiving",
-  },
-  {
     name: "Halloween",
     startMonth: 10,
     startDay: 30,
     durationDays: 3,
     imageName: "halloween",
+  },
+  {
+    name: "Canadian Thanksgiving",
+    blurb:
+      "Feeling grateful for all the blessings in my life. Happy Thanksgiving!",
+    ...getCanadianThanksgivingDate(),
+    imageName: "thanksgiving",
   },
   {
     name: "Remembrance Day",
@@ -173,15 +179,6 @@ export const occasions = [
     startDay: 31,
     durationDays: 1,
     imageName: "new-years-eve",
-    blurbMaxWidth: "12rem",
-  },
-  {
-    name: "New Year's Day",
-    blurb: `Happy New Year! I hope you have a wonderful ${newYear}.`,
-    startMonth: 1,
-    startDay: 1,
-    durationDays: 1,
-    imageName: "new-years-day",
     blurbMaxWidth: "12rem",
   },
 ];
