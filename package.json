@@ -162,7 +162,7 @@
     "unplugin-icons": "^0.18.2",
     "vite": "4.5.2",
     "wireit": "^0.14.3",
-    "xml-formatter": "^3.6.0"
+    "xml-formatter": "^3.6.2"
   },
   "engines": {
     "node": ">=18.19.0"
