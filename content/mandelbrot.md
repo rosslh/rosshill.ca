@@ -1,5 +1,5 @@
 ---
-title: Mandelbrot Set Explorer
+title: Python Mandelbrot Set Explorer
 eventType: project
 date: 2016-11-29
 lastModified: 2022-09-06
