@@ -7,7 +7,8 @@ tags: [ html5, css3, javascript, php, python, ruby, laravel, django, sqlite, mys
 website: https://www.epitech.digital/
 
 date: 2023-10-12
-isOngoing: true
+endDate: 2024-02-11
+isOngoing: false
 isSeasonal: false
 
 thumbnail: epitech
