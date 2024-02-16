@@ -116,7 +116,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.10",
-    "@iconify/json": "^2.2.164",
+    "@iconify/json": "^2.2.183",
     "@playwright/test": "^1.41.2",
     "@sveltejs/adapter-netlify": "^2.0.8",
     "@sveltejs/kit": "1.30.3",
