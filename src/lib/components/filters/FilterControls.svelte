@@ -1,19 +1,19 @@
 <script lang="ts">
-  import type { PostItemStub, TagColors } from "$lib/types";
-  import { PostCategory, SiteTheme } from "$lib/types";
-  import { minTagNumber, themeStore } from "$lib/stores";
-  import Times from "~icons/fa-solid/times";
-
-  import { browser } from "$app/environment";
-  import { tagAncestors } from "$lib/tags";
-  import { prefersColorSchemeDark } from "$lib/functions";
-  import FilterButton from "$lib/components/filters/FilterButton.svelte";
-  import Tag from "$lib/components/Tag.svelte";
+  import { differenceInMonths } from "date-fns";
+  import type { TagColors, PostItemStub } from "$lib/types";
+  import { PostCategory } from "$lib/types";
+  import { minTagNumber } from "$lib/stores";
 
   export let showCategories: Set<PostCategory>;
   export let showTags: Set<string>;
-  export let posts: PostItemStub[] = [];
+  export let posts: PostItemStub[];
   export let tagColors: TagColors;
+
+  import Times from "~icons/fa-solid/times";
+
+  import { tagAncestors } from "$lib/tags";
+  import FilterButton from "./FilterButton.svelte";
+  import Tag from "$lib/components/Tag.svelte";
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
     if (set.has(item)) {
@@ -36,18 +36,24 @@
   $: otherActive = showCategories.has(PostCategory.Other);
   $: projectActive = showCategories.has(PostCategory.Project);
 
-  let tagsOrdered: string[];
+  let tagsOrdered: string[] = [];
 
   $: {
     const tagCounts: Record<string, number> = {};
 
-    for (const { tags: postTags } of posts) {
-      // for each tag in post, add 1 to count
-      for (const tag of postTags) {
-        tagCounts[tag] = (tagCounts[tag] ?? 0) + 1;
+    for (const { tags: postTags, date, eventType } of posts) {
+      let tagCountToAdd = 1;
+
+      const computedEndDate = date.isOngoing ? new Date() : date.end;
+
+      if (eventType === PostCategory.Job && computedEndDate) {
+        tagCountToAdd = differenceInMonths(computedEndDate, date.start);
       }
 
-      // get ancestors of each tag and remove duplicates
+      for (const tag of postTags) {
+        tagCounts[tag] = (tagCounts[tag] ?? 0) + tagCountToAdd;
+      }
+
       const ancestorTags = [
         ...new Set(postTags.flatMap((tag) => tagAncestors[tag] ?? [])),
       ];
@@ -55,7 +61,7 @@
       for (const ancestorTag of ancestorTags.filter(
         (tag) => !postTags.includes(tag),
       )) {
-        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + 1; // add 1 to count for each ancestor
+        tagCounts[ancestorTag] = (tagCounts[ancestorTag] ?? 0) + tagCountToAdd;
       }
     }
 
@@ -73,10 +79,6 @@
       })
       .map((tag) => tag[0]);
   }
-
-  $: isPageBackgroundDark =
-    $themeStore === SiteTheme.Dark ||
-    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
 </script>
 
 <div class="category-buttons">
@@ -125,7 +127,6 @@
       active={showTags.has(tag)}
       background={tagColors[tag]?.bg}
       foreground={tagColors[tag]?.fg}
-      {isPageBackgroundDark}
       needsOutlineOnLightBg={tagColors[tag]?.outlineOnLight ?? false}
       needsOutlineOnDarkBg={tagColors[tag]?.outlineOnDark ?? false}
       onClick={() => toggleTag(tag)}
