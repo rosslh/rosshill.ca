@@ -7,7 +7,7 @@ import { keyBy, merge, escapeRegExp } from "lodash-es";
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
-import type { PostItemStub, TagColors, TagColor } from "$lib/types";
+import type { PostItemStub, TagColors, TagColor } from "../src/lib/types.ts";
 import { tagAncestors } from "../src/lib/tags.js";
 
 const inputPaths = {
@@ -38,12 +38,12 @@ const customIcons: Icon[] = [
     hex: "4169E1",
     path: "M10.55 6.59c-.25-.18-.65-.2-1.1-.2l-1.1.29-1.02.54.05 2.17c-.1.7-.27 1.55-.14 2.26.25 1.38 1.18 2.57 2.78 2.6l.44-1.37c.24-.6.56-1.17.72-1.86.31-1.19.07-3.92-.63-4.43zm-.02.97c-.27.64-1.33.37-1.36-.32l.03-.06.26-.14c.54-.02.82.08 1.1.29l-.03.23zm9.01 1.06c.1-.77.18-1.54.27-2.32-.97-.04-1.96-.08-2.36.52-.28.43-.18 1.36-.03 1.86.39 1.25 1 2.34 1.6 3.37l.4.85.06-.03c.12-.62.4-1.3.27-2.12l-.2-2.13zm-1.15-.98c-.34-.1-.46-.16-.66-.38.02-.16.05-.16.12-.26.15-.06.25-.18.66-.2.3.04.39.1.53.29-.19.33-.32.35-.65.55zm-7.5 7.5-1.18 1.28c-.51.33-1.35.45-2 .62l.03.05c1.36.48 2.49.37 3.45-.43.48-.4.7-1.47-.3-1.51zm10.07.3c-.41-.08-.7-.32-1.07-.38-.5.26-.72.31-.69 1.1 1.24.6 3.6-.23 4.15-.9-.72.08-1.56.33-2.39.18zM4.92.32 3.65.47C2.44.77 1.47 1.46 1 2.5c-1.42 3.23.6 9.25 1.68 11.78.37.86 1.08 2.54 2 2.76.49.11.77-.25.96-.44l2.15-2.44c-.67-.78-1.58-1.75-1.3-3.45l.15-1.48-.06-2.7C7 3.73 7.32 2.8 8.7 1V.96C7.5.76 6.4.34 4.92.32Zm7.46-.06-.66.06-1.25.35c-1.88.81-2.99 3.1-3.1 5.66.42-.22.9-.45 1.39-.59 2.54-.69 2.88.94 3.22 2.87a6.9 6.9 0 0 1-.03 2.5c-.16.6-.39 1.14-.61 1.65l-.59 1.66h.03c.25-.07.49.02.66.08 1.05.41.93 1.44.93 2.85 0 2.55-.31 6.01 1.68 6.59.6.16 1.3-.03 1.77-.18 2.54-.78 2.04-3.8 2.53-6.52.12-.71-.03-1.67.29-2.2.21-.37.55-.43.9-.66-1.07-1.65-2.24-3.4-2.85-5.48-.73-2.5.57-3.5 3.02-3.34C18.6 2.65 16.35.28 12.38.26ZM17.1 0l-1.25.2.06.03c.47.35 1.04.57 1.51.9a8.27 8.27 0 0 1 3.14 4.58c.17.82-.14 2.08-.27 2.79-.21 1.16.41 2.13.2 3.37-.08.52-.59 1.75-.43 1.88v-.05c.36-.36.54-.94.82-1.4a22.5 22.5 0 0 0 2.37-6.35c.2-.9.38-2.43.03-3.28a3.15 3.15 0 0 0-.98-1.1C20.95.5 19.59-.01 17.1 0Z",
   },
-];
+  ];
 
 const icons: Record<string, Icon> = keyBy(
   [...Object.values(SimpleIcons), ...customIcons],
   "slug",
-);
+  );
 
 function handleFileError(error: Error | null): void {
   if (error) {
@@ -54,7 +54,7 @@ function handleFileError(error: Error | null): void {
 const getNumbersFromStylesheetProperty = (
   fileLines: string[],
   propertyName: string,
-): number[] => {
+  ): number[] => {
   const escapedPropertyName = escapeRegExp(propertyName);
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
@@ -70,19 +70,20 @@ function getForegroundColors(): { light: string; dark: string } {
   const [themeSaturation] = getNumbersFromStylesheetProperty(
     fileLines,
     "$theme-saturation",
-  );
+    );
   const [darkColorLightness, lightColorLightness] =
     getNumbersFromStylesheetProperty(fileLines, "--color-heading");
 
   if (
     !(themeHue && themeSaturation && darkColorLightness && lightColorLightness)
-  ) {
+    ) {
     throw new TypeError("Could not parse theme colors");
   }
 
   const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
     .replace(/^#/, "")
     .toUpperCase();
+
   const dark = hsluvToHex([themeHue, themeSaturation, darkColorLightness])
     .replace(/^#/, "")
     .toUpperCase();
@@ -100,7 +101,7 @@ function getBestContrastForeground(
   background: string,
   lightForeground: string,
   darkForeground: string,
-): string {
+  ): string {
   const contrastWithLight = getContrast(background, lightForeground);
   const contrastWithDark = getContrast(background, darkForeground);
 
@@ -150,7 +151,7 @@ function getTagColors(tags: string[]): TagColors {
       const tagColor = getColorsForTag(icon, light, dark);
       return { [tag]: tagColor };
     }),
-  );
+    );
 }
 
 function getTags(posts: PostItemStub[]): string[] {
@@ -175,7 +176,7 @@ function outputTagColors(tagColors: TagColors) {
     outputPaths.tagColors,
     JSON.stringify(tagColors),
     handleFileError,
-  );
+    );
 }
 
 function main(): void {

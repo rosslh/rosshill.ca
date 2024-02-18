@@ -1,21 +1,15 @@
 <script lang="ts">
-  import type { PostItemStub, TagColors } from "$lib/types";
-  import { SiteTheme } from "$lib/types";
-  import { browser } from "$app/environment";
-  import { showCategories, showTags, themeStore } from "$lib/stores";
-  import { tagAncestors } from "$lib/tags";
-  import { prefersColorSchemeDark } from "$lib/functions";
-  import PostStub from "$lib/components/post-stub/PostStub.svelte";
-  import YearLabel from "./YearLabel.svelte";
-  import FilterControls from "$lib/components/filters/FilterControls.svelte";
-  import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
-  import { onDestroy, onMount } from "svelte";
+  import type { TagColors, PostItemStub } from "$lib/types";
 
-  export let posts: PostItemStub[] = [];
+  export let posts: PostItemStub[];
   export let tagColors: TagColors;
 
-  const MAX_POSTS_LENGTH: number = 1000;
-  const POSTS_INCREMENT: number = 10;
+  import { showCategories, showTags } from "$lib/stores";
+  import { tagAncestors } from "$lib/tags";
+  import PostStub from "./post-stub/PostStub.svelte";
+  import YearLabel from "./YearLabel.svelte";
+  import FilterControls from "./filters/FilterControls.svelte";
+  import ConfusedTravolta from "$lib/components/ConfusedTravolta.svelte";
 
   const getYearFromDate = (date: string): string => date.slice(0, 4);
 
@@ -23,7 +17,7 @@
     post: PostItemStub,
     index: number,
     postsArray: PostItemStub[],
-  ): PostItemStub => {
+    ): PostItemStub => {
     const output = post;
 
     const previousItem = postsArray[index - 1];
@@ -55,8 +49,8 @@
       tagAncestors[tag] &&
         tagAncestors[tag]?.some((ancestorTag: string) =>
           $showTags.has(ancestorTag),
-        ),
-    );
+                                ),
+      );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
     const postHasShownTag =
@@ -65,9 +59,12 @@
     return $showTags.size === 0 || postHasShownTag;
   };
 
-  $: isPageBackgroundDark =
-    $themeStore === SiteTheme.Dark ||
-    ($themeStore === SiteTheme.System && prefersColorSchemeDark(browser));
+  $: displayedPosts = posts
+    .filter(
+    (post: PostItemStub) =>
+        isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
+    )
+    .map(getLabelVisibilityAndAlignment);
 
   let activeTags: Set<string>;
 
@@ -83,93 +80,6 @@
     }
     activeTags = tags;
   }
-
-  let loadMoreTrigger: HTMLDivElement | null = null;
-  let displayedPosts: PostItemStub[];
-  let displayedPostsLength: number = 5;
-  let initialDisplayedPostsLength: number = displayedPostsLength;
-
-  $: {
-    const filteredPosts = posts
-      .filter(
-        (post: PostItemStub) =>
-          isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
-      )
-      .map(getLabelVisibilityAndAlignment);
-
-    displayedPosts = filteredPosts.slice(0, displayedPostsLength);
-  }
-
-  $: {
-    if ($showCategories.size || $showTags.size) {
-      displayedPostsLength = MAX_POSTS_LENGTH;
-    }
-  }
-
-  onMount(async () => {
-    if (window.location.href.includes("#")) {
-      displayedPostsLength = MAX_POSTS_LENGTH;
-    }
-  });
-
-  let observer: IntersectionObserver | null = null;
-  const options: {
-    rootMargin: string;
-    threshold: number;
-  } = {
-    rootMargin: "24px",
-    threshold: 0.5,
-  };
-
-  function initialiseObserver() {
-    if (observer === null) {
-      observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            displayedPostsLength += POSTS_INCREMENT;
-          }
-        }
-      }, options);
-    }
-
-    if (loadMoreTrigger) {
-      observer.observe(loadMoreTrigger);
-    }
-  }
-
-  onMount(() => {
-    initialiseObserver();
-  });
-
-  $: {
-    if (displayedPostsLength > initialDisplayedPostsLength) {
-      if (loadMoreTrigger) {
-        if (observer) {
-          observer.disconnect();
-        }
-
-        observer = new IntersectionObserver((entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              displayedPostsLength += POSTS_INCREMENT;
-            }
-          }
-        }, options);
-
-        observer.observe(loadMoreTrigger);
-        initialDisplayedPostsLength = displayedPostsLength;
-      } else {
-        displayedPostsLength = initialDisplayedPostsLength;
-      }
-    }
-  }
-
-  onDestroy(() => {
-    if (observer) {
-      observer.disconnect();
-      observer = null;
-    }
-  });
 </script>
 
 <div class="heading-wrapper content-wrapper">
@@ -191,12 +101,10 @@
           year={getYearFromDate(post.date.start)}
         />
       {/if}
-      <!-- Only transition if index or alignment changes -->
       {#key `${index}|${post.isLeftAligned}`}
         <PostStub
           {post}
           {tagColors}
-          {isPageBackgroundDark}
           {activeTags}
           isLastPost={index === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
@@ -205,13 +113,6 @@
     {/each}
     {#if displayedPosts.length === 0}
       <ConfusedTravolta reason="there are no results" />
-    {/if}
-    {#if displayedPosts.length < posts.length && $showCategories.size === 0 && $showTags.size === 0}
-      <div bind:this={loadMoreTrigger}>
-        <div class="load-more-trigger">
-          <div class="load-more-trigger__text">Charger plus</div>
-        </div>
-      </div>
     {/if}
   </div>
 </div>

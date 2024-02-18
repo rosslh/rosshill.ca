@@ -5,17 +5,14 @@
     "module": "es2020",
     "lib": [
       "es2023",
-      "DOM",
-      "esnext"
+      "DOM"
     ],
     "target": "es2020",
-    "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "resolveJsonModule": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,

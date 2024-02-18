@@ -1,5 +1,5 @@
 export type PostDate = {
-  start: string; // needs to be serialized as a string, not a Date object
+  start: string;
   end?: string;
   isOngoing: boolean;
   isSeasonal: boolean;
