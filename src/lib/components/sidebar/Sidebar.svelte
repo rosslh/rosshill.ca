@@ -8,14 +8,14 @@
   <div class="sidebar-content">
     <div class="img-wrapper">
       <picture class="fixed-size">
-        <source srcset="/headshot.webp" type="image/webp" />
-        <source srcset="/headshot.jpg" type="image/png" />
+        <source srcset="/antoinegreuzard-profile.webp" type="image/webp" />
+        <source srcset="/antoinegreuzard-profile.jpeg" type="image/jpeg" />
         <img
           alt="Antoine Greuzard"
           data-testid="headshot-img"
           height={remsToPixels(13)}
           loading="eager"
-          src="/headshot.jpg"
+          src="/antoinegreuzard-profile.jpeg"
           width={remsToPixels(13)}
         />
       </picture>
