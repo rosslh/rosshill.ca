@@ -12,14 +12,10 @@
     "plugin:unicorn/recommended",
     "plugin:prettier/recommended"
   ],
-  "ignorePatterns": [
-    "*.cjs"
-  ],
+  "ignorePatterns": ["*.cjs"],
   "overrides": [
     {
-      "files": [
-        "*.svelte"
-      ],
+      "files": ["*.svelte"],
       "parser": "svelte-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
@@ -32,10 +28,7 @@
     "requireConfigFile": false,
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "unicorn"
-  ],
+  "plugins": ["@typescript-eslint", "unicorn"],
   "rules": {
     "@typescript-eslint/no-inferrable-types": 0,
     "@typescript-eslint/no-shadow": 2,
@@ -46,19 +39,10 @@
       }
     ],
     "@typescript-eslint/quotes": 0,
-    "brace-style": [
-      1,
-      "1tbs"
-    ],
+    "brace-style": [1, "1tbs"],
     "camelcase": 1,
-    "comma-dangle": [
-      1,
-      "always-multiline"
-    ],
-    "curly": [
-      1,
-      "multi-line"
-    ],
+    "comma-dangle": [1, "always-multiline"],
+    "curly": [1, "multi-line"],
     "eol-last": 1,
     "eqeqeq": [
       2,
@@ -79,10 +63,7 @@
     "no-console": [
       1,
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "no-constant-condition": 2,
@@ -101,10 +82,7 @@
     "no-var": 2,
     "prefer-const": 1,
     "prefer-destructuring": 0,
-    "quote-props": [
-      1,
-      "consistent"
-    ],
+    "quote-props": [1, "consistent"],
     "quotes": 0,
     "semi": 1,
     "unicorn/explicit-length-check": 0,

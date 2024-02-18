@@ -3,7 +3,7 @@ title: Mieral
 isHidden: false
 eventType: projet
 excerpt: Découvrez le site internet Wordpress de Mieral, spécialiste de la volaille depuis 1975, pour des produits de qualité et une expérience client optimisée.
-tags: [ wordpress, css3, html5, javascript, php ]
+tags: [wordpress, css3, html5, javascript, php]
 website: https://www.mieral.com/
 date: 2017-10-15
 endDate:

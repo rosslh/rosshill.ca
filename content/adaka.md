@@ -3,7 +3,7 @@ title: Développeur web - Adaka
 isHidden: false
 eventType: emploi
 excerpt: Pendant deux mois, j'ai travaillé comme développeur web et intégrateur web dans l'agence web & design ADaKa. J'ai eu la chance de travailler sur plusieurs projets web variés.
-tags: [ elementor, wordpress, git, bootstrap, javascript, sass ]
+tags: [elementor, wordpress, git, bootstrap, javascript, sass]
 website: https://adaka-web.com
 
 date: 2021-01-15

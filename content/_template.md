@@ -4,7 +4,7 @@ isHidden: true
 title: Template
 eventType: autre
 excerpt: Short blurb goes here.
-tags: [ javascript ]
+tags: [javascript]
 website: https://google.com
 repository: https://github.com/example/example
 

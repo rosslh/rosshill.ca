@@ -3,7 +3,7 @@ title: Ville de Saint Priest
 isHidden: false
 eventType: projet
 excerpt: Découvrez le site internet de la ville de Saint-Priest pour accéder à toutes les informations sur cette charmante commune de la région lyonnaise.
-tags: [ laravel, wordpress, javascript, php ]
+tags: [laravel, wordpress, javascript, php]
 website: https://ville-saint-priest.fr
 
 date: 2023-11-15
@@ -14,7 +14,6 @@ thumbnail: logo_saintpriest
 thumbnailExt: jpeg
 image: saintpriest
 imageExt: png
-
 ---
 
 Saint-Priest, une commune située dans la banlieue est de Lyon, est connue pour son dynamisme et son évolution constante. Le site internet de la ville de Saint-Priest est une ressource incontournable pour obtenir toutes les informations concernant cette commune attrayante.

@@ -2,7 +2,7 @@
 title: Local Plus
 eventType: projet
 excerpt: Site internet de Local Plus, un service de garde-meubles, de location de box et de self-stockage pour vos biens personnels et professionnels.
-tags: [ wordpress, css3, html5, javascript, php ]
+tags: [wordpress, css3, html5, javascript, php]
 website: https://www.localplus.fr/
 date: 2018-07-15
 isOngoing: false
@@ -11,7 +11,6 @@ thumbnail: localplus_logo
 thumbnailExt: png
 image: localplus
 imageExt: jpg
-
 ---
 
 Local Plus: votre solution de stockage pratique et sécurisée

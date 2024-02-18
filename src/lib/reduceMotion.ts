@@ -1,4 +1,4 @@
-import {isbot} from "isbot";
+import { isbot } from "isbot";
 
 const isBrowser = typeof window !== "undefined" && !("Deno" in window);
 
