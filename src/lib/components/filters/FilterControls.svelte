@@ -179,8 +179,4 @@
     margin-right: var(--spacing-2xs);
     font-size: var(--font-size-3xs);
   }
-
-  .tag-buttons.truncated :global(.tag:nth-last-child(2)) {
-    margin-right: var(--spacing-s);
-  }
 </style>
