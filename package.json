@@ -20,7 +20,9 @@
     "updateNvmrc": "wireit",
     "upgrade": "ncu -u && npm i && npx playwright install"
   },
-  "browserslist": "last 5 years or ie>=11 or >0.2%",
+  "browserslist": [
+    "last 5 years or ie>=11 or >0.2%"
+  ],
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.9",
