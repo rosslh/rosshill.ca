@@ -1,0 +1,7 @@
+{
+  "nodejs.editor.formatOnSave.eslint.glob": "{**/*,*}.{js,ts,jsx,tsx,svelte}",
+  "nodejs.editor.formatOnSave.prettier.glob": "{**/*,*}.{js,ts,jsx,tsx,svelte}",
+  "nodejs.editor.formatOnSave.prettier.mode": "Auto",
+  "nodejs.editor.formatOnSave.eslint.mode": "Auto",
+  "toolchains": []
+}

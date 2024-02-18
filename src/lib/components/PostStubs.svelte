@@ -17,7 +17,7 @@
     post: PostItemStub,
     index: number,
     postsArray: PostItemStub[],
-    ): PostItemStub => {
+  ): PostItemStub => {
     const output = post;
 
     const previousItem = postsArray[index - 1];
@@ -49,8 +49,8 @@
       tagAncestors[tag] &&
         tagAncestors[tag]?.some((ancestorTag: string) =>
           $showTags.has(ancestorTag),
-                                ),
-      );
+        ),
+    );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
     const postHasShownTag =
@@ -61,7 +61,7 @@
 
   $: displayedPosts = posts
     .filter(
-    (post: PostItemStub) =>
+      (post: PostItemStub) =>
         isCategoryOfPostSelected(post) && isTagOfPostSelected(post),
     )
     .map(getLabelVisibilityAndAlignment);
