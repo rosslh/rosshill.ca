@@ -1,7 +1,7 @@
 ---
 title: Quai des enchères
 eventType: projet
-tags: [ wordpress, css3, html5, javascript, php ]
+tags: [wordpress, css3, html5, javascript, php]
 website: https://www.quaidesencheres.fr/
 
 date: 2020-02-15
