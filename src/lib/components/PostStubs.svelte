@@ -53,9 +53,9 @@
     );
 
   $: isTagOfPostSelected = (post: PostItemStub): boolean => {
-    const postHasShownTag =
-      post.tags !== undefined &&
-      post.tags.some((tag) => $showTags.has(tag) || isAncestorTagSelected(tag));
+    const postHasShownTag = post.tags.some(
+      (tag) => $showTags.has(tag) || isAncestorTagSelected(tag),
+    );
     return $showTags.size === 0 || postHasShownTag;
   };
 
@@ -108,11 +108,12 @@
           {activeTags}
           isLastPost={index === displayedPosts.length - 1}
           left={Boolean(post.isLeftAligned)}
+          isPageBackgroundDark={true}
         />
       {/key}
     {/each}
     {#if displayedPosts.length === 0}
-      <ConfusedTravolta reason="there are no results" />
+      <ConfusedTravolta reason="Pas de résultat" />
     {/if}
   </div>
 </div>
