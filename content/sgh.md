@@ -4,7 +4,7 @@ isHidden: false
 title: SGH MEDICAL PHARMA
 eventType: projet
 excerpt: Le site web https://www.sgh-medical.com/fr/ appartient à SGH Medical Pharma, une entreprise qui se concentre sur l'innovation thérapeutique pour contribuer à l'avancement de la pharmacie et de la médecine.
-tags: [ javascript, wordpress, css3, html5, php, mysql, jquery, elementor ]
+tags: [javascript, wordpress, css3, html5, php, mysql, jquery, elementor]
 website: https://www.sgh-medical.com
 
 date: 2022-07-15

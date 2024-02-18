@@ -6,18 +6,13 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.svelte",
-        "*.html"
-      ],
+      "files": ["*.svelte", "*.html"],
       "customSyntax": "postcss-html",
       "rules": {
         "selector-pseudo-class-no-unknown": [
           true,
           {
-            "ignorePseudoClasses": [
-              "global"
-            ]
+            "ignorePseudoClasses": ["global"]
           }
         ]
       }

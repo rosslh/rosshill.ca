@@ -16,12 +16,24 @@ $other-hue: 135;
   $marker-lightness: $category-lightness + 10;
 
   --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv(
+      $project-hue,
+      $category-saturation,
+      $category-lightness
+    )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
   --color-job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
-  --color-project-marker: #{hsluv($project-hue, $marker-saturation, $marker-lightness)};
-  --color-other-marker: #{hsluv($other-hue, $marker-saturation, $marker-lightness)};
+  --color-project-marker: #{hsluv(
+      $project-hue,
+      $marker-saturation,
+      $marker-lightness
+    )};
+  --color-other-marker: #{hsluv(
+      $other-hue,
+      $marker-saturation,
+      $marker-lightness
+    )};
 
   --color-heading: #{hsluv($theme-hue, $theme-saturation, 20%)};
   --color-foreground: #{hsluv($theme-hue, $theme-saturation, 30%)};
@@ -40,7 +52,11 @@ $other-hue: 135;
   $category-lightness: 65%;
 
   --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv($project-hue, $category-saturation, $category-lightness)};
+  --color-project: #{hsluv(
+      $project-hue,
+      $category-saturation,
+      $category-lightness
+    )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
   --color-job-marker: var(--color-job);

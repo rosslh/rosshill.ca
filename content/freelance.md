@@ -3,7 +3,30 @@ title: Développeur web - Freelance
 isHidden: false
 eventType: emploi
 excerpt: Je me lance dans le monde de l'entrepreneuriat en travaillant pour des agences web.
-tags: [ javascript, svelte, vite, typescript, laravel, react, php, mysql, plesk, sass, wordpress, elementor, git, nodedotjs, bootstrap, tailwindcss, phpstorm, roots, netlify, cloudflare, python ]
+tags:
+  [
+    javascript,
+    svelte,
+    vite,
+    typescript,
+    laravel,
+    react,
+    php,
+    mysql,
+    plesk,
+    sass,
+    wordpress,
+    elementor,
+    git,
+    nodedotjs,
+    bootstrap,
+    tailwindcss,
+    phpstorm,
+    roots,
+    netlify,
+    cloudflare,
+    python,
+  ]
 website: https://antoinegreuzard.fr
 repository: https://github.com/antoinegreuzard
 

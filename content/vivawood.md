@@ -4,7 +4,7 @@ isHidden: false
 title: VivaWood
 eventType: projet
 excerpt: Un site internet fait sur Wordpress pour une entreprise spécialiste des éléments à ossature bois.
-tags: [ javascript, wordpress, php, html5, css3, mysql ]
+tags: [javascript, wordpress, php, html5, css3, mysql]
 website: https://vivawood.com
 
 date: 2022-05-15

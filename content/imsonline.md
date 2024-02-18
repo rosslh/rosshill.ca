@@ -3,7 +3,7 @@ title: Développeur web - IMS ON LINE
 isHidden: false
 eventType: emploi
 excerpt: Après avoir fini mes études, j’ai été accepté en tant que salarié chez IMS ON LINE. Mes missions étaient la maintenance, le développement, le référencement de site internet, mais aussi la gestion de la hotline et le suivi des projets. J’ai aussi pu aider des clients en tant que technicien sur leur poste.
-tags: [ javascript, php, wordpress, css3, mysql, html5 ]
+tags: [javascript, php, wordpress, css3, mysql, html5]
 website: https://ims-on-line.net
 
 date: 2016-11-01

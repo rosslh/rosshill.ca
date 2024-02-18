@@ -3,7 +3,7 @@ title: CAP Basket
 isHidden: false
 eventType: projet
 excerpt: Site web réalisé avec Wordpress et Elementor pour CAP Basket.
-tags: [ wordpress, elementor, css3, html5, javascript ]
+tags: [wordpress, elementor, css3, html5, javascript]
 website: https://capbasket.fr/
 
 date: 2021-09-01
