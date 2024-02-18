@@ -9,17 +9,9 @@
       "esnext"
     ],
     "target": "es2020",
-    /**
-        svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
-to enforce using \`import type\` instead of \`import\` for Types.
-        */
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "resolveJsonModule": true,
-    /**
-        To have warnings/errors of the Svelte compiler at the correct position,
-enable source maps by default.
-        */
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -40,21 +32,7 @@ enable source maps by default.
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "allowJs": true,
-    "checkJs": false,
-    "paths": {
-      "$data": [
-        "data"
-      ],
-      "$data/*": [
-        "data/*"
-      ],
-      "$lib": [
-        "src/lib"
-      ],
-      "$lib/*": [
-        "src/lib/*"
-      ]
-    }
+    "checkJs": false
   },
   "include": [
     "src/**/*.d.ts",

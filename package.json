@@ -16,7 +16,7 @@
     "lint:styles": "wireit",
     "prepare": "svelte-kit sync",
     "preview": "vite preview --port 3000",
-    "upgrade": "ncu -u -x universal-cookie && npm i",
+    "upgrade": "ncu -u && npm i && npx playwright install",
     "updateNvmrc": "wireit"
   },
   "wireit": {
@@ -118,8 +118,8 @@
     "@babel/eslint-parser": "^7.23.10",
     "@iconify/json": "^2.2.183",
     "@playwright/test": "^1.41.2",
-    "@sveltejs/adapter-netlify": "^2.0.8",
-    "@sveltejs/kit": "1.30.3",
+    "@sveltejs/adapter-netlify": "^3.0.1",
+    "@sveltejs/kit": "2.0.6",
     "@types/apca-w3": "^0.1.3",
     "@types/chroma-js": "^2.4.3",
     "@types/cssnano": "^5.0.0",
@@ -145,7 +145,7 @@
     "hsluv-ts": "^1.0.1",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
-    "isbot": "^3.7.1",
+    "isbot": "^4.2.0",
     "lodash-es": "^4.17.21",
     "markdown-json": "^1.6.1",
     "npm-check-updates": "^16.14.15",
@@ -160,7 +160,7 @@
     "typescript": "^5.3.3",
     "universal-cookie": "^7.0.2",
     "unplugin-icons": "^0.18.5",
-    "vite": "4.5.2",
+    "vite": "5.0.10",
     "wireit": "^0.14.3",
     "xml-formatter": "^3.6.2"
   },
