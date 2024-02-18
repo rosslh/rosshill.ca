@@ -3,7 +3,10 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "es2020",
-    "lib": ["es2023", "DOM"],
+    "lib": [
+      "es2023",
+      "DOM"
+    ],
     "target": "es2020",
     "isolatedModules": true,
     "resolveJsonModule": true,
@@ -26,7 +29,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "allowJs": true,
-    "checkJs": false
+    "checkJs": true
   },
   "include": [
     "src/**/*.d.ts",
@@ -35,5 +38,10 @@
     "src/**/*.svelte",
     "scripts/**/*.ts"
   ],
-  "exclude": ["./build", "./svelte-kit", "./node_modules", "svelte.config.js"]
+  "exclude": [
+    "./build",
+    "./svelte-kit",
+    "./node_modules",
+    "svelte.config.js"
+  ]
 }
