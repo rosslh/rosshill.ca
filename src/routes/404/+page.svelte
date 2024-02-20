@@ -20,7 +20,7 @@
     url: "https://antoinegreuzard.fr/404",
     siteName: "Antoine Greuzard",
     image: {
-      url: "https://antoinegreuzard.fr/antoine-greuzard.jpg",
+      url: "https://antoinegreuzard.fr/antoinegreuzard-profile.jpeg",
       width: 746,
       height: 1020,
       alt: "Antoine greuzard: A propos, Projets, et Contact",
@@ -33,8 +33,7 @@
   description={meta.description}
   openGraph={{
     article: {
-      authors: [meta.author],
-      tags: meta.tags,
+      authors: [meta.siteName],
     },
     description: meta.description,
     images: [

@@ -22,7 +22,7 @@
     url: "https://antoinegreuzard.fr",
     siteName: "Antoine Greuzard",
     image: {
-      url: "https://antoinegreuzard.fr/antoine-greuzard.jpg",
+      url: "https://antoinegreuzard.fr/antoinegreuzard-profile.jpeg",
       width: 746,
       height: 1020,
       alt: "Antoine greuzard: Développeur web freelance",
