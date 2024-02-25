@@ -43,7 +43,7 @@
     "autoprefixer": "^10.4.17",
     "bezier-easing": "^2.1.0",
     "chroma-js": "^2.4.2",
-    "cssnano": "^6.0.3",
+    "cssnano": "^6.0.5",
     "date-fns": "^3.3.1",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
