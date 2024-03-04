@@ -8,7 +8,7 @@
   const { posts, tagColors } = data;
 
   const intro =
-    "Je suis Antoine Greuzard, un développeur web freelance passionné et spécialiste de l'intégration Wordpress. J'ai consacré 7 ans à transformer les visions en réalités numériques pour des agences web, avec plus de 100 projets réussis à mon actif.\n" +
+    "Je suis Antoine Greuzard, un développeur web passionné. J'ai consacré 7 ans à transformer les visions en réalités numériques pour des agences web, avec plus de 100 projets réussis à mon actif.\n" +
     "\n" +
     "Tout au long de ma carrière, j'ai eu l'occasion de travailler sur des projets de toutes tailles et de toutes complexités, chacun avec ses propres défis et récompenses. Cette expérience m'a permis de développer une approche polyvalente et adaptable, capable de répondre aux exigences spécifiques de chaque client et de chaque projet.\n" +
     "\n" +
@@ -17,7 +17,7 @@
     "Que vous ayez besoin d'une refonte de site web complète, d'une simple page d'accueil ou d'un e-commerce complexe, je suis prêt à vous aider à réaliser vos objectifs numériques. Chaque projet est une nouvelle aventure et je suis toujours enthousiaste à l'idée de commencer un nouveau voyage. Alors, êtes-vous prêt à travailler ensemble pour créer quelque chose de grand ? Je suis toujours disponible pour discuter de vos idées, de vos visions et de la manière dont nous pouvons les transformer en une présence en ligne puissante et réussie.";
   const introLines = intro.split("\n").filter((line) => line.trim() !== "");
   const meta = {
-    title: "Antoine Greuzard : Développeur Web Freelance",
+    title: "Antoine Greuzard : Développeur Web",
     description: truncateBySentence(intro, 155),
     url: "https://antoinegreuzard.fr",
     siteName: "Antoine Greuzard",
@@ -25,7 +25,7 @@
       url: "https://antoinegreuzard.fr/antoinegreuzard-profile.jpeg",
       width: 746,
       height: 1020,
-      alt: "Antoine greuzard: Développeur web freelance",
+      alt: "Antoine greuzard: Développeur web",
     },
   };
 </script>
@@ -56,7 +56,7 @@
 />
 <div class="main-content">
   <div class="content-wrapper intro">
-    <h1 data-testid="main-heading">Je suis un Développeur web Freelance</h1>
+    <h1 data-testid="main-heading">Je suis un Développeur web</h1>
     {#each introLines as line}
       <p>{line}</p>
     {/each}

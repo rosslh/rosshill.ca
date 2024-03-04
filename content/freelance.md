@@ -31,7 +31,8 @@ website: https://antoinegreuzard.fr
 repository: https://github.com/antoinegreuzard
 
 date: 2021-09-21
-isOngoing: true
+endDate: 2024-03-04
+isOngoing: false
 isSeasonal: false
 
 thumbnail: freelance

@@ -13,7 +13,7 @@
       : "Il y a une erreur";
 
   const intro =
-    "Je suis Antoine Greuzard, développeur web freelance et intégrateur web Wordpress. Création de site internet pour les agences web sur Wordpress. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
+    "Je suis Antoine Greuzard, développeur web. Création de site internet pour les agences web. J'ai à mon actif plus de 100 projets terminés et une expérience de 7 ans dans le domaine du développement web.";
   const meta = {
     title: `${code}: ${message} | Antoine Greuzard`,
     description: truncateBySentence(intro, 155),
