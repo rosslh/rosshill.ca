@@ -8,7 +8,7 @@
   const { posts, tagColors } = data;
 
   const intro =
-    "Je suis Antoine Greuzard, développeur web avec 7 ans d'expérience, ayant évolué du freelance à des rôles en entreprise, où je mets en avant mes compétences techniques. Ma polyvalence couvre l'administration de bases de données, le développement logiciel, Angular, Django, React, et bien plus, avec une expertise particulière en cyber-sécurité et intégration continue. Maîtrisant JavaScript, Python, PHP, et expert en solutions cloud comme AWS et Azure, je crée des solutions numériques efficaces.\n" +
+    "Je suis Antoine Greuzard, développeur web avec 7 ans d'expérience, ayant évolué du freelance à des rôles en entreprise, où je mets en avant mes compétences techniques. Ma polyvalence couvre l'administration de bases de données, le développement logiciel, Angular, Django, React, et bien plus, avec une expertise particulière en cyber-sécurité et intégration continue. Maîtrisant JavaScript, Python, PHP,  et je suis compétent avec des solutions cloud telles que AWS et Azure pour développer des solutions numériques robustes.\n" +
     "\n" +
     "Passionné d'innovation, je combine ma compétence en programmation avec Adobe Photoshop et Figma pour concevoir des interfaces captivantes. Mon savoir-faire en SEO et Google Analytics optimise la visibilité en ligne des projets. Je suis aussi un leader expérimenté en gestion d'équipe, appliquant Agile et Scrum pour maximiser l'efficacité.\n" +
     "\n" +
