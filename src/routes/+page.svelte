@@ -7,12 +7,15 @@
   export let data: { posts: PostItemStub[]; tagColors: TagColors };
   const { posts, tagColors } = data;
 
-  const intro =
-    "Je suis Antoine Greuzard, développeur web avec 7 ans d'expérience, ayant évolué du freelance à des rôles en entreprise, où je mets en avant mes compétences techniques. Ma polyvalence couvre l'administration de bases de données, le développement logiciel, Angular, Django, React, et bien plus, avec une expertise particulière en cyber-sécurité et intégration continue. Maîtrisant JavaScript, Python, PHP,  et je suis compétent avec des solutions cloud telles que AWS et Azure pour développer des solutions numériques robustes.\n" +
-    "\n" +
-    "Passionné d'innovation, je combine ma compétence en programmation avec Adobe Photoshop et Figma pour concevoir des interfaces captivantes. Mon savoir-faire en SEO et Google Analytics optimise la visibilité en ligne des projets. Je suis aussi un leader expérimenté en gestion d'équipe, appliquant Agile et Scrum pour maximiser l'efficacité.\n" +
-    "\n" +
-    "Déterminé à contribuer à des projets innovants, je cherche à relever de nouveaux défis et à collaborer pour créer des solutions web exceptionnelles. Discutons de la réalisation de vos objectifs numériques ensemble.";
+  const intro = String(
+    "Je suis Antoine Greuzard, développeur web avec 7 ans d'expérience, spécialisé en administration de bases de données et développement logiciel. Mon parcours m'a permis de me perfectionner dans des technologies clés telles qu'Angular, Django, React, JavaScript, Python, et PHP. Expert dans l'utilisation de solutions cloud comme AWS et Azure, je m'engage à développer des solutions numériques robustes et innovantes.\n" +
+      "\n" +
+      "Ma passion pour la technologie me pousse constamment à explorer et à intégrer de nouvelles pratiques, notamment dans les domaines de la cyber-sécurité et de l'intégration continue. Familiarisé avec les méthodologies Agile et Scrum, je vise à optimiser le processus de développement pour garantir efficacité et qualité.\n" +
+      "\n" +
+      "Je suis déterminé à contribuer à des projets qui non seulement répondent aux besoins spécifiques mais les surpassent, en mettant l'accent sur la création de solutions web exceptionnelles. Mon objectif est de collaborer étroitement avec les équipes pour transformer les visions en réalités numériques tangibles, en utilisant ma vaste palette de compétences techniques.\n" +
+      "\n" +
+      "Motivé par les nouveaux défis, je suis prêt à apporter mon expertise et mon enthousiasme à votre projet, pour travailler ensemble vers la réussite de vos objectifs numériques.",
+  );
   const introLines = intro.split("\n").filter((line) => line.trim() !== "");
   const meta = {
     title: "Antoine Greuzard : Développeur Web",
