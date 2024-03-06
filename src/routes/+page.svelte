@@ -8,13 +8,11 @@
   const { posts, tagColors } = data;
 
   const intro =
-    "Je suis Antoine Greuzard, un développeur web passionné. J'ai consacré 7 ans à transformer les visions en réalités numériques pour des agences web, avec plus de 100 projets réussis à mon actif.\n" +
+    "Je suis Antoine Greuzard, développeur web avec 7 ans d'expérience, ayant évolué du freelance à des rôles en entreprise, où je mets en avant mes compétences techniques. Ma polyvalence couvre l'administration de bases de données, le développement logiciel, Angular, Django, React, et bien plus, avec une expertise particulière en cyber-sécurité et intégration continue. Maîtrisant JavaScript, Python, PHP, et expert en solutions cloud comme AWS et Azure, je crée des solutions numériques efficaces.\n" +
     "\n" +
-    "Tout au long de ma carrière, j'ai eu l'occasion de travailler sur des projets de toutes tailles et de toutes complexités, chacun avec ses propres défis et récompenses. Cette expérience m'a permis de développer une approche polyvalente et adaptable, capable de répondre aux exigences spécifiques de chaque client et de chaque projet.\n" +
+    "Passionné d'innovation, je combine ma compétence en programmation avec Adobe Photoshop et Figma pour concevoir des interfaces captivantes. Mon savoir-faire en SEO et Google Analytics optimise la visibilité en ligne des projets. Je suis aussi un leader expérimenté en gestion d'équipe, appliquant Agile et Scrum pour maximiser l'efficacité.\n" +
     "\n" +
-    "J'apprécie l'indépendance et la liberté qu'offre ce mode de travail, ainsi que l'occasion de nouer des relations plus personnelles avec mes clients. Je suis déterminé à fournir un service exceptionnel, à répondre à vos besoins de manière précise et efficace, et à transformer vos visions en réalités impressionnantes et fonctionnelles.\n" +
-    "\n" +
-    "Que vous ayez besoin d'une refonte de site web complète, d'une simple page d'accueil ou d'un e-commerce complexe, je suis prêt à vous aider à réaliser vos objectifs numériques. Chaque projet est une nouvelle aventure et je suis toujours enthousiaste à l'idée de commencer un nouveau voyage. Alors, êtes-vous prêt à travailler ensemble pour créer quelque chose de grand ? Je suis toujours disponible pour discuter de vos idées, de vos visions et de la manière dont nous pouvons les transformer en une présence en ligne puissante et réussie.";
+    "Déterminé à contribuer à des projets innovants, je cherche à relever de nouveaux défis et à collaborer pour créer des solutions web exceptionnelles. Discutons de la réalisation de vos objectifs numériques ensemble.";
   const introLines = intro.split("\n").filter((line) => line.trim() !== "");
   const meta = {
     title: "Antoine Greuzard : Développeur Web",
