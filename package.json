@@ -66,7 +66,7 @@
     "prettier": "^3.2.4",
     "prettier-plugin-svelte": "^3.2.2",
     "sass": "^1.72.0",
-    "simple-icons": "^11.6.0",
+    "simple-icons": "^11.9.0",
     "slugify": "^1.6.6",
     "stylelint": "^16.2.0",
     "stylelint-config-standard-scss": "^13.0.0",
