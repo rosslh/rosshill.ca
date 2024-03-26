@@ -25,7 +25,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.24.0",
-    "@babel/eslint-parser": "^7.23.9",
+    "@babel/eslint-parser": "^7.24.1",
     "@iconify/json": "^2.2.184",
     "@playwright/test": "^1.42.1",
     "@sveltejs/adapter-netlify": "^4.1.0",
