@@ -84,7 +84,7 @@
     "xml-formatter": "^3.6.2"
   },
   "engines": {
-    "node": ">= 18.14.0"
+    "node": ">=18.20.2"
   },
   "wireit": {
     "build": {
