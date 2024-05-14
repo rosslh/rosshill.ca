@@ -61,7 +61,7 @@
     "lodash-es": "^4.17.21",
     "logrocket": "^8.1.0",
     "markdown-json": "^1.6.1",
-    "npm-check-updates": "^16.14.17",
+    "npm-check-updates": "^16.14.20",
     "postcss-html": "^1.6.0",
     "prettier": "^3.2.4",
     "prettier-plugin-svelte": "^3.2.3",
