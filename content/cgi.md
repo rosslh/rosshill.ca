@@ -3,7 +3,7 @@ title: Expert technique - CGI
 isHidden: false
 eventType: emploi
 excerpt: En tant qu'Expert Technique, je m'engage à assurer la qualité et la sécurité des projets techniques, en apportant mon expertise à mon équipe et en participant activement à l'identification des risques et des solutions. Mon rôle inclut également la formation, le support technique, et le suivi des communautés techniques.
-tags: [ java, php, nextdotjs, react, postgresql, javascript ]
+tags: [ java, php, nextdotjs, react, postgresql, javascript, symfony, mariadb ]
 website: https://www.cgi.com/france/fr-fr
 
 date: 2024-04-22
