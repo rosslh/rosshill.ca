@@ -8,6 +8,7 @@
   export let activeTags: Set<string>;
 
   import { remsToPixels } from "$lib/functions";
+  import { capitalize } from "lodash-es";
 </script>
 
 <div class="post-heading">
@@ -61,18 +62,27 @@
       {/each}
     </div>
   </div>
+  <div
+    class="type"
+    class:work={post.eventType === "work"}
+    class:project={post.eventType === "project"}
+    class:other={post.eventType === "other"}
+  >
+    {post.eventTypeLabel || capitalize(post.eventType)}
+  </div>
 </div>
 
 <style lang="scss">
   div.post-heading {
     display: flex;
     min-height: 1.5rem;
-    align-items: center;
+    gap: var(--spacing-xs);
 
     .picture-frame {
       width: 2rem;
       height: 2rem;
       flex-shrink: 0;
+      align-self: center;
 
       picture {
         width: 100%;
@@ -102,7 +112,7 @@
       h3 {
         font-size: var(--font-size-s);
         display: inline-block;
-        margin: 0 var(--spacing-2xs) 0 var(--spacing-s);
+        margin: 0 var(--spacing-2xs) 0 var(--spacing-2xs);
         padding: 0;
 
         a {
@@ -114,8 +124,26 @@
       div.tags {
         display: flex;
         padding: var(--spacing-3xs) 0;
-        margin-left: var(--spacing-s);
+        margin-left: var(--spacing-2xs);
         flex-wrap: wrap;
+      }
+    }
+
+    .type {
+      margin-left: auto;
+      margin-right: var(--spacing-xs);
+      font-size: var(--font-size-2xs);
+
+      &.work {
+        color: var(--color-work-marker);
+      }
+
+      &.project {
+        color: var(--color-project-marker);
+      }
+
+      &.other {
+        color: var(--color-other-marker);
       }
     }
   }

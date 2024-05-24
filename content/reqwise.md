@@ -10,6 +10,7 @@ tags: [svelte, fastify, postgresql]
 # googlecloud
 embed: <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xrtc45-qvG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 repository: https://github.com/rosslh/ReqWise
+isHidden: true
 ---
 
 I made ReqWise for one reason: Building websites is fun. Collaborating with clients is _hard_.

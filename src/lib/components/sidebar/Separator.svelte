@@ -24,7 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 3rem;
+      height: var(--spacing-3xl);
 
       .symbol {
         font-size: var(--font-size-m);
@@ -36,7 +36,7 @@
 
       .line {
         height: 1px;
-        width: calc(50% - 1.5rem);
+        width: calc(50% - var(--spacing-xl));
         border-bottom: 3px dotted var(--color-border);
       }
     }

@@ -8,17 +8,17 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("Event type filter works", async ({ page }) => {
-  const jobFilter = getLocator([page, "event-filter-job"]);
+  const workFilter = getLocator([page, "event-filter-work"]);
 
   // Before clicking the filter, the wtformat item should exist
   await expectCount([page, "post-stub-wtformat"], 1);
 
-  await jobFilter.click();
+  await workFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
   await expectCount([page, "post-stub-wtformat"], 0);
 
-  await jobFilter.click();
+  await workFilter.click();
 
   // After clicking the filter again, the wtformat item should exist
   await expectCount([page, "post-stub-wtformat"], 1);
@@ -78,32 +78,32 @@ const getAttribute = async (
 
 test("Clear filters button works", async ({ page }) => {
   const clearFilters = getLocator([page, "clear-filters"]);
-  const jobFilter = getLocator([page, "event-filter-job"]);
+  const workFilter = getLocator([page, "event-filter-work"]);
   const jsFilter = getLocator([page, "skill-filter-javascript"]);
 
   // clearFilters does not exist
   await expectCount([page, "clear-filters"], 0);
 
-  // jobFilter exists
-  await expectCount([page, "event-filter-job"], 1);
+  // workFilter exists
+  await expectCount([page, "event-filter-work"], 1);
 
   // jsFilter exists
   await expectCount([page, "skill-filter-javascript"], 1);
 
-  // jobFilter does not have class active
-  const jobFilterClasses = await getAttribute(jobFilter, "class");
-  expect(jobFilterClasses.split(" ")).not.toContain("active");
+  // workFilter does not have class active
+  const workFilterClasses = await getAttribute(workFilter, "class");
+  expect(workFilterClasses.split(" ")).not.toContain("active");
 
   // jsFilter does not have class active
   const jsFilterClasses = await getAttribute(jsFilter, "class");
   expect(jsFilterClasses.split(" ")).not.toContain("active");
 
-  await jobFilter.click();
+  await workFilter.click();
   await jsFilter.click();
 
-  // jobFilter has class active
-  const jobFilterClassesAfterClick = await getAttribute(jobFilter, "class");
-  expect(jobFilterClassesAfterClick.split(" ")).toContain("active");
+  // workFilter has class active
+  const workFilterClassesAfterClick = await getAttribute(workFilter, "class");
+  expect(workFilterClassesAfterClick.split(" ")).toContain("active");
 
   // jsFilter has class active
   const jsFilterClassesAfterClick = await getAttribute(jsFilter, "class");
@@ -114,9 +114,9 @@ test("Clear filters button works", async ({ page }) => {
 
   await clearFilters.click();
 
-  // jobFilter does not have class active
-  const jobFilterClassesAfterClear = await getAttribute(jobFilter, "class");
-  expect(jobFilterClassesAfterClear.split(" ")).not.toContain("active");
+  // workFilter does not have class active
+  const workFilterClassesAfterClear = await getAttribute(workFilter, "class");
+  expect(workFilterClassesAfterClear.split(" ")).not.toContain("active");
 
   // jsFilter does not have class active
   const jsFilterClassesAfterClear = await getAttribute(jsFilter, "class");

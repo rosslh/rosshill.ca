@@ -35,7 +35,7 @@
   }
 
   div.post-spacer {
-    height: 3rem !important;
+    height: var(--spacing-3xl) !important;
 
     &.left {
       border-left: 3px solid var(--color-timeline);

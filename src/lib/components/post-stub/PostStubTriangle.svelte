@@ -25,13 +25,13 @@
 
     &.arrow-left {
       transform: translate(-50%, -50%);
-      left: -0.2rem;
+      left: calc(-1 * var(--spacing-2xs));
       border-right: 16px solid var(--color-panel-background);
     }
 
     &.arrow-right {
       transform: translate(50%, -50%);
-      right: -0.2rem;
+      right: calc(-1 * var(--spacing-2xs));
       border-left: 16px solid var(--color-panel-background);
     }
   }
@@ -47,13 +47,13 @@
 
     &.arrow-left-border {
       transform: translate(-50%, -50%);
-      left: -0.2rem;
+      left: calc(-1 * var(--spacing-2xs));
       border-right: 18.5px solid var(--color-border);
     }
 
     &.arrow-right-border {
       transform: translate(50%, -50%);
-      right: -0.2rem;
+      right: calc(-1 * var(--spacing-2xs));
       border-left: 18.5px solid var(--color-border);
     }
   }

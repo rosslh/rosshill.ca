@@ -6,7 +6,7 @@ export type PostDate = {
 };
 
 export enum PostCategory {
-  Job = "job",
+  Work = "work",
   Project = "project",
   Other = "other",
 }
@@ -23,6 +23,7 @@ type PostItemBase = {
 
 export type PostItemStub = PostItemBase & {
   eventType: PostCategory;
+  eventTypeLabel?: string;
   hasContent: boolean;
   isLeftAligned?: boolean;
   showYearLabel?: boolean;

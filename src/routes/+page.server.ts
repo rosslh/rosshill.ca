@@ -16,6 +16,7 @@ const posts: PostItemStub[] = Object.values(timeline)
     eventType:
       Object.values(PostCategory).find((cat) => cat === post.eventType) ??
       PostCategory.Other,
+    eventTypeLabel: post.eventTypeLabel,
     excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
     repository: post.repository,

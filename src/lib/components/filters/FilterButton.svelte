@@ -70,13 +70,13 @@
         opacity 0.3s ease;
     }
 
-    &.job-button {
-      color: var(--color-job);
+    &.work-button {
+      color: var(--color-work);
 
       &.active {
         color: var(--color-background);
-        background-color: var(--color-job);
-        border-color: var(--color-job);
+        background-color: var(--color-work);
+        border-color: var(--color-work);
       }
     }
 
@@ -104,7 +104,7 @@
       position: absolute;
       display: inline-flex;
       align-items: center;
-      font-size: var(--font-size-3xs);
+      font-size: 0.7rem;
       left: var(--spacing-s);
     }
 

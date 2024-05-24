@@ -8,6 +8,7 @@ image: mandelbrot
 thumbnail: mandelbrot-thumb
 excerpt: An interactive application that lets you explore the Mandelbrot set fractal. Made with Python and TKinter.
 tags: [python]
+isHidden: true
 ---
 
 The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, <code>f(z) = z<sup>2</sup> + c</code>. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.

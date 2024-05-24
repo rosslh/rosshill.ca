@@ -1,6 +1,6 @@
 ---
 title: Front-End Developer Intern – Nudge.ai
-eventType: job
+eventType: work
 date: 2017-05-01
 endDate: 2017-08-20
 image: Nudge1

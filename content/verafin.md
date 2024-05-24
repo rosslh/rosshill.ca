@@ -1,6 +1,6 @@
 ---
 title: Software Developer Intern – Verafin
-eventType: job
+eventType: work
 date: 2019-05-01
 endDate: 2019-08-20
 thumbnail: verafin-thumb

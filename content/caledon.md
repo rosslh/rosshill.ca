@@ -1,6 +1,6 @@
 ---
 title: Ski Instructor – Caledon Ski Club
-eventType: job
+eventType: work
 date: 2014-12-01
 endDate: 2016-03-20
 isSeasonal: true

@@ -3,9 +3,9 @@
 // Colors
 
 $theme-hue: 253;
-$job-hue: 12;
+$work-hue: 135;
 $project-hue: 272;
-$other-hue: 135;
+$other-hue: 12;
 
 @mixin light-theme() {
   $theme-saturation: 20%;
@@ -15,7 +15,7 @@ $other-hue: 135;
   $marker-saturation: $category-saturation - 10;
   $marker-lightness: $category-lightness + 10;
 
-  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
   --color-project: #{hsluv(
       $project-hue,
       $category-saturation,
@@ -23,7 +23,7 @@ $other-hue: 135;
     )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
-  --color-job-marker: #{hsluv($job-hue, $marker-saturation, $marker-lightness)};
+  --color-work-marker: #{hsluv($work-hue, $marker-saturation, $marker-lightness)};
   --color-project-marker: #{hsluv(
       $project-hue,
       $marker-saturation,
@@ -61,10 +61,10 @@ $other-hue: 135;
 
 @mixin dark-theme() {
   $theme-saturation: 35%;
-  $category-saturation: 75%;
-  $category-lightness: 65%;
+  $category-saturation: 70%;
+  $category-lightness: 70%;
 
-  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
   --color-project: #{hsluv(
       $project-hue,
       $category-saturation,
@@ -72,7 +72,7 @@ $other-hue: 135;
     )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
-  --color-job-marker: var(--color-job);
+  --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
@@ -105,7 +105,7 @@ $other-hue: 135;
   $pink-hue: 310;
   $blue-hue: 270;
 
-  $job-hue: 45;
+  $work-hue: 45;
   $project-hue: 190;
   $other-hue: 130;
 
@@ -116,7 +116,7 @@ $other-hue: 135;
   $category-lightness: 75%;
   $category-saturation: 75%;
 
-  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
   --color-project: #{hsluv(
       $project-hue,
       $category-saturation,
@@ -124,7 +124,7 @@ $other-hue: 135;
     )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
-  --color-job-marker: var(--color-job);
+  --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
@@ -146,7 +146,7 @@ $other-hue: 135;
   $category-saturation: 75%;
   $category-lightness: 65%;
 
-  --color-job: #{hsluv($job-hue, $category-saturation, $category-lightness)};
+  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
   --color-project: #{hsluv(
       $project-hue,
       $category-saturation,
@@ -154,7 +154,7 @@ $other-hue: 135;
     )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
-  --color-job-marker: var(--color-job);
+  --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
@@ -212,14 +212,12 @@ div.app-wrapper[data-theme="black"] {
 
 .app-wrapper {
   // Font sizes
-  --font-size-3xs: 0.7rem;
   --font-size-2xs: 0.8rem;
   --font-size-xs: 0.9rem;
   --font-size-s: 1rem;
   --font-size-m: 1.2rem;
-  --font-size-l: 1.4rem;
-  --font-size-xl: 1.6rem;
-  --font-size-2xl: 2.4rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2.2rem;
 
   // Spacing (padding and margin)
   --spacing-3xs: 0.125rem;

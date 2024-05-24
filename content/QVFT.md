@@ -1,6 +1,7 @@
 ---
 title: Director of Systems Automation – QVFT
 eventType: other
+eventTypeLabel: Organization
 date: 2019-11-10
 endDate: 2020-04-20
 thumbnail: qvft

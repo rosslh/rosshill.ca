@@ -32,7 +32,7 @@
     showTags = toggleItemInSet(showTags, tag);
   };
 
-  $: jobActive = showCategories.has(PostCategory.Job);
+  $: workActive = showCategories.has(PostCategory.Work);
   $: otherActive = showCategories.has(PostCategory.Other);
   $: projectActive = showCategories.has(PostCategory.Project);
 
@@ -46,7 +46,7 @@
 
       const computedEndDate = date.isOngoing ? new Date() : date.end;
 
-      if (eventType === PostCategory.Job && computedEndDate) {
+      if (eventType === PostCategory.Work && computedEndDate) {
         tagCountToAdd = differenceInMonths(computedEndDate, date.start);
       }
 
@@ -83,9 +83,9 @@
 
 <div class="category-buttons">
   <FilterButton
-    active={jobActive}
-    classPrefix={PostCategory.Job}
-    onClick={() => toggleCategory(PostCategory.Job)}
+    active={workActive}
+    classPrefix={PostCategory.Work}
+    onClick={() => toggleCategory(PostCategory.Work)}
   >
     Work
   </FilterButton>
@@ -177,7 +177,7 @@
     display: inline-flex;
     align-items: center;
     margin-right: var(--spacing-2xs);
-    font-size: var(--font-size-3xs);
+    font-size: 0.7rem;
   }
 
   .tag-buttons.truncated :global(.tag:nth-last-child(2)) {

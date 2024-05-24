@@ -37,8 +37,6 @@
   const preloadPage = async (): Promise<void> => {
     await preloadData(`item/${post.slug}`);
   };
-
-  let showTooltip = false;
 </script>
 
 <IntersectionObserver
@@ -52,15 +50,9 @@
     id="timeline-{post.slug}"
     data-testid="post-stub-{post.slug}"
     class="post-wrapper transition-colors {left ? 'left' : 'right'}"
-    on:mouseenter={() => {
-      showTooltip = true;
-    }}
-    on:mouseleave={() => {
-      showTooltip = false;
-    }}
     role="listitem"
   >
-    <TimelineMarker {showTooltip} {left} eventType={post.eventType} />
+    <TimelineMarker {left} eventType={post.eventType} />
     <div class="{getFadeInClass()} {left ? 'left' : 'right'}">
       <PostStubTriangle {left} />
       <div
@@ -169,6 +161,7 @@
       p.post-text {
         padding: var(--spacing-2xs) var(--spacing-s) 0
           calc(var(--spacing-3xl) - var(--spacing-2xs));
+        font-size: var(--font-size-s);
       }
     }
   }

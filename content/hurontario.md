@@ -1,6 +1,6 @@
 ---
 title: Counsellor – Camp Hurontario
-eventType: job
+eventType: work
 date: 2014-05-01
 endDate: 2016-08-20
 isSeasonal: true
