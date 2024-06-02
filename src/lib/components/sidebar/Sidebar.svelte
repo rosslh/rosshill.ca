@@ -7,7 +7,7 @@
   import { occasions } from "$lib/occasions";
 
   const today = new Date(
-    new Date().toLocaleString(undefined, { timeZone: "America/Toronto" }),
+    new Date().toLocaleString("en-US", { timeZone: "America/Toronto" }),
   );
   const currentYear = today.getFullYear();
   const currentOccasion = occasions.find(
