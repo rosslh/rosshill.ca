@@ -4,7 +4,6 @@
   export let data: { themeFromSession: SiteTheme };
 
   import { onMount } from "svelte";
-  import LogRocket from "logrocket";
 
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
@@ -37,10 +36,6 @@
         padding: ${getCssVariable("spacing-s")};
         `,
       );
-    }
-
-    if (browser && import.meta.env.VITE_ENV === "production") {
-      LogRocket.init("personal-rpsz0/rosshillca");
     }
   });
 
@@ -190,6 +185,20 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#20232e" />
   <meta name="msapplication-TileColor" content="#20232e" />
   <meta name="theme-color" content="#20232e" />
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-ZTGKQ6SJEW"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-ZTGKQ6SJEW");
+  </script>
 </svelte:head>
 
 <style lang="scss">
