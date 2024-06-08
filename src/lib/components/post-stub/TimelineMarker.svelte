@@ -26,13 +26,13 @@
     &.left {
       transform: translate(50%, -50%);
       position: absolute;
-      left: calc(-0.9rem + 2px);
+      left: calc(-0.7rem - 1px);
     }
 
     &.right {
       transform: translate(-50%, -50%);
       position: absolute;
-      right: calc(-0.9rem + 2px);
+      right: calc(-0.7rem - 1px);
     }
   }
 </style>

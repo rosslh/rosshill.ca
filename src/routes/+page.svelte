@@ -15,7 +15,7 @@
     "I develop software and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
 
   const meta = {
-    title: "Ross Hill: Website and Portfolio",
+    title: "Ross Hill - Projects and Experience",
     description: truncateBySentence(intro, 155),
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
@@ -23,7 +23,7 @@
       url: "https://rosshill.ca/site-image.png",
       width: 1000,
       height: 523,
-      alt: "Ross Hill: About Me, Projects, and Contact",
+      alt: "Ross Hill - Projects and Experience",
     },
   };
 </script>
