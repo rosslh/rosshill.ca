@@ -1,6 +1,6 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import Icons from "unplugin-icons/vite";
-import { resolve } from "node:path";
+import path from "node:path";
 import type { UserConfig } from "vite";
 
 const config: UserConfig = {
@@ -12,7 +12,7 @@ const config: UserConfig = {
   ],
   resolve: {
     alias: {
-      $data: resolve("./data"),
+      $data: path.resolve("./data"),
     },
   },
 };

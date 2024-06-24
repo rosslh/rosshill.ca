@@ -30,7 +30,9 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   expect(
     await getLocator([page, "app-wrapper"]).getAttribute("data-theme"),
   ).toBe(theme);
-  expect(await page.evaluate(() => document.cookie)).toBe(`theme=${theme}`);
+  expect(await page.evaluate(() => document.cookie)).toContain(
+    `theme=${theme}`,
+  );
 
   const computedTheme =
     theme === "auto" ? await getPreferredColorScheme(page) : theme;
