@@ -2,7 +2,6 @@
 title: "Dodgeball: The Game"
 eventType: project
 date: 2018-01-01
-lastModified: 2023-04-23
 thumbnailExt: jpg
 thumbnail: dodgeball
 thumbnailBorder: true

@@ -2,7 +2,6 @@
 title: Python Mandelbrot Set Explorer
 eventType: project
 date: 2016-11-29
-lastModified: 2022-09-06
 repository: https://github.com/rosslh/Mandelbrot-set-explorer
 image: mandelbrot
 thumbnail: mandelbrot-thumb

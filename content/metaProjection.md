@@ -1,14 +1,13 @@
 ---
-title: MetaProjection
+title: MetaProjection.ca
 eventType: project
 date: 2019-08-20
-lastModified: 2023-04-23
 website: https://2021.metaprojection.ca
-repository: https://github.com/rosslh/metaprojection
+repository: https://github.com/rosslh/MetaProjection.ca
 image: metaprojection
 thumbnail: metaprojection-thumb
 thumbnailBorder: true
-excerpt: An aggregator of multiple Canadian federal electoral projections which provides an overview of how the election is playing out, both federally and by district. Updated for 2021.
+excerpt: An aggregator of Canadian federal electoral projections. It provides an overview of how the election is playing out, both federally and by district.
 tags: [gatsby, graphql, nodedotjs]
 ---
 

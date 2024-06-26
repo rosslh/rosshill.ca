@@ -11,17 +11,17 @@ test("Event type filter works", async ({ page }) => {
   const workFilter = getLocator([page, "event-filter-work"]);
 
   // Before clicking the filter, the wtformat item should exist
-  await expectCount([page, "post-stub-wtformat"], 1);
+  await expectCount([page, "post-stub-wtformat.com"], 1);
 
   await workFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
-  await expectCount([page, "post-stub-wtformat"], 0);
+  await expectCount([page, "post-stub-wtformat.com"], 0);
 
   await workFilter.click();
 
   // After clicking the filter again, the wtformat item should exist
-  await expectCount([page, "post-stub-wtformat"], 1);
+  await expectCount([page, "post-stub-wtformat.com"], 1);
 });
 
 test("Skill tag filter works", async ({ page }) => {
@@ -29,12 +29,12 @@ test("Skill tag filter works", async ({ page }) => {
   const jsFilter = getLocator([page, "skill-filter-javascript"]);
 
   // Before clicking the filter, the wtformat item should exist
-  await expectCount([page, "post-stub-wtformat"], 1);
+  await expectCount([page, "post-stub-wtformat.com"], 1);
 
   await djangoFilter.click();
 
   // After clicking the filter, the wtformat item should not exist
-  await expectCount([page, "post-stub-wtformat"], 0);
+  await expectCount([page, "post-stub-wtformat.com"], 0);
 
   // But the doctalk item should exist
   await expectCount([page, "post-stub-full-stack-developer-doctalk"], 1);
@@ -42,7 +42,7 @@ test("Skill tag filter works", async ({ page }) => {
   await jsFilter.click();
 
   // After clicking the filter, the wtformat item should now exist
-  await expectCount([page, "post-stub-wtformat"], 1);
+  await expectCount([page, "post-stub-wtformat.com"], 1);
 
   // And the doctalk item should exist
   await expectCount([page, "post-stub-full-stack-developer-doctalk"], 1);
