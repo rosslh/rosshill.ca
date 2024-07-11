@@ -7,16 +7,13 @@
   const { posts, tagColors } = data;
 
   import PostStubs from "$lib/components/PostStubs.svelte";
-  import { truncateBySentence } from "$lib/functions";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
   import { themeStore } from "$lib/stores";
 
-  const intro =
-    "I develop software and I'm always on the lookout for cool new technologies. I like to spend my time reading, working on side projects, and exploring the great city of Toronto.";
-
   const meta = {
     title: "Ross Hill - Projects and Experience",
-    description: truncateBySentence(intro, 155),
+    description:
+      "I'm a software engineer from Toronto with a passion for front-end development. Learn about my projects, professional experience, education, and more.",
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
@@ -61,7 +58,11 @@
     </h2>
     <p>
       {#key $themeStore}
-        <Balancer>{intro}</Balancer>
+        <Balancer>
+          I develop software and I'm always on the lookout for cool new
+          technologies. I like to spend my time reading, working on side
+          projects, and exploring the great city of Toronto.
+        </Balancer>
       {/key}
     </p>
   </div>
