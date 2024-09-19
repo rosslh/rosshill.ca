@@ -35,10 +35,10 @@ $other-hue: 12;
       $marker-lightness
     )};
 
-  --color-heading: #{hsluv($theme-hue, $theme-saturation, 20%)};
-  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 30%)};
+  --color-heading: #{hsluv($theme-hue, $theme-saturation, 22%)};
+  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 38%)};
   --color-link: #{hsluv($theme-hue, 90%, 40%)};
-  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 38%)};
+  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 44%)};
   --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 60%)};
   --color-timeline: #{hsluv($theme-hue, $theme-saturation, 65%)};
   --color-border: #{hsluv($theme-hue, $theme-saturation, 90%)};
@@ -77,9 +77,9 @@ $other-hue: 12;
   --color-other-marker: var(--color-other);
 
   --color-heading: #{hsluv($theme-hue, $theme-saturation, 95%)};
-  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 87%)};
+  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 82%)};
   --color-link: #{hsluv($theme-hue, 90%, 77%)};
-  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 75%)};
+  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 70%)};
   --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
   --color-timeline: #{hsluv($theme-hue, $theme-saturation, 35%)};
   --color-border: #{hsluv($theme-hue, $theme-saturation, 21%)};
@@ -164,8 +164,8 @@ $other-hue: 12;
   --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 67%)};
   --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
   --color-timeline: #{hsluv($theme-hue, $theme-saturation, 21%)};
-  --color-border: #{hsluv($theme-hue, $theme-saturation, 21%)};
-  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 0%)};
+  --color-border: #{hsluv($theme-hue, $theme-saturation, 10%)};
+  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 3%)};
   --color-background: #{hsluv($theme-hue, $theme-saturation, 0%)};
 
   font-family:
@@ -180,6 +180,10 @@ $other-hue: 12;
     "Apple Color Emoji",
     "Segoe UI Emoji",
     "Segoe UI Symbol";
+
+  a {
+    text-decoration: underline;
+  }
 }
 
 .app-wrapper {

@@ -8,7 +8,7 @@ image: metaprojection
 thumbnail: metaprojection-thumb
 thumbnailBorder: true
 excerpt: An aggregator of Canadian federal electoral projections. It provides an overview of how the election is playing out, both federally and by district.
-tags: [gatsby, graphql, nodedotjs]
+tags: [typescript, gatsby, graphql, nodedotjs]
 ---
 
 MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.

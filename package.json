@@ -95,6 +95,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "svelte.config.js",
         "vite.config.ts",
         "src/**/*",
@@ -112,6 +113,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "data/posts.json",
         "scripts/getIcons.ts"
       ],
@@ -125,6 +127,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "content/**/*"
       ],
       "output": [
@@ -136,6 +139,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "assets/**/*.{png,jpg,jpeg}",
         "scripts/getWebp.ts"
       ],
@@ -148,6 +152,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "scripts/updateNvmrc.ts"
       ],
       "output": [
@@ -165,6 +170,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "**/*.{css,scss,svelte}",
         ".stylelintrc.json"
       ],
@@ -175,6 +181,7 @@
       "files": [
         "tsconfig.json",
         "package.json",
+        ".nvmrc",
         "src/**/*.{js,ts,svelte}",
         "scripts/**/*.{js,ts,svelte}",
         "svelte.config.js",

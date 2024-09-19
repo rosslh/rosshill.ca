@@ -5,6 +5,6 @@ date: 2017-05-01
 endDate: 2017-08-20
 image: Nudge1
 thumbnail: nudge-thumb
-excerpt: Created a modern interface for Nudge employees to carry out administrative tasks. Interacting with a RESTful API, this interface allows an administrator to create, delete, or modify accounts, and to directly access and modify person and company data used by the sales platform.
+excerpt: Built a modern admin interface for managing accounts and modifying sales data, interacting with a RESTful API.
 tags: [react, redux]
 ---

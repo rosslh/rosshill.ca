@@ -1,7 +1,7 @@
 import chroma from "chroma-js";
 import { APCAcontrast, sRGBtoY } from "apca-w3";
 import fs from "node:fs";
-import { hsluvToHex } from "hsluv-ts";
+import { hsluvToHex, hexToHsluv } from "hsluv-ts";
 import { keyBy, merge, escapeRegExp } from "lodash-es";
 
 import * as SimpleIcons from "simple-icons";
@@ -107,7 +107,19 @@ function getBestContrastForeground(
 }
 
 function getColorsForTag(icon: Icon, light: string, dark: string): TagColor {
-  const background = icon.hex;
+  const hsluv = hexToHsluv(`#${icon.hex}`);
+
+  const adjustedSaturation = Math.min(hsluv[1], 80);
+  const adjustedHsluv = [hsluv[0], adjustedSaturation, hsluv[2]] as const;
+
+  const background = hsluvToHex([
+    adjustedHsluv[0],
+    adjustedHsluv[1],
+    adjustedHsluv[2],
+  ])
+    .replace(/^#/, "")
+    .toUpperCase();
+
   const foreground = getBestContrastForeground(background, light, dark);
 
   return {
