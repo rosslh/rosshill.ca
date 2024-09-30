@@ -74,8 +74,9 @@
             href={currentOccasion.learnMoreUrl}
             target="_blank"
             rel="noopener noreferrer"
+            class="learn-more-link"
           >
-            Learn more.
+            Learn more
           </a>
         {/if}
       </p>
@@ -149,6 +150,10 @@
         max-width: 20rem;
         width: 100%;
         color: var(--color-subtitle);
+
+        .learn-more-link {
+          white-space: nowrap;
+        }
       }
 
       .name-wrapper {
