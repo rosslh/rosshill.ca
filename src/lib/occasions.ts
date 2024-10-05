@@ -37,18 +37,6 @@ const getCanadianThanksgivingDate = (): {
   return { startDay, startMonth, durationDays };
 };
 
-const getAmericanThanksgivingDate = (): {
-  startDay: number;
-  startMonth: number;
-  durationDays: number;
-} => {
-  const startMonth = 11;
-  const startDay = getNthDayOfWeekInMonth(startMonth, 4, 4);
-  const durationDays = 1;
-
-  return { startDay, startMonth, durationDays };
-};
-
 const currentYear = new Date().getFullYear();
 const newYear = addMonths(new Date(), 1).getFullYear();
 
@@ -123,7 +111,7 @@ export const occasions = [
     imageName: "reconciliation",
     blurbMaxWidth: "16rem",
     learnMoreUrl:
-      "https://www.rcaanc-cirnac.gc.ca/eng/1631130192216/1631130220404",
+      "https://www.canada.ca/en/canadian-heritage/campaigns/national-day-truth-reconciliation.html",
   },
   {
     name: "Halloween",
@@ -157,12 +145,6 @@ export const occasions = [
     durationDays: 7,
     imageName: "trans",
     learnMoreUrl: "https://www.glaad.org/transweek",
-  },
-  {
-    name: "American Thanksgiving",
-    blurb: "Happy Thanksgiving to all my American friends!",
-    imageName: "thanksgiving",
-    ...getAmericanThanksgivingDate(),
   },
   {
     name: `Holidays ${currentYear}`,

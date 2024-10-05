@@ -59,9 +59,10 @@
     <p>
       {#key $themeStore}
         <Balancer>
-          I develop software and I'm always on the lookout for cool new
-          technologies. I like to spend my time reading, working on side
-          projects, and exploring the great city of Toronto.
+          As a seasoned full-stack engineer with a passion for front-end, I
+          specialize in building delightful user experiences that drive results.
+          My expertise in TypeScript and a focus on code quality enable me to
+          create seamless applications that are robust and maintainable.
         </Balancer>
       {/key}
     </p>

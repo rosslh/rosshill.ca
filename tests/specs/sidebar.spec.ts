@@ -87,7 +87,6 @@ const occasions = {
   "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
   "Remembrance Day": ["2023-11-11"],
   "Transgender Awareness Week": ["2023-11-13", "2023-11-16", "2023-11-19"],
-  "American Thanksgiving": ["2023-11-23"],
   "Holidays 2023": ["2023-12-10", "2023-12-20", "2023-12-28"],
   "New Year's Eve": ["2023-12-31"],
 };

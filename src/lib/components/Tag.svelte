@@ -10,9 +10,10 @@
   export let needsOutlineOnDarkBg = false;
 
   import { tagLabels } from "$lib/tags";
-  import { isPageBackgroundDark, remsToPixels } from "$lib/functions";
+  import { prefersColorSchemeDark, remsToPixels } from "$lib/functions";
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
+  import { SiteTheme } from "$lib/types";
 
   $: tagString = tagLabels[tagId] ?? tagId;
 
@@ -39,13 +40,22 @@
   const getHexOpacity = (floatPercentage: number): string =>
     Math.round(255 * floatPercentage).toString(16);
 
+  const isPageBackgroundDark = (currentTheme: SiteTheme) => {
+    const darkThemes = [SiteTheme.Dark, SiteTheme.Cyberpunk, SiteTheme.Black];
+
+    return (
+      darkThemes.includes(currentTheme) ||
+      (currentTheme === SiteTheme.Auto && prefersColorSchemeDark(browser))
+    );
+  };
+
   $: dividerColor = active
     ? `#${foreground}${getHexOpacity(0.35)}`
     : "transparent";
 
   const hasOutline =
     (needsOutlineOnDarkBg || needsOutlineOnLightBg) &&
-    isPageBackgroundDark(browser, $themeStore)
+    isPageBackgroundDark($themeStore)
       ? needsOutlineOnDarkBg
       : needsOutlineOnLightBg;
 </script>
