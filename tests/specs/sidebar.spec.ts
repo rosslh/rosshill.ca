@@ -84,7 +84,14 @@ const occasions = {
     "2023-10-01",
   ],
   "Halloween": ["2023-10-30", "2023-10-31", "2023-11-01"],
-  "Canadian Thanksgiving": ["2023-10-08", "2023-10-09", "2023-10-10"],
+  "Canadian Thanksgiving": [
+    "2023-10-08",
+    "2023-10-09",
+    "2023-10-10",
+    "2024-10-13",
+    "2024-10-14",
+    "2024-10-15",
+  ],
   "Remembrance Day": ["2023-11-11"],
   "Transgender Awareness Week": ["2023-11-13", "2023-11-16", "2023-11-19"],
   "Holidays 2023": ["2023-12-10", "2023-12-20", "2023-12-28"],
@@ -112,3 +119,22 @@ for (let index = 0; index < Object.keys(occasions).length; index += 1) {
     });
   }
 }
+
+test("Sidebar displays normal image on a non-occasion day", async ({
+  page,
+}) => {
+  const nonOccasionDate = "2023-07-15";
+  await setBrowserDate(page, nonOccasionDate);
+
+  const sidebar = getLocator([page, "sidebar"]);
+
+  const normalImage = getLocator([sidebar, "headshot-image"]);
+
+  const altText = await normalImage.getAttribute("alt");
+  expect(altText).toBe("Ross Hill");
+
+  const sourcePath = await normalImage.getAttribute("src");
+  expect(sourcePath).toBe("/headshot.jpg");
+
+  await expectCount(normalImage, 1);
+});

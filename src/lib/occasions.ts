@@ -15,7 +15,7 @@ const getNthDayOfWeekInMonth = (
   dayOfWeek: number,
   n: number,
 ): number => {
-  const date = new Date(2023, 10, 23);
+  const date = new Date();
   date.setMonth(month - 1);
   date.setDate(1);
   while (date.getDay() !== dayOfWeek) {
