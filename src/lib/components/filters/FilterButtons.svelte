@@ -4,16 +4,25 @@
   import { PostCategory } from "$lib/types";
   import { minTagNumber } from "$lib/stores";
 
-  export let showCategories: Set<PostCategory>;
-  export let showTags: Set<string>;
-  export let posts: PostItemStub[];
-  export let tagColors: TagColors;
-
   import Times from "~icons/fa-solid/times";
 
   import { tagAncestors } from "$lib/tags";
   import FilterButton from "./FilterButton.svelte";
   import Tag from "$lib/components/Tag.svelte";
+
+  interface Props {
+    showCategories: Set<PostCategory>;
+    showTags: Set<string>;
+    posts: PostItemStub[];
+    tagColors: TagColors;
+  }
+
+  let {
+    showCategories = $bindable(),
+    showTags = $bindable(),
+    posts,
+    tagColors,
+  }: Props = $props();
 
   function toggleItemInSet<T>(set: Set<T>, item: T): Set<T> {
     if (set.has(item)) {
@@ -32,13 +41,13 @@
     showTags = toggleItemInSet(showTags, tag);
   };
 
-  $: workActive = showCategories.has(PostCategory.Work);
-  $: otherActive = showCategories.has(PostCategory.Other);
-  $: projectActive = showCategories.has(PostCategory.Project);
+  const workActive = $derived(showCategories.has(PostCategory.Work));
+  const otherActive = $derived(showCategories.has(PostCategory.Other));
+  const projectActive = $derived(showCategories.has(PostCategory.Project));
 
-  let tagsOrdered: string[] = [];
+  let tagsOrdered: string[] = $state([]);
 
-  $: {
+  $effect(() => {
     const tagCounts: Record<string, number> = {};
 
     for (const { tags: postTags, date, eventType } of posts) {
@@ -78,7 +87,7 @@
         return a[0] < b[0] ? -1 : 1;
       })
       .map((tag) => tag[0]);
-  }
+  });
 </script>
 
 <div class="category-buttons">
@@ -107,7 +116,7 @@
     <button
       data-testid="clear-filters"
       class="secondary-button transition-colors"
-      on:click={() => {
+      onclick={() => {
         showCategories.clear();
         showTags.clear();
 
@@ -136,7 +145,7 @@
     <button
       data-testid="show-more-tags"
       class="secondary-button transition-colors"
-      on:click={() => {
+      onclick={() => {
         $minTagNumber = 0;
       }}
     >

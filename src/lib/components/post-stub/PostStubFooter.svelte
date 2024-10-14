@@ -1,10 +1,14 @@
 <script lang="ts">
   import type { PostItemStub } from "$lib/types";
 
-  export let post: PostItemStub;
-
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
+
+  interface Props {
+    post: PostItemStub;
+  }
+
+  let { post }: Props = $props();
 </script>
 
 <div class="footer">

@@ -44,6 +44,7 @@
   $: isCategoryOfPostSelected = (post: PostItemStub): boolean =>
     $showCategories.size === 0 || $showCategories.has(post.eventType);
 
+  // svelte-ignore reactive_declaration_non_reactive_property
   $: isAncestorTagSelected = (tag: string): boolean =>
     Boolean(
       tagAncestors[tag] &&

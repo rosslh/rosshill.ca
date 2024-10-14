@@ -1,15 +1,18 @@
 <script lang="ts">
-  import { remsToPixels } from "$lib/functions";
-  import Separator from "./Separator.svelte";
-  import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { addDays, endOfDay, startOfDay } from "date-fns";
 
+  import { remsToPixels } from "$lib/functions";
+  import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { occasions } from "$lib/occasions";
+
+  import Separator from "./Separator.svelte";
 
   const today = new Date(
     new Date().toLocaleString("en-US", { timeZone: "America/Toronto" }),
   );
+
   const currentYear = today.getFullYear();
+
   const currentOccasion = occasions.find(
     ({ startDay, startMonth, durationDays }) => {
       const startDate = startOfDay(
@@ -150,6 +153,7 @@
         max-width: 20rem;
         width: 100%;
         color: var(--color-subtitle);
+        padding: 0 var(--spacing-s);
 
         .learn-more-link {
           white-space: nowrap;

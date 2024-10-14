@@ -1,7 +1,11 @@
 <script lang="ts">
-  export let href = "/";
-
   import LeftArrow from "~icons/feather/corner-up-left";
+
+  interface Props {
+    href?: string;
+  }
+
+  let { href = "/" }: Props = $props();
 </script>
 
 <a data-sveltekit-preload-data data-testid="back-link" class="back-link" {href}>

@@ -5,19 +5,24 @@
   import { onMount, tick } from "svelte";
   import { tagLabels } from "$lib/tags";
 
-  export let data: { post: PostItemPage; tagColors: TagColors };
-  const { post, tagColors } = data;
-
   import PostDate from "$lib/components/PostDate.svelte";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import Tag from "$lib/components/Tag.svelte";
   import BackLink from "$lib/components/BackLink.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
 
-  let mainContent: HTMLDivElement;
+  interface Props {
+    data: { post: PostItemPage; tagColors: TagColors };
+  }
+
+  let { data }: Props = $props();
+
+  const { post, tagColors } = data;
+
+  let mainContent: HTMLDivElement | undefined = $state();
   onMount(async () => {
     await tick();
-    mainContent.scrollIntoView();
+    mainContent?.scrollIntoView();
   });
 
   const capitalize = (text: string): string =>

@@ -1,8 +1,12 @@
 <script lang="ts">
   import { PostCategory } from "$lib/types";
 
-  export let left: boolean;
-  export let eventType: PostCategory;
+  interface Props {
+    left: boolean;
+    eventType: PostCategory;
+  }
+
+  let { left, eventType }: Props = $props();
 </script>
 
 <div
@@ -10,7 +14,7 @@
   class="timeline-marker transition-colors {left
     ? 'left'
     : 'right'} {eventType ?? PostCategory.Other}"
-/>
+></div>
 
 <style lang="scss">
   @import "src/lib/styles/media-queries";
@@ -21,7 +25,7 @@
     height: 0.7rem;
     width: 0.7rem;
     border-radius: 50%;
-    background-color: var(--color-focus-outline);
+    background-color: var(--color-timeline-marker);
 
     &.left {
       transform: translate(50%, -50%);

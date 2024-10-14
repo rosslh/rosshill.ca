@@ -1,7 +1,11 @@
 <script lang="ts">
-  export let reason: string;
-
   import { remsToPixels } from "$lib/functions";
+
+  interface Props {
+    reason: string;
+  }
+
+  let { reason }: Props = $props();
 </script>
 
 <img

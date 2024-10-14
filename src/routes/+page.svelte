@@ -3,12 +3,17 @@
   import Balancer from "svelte-wrap-balancer";
   import type { TagColors, PostItemStub } from "$lib/types";
 
-  export let data: { posts: PostItemStub[]; tagColors: TagColors };
-  const { posts, tagColors } = data;
-
   import PostStubs from "$lib/components/PostStubs.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
   import { themeStore } from "$lib/stores";
+
+  interface Props {
+    data: { posts: PostItemStub[]; tagColors: TagColors };
+  }
+
+  let { data }: Props = $props();
+
+  const { posts, tagColors } = data;
 
   const meta = {
     title: "Ross Hill - Projects and Experience",

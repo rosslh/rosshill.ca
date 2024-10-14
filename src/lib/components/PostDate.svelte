@@ -9,7 +9,11 @@
   } from "date-fns";
   import type { PostDate } from "$lib/types";
 
-  export let date: PostDate;
+  interface Props {
+    date: PostDate;
+  }
+
+  let { date }: Props = $props();
 
   const getDateFromString = (d: string): Date =>
     parse(d.slice(0, 10), "yyyy-MM-dd", new Date());

@@ -1,9 +1,13 @@
 <script lang="ts">
   import PostStubSpacer from "./post-stub/PostStubSpacer.svelte";
 
-  export let year: string;
-  export let isRightToLeft: boolean;
-  export let isFirstLabel: boolean;
+  interface Props {
+    year: string;
+    isRightToLeft: boolean;
+    isFirstLabel: boolean;
+  }
+
+  let { year, isRightToLeft, isFirstLabel }: Props = $props();
 </script>
 
 <div class="label-wrapper transition-colors">
@@ -15,7 +19,7 @@
     {year}
   </span>
   {#if isFirstLabel}
-    <div aria-hidden="true" class="first-label-line" />
+    <div aria-hidden="true" class="first-label-line"></div>
     <PostStubSpacer left />
   {:else}
     <div
@@ -24,10 +28,10 @@
       class:rtl={isRightToLeft}
       class:ltr={!isRightToLeft}
     >
-      <div class="transition-colors" />
-      <div class="transition-colors" />
-      <div class="transition-colors" />
-      <div class="transition-colors" />
+      <div class="transition-colors"></div>
+      <div class="transition-colors"></div>
+      <div class="transition-colors"></div>
+      <div class="transition-colors"></div>
     </div>
   {/if}
 </div>

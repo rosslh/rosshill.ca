@@ -1,17 +1,21 @@
 <script lang="ts">
-  export let left: boolean;
-  export let showBottomBorder = false;
+  interface Props {
+    left: boolean;
+    showBottomBorder?: boolean;
+  }
+
+  let { left, showBottomBorder = false }: Props = $props();
 </script>
 
 <div
   aria-hidden="true"
   class="post-spacer transition-colors {left ? 'left' : 'right'}"
-/>
+></div>
 {#if showBottomBorder}
   <div
     aria-hidden="true"
     class="bottom-marker transition-colors {left ? 'left' : 'right'}"
-  />
+  ></div>
 {/if}
 
 <style lang="scss">

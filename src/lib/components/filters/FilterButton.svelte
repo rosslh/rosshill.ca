@@ -4,14 +4,19 @@
 
   import type { PostCategory } from "$lib/types";
 
-  export let active: boolean;
-  export let onClick: () => void;
-  export let classPrefix: PostCategory;
-
   import Circle from "~icons/fa-regular/circle";
   import CheckCircle from "~icons/fa-solid/check-circle";
 
-  let isToggling = false;
+  interface Props {
+    active: boolean;
+    onClick: () => void;
+    classPrefix: PostCategory;
+    children?: import("svelte").Snippet;
+  }
+
+  let { active, onClick, classPrefix, children }: Props = $props();
+
+  let isToggling = $state(false);
 
   const handleClick = (): void => {
     isToggling = true;
@@ -33,7 +38,7 @@
   class:toggling={isToggling}
   class:transition-colors={!isToggling}
   class:active
-  on:click={handleClick}
+  onclick={handleClick}
 >
   {#if active}
     <span class="symbol" transition:fade={transitionOptions}>
@@ -45,7 +50,7 @@
     </span>
   {/if}
   <span class="text">
-    <slot />
+    {@render children?.()}
   </span>
 </button>
 

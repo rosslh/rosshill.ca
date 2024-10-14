@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { SiteTheme } from "$lib/types";
 
-  export let data: { themeFromSession: SiteTheme };
-
   import { onMount } from "svelte";
 
   import { themeStore } from "$lib/stores";
@@ -14,8 +12,20 @@
   import "$lib/styles/global.scss";
   import "$lib/styles/normalize.css";
 
-  let appWrapper: HTMLDivElement;
+  interface Props {
+    data: { themeFromSession: SiteTheme };
+    children?: import("svelte").Snippet;
+  }
+
+  let { data, children }: Props = $props();
+
+  let appWrapper: HTMLDivElement | undefined = $state();
+
   const getCssVariable = (variableName: string): string => {
+    if (!appWrapper) {
+      return "";
+    }
+
     const style = getComputedStyle(appWrapper);
     return style.getPropertyValue(`--${variableName}`);
   };
@@ -39,7 +49,7 @@
     }
   });
 
-  $: selectedTheme = browser ? $themeStore : data.themeFromSession;
+  const selectedTheme = $derived(browser ? $themeStore : data.themeFromSession);
 </script>
 
 <div
@@ -51,7 +61,7 @@
   <ThemeSwitcher {selectedTheme} />
   <div class="two-column">
     <Sidebar />
-    <slot />
+    {@render children?.()}
   </div>
 </div>
 <svelte:head>

@@ -3,12 +3,16 @@
 
   import Tag from "$lib/components/Tag.svelte";
 
-  export let tagColors: TagColors;
-  export let post: PostItemStub;
-  export let activeTags: Set<string>;
-
   import { remsToPixels } from "$lib/functions";
   import { capitalize } from "lodash-es";
+
+  interface Props {
+    tagColors: TagColors;
+    post: PostItemStub;
+    activeTags: Set<string>;
+  }
+
+  let { tagColors, post, activeTags }: Props = $props();
 </script>
 
 <div class="post-heading">

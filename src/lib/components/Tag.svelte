@@ -1,21 +1,33 @@
 <script lang="ts">
-  export let tagId: string;
-  export let active = false;
-  export let background: string = "000";
-  export let foreground: string = "FFF";
-  export let onClick: (() => void) | null = null;
-  export let lazyLoad = false;
-
-  export let needsOutlineOnLightBg = false;
-  export let needsOutlineOnDarkBg = false;
-
   import { tagLabels } from "$lib/tags";
   import { prefersColorSchemeDark, remsToPixels } from "$lib/functions";
   import { themeStore } from "$lib/stores";
   import { browser } from "$app/environment";
   import { SiteTheme } from "$lib/types";
 
-  $: tagString = tagLabels[tagId] ?? tagId;
+  interface Props {
+    tagId: string;
+    active?: boolean;
+    background?: string;
+    foreground?: string;
+    onClick?: (() => void) | null;
+    lazyLoad?: boolean;
+    needsOutlineOnLightBg?: boolean;
+    needsOutlineOnDarkBg?: boolean;
+  }
+
+  let {
+    tagId,
+    active = false,
+    background = "000",
+    foreground = "FFF",
+    onClick = null,
+    lazyLoad = false,
+    needsOutlineOnLightBg = false,
+    needsOutlineOnDarkBg = false,
+  }: Props = $props();
+
+  const tagString = $derived(tagLabels[tagId] ?? tagId);
 
   type IconPosition = {
     x?: string | 0;
@@ -49,9 +61,9 @@
     );
   };
 
-  $: dividerColor = active
-    ? `#${foreground}${getHexOpacity(0.35)}`
-    : "transparent";
+  const dividerColor = $derived(
+    active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent",
+  );
 
   const hasOutline =
     (needsOutlineOnDarkBg || needsOutlineOnLightBg) &&
@@ -65,7 +77,7 @@
   class="tag transition-colors"
   class:active
   data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
-  on:click={onClick}
+  onclick={onClick}
   style={active ? `color: #${foreground};` : ""}
   role={onClick ? "button" : undefined}
 >

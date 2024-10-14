@@ -1,17 +1,21 @@
 <script lang="ts">
-  export let left: boolean;
+  interface Props {
+    left: boolean;
+  }
 
-  $: positionString = left ? "left" : "right";
+  let { left }: Props = $props();
+
+  const positionString = $derived(left ? "left" : "right");
 </script>
 
 <div
   aria-hidden="true"
   class="arrow arrow-{positionString} transition-colors"
-/>
+></div>
 <div
   aria-hidden="true"
   class="arrow-border arrow-{positionString}-border transition-colors"
-/>
+></div>
 
 <style lang="scss">
   .arrow {
