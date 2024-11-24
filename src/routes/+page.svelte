@@ -64,10 +64,10 @@
     <p>
       {#key $themeStore}
         <Balancer>
-          As a seasoned full-stack engineer with a passion for front-end, I
-          specialize in building delightful user experiences that drive results.
-          My expertise in TypeScript and a focus on code quality enable me to
-          create seamless applications that are robust and maintainable.
+          As a seasoned full-stack engineer with a passion for front-end
+          development, I deliver delightful and impactful user experiences. With
+          expertise in TypeScript and a dedication to code quality, I build
+          robust applications that drive results.
         </Balancer>
       {/key}
     </p>
