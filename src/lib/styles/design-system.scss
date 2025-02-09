@@ -2,7 +2,7 @@
 
 // Colors
 
-$theme-hue: 253;
+$theme-hue: 245;
 $work-hue: 135;
 $project-hue: 272;
 $other-hue: 12;
@@ -23,7 +23,11 @@ $other-hue: 12;
     )};
   --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
 
-  --color-work-marker: #{hsluv($work-hue, $marker-saturation, $marker-lightness)};
+  --color-work-marker: #{hsluv(
+      $work-hue,
+      $marker-saturation,
+      $marker-lightness
+    )};
   --color-project-marker: #{hsluv(
       $project-hue,
       $marker-saturation,
@@ -240,6 +244,6 @@ div.app-wrapper[data-theme="black"] {
   --spacing-4xl: 5rem;
 
   // Border radius
-  --border-radius-s: 0.25rem;
-  --border-radius-m: 0.5rem;
+  --border-radius-s: 0.5rem;
+  --border-radius-l: 0.75rem;
 }

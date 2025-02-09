@@ -38,7 +38,7 @@
         `
         background-color: ${getCssVariable("color-panel-background")};
         border: 1px solid ${getCssVariable("color-border")};
-        border-radius: ${getCssVariable("border-radius-m")};
+        border-radius: ${getCssVariable("border-radius-l")};
         color: ${getCssVariable("color-foreground")};
         display: inline-block;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;

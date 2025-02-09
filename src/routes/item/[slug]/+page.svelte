@@ -204,7 +204,7 @@
       margin: var(--spacing-2xl) auto;
       display: block;
       border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-m);
+      border-radius: var(--border-radius-l);
     }
 
     div.embed-wrapper {
@@ -217,7 +217,7 @@
         padding-bottom: 56.25%;
         overflow: hidden;
         border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-m);
+        border-radius: var(--border-radius-l);
       }
     }
   }

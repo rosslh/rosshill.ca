@@ -87,7 +87,7 @@
       color: var(--color-heading);
       background-color: var(--color-panel-background);
       height: 2.2rem;
-      border-radius: var(--border-radius-m);
+      border-radius: var(--border-radius-s);
       width: 4.5rem;
       border: 1px solid var(--color-border);
       display: flex;

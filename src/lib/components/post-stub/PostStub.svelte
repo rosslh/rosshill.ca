@@ -154,7 +154,7 @@
       padding: var(--spacing-s);
       background-color: var(--color-panel-background);
       border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-m);
+      border-radius: var(--border-radius-l);
       margin: var(--spacing-s) 0;
       position: relative;
 

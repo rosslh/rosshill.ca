@@ -7,7 +7,7 @@ website: https://mandelbrot.site
 thumbnail: mandelbrot-thumb
 image: rust-mandelbrot
 excerpt: An interactive application that lets you explore the Mandelbrot set fractal and generate high resolution images.
-tags: [rust, webassembly, typescript]
+tags: [rust, webassembly, typescript, pwa]
 ---
 
 Mandelbrot.site is a web-based viewer that allows users to explore the fascinating world of the Mandelbrot set, a complex mathematical fractal. The project leverages cutting-edge web technologies, including Rust, WebAssembly (Wasm), TypeScript, and Leaflet.js, to create a high-performance, interactive, and visually captivating experience.

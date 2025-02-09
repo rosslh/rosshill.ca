@@ -9,6 +9,7 @@ export const tagLabels: Record<string, string> = {
   nodedotjs: "Node",
   postgresql: "Postgres",
   prosemirror: "ProseMirror",
+  pwa: "PWA",
   raspberrypi: "Raspberry Pi",
   rubyonrails: "Rails",
   tensorflow: "TensorFlow",

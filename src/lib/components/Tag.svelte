@@ -115,7 +115,7 @@
 
     background-color: var(--color-panel-background);
     color: var(--color-subtitle);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-s);
     border: 1px solid var(--color-border);
     font-size: var(--font-size-2xs);
   }
@@ -131,8 +131,8 @@
     align-items: center;
 
     border: 1px solid var(--color-border);
-    border-top-left-radius: var(--border-radius-m);
-    border-bottom-left-radius: var(--border-radius-m);
+    border-top-left-radius: var(--border-radius-s);
+    border-bottom-left-radius: var(--border-radius-s);
 
     &.transition-colors {
       /* taken from global.scss .transition-colors */
@@ -152,8 +152,8 @@
   }
 
   .tag.active .logo-wrapper {
-    border-bottom-right-radius: var(--border-radius-m);
-    border-top-right-radius: var(--border-radius-m);
+    border-bottom-right-radius: var(--border-radius-s);
+    border-top-right-radius: var(--border-radius-s);
     /* 2px accounts for negative margin + border */
     width: calc(100% + 2px);
 

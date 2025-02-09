@@ -59,7 +59,7 @@
     position: relative;
     background-color: var(--color-panel-background);
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-s);
     height: 1.8rem;
     font-size: var(--font-size-xs);
     display: inline-flex;
