@@ -6,7 +6,7 @@ repository: https://github.com/rosslh/Mandelbrot.site
 website: https://mandelbrot.site
 thumbnail: mandelbrot-thumb
 image: rust-mandelbrot
-excerpt: An interactive application that lets you explore the Mandelbrot set fractal and generate high resolution images.
+excerpt: Explore the Mandelbrot set fractal in your web browser
 tags: [rust, webassembly, typescript, pwa]
 ---
 

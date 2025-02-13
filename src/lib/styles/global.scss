@@ -1,5 +1,5 @@
-@import "./design-system";
-@import "./media-queries";
+@use "./design-system";
+@use "./media-queries";
 
 html,
 body {
@@ -34,7 +34,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: $breakpoint-xs-min) {
+@media (min-width: media-queries.$breakpoint-xs-min) {
   html {
     font-size: 17px;
   }
@@ -139,13 +139,13 @@ h3 {
   padding: 0 5%;
 }
 
-@media (min-width: $breakpoint-xs-min) {
+@media (min-width: media-queries.$breakpoint-xs-min) {
   .content-wrapper {
     padding: 0 7%;
   }
 }
 
-@media (min-width: $breakpoint-l-min) {
+@media (min-width: media-queries.$breakpoint-l-min) {
   .content-wrapper {
     padding: 0 var(--spacing-4xl);
   }
@@ -162,4 +162,8 @@ code {
 a {
   color: var(--color-link);
   text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }

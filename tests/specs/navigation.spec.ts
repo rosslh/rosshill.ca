@@ -1,12 +1,7 @@
 import { expect, test } from "@playwright/test";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
-import {
-  expectToBeAtTop,
-  expectCount,
-  getLocator,
-  waitForElement,
-} from "../commands.js";
+import { expectCount, getLocator, waitForElement } from "../commands.js";
 import posts from "../../data/posts.json" assert { type: "json" };
 
 test.describe.configure({ mode: "parallel" });
@@ -31,9 +26,9 @@ const testPage = async (
   await postStubLink.click();
 
   try {
-    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10_000 });
+    await page.waitForURL(`${baseURL}/experience/${slug}`, { timeout: 10_000 });
   } catch {
-    await page.waitForURL(`${baseURL}/item/${slug}`, { timeout: 10_000 });
+    await page.waitForURL(`${baseURL}/experience/${slug}`, { timeout: 10_000 });
   }
 
   await waitForElement(page, "post-title");
@@ -42,14 +37,14 @@ const testPage = async (
 
   await expectCount([page, "error"], 0);
 
-  // After clicking the link, the path should be /item/:slug
-  expect(page.url()).toMatch(/^.*\/item\/[^/]+$/);
+  // After clicking the link, the path should be /experience/:slug
+  expect(page.url()).toMatch(/^.*\/experience\/[^/]+$/);
 
   await waitForElement(page, "main-heading", { state: "detached" });
 
   await backLink.click();
 
-  await page.waitForURL(`${baseURL}/#timeline-${slug}`, { timeout: 10_000 });
+  await page.waitForURL(`${baseURL}/`, { timeout: 10_000 });
 
   await waitForElement(page, "main-heading");
 
@@ -57,11 +52,8 @@ const testPage = async (
 
   await expectCount([page, "error"], 0);
 
-  // After clicking the back link, you should be back at the root with an anchor to the post
-  expect(page.url()).toBe(`${baseURL}/#timeline-${slug}`);
-
-  // Element is at top
-  await expectToBeAtTop(page, `post-stub-${slug}`);
+  // After clicking the back link, you should be back at the root
+  expect(page.url()).toBe(`${baseURL}/`);
 };
 
 // TODO: make these tests not flake

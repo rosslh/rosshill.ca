@@ -56,10 +56,10 @@
   const meta = {
     title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
-    url: `https://rosshill.ca/item/${post.slug}`,
+    url: `https://rosshill.ca/experience/${post.slug}`,
     image: {
       url: post.image
-        ? `https://rosshill.ca/timeline/${post.image.name}.${post.image.extension}`
+        ? `https://rosshill.ca/experience/${post.image.name}.${post.image.extension}`
         : "https://rosshill.ca/site-image.png",
       alt: post.title,
     },
@@ -74,16 +74,9 @@
   description={meta.description}
   canonical={meta.url}
   openGraph={{
-    article: {
-      authors: [meta.author],
-      tags: meta.tags,
-    },
+    article: { authors: [meta.author], tags: meta.tags },
     description: meta.description,
-    images: [
-      {
-        ...meta.image,
-      },
-    ],
+    images: [{ ...meta.image }],
     siteName: meta.siteName,
     title: meta.title,
     type: "article",
@@ -97,12 +90,8 @@
     imageAlt: meta.image.alt,
   }}
 />
-<div
-  bind:this={mainContent}
-  class="content-wrapper main-content"
-  data-testid="main-content"
->
-  <BackLink href="/#timeline-{post.slug}" />
+<div bind:this={mainContent} class="content-wrapper" data-testid="main-content">
+  <BackLink href="/" />
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
     <div class="details">
@@ -124,25 +113,21 @@
       {#if post.tags.length}
         <div class="tags-wrapper">
           {#each post.tags as tagId}
-            <Tag
-              {tagId}
-              background={tagColors[tagId]?.bg}
-              foreground={tagColors[tagId]?.fg}
-            />
+            <Tag {tagId} background={tagColors[tagId]?.bg} />
           {/each}
         </div>
       {/if}
     </div>
     {#if post.image}
       <picture>
-        <source srcset="/timeline/{post.image.name}.webp" type="image/webp" />
+        <source srcset="/experience/{post.image.name}.webp" type="image/webp" />
         <source
-          srcset="/timeline/{post.image.name}.{post.image.extension}"
+          srcset="/experience/{post.image.name}.{post.image.extension}"
           type="image/{post.image.extension}"
         />
         <img
           class="transition-colors"
-          src="/timeline/{post.image.name}.{post.image.extension}"
+          src="/experience/{post.image.name}.{post.image.extension}"
           alt={post.title}
           width={600}
           height={400}
@@ -192,6 +177,7 @@
         display: flex;
         flex-wrap: wrap;
         margin: var(--spacing-xs) 0 0;
+        gap: var(--spacing-xs);
       }
     }
 

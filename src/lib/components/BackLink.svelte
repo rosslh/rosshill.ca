@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LeftArrow from "~icons/feather/corner-up-left";
+  import LeftArrow from "~icons/ci/arrow-left-lg";
 
   interface Props {
     href?: string;
@@ -9,7 +9,7 @@
 </script>
 
 <a data-sveltekit-preload-data data-testid="back-link" class="back-link" {href}>
-  <LeftArrow /> Back to Home
+  <LeftArrow /> Home page
 </a>
 
 <style>
@@ -17,6 +17,7 @@
     display: inline-flex;
     align-items: center;
     margin: var(--spacing-2xl) 0 var(--spacing-xl);
+    color: var(--color-subtitle);
   }
 
   a.back-link > :global(svg) {

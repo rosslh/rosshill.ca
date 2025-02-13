@@ -1,7 +1,7 @@
 ---
-title: Software Engineer - Doormat
+title: Doormat
 eventType: work
-excerpt: I'm helping build a seamless and intuitive user experience, contributing to Doormat's mission of making real estate law simple.
+excerpt: Tech-enabled law firm that makes real estate transactions simple
 tags: [nextdotjs, typescript, graphql, rubyonrails, postgresql]
 website: https://doormat.ca
 

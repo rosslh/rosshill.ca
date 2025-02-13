@@ -7,7 +7,7 @@ repository: https://github.com/rosslh/IsEarthStillWarming.com
 image: isearthstillwarming
 thumbnail: fire
 thumbnailBorder: true
-excerpt: A website offering up-to-date global warming data and a high-level overview of its causes and effects.
+excerpt: Global warming information and data, updated daily
 tags: [astro, react, nodedotjs]
 ---
 

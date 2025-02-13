@@ -11,7 +11,7 @@ async function convertImages(directory: string): Promise<void> {
 (async () => {
   await Promise.all([
     convertImages("assets"),
-    convertImages("assets/timeline"),
+    convertImages("assets/experience"),
     convertImages("assets/occasions"),
   ]);
 })();

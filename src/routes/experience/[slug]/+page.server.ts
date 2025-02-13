@@ -1,9 +1,9 @@
-import { data as timeline } from "$data/posts.json";
+import { data as postsObject } from "$data/posts.json";
 import { formatPostTitle, slugify } from "$lib/functions";
 import tagColors from "$data/tagColors.json";
 import type { TagColors, PostItemPage } from "$lib/types";
 
-const posts: PostItemPage[] = Object.values(timeline)
+const posts: PostItemPage[] = Object.values(postsObject)
   .filter(({ contents, isHidden }) => contents && !isHidden)
   .map((post) => ({
     contents: post.contents,
@@ -16,10 +16,7 @@ const posts: PostItemPage[] = Object.values(timeline)
     embed: post.embed,
     excerpt: post.excerpt,
     image: post.image
-      ? {
-          name: post.image,
-          extension: post.imageExt ?? "png",
-        }
+      ? { name: post.image, extension: post.imageExt ?? "png" }
       : undefined,
     repository: post.repository,
     slug: slugify(post.title),
@@ -33,24 +30,14 @@ const lookup: Map<string, PostItemPage> = new Map(
 );
 
 type LoadResponse =
-  | {
-      post: PostItemPage;
-      tagColors: TagColors;
-    }
-  | {
-      message: string;
-    };
+  | { post: PostItemPage; tagColors: TagColors }
+  | { message: string };
 
 export function load({ params }: { params: { slug: string } }): LoadResponse {
   const slug = params.slug.toLowerCase();
   const post = lookup.get(slug);
   if (post) {
-    return {
-      post,
-      tagColors,
-    };
+    return { post, tagColors };
   }
-  return {
-    message: "Not found",
-  };
+  return { message: "Not found" };
 }

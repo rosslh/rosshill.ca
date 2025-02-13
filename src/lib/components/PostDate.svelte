@@ -82,5 +82,6 @@
   div.date-string {
     color: var(--color-subtitle);
     display: inline-block;
+    font-size: var(--font-size-2xs);
   }
 </style>

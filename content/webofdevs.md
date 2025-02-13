@@ -7,7 +7,7 @@ thumbnail: webofdevs-thumb
 thumbnailBorder: true
 image: webofdevs
 imageExt: png
-excerpt: A community of developers with amazing webpages. You can browse personal sites, save your favorites, and share your own.
+excerpt: A directory of cool developer websites, homepages, and portfolios
 tags: [typescript, svelte, nestjs, postgresql]
 ---
 

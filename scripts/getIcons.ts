@@ -7,8 +7,7 @@ import { keyBy, merge, escapeRegExp } from "lodash-es";
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
-import type { PostItemStub, TagColors, TagColor } from "$lib/types";
-import { tagAncestors } from "../src/lib/tags.js";
+import type { TagColors, TagColor, PostItemPage } from "$lib/types";
 
 const inputPaths = {
   posts: "data/posts.json",
@@ -54,7 +53,7 @@ const getNumbersFromStylesheetProperty = (
   const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
   const matches = fileLines.filter((line) => pattern.test(line));
 
-  return matches.map((m) => Number.parseFloat(m.replaceAll(/[^\d.]*/g, "")));
+  return matches.map((m) => Number.parseFloat(m.replaceAll(/[^\d]*/g, "")));
 };
 
 function getForegroundColors(): { light: string; dark: string } {
@@ -161,21 +160,10 @@ function getTagColors(tags: string[]): TagColors {
   );
 }
 
-function getTags(posts: PostItemStub[]): string[] {
+function getTags(posts: PostItemPage[]): string[] {
   return posts
-    .filter((post: PostItemStub) => post.tags?.length)
-    .flatMap((post: PostItemStub) => {
-      const postTags: string[] = [...post.tags];
-
-      for (const tag of post.tags) {
-        const ancestors = tagAncestors[tag];
-        if (ancestors?.length) {
-          postTags.push(...ancestors);
-        }
-      }
-
-      return [...new Set(postTags)];
-    });
+    .filter((post: PostItemPage) => post.tags?.length)
+    .flatMap((post: PostItemPage) => post.tags);
 }
 
 function outputTagColors(tagColors: TagColors) {

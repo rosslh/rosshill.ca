@@ -7,7 +7,7 @@ website: https://wtformat.com
 image: wtformat
 thumbnail: moment
 thumbnailBorder: true
-excerpt: An online tool to generate date format codes for popular date formatting libraries, including date-fns, Moment.js, Day.js, and Luxon.
+excerpt: Generate date format codes for date-fns, Moment.js, Day.js, and Luxon
 tags: [vuedotjs, typescript]
 ---
 

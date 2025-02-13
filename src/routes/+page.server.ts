@@ -1,10 +1,10 @@
-import { data as timeline } from "$data/posts.json";
+import { data as postsObject } from "$data/posts.json";
 import { formatPostTitle, slugify } from "$lib/functions";
 import tagColors from "$data/tagColors.json";
 import type { TagColors, PostItemStub } from "$lib/types";
 import { PostCategory } from "$lib/types";
 
-const posts: PostItemStub[] = Object.values(timeline)
+const posts: PostItemStub[] = Object.values(postsObject)
   .filter((post) => !post.isHidden)
   .map((post) => ({
     date: {
@@ -23,7 +23,7 @@ const posts: PostItemStub[] = Object.values(timeline)
     slug: slugify(post.title),
     tags: post.tags ?? [],
     thumbnail: {
-      name: post.thumbnail ?? `timeline/${post.thumbnail}`,
+      name: post.thumbnail ?? `experience/${post.thumbnail}`,
       extension: post.thumbnailExt ?? "png",
       showBorder: post.thumbnailBorder ?? false,
     },
@@ -35,8 +35,5 @@ const posts: PostItemStub[] = Object.values(timeline)
   );
 
 export function load(): { posts: PostItemStub[]; tagColors: TagColors } {
-  return {
-    posts,
-    tagColors,
-  };
+  return { posts, tagColors };
 }

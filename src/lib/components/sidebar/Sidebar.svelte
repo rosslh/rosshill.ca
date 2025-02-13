@@ -27,9 +27,11 @@
 <div class="sidebar transition-colors" data-testid="sidebar">
   <div class="sidebar-content">
     {#if !currentOccasion || currentOccasion.imageName}
-      <div
+      <a
         class="img-wrapper transition-colors"
         class:rounded={!currentOccasion}
+        href="/"
+        data-sveltekit-preload-data="hover"
       >
         {#if currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
@@ -63,7 +65,7 @@
             />
           </picture>
         {/if}
-      </div>
+      </a>
     {/if}
     {#if currentOccasion?.blurb}
       <p
@@ -84,9 +86,9 @@
         {/if}
       </p>
     {/if}
-    <div class="name-wrapper">
+    <a class="name-wrapper" href="/" data-sveltekit-preload-data="hover">
       <h1 class="transition-colors">Ross Hill</h1>
-    </div>
+    </a>
     <p class="subtitle role transition-colors" data-testid="job-title">
       Software Engineer
     </p>
@@ -128,7 +130,7 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries";
+  @use "src/lib/styles/media-queries";
 
   div.sidebar {
     border-right: 1px solid var(--color-border);
@@ -146,6 +148,10 @@
       position: sticky;
       top: 0;
       gap: var(--spacing-xl);
+
+      a:hover {
+        opacity: 1;
+      }
 
       .occasion-blurb {
         text-align: center;
@@ -179,7 +185,7 @@
         }
       }
 
-      div.img-wrapper {
+      .img-wrapper {
         width: 10.5rem;
         height: 10.5rem;
         min-width: 10.5rem;
@@ -210,7 +216,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: media-queries.$breakpoint-m-max) {
     div.sidebar {
       border-width: 0;
       padding: var(--spacing-xl) var(--spacing-xl) 0;

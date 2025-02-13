@@ -6,7 +6,7 @@ export async function GET() {
   const urls = data
     .filter(({ contents, isHidden }) => contents && !isHidden)
     .map((post) => ({
-      loc: `https://rosshill.ca/item/${slugify(post.title)}`,
+      loc: `https://rosshill.ca/experience/${slugify(post.title)}`,
       changefreq: "monthly",
       priority: 0.8,
     }));
@@ -48,8 +48,6 @@ export async function GET() {
   });
 
   return new Response(minified, {
-    headers: {
-      "Content-Type": "application/xml",
-    },
+    headers: { "Content-Type": "application/xml" },
   });
 }

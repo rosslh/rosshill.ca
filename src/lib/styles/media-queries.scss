@@ -1,6 +1,8 @@
 // Breakpoints
 
 // These need to be SCSS variables so they can be used in media queries
+$breakpoint-2xs-max: 499px;
+$breakpoint-2xs-min: 500px;
 $breakpoint-xs-max: 699px;
 $breakpoint-xs-min: 700px;
 $breakpoint-s-max: 799px;

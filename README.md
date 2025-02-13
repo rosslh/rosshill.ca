@@ -1,6 +1,6 @@
 # rosshill.ca
 
-[rosshill.ca](https://rosshill.ca/) is more than just a portfolio, it's a testament to my love for crafting elegant and efficient web experiences. Dive into a curated collection of my projects, easily navigated through a filterable timeline. Discover features like the dynamic profile picture, changing with holidays, and a dropdown theme picker. Built with a focus on code quality and backed by a comprehensive test suite, this site reflects my commitment to the highest development standards.
+[rosshill.ca](https://rosshill.ca/) is more than just a portfolio, it's a testament to my love for crafting elegant and efficient web experiences. Dive into a curated collection of my projects and discover features like the dynamic profile picture, changing with holidays, and a dropdown theme picker. Built with a focus on code quality and backed by a comprehensive test suite, this site reflects my commitment to the highest development standards.
 
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/rosslh/rosshill.ca/main?style=flat-square&label=Checks)
 ![Netlify](https://img.shields.io/netlify/bb0ce20c-358e-4da7-971d-00d6fb6dd61b?style=flat-square&label=Netlify)

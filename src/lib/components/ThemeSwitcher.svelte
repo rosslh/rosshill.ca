@@ -6,8 +6,8 @@
   import Select from "svelte-select";
   import { themeStore } from "$lib/stores";
 
-  import LightThemeIcon from "~icons/ion/ios-sunny";
-  import DarkThemeIcon from "~icons/ion/ios-moon";
+  import LightThemeIcon from "~icons/ci/sun";
+  import DarkThemeIcon from "~icons/ci/moon";
   import AutoThemeIcon from "~icons/lucide/settings-2";
   import CyberpunkThemeIcon from "~icons/ph/circle-half-bold";
 
@@ -112,9 +112,9 @@
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries";
+  @use "src/lib/styles/media-queries";
 
-  @media (max-width: $breakpoint-xs-max) {
+  @media (max-width: media-queries.$breakpoint-xs-max) {
     .icon,
     .item-auto-light,
     .item-auto-dark {
@@ -135,19 +135,19 @@
     }
   }
 
-  @media (max-width: $breakpoint-xs-max) {
+  @media (max-width: media-queries.$breakpoint-xs-max) {
     div.theme-switcher-wrapper {
       margin: var(--spacing-m);
     }
   }
 
-  @media (min-width: $breakpoint-xs-min) {
+  @media (min-width: media-queries.$breakpoint-xs-min) {
     .theme-switcher-wrapper {
       margin: var(--spacing-xl) 7%;
     }
   }
 
-  @media (min-width: $breakpoint-l-min) {
+  @media (min-width: media-queries.$breakpoint-l-min) {
     .theme-switcher-wrapper {
       margin: var(--spacing-xl) var(--spacing-4xl);
     }

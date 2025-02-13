@@ -7,7 +7,7 @@ repository: https://github.com/rosslh/MetaProjection.ca
 image: metaprojection
 thumbnail: metaprojection-thumb
 thumbnailBorder: true
-excerpt: An aggregator of Canadian federal electoral projections. It provides an overview of how the election is playing out, both federally and by district.
+excerpt: An aggregator of Canadian electoral projections
 tags: [typescript, gatsby, graphql, nodedotjs]
 ---
 

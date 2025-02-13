@@ -12,7 +12,7 @@
       : "That's an error";
 </script>
 
-<div data-testid="error" class="content-wrapper main-content">
+<div data-testid="error" class="content-wrapper">
   <BackLink />
   <h2 data-testid="error-heading">{code}: {message}</h2>
   <ConfusedTravolta

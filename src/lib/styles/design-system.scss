@@ -1,4 +1,4 @@
-@import "/node_modules/hsluv-sass";
+@use "/node_modules/hsluv-sass";
 
 // Colors
 
@@ -15,40 +15,50 @@ $other-hue: 12;
   $marker-saturation: $category-saturation - 10;
   $marker-lightness: $category-lightness + 10;
 
-  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv(
+  --color-work: #{hsluv-sass.hsluv(
+      $work-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-project: #{hsluv-sass.hsluv(
       $project-hue,
       $category-saturation,
       $category-lightness
     )};
-  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv-sass.hsluv(
+      $other-hue,
+      $category-saturation,
+      $category-lightness
+    )};
 
-  --color-work-marker: #{hsluv(
+  --color-work-marker: #{hsluv-sass.hsluv(
       $work-hue,
       $marker-saturation,
       $marker-lightness
     )};
-  --color-project-marker: #{hsluv(
+  --color-project-marker: #{hsluv-sass.hsluv(
       $project-hue,
       $marker-saturation,
       $marker-lightness
     )};
-  --color-other-marker: #{hsluv(
+  --color-other-marker: #{hsluv-sass.hsluv(
       $other-hue,
       $marker-saturation,
       $marker-lightness
     )};
 
-  --color-heading: #{hsluv($theme-hue, $theme-saturation, 22%)};
-  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 38%)};
-  --color-link: #{hsluv($theme-hue, 90%, 40%)};
-  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 44%)};
-  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 60%)};
-  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 70%)};
-  --color-timeline-marker: #{hsluv($theme-hue, $theme-saturation, 55%)};
-  --color-border: #{hsluv($theme-hue, $theme-saturation, 90%)};
-  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 95%)};
-  --color-background: #{hsluv($theme-hue, $theme-saturation, 98%)};
+  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 22%)};
+  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 38%)};
+  --color-link: #{hsluv-sass.hsluv($theme-hue, 90%, 40%)};
+  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 44%)};
+  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 60%)};
+  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 90%)};
+  --color-panel-background: #{hsluv-sass.hsluv(
+      $theme-hue,
+      $theme-saturation,
+      95%
+    )};
+  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 98%)};
 
   font-family:
     "Inter",
@@ -69,28 +79,38 @@ $other-hue: 12;
   $category-saturation: 70%;
   $category-lightness: 70%;
 
-  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv(
+  --color-work: #{hsluv-sass.hsluv(
+      $work-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-project: #{hsluv-sass.hsluv(
       $project-hue,
       $category-saturation,
       $category-lightness
     )};
-  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv-sass.hsluv(
+      $other-hue,
+      $category-saturation,
+      $category-lightness
+    )};
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
-  --color-heading: #{hsluv($theme-hue, $theme-saturation, 95%)};
-  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 82%)};
-  --color-link: #{hsluv($theme-hue, 90%, 77%)};
-  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 70%)};
-  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
-  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 30%)};
-  --color-timeline-marker: #{hsluv($theme-hue, $theme-saturation, 45%)};
-  --color-border: #{hsluv($theme-hue, $theme-saturation, 21%)};
-  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 14%)};
-  --color-background: #{hsluv($theme-hue, $theme-saturation, 8%)};
+  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 95%)};
+  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 82%)};
+  --color-link: #{hsluv-sass.hsluv($theme-hue, 90%, 77%)};
+  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 70%)};
+  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 35%)};
+  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 21%)};
+  --color-panel-background: #{hsluv-sass.hsluv(
+      $theme-hue,
+      $theme-saturation,
+      14%
+    )};
+  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 8%)};
 
   font-family:
     "Inter",
@@ -107,7 +127,7 @@ $other-hue: 12;
 }
 
 @mixin cyberpunk-theme() {
-  $yellow: hsluv(75, 82%, 85%);
+  $yellow: hsluv-sass.hsluv(75, 82%, 85%);
   $pink-hue: 310;
   $blue-hue: 270;
 
@@ -122,28 +142,42 @@ $other-hue: 12;
   $category-lightness: 75%;
   $category-saturation: 75%;
 
-  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv(
+  --color-work: #{hsluv-sass.hsluv(
+      $work-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-project: #{hsluv-sass.hsluv(
       $project-hue,
       $category-saturation,
       $category-lightness
     )};
-  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv-sass.hsluv(
+      $other-hue,
+      $category-saturation,
+      $category-lightness
+    )};
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
   --color-heading: #{$yellow};
-  --color-foreground: #{hsluv($blue-hue, $foreground-saturation, 80%)};
+  --color-foreground: #{hsluv-sass.hsluv(
+      $blue-hue,
+      $foreground-saturation,
+      80%
+    )};
   --color-link: #{$yellow};
-  --color-subtitle: #{hsluv($blue-hue, $foreground-saturation, 70%)};
-  --color-focus-outline: #{hsluv($pink-hue, $border-saturation, 37%)};
-  --color-timeline: #{hsluv($blue-hue, $background-saturation, 28%)};
-  --color-timeline-marker: #{hsluv($blue-hue, $background-saturation, 42%)};
-  --color-border: #{hsluv($pink-hue, $border-saturation, 32%)};
-  --color-panel-background: #{hsluv($blue-hue, $background-saturation, 7%)};
-  --color-background: #{hsluv($blue-hue, $background-saturation, 3%)};
+  --color-subtitle: #{hsluv-sass.hsluv($blue-hue, $foreground-saturation, 70%)};
+  --color-focus-outline: #{hsluv-sass.hsluv($pink-hue, $border-saturation, 37%)};
+  --color-border: #{hsluv-sass.hsluv($pink-hue, $border-saturation, 32%)};
+  --color-panel-background: #{hsluv-sass.hsluv(
+      $blue-hue,
+      $background-saturation,
+      7%
+    )};
+  --color-background: #{hsluv-sass.hsluv($blue-hue, $background-saturation, 3%)};
 
   font-family: "IBM Plex Mono", monospace;
 }
@@ -153,28 +187,38 @@ $other-hue: 12;
   $category-saturation: 75%;
   $category-lightness: 65%;
 
-  --color-work: #{hsluv($work-hue, $category-saturation, $category-lightness)};
-  --color-project: #{hsluv(
+  --color-work: #{hsluv-sass.hsluv(
+      $work-hue,
+      $category-saturation,
+      $category-lightness
+    )};
+  --color-project: #{hsluv-sass.hsluv(
       $project-hue,
       $category-saturation,
       $category-lightness
     )};
-  --color-other: #{hsluv($other-hue, $category-saturation, $category-lightness)};
+  --color-other: #{hsluv-sass.hsluv(
+      $other-hue,
+      $category-saturation,
+      $category-lightness
+    )};
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
-  --color-heading: #{hsluv($theme-hue, $theme-saturation, 100%)};
-  --color-foreground: #{hsluv($theme-hue, $theme-saturation, 85%)};
-  --color-link: #{hsluv($theme-hue, $theme-saturation, 100%)};
-  --color-subtitle: #{hsluv($theme-hue, $theme-saturation, 67%)};
-  --color-focus-outline: #{hsluv($theme-hue, $theme-saturation, 35%)};
-  --color-timeline: #{hsluv($theme-hue, $theme-saturation, 21%)};
-  --color-timeline-marker: #{hsluv($theme-hue, $theme-saturation, 35%)};
-  --color-border: #{hsluv($theme-hue, $theme-saturation, 12%)};
-  --color-panel-background: #{hsluv($theme-hue, $theme-saturation, 4%)};
-  --color-background: #{hsluv($theme-hue, $theme-saturation, 0%)};
+  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 100%)};
+  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 85%)};
+  --color-link: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 100%)};
+  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 67%)};
+  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 35%)};
+  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 12%)};
+  --color-panel-background: #{hsluv-sass.hsluv(
+      $theme-hue,
+      $theme-saturation,
+      4%
+    )};
+  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 0%)};
 
   font-family:
     "Inter",

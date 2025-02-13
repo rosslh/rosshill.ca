@@ -19,21 +19,3 @@ export const tagLabels: Record<string, string> = {
   webassembly: "Wasm",
   wordpress: "WordPress",
 };
-
-export const tagAncestors: Record<string, string[]> = {
-  backbonedotjs: ["javascript"],
-  cypress: ["javascript"],
-  django: ["python"],
-  express: ["nodedotjs", "javascript"],
-  fastify: ["nodedotjs", "javascript"],
-  flask: ["python"],
-  gatsby: ["react", "javascript"],
-  nestjs: ["nodedotjs", "javascript"],
-  nextdotjs: ["react", "javascript"],
-  nodedotjs: ["javascript"],
-  react: ["javascript"],
-  redux: ["javascript"],
-  svelte: ["javascript"],
-  typescript: ["javascript"],
-  vuedotjs: ["javascript"],
-};

@@ -1,31 +1,14 @@
 <script lang="ts">
   import { tagLabels } from "$lib/tags";
-  import { prefersColorSchemeDark, remsToPixels } from "$lib/functions";
-  import { themeStore } from "$lib/stores";
-  import { browser } from "$app/environment";
-  import { SiteTheme } from "$lib/types";
+  import { remsToPixels } from "$lib/functions";
 
   interface Props {
     tagId: string;
-    active?: boolean;
     background?: string;
     foreground?: string;
-    onClick?: (() => void) | null;
-    lazyLoad?: boolean;
-    needsOutlineOnLightBg?: boolean;
-    needsOutlineOnDarkBg?: boolean;
   }
 
-  let {
-    tagId,
-    active = false,
-    background = "000",
-    foreground = "FFF",
-    onClick = null,
-    lazyLoad = false,
-    needsOutlineOnLightBg = false,
-    needsOutlineOnDarkBg = false,
-  }: Props = $props();
+  let { tagId, background = "000" }: Props = $props();
 
   const tagString = $derived(tagLabels[tagId] ?? tagId);
 
@@ -48,60 +31,25 @@
     scale: 1,
     ...iconPositions[tagId],
   };
-
-  const getHexOpacity = (floatPercentage: number): string =>
-    Math.round(255 * floatPercentage).toString(16);
-
-  const isPageBackgroundDark = (currentTheme: SiteTheme) => {
-    const darkThemes = [SiteTheme.Dark, SiteTheme.Cyberpunk, SiteTheme.Black];
-
-    return (
-      darkThemes.includes(currentTheme) ||
-      (currentTheme === SiteTheme.Auto && prefersColorSchemeDark(browser))
-    );
-  };
-
-  const dividerColor = $derived(
-    active ? `#${foreground}${getHexOpacity(0.35)}` : "transparent",
-  );
-
-  const hasOutline =
-    (needsOutlineOnDarkBg || needsOutlineOnLightBg) &&
-    isPageBackgroundDark($themeStore)
-      ? needsOutlineOnDarkBg
-      : needsOutlineOnLightBg;
 </script>
 
-<svelte:element
-  this={onClick ? "button" : "div"}
-  class="tag transition-colors"
-  class:active
-  data-testid="skill-{onClick ? 'filter' : 'tag'}-{tagId}"
-  onclick={onClick}
-  style={active ? `color: #${foreground};` : ""}
-  role={onClick ? "button" : undefined}
->
+<div class="tag transition-colors" data-testid="skill-tag-{tagId}">
   <span
     class="logo-wrapper transition-colors"
     style="background-color: #{background};"
-    class:hasOutline
   >
     <img
       src="/tags/{tagId}.svg"
       alt="{tagString} logo"
-      loading={lazyLoad ? "lazy" : null}
       style:transform={`translate(${iconPosition.x}, ${iconPosition.y}) scale(${iconPosition.scale})`}
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)}
     />
   </span>
-  <span
-    style={`border-left: 1px solid ${dividerColor};`}
-    class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}
-  >
+  <span class={`tag-string ${tagString === tagId ? "capitalize" : ""}`}>
     {tagString}
   </span>
-</svelte:element>
+</div>
 
 <style lang="scss">
   .tag {
@@ -109,7 +57,6 @@
     align-items: center;
 
     height: 1.5rem;
-    margin: var(--spacing-2xs) var(--spacing-2xs) var(--spacing-2xs) 0;
     padding: 0 var(--spacing-3xs) 0 0;
     position: relative;
 
@@ -148,17 +95,6 @@
       height: 0.85rem;
       width: 0.85rem;
       margin-left: 0.35rem;
-    }
-  }
-
-  .tag.active .logo-wrapper {
-    border-bottom-right-radius: var(--border-radius-s);
-    border-top-right-radius: var(--border-radius-s);
-    /* 2px accounts for negative margin + border */
-    width: calc(100% + 2px);
-
-    &.hasOutline {
-      border-color: var(--color-subtitle);
     }
   }
 

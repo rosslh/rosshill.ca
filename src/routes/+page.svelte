@@ -3,9 +3,9 @@
   import Balancer from "svelte-wrap-balancer";
   import type { TagColors, PostItemStub } from "$lib/types";
 
-  import PostStubs from "$lib/components/PostStubs.svelte";
   import CopyrightNotice from "$lib/components/CopyrightNotice.svelte";
   import { themeStore } from "$lib/stores";
+  import Posts from "$lib/components/posts/Posts.svelte";
 
   interface Props {
     data: { posts: PostItemStub[]; tagColors: TagColors };
@@ -13,7 +13,7 @@
 
   let { data }: Props = $props();
 
-  const { posts, tagColors } = data;
+  const { posts } = data;
 
   const meta = {
     title: "Ross Hill - Projects and Experience",
@@ -28,6 +28,10 @@
       alt: "Ross Hill - Projects and Experience",
     },
   };
+
+  const workExperience = posts.filter((post) => post.eventType === "work");
+  const projects = posts.filter((post) => post.eventType === "project");
+  const other = posts.filter((post) => post.eventType === "other");
 </script>
 
 <MetaTags
@@ -36,11 +40,7 @@
   canonical={meta.url}
   openGraph={{
     description: meta.description,
-    images: [
-      {
-        ...meta.image,
-      },
-    ],
+    images: [{ ...meta.image }],
     siteName: meta.siteName,
     title: meta.title,
     type: "website",
@@ -72,18 +72,19 @@
       {/key}
     </p>
   </div>
-  <PostStubs {posts} {tagColors} />
+  <Posts posts={projects} title="Personal projects" />
+  <Posts posts={workExperience} title="Development experience" showDate />
+  <Posts posts={other} title="Education and extracurriculars" showDate />
   <div class="content-wrapper">
     <CopyrightNotice />
   </div>
 </div>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries";
+  @use "src/lib/styles/media-queries";
 
   div.intro {
     margin-top: var(--spacing-3xl);
-    margin-bottom: var(--spacing-3xl);
     padding-top: var(--spacing-3xl);
 
     h2 {
@@ -95,9 +96,15 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: media-queries.$breakpoint-m-max) {
     div.intro {
       padding-top: 0;
     }
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
   }
 </style>

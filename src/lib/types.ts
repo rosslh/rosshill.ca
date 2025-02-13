@@ -17,7 +17,6 @@ type PostItemBase = {
   repository?: string;
   website?: string;
   title: string;
-  tags: string[];
   slug: string;
 };
 
@@ -35,6 +34,7 @@ export type PostItemStub = PostItemBase & {
 };
 
 export type PostItemPage = PostItemBase & {
+  tags: string[];
   contents: string;
   embed?: string;
   image?: {

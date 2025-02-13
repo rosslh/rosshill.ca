@@ -11,7 +11,7 @@ const preloadImage = (source: string): Promise<unknown> =>
 
 export const load: Load = async ({ data }) => {
   if (browser && data?.post?.image) {
-    const webpImageSource = `/timeline/${data.post.image.name}.webp`;
+    const webpImageSource = `/experience/${data.post.image.name}.webp`;
     await preloadImage(webpImageSource);
   }
   return data;

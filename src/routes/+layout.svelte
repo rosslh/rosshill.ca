@@ -212,7 +212,7 @@
 </svelte:head>
 
 <style lang="scss">
-  @import "src/lib/styles/media-queries";
+  @use "src/lib/styles/media-queries";
 
   div.two-column {
     display: flex;
@@ -232,7 +232,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-m-max) {
+  @media (max-width: media-queries.$breakpoint-m-max) {
     div.two-column {
       flex-direction: column;
 
@@ -245,7 +245,7 @@
     }
   }
 
-  @media (max-width: $breakpoint-l-max) {
+  @media (max-width: media-queries.$breakpoint-l-max) {
     div.two-column {
       :global(> *:first-child) {
         width: 18rem;
@@ -253,7 +253,7 @@
     }
   }
 
-  @media (min-width: $breakpoint-xl-min) {
+  @media (min-width: media-queries.$breakpoint-xl-min) {
     div.two-column {
       :global(> *:first-child) {
         width: 30rem;
