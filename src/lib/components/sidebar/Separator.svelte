@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Code from "~icons/iconoir/code";
+  import Code from "~icons/ci/code";
 </script>
 
 <div class="content-wrapper">
@@ -36,7 +36,7 @@
 
       .line {
         height: 1px;
-        width: calc(50% - var(--spacing-xl));
+        width: calc(50% - var(--spacing-l));
         border-bottom: 3px dotted var(--color-border);
       }
     }

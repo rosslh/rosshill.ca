@@ -149,8 +149,13 @@
       top: 0;
       gap: var(--spacing-xl);
 
-      a:hover {
-        opacity: 1;
+      a.img-wrapper,
+      a.name-wrapper {
+        text-decoration: none;
+
+        &:hover {
+          opacity: 1;
+        }
       }
 
       .occasion-blurb {

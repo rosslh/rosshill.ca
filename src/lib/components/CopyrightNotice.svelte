@@ -1,12 +1,30 @@
+<script>
+  import MapleLeafIcon from "~icons/fa-brands/canadian-maple-leaf";
+</script>
+
 <footer class="transition-colors">
-  Copyright &copy; Ross Hill. All Rights Reserved.
+  <p class="subtitle product-of-canada">
+    <MapleLeafIcon /> Product of Canada
+  </p>
+  <p>Copyright &copy; Ross Hill. All Rights Reserved.</p>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
-    text-align: right;
-    color: var(--color-subtitle);
     margin: var(--spacing-2xl) auto;
-    font-size: var(--font-size-2xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: var(--color-subtitle);
+      font-size: var(--font-size-2xs);
+
+      &.product-of-canada {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+      }
+    }
   }
 </style>
