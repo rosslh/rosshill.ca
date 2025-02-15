@@ -1,7 +1,7 @@
 ---
 title: WTFormat.com
 eventType: project
-date: 2021-08-01
+date: 2018-07-05
 repository: https://github.com/rosslh/WTFormat.com
 website: https://wtformat.com
 image: wtformat

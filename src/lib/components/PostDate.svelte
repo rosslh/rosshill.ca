@@ -11,9 +11,10 @@
 
   interface Props {
     date: PostDate;
+    fontSize?: string;
   }
 
-  let { date }: Props = $props();
+  let { date, fontSize }: Props = $props();
 
   const getDateFromString = (d: string): Date =>
     parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
@@ -56,7 +57,7 @@
   const duration = getDuration();
 </script>
 
-<div class="date-string transition-colors">
+<div class="date-string transition-colors" style:font-size={fontSize}>
   {#if date.isSeasonal}
     Seasonal:
   {/if}
@@ -82,6 +83,6 @@
   div.date-string {
     color: var(--color-subtitle);
     display: inline-block;
-    font-size: var(--font-size-2xs);
+    font-size: var(--font-size-xs);
   }
 </style>

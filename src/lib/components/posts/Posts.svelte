@@ -65,7 +65,7 @@
             {@html post.excerpt}
           </p>
           {#if showDate}
-            <PostDate date={post.date} />
+            <PostDate date={post.date} fontSize="var(--font-size-2xs)" />
           {/if}
         </svelte:element>
       </div>
