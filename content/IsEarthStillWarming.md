@@ -8,7 +8,7 @@ image: isearthstillwarming
 thumbnail: fire
 thumbnailBorder: true
 excerpt: Global warming information and data, updated daily
-tags: [astro, react, nodedotjs]
+tags: [typescript, astro, react]
 ---
 
 The goal of this webpage is to provide a high-level overview of what global warming is: how it's caused, how much the Earth has warmed, and its observed and predicted effects. Made with <a target="_blank" rel="noopener noreferrer" href="https://astro.build/">Astro</a>, a static-site generator compatible with React, IsEarthStillWarming.com fetches up-to-date climate data from NASA and NOAA servers and displays the data as charts to provide a visualization of how global warming is progressing.

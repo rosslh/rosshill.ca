@@ -8,7 +8,7 @@ image: wtformat
 thumbnail: moment
 thumbnailBorder: true
 excerpt: Generate date format codes for date-fns, Moment.js, Day.js, and Luxon
-tags: [vuedotjs, typescript]
+tags: [typescript, vuedotjs]
 ---
 
 In the fast-paced world of web development, efficiency is key. Developers constantly seek tools that streamline their workflow and reduce the time spent on repetitive tasks. One such task is date formatting, which can be a headache due to the variety of format codes required by different libraries. Enter WTFormat, a user-friendly tool that simplifies the date formatting process, saving developers time and effort.
