@@ -13,15 +13,15 @@
 
   const currentYear = today.getFullYear();
 
-  const currentOccasion = occasions.find(
-    ({ startDay, startMonth, durationDays }) => {
+  const currentOccasion = occasions
+    .filter(({ startDay, startMonth, durationDays }) => {
       const startDate = startOfDay(
         new Date(currentYear, startMonth - 1, startDay),
       );
       const endDate = endOfDay(addDays(startDate, durationDays - 1));
       return today >= startDate && today <= endDate;
-    },
-  );
+    })
+    .sort((a, b) => a.durationDays - b.durationDays)[0];
 </script>
 
 <div class="sidebar transition-colors" data-testid="sidebar">
