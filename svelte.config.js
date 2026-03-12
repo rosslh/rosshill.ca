@@ -1,7 +1,7 @@
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
 import preprocess from "svelte-preprocess";
-import netlifyAdapter from "@sveltejs/adapter-netlify";
+import nodeAdapter from "@sveltejs/adapter-node";
 
 const testIdReplacements = [
   /data-testid\s?=\s?".*?"/g,
@@ -12,10 +12,7 @@ const testIdReplacements = [
 /** @type {import('@sveltejs/kit').Config} */
 export default {
   kit: {
-    adapter: netlifyAdapter({
-      edge: true, // use Netlify edge functions
-      split: false, // do not use a separate function for each route
-    }),
+    adapter: nodeAdapter(),
     files: {
       assets: "assets",
       hooks: {

@@ -14,7 +14,6 @@ playwright-report/
 tests/build/
 tests/build
 build/
-.netlify/
 .wireit/
 data
 src/data
