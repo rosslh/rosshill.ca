@@ -10,6 +10,7 @@ thumbnailExt: png
 image: uptime-checker
 imageExt: png
 thumbnailBorder: true
+isHidden: true
 ---
 
 This is a command line tool designed to make monitoring the status of websites tracked by <a href="https://uptimerobot.com/" target="_blank" rel="noopener noreferrer">UptimeRobot</a> as effortless as possible. Built using React and the Ink renderer, uptime-checker offers a developer-friendly solution for keeping tabs on website uptime, performance, and outages in a sleek terminal interface.
