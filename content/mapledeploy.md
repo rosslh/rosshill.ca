@@ -10,19 +10,19 @@ tags: [typescript, react, nestjs, postgresql]
 website: https://mapledeploy.ca
 ---
 
-MapleDeploy is a Canadian Platform-as-a-Service built for developers who want their infrastructure to stay on Canadian soil. It's the Canadian alternative to Heroku, Railway, and Render. Customers sign up, select a plan, and within minutes have their own deployment platform running in a Toronto data center — no infrastructure management required.
+I built MapleDeploy as a Canadian alternative to Heroku, Railway, and Render. Customers sign up, pick a plan, and within minutes they have their own deployment platform running in a Toronto data center. No infrastructure management on their end.
 
-The motivation behind MapleDeploy is data sovereignty. Many Canadian companies need to keep their data within Canada for regulatory or compliance reasons, but most major hosting platforms run exclusively on US infrastructure. MapleDeploy fills that gap by offering a fully managed deployment experience where all servers, databases, and customer data are hosted in Canada and governed by Canadian law.
+The motivation is data sovereignty. A lot of Canadian companies need to keep their data in Canada for regulatory or compliance reasons, but most of the major hosting platforms run exclusively on US infrastructure. I wanted to fill that gap. Every server, database, and byte of customer data stays in Canada and is governed by Canadian law.
 
 ### Key features
 
 - **Git push deployments** with automatic SSL certificates
 - **One-click managed databases** including PostgreSQL, MySQL, Redis, and MongoDB
-- **Flat pricing** with dedicated servers rather than metered, per-project billing
-- **Automated provisioning** where servers are security-hardened, configured, and ready within minutes
+- **Flat pricing** with dedicated servers, not metered per-project billing
+- **Automated provisioning**. Servers are security-hardened, configured, and ready within minutes
 
 ### Architecture
 
-The platform is split into three main services: a marketing site built with Next.js, a React dashboard where customers manage their servers and subscriptions, and a NestJS API server backed by PostgreSQL. The API handles authentication and an automated provisioning pipeline that spins up VMs, hardens them with Fail2Ban and SSH key authentication, installs the deployment platform, and configures DNS and SSL — all without manual intervention.
+I split the platform into three services: a Next.js marketing site, a React dashboard where customers manage their servers and subscriptions, and a NestJS API backed by PostgreSQL. The API handles authentication and the provisioning pipeline. That pipeline spins up a VM, hardens it with Fail2Ban and SSH key authentication, installs the deployment platform, and configures DNS and SSL. All of it runs without my intervention.
 
-The deployment layer is built on Coolify, an open-source PaaS. Background jobs like server provisioning and health checks are processed through pg-boss, a PostgreSQL-based job queue, keeping the architecture simple by avoiding a separate message broker.
+The deployment layer is built on Coolify, an open-source PaaS. I run background jobs like provisioning and health checks through pg-boss, a PostgreSQL-based job queue. That kept the architecture simple and let me skip running a separate message broker.
