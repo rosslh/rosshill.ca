@@ -11,10 +11,10 @@ excerpt: A directory of cool developer websites, homepages, and portfolios
 tags: [typescript, svelte, nestjs, postgresql]
 ---
 
-<a href="https://webofdevs.com/" target="_blank" rel="noopener noreferrer">WebofDevs.com</a> is a curated community for developers who want to share their personal websites, portfolios, and homepages. The platform offers users the opportunity to explore a collection of unique developer sites for inspiration, as well as share their own work with the community.
+I built <a href="https://webofdevs.com/" target="_blank" rel="noopener noreferrer">WebofDevs.com</a> as a curated community for developers who want to share their personal websites, portfolios, and homepages. Visitors browse a collection of unique developer sites for inspiration and contribute their own work back to the community.
 
-The website makes it easy to browse through a variety of developer websites, “favorite” the ones that stand out, and even add your own website to the mix. For developers looking to showcase their work, Web of Devs is a space to connect with like-minded individuals and discover innovative approaches to web design and content presentation.
+You can scroll through a variety of developer websites, favorite the ones that stand out, and add your own to the mix. For developers showing off their work, Web of Devs is a place to connect with like-minded people and pick up fresh ideas about web design and content presentation.
 
-To maintain high-quality submissions, the site enforces criteria that ensure all featured websites are personal, content-rich, mobile-friendly, and quick to load. Developers can join by logging in and submitting their websites, provided their site meets the platform’s standards, such as using HTTPS, being free of bugs, and working well within an iframe.
+To keep submissions high quality, I enforce a few criteria: every featured site has to be personal, content-rich, mobile-friendly, and quick to load. Developers log in and submit their websites, and as long as the site meets the standards (HTTPS, no obvious bugs, works inside an iframe) it gets in.
 
-Whether you’re looking for inspiration or a place to share your personal website, Web of Devs is the go-to destination for developers who take pride in their online presence.
+Whether you want inspiration or a home for your personal website, I hope Web of Devs is a great destination for developers who take pride in their online presence.

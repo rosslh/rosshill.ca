@@ -12,6 +12,6 @@ tags: [unity]
 isHidden: true
 ---
 
-For Human-Computer Interactions, a course at Queen's, my group created a dodgeball-style game where the player has to dodge objects approaching them. The goal of the game is to effectively avoid the dodgeballs, by moving left and right. The movement of the player is tracked through the infrared sensor within the Wii Remote. By using 2 IR lights taped onto either sides of a pair of sunglasses, the Wii Remote has the ability to pick up the IR light reflected from objects and track player movement.
+For Human-Computer Interactions, a course at Queen's, my group built a dodgeball-style game where the player dodges objects flying toward them. The player moves left and right to avoid the dodgeballs. We tracked player movement with the infrared sensor inside a Wii Remote. We taped two IR lights to the sides of a pair of sunglasses, and the Wii Remote picked up the reflected IR light to follow the player's head.
 
-By using simple left and right movements, the player's physical movement is translated into movement for the in-game camera. The player will then either successfully dodge the balls, or experience a ‘hit’ resulting in a loss of 1 life. The game increases in difficulty the longer you play, and the score increases with time. If the player’s runs out of lives, it’s game over, and the player is given the option to play again.
+The player's physical left and right movements drive the in-game camera. They either dodge the balls or take a hit and lose a life. The game speeds up the longer you play, and your score climbs with time. When the player runs out of lives, it's game over, and we give them the option to play again.

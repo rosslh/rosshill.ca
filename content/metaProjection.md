@@ -11,10 +11,10 @@ excerpt: An aggregator of Canadian electoral projections
 tags: [typescript, gatsby, graphql, nodedotjs]
 ---
 
-MetaProjection is a website that aggregates multiple Canadian federal electoral projections in order to provide an overview of how the election is playing out, both federally and by district. A map is displayed at the top of the page which indicates how each electoral district is likely to vote. The application uses the user’s geolocation to find their district and display its likely winner.
+MetaProjection aggregates Canadian federal electoral projections so visitors can see how the election is shaping up, both nationally and by district. A map at the top of the page shows how each electoral district is likely to vote. The site uses the visitor's geolocation to find their district and surface its likely winner.
 
-I made this project during the run-up to the 2019 Canadian federal election because I found myself checking multiple electoral projection sites that would sometimes have conflicting information. MetaProjection.ca gives a balanced overview of the election by combining the results of multiple reputable poll-trackers.
+I built this in the run-up to the 2019 Canadian federal election because I kept checking multiple projection sites and finding conflicting numbers. MetaProjection.ca combines the results of several reputable poll-trackers so you get a balanced read on the race in one place.
 
-MetaProjection was built with Gatsby, a React.js static site generator. First, the projection sources are scraped for their data, which is saved into json files. This data is then queried from the React client using GraphQL.
+I built MetaProjection with Gatsby, a React.js static site generator. The build scrapes each projection source, saves the data as JSON, and then the React client queries it through GraphQL.
 
-Updated for the 2021 federal election.
+I updated it for the 2021 federal election.

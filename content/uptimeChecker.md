@@ -13,15 +13,15 @@ thumbnailBorder: true
 isHidden: true
 ---
 
-This is a command line tool designed to make monitoring the status of websites tracked by <a href="https://uptimerobot.com/" target="_blank" rel="noopener noreferrer">UptimeRobot</a> as effortless as possible. Built using React and the Ink renderer, uptime-checker offers a developer-friendly solution for keeping tabs on website uptime, performance, and outages in a sleek terminal interface.
+I built uptime-checker so I could monitor websites tracked by <a href="https://uptimerobot.com/" target="_blank" rel="noopener noreferrer">UptimeRobot</a> without leaving the terminal. I built it with React and the Ink renderer, which gives it a clean developer-friendly UI for checking uptime, performance, and outages.
 
-With just a single command, users can check the current status of their monitored websites, including uptime ratio, average response time, time since the last outage, and more. The tool retrieves data directly from UptimeRobot using a read-only access token and presents it in a concise, readable format - ideal for quick status checks from the terminal.
+You run a single command and it prints the current status of your monitored websites, including uptime ratio, average response time, and time since the last outage. The tool talks to UptimeRobot directly with a read-only access token and lays the data out in a concise, readable format that's great for quick status checks.
 
-Key Features
+Key features
 
-- Uptime Status: Instantly view whether your website is up or down.
-- Uptime Statistics: Get detailed metrics like uptime percentage over the past month and average response time.
-- Outage Insights: See when the last outage occurred and how long it lasted.
-- Built with React and Ink: The command line interface is rendered beautifully with the Ink library, bringing a modern and smooth experience to the terminal.
+- Uptime status: see at a glance whether each site is up or down.
+- Uptime statistics: pull metrics like uptime percentage over the past month and average response time.
+- Outage insights: see when the last outage hit and how long it lasted.
+- Built with React and Ink: Ink renders the CLI smoothly and gives it a modern feel right in the terminal.
 
-For developers who value efficiency and a clutter-free workflow, uptime-checker integrates the critical aspects of website monitoring into your terminal environment, allowing you to quickly assess the health of your projects without leaving your command line. Whether you’re debugging performance issues or monitoring your site’s uptime, uptime-checker provides all the essential data you need in one place.
+If you want a clutter-free workflow, uptime-checker brings website monitoring into your terminal so you can check on your projects without context-switching. Whether you're debugging a performance issue or just glancing at your site's uptime, it puts the data you need in one place.

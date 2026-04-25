@@ -10,6 +10,6 @@ tags: [python]
 isHidden: true
 ---
 
-The Mandelbrot Set is the set of complex numbers that stays bounded when iterated on the function, `f(z) = z² + c`. A famous example of a fractal in mathematics, the Mandelbrot Set has infinite complexity which makes exploring it quite interesting. In Python, using the UI and graphics libraries TKinter and Pillow, I created an interactive Mandelbrot Set visualizer that lets you zoom into parts of the fractal.
+The Mandelbrot Set is the set of complex numbers that stay bounded when you iterate them on `f(z) = z² + c`. It's one of the most famous fractals in mathematics, and its infinite complexity makes it endlessly fun to explore. I built an interactive Mandelbrot Set visualizer in Python that lets you zoom into any part of the fractal. I used TKinter for the UI and Pillow for the graphics.
 
-One challenge with the Mandelbrot set is that it is quite computationally intensive to visualize. For each pixel in the visualization, those coordinates need to be iterated on the before-mentioned formula. In order to speed up the visualization, this project uses multiprocessing to split up the work load across all available CPU cores on the computer. Through this project I gained experience in software graphics and designing user interfaces.
+The hard part is that visualizing the Mandelbrot set takes a lot of compute. I have to iterate the formula above for every pixel on screen. To speed things up, I split the work across all available CPU cores using Python's multiprocessing module. I picked up a lot about software graphics and UI design while building this.

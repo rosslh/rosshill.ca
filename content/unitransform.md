@@ -10,4 +10,4 @@ isHidden: true
 excerpt: A JavaScript library for visually consistent color transformations through HSLuv color space
 ---
 
-Unitransform is a JavaScript library for visually consistent color transformations through HSLuv color space. For example, with this library you can saturate or lighten multiple colors and all colors will look like they changed by the same amount.
+I built Unitransform, a JavaScript library that performs visually consistent color transformations through HSLuv color space. For example, when you saturate or lighten a set of colors, every color looks like it changed by the same amount.

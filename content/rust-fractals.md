@@ -10,10 +10,10 @@ excerpt: Explore the Mandelbrot set fractal in your web browser
 tags: [rust, webassembly, typescript, pwa]
 ---
 
-Mandelbrot.site is a web-based viewer that allows users to explore the fascinating world of the Mandelbrot set, a complex mathematical fractal. The project leverages cutting-edge web technologies, including Rust, WebAssembly (Wasm), TypeScript, and Leaflet.js, to create a high-performance, interactive, and visually captivating experience.
+I built Mandelbrot.site as a web-based viewer for exploring the Mandelbrot set, a famously complex mathematical fractal. The project uses Rust, WebAssembly, TypeScript, and Leaflet.js to make the experience fast, interactive, and visually striking right in the browser.
 
-The viewer enables users to navigate through different regions of the Mandelbrot set seamlessly, offering features such as dynamic zooming, iteration adjustment, and customizable color schemes. Additionally, users can explore multibrot sets and generate shareable URLs to share their unique fractal discoveries with others.
+You can pan and zoom seamlessly across different regions of the set, adjust the iteration count, and switch between custom color schemes. You can also explore multibrot sets and generate shareable URLs so other people can land on the exact same view of the fractal you discovered.
 
-Under the hood, the application combines the power of Rust for high-performance computations, WebAssembly for efficient execution in the browser, and TypeScript for enhanced frontend development. The integration of these technologies, along with innovative optimizations like rectangle checking and the use of Web Workers, ensures a smooth and responsive user experience.
+Under the hood, I run the heavy math in Rust, ship it to the browser as WebAssembly for near-native speed, and wire everything up with TypeScript on the frontend. I added a few optimizations to keep things responsive, including rectangle checking to skip uniform regions and Web Workers to spread work across CPU cores.
 
-Mandelbrot.site demonstrates the potential of modern web technologies in creating sophisticated, CPU-intensive applications. It serves as an educational tool, an artistic platform, and a source of inspiration for those interested in the intersection of mathematics, computation, and visual beauty.
+I think Mandelbrot.site shows what modern web technologies can do for sophisticated, CPU-intensive applications. I hope it works as a teaching tool, an artistic platform, and a starting point for anyone curious about where math, computation, and visual beauty meet.

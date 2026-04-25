@@ -12,18 +12,18 @@ repository: https://github.com/rosslh/ReqWise
 isHidden: true
 ---
 
-I made ReqWise for one reason: Building websites is fun. Collaborating with clients is _hard_.
+I built ReqWise for one reason: Building websites is fun. Collaborating with clients is _hard_.
 
-I graduated from university in April 2020. As part of my computer science degree, I worked on a box-office ticketing website for a local festival as a capstone project. Although my team was eager to start coding the project, it became clear that the hardest part would be understanding the client's expectations, specifying their requirements, and getting approval on designs. Redoing work due to misunderstood requirements, keeping track of multiple stakeholders, and getting final sign-off were just some of the challenges we faced over the course of the year.
+I graduated from university in April 2020. As part of my computer science degree, my team built a box-office ticketing website for a local festival as our capstone project. We were eager to start coding, but it quickly became clear that the hardest part would be understanding the client's expectations, specifying their requirements, and getting approval on designs. Over the course of the year, we redid work because we'd misunderstood requirements, struggled to keep track of multiple stakeholders, and chased final sign-off.
 
-If you work in a digital agency or as a freelancer, you have probably faced similar challenges. Now there's a better way to collaborate with clients than sending documents over email. Manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.
+If you work in a digital agency or as a freelancer, you've probably faced similar challenges. ReqWise gives you a better way to collaborate with clients than sending documents over email. You manage all of your client interaction in one place, from the initial brainstorming of requirements to the final design sign-off.
 
 ### Feature overview
 
-The first feature ReqWise offers is **Questionnaires**, where you can ask your stakeholders questions to get an idea for what you're supposed to build. Questionnaires can be used to supplement time-consuming meetings.
+ReqWise's first feature is **Questionnaires**. You ask your stakeholders questions to figure out what they want you to build, which cuts down on time-consuming meetings.
 
-ReqWise's next feature is **Organizing Requirements**. Arrange stakeholders' needs into requirements and sub-requirements. Prioritize the most important ones.
+Next is **Organizing Requirements**. You arrange stakeholders' needs into requirements and sub-requirements, then prioritize the ones that matter most.
 
-ReqWise isn't limited to text-based requirements. Upload **Files and Designs** from your computer or draw diagrams with the built-in editor.
+ReqWise doesn't limit you to text. You can upload **Files and Designs** from your computer or draw diagrams in the built-in editor.
 
-Lastly, you can receive **Feedback and Approval** from clients. Stakeholders can review requirements and designs to make sure that you build what they want.
+Finally, you collect **Feedback and Approval** from clients. Stakeholders review requirements and designs so you can be sure you're building what they want.
