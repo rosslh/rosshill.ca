@@ -34,9 +34,7 @@
           data-testid={dataTestId}
           data-sveltekit-preload-data={href ? "hover" : undefined}
           target={href && href === post.website ? "_blank" : undefined}
-          rel={href && href === post.website
-            ? "noopener noreferrer"
-            : undefined}
+          rel={href && href === post.website ? "noopener" : undefined}
         >
           <img
             src={`/experience/${post.thumbnail.name}.${post.thumbnail.extension}`}

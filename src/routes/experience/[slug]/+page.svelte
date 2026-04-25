@@ -105,7 +105,7 @@
         {/if}
         {#if post.website}
           <InlineSeparator />
-          <a target="_blank" rel="noopener noreferrer" href={post.website}>
+          <a target="_blank" rel="noopener" href={post.website}>
             Website
           </a>
         {/if}

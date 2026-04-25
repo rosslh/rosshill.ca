@@ -10,7 +10,7 @@ excerpt: Explore the Mandelbrot set fractal in your web browser
 tags: [rust, webassembly, typescript, pwa]
 ---
 
-I built <a href="https://mandelbrot.site" target="_blank" rel="noopener noreferrer">Mandelbrot.site</a> as a web-based viewer for exploring the Mandelbrot set, a famously complex mathematical fractal. The project uses Rust, WebAssembly, TypeScript, and Leaflet.js to make the experience fast, interactive, and visually striking right in the browser.
+I built <a href="https://mandelbrot.site" target="_blank" rel="noopener">Mandelbrot.site</a> as a web-based viewer for exploring the Mandelbrot set, a famously complex mathematical fractal. The project uses Rust, WebAssembly, TypeScript, and Leaflet.js to make the experience fast, interactive, and visually striking right in the browser.
 
 You can pan and zoom seamlessly across different regions of the set, adjust the iteration count, and switch between custom color schemes. You can also explore multibrot sets and generate shareable URLs so other people can land on the exact same view of the fractal you discovered.
 
