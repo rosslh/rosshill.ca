@@ -6,7 +6,7 @@ thumbnail: mapledeploy-thumb
 image: mapledeploy
 imageExt: png
 excerpt: Powerful hosting on Canadian soil. Git push deploys, managed databases, flat pricing.
-tags: [typescript, react, nestjs, postgresql]
+tags: [typescript, nextdotjs, nestjs, postgresql]
 website: https://mapledeploy.ca
 ---
 
