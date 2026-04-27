@@ -1,64 +1,22 @@
-@use "/node_modules/hsluv-sass";
-
 // Colors
 
-$theme-hue: 245;
-$work-hue: 135;
-$project-hue: 272;
-$other-hue: 12;
-
 @mixin light-theme() {
-  $theme-saturation: 20%;
-  $category-saturation: 74%;
-  $category-lightness: 46%;
+  --color-work: oklch(52.4164% 0.1067 150.11);
+  --color-project: oklch(55.2274% 0.1864 290.19);
+  --color-other: oklch(55.7429% 0.184 25.16);
 
-  $marker-saturation: $category-saturation - 10;
-  $marker-lightness: $category-lightness + 10;
+  --color-work-marker: oklch(60.9566% 0.1073 150.08);
+  --color-project-marker: oklch(63.1167% 0.1329 291.31);
+  --color-other-marker: oklch(64.0909% 0.168 22.66);
 
-  --color-work: #{hsluv-sass.hsluv(
-      $work-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-project: #{hsluv-sass.hsluv(
-      $project-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-other: #{hsluv-sass.hsluv(
-      $other-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-
-  --color-work-marker: #{hsluv-sass.hsluv(
-      $work-hue,
-      $marker-saturation,
-      $marker-lightness
-    )};
-  --color-project-marker: #{hsluv-sass.hsluv(
-      $project-hue,
-      $marker-saturation,
-      $marker-lightness
-    )};
-  --color-other-marker: #{hsluv-sass.hsluv(
-      $other-hue,
-      $marker-saturation,
-      $marker-lightness
-    )};
-
-  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 22%)};
-  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 38%)};
-  --color-link: #{hsluv-sass.hsluv($theme-hue, 90%, 40%)};
-  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 44%)};
-  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 60%)};
-  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 90%)};
-  --color-panel-background: #{hsluv-sass.hsluv(
-      $theme-hue,
-      $theme-saturation,
-      95%
-    )};
-  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 98%)};
+  --color-heading: oklch(32.7396% 0.0158 259.8);
+  --color-foreground: oklch(46.5001% 0.0219 258.37);
+  --color-link: oklch(48.024% 0.1053 245.85);
+  --color-subtitle: oklch(51.7754% 0.0233 257.51);
+  --color-focus-outline: oklch(65.5592% 0.0308 256.52);
+  --color-border: oklch(91.4209% 0.008 253.86);
+  --color-panel-background: oklch(95.7475% 0.0045 258.37);
+  --color-background: oklch(98.2399% 0.0013 287.32);
 
   font-family:
     "Inter",
@@ -75,42 +33,22 @@ $other-hue: 12;
 }
 
 @mixin dark-theme() {
-  $theme-saturation: 35%;
-  $category-saturation: 70%;
-  $category-lightness: 70%;
-
-  --color-work: #{hsluv-sass.hsluv(
-      $work-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-project: #{hsluv-sass.hsluv(
-      $project-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-other: #{hsluv-sass.hsluv(
-      $other-hue,
-      $category-saturation,
-      $category-lightness
-    )};
+  --color-work: oklch(72.7377% 0.1391 150.09);
+  --color-project: oklch(74.8587% 0.0988 292.5);
+  --color-other: oklch(75.5321% 0.1055 19.84);
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
-  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 95%)};
-  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 82%)};
-  --color-link: #{hsluv-sass.hsluv($theme-hue, 90%, 77%)};
-  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 70%)};
-  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 35%)};
-  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 21%)};
-  --color-panel-background: #{hsluv-sass.hsluv(
-      $theme-hue,
-      $theme-saturation,
-      14%
-    )};
-  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 8%)};
+  --color-heading: oklch(95.7293% 0.0074 260.77);
+  --color-foreground: oklch(84.4377% 0.0271 257.04);
+  --color-link: oklch(80.1083% 0.093 252.82);
+  --color-subtitle: oklch(74.1374% 0.0481 256.49);
+  --color-focus-outline: oklch(43.7833% 0.0361 256.12);
+  --color-border: oklch(31.833% 0.0264 257.52);
+  --color-panel-background: oklch(25.8017% 0.0215 257.28);
+  --color-background: oklch(20.6235% 0.0167 252.52);
 
   font-family:
     "Inter",
@@ -127,98 +65,45 @@ $other-hue: 12;
 }
 
 @mixin cyberpunk-theme() {
-  $yellow: hsluv-sass.hsluv(75, 82%, 85%);
-  $pink-hue: 310;
-  $blue-hue: 270;
+  $yellow: oklch(86.8479% 0.1425 99.11);
 
-  $work-hue: 45;
-  $project-hue: 190;
-  $other-hue: 130;
-
-  $background-saturation: 45%;
-  $foreground-saturation: 100%;
-  $border-saturation: 55%;
-
-  $category-lightness: 75%;
-  $category-saturation: 75%;
-
-  --color-work: #{hsluv-sass.hsluv(
-      $work-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-project: #{hsluv-sass.hsluv(
-      $project-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-other: #{hsluv-sass.hsluv(
-      $other-hue,
-      $category-saturation,
-      $category-lightness
-    )};
+  --color-work: oklch(79.1001% 0.1261 66.74);
+  --color-project: oklch(77.4284% 0.0959 193.64);
+  --color-other: oklch(76.6727% 0.1779 145.53);
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
   --color-heading: #{$yellow};
-  --color-foreground: #{hsluv-sass.hsluv(
-      $blue-hue,
-      $foreground-saturation,
-      80%
-    )};
+  --color-foreground: oklch(83.3295% 0.0891 290.06);
   --color-link: #{$yellow};
-  --color-subtitle: #{hsluv-sass.hsluv($blue-hue, $foreground-saturation, 70%)};
-  --color-focus-outline: #{hsluv-sass.hsluv($pink-hue, $border-saturation, 37%)};
-  --color-border: #{hsluv-sass.hsluv($pink-hue, $border-saturation, 32%)};
-  --color-panel-background: #{hsluv-sass.hsluv(
-      $blue-hue,
-      $background-saturation,
-      7%
-    )};
-  --color-background: #{hsluv-sass.hsluv($blue-hue, $background-saturation, 3%)};
+  --color-subtitle: oklch(75.1682% 0.1362 288.9);
+  --color-focus-outline: oklch(47.1995% 0.1179 328.45);
+  --color-border: oklch(42.8081% 0.1069 328.61);
+  --color-panel-background: oklch(20.3651% 0.0523 287.63);
+  --color-background: oklch(15.1289% 0.0398 288.22);
 
   font-family: "IBM Plex Mono", monospace;
 }
 
 @mixin black-theme() {
-  $theme-saturation: 0%;
-  $category-saturation: 75%;
-  $category-lightness: 65%;
-
-  --color-work: #{hsluv-sass.hsluv(
-      $work-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-project: #{hsluv-sass.hsluv(
-      $project-hue,
-      $category-saturation,
-      $category-lightness
-    )};
-  --color-other: #{hsluv-sass.hsluv(
-      $other-hue,
-      $category-saturation,
-      $category-lightness
-    )};
+  --color-work: oklch(68.3059% 0.1407 150.06);
+  --color-project: oklch(70.756% 0.1228 291.59);
+  --color-other: oklch(71.4177% 0.137 21.08);
 
   --color-work-marker: var(--color-work);
   --color-project-marker: var(--color-project);
   --color-other-marker: var(--color-other);
 
-  --color-heading: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 100%)};
-  --color-foreground: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 85%)};
-  --color-link: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 100%)};
-  --color-subtitle: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 67%)};
-  --color-focus-outline: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 35%)};
-  --color-border: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 12%)};
-  --color-panel-background: #{hsluv-sass.hsluv(
-      $theme-hue,
-      $theme-saturation,
-      4%
-    )};
-  --color-background: #{hsluv-sass.hsluv($theme-hue, $theme-saturation, 0%)};
+  --color-heading: oklch(100% 0 0);
+  --color-foreground: oklch(86.9944% 0 0);
+  --color-link: oklch(100% 0 0);
+  --color-subtitle: oklch(71.5474% 0 0);
+  --color-focus-outline: oklch(43.8605% 0 0);
+  --color-border: oklch(23.9293% 0 0);
+  --color-panel-background: oklch(16.3758% 0 0);
+  --color-background: oklch(0% 0 0);
 
   font-family:
     "Inter",

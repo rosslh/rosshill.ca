@@ -1,8 +1,7 @@
 import chroma from "chroma-js";
 import { APCAcontrast, sRGBtoY } from "apca-w3";
 import fs from "node:fs";
-import { hsluvToHex, hexToHsluv } from "hsluv-ts";
-import { keyBy, merge, escapeRegExp } from "lodash-es";
+import { keyBy, merge } from "lodash-es";
 
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
@@ -45,44 +44,26 @@ function handleFileError(error: Error | null): void {
   }
 }
 
-const getNumbersFromStylesheetProperty = (
-  fileLines: string[],
-  propertyName: string,
-): number[] => {
-  const escapedPropertyName = escapeRegExp(propertyName);
-  const pattern = new RegExp(`^\\s*${escapedPropertyName}:.*;$`);
-  const matches = fileLines.filter((line) => pattern.test(line));
-
-  return matches.map((m) => Number.parseFloat(m.replaceAll(/[^\d]*/g, "")));
-};
+const oklchToUppercaseHex = (oklch: string): string =>
+  chroma(oklch).hex().replace(/^#/, "").toUpperCase();
 
 function getForegroundColors(): { light: string; dark: string } {
-  const fileLines = fs
-    .readFileSync(inputPaths.stylesheet, "utf8")
-    .split(/\r?\n/);
-  const [themeHue] = getNumbersFromStylesheetProperty(fileLines, "$theme-hue");
-  const [themeSaturation] = getNumbersFromStylesheetProperty(
-    fileLines,
-    "$theme-saturation",
-  );
-  const [darkColorLightness, lightColorLightness] =
-    getNumbersFromStylesheetProperty(fileLines, "--color-heading");
+  const stylesheet = fs.readFileSync(inputPaths.stylesheet, "utf8");
+  const captures = [
+    ...stylesheet.matchAll(/--color-heading:\s*(oklch\([^)]+\))\s*;/g),
+  ].map((m) => m[1]);
 
-  if (
-    !(themeHue && themeSaturation && darkColorLightness && lightColorLightness)
-  ) {
-    throw new TypeError("Could not parse theme colors");
+  const [lightOklch, darkOklch] = captures;
+  if (captures.length !== 3 || !lightOklch || !darkOklch) {
+    throw new TypeError(
+      `Expected 3 literal oklch() --color-heading declarations (light, dark, black); found ${captures.length}`,
+    );
   }
 
-  const light = hsluvToHex([themeHue, themeSaturation, lightColorLightness])
-    .replace(/^#/, "")
-    .toUpperCase();
-
-  const dark = hsluvToHex([themeHue, themeSaturation, darkColorLightness])
-    .replace(/^#/, "")
-    .toUpperCase();
-
-  return { light, dark };
+  return {
+    light: oklchToUppercaseHex(lightOklch),
+    dark: oklchToUppercaseHex(darkOklch),
+  };
 }
 
 function getContrast(color1: string, color2: string): number {
@@ -106,16 +87,12 @@ function getBestContrastForeground(
 }
 
 function getColorsForTag(icon: Icon, light: string, dark: string): TagColor {
-  const hsluv = hexToHsluv(`#${icon.hex}`);
+  const [L, C, H] = chroma(`#${icon.hex}`).oklch();
+  const cappedC = Math.min(C || 0, 0.18);
 
-  const adjustedSaturation = Math.min(hsluv[1], 80);
-  const adjustedHsluv = [hsluv[0], adjustedSaturation, hsluv[2]] as const;
-
-  const background = hsluvToHex([
-    adjustedHsluv[0],
-    adjustedHsluv[1],
-    adjustedHsluv[2],
-  ])
+  const background = chroma
+    .oklch(L, cappedC, H)
+    .hex()
     .replace(/^#/, "")
     .toUpperCase();
 

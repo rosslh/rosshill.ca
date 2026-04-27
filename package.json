@@ -21,7 +21,7 @@
     "test": "wireit",
     "upgrade": "ncu -u -x eslint,@typescript-eslint/parser,@typescript-eslint/eslint-plugin && npm i --force"
   },
-  "browserslist": "last 5 years or ie>=11 or >0.2%",
+  "browserslist": "last 5 years or >0.2%",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.26.5",
@@ -51,8 +51,6 @@
     "eslint-plugin-prettier": "^5.2.2",
     "eslint-plugin-svelte": "^2.46.1",
     "eslint-plugin-unicorn": "^56.0.1",
-    "hsluv-sass": "^2.0.1",
-    "hsluv-ts": "^1.0.1",
     "imagemin": "^9.0.0",
     "imagemin-webp": "^8.0.0",
     "lodash-es": "^4.17.21",
