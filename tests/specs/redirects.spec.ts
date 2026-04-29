@@ -71,13 +71,9 @@ test.describe("Legacy route segment redirects", () => {
     }) => {
       const firstCase = redirectCases[0];
       expect(firstCase).toBeDefined();
-      const response = await page.goto(
-        `/${segment}/${firstCase.priorSlug}`,
-      );
+      const response = await page.goto(`/${segment}/${firstCase.priorSlug}`);
       expect(response?.status()).toBe(200);
-      expect(page.url()).toBe(
-        `${baseURL}/experience/${firstCase.currentSlug}`,
-      );
+      expect(page.url()).toBe(`${baseURL}/experience/${firstCase.currentSlug}`);
     });
   }
 });
