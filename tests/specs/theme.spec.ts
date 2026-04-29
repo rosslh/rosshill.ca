@@ -37,10 +37,7 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   const computedTheme =
     theme === "auto" ? await getPreferredColorScheme(page) : theme;
 
-  const background = (await getCssVariable(page, "color-background")).replace(
-    /\s/g,
-    "",
-  );
+  const background = (await getCssVariable(page, "color-background")).trim();
   const contrastWithWhite = chroma.contrast(background, "white");
   const contrastWithBlack = chroma.contrast(background, "black");
 

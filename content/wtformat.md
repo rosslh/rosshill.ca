@@ -1,5 +1,6 @@
 ---
 title: WTFormat.com
+priorTitles: [WTFormat]
 eventType: project
 date: 2018-07-05
 repository: https://github.com/rosslh/WTFormat.com

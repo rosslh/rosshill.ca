@@ -1,5 +1,6 @@
 ---
 title: Mandelbrot.site
+priorTitles: [Mandelbrot Set Explorer, Mandelbrot Set in Rust, Mandelbrot Set Explorer v2]
 eventType: project
 date: 2021-01-01
 repository: https://github.com/rosslh/Mandelbrot.site

@@ -105,9 +105,7 @@
         {/if}
         {#if post.website}
           <InlineSeparator />
-          <a target="_blank" rel="noopener" href={post.website}>
-            Website
-          </a>
+          <a target="_blank" rel="noopener" href={post.website}> Website </a>
         {/if}
       </div>
       {#if post.tags.length}

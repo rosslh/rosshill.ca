@@ -1,8 +1,10 @@
 ---
-title: Web of Devs
+title: WebOfDevs.com
+priorTitles: [Web of Devs]
 eventType: project
 date: 2023-03-05
 website: https://webofdevs.com
+repository: https://github.com/rosslh/WebOfDevs.com
 thumbnail: webofdevs-thumb
 thumbnailBorder: true
 image: webofdevs

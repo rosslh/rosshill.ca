@@ -1,5 +1,6 @@
 ---
 title: MetaProjection.ca
+priorTitles: [MetaProjection]
 eventType: project
 date: 2019-08-20
 website: https://2021.metaprojection.ca
