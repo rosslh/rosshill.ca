@@ -1,9 +1,9 @@
 ---
-title: WTFormat.com
-priorTitles: [WTFormat]
+title: WTFormat
+priorTitles: [WTFormat.com]
 eventType: project
 date: 2018-07-05
-repository: https://github.com/rosslh/WTFormat.com
+repository: https://github.com/rosslh/WTFormat
 website: https://wtformat.com
 image: wtformat
 thumbnail: moment

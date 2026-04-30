@@ -1,10 +1,10 @@
 ---
-title: WebOfDevs.com
-priorTitles: [Web of Devs]
+title: Web of Devs
+priorTitles: [WebOfDevs.com]
 eventType: project
 date: 2023-03-05
 website: https://webofdevs.com
-repository: https://github.com/rosslh/WebOfDevs.com
+repository: https://github.com/rosslh/Web-of-Devs
 thumbnail: webofdevs-thumb
 thumbnailBorder: true
 image: webofdevs
@@ -13,7 +13,7 @@ excerpt: A directory of cool developer websites, homepages, and portfolios
 tags: [typescript, svelte, nestjs, postgresql]
 ---
 
-I built <a href="https://webofdevs.com/" target="_blank" rel="noopener">WebofDevs.com</a> as a curated community for developers who want to share their personal websites, portfolios, and homepages. Visitors browse a collection of unique developer sites for inspiration and contribute their own work back to the community.
+I built <a href="https://webofdevs.com/" target="_blank" rel="noopener">Web of Devs</a> as a curated community for developers who want to share their personal websites, portfolios, and homepages. Visitors browse a collection of unique developer sites for inspiration and contribute their own work back to the community.
 
 You can scroll through a variety of developer websites, favorite the ones that stand out, and add your own to the mix. For developers showing off their work, Web of Devs is a place to connect with like-minded people and pick up fresh ideas about web design and content presentation.
 

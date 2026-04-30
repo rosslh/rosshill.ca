@@ -1,10 +1,10 @@
 ---
-title: MetaProjection.ca
-priorTitles: [MetaProjection]
+title: MetaProjection
+priorTitles: [MetaProjection.ca]
 eventType: project
 date: 2019-08-20
 website: https://2021.metaprojection.ca
-repository: https://github.com/rosslh/MetaProjection.ca
+repository: https://github.com/rosslh/MetaProjection
 image: metaprojection
 thumbnail: metaprojection-thumb
 thumbnailBorder: true
