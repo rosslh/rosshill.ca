@@ -18,7 +18,7 @@
   const meta = {
     title: "Ross Hill - Projects and Experience",
     description:
-      "I'm a software engineer from Toronto with a passion for front-end development. Learn about my projects, professional experience, education, and more.",
+      "I'm a full-stack engineer in Toronto turning messy product and technical problems into intuitive, reliable software and practical AI workflows.",
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
@@ -64,10 +64,13 @@
     <p>
       {#key $themeStore}
         <Balancer>
-          As a seasoned full-stack engineer who's passionate about front-end
-          development, I deliver delightful and impactful user experiences. My
-          expertise in TypeScript and dedication to code quality enable me to
-          build robust applications that drive results.
+          I’m a full-stack engineer in Toronto with a builder’s mindset. I like
+          turning messy product and technical problems into software that feels
+          intuitive, useful, and reliable. I lead engineering work, help teams
+          make practical technical decisions, and stay close to the craft of
+          building. Recently, I’ve been exploring how AI tools can improve
+          product and engineering workflows without getting in the way of good
+          software design.
         </Balancer>
       {/key}
     </p>
@@ -92,6 +95,7 @@
     }
 
     p {
+      line-height: var(--line-height-loose);
       margin: var(--spacing-m) auto !important;
     }
   }
