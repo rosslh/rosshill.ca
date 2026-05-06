@@ -13,7 +13,7 @@ excerpt: A directory of cool developer websites, homepages, and portfolios
 tags: [typescript, svelte, nestjs, postgresql]
 ---
 
-I built <a href="https://webofdevs.com/" target="_blank" rel="noopener">Web of Devs</a> as a curated directory of personal developer websites, portfolios, and homepages. Visitors browse for inspiration, favorite the ones that stand out, and submit their own.
+I built <a href="https://webofdevs.com/" target="_blank" rel="noopener">Web of Devs</a> as a curated directory of personal developer websites, portfolios, and homepages. Visitors browse for inspiration, favourite the ones that stand out, and submit their own.
 
 Most "best portfolio" lists are someone's blog post from 2019 with broken links. I wanted something living. Developers sign in with GitHub, submit their site, and as long as it clears a quality bar it gets in: a personal site (not a company or product page), with real content, a description of the author, evident design effort, working mobile layout, HTTPS, a sub-two-second load, no obvious bugs, English copy, and headers that allow iframe embedding.
 

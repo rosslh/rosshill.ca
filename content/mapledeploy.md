@@ -10,7 +10,7 @@ tags: [typescript, nextdotjs, nestjs, postgresql]
 website: https://mapledeploy.ca
 ---
 
-I built <a href="https://mapledeploy.ca" target="_blank" rel="noopener">MapleDeploy</a> as a Canadian alternative to Heroku, Railway, and Render. A customer signs up, picks a plan, and within minutes has a dedicated deployment platform running in a Toronto data center. They never touch the infrastructure.
+I built <a href="https://mapledeploy.ca" target="_blank" rel="noopener">MapleDeploy</a> as a Canadian alternative to Heroku, Railway, and Render. A customer signs up, picks a plan, and within minutes has a dedicated deployment platform running in a Toronto data centre. They never touch the infrastructure.
 
 The motivation is data sovereignty. Plenty of Canadian companies need to keep their data in Canada for regulatory or compliance reasons, but the developer-friendly hosting platforms all run on US infrastructure. I wanted to fill that gap. Every server, database, and byte of customer data stays in Canada under Canadian law.
 

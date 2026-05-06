@@ -10,4 +10,4 @@ isHidden: true
 excerpt: A JavaScript library for visually consistent color transformations through HSLuv color space
 ---
 
-I built <a href="https://www.npmjs.com/package/unitransform" target="_blank" rel="noopener noreferrer">Unitransform</a>, a JavaScript library that performs visually consistent color transformations through HSLuv color space. For example, when you saturate or lighten a set of colors, every color looks like it changed by the same amount.
+I built <a href="https://www.npmjs.com/package/unitransform" target="_blank" rel="noopener noreferrer">Unitransform</a>, a JavaScript library that performs visually consistent colour transformations through HSLuv colour space. For example, when you saturate or lighten a set of colours, every colour looks like it changed by the same amount.
