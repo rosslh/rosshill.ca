@@ -1,5 +1,5 @@
 import { data as postsObject } from "$data/posts.json";
-import { formatPostTitle, slugify } from "$lib/functions";
+import { formatPostTitle, normalizePostSeason, slugify } from "$lib/functions";
 import tagColors from "$data/tagColors.json";
 import type { TagColors, PostItemStub } from "$lib/types";
 import { PostCategory } from "$lib/types";
@@ -12,6 +12,7 @@ const posts: PostItemStub[] = Object.values(postsObject)
       end: post.endDate,
       isOngoing: post.isOngoing ?? false,
       isSeasonal: post.isSeasonal ?? false,
+      season: normalizePostSeason(post.season),
     },
     eventType:
       Object.values(PostCategory).find((cat) => cat === post.eventType) ??
@@ -20,6 +21,7 @@ const posts: PostItemStub[] = Object.values(postsObject)
     excerpt: post.excerpt,
     hasContent: Boolean(post.contents),
     repository: post.repository,
+    roles: post.roles,
     slug: slugify(post.title),
     tags: post.tags ?? [],
     thumbnail: {

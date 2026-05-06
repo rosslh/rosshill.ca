@@ -1,6 +1,7 @@
 ---
 title: Mandelbrot.site
-priorTitles: [Mandelbrot Set Explorer, Mandelbrot Set in Rust, Mandelbrot Set Explorer v2]
+priorTitles:
+  [Mandelbrot Set Explorer, Mandelbrot Set in Rust, Mandelbrot Set Explorer v2]
 eventType: project
 date: 2021-01-01
 repository: https://github.com/rosslh/Mandelbrot.site
@@ -11,10 +12,12 @@ excerpt: Explore the Mandelbrot set fractal in your web browser
 tags: [rust, webassembly, typescript, pwa]
 ---
 
-I built <a href="https://mandelbrot.site" target="_blank" rel="noopener">Mandelbrot.site</a> as a web-based viewer for exploring the Mandelbrot set, a famously complex mathematical fractal. The project uses Rust, WebAssembly, TypeScript, and Leaflet.js to make the experience fast, interactive, and visually striking right in the browser.
+I built <a href="https://mandelbrot.site" target="_blank" rel="noopener">Mandelbrot.site</a> as a browser-based viewer for the Mandelbrot set. The interface treats the complex plane like a slippy map: you pan and zoom with Leaflet.js, and tiles are computed on demand instead of pulled from a server.
 
-You can pan and zoom seamlessly across different regions of the set, adjust the iteration count, and switch between custom color schemes. You can also explore multibrot sets and generate shareable URLs so other people can land on the exact same view of the fractal you discovered.
+The escape-time math runs in Rust, compiled to WebAssembly via wasm-pack. Tile requests are dispatched to a pool of Web Workers (using threads.js), which keeps the main thread free for UI work and parallelizes rendering across CPU cores. One small optimization helps a lot in practice: because the Mandelbrot set is simply connected, if every point on a tile's border is in the set, the whole tile is. I check the perimeter first and skip the interior when that holds, which makes deep regions of solid black render almost instantly.
 
-Under the hood, I run the heavy math in Rust, ship it to the browser as WebAssembly for near-native speed, and wire everything up with TypeScript on the frontend. I added a few optimizations to keep things responsive, including rectangle checking to skip uniform regions and Web Workers to spread work across CPU cores.
+You can adjust the iteration count, switch between roughly thirty color palettes, reverse them, tweak hue, saturation, and lightness in your choice of color space (HSL, HSLuv, LCh, or Okhsl), and clamp the palette to a custom iteration range. Smooth coloring is optional. The exponent is configurable too, so you can wander into multibrot sets with cubic, quartic, or higher powers.
 
-I think Mandelbrot.site shows what modern web technologies can do for sophisticated, CPU-intensive applications. I hope it works as a teaching tool, an artistic platform, and a starting point for anyone curious about where math, computation, and visual beauty meet.
+Every view is encoded in URL parameters, so sharing a link drops someone onto the exact coordinates, zoom, and color settings you found. Image export renders the current viewport in 24 vertical strips (each a parallel worker job), stitches them on a canvas, and optionally runs the PNG through oxipng before saving. The whole thing is a Progressive Web App, so it installs and runs offline once the assets are cached.
+
+Treating the complex plane as a tile grid is what made the rest fall into place. Once tiles were the unit of work, parallelization and optimization came along for the ride.

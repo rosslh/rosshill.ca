@@ -33,11 +33,29 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   expect(await page.evaluate(() => document.cookie)).toContain(
     `theme=${theme}`,
   );
+  expect(
+    await page.evaluate(() => document.documentElement.dataset.theme),
+  ).toBe(theme);
 
   const computedTheme =
     theme === "auto" ? await getPreferredColorScheme(page) : theme;
 
   const background = (await getCssVariable(page, "color-background")).trim();
+  const [htmlBackground, bodyBackground, appBackground] = await page.evaluate(
+    () => {
+      const html = getComputedStyle(document.documentElement);
+      const body = getComputedStyle(document.body);
+      const app = getComputedStyle(
+        document.querySelector('[data-testid="app-wrapper"]')!,
+      );
+
+      return [html.backgroundColor, body.backgroundColor, app.backgroundColor];
+    },
+  );
+
+  expect(htmlBackground).toBe(appBackground);
+  expect(bodyBackground).toBe(appBackground);
+
   const contrastWithWhite = chroma.contrast(background, "white");
   const contrastWithBlack = chroma.contrast(background, "black");
 

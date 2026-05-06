@@ -6,6 +6,7 @@ endDate: 2019-08-20
 thumbnail: verafin-thumb
 image: verafin
 excerpt: Anti-financial crime software targeting fraud and money laundering
+roles: [Software Engineer Intern]
 tags: [java, postgresql, backbonedotjs]
 website: https://verafin.com
 ---

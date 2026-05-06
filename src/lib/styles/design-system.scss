@@ -123,30 +123,37 @@
   }
 }
 
+:root,
 .app-wrapper {
   @include light-theme();
 }
 
 @media (prefers-color-scheme: light) {
+  :root,
   div.app-wrapper {
     @include light-theme();
   }
 }
 @media (prefers-color-scheme: dark) {
+  :root,
   div.app-wrapper {
     @include dark-theme();
   }
 }
 
+html[data-theme="light"],
 div.app-wrapper[data-theme="light"] {
   @include light-theme();
 }
+html[data-theme="dark"],
 div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
 }
+html[data-theme="cyberpunk"],
 div.app-wrapper[data-theme="cyberpunk"] {
   @include cyberpunk-theme();
 }
+html[data-theme="black"],
 div.app-wrapper[data-theme="black"] {
   @include black-theme();
 }

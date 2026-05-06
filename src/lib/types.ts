@@ -1,8 +1,11 @@
+export type PostSeason = "summer" | "winter";
+
 export type PostDate = {
   start: string; // needs to be serialized as a string, not a Date object
   end?: string;
   isOngoing: boolean;
   isSeasonal: boolean;
+  season?: PostSeason;
 };
 
 export enum PostCategory {
@@ -15,6 +18,7 @@ type PostItemBase = {
   date: PostDate;
   excerpt: string;
   repository?: string;
+  roles?: string[];
   website?: string;
   title: string;
   slug: string;

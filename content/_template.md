@@ -12,6 +12,7 @@ date: 2020-01-01
 endDate: 2021-01-01
 isOngoing: false
 isSeasonal: false
+season: summer
 
 thumbnail: thumbnail
 thumbnailExt: png

@@ -50,6 +50,12 @@
   });
 
   const selectedTheme = $derived(browser ? $themeStore : data.themeFromSession);
+
+  $effect(() => {
+    if (browser) {
+      document.documentElement.dataset.theme = selectedTheme;
+    }
+  });
 </script>
 
 <div

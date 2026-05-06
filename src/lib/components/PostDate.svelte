@@ -21,6 +21,7 @@
 
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
+  const seasonLabel = date.season === "winter" ? "Winters" : "Summers";
 
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
@@ -59,7 +60,7 @@
 
 <div class="date-string transition-colors" style:font-size={fontSize}>
   {#if date.isSeasonal}
-    Seasonal:
+    {seasonLabel},
   {/if}
   {#if isStartInFuture}
     Starting:

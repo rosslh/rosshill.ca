@@ -8,11 +8,13 @@ body {
 }
 
 html {
+  background-color: var(--color-background);
   visibility: visible !important;
   font-size: 15px;
 }
 
 body {
+  background-color: var(--color-background);
   line-height: 1.6;
   overflow-y: scroll;
   max-width: 100vw;

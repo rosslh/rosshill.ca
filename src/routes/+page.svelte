@@ -75,8 +75,8 @@
       {/key}
     </p>
   </div>
-  <Posts posts={projects} title="Personal projects" />
-  <Posts posts={workExperience} title="Development experience" showDate />
+  <Posts posts={projects} title="Projects" />
+  <Posts posts={workExperience} title="Career" showDate />
   <Posts posts={other} title="Education and extracurriculars" showDate />
   <div class="content-wrapper">
     <CopyrightNotice />

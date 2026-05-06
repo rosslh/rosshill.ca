@@ -2,6 +2,7 @@
 title: Ownright
 eventType: work
 excerpt: Tech-enabled law firm that makes real estate transactions simple
+roles: [Software Engineer, Engineering Lead]
 tags: [nextdotjs, typescript, graphql, rubyonrails, postgresql]
 website: https://ownright.com
 
