@@ -21,7 +21,12 @@
 
   const startDate = startOfMonth(getDateFromString(date.start));
   const endDate = date.end && endOfMonth(getDateFromString(date.end));
-  const seasonLabel = date.season === "winter" ? "Winters" : "Summers";
+  const isSeasonRange =
+    date.isSeasonal &&
+    endDate &&
+    startDate.getFullYear() !== endDate.getFullYear();
+  const seasonNoun = date.season === "winter" ? "Winter" : "Summer";
+  const seasonLabel = `${seasonNoun}${isSeasonRange ? "s" : ""}`;
 
   const currentDate = new Date();
   const isStartInFuture = startDate > currentDate;
@@ -60,14 +65,14 @@
 
 <div class="date-string transition-colors" style:font-size={fontSize}>
   {#if date.isSeasonal}
-    {seasonLabel},
+    {seasonLabel}
   {/if}
   {#if isStartInFuture}
     Starting:
   {/if}
   {date.isSeasonal ? format(startDate, "y") : format(startDate, "MMM y")}
   {#if !isStartInFuture}
-    {#if endDate}
+    {#if endDate && (!date.isSeasonal || isSeasonRange)}
       &ndash; {date.isSeasonal
         ? format(endDate, "y")
         : format(endDate, "MMM y")}
