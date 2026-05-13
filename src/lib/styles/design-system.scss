@@ -21,7 +21,7 @@ $font-stack-sans:
   --color-subtitle: oklch(58% 0.025 #{$hue});
   --color-link: oklch(48% #{$accent-chroma} #{$hue});
   --color-foreground: oklch(46% 0.025 #{$hue});
-  --color-heading: oklch(32% 0.015 #{$hue});
+  --color-heading: oklch(35% 0.015 #{$hue});
 }
 
 @mixin dark-scale($hue, $accent-chroma: 0.1) {
