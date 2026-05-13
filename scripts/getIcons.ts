@@ -20,6 +20,19 @@ const outputPaths = {
 
 type Icon = Pick<SimpleIcon, "hex" | "path" | "slug">;
 
+function isSimpleIcon(value: unknown): value is SimpleIcon {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const icon = value as Partial<Record<keyof SimpleIcon, unknown>>;
+  return (
+    typeof icon.hex === "string" &&
+    typeof icon.path === "string" &&
+    typeof icon.slug === "string"
+  );
+}
+
 const customIcons: Icon[] = [
   {
     slug: "java",
@@ -33,8 +46,11 @@ const customIcons: Icon[] = [
   },
 ];
 
+const simpleIcons: Icon[] = Object.values(SimpleIcons)
+  .filter(isSimpleIcon)
+  .map(({ hex, path, slug }) => ({ hex, path, slug }));
 const icons: Record<string, Icon> = keyBy(
-  [...Object.values(SimpleIcons), ...customIcons],
+  [...simpleIcons, ...customIcons],
   "slug",
 );
 
@@ -47,18 +63,25 @@ function handleFileError(error: Error | null): void {
 const oklchToUppercaseHex = (oklch: string): string =>
   chroma(oklch).hex().replace(/^#/, "").toUpperCase();
 
-function getForegroundColors(): { light: string; dark: string } {
-  const stylesheet = fs.readFileSync(inputPaths.stylesheet, "utf8");
-  const captures = [
-    ...stylesheet.matchAll(/--color-heading:\s*(oklch\([^)]+\))\s*;/g),
-  ].map((m) => m[1]);
-
-  const [lightOklch, darkOklch] = captures;
-  if (captures.length !== 3 || !lightOklch || !darkOklch) {
+function getThemeHeadingColor(stylesheet: string, theme: "light" | "dark") {
+  const match = stylesheet.match(
+    new RegExp(
+      `@mixin ${theme}-theme\\(\\) \\{[\\s\\S]*?--color-heading:\\s*(oklch\\([^)]+\\))\\s*;`,
+    ),
+  );
+  const color = match?.[1];
+  if (!color) {
     throw new TypeError(
-      `Expected 3 literal oklch() --color-heading declarations (light, dark, black); found ${captures.length}`,
+      `Expected a literal oklch() --color-heading in ${theme}-theme`,
     );
   }
+  return color;
+}
+
+function getForegroundColors(): { light: string; dark: string } {
+  const stylesheet = fs.readFileSync(inputPaths.stylesheet, "utf8");
+  const lightOklch = getThemeHeadingColor(stylesheet, "light");
+  const darkOklch = getThemeHeadingColor(stylesheet, "dark");
 
   return {
     light: oklchToUppercaseHex(lightOklch),

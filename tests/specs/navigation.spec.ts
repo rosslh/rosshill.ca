@@ -1,8 +1,17 @@
+import { createRequire } from "node:module";
 import { expect, test } from "@playwright/test";
 import type { Page } from "playwright-core";
 import { slugify } from "../../src/lib/functions.js";
 import { expectCount, getLocator, waitForElement } from "../commands.js";
-import posts from "../../data/posts.json" assert { type: "json" };
+
+type Post = {
+  contents?: string;
+  isHidden?: boolean;
+  title: string;
+};
+
+const require = createRequire(import.meta.url);
+const posts = require("../../data/posts.json") as { data: Post[] };
 
 test.describe.configure({ mode: "parallel" });
 

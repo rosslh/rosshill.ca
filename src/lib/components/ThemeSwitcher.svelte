@@ -14,22 +14,30 @@
   import { prefersColorSchemeDark } from "$lib/functions";
   import { browser } from "$app/environment";
 
-  const themes: [SiteTheme, SiteTheme, SiteTheme, SiteTheme, SiteTheme] =
-    prefersColorSchemeDark(browser)
-      ? [
-          SiteTheme.Auto,
-          SiteTheme.Light,
-          SiteTheme.Dark,
-          SiteTheme.Black,
-          SiteTheme.Cyberpunk,
-        ]
-      : [
-          SiteTheme.Auto,
-          SiteTheme.Dark,
-          SiteTheme.Light,
-          SiteTheme.Black,
-          SiteTheme.Cyberpunk,
-        ];
+  const themes: [
+    SiteTheme,
+    SiteTheme,
+    SiteTheme,
+    SiteTheme,
+    SiteTheme,
+    SiteTheme,
+  ] = prefersColorSchemeDark(browser)
+    ? [
+        SiteTheme.Auto,
+        SiteTheme.Light,
+        SiteTheme.Dark,
+        SiteTheme.Blue,
+        SiteTheme.Black,
+        SiteTheme.Cyberpunk,
+      ]
+    : [
+        SiteTheme.Auto,
+        SiteTheme.Dark,
+        SiteTheme.Light,
+        SiteTheme.Blue,
+        SiteTheme.Black,
+        SiteTheme.Cyberpunk,
+      ];
 
   $: changeTheme = (theme: SiteTheme): void => {
     $themeStore = theme;
@@ -86,6 +94,8 @@
         {:else if selection.value === SiteTheme.Cyberpunk}
           <CyberpunkThemeIcon />
         {:else if selection.value === SiteTheme.Black}
+          <DarkThemeIcon />
+        {:else if selection.value === SiteTheme.Blue}
           <DarkThemeIcon />
         {:else}
           <AutoThemeIcon />

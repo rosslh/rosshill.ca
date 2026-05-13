@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "wireit",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check": "npm run getIcons && svelte-check --tsconfig ./tsconfig.json",
     "checkNodeVersions": "wireit",
     "dev": "wireit",
     "format": "prettier --write  --plugin prettier-plugin-svelte .",

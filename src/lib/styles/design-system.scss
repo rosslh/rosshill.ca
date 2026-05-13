@@ -1,14 +1,6 @@
 // Colors
 
 @mixin light-theme() {
-  --color-work: oklch(52.4164% 0.1067 150.11);
-  --color-project: oklch(55.2274% 0.1864 290.19);
-  --color-other: oklch(55.7429% 0.184 25.16);
-
-  --color-work-marker: oklch(60.9566% 0.1073 150.08);
-  --color-project-marker: oklch(63.1167% 0.1329 291.31);
-  --color-other-marker: oklch(64.0909% 0.168 22.66);
-
   --color-heading: oklch(32.7396% 0.0158 259.8);
   --color-foreground: oklch(46.5001% 0.0219 258.37);
   --color-link: oklch(48.024% 0.1053 245.85);
@@ -32,15 +24,7 @@
     "Segoe UI Symbol";
 }
 
-@mixin dark-theme() {
-  --color-work: oklch(72.7377% 0.1391 150.09);
-  --color-project: oklch(74.8587% 0.0988 292.5);
-  --color-other: oklch(75.5321% 0.1055 19.84);
-
-  --color-work-marker: var(--color-work);
-  --color-project-marker: var(--color-project);
-  --color-other-marker: var(--color-other);
-
+@mixin blue-theme() {
   --color-heading: oklch(95.7293% 0.0074 260.77);
   --color-foreground: oklch(84.4377% 0.0271 257.04);
   --color-link: oklch(80.1083% 0.093 252.82);
@@ -64,16 +48,32 @@
     "Segoe UI Symbol";
 }
 
+@mixin dark-theme() {
+  --color-heading: oklch(90% 0.0074 152);
+  --color-foreground: oklch(84.4377% 0.0271 152);
+  --color-link: oklch(80.1083% 0.115 152);
+  --color-subtitle: oklch(74.1374% 0.0481 152);
+  --color-focus-outline: oklch(43.7833% 0.0361 152);
+  --color-border: oklch(29% 0.0264 152);
+  --color-panel-background: oklch(25.8017% 0.0215 152);
+  --color-background: oklch(20.6235% 0.015 152);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
 @mixin cyberpunk-theme() {
   $yellow: oklch(86.8479% 0.1425 99.11);
-
-  --color-work: oklch(79.1001% 0.1261 66.74);
-  --color-project: oklch(77.4284% 0.0959 193.64);
-  --color-other: oklch(76.6727% 0.1779 145.53);
-
-  --color-work-marker: var(--color-work);
-  --color-project-marker: var(--color-project);
-  --color-other-marker: var(--color-other);
 
   --color-heading: #{$yellow};
   --color-foreground: oklch(83.3295% 0.0891 290.06);
@@ -88,14 +88,6 @@
 }
 
 @mixin black-theme() {
-  --color-work: oklch(68.3059% 0.1407 150.06);
-  --color-project: oklch(70.756% 0.1228 291.59);
-  --color-other: oklch(71.4177% 0.137 21.08);
-
-  --color-work-marker: var(--color-work);
-  --color-project-marker: var(--color-project);
-  --color-other-marker: var(--color-other);
-
   --color-heading: oklch(100% 0 0);
   --color-foreground: oklch(86.9944% 0 0);
   --color-link: oklch(100% 0 0);
@@ -156,6 +148,10 @@ div.app-wrapper[data-theme="cyberpunk"] {
 html[data-theme="black"],
 div.app-wrapper[data-theme="black"] {
   @include black-theme();
+}
+html[data-theme="blue"],
+div.app-wrapper[data-theme="blue"] {
+  @include blue-theme();
 }
 
 .app-wrapper {
