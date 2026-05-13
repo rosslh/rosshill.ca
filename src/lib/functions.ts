@@ -16,7 +16,5 @@ export const prefersColorSchemeDark = (browser: boolean): boolean =>
 export const formatPostTitle = (title: string): string =>
   title.replaceAll(/\s[–—-]\s/g, " – ");
 
-export const normalizePostSeason = (
-  season: unknown,
-): PostSeason | undefined =>
+export const normalizePostSeason = (season: unknown): PostSeason | undefined =>
   season === "summer" || season === "winter" ? season : undefined;

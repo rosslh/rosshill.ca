@@ -1,4 +1,5 @@
-import { test, expect, Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+import type { Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
@@ -41,20 +42,22 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
     theme === "auto" ? await getPreferredColorScheme(page) : theme;
 
   const background = (await getCssVariable(page, "color-background")).trim();
-  const [htmlBackground, bodyBackground, appBackground] = await page.evaluate(
-    () => {
-      const html = getComputedStyle(document.documentElement);
-      const body = getComputedStyle(document.body);
-      const app = getComputedStyle(
-        document.querySelector('[data-testid="app-wrapper"]')!,
-      );
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const html = getComputedStyle(document.documentElement);
+        const body = getComputedStyle(document.body);
+        const app = getComputedStyle(
+          document.querySelector('[data-testid="app-wrapper"]')!,
+        );
 
-      return [html.backgroundColor, body.backgroundColor, app.backgroundColor];
-    },
-  );
-
-  expect(htmlBackground).toBe(appBackground);
-  expect(bodyBackground).toBe(appBackground);
+        return [
+          html.backgroundColor === app.backgroundColor,
+          body.backgroundColor === app.backgroundColor,
+        ];
+      }),
+    )
+    .toEqual([true, true]);
 
   const contrastWithWhite = chroma.contrast(background, "white");
   const contrastWithBlack = chroma.contrast(background, "black");
