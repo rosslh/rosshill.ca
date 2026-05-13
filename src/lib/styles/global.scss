@@ -24,6 +24,7 @@ body {
 div.app-wrapper {
   color: var(--color-foreground);
   background-color: var(--color-background);
+  font-size: var(--font-size-body);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,8 +116,20 @@ h3,
 h4,
 h5 {
   color: var(--color-heading);
-  font-weight: 600 !important;
+  font-family: "Cormorant Infant", Georgia, serif;
+  font-weight: 700 !important;
   letter-spacing: 0.006rem;
+}
+
+html[data-theme="cyberpunk"],
+div.app-wrapper[data-theme="cyberpunk"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "IBM Plex Mono", monospace;
+  }
 }
 
 h1 {

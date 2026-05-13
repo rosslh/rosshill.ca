@@ -94,7 +94,7 @@
   />
   <link
     rel="preload"
-    href="/fonts/inter-v13-latin-600.woff2"
+    href="/fonts/cormorant-infant-v22-latin-700.woff2"
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
@@ -133,6 +133,24 @@
           url("/fonts/inter-v13-latin-500.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
           url("/fonts/inter-v13-latin-500.svg#Inter") format("svg"); /* Legacy iOS */
+    }
+    @font-face {
+      font-display: block;
+      font-family: "Cormorant Infant";
+      font-weight: 700;
+      src: url("/fonts/cormorant-infant-v22-latin-700.eot"); /* IE9 Compat Modes */
+      src:
+        url("/fonts/cormorant-infant-v22-latin-700.eot?#iefix")
+          format("embedded-opentype"),
+        /* IE6-IE8 */ url("/fonts/cormorant-infant-v22-latin-700.woff2")
+          format("woff2"),
+        /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+          url("/fonts/cormorant-infant-v22-latin-700.woff") format("woff"),
+        /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+          url("/fonts/cormorant-infant-v22-latin-700.ttf") format("truetype"),
+        /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+          url("/fonts/cormorant-infant-v22-latin-700.svg#CormorantInfant")
+          format("svg"); /* Legacy iOS */
     }
     @font-face {
       font-display: block;

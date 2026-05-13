@@ -58,7 +58,7 @@
   <div class="content-wrapper intro">
     <h2 data-testid="main-heading">
       {#key $themeStore}
-        <Balancer>Welcome to my corner of the web!</Balancer>
+        <Balancer>Welcome to my corner of the web</Balancer>
       {/key}
     </h2>
     <p>

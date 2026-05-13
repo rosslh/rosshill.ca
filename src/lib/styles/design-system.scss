@@ -1,14 +1,14 @@
 // Colors
 
 @mixin light-theme() {
-  --color-heading: oklch(32.7396% 0.0158 259.8);
-  --color-foreground: oklch(46.5001% 0.0219 258.37);
-  --color-link: oklch(48.024% 0.1053 245.85);
-  --color-subtitle: oklch(51.7754% 0.0233 257.51);
-  --color-focus-outline: oklch(65.5592% 0.0308 256.52);
-  --color-border: oklch(91.4209% 0.008 253.86);
-  --color-panel-background: oklch(95.7475% 0.0045 258.37);
-  --color-background: oklch(98.2399% 0.0013 287.32);
+  --color-heading: oklch(32.74% 0.016 258);
+  --color-foreground: oklch(46.5% 0.022 258);
+  --color-link: oklch(48.02% 0.105 258);
+  --color-subtitle: oklch(51.78% 0.023 258);
+  --color-focus-outline: oklch(65.56% 0.031 258);
+  --color-border: oklch(91.42% 0.008 258);
+  --color-panel-background: oklch(95.75% 0.005 258);
+  --color-background: oklch(98.24% 0.001 258);
 
   font-family:
     "Inter",
@@ -25,14 +25,14 @@
 }
 
 @mixin blue-theme() {
-  --color-heading: oklch(95.7293% 0.0074 260.77);
-  --color-foreground: oklch(84.4377% 0.0271 257.04);
-  --color-link: oklch(80.1083% 0.093 252.82);
-  --color-subtitle: oklch(74.1374% 0.0481 256.49);
-  --color-focus-outline: oklch(43.7833% 0.0361 256.12);
-  --color-border: oklch(31.833% 0.0264 257.52);
-  --color-panel-background: oklch(25.8017% 0.0215 257.28);
-  --color-background: oklch(20.6235% 0.0167 252.52);
+  --color-heading: oklch(95.73% 0.007 257);
+  --color-foreground: oklch(84.44% 0.027 257);
+  --color-link: oklch(80.11% 0.093 257);
+  --color-subtitle: oklch(74.14% 0.048 257);
+  --color-focus-outline: oklch(43.78% 0.036 257);
+  --color-border: oklch(31.83% 0.026 257);
+  --color-panel-background: oklch(25.8% 0.022 257);
+  --color-background: oklch(20.62% 0.017 257);
 
   font-family:
     "Inter",
@@ -49,14 +49,14 @@
 }
 
 @mixin dark-theme() {
-  --color-heading: oklch(90% 0.0074 152);
-  --color-foreground: oklch(84.4377% 0.0271 152);
-  --color-link: oklch(80.1083% 0.115 152);
-  --color-subtitle: oklch(74.1374% 0.0481 152);
-  --color-focus-outline: oklch(43.7833% 0.0361 152);
-  --color-border: oklch(29% 0.0264 152);
-  --color-panel-background: oklch(25.8017% 0.0215 152);
-  --color-background: oklch(20.6235% 0.015 152);
+  --color-heading: oklch(90% 0.007 152);
+  --color-foreground: oklch(84.44% 0.027 152);
+  --color-link: oklch(80.11% 0.115 152);
+  --color-subtitle: oklch(74.14% 0.048 152);
+  --color-focus-outline: oklch(43.78% 0.036 152);
+  --color-border: oklch(28% 0.026 152);
+  --color-panel-background: oklch(25.8% 0.022 152);
+  --color-background: oklch(20.62% 0.015 152);
 
   font-family:
     "Inter",
@@ -73,28 +73,28 @@
 }
 
 @mixin cyberpunk-theme() {
-  $yellow: oklch(86.8479% 0.1425 99.11);
+  $yellow: oklch(86.85% 0.143 99);
 
   --color-heading: #{$yellow};
-  --color-foreground: oklch(83.3295% 0.0891 290.06);
+  --color-foreground: oklch(83.33% 0.089 289);
   --color-link: #{$yellow};
-  --color-subtitle: oklch(75.1682% 0.1362 288.9);
-  --color-focus-outline: oklch(47.1995% 0.1179 328.45);
-  --color-border: oklch(42.8081% 0.1069 328.61);
-  --color-panel-background: oklch(20.3651% 0.0523 287.63);
-  --color-background: oklch(15.1289% 0.0398 288.22);
+  --color-subtitle: oklch(75.17% 0.136 289);
+  --color-focus-outline: oklch(47.2% 0.118 328);
+  --color-border: oklch(42.81% 0.107 328);
+  --color-panel-background: oklch(20.37% 0.052 289);
+  --color-background: oklch(15.13% 0.04 289);
 
   font-family: "IBM Plex Mono", monospace;
 }
 
 @mixin black-theme() {
   --color-heading: oklch(100% 0 0);
-  --color-foreground: oklch(86.9944% 0 0);
+  --color-foreground: oklch(87% 0 0);
   --color-link: oklch(100% 0 0);
-  --color-subtitle: oklch(71.5474% 0 0);
-  --color-focus-outline: oklch(43.8605% 0 0);
-  --color-border: oklch(23.9293% 0 0);
-  --color-panel-background: oklch(16.3758% 0 0);
+  --color-subtitle: oklch(71.55% 0 0);
+  --color-focus-outline: oklch(43.86% 0 0);
+  --color-border: oklch(23.93% 0 0);
+  --color-panel-background: oklch(16.38% 0 0);
   --color-background: oklch(0% 0 0);
 
   font-family:
@@ -158,6 +158,7 @@ div.app-wrapper[data-theme="blue"] {
   // Font sizes
   --font-size-2xs: 0.8rem;
   --font-size-xs: 0.9rem;
+  --font-size-body: 0.95rem;
   --font-size-s: 1rem;
   --font-size-m: 1.2rem;
   --font-size-l: 1.5rem;

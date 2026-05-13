@@ -138,42 +138,29 @@
     z-index: 10;
     text-align: center;
 
-    :global(html[data-theme="dark"]) &,
-    :global(div.app-wrapper[data-theme="dark"]) & {
-      background-image: url("/leaves.jpg");
-      background-repeat: repeat;
-      background-size: 20rem 20rem;
-      background-attachment: fixed;
-      background-blend-mode: soft-light;
-    }
+    background-image: url("/leaves.jpg");
+    background-repeat: repeat;
+    background-size: 20rem 20rem;
+    background-attachment: fixed;
+    background-blend-mode: soft-light;
 
     :global(html[data-theme="light"]) &,
     :global(div.app-wrapper[data-theme="light"]) & {
       background-image: url("/leaves-light.jpg");
-      background-repeat: repeat;
-      background-size: 20rem 20rem;
-      background-attachment: fixed;
       background-blend-mode: multiply;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :global(html[data-theme="auto"]) &,
-      :global(div.app-wrapper[data-theme="auto"]) & {
-        background-image: url("/leaves.jpg");
-        background-repeat: repeat;
-        background-size: 20rem 20rem;
-        background-attachment: fixed;
-        background-blend-mode: soft-light;
-      }
+    :global(html[data-theme="cyberpunk"]) &,
+    :global(div.app-wrapper[data-theme="cyberpunk"]) &,
+    :global(html[data-theme="black"]) &,
+    :global(div.app-wrapper[data-theme="black"]) & {
+      background-image: none;
     }
 
     @media (prefers-color-scheme: light) {
       :global(html[data-theme="auto"]) &,
       :global(div.app-wrapper[data-theme="auto"]) & {
         background-image: url("/leaves-light.jpg");
-        background-repeat: repeat;
-        background-size: 20rem 20rem;
-        background-attachment: fixed;
         background-blend-mode: multiply;
       }
     }
