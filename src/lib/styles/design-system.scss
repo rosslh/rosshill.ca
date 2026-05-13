@@ -1,75 +1,53 @@
 // Colors
 
-@mixin light-theme() {
-  --color-heading: oklch(32.74% 0.016 258);
-  --color-foreground: oklch(46.5% 0.022 258);
-  --color-link: oklch(48.02% 0.105 258);
-  --color-subtitle: oklch(51.78% 0.023 258);
-  --color-focus-outline: oklch(65.56% 0.031 258);
-  --color-border: oklch(91.42% 0.008 258);
-  --color-panel-background: oklch(95.75% 0.005 258);
-  --color-background: oklch(98.24% 0.001 258);
+$font-stack-sans:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol";
 
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+@mixin light-scale($hue, $accent-chroma: 0.1) {
+  --color-background: oklch(98% 0.005 #{$hue});
+  --color-panel-background: oklch(95% 0.01 #{$hue});
+  --color-border: oklch(90% 0.015 #{$hue});
+  --color-focus-outline: oklch(65% 0.03 #{$hue});
+  --color-subtitle: oklch(58% 0.025 #{$hue});
+  --color-link: oklch(48% #{$accent-chroma} #{$hue});
+  --color-foreground: oklch(46% 0.025 #{$hue});
+  --color-heading: oklch(32% 0.015 #{$hue});
+}
+
+@mixin dark-scale($hue, $accent-chroma: 0.1) {
+  --color-background: oklch(20% 0.015 #{$hue});
+  --color-panel-background: oklch(26% 0.02 #{$hue});
+  --color-border: oklch(30% 0.025 #{$hue});
+  --color-focus-outline: oklch(44% 0.035 #{$hue});
+  --color-subtitle: oklch(74% 0.045 #{$hue});
+  --color-link: oklch(80% #{$accent-chroma} #{$hue});
+  --color-foreground: oklch(84% 0.025 #{$hue});
+  --color-heading: oklch(95% 0.01 #{$hue});
+}
+
+@mixin light-theme() {
+  @include light-scale(258);
+  font-family: $font-stack-sans;
 }
 
 @mixin blue-theme() {
-  --color-heading: oklch(95.73% 0.007 257);
-  --color-foreground: oklch(84.44% 0.027 257);
-  --color-link: oklch(80.11% 0.093 257);
-  --color-subtitle: oklch(74.14% 0.048 257);
-  --color-focus-outline: oklch(43.78% 0.036 257);
-  --color-border: oklch(31.83% 0.026 257);
-  --color-panel-background: oklch(25.8% 0.022 257);
-  --color-background: oklch(20.62% 0.017 257);
-
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  @include dark-scale(257);
+  font-family: $font-stack-sans;
 }
 
 @mixin dark-theme() {
-  --color-heading: oklch(90% 0.007 152);
-  --color-foreground: oklch(84.44% 0.027 152);
-  --color-link: oklch(80.11% 0.115 152);
-  --color-subtitle: oklch(74.14% 0.048 152);
-  --color-focus-outline: oklch(43.78% 0.036 152);
-  --color-border: oklch(28% 0.026 152);
-  --color-panel-background: oklch(25.8% 0.022 152);
-  --color-background: oklch(20.62% 0.015 152);
-
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  @include dark-scale(152);
+  font-family: $font-stack-sans;
 }
 
 @mixin cyberpunk-theme() {
