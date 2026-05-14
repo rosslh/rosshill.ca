@@ -26,4 +26,4 @@ That pipeline is the interesting part. When a new server is requested, it provis
 
 I run those provisioning jobs, along with scheduled work like metric polling and health checks, through pg-boss, a PostgreSQL-backed job queue. Reusing the existing database meant one less moving part to operate.
 
-Most "deploy your app in minutes" platforms quietly assume your data can sit anywhere. MapleDeploy is the version of that promise where the answer to "where is my server" is a specific city.
+Most "deploy your app in minutes" platforms quietly assume your data can sit anywhere. MapleDeploy is the version of that promise where the answer to "where is my server" is a specific city in Canada.

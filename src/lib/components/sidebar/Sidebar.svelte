@@ -90,7 +90,7 @@
       <h1 class="transition-colors">Ross Hill</h1>
     </a>
     <p class="subtitle role transition-colors" data-testid="job-title">
-      Software Engineer
+      Engineering Lead
     </p>
     <p class="subtitle email">
       <a href="mailto:ross@rosshill.ca" data-testid="email-address">
