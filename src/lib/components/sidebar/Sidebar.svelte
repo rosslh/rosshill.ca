@@ -131,27 +131,52 @@
 
   div.sidebar {
     border-right: 1px solid var(--color-border);
-    background-color: var(--color-panel-background);
+    background-color: var(--color-background);
+    position: relative;
     z-index: 10;
     text-align: center;
 
-    background-image: url("/leaves.jpg");
+    background-image: none;
     background-repeat: repeat;
     background-size: 20rem 20rem;
     background-attachment: fixed;
     background-blend-mode: soft-light;
 
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: inherit;
+      background-color: var(--color-panel-background);
+      clip-path: inset(0 1px 0 0);
+      pointer-events: none;
+      mask-image: url("/leaves-mask.png");
+      mask-repeat: repeat;
+      mask-size: 20rem 20rem;
+      -webkit-mask-image: url("/leaves-mask.png");
+      -webkit-mask-repeat: repeat;
+      -webkit-mask-size: 20rem 20rem;
+    }
+
     :global(html[data-theme="light"]) &,
     :global(div.app-wrapper[data-theme="light"]) & {
       background-image: url("/leaves-light.jpg");
       background-blend-mode: multiply;
+
+      &::before {
+        content: none;
+      }
     }
 
-    :global(html[data-theme="cyberpunk"]) &,
-    :global(div.app-wrapper[data-theme="cyberpunk"]) &,
     :global(html[data-theme="black"]) &,
     :global(div.app-wrapper[data-theme="black"]) & {
       background-image: none;
+
+      &::before {
+        content: none;
+      }
     }
 
     @media (prefers-color-scheme: light) {
@@ -159,6 +184,10 @@
       :global(div.app-wrapper[data-theme="auto"]) & {
         background-image: url("/leaves-light.jpg");
         background-blend-mode: multiply;
+
+        &::before {
+          content: none;
+        }
       }
     }
 
@@ -171,6 +200,7 @@
       height: 100vh;
       position: sticky;
       top: 0;
+      z-index: 1;
       gap: var(--spacing-xl);
 
       a.img-wrapper,
@@ -251,11 +281,23 @@
       border-bottom: 1px solid var(--color-border);
       padding: var(--spacing-xl) var(--spacing-xl) 0;
       background-attachment: scroll;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        outline-color 0.3s ease;
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        width: auto;
+        clip-path: inset(0 0 1px 0);
+      }
 
       div.sidebar-content {
         height: unset !important;
         padding: var(--spacing-2xl) 0 var(--spacing-3xl);
-        position: initial !important;
+        position: relative !important;
       }
     }
   }
