@@ -5,8 +5,6 @@
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
   import { occasions } from "$lib/occasions";
 
-  import Separator from "./Separator.svelte";
-
   const today = new Date(
     new Date().toLocaleString("en-US", { timeZone: "America/Toronto" }),
   );
@@ -126,7 +124,6 @@
       </a>
     </p>
   </div>
-  <Separator />
 </div>
 
 <style lang="scss">
@@ -251,18 +248,9 @@
   @media (max-width: media-queries.$breakpoint-m-max) {
     div.sidebar {
       border-width: 0;
+      border-bottom: 1px solid var(--color-border);
       padding: var(--spacing-xl) var(--spacing-xl) 0;
-      background-color: var(--color-background);
-
-      &,
-      :global(html[data-theme="dark"]) &,
-      :global(div.app-wrapper[data-theme="dark"]) &,
-      :global(html[data-theme="light"]) &,
-      :global(div.app-wrapper[data-theme="light"]) &,
-      :global(html[data-theme="auto"]) &,
-      :global(div.app-wrapper[data-theme="auto"]) & {
-        background-image: none;
-      }
+      background-attachment: scroll;
 
       div.sidebar-content {
         height: unset !important;
