@@ -136,12 +136,6 @@
     z-index: 10;
     text-align: center;
 
-    background-image: none;
-    background-repeat: repeat;
-    background-size: 20rem 20rem;
-    background-attachment: fixed;
-    background-blend-mode: soft-light;
-
     &::before {
       content: "";
       position: fixed;
@@ -160,34 +154,10 @@
       -webkit-mask-size: 20rem 20rem;
     }
 
-    :global(html[data-theme="light"]) &,
-    :global(div.app-wrapper[data-theme="light"]) & {
-      background-image: url("/leaves-light.jpg");
-      background-blend-mode: multiply;
-
-      &::before {
-        content: none;
-      }
-    }
-
     :global(html[data-theme="black"]) &,
     :global(div.app-wrapper[data-theme="black"]) & {
-      background-image: none;
-
       &::before {
         content: none;
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      :global(html[data-theme="auto"]) &,
-      :global(div.app-wrapper[data-theme="auto"]) & {
-        background-image: url("/leaves-light.jpg");
-        background-blend-mode: multiply;
-
-        &::before {
-          content: none;
-        }
       }
     }
 
