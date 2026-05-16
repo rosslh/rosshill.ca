@@ -48,7 +48,7 @@ test("Sidebar information is displayed", async ({ page }) => {
   await expectCount(headshotImage, 1);
 
   const workTitle = getLocator([sidebar, "job-title"]);
-  await expectTextContent(workTitle, "Software Engineer");
+  await expectTextContent(workTitle, "Engineering Lead");
 
   const emailAddress = getLocator([sidebar, "email-address"]);
   await expectTextContent(emailAddress, "ross@rosshill.ca");

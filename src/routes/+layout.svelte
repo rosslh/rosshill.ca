@@ -149,8 +149,7 @@
         /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
           url("/fonts/newsreader-v26-latin-500.ttf") format("truetype"),
         /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-          url("/fonts/newsreader-v26-latin-500.svg#Newsreader")
-          format("svg"); /* Legacy iOS */
+          url("/fonts/newsreader-v26-latin-500.svg#Newsreader") format("svg"); /* Legacy iOS */
     }
     @font-face {
       font-display: block;

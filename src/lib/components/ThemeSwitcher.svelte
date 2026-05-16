@@ -26,7 +26,7 @@
         SiteTheme.Auto,
         SiteTheme.Light,
         SiteTheme.Dark,
-        SiteTheme.Blue,
+        SiteTheme.Navy,
         SiteTheme.Black,
         SiteTheme.Cyberpunk,
       ]
@@ -34,7 +34,7 @@
         SiteTheme.Auto,
         SiteTheme.Dark,
         SiteTheme.Light,
-        SiteTheme.Blue,
+        SiteTheme.Navy,
         SiteTheme.Black,
         SiteTheme.Cyberpunk,
       ];
@@ -95,7 +95,7 @@
           <CyberpunkThemeIcon />
         {:else if selection.value === SiteTheme.Black}
           <DarkThemeIcon />
-        {:else if selection.value === SiteTheme.Blue}
+        {:else if selection.value === SiteTheme.Navy}
           <DarkThemeIcon />
         {:else}
           <AutoThemeIcon />

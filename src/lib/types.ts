@@ -62,5 +62,5 @@ export enum SiteTheme {
   Auto = "auto",
   Cyberpunk = "cyberpunk",
   Black = "black",
-  Blue = "blue",
+  Navy = "navy",
 }

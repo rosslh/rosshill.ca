@@ -8,7 +8,7 @@ repository: https://github.com/rosslh/Mandelbrot.site
 website: https://mandelbrot.site
 thumbnail: mandelbrot-thumb
 image: rust-mandelbrot
-excerpt: Explore the Mandelbrot set fractal in your web browser
+excerpt: Explore the Mandelbrot set in your browser, rendered with Rust and WebAssembly.
 tags: [rust, webassembly, typescript, pwa]
 ---
 

@@ -64,20 +64,19 @@
     <p>
       {#key $themeStore}
         <Balancer>
-          I’m a full-stack engineer in Toronto with a builder’s mindset. I like
-          turning messy product and technical problems into software that feels
-          intuitive, useful, and reliable. I lead engineering work, help teams
-          make practical technical decisions, and stay close to the craft of
-          building. Recently, I’ve been exploring how AI tools can improve
-          product and engineering workflows without getting in the way of good
-          software design.
+          I'm a full-stack engineer in Toronto with a builder's mindset. I turn
+          messy product and technical problems into software that feels
+          intuitive and reliable. I lead engineering work, help teams make
+          practical technical decisions, and stay close to the craft. Recently,
+          I've been exploring how AI tools can improve product and engineering
+          workflows without compromising good software design.
         </Balancer>
       {/key}
     </p>
   </div>
   <Posts posts={projects} title="Projects" />
   <Posts posts={workExperience} title="Career" showDate />
-  <Posts posts={other} title="Education and extracurriculars" showDate />
+  <Posts posts={other} title="University" showDate />
   <div class="content-wrapper">
     <CopyrightNotice />
   </div>

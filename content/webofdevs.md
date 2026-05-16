@@ -9,7 +9,7 @@ thumbnail: webofdevs-thumb
 thumbnailBorder: true
 image: webofdevs
 imageExt: png
-excerpt: A directory of cool developer websites, homepages, and portfolios
+excerpt: Curated developer portfolios with live previews. Favourite the sites you like and share your own.
 tags: [typescript, svelte, nestjs, postgresql]
 ---
 

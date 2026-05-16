@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
-type SiteTheme = "light" | "dark" | "auto" | "cyberpunk" | "black" | "blue";
+type SiteTheme = "light" | "dark" | "auto" | "cyberpunk" | "black" | "navy";
 
 async function getCssVariable(
   page: Page,
@@ -87,8 +87,8 @@ for (const preferredColorScheme of colorSchemes) {
     test("Theme toggle works", async ({ page }) => {
       const themeOrder: SiteTheme[] =
         preferredColorScheme === "light"
-          ? ["auto", "dark", "light", "blue", "black", "cyberpunk"]
-          : ["auto", "light", "dark", "blue", "black", "cyberpunk"];
+          ? ["auto", "dark", "light", "navy", "black", "cyberpunk"]
+          : ["auto", "light", "dark", "navy", "black", "cyberpunk"];
 
       await expectTheme(page, themeOrder[0]);
 
@@ -157,10 +157,10 @@ test("User stored theme works", async ({ page }) => {
   await page.reload();
   await expectTheme(page, "cyberpunk");
 
-  // User stored blue theme works
+  // User stored navy theme works
   await page.evaluate(() => {
-    document.cookie = "theme=blue";
+    document.cookie = "theme=navy";
   });
   await page.reload();
-  await expectTheme(page, "blue");
+  await expectTheme(page, "navy");
 });

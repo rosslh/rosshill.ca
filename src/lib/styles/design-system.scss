@@ -40,7 +40,7 @@ $font-stack-sans:
   font-family: $font-stack-sans;
 }
 
-@mixin blue-theme() {
+@mixin navy-theme() {
   @include dark-scale(257);
   font-family: $font-stack-sans;
 }
@@ -127,16 +127,15 @@ html[data-theme="black"],
 div.app-wrapper[data-theme="black"] {
   @include black-theme();
 }
-html[data-theme="blue"],
-div.app-wrapper[data-theme="blue"] {
-  @include blue-theme();
+html[data-theme="navy"],
+div.app-wrapper[data-theme="navy"] {
+  @include navy-theme();
 }
 
 .app-wrapper {
   // Font sizes
   --font-size-2xs: 0.8rem;
   --font-size-xs: 0.9rem;
-  --font-size-body: 0.95rem;
   --font-size-s: 1rem;
   --font-size-m: 1.2rem;
   --font-size-l: 1.5rem;

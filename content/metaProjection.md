@@ -8,7 +8,7 @@ repository: https://github.com/rosslh/MetaProjection
 image: metaprojection
 thumbnail: metaprojection-thumb
 thumbnailBorder: true
-excerpt: An aggregator of Canadian electoral projections
+excerpt: View Canadian election projections on one map and find the predictions for your riding.
 tags: [typescript, gatsby, graphql, nodedotjs]
 ---
 

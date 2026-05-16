@@ -8,7 +8,7 @@ website: https://wtformat.com
 image: wtformat
 thumbnail: moment
 thumbnailBorder: true
-excerpt: Generate date format codes for date-fns, Moment.js, Day.js, and Luxon
+excerpt: Type a date example, get format codes for date-fns, Moment.js, Day.js, and Luxon.
 tags: [typescript, vuedotjs]
 ---
 

@@ -7,7 +7,7 @@ repository: https://github.com/rosslh/IsEarthStillWarming.com
 image: isearthstillwarming
 thumbnail: fire
 thumbnailBorder: true
-excerpt: Global warming information and data, updated daily
+excerpt: Track Earth's warming with current climate data and plain-language explanations.
 tags: [typescript, astro, react]
 ---
 
