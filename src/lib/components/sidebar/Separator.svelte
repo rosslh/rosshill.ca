@@ -13,7 +13,7 @@
 </div>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   div.content-wrapper {
     display: none;
@@ -42,7 +42,7 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-m-max) {
+  @media (max-width: breakpoints.$breakpoint-m-max) {
     div.content-wrapper {
       display: block;
     }

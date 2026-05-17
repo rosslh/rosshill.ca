@@ -127,7 +127,7 @@
 </div>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   div.sidebar {
     border-right: 1px solid var(--color-border);
@@ -152,13 +152,6 @@
       -webkit-mask-image: url("/leaves-mask.png");
       -webkit-mask-repeat: repeat;
       -webkit-mask-size: 20rem 20rem;
-    }
-
-    :global(html[data-theme="black"]) &,
-    :global(div.app-wrapper[data-theme="black"]) & {
-      &::before {
-        content: none;
-      }
     }
 
     div.sidebar-content {
@@ -245,7 +238,7 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-m-max) {
+  @media (max-width: breakpoints.$breakpoint-m-max) {
     div.sidebar {
       border-width: 0;
       border-bottom: 1px solid var(--color-border);

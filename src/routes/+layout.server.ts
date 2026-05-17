@@ -1,9 +1,9 @@
-import type { SiteTheme } from "$lib/types";
+import { SiteTheme } from "$lib/types";
 
 export const load = ({
   locals,
 }: {
   locals: { theme?: SiteTheme };
-}): { theme?: SiteTheme } => ({
-  theme: locals.theme,
+}): { theme: SiteTheme } => ({
+  theme: locals.theme ?? SiteTheme.Auto,
 });

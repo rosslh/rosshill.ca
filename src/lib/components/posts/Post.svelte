@@ -77,7 +77,7 @@
 </div>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   .post-card-wrapper {
     min-width: 0;
@@ -153,19 +153,19 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-l-max) {
+  @media (max-width: breakpoints.$breakpoint-l-max) {
     .post-card-wrapper {
       width: 50% !important;
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-xs-max) {
+  @media (max-width: breakpoints.$breakpoint-xs-max) {
     .post-card {
       padding: var(--spacing-l);
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-2xs-max) {
+  @media (max-width: breakpoints.$breakpoint-2xs-max) {
     .post-card-wrapper {
       width: 100% !important;
 

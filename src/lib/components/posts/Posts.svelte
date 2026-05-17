@@ -21,7 +21,7 @@
 </div>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   .title {
     margin: 0;
@@ -35,7 +35,7 @@
     row-gap: var(--spacing-l);
   }
 
-  @media (max-width: media-queries.$breakpoint-xs-max) {
+  @media (max-width: breakpoints.$breakpoint-xs-max) {
     .posts {
       margin: 0 calc(var(--spacing-m) * -1);
     }

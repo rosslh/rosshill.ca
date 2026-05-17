@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test";
 import chroma from "chroma-js";
 import { getLocator } from "../commands.js";
 
-type SiteTheme = "light" | "dark" | "auto" | "cyberpunk" | "black" | "navy";
+type SiteTheme = "light" | "dark" | "auto";
 
 async function getCssVariable(
   page: Page,
@@ -85,38 +85,18 @@ for (const preferredColorScheme of colorSchemes) {
     });
 
     test("Theme toggle works", async ({ page }) => {
-      const themeOrder: SiteTheme[] =
-        preferredColorScheme === "light"
-          ? ["auto", "dark", "light", "navy", "black", "cyberpunk"]
-          : ["auto", "light", "dark", "navy", "black", "cyberpunk"];
+      const firstTheme = preferredColorScheme === "light" ? "dark" : "light";
+      const secondTheme = preferredColorScheme === "light" ? "light" : "dark";
 
-      await expectTheme(page, themeOrder[0]);
+      await expectTheme(page, "auto");
 
       const themeSwitcher = getLocator([page, "theme-switcher"]);
 
       await themeSwitcher.click();
-      await page.getByText(themeOrder[1], { exact: true }).click();
-      await expectTheme(page, themeOrder[1]);
+      await expectTheme(page, firstTheme);
 
       await themeSwitcher.click();
-      await page.getByText(themeOrder[2], { exact: true }).click();
-      await expectTheme(page, themeOrder[2]);
-
-      await themeSwitcher.click();
-      await page.getByText(themeOrder[3], { exact: true }).click();
-      await expectTheme(page, themeOrder[3]);
-
-      await themeSwitcher.click();
-      await page.getByText(themeOrder[4], { exact: true }).click();
-      await expectTheme(page, themeOrder[4]);
-
-      await themeSwitcher.click();
-      await page.getByText(themeOrder[5], { exact: true }).click();
-      await expectTheme(page, themeOrder[5]);
-
-      await themeSwitcher.click();
-      await page.getByText(themeOrder[0], { exact: true }).click();
-      await expectTheme(page, themeOrder[0]);
+      await expectTheme(page, secondTheme);
     });
   });
 }
@@ -143,24 +123,24 @@ test("User stored theme works", async ({ page }) => {
   await page.reload();
   await expectTheme(page, "dark");
 
-  // User stored black theme works
+  // Outdated stored black theme falls back to system default
   await page.evaluate(() => {
     document.cookie = "theme=black";
   });
   await page.reload();
-  await expectTheme(page, "black");
+  await expectTheme(page, "auto");
 
-  // User stored cyberpunk theme works
+  // Outdated stored cyberpunk theme falls back to system default
   await page.evaluate(() => {
     document.cookie = "theme=cyberpunk";
   });
   await page.reload();
-  await expectTheme(page, "cyberpunk");
+  await expectTheme(page, "auto");
 
-  // User stored navy theme works
+  // Outdated stored navy theme falls back to system default
   await page.evaluate(() => {
     document.cookie = "theme=navy";
   });
   await page.reload();
-  await expectTheme(page, "navy");
+  await expectTheme(page, "auto");
 });

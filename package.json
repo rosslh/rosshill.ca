@@ -68,7 +68,6 @@
     "svelte-check": "^4.1.4",
     "svelte-meta-tags": "^4.1.0",
     "svelte-preprocess": "^6.0.3",
-    "svelte-select": "^5.8.3",
     "svelte-wrap-balancer": "^0.0.4",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",

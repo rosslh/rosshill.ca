@@ -13,7 +13,7 @@
   import "$lib/styles/normalize.css";
 
   interface Props {
-    data: { themeFromSession: SiteTheme };
+    data: { theme: SiteTheme };
     children?: import("svelte").Snippet;
   }
 
@@ -49,7 +49,7 @@
     }
   });
 
-  const selectedTheme = $derived(browser ? $themeStore : data.themeFromSession);
+  const selectedTheme = $derived(browser ? $themeStore : data.theme);
 
   $effect(() => {
     if (browser) {
@@ -67,7 +67,9 @@
   <ThemeSwitcher {selectedTheme} />
   <div class="two-column">
     <Sidebar />
-    {@render children?.()}
+    <main class="transition-colors">
+      {@render children?.()}
+    </main>
   </div>
 </div>
 <svelte:head>
@@ -235,19 +237,38 @@
 </svelte:head>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   div.two-column {
+    background-color: var(--color-background);
     display: flex;
+    isolation: isolate;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: var(--main-grain-image);
+      background-repeat: repeat;
+      background-size: 24rem 24rem;
+      pointer-events: none;
+    }
 
     :global(> *:first-child) {
       margin-right: var(--spacing-m);
+      position: relative;
       width: 23rem;
       flex-shrink: 0;
+      z-index: 1;
     }
 
     :global(> *:last-child) {
+      min-width: 0;
+      position: relative;
       width: 100%;
+      z-index: 1;
     }
 
     :global(> *:not(:first-child):not(:last-child)) {
@@ -255,9 +276,13 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-m-max) {
+  @media (max-width: breakpoints.$breakpoint-m-max) {
     div.two-column {
       flex-direction: column;
+
+      &::before {
+        position: absolute;
+      }
 
       :global(> *:first-child) {
         margin-right: 0;
@@ -268,7 +293,7 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-l-max) {
+  @media (max-width: breakpoints.$breakpoint-l-max) {
     div.two-column {
       :global(> *:first-child) {
         width: 18rem;
@@ -276,7 +301,7 @@
     }
   }
 
-  @media (min-width: media-queries.$breakpoint-xl-min) {
+  @media (min-width: breakpoints.$breakpoint-xl-min) {
     div.two-column {
       :global(> *:first-child) {
         width: 30rem;

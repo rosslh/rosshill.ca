@@ -60,7 +60,11 @@ export enum SiteTheme {
   Light = "light",
   Dark = "dark",
   Auto = "auto",
-  Cyberpunk = "cyberpunk",
-  Black = "black",
-  Navy = "navy",
 }
+
+const siteThemes = new Set<string>(Object.values(SiteTheme));
+
+export const normalizeSiteTheme = (theme: unknown): SiteTheme =>
+  typeof theme === "string" && siteThemes.has(theme)
+    ? (theme as SiteTheme)
+    : SiteTheme.Auto;

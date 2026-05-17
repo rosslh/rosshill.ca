@@ -1,5 +1,5 @@
 @use "./design-system";
-@use "./media-queries";
+@use "./breakpoints";
 
 html,
 body {
@@ -10,6 +10,7 @@ body {
 html {
   background-color: var(--color-background);
   visibility: visible !important;
+  font-family: design-system.$font-stack-sans;
   font-size: 15px;
 }
 
@@ -36,7 +37,7 @@ div.app-wrapper {
   }
 }
 
-@media (min-width: media-queries.$breakpoint-xs-min) {
+@media (min-width: breakpoints.$breakpoint-xs-min) {
   html {
     font-size: 17px;
   }
@@ -119,17 +120,6 @@ h5 {
   font-weight: 500 !important;
 }
 
-html[data-theme="cyberpunk"],
-div.app-wrapper[data-theme="cyberpunk"] {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: "IBM Plex Mono", monospace;
-  }
-}
-
 h1 {
   font-size: var(--font-size-xl);
   margin: var(--spacing-3xl) 0 var(--spacing-l);
@@ -152,13 +142,13 @@ h3 {
   padding: 0 5%;
 }
 
-@media (min-width: media-queries.$breakpoint-xs-min) {
+@media (min-width: breakpoints.$breakpoint-xs-min) {
   .content-wrapper {
     padding: 0 7%;
   }
 }
 
-@media (min-width: media-queries.$breakpoint-l-min) {
+@media (min-width: breakpoints.$breakpoint-l-min) {
   .content-wrapper {
     padding: 0 var(--spacing-4xl);
   }

@@ -1,5 +1,3 @@
-// Colors
-
 $font-stack-sans:
   "Inter",
   -apple-system,
@@ -13,84 +11,28 @@ $font-stack-sans:
   "Segoe UI Emoji",
   "Segoe UI Symbol";
 
-@mixin light-scale($hue, $accent-chroma: 0.1) {
-  --color-background: oklch(98% 0.005 #{$hue});
-  --color-panel-background: oklch(95% 0.01 #{$hue});
-  --color-border: oklch(90% 0.015 #{$hue});
-  --color-focus-outline: oklch(65% 0.03 #{$hue});
-  --color-subtitle: oklch(58% 0.025 #{$hue});
-  --color-link: oklch(48% #{$accent-chroma} #{$hue});
-  --color-foreground: oklch(46% 0.025 #{$hue});
-  --color-heading: oklch(35% 0.015 #{$hue});
-}
-
-@mixin dark-scale($hue, $accent-chroma: 0.1) {
-  --color-background: oklch(20% 0.015 #{$hue});
-  --color-panel-background: oklch(26% 0.02 #{$hue});
-  --color-border: oklch(30% 0.025 #{$hue});
-  --color-focus-outline: oklch(44% 0.035 #{$hue});
-  --color-subtitle: oklch(74% 0.045 #{$hue});
-  --color-link: oklch(80% #{$accent-chroma} #{$hue});
-  --color-foreground: oklch(84% 0.025 #{$hue});
-  --color-heading: oklch(95% 0.01 #{$hue});
-}
-
 @mixin light-theme() {
-  @include light-scale(258);
-  font-family: $font-stack-sans;
-}
-
-@mixin navy-theme() {
-  @include dark-scale(257);
-  font-family: $font-stack-sans;
+  --color-background: oklch(98% 0.005 258);
+  --color-panel-background: oklch(95% 0.01 258);
+  --color-border: oklch(90% 0.015 258);
+  --color-focus-outline: oklch(65% 0.03 258);
+  --color-subtitle: oklch(58% 0.025 258);
+  --color-link: oklch(48% 0.1 258);
+  --color-foreground: oklch(46% 0.025 258);
+  --color-heading: oklch(35% 0.015 258);
+  --main-grain-image: url("/main-grain-light.png");
 }
 
 @mixin dark-theme() {
-  @include dark-scale(152);
-  font-family: $font-stack-sans;
-}
-
-@mixin cyberpunk-theme() {
-  $yellow: oklch(86.85% 0.143 99);
-
-  --color-heading: #{$yellow};
-  --color-foreground: oklch(83.33% 0.089 289);
-  --color-link: #{$yellow};
-  --color-subtitle: oklch(75.17% 0.136 289);
-  --color-focus-outline: oklch(47.2% 0.118 328);
-  --color-border: oklch(42.81% 0.107 328);
-  --color-panel-background: oklch(20.37% 0.052 289);
-  --color-background: oklch(15.13% 0.04 289);
-
-  font-family: "IBM Plex Mono", monospace;
-}
-
-@mixin black-theme() {
-  --color-heading: oklch(100% 0 0);
-  --color-foreground: oklch(87% 0 0);
-  --color-link: oklch(100% 0 0);
-  --color-subtitle: oklch(71.55% 0 0);
-  --color-focus-outline: oklch(43.86% 0 0);
-  --color-border: oklch(23.93% 0 0);
-  --color-panel-background: oklch(16.38% 0 0);
-  --color-background: oklch(0% 0 0);
-
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
-
-  a {
-    text-decoration: underline;
-  }
+  --color-background: oklch(20% 0.015 152);
+  --color-panel-background: oklch(26% 0.02 152);
+  --color-border: oklch(30% 0.025 152);
+  --color-focus-outline: oklch(44% 0.035 152);
+  --color-subtitle: oklch(74% 0.045 152);
+  --color-link: oklch(80% 0.1 152);
+  --color-foreground: oklch(84% 0.025 152);
+  --color-heading: oklch(95% 0.01 152);
+  --main-grain-image: url("/main-grain-dark.png");
 }
 
 :root,
@@ -118,18 +60,6 @@ div.app-wrapper[data-theme="light"] {
 html[data-theme="dark"],
 div.app-wrapper[data-theme="dark"] {
   @include dark-theme();
-}
-html[data-theme="cyberpunk"],
-div.app-wrapper[data-theme="cyberpunk"] {
-  @include cyberpunk-theme();
-}
-html[data-theme="black"],
-div.app-wrapper[data-theme="black"] {
-  @include black-theme();
-}
-html[data-theme="navy"],
-div.app-wrapper[data-theme="navy"] {
-  @include navy-theme();
 }
 
 .app-wrapper {

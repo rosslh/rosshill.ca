@@ -83,7 +83,7 @@
 </div>
 
 <style lang="scss">
-  @use "src/lib/styles/media-queries";
+  @use "src/lib/styles/breakpoints";
 
   div.intro {
     margin-top: var(--spacing-3xl);
@@ -99,7 +99,7 @@
     }
   }
 
-  @media (max-width: media-queries.$breakpoint-m-max) {
+  @media (max-width: breakpoints.$breakpoint-m-max) {
     div.intro {
       padding-top: 0;
     }
