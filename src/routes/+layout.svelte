@@ -250,7 +250,7 @@
       position: fixed;
       inset: 0;
       z-index: 0;
-      background-image: var(--main-grain-image);
+      background-image: var(--background-grain-image);
       background-repeat: repeat;
       background-size: 24rem 24rem;
       pointer-events: none;

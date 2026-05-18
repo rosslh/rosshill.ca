@@ -9,10 +9,11 @@
     "checkNodeVersions": "wireit",
     "dev": "wireit",
     "format": "prettier --write  --plugin prettier-plugin-svelte .",
+    "getGrain": "wireit",
     "getIcons": "wireit",
     "getPosts": "wireit",
     "getWebp": "wireit",
-    "postinstall": "npx playwright install",
+    "optimizeImages": "wireit",
     "lint": "wireit",
     "lint:styles": "wireit",
     "lint:ts-svelte": "wireit",
@@ -52,6 +53,8 @@
     "eslint-plugin-svelte": "^2.46.1",
     "eslint-plugin-unicorn": "^56.0.1",
     "imagemin": "^9.0.0",
+    "imagemin-jpegtran": "^8.0.0",
+    "imagemin-optipng": "^8.0.0",
     "imagemin-webp": "^8.0.0",
     "lodash-es": "^4.17.21",
     "markdown-json": "^1.6.1",
@@ -86,7 +89,7 @@
       "dependencies": [
         "checkNodeVersions",
         "getIcons",
-        "getWebp"
+        "optimizeImages"
       ],
       "files": [
         "tsconfig.json",
@@ -146,6 +149,38 @@
       "output": [
         "assets/**/*.webp"
       ]
+    },
+    "getGrain": {
+      "command": "tsx ./scripts/getGrain.ts",
+      "files": [
+        "tsconfig.json",
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        "src/lib/styles/design-system.scss",
+        "scripts/getGrain.ts"
+      ],
+      "output": [
+        "assets/background-grain-light.png",
+        "assets/background-grain-dark.png"
+      ]
+    },
+    "optimizeImages": {
+      "command": "tsx ./scripts/optimizeImages.ts",
+      "dependencies": [
+        "getWebp",
+        "getGrain"
+      ],
+      "files": [
+        "tsconfig.json",
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        "assets/**/*.{png,jpg,jpeg,webp}",
+        "scripts/optimizeImages.ts",
+        "scripts/imagemin-plugins.d.ts"
+      ],
+      "output": []
     },
     "checkNodeVersions": {
       "command": "tsx ./scripts/checkNodeVersions.ts",

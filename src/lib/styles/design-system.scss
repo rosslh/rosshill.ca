@@ -20,7 +20,7 @@ $font-stack-sans:
   --color-link: oklch(48% 0.1 258);
   --color-foreground: oklch(46% 0.025 258);
   --color-heading: oklch(35% 0.015 258);
-  --main-grain-image: url("/main-grain-light.png");
+  --background-grain-image: url("/background-grain-light.png");
 }
 
 @mixin dark-theme() {
@@ -32,7 +32,7 @@ $font-stack-sans:
   --color-link: oklch(80% 0.1 152);
   --color-foreground: oklch(84% 0.025 152);
   --color-heading: oklch(95% 0.01 152);
-  --main-grain-image: url("/main-grain-dark.png");
+  --background-grain-image: url("/background-grain-dark.png");
 }
 
 :root,

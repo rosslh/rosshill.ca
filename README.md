@@ -7,7 +7,7 @@
 <h1 align="center">rosshill.ca</h1>
 
 <p align="center">
-  <a href="https://rosshill.ca">rosshill.ca</a> is my personal portfolio, a curated collection of my projects with features like a dynamic profile picture that changes with holidays and a dropdown theme picker. Built with a focus on code quality and backed by a comprehensive test suite, this site reflects my commitment to high development standards.
+  <a href="https://rosshill.ca">rosshill.ca</a> is my personal portfolio, a curated collection of my projects with features like a dynamic profile picture that changes with holidays and a theme picker. Built with a focus on code quality and backed by a comprehensive test suite, this site reflects my commitment to high development standards.
 </p>
 
 <p align="center">

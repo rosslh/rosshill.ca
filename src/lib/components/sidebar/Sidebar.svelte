@@ -146,10 +146,16 @@
       background-color: var(--color-panel-background);
       clip-path: inset(0 1px 0 0);
       pointer-events: none;
-      mask-image: url("/leaves-mask.png");
+      mask-image: image-set(
+        url("/leaves-mask.webp") type("image/webp"),
+        url("/leaves-mask.png") type("image/png")
+      );
       mask-repeat: repeat;
       mask-size: 20rem 20rem;
-      -webkit-mask-image: url("/leaves-mask.png");
+      -webkit-mask-image: image-set(
+        url("/leaves-mask.webp") type("image/webp"),
+        url("/leaves-mask.png") type("image/png")
+      );
       -webkit-mask-repeat: repeat;
       -webkit-mask-size: 20rem 20rem;
     }
