@@ -244,16 +244,28 @@
     display: flex;
     isolation: isolate;
     position: relative;
+    transition: background-color 0.3s ease;
 
-    &::before {
+    &::before,
+    &::after {
       content: "";
       position: fixed;
       inset: 0;
       z-index: 0;
-      background-image: var(--background-grain-image);
       background-repeat: repeat;
       background-size: 24rem 24rem;
       pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    &::before {
+      background-image: url("/background-grain-light.png");
+      opacity: var(--background-grain-light-opacity);
+    }
+
+    &::after {
+      background-image: url("/background-grain-dark.png");
+      opacity: var(--background-grain-dark-opacity);
     }
 
     :global(> *:first-child) {
@@ -280,7 +292,8 @@
     div.two-column {
       flex-direction: column;
 
-      &::before {
+      &::before,
+      &::after {
         position: absolute;
       }
 

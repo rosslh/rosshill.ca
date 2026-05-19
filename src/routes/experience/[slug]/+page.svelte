@@ -90,7 +90,11 @@
     imageAlt: meta.image.alt,
   }}
 />
-<div bind:this={mainContent} class="content-wrapper" data-testid="main-content">
+<div
+  bind:this={mainContent}
+  class="content-wrapper article-wrapper"
+  data-testid="main-content"
+>
   <BackLink href="/" />
   <article class="post-full">
     <h2 data-testid="post-title">{post.title}</h2>
@@ -150,6 +154,10 @@
 </div>
 
 <style lang="scss">
+  div.article-wrapper {
+    max-width: 52rem;
+  }
+
   article.post-full {
     margin-bottom: var(--spacing-3xl);
 

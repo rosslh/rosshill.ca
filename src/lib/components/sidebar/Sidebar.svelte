@@ -158,6 +158,7 @@
       );
       -webkit-mask-repeat: repeat;
       -webkit-mask-size: 20rem 20rem;
+      transition: background-color 0.3s ease;
     }
 
     div.sidebar-content {

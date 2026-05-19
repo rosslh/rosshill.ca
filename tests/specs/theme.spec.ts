@@ -67,6 +67,39 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
   } else {
     expect(contrastWithWhite).toBeGreaterThan(contrastWithBlack);
   }
+
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const twoColumn = document.querySelector("div.two-column")!;
+        const sidebar = document.querySelector('[data-testid="sidebar"]')!;
+        const lightGrain = getComputedStyle(twoColumn, "::before");
+        const darkGrain = getComputedStyle(twoColumn, "::after");
+        const leaves = getComputedStyle(sidebar, "::before");
+        const twoColumnStyle = getComputedStyle(twoColumn);
+
+        return {
+          darkGrainOpacity: twoColumnStyle
+            .getPropertyValue("--background-grain-dark-opacity")
+            .trim(),
+          darkGrainTransition: darkGrain.transitionProperty,
+          leavesTransition: leaves.transitionProperty,
+          lightGrainOpacity: twoColumnStyle
+            .getPropertyValue("--background-grain-light-opacity")
+            .trim(),
+          lightGrainTransition: lightGrain.transitionProperty,
+          twoColumnTransition: twoColumnStyle.transitionProperty,
+        };
+      }),
+    )
+    .toMatchObject({
+      darkGrainOpacity: computedTheme === "dark" ? "1" : "0",
+      darkGrainTransition: "opacity",
+      leavesTransition: "background-color",
+      lightGrainOpacity: computedTheme === "light" ? "1" : "0",
+      lightGrainTransition: "opacity",
+      twoColumnTransition: "background-color",
+    });
 }
 
 test.describe.configure({ mode: "parallel" });

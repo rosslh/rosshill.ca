@@ -31,13 +31,13 @@
   .posts {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 calc(var(--spacing-l) * -1);
+    margin: calc(var(--spacing-xs) * -1) calc(var(--spacing-l) * -1) 0;
     row-gap: var(--spacing-l);
   }
 
   @media (max-width: breakpoints.$breakpoint-xs-max) {
     .posts {
-      margin: 0 calc(var(--spacing-m) * -1);
+      margin: calc(var(--spacing-xs) * -1) calc(var(--spacing-m) * -1) 0;
     }
   }
 </style>

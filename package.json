@@ -180,7 +180,10 @@
         "scripts/optimizeImages.ts",
         "scripts/imagemin-plugins.d.ts"
       ],
-      "output": []
+      "output": [
+        "assets/**/*.{png,jpg,jpeg,webp}"
+      ],
+      "clean": false
     },
     "checkNodeVersions": {
       "command": "tsx ./scripts/checkNodeVersions.ts",

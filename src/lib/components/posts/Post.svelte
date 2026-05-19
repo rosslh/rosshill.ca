@@ -108,6 +108,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing-xs);
+        margin-top: var(--spacing-2xs);
 
         > div {
           display: flex;

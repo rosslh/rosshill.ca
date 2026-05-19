@@ -21,6 +21,8 @@ $font-stack-sans:
   --color-foreground: oklch(46% 0.025 258);
   --color-heading: oklch(35% 0.015 258);
   --background-grain-image: url("/background-grain-light.png");
+  --background-grain-light-opacity: 1;
+  --background-grain-dark-opacity: 0;
 }
 
 @mixin dark-theme() {
@@ -33,6 +35,8 @@ $font-stack-sans:
   --color-foreground: oklch(84% 0.025 152);
   --color-heading: oklch(95% 0.01 152);
   --background-grain-image: url("/background-grain-dark.png");
+  --background-grain-light-opacity: 0;
+  --background-grain-dark-opacity: 1;
 }
 
 :root,
@@ -72,7 +76,7 @@ div.app-wrapper[data-theme="dark"] {
   --font-size-xl: 2.2rem;
 
   // Line heights
-  --line-height-loose: 2;
+  --line-height-loose: 1.875;
 
   // Spacing (padding and margin)
   --spacing-3xs: 0.125rem;

@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 import { data as postsObject } from "$data/posts.json";
 import { formatPostTitle, normalizePostSeason, slugify } from "$lib/functions";
 import tagColors from "$data/tagColors.json";
@@ -42,9 +42,7 @@ const priorSlugRedirects: Map<string, string> = new Map(
   }),
 );
 
-type LoadResponse =
-  | { post: PostItemPage; tagColors: TagColors }
-  | { message: string };
+type LoadResponse = { post: PostItemPage; tagColors: TagColors };
 
 export function load({ params }: { params: { slug: string } }): LoadResponse {
   const slug = params.slug.toLowerCase();
@@ -56,5 +54,5 @@ export function load({ params }: { params: { slug: string } }): LoadResponse {
   if (post) {
     return { post, tagColors };
   }
-  return { message: "Not found" };
+  return error(404, "Not Found");
 }

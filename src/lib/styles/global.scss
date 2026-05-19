@@ -101,6 +101,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 code {
   transition:
     color 0.3s ease,
@@ -114,10 +116,12 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   color: var(--color-heading);
   font-family: "Newsreader", Georgia, serif;
   font-weight: 500 !important;
+  line-height: 1.15;
 }
 
 h1 {
@@ -131,8 +135,23 @@ h2 {
 }
 
 h3 {
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   margin: var(--spacing-xl) 0 var(--spacing-s);
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: var(--spacing-l) 0 var(--spacing-xs);
+}
+
+h5 {
+  font-size: var(--font-size-s);
+  margin: var(--spacing-l) 0 var(--spacing-xs);
+}
+
+h6 {
+  font-size: var(--font-size-s);
+  margin: var(--spacing-m) 0 var(--spacing-xs);
 }
 
 .content-wrapper {

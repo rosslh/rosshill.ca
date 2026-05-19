@@ -2,6 +2,8 @@
 import fs from "node:fs";
 import zlib from "node:zlib";
 
+import imageminOptipng from "imagemin-optipng";
+
 type OklchColor = {
   L: number;
   C: number;
@@ -56,6 +58,9 @@ const themes: ThemeConfig[] = [
   { imagePath: "assets/background-grain-light.png", themeName: "light" },
   { imagePath: "assets/background-grain-dark.png", themeName: "dark" },
 ];
+const pngOptimizer = imageminOptipng({
+  optimizationLevel: 3,
+});
 
 function getValue(array: ArrayLike<number>, index: number): number {
   return array[index] ?? 0;
@@ -227,7 +232,7 @@ function createPngChunk(type: string, data = Buffer.alloc(0)): Buffer {
   return output;
 }
 
-function writePng(path: string, rgba: Uint8Array): void {
+function createPng(rgba: Uint8Array): Buffer {
   const stride = width * channels;
   const raw = Buffer.alloc((stride + 1) * height);
   let offset = 0;
@@ -250,15 +255,20 @@ function writePng(path: string, rgba: Uint8Array): void {
   ihdr[8] = 8;
   ihdr[9] = 6;
 
-  fs.writeFileSync(
-    path,
-    Buffer.concat([
-      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
-      createPngChunk("IHDR", ihdr),
-      createPngChunk("IDAT", zlib.deflateSync(raw, { level: 9 })),
-      createPngChunk("IEND"),
-    ]),
-  );
+  return Buffer.concat([
+    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+    createPngChunk("IHDR", ihdr),
+    createPngChunk("IDAT", zlib.deflateSync(raw, { level: 9 })),
+    createPngChunk("IEND"),
+  ]);
+}
+
+function writeIfChanged(path: string, content: Buffer): void {
+  if (fs.existsSync(path) && fs.readFileSync(path).equals(content)) {
+    return;
+  }
+
+  fs.writeFileSync(path, content);
 }
 
 function srgbChannelToLinear(value: number): number {
@@ -410,22 +420,31 @@ function rollAndBlend(rgba: Uint8Array): Uint8Array {
   return output;
 }
 
-function buildGrainImages(): void {
+async function buildGrainImages(): Promise<void> {
   const targets = parseThemeBackgrounds(
     fs.readFileSync(stylesheetPath, "utf8"),
   );
   const baseImage = createBaseImage(createGrainDeltas());
 
-  for (const { imagePath, themeName } of themes) {
-    const target = targets[themeName];
+  await Promise.all(
+    themes.map(async ({ imagePath, themeName }) => {
+      const target = targets[themeName];
 
-    if (!target) {
-      throw new Error(`Missing grain target for ${themeName}-theme`);
-    }
+      if (!target) {
+        throw new Error(`Missing grain target for ${themeName}-theme`);
+      }
 
-    const normalized = normalizeToTargetBackground(baseImage, target);
-    writePng(imagePath, rollAndBlend(normalized));
-  }
+      const normalized = normalizeToTargetBackground(baseImage, target);
+      const png = createPng(rollAndBlend(normalized));
+      const optimized = Buffer.from(await pngOptimizer(png));
+      writeIfChanged(
+        imagePath,
+        optimized.byteLength < png.byteLength ? optimized : png,
+      );
+    }),
+  );
 }
 
-buildGrainImages();
+buildGrainImages().catch((error: unknown) => {
+  throw error;
+});
