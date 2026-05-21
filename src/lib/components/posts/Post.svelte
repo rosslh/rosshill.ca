@@ -3,7 +3,7 @@
   import type { PostItemStub } from "$lib/types";
   import Balancer from "svelte-wrap-balancer";
   import PostDate from "../PostDate.svelte";
-  import InternalLinkIcon from "~icons/ci/arrow-right-lg";
+  import InternalLinkIcon from "~icons/ci/arrow-right-md";
   import ExternalLinkIcon from "~icons/ci/external-link";
   import RoleArrowIcon from "~icons/ci/arrow-right-sm";
 
@@ -113,8 +113,8 @@
         > div {
           display: flex;
           align-items: center;
-          color: var(--color-subtitle);
-          font-size: var(--font-size-2xs);
+          color: var(--highlight-color);
+          font-size: var(--font-size-xs);
         }
 
         .post-title {

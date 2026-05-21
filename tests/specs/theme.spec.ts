@@ -73,31 +73,29 @@ async function expectTheme(page: Page, theme: SiteTheme): Promise<void> {
       page.evaluate(() => {
         const twoColumn = document.querySelector("div.two-column")!;
         const sidebar = document.querySelector('[data-testid="sidebar"]')!;
-        const lightGrain = getComputedStyle(twoColumn, "::before");
-        const darkGrain = getComputedStyle(twoColumn, "::after");
+        const grain = getComputedStyle(twoColumn, "::before");
         const leaves = getComputedStyle(sidebar, "::before");
         const twoColumnStyle = getComputedStyle(twoColumn);
 
         return {
-          darkGrainOpacity: twoColumnStyle
-            .getPropertyValue("--background-grain-dark-opacity")
+          grainImage: grain.backgroundImage,
+          grainOpacity: twoColumnStyle
+            .getPropertyValue("--background-grain-opacity")
             .trim(),
-          darkGrainTransition: darkGrain.transitionProperty,
+          grainTransition: grain.transitionProperty,
           leavesTransition: leaves.transitionProperty,
-          lightGrainOpacity: twoColumnStyle
-            .getPropertyValue("--background-grain-light-opacity")
-            .trim(),
-          lightGrainTransition: lightGrain.transitionProperty,
           twoColumnTransition: twoColumnStyle.transitionProperty,
         };
       }),
     )
     .toMatchObject({
-      darkGrainOpacity: computedTheme === "dark" ? "1" : "0",
-      darkGrainTransition: "opacity",
+      grainImage:
+        computedTheme === "dark"
+          ? expect.stringContaining("background-grain-dark.png")
+          : "none",
+      grainOpacity: computedTheme === "dark" ? "1" : "0",
+      grainTransition: "opacity",
       leavesTransition: "background-color",
-      lightGrainOpacity: computedTheme === "light" ? "1" : "0",
-      lightGrainTransition: "opacity",
       twoColumnTransition: "background-color",
     });
 }

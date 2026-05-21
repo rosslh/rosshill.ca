@@ -6,6 +6,7 @@ import { keyBy, merge } from "lodash-es";
 import * as SimpleIcons from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
+import { getThemeOklchProperty, type ThemeName } from "./designTokens";
 import type { TagColors, TagColor, PostItemPage } from "$lib/types";
 
 const inputPaths = {
@@ -63,19 +64,8 @@ function handleFileError(error: Error | null): void {
 const oklchToUppercaseHex = (oklch: string): string =>
   chroma(oklch).hex().replace(/^#/, "").toUpperCase();
 
-function getThemeHeadingColor(stylesheet: string, theme: "light" | "dark") {
-  const match = stylesheet.match(
-    new RegExp(
-      `@mixin ${theme}-theme\\(\\) \\{[\\s\\S]*?--color-heading:\\s*(oklch\\([^)]+\\))\\s*;`,
-    ),
-  );
-  const color = match?.[1];
-  if (!color) {
-    throw new TypeError(
-      `Expected a literal oklch() --color-heading in ${theme}-theme`,
-    );
-  }
-  return color;
+function getThemeHeadingColor(stylesheet: string, theme: ThemeName): string {
+  return getThemeOklchProperty(stylesheet, theme, "--color-heading");
 }
 
 function getForegroundColors(): { light: string; dark: string } {

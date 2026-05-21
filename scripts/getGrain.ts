@@ -1,70 +1,39 @@
 /* eslint-disable no-bitwise, unicorn/no-for-loop, unicorn/numeric-separators-style */
 import fs from "node:fs";
-import zlib from "node:zlib";
 
+import { converter, parse, type Oklab, type Oklch, type Rgb } from "culori";
 import imageminOptipng from "imagemin-optipng";
+import sharp from "sharp";
 
-type OklchColor = {
-  L: number;
-  C: number;
-  h: number;
-};
-
-type OklabColor = {
-  L: number;
-  a: number;
-  b: number;
-};
-
-type LinearRgb = {
-  r: number;
-  g: number;
-  b: number;
-};
-
-type ThemeConfig = {
-  imagePath: string;
-  themeName: "light" | "dark";
-};
+import { getThemeOklchProperty } from "./designTokens";
 
 const width = 384;
 const height = 384;
 const channels = 4;
 const seed = 0x726f7373;
+const outputPath = "assets/background-grain-dark.png";
 const stylesheetPath = "src/lib/styles/design-system.scss";
+const themeName = "dark";
 
-// Overall visibility of the finished grain. Higher values make the light and
-// dark speckles farther from the base background color.
-const grainVisibility = 3;
-
-// Sharp, close-up speckle. This is the main film-grain character.
-const fineGrainStrength = 0.75;
-
-// Slightly wider texture between the fine speckles and the broad cloudy areas.
-const midTextureStrength = 1;
-
-// Broad background variation. Lower values reduce large cloudy patches.
-const cloudyPatchStrength = 1;
+const grainVisibility = 1.5;
+const textureStrengths = [1.5, 0.25, 0.75, 0.75, 0.5, 0.5, 0.25, 0.25] as const;
 
 const grainLayerWeights: [number, number][] = [
-  [192, 0.5 * fineGrainStrength],
-  [128, 0.36 * fineGrainStrength],
-  [64, 0.24 * midTextureStrength],
-  [31, 0.12 * cloudyPatchStrength],
-  [15, 0.06 * cloudyPatchStrength],
+  [256, textureStrengths[0]],
+  [128, textureStrengths[1]],
+  [64, textureStrengths[2]],
+  [32, textureStrengths[3]],
+  [16, textureStrengths[4]],
+  [8, textureStrengths[5]],
+  [4, textureStrengths[6]],
+  [2, textureStrengths[7]],
 ];
 
-const themes: ThemeConfig[] = [
-  { imagePath: "assets/background-grain-light.png", themeName: "light" },
-  { imagePath: "assets/background-grain-dark.png", themeName: "dark" },
-];
 const pngOptimizer = imageminOptipng({
   optimizationLevel: 3,
 });
-
-function getValue(array: ArrayLike<number>, index: number): number {
-  return array[index] ?? 0;
-}
+const toOklab = converter("oklab");
+const toRgb = converter("rgb");
 
 function createRandom(seedValue: number): () => number {
   let state = seedValue;
@@ -112,8 +81,8 @@ function sampleGrid(
   const ty = smooth(v - Math.floor(v));
 
   return lerp(
-    lerp(getValue(grid, y0 * size + x0), getValue(grid, y0 * size + x1), tx),
-    lerp(getValue(grid, y1 * size + x0), getValue(grid, y1 * size + x1), tx),
+    lerp(grid[y0 * size + x0]!, grid[y0 * size + x1]!, tx),
+    lerp(grid[y1 * size + x0]!, grid[y1 * size + x1]!, tx),
     ty,
   );
 }
@@ -142,125 +111,31 @@ function createGrainDeltas(): Int8Array {
   mean /= field.length;
 
   const deltas = new Int8Array(width * height);
-  let deltaMean = 0;
 
   for (let index = 0; index < field.length; index += 1) {
-    const centered = getValue(field, index) - mean;
-    const delta = Math.max(
-      -3,
-      Math.min(3, Math.round(centered * grainVisibility)),
-    );
-
-    deltas[index] = delta;
-    deltaMean += delta;
-  }
-
-  deltaMean /= deltas.length;
-
-  for (let index = 0; index < deltas.length; index += 1) {
-    deltas[index] = Math.max(
-      -3,
-      Math.min(3, Math.round(getValue(deltas, index) - deltaMean)),
-    );
+    const centered = field[index]! - mean;
+    deltas[index] = Math.round(centered * grainVisibility);
   }
 
   return deltas;
 }
 
-function parseThemeBackgrounds(stylesheet: string): Record<string, OklchColor> {
-  const targets: Record<string, OklchColor> = {};
-
-  for (const { themeName } of themes) {
-    const mixinMatch = stylesheet.match(
-      new RegExp(`@mixin\\s+${themeName}-theme\\(\\)\\s*\\{([\\s\\S]*?)\\n\\}`),
-    );
-    const mixinBody = mixinMatch?.[1];
-    const colorMatch = mixinBody?.match(
-      /--color-background:\s*oklch\(([^)]+)\)\s*;/,
-    );
-
-    if (!colorMatch) {
-      throw new Error(
-        `Could not find literal --color-background in ${themeName}-theme`,
-      );
-    }
-
-    const [rawL, rawC, rawH] = colorMatch[1]?.trim().split(/\s+/) ?? [];
-
-    if (!rawL || !rawC || !rawH) {
-      throw new Error(`Unexpected OKLCH syntax in ${themeName}-theme`);
-    }
-
-    targets[themeName] = {
-      L: rawL.endsWith("%")
-        ? Number.parseFloat(rawL) / 100
-        : Number.parseFloat(rawL),
-      C: Number.parseFloat(rawC),
-      h: Number.parseFloat(rawH),
-    };
-  }
-
-  return targets;
+function isOklchColor(color: ReturnType<typeof parse>): color is Oklch {
+  return color?.mode === "oklch";
 }
 
-function crc32(buffer: Buffer): number {
-  let crc = ~0;
-
-  for (let index = 0; index < buffer.length; index += 1) {
-    crc ^= getValue(buffer, index);
-
-    for (let bit = 0; bit < 8; bit += 1) {
-      crc = (crc >>> 1) ^ (0xedb88320 & -(crc & 1));
-    }
-  }
-
-  return ~crc >>> 0;
-}
-
-function createPngChunk(type: string, data = Buffer.alloc(0)): Buffer {
-  const typeBuffer = Buffer.from(type, "ascii");
-  const output = Buffer.alloc(12 + data.length);
-
-  output.writeUInt32BE(data.length, 0);
-  typeBuffer.copy(output, 4);
-  data.copy(output, 8);
-  output.writeUInt32BE(
-    crc32(Buffer.concat([typeBuffer, data])),
-    8 + data.length,
+function parseThemeBackground(stylesheet: string): Oklch {
+  const color = parse(
+    getThemeOklchProperty(stylesheet, themeName, "--color-background"),
   );
 
-  return output;
-}
-
-function createPng(rgba: Uint8Array): Buffer {
-  const stride = width * channels;
-  const raw = Buffer.alloc((stride + 1) * height);
-  let offset = 0;
-
-  for (let y = 0; y < height; y += 1) {
-    raw[offset] = 0;
-    offset += 1;
-
-    for (let x = 0; x < stride; x += 1) {
-      raw[offset + x] = getValue(rgba, y * stride + x);
-    }
-
-    offset += stride;
+  if (!isOklchColor(color)) {
+    throw new Error(
+      `Could not resolve --color-background to oklch() in ${themeName}-theme`,
+    );
   }
 
-  const ihdr = Buffer.alloc(13);
-
-  ihdr.writeUInt32BE(width, 0);
-  ihdr.writeUInt32BE(height, 4);
-  ihdr[8] = 8;
-  ihdr[9] = 6;
-
-  return Buffer.concat([
-    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
-    createPngChunk("IHDR", ihdr),
-    createPngChunk("IDAT", zlib.deflateSync(raw, { level: 9 })),
-    createPngChunk("IEND"),
-  ]);
+  return color;
 }
 
 function writeIfChanged(path: string, content: Buffer): void {
@@ -271,54 +146,17 @@ function writeIfChanged(path: string, content: Buffer): void {
   fs.writeFileSync(path, content);
 }
 
-function srgbChannelToLinear(value: number): number {
-  const channel = value / 255;
-  return channel <= 0.04045
-    ? channel / 12.92
-    : ((channel + 0.055) / 1.055) ** 2.4;
-}
-
-function linearChannelToSrgb(value: number): number {
-  const clipped = Math.max(0, Math.min(1, value));
-  const channel =
-    clipped <= 0.003_130_8
-      ? 12.92 * clipped
-      : 1.055 * clipped ** (1 / 2.4) - 0.055;
-
+function colorChannelToByte(channel: number): number {
   return Math.max(0, Math.min(255, Math.round(channel * 255)));
 }
 
-function linearRgbToOklab({ r, g, b }: LinearRgb): OklabColor {
-  const l = 0.412_221_470_8 * r + 0.536_332_536_3 * g + 0.051_445_992_9 * b;
-  const m = 0.211_903_498_2 * r + 0.680_699_545_1 * g + 0.107_396_956_6 * b;
-  const s = 0.088_302_461_9 * r + 0.281_718_837_6 * g + 0.629_978_700_5 * b;
-  const lRoot = Math.cbrt(l);
-  const mRoot = Math.cbrt(m);
-  const sRoot = Math.cbrt(s);
-
-  return {
-    L:
-      0.210_454_255_3 * lRoot + 0.793_617_785 * mRoot - 0.004_072_046_8 * sRoot,
-    a:
-      1.977_998_495_1 * lRoot - 2.428_592_205 * mRoot + 0.450_593_709_9 * sRoot,
-    b:
-      0.025_904_037_1 * lRoot + 0.782_771_766_2 * mRoot - 0.808_675_766 * sRoot,
-  };
-}
-
-function oklabToLinearRgb({ L, a, b }: OklabColor): LinearRgb {
-  const lRoot = L + 0.396_337_777_4 * a + 0.215_803_757_3 * b;
-  const mRoot = L - 0.105_561_345_8 * a - 0.063_854_172_8 * b;
-  const sRoot = L - 0.089_484_177_5 * a - 1.291_485_548 * b;
-  const l = lRoot ** 3;
-  const m = mRoot ** 3;
-  const s = sRoot ** 3;
-
-  return {
-    r: 4.076_741_662_1 * l - 3.307_711_591_3 * m + 0.230_969_929_2 * s,
-    g: -1.268_438_004_6 * l + 2.609_757_401_1 * m - 0.341_319_396_5 * s,
-    b: -0.004_196_086_3 * l - 0.703_418_614_7 * m + 1.707_614_701 * s,
-  };
+function rgbaPixelToOklab(rgba: Uint8Array, index: number): Oklab {
+  return toOklab({
+    mode: "rgb",
+    r: rgba[index]! / 255,
+    g: rgba[index + 1]! / 255,
+    b: rgba[index + 2]! / 255,
+  });
 }
 
 function rgbaToOklabLightnessMean(rgba: Uint8Array): number {
@@ -326,11 +164,7 @@ function rgbaToOklabLightnessMean(rgba: Uint8Array): number {
   const pixelCount = width * height;
 
   for (let index = 0; index < rgba.length; index += channels) {
-    mean += linearRgbToOklab({
-      r: srgbChannelToLinear(getValue(rgba, index)),
-      g: srgbChannelToLinear(getValue(rgba, index + 1)),
-      b: srgbChannelToLinear(getValue(rgba, index + 2)),
-    }).L;
+    mean += rgbaPixelToOklab(rgba, index).l;
   }
 
   return mean / pixelCount;
@@ -338,29 +172,24 @@ function rgbaToOklabLightnessMean(rgba: Uint8Array): number {
 
 function normalizeToTargetBackground(
   rgba: Uint8Array,
-  target: OklchColor,
+  target: Oklch,
 ): Uint8Array {
   const output = new Uint8Array(rgba);
   const meanLightness = rgbaToOklabLightnessMean(rgba);
-  const hueRadians = (target.h * Math.PI) / 180;
-  const targetA = target.C * Math.cos(hueRadians);
-  const targetB = target.C * Math.sin(hueRadians);
+  const targetLab = toOklab(target);
 
   for (let index = 0; index < output.length; index += channels) {
-    const lab = linearRgbToOklab({
-      r: srgbChannelToLinear(getValue(output, index)),
-      g: srgbChannelToLinear(getValue(output, index + 1)),
-      b: srgbChannelToLinear(getValue(output, index + 2)),
-    });
-    const rgb = oklabToLinearRgb({
-      L: lab.L - meanLightness + target.L,
-      a: targetA,
-      b: targetB,
+    const lab = rgbaPixelToOklab(output, index);
+    const rgb: Rgb = toRgb({
+      mode: "oklab",
+      l: lab.l - meanLightness + target.l,
+      a: targetLab.a,
+      b: targetLab.b,
     });
 
-    output[index] = linearChannelToSrgb(rgb.r);
-    output[index + 1] = linearChannelToSrgb(rgb.g);
-    output[index + 2] = linearChannelToSrgb(rgb.b);
+    output[index] = colorChannelToByte(rgb.r);
+    output[index + 1] = colorChannelToByte(rgb.g);
+    output[index + 2] = colorChannelToByte(rgb.b);
   }
 
   return output;
@@ -371,7 +200,7 @@ function createBaseImage(deltas: Int8Array): Uint8Array {
 
   for (let index = 0; index < deltas.length; index += 1) {
     const offset = index * channels;
-    const value = 128 + getValue(deltas, index);
+    const value = 128 + deltas[index]!;
 
     rgba[offset] = value;
     rgba[offset + 1] = value;
@@ -382,66 +211,24 @@ function createBaseImage(deltas: Int8Array): Uint8Array {
   return rgba;
 }
 
-function rollAndBlend(rgba: Uint8Array): Uint8Array {
-  const output = new Uint8Array(rgba);
-  const taperSize = Math.max(16, Math.floor(Math.min(width, height) / 8));
-  const wx = new Float64Array(width);
-  const wy = new Float64Array(height);
-
-  for (let x = 0; x < width; x += 1) {
-    const distance = Math.min(x, width - 1 - x);
-    const clamped = Math.max(0, Math.min(1, distance / taperSize));
-    wx[x] = 0.5 * (1 - Math.cos(Math.PI * clamped));
-  }
-
-  for (let y = 0; y < height; y += 1) {
-    const distance = Math.min(y, height - 1 - y);
-    const clamped = Math.max(0, Math.min(1, distance / taperSize));
-    wy[y] = 0.5 * (1 - Math.cos(Math.PI * clamped));
-  }
-
-  for (let y = 0; y < height; y += 1) {
-    for (let x = 0; x < width; x += 1) {
-      const index = (y * width + x) * channels;
-      const rolledX = (x + Math.floor(width / 2)) % width;
-      const rolledY = (y + Math.floor(height / 2)) % height;
-      const rolledIndex = (rolledY * width + rolledX) * channels;
-      const mask = getValue(wx, x) * getValue(wy, y);
-
-      for (let channel = 0; channel < 3; channel += 1) {
-        output[index + channel] = Math.round(
-          getValue(rgba, index + channel) * mask +
-            getValue(rgba, rolledIndex + channel) * (1 - mask),
-        );
-      }
-    }
-  }
-
-  return output;
+async function createPng(rgba: Uint8Array): Promise<Buffer> {
+  return sharp(Buffer.from(rgba), {
+    raw: { width, height, channels },
+  })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
 }
 
 async function buildGrainImages(): Promise<void> {
-  const targets = parseThemeBackgrounds(
-    fs.readFileSync(stylesheetPath, "utf8"),
-  );
+  const target = parseThemeBackground(fs.readFileSync(stylesheetPath, "utf8"));
   const baseImage = createBaseImage(createGrainDeltas());
+  const normalized = normalizeToTargetBackground(baseImage, target);
+  const png = await createPng(normalized);
+  const optimized = Buffer.from(await pngOptimizer(png));
 
-  await Promise.all(
-    themes.map(async ({ imagePath, themeName }) => {
-      const target = targets[themeName];
-
-      if (!target) {
-        throw new Error(`Missing grain target for ${themeName}-theme`);
-      }
-
-      const normalized = normalizeToTargetBackground(baseImage, target);
-      const png = createPng(rollAndBlend(normalized));
-      const optimized = Buffer.from(await pngOptimizer(png));
-      writeIfChanged(
-        imagePath,
-        optimized.byteLength < png.byteLength ? optimized : png,
-      );
-    }),
+  writeIfChanged(
+    outputPath,
+    optimized.byteLength < png.byteLength ? optimized : png,
   );
 }
 

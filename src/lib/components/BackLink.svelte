@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LeftArrow from "~icons/ci/arrow-left-lg";
+  import LeftArrow from "~icons/ci/arrow-left-md";
 
   interface Props {
     href?: string;
@@ -17,10 +17,10 @@
     display: inline-flex;
     align-items: center;
     margin: var(--spacing-2xl) 0 var(--spacing-xl);
-    color: var(--color-subtitle);
+    font-size: var(--font-size-xs);
   }
 
   a.back-link > :global(svg) {
-    margin-right: var(--spacing-xs);
+    margin-right: var(--spacing-2xs);
   }
 </style>

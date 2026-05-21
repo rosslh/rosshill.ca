@@ -11,36 +11,63 @@ $font-stack-sans:
   "Segoe UI Emoji",
   "Segoe UI Symbol";
 
+@mixin color-scales() {
+  --color-green-50: oklch(95% 0.011 152);
+  --color-green-100: oklch(90% 0.02 152);
+  --color-green-200: oklch(84% 0.025 152);
+  --color-green-300: oklch(74% 0.045 152);
+  --color-green-400: oklch(64% 0.04 152);
+  --color-green-500: oklch(54% 0.035 152);
+  --color-green-600: oklch(44% 0.035 152);
+  --color-green-700: oklch(37% 0.03 152);
+  --color-green-800: oklch(31% 0.025 152);
+  --color-green-900: oklch(26% 0.02 152);
+  --color-green-950: oklch(20% 0.0175 152);
+
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-200: oklch(92.2% 0 0);
+  --color-neutral-300: oklch(87% 0 0);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-500: oklch(55.6% 0 0);
+  --color-neutral-600: oklch(43.9% 0 0);
+  --color-neutral-700: oklch(37.1% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+  --color-neutral-950: oklch(14.5% 0 0);
+}
+
 @mixin light-theme() {
-  --color-background: oklch(98% 0.005 258);
-  --color-panel-background: oklch(95% 0.01 258);
-  --color-border: oklch(90% 0.015 258);
-  --color-focus-outline: oklch(65% 0.03 258);
-  --color-subtitle: oklch(58% 0.025 258);
-  --color-link: oklch(48% 0.1 258);
-  --color-foreground: oklch(46% 0.025 258);
-  --color-heading: oklch(35% 0.015 258);
-  --background-grain-image: url("/background-grain-light.png");
-  --background-grain-light-opacity: 1;
-  --background-grain-dark-opacity: 0;
+  --highlight-color: oklch(60% 0.12 152);
+  --color-background: white;
+  --color-panel-background: var(--color-neutral-50);
+  --color-border: var(--color-neutral-200);
+  --color-focus-outline: var(--color-green-400);
+  --color-subtitle: var(--color-neutral-500);
+  --color-link: var(--highlight-color);
+  --color-foreground: var(--color-neutral-600);
+  --color-heading: var(--color-neutral-700);
+  --background-grain-image: none;
+  --background-grain-opacity: 0;
 }
 
 @mixin dark-theme() {
-  --color-background: oklch(20% 0.015 152);
-  --color-panel-background: oklch(26% 0.02 152);
-  --color-border: oklch(30% 0.025 152);
-  --color-focus-outline: oklch(44% 0.035 152);
-  --color-subtitle: oklch(74% 0.045 152);
-  --color-link: oklch(80% 0.1 152);
-  --color-foreground: oklch(84% 0.025 152);
-  --color-heading: oklch(95% 0.01 152);
+  --highlight-color: oklch(80% 0.1 152);
+  --color-background: var(--color-green-950);
+  --color-panel-background: var(--color-green-900);
+  --color-border: var(--color-green-800);
+  --color-focus-outline: var(--color-green-600);
+  --color-subtitle: var(--color-green-300);
+  --color-link: var(--highlight-color);
+  --color-foreground: var(--color-green-200);
+  --color-heading: var(--color-green-100);
   --background-grain-image: url("/background-grain-dark.png");
-  --background-grain-light-opacity: 0;
-  --background-grain-dark-opacity: 1;
+  --background-grain-opacity: 1;
 }
 
 :root,
 .app-wrapper {
+  @include color-scales();
   @include light-theme();
 }
 

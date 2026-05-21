@@ -129,9 +129,43 @@
 <style lang="scss">
   @use "src/lib/styles/breakpoints";
 
+  @mixin sidebar-light {
+    --sidebar-background: white;
+    --sidebar-leaves: var(--color-green-50);
+    --sidebar-profile-pic-border: var(--color-green-50);
+    --sidebar-heading: var(--color-green-700);
+    --sidebar-role: var(--color-green-600);
+  }
+
+  @mixin sidebar-dark {
+    --sidebar-background: var(--color-green-950);
+    --sidebar-leaves: var(--color-green-900);
+    --sidebar-profile-pic-border: var(--color-green-900);
+    --sidebar-heading: var(--color-neutral-100);
+    --sidebar-role: var(--color-neutral-200);
+  }
+
+  div.sidebar {
+    @include sidebar-light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    div.sidebar {
+      @include sidebar-dark;
+    }
+  }
+
+  :global([data-theme="light"]) div.sidebar {
+    @include sidebar-light;
+  }
+
+  :global([data-theme="dark"]) div.sidebar {
+    @include sidebar-dark;
+  }
+
   div.sidebar {
     border-right: 1px solid var(--color-border);
-    background-color: var(--color-background);
+    background-color: var(--sidebar-background);
     position: relative;
     z-index: 10;
     text-align: center;
@@ -143,7 +177,7 @@
       bottom: 0;
       left: 0;
       width: inherit;
-      background-color: var(--color-panel-background);
+      background-color: var(--sidebar-leaves);
       clip-path: inset(0 1px 0 0);
       pointer-events: none;
       mask-image: image-set(
@@ -204,13 +238,14 @@
           letter-spacing: 0.05rem;
           margin: 0;
           line-height: 1;
+          color: var(--sidebar-heading);
         }
       }
 
       p.subtitle {
         &.role {
           font-size: var(--font-size-m);
-          color: var(--color-foreground);
+          color: var(--sidebar-role);
         }
       }
 
@@ -223,7 +258,7 @@
         &.rounded {
           overflow: hidden;
           border-radius: 50%;
-          border: 3px solid var(--color-border);
+          border: 3px solid var(--sidebar-profile-pic-border);
         }
 
         picture {

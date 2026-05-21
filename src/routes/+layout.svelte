@@ -246,26 +246,17 @@
     position: relative;
     transition: background-color 0.3s ease;
 
-    &::before,
-    &::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 0;
+    &::before {
+      background-image: var(--background-grain-image);
       background-repeat: repeat;
       background-size: 24rem 24rem;
+      content: "";
+      opacity: var(--background-grain-opacity);
       pointer-events: none;
+      position: fixed;
+      inset: 0;
       transition: opacity 0.3s ease;
-    }
-
-    &::before {
-      background-image: url("/background-grain-light.png");
-      opacity: var(--background-grain-light-opacity);
-    }
-
-    &::after {
-      background-image: url("/background-grain-dark.png");
-      opacity: var(--background-grain-dark-opacity);
+      z-index: 0;
     }
 
     :global(> *:first-child) {
