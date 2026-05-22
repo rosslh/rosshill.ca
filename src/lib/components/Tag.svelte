@@ -81,14 +81,6 @@
     border-top-left-radius: var(--border-radius-s);
     border-bottom-left-radius: var(--border-radius-s);
 
-    &.transition-colors {
-      /* taken from global.scss .transition-colors */
-      transition:
-        border-color 0.3s ease,
-        width 0.3s ease,
-        border-radius 0.3s ease;
-    }
-
     > img {
       display: block;
       fill: var(--color-subtitle);
@@ -108,7 +100,6 @@
     padding: 0 var(--spacing-2xs);
 
     position: relative;
-    transition: border-color 0.3s ease;
     z-index: 2;
 
     &.capitalize {

@@ -15,7 +15,7 @@ const outputPath = "assets/background-grain-dark.png";
 const stylesheetPath = "src/lib/styles/design-system.scss";
 const themeName = "dark";
 
-const grainVisibility = 1.5;
+const grainVisibility = 1;
 const textureStrengths = [1.5, 0.25, 0.75, 0.75, 0.5, 0.5, 0.25, 0.25] as const;
 
 const grainLayerWeights: [number, number][] = [

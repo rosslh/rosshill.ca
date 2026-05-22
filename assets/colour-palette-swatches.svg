@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1916" height="172" viewBox="0 0 1916 172" role="img" aria-labelledby="title description">
+  <title id="title">Design system colour palette swatches</title>
+  <desc id="description">Generated from src/lib/styles/design-system.scss</desc>
+  <rect width="100%" height="100%" fill="#FFFFFF" />
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="24" y="54" fill="#111111" font-size="24" font-weight="700">Design system colour palette</text>
+    
+    <text x="24" y="115" fill="#111111" font-size="20" font-weight="700">green</text>
+    
+    <g transform="translate(144 72)">
+      <rect width="148" height="76" fill="#F3FFF6" />
+      <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">50</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#F3FFF6</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(99% 0.018 152)</text>
+    </g>
+    <g transform="translate(292 72)">
+      <rect width="148" height="76" fill="#DDF1E1" />
+      <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">100</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#DDF1E1</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(94% 0.03 152)</text>
+    </g>
+    <g transform="translate(440 72)">
+      <rect width="148" height="76" fill="#C2DCC8" />
+      <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">200</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#C2DCC8</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(87% 0.04 152)</text>
+    </g>
+    <g transform="translate(588 72)">
+      <rect width="148" height="76" fill="#A2BCA8" />
+      <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">300</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#A2BCA8</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(77% 0.041 152)</text>
+    </g>
+    <g transform="translate(736 72)">
+      <rect width="148" height="76" fill="#7E9B85" />
+      <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">400</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#7E9B85</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(66% 0.046 152)</text>
+    </g>
+    <g transform="translate(884 72)">
+      <rect width="148" height="76" fill="#6A8470" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">500</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#6A8470</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(58.55% 0.0425 152)</text>
+    </g>
+    <g transform="translate(1032 72)">
+      <rect width="148" height="76" fill="#546D5A" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">600</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#546D5A</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(50.85% 0.042 152)</text>
+    </g>
+    <g transform="translate(1180 72)">
+      <rect width="148" height="76" fill="#405745" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">700</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#405745</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(43.15% 0.0405 152)</text>
+    </g>
+    <g transform="translate(1328 72)">
+      <rect width="148" height="76" fill="#2E4133" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">800</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#2E4133</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(35.4% 0.035 152)</text>
+    </g>
+    <g transform="translate(1476 72)">
+      <rect width="148" height="76" fill="#1F2C22" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">900</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#1F2C22</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(27.7% 0.025 152)</text>
+    </g>
+    <g transform="translate(1624 72)">
+      <rect width="148" height="76" fill="#111813" />
+      <text x="10" y="24" fill="#FFFFFF" font-size="15" font-weight="700">950</text>
+      <text x="10" y="48" fill="#FFFFFF" font-size="11">#111813</text>
+      <text x="10" y="64" fill="#FFFFFF" font-size="9">oklch(20% 0.015 152)</text>
+    </g>
+    
+    <g transform="translate(1788 72)">
+      <text x="0" y="-10" fill="#111111" font-size="11" font-weight="700">highlight</text>
+      
+      <g transform="translate(0 0)">
+        <rect width="104" height="38" fill="#4E9162" />
+        <text x="10" y="16" fill="#FFFFFF" font-size="10" font-weight="700">light</text>
+        <text x="10" y="30" fill="#FFFFFF" font-size="9">#4E9162</text>
+      </g>
+      <g transform="translate(0 38)">
+        <rect width="104" height="38" fill="#8CD19E" />
+        <text x="10" y="16" fill="#111111" font-size="10" font-weight="700">dark</text>
+        <text x="10" y="30" fill="#111111" font-size="9">#8CD19E</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -130,19 +130,19 @@
   @use "src/lib/styles/breakpoints";
 
   @mixin sidebar-light {
-    --sidebar-background: white;
-    --sidebar-leaves: var(--color-green-50);
-    --sidebar-profile-pic-border: var(--color-green-50);
-    --sidebar-heading: var(--color-green-700);
-    --sidebar-role: var(--color-green-600);
+    --sidebar-background: var(--color-green-50);
+    --sidebar-leaves: var(--color-green-100);
+    --sidebar-profile-pic-border: var(--color-green-100);
+    --sidebar-heading: var(--color-green-800);
+    --sidebar-role: var(--color-green-700);
   }
 
   @mixin sidebar-dark {
     --sidebar-background: var(--color-green-950);
     --sidebar-leaves: var(--color-green-900);
     --sidebar-profile-pic-border: var(--color-green-900);
-    --sidebar-heading: var(--color-neutral-100);
-    --sidebar-role: var(--color-neutral-200);
+    --sidebar-heading: var(--color-green-100);
+    --sidebar-role: var(--color-green-200);
   }
 
   div.sidebar {
@@ -192,7 +192,6 @@
       );
       -webkit-mask-repeat: repeat;
       -webkit-mask-size: 20rem 20rem;
-      transition: background-color 0.3s ease;
     }
 
     div.sidebar-content {
@@ -286,11 +285,6 @@
       border-bottom: 1px solid var(--color-border);
       padding: var(--spacing-xl) var(--spacing-xl) 0;
       background-attachment: scroll;
-      transition:
-        color 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        outline-color 0.3s ease;
 
       &::before {
         position: absolute;

@@ -65,7 +65,7 @@
   data-testid="app-wrapper"
 >
   <ThemeSwitcher {selectedTheme} />
-  <div class="two-column">
+  <div class="two-column transition-colors">
     <Sidebar />
     <main class="transition-colors">
       {@render children?.()}
@@ -244,7 +244,6 @@
     display: flex;
     isolation: isolate;
     position: relative;
-    transition: background-color 0.3s ease;
 
     &::before {
       background-image: var(--background-grain-image);
@@ -255,7 +254,6 @@
       pointer-events: none;
       position: fixed;
       inset: 0;
-      transition: opacity 0.3s ease;
       z-index: 0;
     }
 

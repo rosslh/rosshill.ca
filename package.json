@@ -8,6 +8,7 @@
     "check": "npm run getIcons && svelte-check --tsconfig ./tsconfig.json",
     "checkNodeVersions": "wireit",
     "dev": "wireit",
+    "getColourPaletteSwatches": "wireit",
     "format": "prettier --write  --plugin prettier-plugin-svelte .",
     "getGrain": "wireit",
     "getIcons": "wireit",
@@ -91,6 +92,7 @@
       "command": "vite build",
       "dependencies": [
         "checkNodeVersions",
+        "getColourPaletteSwatches",
         "getIcons",
         "optimizeImages"
       ],
@@ -167,6 +169,21 @@
       ],
       "output": [
         "assets/background-grain-dark.png"
+      ]
+    },
+    "getColourPaletteSwatches": {
+      "command": "tsx ./scripts/getColourPaletteSwatches.ts",
+      "files": [
+        "tsconfig.json",
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        "src/lib/styles/design-system.scss",
+        "scripts/designTokens.ts",
+        "scripts/getColourPaletteSwatches.ts"
+      ],
+      "output": [
+        "assets/colour-palette-swatches.svg"
       ]
     },
     "optimizeImages": {

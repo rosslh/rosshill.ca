@@ -35,6 +35,7 @@
 
 <div class="theme-switcher-wrapper" data-testid="theme-switcher">
   <button
+    class="transition-colors"
     type="button"
     aria-label="Switch to {nextTheme} theme"
     title="Switch to {nextTheme} theme"
