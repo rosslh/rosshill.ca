@@ -8,10 +8,10 @@
     <text x="24" y="115" fill="#111111" font-size="20" font-weight="700">green</text>
     
     <g transform="translate(144 72)">
-      <rect width="148" height="76" fill="#F3FFF6" />
+      <rect width="148" height="76" fill="#F5FFF8" />
       <text x="10" y="24" fill="#111111" font-size="15" font-weight="700">50</text>
-      <text x="10" y="48" fill="#111111" font-size="11">#F3FFF6</text>
-      <text x="10" y="64" fill="#111111" font-size="9">oklch(99% 0.018 152)</text>
+      <text x="10" y="48" fill="#111111" font-size="11">#F5FFF8</text>
+      <text x="10" y="64" fill="#111111" font-size="9">oklch(99.5% 0.018 152)</text>
     </g>
     <g transform="translate(292 72)">
       <rect width="148" height="76" fill="#DDF1E1" />

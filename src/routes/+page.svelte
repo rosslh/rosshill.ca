@@ -22,9 +22,9 @@
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
-      url: "https://rosshill.ca/site-image.png",
-      width: 1000,
-      height: 523,
+      url: "https://rosshill.ca/og.png",
+      width: 1200,
+      height: 630,
       alt: "Ross Hill - Projects and Experience",
     },
   };

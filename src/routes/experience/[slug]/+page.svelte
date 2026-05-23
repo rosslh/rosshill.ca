@@ -58,9 +58,9 @@
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
     url: `https://rosshill.ca/experience/${post.slug}`,
     image: {
-      url: post.image
-        ? `https://rosshill.ca/experience/${post.image.name}.${post.image.extension}`
-        : "https://rosshill.ca/site-image.png",
+      url: "https://rosshill.ca/og.png",
+      width: 1200,
+      height: 630,
       alt: post.title,
     },
     siteName: "Ross Hill",

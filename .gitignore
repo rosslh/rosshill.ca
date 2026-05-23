@@ -20,3 +20,4 @@ src/data
 assets/**/*.webp
 assets/tags
 .env
+og-preview.png

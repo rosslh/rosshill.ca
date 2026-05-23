@@ -12,6 +12,7 @@
     "format": "prettier --write  --plugin prettier-plugin-svelte .",
     "getGrain": "wireit",
     "getIcons": "wireit",
+    "getWallpapers": "wireit",
     "getPosts": "wireit",
     "getWebp": "wireit",
     "optimizeImages": "wireit",
@@ -171,6 +172,25 @@
         "assets/background-grain-dark.png"
       ]
     },
+    "getWallpapers": {
+      "command": "tsx ./scripts/getWallpapers.ts",
+      "files": [
+        "tsconfig.json",
+        "package.json",
+        "package-lock.json",
+        ".nvmrc",
+        "src/lib/styles/design-system.scss",
+        "src/lib/components/sidebar/Sidebar.svelte",
+        "assets/leaves-mask.png",
+        "scripts/designTokens.ts",
+        "scripts/getWallpapers.ts"
+      ],
+      "output": [
+        "assets/linkedin-wallpaper-light.png",
+        "assets/linkedin-wallpaper-dark.png",
+        "assets/og-background-dark.png"
+      ]
+    },
     "getColourPaletteSwatches": {
       "command": "tsx ./scripts/getColourPaletteSwatches.ts",
       "files": [
@@ -190,7 +210,8 @@
       "command": "tsx ./scripts/optimizeImages.ts",
       "dependencies": [
         "getWebp",
-        "getGrain"
+        "getGrain",
+        "getWallpapers"
       ],
       "files": [
         "tsconfig.json",
@@ -271,5 +292,9 @@
       ],
       "output": []
     }
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.26.0"
   }
 }

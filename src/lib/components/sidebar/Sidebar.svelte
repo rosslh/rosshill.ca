@@ -138,9 +138,9 @@
   }
 
   @mixin sidebar-dark {
-    --sidebar-background: var(--color-green-950);
-    --sidebar-leaves: var(--color-green-900);
-    --sidebar-profile-pic-border: var(--color-green-900);
+    --sidebar-background: var(--color-green-900);
+    --sidebar-leaves: var(--color-green-800);
+    --sidebar-profile-pic-border: var(--color-green-800);
     --sidebar-heading: var(--color-green-100);
     --sidebar-role: var(--color-green-200);
   }
@@ -164,7 +164,8 @@
   }
 
   div.sidebar {
-    border-right: 1px solid var(--color-border);
+    border: 0 solid var(--color-border);
+    border-right-width: 1px;
     background-color: var(--sidebar-background);
     position: relative;
     z-index: 10;
@@ -281,8 +282,8 @@
 
   @media (max-width: breakpoints.$breakpoint-m-max) {
     div.sidebar {
-      border-width: 0;
-      border-bottom: 1px solid var(--color-border);
+      border-right-width: 0;
+      border-bottom-width: 1px;
       padding: var(--spacing-xl) var(--spacing-xl) 0;
       background-attachment: scroll;
 

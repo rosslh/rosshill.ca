@@ -37,13 +37,15 @@ $font-stack-sans:
   --color-heading: var(--color-green-700);
   --background-grain-image: none;
   --background-grain-opacity: 0;
+  --background-color-transition-duration: 0.3s;
+  --background-color-transition-delay: 0s;
 }
 
 @mixin dark-theme() {
   --highlight-color: oklch(80% 0.1 152);
-  --color-background: var(--color-green-950);
-  --color-panel-background: var(--color-green-900);
-  --color-border: var(--color-green-800);
+  --color-background: var(--color-green-900);
+  --color-panel-background: var(--color-green-800);
+  --color-border: var(--color-green-700);
   --color-focus-outline: var(--color-green-600);
   --color-subtitle: var(--color-green-300);
   --color-link: var(--highlight-color);
@@ -51,6 +53,8 @@ $font-stack-sans:
   --color-heading: var(--color-green-100);
   --background-grain-image: url("/background-grain-dark.png");
   --background-grain-opacity: 1;
+  --background-color-transition-duration: 0s;
+  --background-color-transition-delay: 0.3s;
 }
 
 :root,
