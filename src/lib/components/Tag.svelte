@@ -40,7 +40,7 @@
   >
     <img
       src="/tags/{tagId}.svg"
-      alt="{tagString} logo"
+      alt=""
       style:transform={`translate(${iconPosition.x}, ${iconPosition.y}) scale(${iconPosition.scale})`}
       height={remsToPixels(0.85)}
       width={remsToPixels(0.85)}

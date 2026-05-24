@@ -132,7 +132,7 @@ test("Sidebar displays normal image on a non-occasion day", async ({
   const normalImage = getLocator([sidebar, "headshot-image"]);
 
   const altText = await normalImage.getAttribute("alt");
-  expect(altText).toBe("Ross Hill");
+  expect(altText).toBe("");
 
   const sourcePath = await normalImage.getAttribute("src");
   expect(sourcePath).toBe("/headshot.jpg");

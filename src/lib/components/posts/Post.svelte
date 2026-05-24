@@ -32,7 +32,7 @@
   >
     <img
       src={`/experience/${post.thumbnail.name}.${post.thumbnail.extension}`}
-      alt={post.title}
+      alt=""
       class="post-thumbnail transition-colors"
       class:show-border={post.thumbnail.showBorder}
       width={remsToPixels(2.5)}

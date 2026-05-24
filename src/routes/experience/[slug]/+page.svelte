@@ -130,7 +130,7 @@
         <img
           class="transition-colors"
           src="/experience/{post.image.name}.{post.image.extension}"
-          alt={post.title}
+          alt=""
           width={600}
           height={400}
         />

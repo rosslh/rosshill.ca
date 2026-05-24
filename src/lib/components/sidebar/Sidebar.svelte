@@ -29,6 +29,7 @@
         class="img-wrapper transition-colors"
         class:rounded={!currentOccasion}
         href="/"
+        aria-label="Home"
         data-sveltekit-preload-data="hover"
       >
         {#if currentOccasion?.imageName}
@@ -57,7 +58,7 @@
             <img
               data-testid="headshot-image"
               src="/headshot.jpg"
-              alt="Ross Hill"
+              alt=""
               width={remsToPixels(10)}
               height={remsToPixels(10)}
             />
