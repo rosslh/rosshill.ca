@@ -1,12 +1,7 @@
 import Cookies from "universal-cookie";
 import { writable } from "svelte/store";
 import type { Writable } from "svelte/store";
-import type { PostCategory } from "./types";
 import { normalizeSiteTheme, SiteTheme } from "./types";
-
-export const showCategories = writable(new Set<PostCategory>());
-export const showTags = writable(new Set<string>());
-export const minTagNumber = writable(4);
 
 const cookies = new Cookies();
 const yearInSeconds = 60 * 60 * 24 * 365;

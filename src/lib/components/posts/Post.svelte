@@ -14,10 +14,12 @@
 
   let { post, showDate }: Props = $props();
 
-  const href = post.hasContent ? `/experience/${post.slug}` : post.website;
-  const dataTestId = post.hasContent
-    ? `post-stub-link-${post.slug}`
-    : undefined;
+  const href = $derived(
+    post.hasContent ? `/experience/${post.slug}` : post.website,
+  );
+  const dataTestId = $derived(
+    post.hasContent ? `post-stub-link-${post.slug}` : undefined,
+  );
 </script>
 
 <div class="post-card-wrapper">

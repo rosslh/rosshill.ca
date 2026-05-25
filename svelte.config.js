@@ -1,13 +1,24 @@
-import autoprefixer from "autoprefixer";
-import cssnano from "cssnano";
-import preprocess from "svelte-preprocess";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import nodeAdapter from "@sveltejs/adapter-node";
 
 const testIdReplacements = [
   /data-testid\s?=\s?".*?"/g,
   /data-testid\s?=\s?'.*?'/g,
   /data-testid\s?=\s?{.*?}/g,
-].map((regex) => [regex, ""]);
+];
+
+const stripTestIds = {
+  markup({ content }) {
+    if (process.env.VITE_ENV !== "production") {
+      return { code: content };
+    }
+    let code = content;
+    for (const regex of testIdReplacements) {
+      code = code.replace(regex, "");
+    }
+    return { code };
+  },
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -34,16 +45,5 @@ export default {
       "$lib/*": "src/lib/*",
     },
   },
-  preprocess: preprocess({
-    replace:
-      process.env.VITE_ENV === "production" ? testIdReplacements : undefined,
-    postcss: {
-      plugins: [
-        autoprefixer(),
-        cssnano({
-          preset: "default",
-        }),
-      ],
-    },
-  }),
+  preprocess: [stripTestIds, vitePreprocess()],
 };

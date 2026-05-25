@@ -10,5 +10,5 @@ export const GET: RequestHandler = async ({ setHeaders }) => {
     "cache-control": "public, max-age=86400, s-maxage=2592000",
   });
 
-  return new Response(png);
+  return new Response(new Uint8Array(png));
 };

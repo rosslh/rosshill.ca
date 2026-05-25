@@ -19,17 +19,23 @@
   const getDateFromString = (d: string): Date =>
     parse(d.slice(0, 10), "yyyy-MM-dd", new Date());
 
-  const startDate = startOfMonth(getDateFromString(date.start));
-  const endDate = date.end && endOfMonth(getDateFromString(date.end));
-  const isSeasonRange =
-    date.isSeasonal &&
-    endDate &&
-    startDate.getFullYear() !== endDate.getFullYear();
-  const seasonNoun = date.season === "winter" ? "Winter" : "Summer";
-  const seasonLabel = `${seasonNoun}${isSeasonRange ? "s" : ""}`;
+  const startDate = $derived(startOfMonth(getDateFromString(date.start)));
+  const endDate = $derived(
+    date.end ? endOfMonth(getDateFromString(date.end)) : undefined,
+  );
+  const isSeasonRange = $derived(
+    Boolean(
+      date.isSeasonal &&
+      endDate &&
+      startDate.getFullYear() !== endDate.getFullYear(),
+    ),
+  );
+  const seasonLabel = $derived(
+    `${date.season === "winter" ? "Winter" : "Summer"}${isSeasonRange ? "s" : ""}`,
+  );
 
   const currentDate = new Date();
-  const isStartInFuture = startDate > currentDate;
+  const isStartInFuture = $derived(startDate > currentDate);
 
   function getDuration(): string | null {
     if (isStartInFuture) {
@@ -60,7 +66,7 @@
     return formatDuration(interval, { format: ["years", "months"] });
   }
 
-  const duration = getDuration();
+  const duration = $derived(getDuration());
 </script>
 
 <div class="date-string transition-colors" style:font-size={fontSize}>

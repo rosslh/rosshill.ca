@@ -17,7 +17,8 @@
 
   let { data }: Props = $props();
 
-  const { post, tagColors } = data;
+  const post = $derived(data.post);
+  const tagColors = $derived(data.tagColors);
 
   let mainContent: HTMLDivElement | undefined = $state();
   onMount(async () => {
@@ -53,7 +54,7 @@
     return truncated || firstSentence;
   };
 
-  const meta = {
+  const meta = $derived({
     title: post.title.length < 50 ? `${post.title} | Ross Hill` : post.title,
     description: truncateBySentence(post.excerpt, 155) ?? post.title,
     url: `https://rosshill.ca/experience/${post.slug}`,
@@ -66,7 +67,7 @@
     siteName: "Ross Hill",
     author: "Ross Hill",
     tags: post.tags.map((tagId) => tagLabels[tagId] ?? capitalize(tagId)),
-  };
+  });
 </script>
 
 <MetaTags

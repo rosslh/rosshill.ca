@@ -8,16 +8,22 @@
   import LightThemeIcon from "~icons/ci/sun";
   import DarkThemeIcon from "~icons/ci/moon";
 
-  export let selectedTheme: SiteTheme;
+  interface Props {
+    selectedTheme: SiteTheme;
+  }
 
-  let systemTheme = prefersColorSchemeDark(browser)
-    ? SiteTheme.Dark
-    : SiteTheme.Light;
+  let { selectedTheme }: Props = $props();
 
-  $: resolvedTheme =
-    selectedTheme === SiteTheme.Auto ? systemTheme : selectedTheme;
-  $: nextTheme =
-    resolvedTheme === SiteTheme.Dark ? SiteTheme.Light : SiteTheme.Dark;
+  let systemTheme = $state(
+    prefersColorSchemeDark(browser) ? SiteTheme.Dark : SiteTheme.Light,
+  );
+
+  const resolvedTheme = $derived(
+    selectedTheme === SiteTheme.Auto ? systemTheme : selectedTheme,
+  );
+  const nextTheme = $derived(
+    resolvedTheme === SiteTheme.Dark ? SiteTheme.Light : SiteTheme.Dark,
+  );
 
   onMount(() => {
     const colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -39,7 +45,7 @@
     type="button"
     aria-label="Switch to {nextTheme} theme"
     title="Switch to {nextTheme} theme"
-    on:click={() => {
+    onclick={() => {
       $themeStore = nextTheme;
     }}
   >

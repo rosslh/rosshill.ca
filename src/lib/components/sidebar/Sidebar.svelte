@@ -180,6 +180,7 @@
       left: 0;
       width: inherit;
       background-color: var(--sidebar-leaves);
+      transition: background-color 0.3s ease;
       clip-path: inset(0 1px 0 0);
       pointer-events: none;
       mask-image: image-set(

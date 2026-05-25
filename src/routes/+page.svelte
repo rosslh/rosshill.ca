@@ -13,7 +13,7 @@
 
   let { data }: Props = $props();
 
-  const { posts } = data;
+  const posts = $derived(data.posts);
 
   const meta = {
     title: "Ross Hill - Projects and Experience",
@@ -29,9 +29,13 @@
     },
   };
 
-  const workExperience = posts.filter((post) => post.eventType === "work");
-  const projects = posts.filter((post) => post.eventType === "project");
-  const other = posts.filter((post) => post.eventType === "other");
+  const workExperience = $derived(
+    posts.filter((post) => post.eventType === "work"),
+  );
+  const projects = $derived(
+    posts.filter((post) => post.eventType === "project"),
+  );
+  const other = $derived(posts.filter((post) => post.eventType === "other"));
 </script>
 
 <MetaTags

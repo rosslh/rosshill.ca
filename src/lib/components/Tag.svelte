@@ -25,12 +25,12 @@
     rubyonrails: { scale: 1.25 },
   };
 
-  const iconPosition: IconPosition = {
+  const iconPosition: IconPosition = $derived({
     x: 0,
     y: 0,
     scale: 1,
     ...iconPositions[tagId],
-  };
+  });
 </script>
 
 <div class="tag transition-colors" data-testid="skill-tag-{tagId}">

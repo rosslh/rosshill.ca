@@ -111,9 +111,7 @@ async function renderToBuffer(): Promise<Buffer> {
   });
 
   return Buffer.from(
-    new Resvg(svg, { fitTo: { mode: "width", value: width } })
-      .render()
-      .asPng(),
+    new Resvg(svg, { fitTo: { mode: "width", value: width } }).render().asPng(),
   );
 }
 

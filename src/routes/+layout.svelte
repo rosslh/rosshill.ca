@@ -194,16 +194,9 @@
     position: relative;
 
     &.transition-colors {
-      transition:
-        color 0.3s ease,
-        background-color var(--background-color-transition-duration, 0.3s) ease
-          var(--background-color-transition-delay, 0s),
-        border-color 0.3s ease,
-        fill 0.3s ease,
-        box-shadow 0.3s ease,
-        outline-color 0.3s ease,
-        stroke 0.3s ease,
-        opacity 0.3s ease;
+      transition: background-color
+        var(--background-color-transition-duration, 0.3s) ease
+        var(--background-color-transition-delay, 0s);
     }
 
     &::before {
@@ -216,6 +209,7 @@
       position: fixed;
       inset: 0;
       z-index: 0;
+      transition: opacity 0.3s ease;
     }
 
     :global(> *:first-child) {

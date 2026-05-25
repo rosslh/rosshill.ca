@@ -70,9 +70,7 @@ function getSidebarThemeValue(
   const rawValue = propertyMatch?.[1]?.trim();
 
   if (!rawValue) {
-    throw new Error(
-      `Could not find ${propertyName} in sidebar-${theme} mixin`,
-    );
+    throw new Error(`Could not find ${propertyName} in sidebar-${theme} mixin`);
   }
 
   const resolved = resolveCustomPropertyValue(
@@ -96,7 +94,11 @@ function oklchStringToRgbBytes(oklch: string): {
   g: number;
   b: number;
 } {
-  const rgb: Rgb = toRgb(parse(oklch));
+  const parsed = parse(oklch);
+  if (!parsed) {
+    throw new Error(`Failed to parse OKLCH color: ${oklch}`);
+  }
+  const rgb: Rgb = toRgb(parsed);
 
   return {
     r: colorChannelToByte(rgb.r),
