@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import type { Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 
 import {
   getLocator,
@@ -37,6 +37,26 @@ async function setBrowserDate(page: Page, occasionDate: string) {
   await waitForElement(page, "sidebar");
 
   await page.reload();
+}
+
+async function expectImageButton(
+  sidebar: Locator,
+  ariaLabel: string,
+): Promise<Locator> {
+  const imageButton = sidebar.locator("button.img-wrapper");
+
+  await expectCount(imageButton, 1);
+  await expectCount(sidebar.locator("a.img-wrapper"), 0);
+  expect(await imageButton.getAttribute("aria-label")).toBe(ariaLabel);
+
+  return imageButton;
+}
+
+const prideTooltipText =
+  "Happy Pride Month! Let's celebrate love, diversity, and inclusion.";
+
+function getOccasionTooltip(page: Page, text: string): Locator {
+  return page.locator('.tippy-box[data-theme~="occasion"]', { hasText: text });
 }
 
 test("Sidebar information is displayed", async ({ page }) => {
@@ -99,6 +119,21 @@ const occasions = {
   "New Year's Eve": ["2023-12-31"],
 };
 
+const occasionsWithTooltip = new Set([
+  "New Year's Day",
+  "Valentine's Day",
+  "Trans Day of Visibility",
+  "Pride Month",
+  "Canada Day",
+  "Emancipation Day",
+  "National Day for Truth and Reconciliation",
+  "Canadian Thanksgiving",
+  "Remembrance Day",
+  "Transgender Awareness Week",
+  "Holidays 2023",
+  "New Year's Eve",
+]);
+
 for (let index = 0; index < Object.keys(occasions).length; index += 1) {
   const occasionName = Object.keys(occasions)[index];
   const occasionDates = Object.values(occasions)[index];
@@ -117,6 +152,21 @@ for (let index = 0; index < Object.keys(occasions).length; index += 1) {
         `occasion-image-${occasionName}`,
       ]);
       await expectCount(occasionImage, 1);
+
+      const hasTooltip = occasionsWithTooltip.has(occasionName);
+      await expectImageButton(
+        sidebar,
+        hasTooltip ? `Learn more about ${occasionName}` : "Home",
+      );
+
+      const imageElement = occasionImage.locator("img");
+      expect(await imageElement.getAttribute("alt")).toBe(occasionName);
+      expect(await imageElement.getAttribute("title")).toBeNull();
+
+      await expectCount(
+        getLocator([sidebar, `occasion-blurb-${occasionName}`]),
+        0,
+      );
     });
   }
 }
@@ -130,6 +180,7 @@ test("Sidebar displays normal image on a non-occasion day", async ({
   const sidebar = getLocator([page, "sidebar"]);
 
   const normalImage = getLocator([sidebar, "headshot-image"]);
+  await expectImageButton(sidebar, "Home");
 
   const altText = await normalImage.getAttribute("alt");
   expect(altText).toBe("");
@@ -138,4 +189,85 @@ test("Sidebar displays normal image on a non-occasion day", async ({
   expect(sourcePath).toBe("/headshot.jpg");
 
   await expectCount(normalImage, 1);
+});
+
+test("Occasion tooltip scrolls with the image on small screens", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await setBrowserDate(page, "2023-06-15");
+
+  const sidebar = getLocator([page, "sidebar"]);
+  const occasionImage = getLocator([sidebar, "occasion-image-Pride Month"]);
+  const occasionImageButton = await expectImageButton(
+    sidebar,
+    "Learn more about Pride Month",
+  );
+  await occasionImageButton.focus();
+
+  const occasionTooltip = getOccasionTooltip(page, prideTooltipText);
+  await expectTextContent(occasionTooltip, prideTooltipText);
+
+  const imageBoxBefore = await occasionImage.boundingBox();
+  const tooltipBoxBefore = await occasionTooltip.boundingBox();
+  expect(imageBoxBefore).not.toBeNull();
+  expect(tooltipBoxBefore).not.toBeNull();
+
+  const scrollY = await page.evaluate(() => {
+    window.scrollBy(0, 160);
+    return window.scrollY;
+  });
+  expect(scrollY).toBeGreaterThan(0);
+
+  const imageBoxAfter = await occasionImage.boundingBox();
+  const tooltipBoxAfter = await occasionTooltip.boundingBox();
+  expect(imageBoxAfter).not.toBeNull();
+  expect(tooltipBoxAfter).not.toBeNull();
+
+  if (imageBoxBefore && tooltipBoxBefore && imageBoxAfter && tooltipBoxAfter) {
+    const offsetBefore = tooltipBoxBefore.y - imageBoxBefore.y;
+    const offsetAfter = tooltipBoxAfter.y - imageBoxAfter.y;
+
+    expect(Math.abs(offsetAfter - offsetBefore)).toBeLessThanOrEqual(1);
+  }
+});
+
+test("Touchscreen tap shows occasion tooltip", async ({ page }, testInfo) => {
+  test.skip(
+    testInfo.project.name !== "chromium-mobile",
+    "Requires a real touch-enabled browser context",
+  );
+
+  await setBrowserDate(page, "2023-06-15");
+
+  const sidebar = getLocator([page, "sidebar"]);
+  await expectImageButton(sidebar, "Learn more about Pride Month");
+  const occasionImage = getLocator([sidebar, "occasion-image-Pride Month"]);
+  const imageBox = await occasionImage.boundingBox();
+  expect(imageBox).not.toBeNull();
+
+  if (imageBox) {
+    await page.touchscreen.tap(
+      imageBox.x + imageBox.width / 2,
+      imageBox.y + imageBox.height / 2,
+    );
+  }
+
+  const occasionTooltip = getOccasionTooltip(page, prideTooltipText);
+  await expectTextContent(occasionTooltip, prideTooltipText);
+
+  expect(page.url()).toMatch(/\/$/);
+});
+
+test("Sidebar image button navigates home without a tooltip", async ({
+  page,
+}) => {
+  await page.goto("/experience/traffic");
+  await setBrowserDate(page, "2023-07-15");
+
+  const sidebar = getLocator([page, "sidebar"]);
+  const imageButton = await expectImageButton(sidebar, "Home");
+
+  await imageButton.click();
+  await page.waitForURL("/");
 });

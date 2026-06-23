@@ -1,5 +1,10 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import { addDays, endOfDay, startOfDay } from "date-fns";
+  import tippy from "tippy.js";
+  import type { Instance, Props } from "tippy.js";
+  import type { Action } from "svelte/action";
+  import "tippy.js/dist/tippy.css";
 
   import { remsToPixels } from "$lib/functions";
   import InlineSeparator from "$lib/components/InlineSeparator.svelte";
@@ -20,17 +25,119 @@
       return today >= startDate && today <= endDate;
     })
     .sort((a, b) => a.durationDays - b.durationDays)[0];
+
+  type OccasionTooltipOptions = {
+    content?: string;
+  };
+
+  const getOccasionTooltipPlacement = (): Props["placement"] =>
+    window.innerWidth < 1000 ? "bottom" : "top";
+
+  const getOccasionTooltipMaxWidth = (node: HTMLElement): number | string => {
+    const sidebarWidth = node
+      .closest(".sidebar")
+      ?.getBoundingClientRect().width;
+
+    return sidebarWidth
+      ? Math.max(sidebarWidth - remsToPixels(1.5), 0)
+      : "min(18rem, calc(100vw - var(--spacing-xl)))";
+  };
+
+  const createOccasionTooltipProps = (
+    node: HTMLElement,
+    { content }: OccasionTooltipOptions,
+  ): Partial<Props> => {
+    const sidebar = node.closest(".sidebar") ?? undefined;
+
+    return {
+      content,
+      theme: "occasion",
+      placement: getOccasionTooltipPlacement(),
+      maxWidth: getOccasionTooltipMaxWidth(node),
+      arrow: false,
+      offset: [0, remsToPixels(0.75)],
+      trigger: "mouseenter focus click",
+      touch: true,
+      onTrigger(instance) {
+        instance.setProps({
+          placement: getOccasionTooltipPlacement(),
+          maxWidth: getOccasionTooltipMaxWidth(node),
+        });
+      },
+      popperOptions: {
+        modifiers: [
+          {
+            name: "preventOverflow",
+            options: {
+              boundary: sidebar,
+              padding: remsToPixels(0.75),
+            },
+          },
+          {
+            name: "flip",
+            options: {
+              boundary: sidebar,
+              padding: remsToPixels(0.75),
+            },
+          },
+        ],
+      },
+    };
+  };
+
+  const occasionTooltip: Action<HTMLElement, OccasionTooltipOptions> = (
+    node,
+    options,
+  ) => {
+    let instance: Instance | undefined;
+
+    const updateTooltip = (nextOptions: OccasionTooltipOptions): void => {
+      if (!nextOptions.content) {
+        instance?.destroy();
+        instance = undefined;
+        return;
+      }
+
+      const props = createOccasionTooltipProps(node, nextOptions);
+
+      if (instance) {
+        instance.setProps(props);
+      } else {
+        instance = tippy(node, props);
+      }
+    };
+
+    updateTooltip(options);
+
+    return {
+      update: updateTooltip,
+      destroy() {
+        instance?.destroy();
+      },
+    };
+  };
+
+  const handleImageButtonClick = async (): Promise<void> => {
+    if (!currentOccasion?.blurb) {
+      await goto("/");
+    }
+  };
 </script>
 
 <div class="sidebar transition-colors" data-testid="sidebar">
   <div class="sidebar-content">
     {#if !currentOccasion || currentOccasion.imageName}
-      <a
+      <button
         class="img-wrapper transition-colors"
         class:rounded={!currentOccasion}
-        href="/"
-        aria-label="Home"
-        data-sveltekit-preload-data="hover"
+        type="button"
+        aria-label={currentOccasion?.blurb
+          ? `Learn more about ${currentOccasion.name}`
+          : "Home"}
+        use:occasionTooltip={{
+          content: currentOccasion?.blurb,
+        }}
+        onclick={handleImageButtonClick}
       >
         {#if currentOccasion?.imageName}
           <picture data-testid="occasion-image-{currentOccasion.name}">
@@ -46,7 +153,6 @@
               data-testid="headshot-image"
               src="/occasions/{currentOccasion.imageName}.png"
               alt={currentOccasion.name}
-              title={currentOccasion.name}
               width={remsToPixels(10)}
               height={remsToPixels(10)}
             />
@@ -64,26 +170,7 @@
             />
           </picture>
         {/if}
-      </a>
-    {/if}
-    {#if currentOccasion?.blurb}
-      <p
-        class="occasion-blurb"
-        data-testid="occasion-blurb-{currentOccasion.name}"
-        style:max-width={currentOccasion.blurbMaxWidth}
-      >
-        {currentOccasion.blurb}
-        {#if currentOccasion.learnMoreUrl}
-          <a
-            href={currentOccasion.learnMoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="learn-more-link"
-          >
-            Learn more
-          </a>
-        {/if}
-      </p>
+      </button>
     {/if}
     <a class="name-wrapper" href="/" data-sveltekit-preload-data="hover">
       <h1 class="transition-colors">Ross Hill</h1>
@@ -209,7 +296,7 @@
       z-index: 1;
       gap: var(--spacing-xl);
 
-      a.img-wrapper,
+      button.img-wrapper,
       a.name-wrapper {
         text-decoration: none;
 
@@ -218,17 +305,11 @@
         }
       }
 
-      .occasion-blurb {
-        text-align: center;
-        margin-top: calc(var(--spacing-s) * -1);
-        max-width: 20rem;
-        width: 100%;
-        color: var(--color-subtitle);
-        padding: 0 var(--spacing-s);
-
-        .learn-more-link {
-          white-space: nowrap;
-        }
+      button.img-wrapper {
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
       }
 
       .name-wrapper {
@@ -280,6 +361,21 @@
         }
       }
     }
+  }
+
+  :global(.tippy-box[data-theme~="occasion"]) {
+    color: var(--color-foreground, #181b1f);
+    background: var(--color-panel-background, #ffffff);
+    border: 1px solid var(--color-border, rgb(0 0 0 / 18%));
+    border-radius: var(--border-radius-s, 0.375rem);
+    box-shadow: 0 var(--spacing-xs) var(--spacing-xl) rgb(0 0 0 / 12%);
+    font-size: var(--font-size-xs);
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  :global(.tippy-box[data-theme~="occasion"] > .tippy-content) {
+    padding: var(--spacing-xs, 0.5rem) var(--spacing-s, 0.75rem);
   }
 
   @media (max-width: breakpoints.$breakpoint-m-max) {

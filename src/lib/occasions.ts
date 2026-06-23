@@ -48,7 +48,6 @@ export const occasions = [
     startDay: 1,
     durationDays: 1,
     imageName: "new-years-day",
-    blurbMaxWidth: "12rem",
   },
   {
     name: "Valentine's Day",
@@ -70,7 +69,6 @@ export const occasions = [
     name: "Trans Day of Visibility",
     blurb:
       "Join me in celebrating our transgender friends, colleagues, and neighbours!",
-    learnMoreUrl: "https://www.glaad.org/tdov",
     startMonth: 3,
     startDay: 31,
     durationDays: 1,
@@ -83,7 +81,6 @@ export const occasions = [
     startDay: 1,
     durationDays: 30,
     imageName: "pride",
-    blurbMaxWidth: "15rem",
   },
   {
     name: "Canada Day",
@@ -109,9 +106,6 @@ export const occasions = [
     startDay: 29,
     durationDays: 3,
     imageName: "reconciliation",
-    blurbMaxWidth: "16rem",
-    learnMoreUrl:
-      "https://www.canada.ca/en/canadian-heritage/campaigns/national-day-truth-reconciliation.html",
   },
   {
     name: "Halloween",
@@ -134,7 +128,6 @@ export const occasions = [
     startDay: 11,
     durationDays: 1,
     imageName: "remembrance",
-    blurbMaxWidth: "15rem",
   },
   {
     name: "Transgender Awareness Week",
@@ -144,7 +137,6 @@ export const occasions = [
     startDay: 13,
     durationDays: 7,
     imageName: "trans",
-    learnMoreUrl: "https://www.glaad.org/transweek",
   },
   {
     name: `Holidays ${currentYear}`,
@@ -161,6 +153,5 @@ export const occasions = [
     startDay: 31,
     durationDays: 1,
     imageName: "new-years-eve",
-    blurbMaxWidth: "12rem",
   },
 ];
