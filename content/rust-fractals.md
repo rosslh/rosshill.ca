@@ -8,16 +8,18 @@ repository: https://github.com/rosslh/Mandelbrot.site
 website: https://mandelbrot.site
 thumbnail: mandelbrot-thumb
 image: rust-mandelbrot
-excerpt: Explore the Mandelbrot set in your browser, rendered with Rust and WebAssembly.
+excerpt: Explore the Mandelbrot set at unlimited depth in your browser, rendered with Rust and WebAssembly.
 tags: [rust, webassembly, typescript, pwa]
 ---
 
-I built <a href="https://mandelbrot.site" target="_blank" rel="noopener">Mandelbrot.site</a> as a browser-based viewer for the Mandelbrot set. The interface treats the complex plane like a slippy map: you pan and zoom with Leaflet.js, and tiles are computed on demand instead of pulled from a server.
+I built <a href="https://mandelbrot.site" target="_blank" rel="noopener">Mandelbrot.site</a>, a website for exploring the Mandelbrot set, a famous fractal with endless detail at every scale. It works like an online map: you pan and zoom the same way you would in Google Maps, and each piece of the image is calculated on your own device as you go.
 
-The escape-time math runs in Rust, compiled to WebAssembly via wasm-pack. Tile requests are dispatched to a pool of Web Workers (using threads.js), which keeps the main thread free for UI work and parallelizes rendering across CPU cores. One optimization is worth calling out: because the Mandelbrot set is simply connected, if every point on a tile's border is in the set, the whole tile is. I check the perimeter first and skip the interior when that holds, which makes deep regions of solid black render almost instantly.
+The heavy math is written in Rust and runs in the browser through WebAssembly, split across background threads so the page stays responsive. A few mathematical shortcuts help too, like detecting solid-black regions from their edges so they don't have to be computed point by point.
 
-Colouring is where most of the perceived quality of a fractal viewer lives, so each control has a reason behind it. Hue, saturation, and lightness adjustments can run in HSL, HSLuv, LCh, or Okhsl, because perceptually uniform spaces produce noticeably smoother gradients along the boundary than HSL. Smooth colouring uses Inigo Quilez's logarithmic formula to eliminate banding at iteration thresholds. The palette can be reversed and clamped to a custom iteration range, which matters in shallow views where most pixels escape early and a default mapping crushes the visible variation. The exponent is configurable too, so the same renderer handles multibrot sets with cubic, quartic, and higher powers.
+You can zoom essentially forever. Ordinary computer arithmetic runs out of precision at extreme depths, so the renderer switches to a technique called perturbation theory: it computes one point with very high precision, then describes every other pixel by its tiny difference from that point.
 
-Every view is encoded in URL parameters, so sharing a link drops someone onto the exact coordinates, zoom, and colour settings. Image export renders the current viewport in 24 vertical strips (each a parallel worker job), stitches them on a canvas, and optionally runs the PNG through oxipng before saving. The whole thing is a Progressive Web App, so it installs and runs offline once the assets are cached.
+Colours are adjustable, with several colour modes and smooth gradients that avoid visible banding. Because the underlying math is cached separately from the image, changing colours updates the view instantly without recomputing anything. There are also small tools for the curious: hovering over a point shows its coordinates and other details, a side panel shows the related Julia set for wherever your cursor is, favourite views can be saved, and a caption compares your current zoom to familiar objects (a city, a coin, an atom) as if the fractal were the size of Earth.
 
-The escape-time math is textbook. What's not is a fractal explorer that runs in the browser, stays responsive while you pan and zoom, and offers more rendering controls than the math strictly needs. Those three things don't normally show up together.
+Every view has its own URL, so a shared link reproduces exactly what you were seeing. You can export high-resolution images that can later be loaded back in as views, record zoom animations as video, and use the whole site offline.
+
+Performance changes are benchmarked in an automated harness before they ship, with statistical checks to make sure the output stays correct. One optimization alone cut rendering time by 44% on a deep-zoom test.
