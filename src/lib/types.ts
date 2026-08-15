@@ -44,6 +44,7 @@ export type PostItemPage = PostItemBase & {
   image?: {
     name: string;
     extension: string;
+    showBorder: boolean;
   };
 };
 

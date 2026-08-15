@@ -130,6 +130,7 @@
         />
         <img
           class="transition-colors"
+          class:show-border={post.image.showBorder}
           src="/experience/{post.image.name}.{post.image.extension}"
           alt=""
           width={600}
@@ -196,8 +197,11 @@
       height: auto;
       margin: var(--spacing-2xl) auto;
       display: block;
-      border: 1px solid var(--color-border);
       border-radius: var(--border-radius-l);
+
+      &.show-border {
+        border: 1px solid var(--color-border);
+      }
     }
 
     div.embed-wrapper {

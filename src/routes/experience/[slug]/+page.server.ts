@@ -18,7 +18,11 @@ const posts: PostItemPage[] = Object.values(postsObject)
     embed: post.embed,
     excerpt: post.excerpt,
     image: post.image
-      ? { name: post.image, extension: post.imageExt ?? "png" }
+      ? {
+          name: post.image,
+          extension: post.imageExt ?? "png",
+          showBorder: post.imageBorder ?? true,
+        }
       : undefined,
     repository: post.repository,
     roles: post.roles,
