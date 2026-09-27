@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-deep" d="M6.25 14.5H10.25L12.5 25.06L14.75 14.5H19.5L14.37 32H9.98Z"/><path class="th-accent" d="M20.13 18.5L22.5 27Q27.02 15.97 34.5 6L24.1 32H19.1Z"/>
+</svg>

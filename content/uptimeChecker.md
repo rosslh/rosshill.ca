@@ -6,10 +6,8 @@ tags: [typescript, react, nodedotjs]
 repository: https://github.com/rosslh/uptime-checker
 date: 2024-10-11
 thumbnail: uptime-checker-thumb
-thumbnailExt: png
 image: uptime-checker
 imageExt: png
-thumbnailBorder: true
 isHidden: true
 ---
 

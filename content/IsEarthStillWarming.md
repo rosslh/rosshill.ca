@@ -5,8 +5,7 @@ date: 2019-01-11
 website: https://isearthstillwarming.com
 repository: https://github.com/rosslh/IsEarthStillWarming.com
 image: isearthstillwarming
-thumbnail: fire
-thumbnailBorder: true
+thumbnail: isearthstillwarming-thumb
 excerpt: Track Earth's warming with current climate data and plain-language explanations.
 tags: [typescript, astro, react]
 ---

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <circle class="th-line-main" cx="20" cy="20" r="13.25" stroke-width="1.5"/>
+  <path class="th-line-accent" d="M22.75 13.75V27.5M19 19.04L28.25 15.92" stroke-width="1.5" stroke-linecap="round"/>
+  <path class="th-deep" fill-rule="evenodd" d="M17 12.5H20V25.5H15.5A4.5 4.6 0 1 1 17 16.56ZM17 18.9A2.25 2.4 0 1 0 17 22.9Z"/>
+</svg>

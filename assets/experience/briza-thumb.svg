@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-line-deep" stroke-width="2.7" stroke-linecap="butt" d="M6.3 24.08L17.44 17.65A3.7 3.7 0 0 0 16.33 10.82A3.7 3.7 0 0 0 12.64 16.67M6.7 28.7L29.11 15.77A3.7 3.7 0 0 0 28 8.94A3.7 3.7 0 0 0 24.31 14.79M11.09 31.02L26.57 22.08A3.7 3.7 0 0 1 31.93 26.46A3.7 3.7 0 0 1 25.02 26.73"/>
+</svg>

@@ -2,8 +2,7 @@
 title: ReqWise
 eventType: project
 date: 2020-04-01
-thumbnail: reqwise
-thumbnailBorder: true
+thumbnail: reqwise-thumb
 excerpt: An easier way for web developers and digital agencies to understand their customer's needs. Brainstorm requirements, propose designs, and get stakeholder sign-off.
 tags: [svelte, fastify, postgresql]
 # googlecloud

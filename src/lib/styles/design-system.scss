@@ -35,6 +35,13 @@ $font-stack-sans:
   --color-link: var(--highlight-color);
   --color-foreground: var(--color-green-600);
   --color-heading: var(--color-green-700);
+  // Thumbnail SVG tones, ordered by contrast against the tile
+  --thumb-tile: var(--color-green-100);
+  --thumb-soft: var(--color-green-200);
+  --thumb-mid: var(--color-green-300);
+  --thumb-main: var(--color-green-600);
+  --thumb-deep: var(--color-green-700);
+  --thumb-accent: var(--highlight-color);
   --background-grain-image: none;
   --background-grain-opacity: 0;
   --background-color-transition-duration: 0.3s;
@@ -51,6 +58,12 @@ $font-stack-sans:
   --color-link: var(--highlight-color);
   --color-foreground: var(--color-green-200);
   --color-heading: var(--color-green-100);
+  --thumb-tile: var(--color-green-700);
+  --thumb-soft: var(--color-green-600);
+  --thumb-mid: var(--color-green-400);
+  --thumb-main: var(--color-green-200);
+  --thumb-deep: var(--color-green-50);
+  --thumb-accent: var(--highlight-color);
   --background-grain-image: url("/background-grain-dark.png");
   --background-grain-opacity: 1;
   --background-color-transition-duration: 0s;

@@ -7,7 +7,6 @@ website: https://2021.metaprojection.ca
 repository: https://github.com/rosslh/MetaProjection
 image: metaprojection
 thumbnail: metaprojection-thumb
-thumbnailBorder: true
 excerpt: View Canadian election projections on one map and find the predictions for your riding.
 tags: [typescript, gatsby, graphql, nodedotjs]
 ---

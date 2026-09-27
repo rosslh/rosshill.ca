@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { remsToPixels } from "$lib/functions";
   import type { PostItemStub } from "$lib/types";
   import Balancer from "svelte-wrap-balancer";
   import PostDate from "../PostDate.svelte";
@@ -32,14 +31,11 @@
     target={href && href === post.website ? "_blank" : undefined}
     rel={href && href === post.website ? "noopener" : undefined}
   >
-    <img
-      src={`/experience/${post.thumbnail.name}.${post.thumbnail.extension}`}
-      alt=""
-      class="post-thumbnail transition-colors"
-      class:show-border={post.thumbnail.showBorder}
-      width={remsToPixels(2.5)}
-      height={remsToPixels(2.5)}
-    />
+    <!-- Inlined so the SVG's fills follow the site's theme variables -->
+    <span class="post-thumbnail transition-colors" aria-hidden="true">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html post.thumbnail}
+    </span>
     <div class="post-header">
       <h3 class="post-title">{post.title}</h3>
       <div class="post-link-icon">
@@ -99,10 +95,16 @@
       text-decoration: none;
 
       .post-thumbnail {
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: var(--border-radius-s);
+        overflow: hidden;
 
-        &.show-border {
-          border: 1px solid var(--color-border);
+        :global(svg) {
+          display: block;
+          width: 100%;
+          height: 100%;
         }
       }
 

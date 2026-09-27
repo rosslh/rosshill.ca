@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-deep" d="M40 40H0A40 40 0 0 1 40 0Z"/><path class="th-mid" d="M40 40H4A36 36 0 0 1 40 4Z"/><path class="th-soft" d="M40 40H8A32 32 0 0 1 40 8Z"/><path class="th-accent" d="M40 40H12A28 28 0 0 1 40 12Z"/><path class="th-main" d="M40 40H16A24 24 0 0 1 40 16Z"/><path class="th-tile" d="M40 40H20A20 20 0 0 1 40 20Z"/>
+</svg>

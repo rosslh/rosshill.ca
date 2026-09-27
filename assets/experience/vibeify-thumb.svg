@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-mid" d="M7.5 19.78C12.1 18.5 15.66 14.84 16.82 10.2C19.15 13.94 24.2 17.4 31.51 15.12A12.5 12.5 0 0 0 7.5 19.78Z"/>
+  <circle class="th-line-main" cx="20" cy="20" r="12.5" stroke-width="3"/>
+  <path class="th-line-main" d="M7.5 19.78C12.1 18.5 15.66 14.84 16.82 10.2C19.15 13.94 24.2 17.4 31.51 15.12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="th-deep" cx="16" cy="21.5" r="1.85"/>
+  <circle class="th-deep" cx="24" cy="21.5" r="1.85"/>
+</svg>

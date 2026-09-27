@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-soft" d="M9.52 10.98A14.25 14.25 0 0 1 34.97 18.76L31.72 18.98A11 11 0 0 0 12.08 12.98Z"/>
+  <path class="th-main" d="M32.42 27.92A14.25 14.25 0 0 1 8.17 13.06L11.04 14.59A11 11 0 0 0 29.76 26.06Z"/>
+  <circle class="th-tile" cx="20.75" cy="32.38" r="0.8"/>
+  <circle class="th-deep" cx="20.75" cy="19.75" r="9.5"/>
+  <path class="th-line-tile" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M20.75 19.75L20.75 12.5M18.98 13.48L20.75 15.25L22.52 13.48M20.75 19.75L27.03 16.12M25.29 15.09L24.65 17.5L27.06 18.15M20.75 19.75L27.03 23.38M27.06 21.35L24.65 22L25.29 24.41M20.75 19.75L20.75 27M22.52 26.02L20.75 24.25L18.98 26.02M20.75 19.75L14.47 23.38M16.21 24.41L16.85 22L14.44 21.35M20.75 19.75L14.47 16.12M14.44 18.15L16.85 17.5L16.21 15.09"/>
+</svg>

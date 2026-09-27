@@ -4,6 +4,20 @@ import tagColors from "$data/tagColors.json";
 import type { TagColors, PostItemStub } from "$lib/types";
 import { PostCategory } from "$lib/types";
 
+const thumbnails = import.meta.glob<string>("/assets/experience/*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+
+function getThumbnail(name: string): string {
+  const svg = thumbnails[`/assets/experience/${name}.svg`];
+  if (!svg) {
+    throw new Error(`Missing thumbnail: assets/experience/${name}.svg`);
+  }
+  return svg;
+}
+
 const posts: PostItemStub[] = Object.values(postsObject)
   .filter((post) => !post.isHidden)
   .map((post) => ({
@@ -24,11 +38,7 @@ const posts: PostItemStub[] = Object.values(postsObject)
     roles: post.roles,
     slug: slugify(post.title),
     tags: post.tags ?? [],
-    thumbnail: {
-      name: post.thumbnail ?? `experience/${post.thumbnail}`,
-      extension: post.thumbnailExt ?? "png",
-      showBorder: post.thumbnailBorder ?? false,
-    },
+    thumbnail: getThumbnail(post.thumbnail),
     title: formatPostTitle(post.title),
     website: post.website,
   }))

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-deep" d="M8.44 11.5H26.17A1.44 1.44 0 0 1 27.19 11.92L34.25 18.98A1.44 1.44 0 0 1 34.25 21.02L27.19 28.08A1.44 1.44 0 0 1 26.17 28.5H8.44A1.44 1.44 0 0 1 7 27.06V12.94A1.44 1.44 0 0 1 8.44 11.5Z"/><path class="th-soft" d="M11.22 15H25.02A0.72 0.72 0 0 1 25.53 15.21L29.81 19.49A0.72 0.72 0 0 1 29.81 20.51L25.53 24.79A0.72 0.72 0 0 1 25.02 25H11.22A0.72 0.72 0 0 1 10.5 24.28V15.72A0.72 0.72 0 0 1 11.22 15Z"/>
+</svg>

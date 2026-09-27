@@ -9,7 +9,5 @@ website: https://ownright.com
 date: 2023-05-05
 isOngoing: true
 
-thumbnail: ownright
-thumbnailExt: svg
-thumbnailBorder: true
+thumbnail: ownright-thumb
 ---

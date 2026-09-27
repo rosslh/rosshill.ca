@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <style>
+    .th-tile{fill:var(--thumb-tile,#DDF1E1)}
+    .th-soft{fill:var(--thumb-soft,#C2DCC8)}
+    .th-mid{fill:var(--thumb-mid,#A2BCA8)}
+    .th-main{fill:var(--thumb-main,#546D5A)}
+    .th-deep{fill:var(--thumb-deep,#405745)}
+    .th-accent{fill:var(--thumb-accent,#4E9162)}
+    .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
+    .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
+    .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
+    .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
+    .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
+    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
+  </style>
+  <rect class="th-tile" width="40" height="40"/>
+  <path class="th-mid" d="M11.16 12.57 17.23 6.5 19 6.5 19 8.27 12.93 14.34Z"/>
+  <path class="th-deep" d="M6.5 6.5 6.5 19 19 19Z"/>
+  <path class="th-mid" d="M16.5 6.5H19V19H16.5Z"/>
+  <path class="th-deep" d="M21 6.5H29.5V13.5H31V6.5H33.5V12.75A6.25 6.25 0 0 1 21 12.75Z"/>
+  <path class="th-deep" d="M17.67 23.39A6.25 6.25 0 1 1 16.61 22.33L12.22 26.72L13.28 27.78Z"/>
+  <path class="th-mid" d="M25.5 25.5H32V28H25.5Z"/>
+  <path class="th-mid" d="M21 31H33.5V33.5H21Z"/>
+  <path class="th-deep" d="M21 21 33.5 21 21 33.5Z"/>
+</svg>

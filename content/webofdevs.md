@@ -6,7 +6,6 @@ date: 2023-03-05
 website: https://webofdevs.com
 repository: https://github.com/rosslh/Web-of-Devs
 thumbnail: webofdevs-thumb
-thumbnailBorder: true
 image: webofdevs
 imageExt: png
 excerpt: Curated developer portfolios with live previews. Favourite the sites you like and share your own.

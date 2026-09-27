@@ -30,11 +30,7 @@ export type PostItemStub = PostItemBase & {
   hasContent: boolean;
   isLeftAligned?: boolean;
   showYearLabel?: boolean;
-  thumbnail: {
-    name: string;
-    extension: string;
-    showBorder: boolean;
-  };
+  thumbnail: string; // inline SVG markup
 };
 
 export type PostItemPage = PostItemBase & {

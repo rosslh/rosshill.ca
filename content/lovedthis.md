@@ -3,7 +3,6 @@ title: LovedThis!
 eventType: project
 date: 2026-08-11
 thumbnail: lovedthis-thumb
-thumbnailBorder: true
 image: lovedthis
 imageExt: png
 imageBorder: false

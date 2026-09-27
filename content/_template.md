@@ -14,8 +14,7 @@ isOngoing: false
 isSeasonal: false
 season: summer
 
-thumbnail: thumbnail
-thumbnailExt: png
+thumbnail: example-thumb
 image: image
 imageExt: png
 ---
