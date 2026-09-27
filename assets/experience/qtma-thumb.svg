@@ -5,15 +5,13 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <path class="th-deep" d="M7 12.75A6 6 0 1 1 19 12.75A6 6 0 1 1 7 12.75ZM9.5 12.75A3.5 3.5 0 1 0 16.5 12.75A3.5 3.5 0 1 0 9.5 12.75ZM21.5 7L33 7L33 9.5L28.5 9.5L28.5 18.5L26 18.5L26 9.5L21.5 9.5ZM7 33L7 21.5L10 21.5L13 27.71L16 21.5L19 21.5L19 33L16.5 33L16.5 25.75L13 33L9.5 25.75L9.5 33ZM21.5 33L26 21.5L28.5 21.5L33 33L30.32 33L29.34 30.5L25.16 30.5L24.18 33ZM27.25 25.17L25.95 28.5L28.55 28.5Z"/>
-  <path class="th-line-accent" d="M14.7 14.45L18.94 18.69" stroke-width="2.5"/>
+  <path class="th-line-deep" d="M14.7 14.45L18.94 18.69" stroke-width="2.5"/>
 </svg>

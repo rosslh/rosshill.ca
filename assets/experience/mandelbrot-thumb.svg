@@ -5,13 +5,11 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <path class="th-soft" d="M37.01 20C37.01 11.61 30.78 2.68 21.49 5.67C17.66 6.9 14.34 9.77 10.98 11.91C7.95 13.83 3.75 15.82 3.75 20C3.75 24.18 7.95 26.17 10.98 28.09C14.34 30.23 17.66 33.1 21.49 34.33C30.78 37.32 37.01 28.39 37.01 20Z"/>

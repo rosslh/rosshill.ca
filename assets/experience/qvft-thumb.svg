@@ -5,13 +5,11 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <path class="th-line-mid" stroke-width="1.75" stroke-linecap="round" d="M7.21 16.51A13.5 13.5 0 0 1 33.29 16.51"/>

@@ -5,13 +5,11 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <path class="th-deep" d="M20 6.25A1.1 1.1 0 0 0 19.14 6.66L14.74 12.16A1.1 1.1 0 0 0 14.5 12.85L14.5 16.79L14.18 16.47A1.1 1.1 0 0 0 13.62 16.17L8.12 15.07A1.1 1.1 0 0 0 6.82 16.37L7.92 21.87A1.1 1.1 0 0 0 8.22 22.43L10.96 25.17L9.12 28.86A1.1 1.1 0 0 0 10.34 30.42L18.59 28.59L17.82 32.43A1.1 1.1 0 0 0 18.9 33.75L21.1 33.75A1.1 1.1 0 0 0 22.18 32.43L21.41 28.59L29.66 30.42A1.1 1.1 0 0 0 30.88 28.86L29.04 25.17L31.78 22.43A1.1 1.1 0 0 0 32.08 21.87L33.18 16.37A1.1 1.1 0 0 0 31.88 15.07L26.38 16.17A1.1 1.1 0 0 0 25.82 16.47L25.5 16.79L25.5 12.85A1.1 1.1 0 0 0 25.26 12.16L20.86 6.66A1.1 1.1 0 0 0 20 6.25Z"/>

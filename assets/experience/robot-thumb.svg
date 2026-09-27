@@ -5,17 +5,15 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <rect class="th-main" x="19" y="10.5" width="2" height="5"/>
-  <circle class="th-accent" cx="20" cy="8.75" r="3"/>
+  <circle class="th-main" cx="20" cy="8.75" r="3"/>
   <rect class="th-mid" x="6" y="19.5" width="6" height="10" rx="2.5"/>
   <rect class="th-mid" x="28" y="19.5" width="6" height="10" rx="2.5"/>
   <rect class="th-main" x="9" y="14.5" width="22" height="19.5" rx="4"/>

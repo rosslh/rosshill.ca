@@ -5,13 +5,11 @@
     .th-mid{fill:var(--thumb-mid,#A2BCA8)}
     .th-main{fill:var(--thumb-main,#546D5A)}
     .th-deep{fill:var(--thumb-deep,#405745)}
-    .th-accent{fill:var(--thumb-accent,#4E9162)}
     .th-line-tile{fill:none;stroke:var(--thumb-tile,#DDF1E1)}
     .th-line-soft{fill:none;stroke:var(--thumb-soft,#C2DCC8)}
     .th-line-mid{fill:none;stroke:var(--thumb-mid,#A2BCA8)}
     .th-line-main{fill:none;stroke:var(--thumb-main,#546D5A)}
     .th-line-deep{fill:none;stroke:var(--thumb-deep,#405745)}
-    .th-line-accent{fill:none;stroke:var(--thumb-accent,#4E9162)}
   </style>
   <rect class="th-tile" width="40" height="40"/>
   <mask id="queens-inner"><path fill="white" stroke="black" stroke-width="7" d="M8 6H32V23C32 29 26 31.6 20 35C14 31.6 8 29 8 23Z"/></mask>
@@ -20,5 +18,5 @@
   <rect class="th-tile" width="40" height="40" mask="url(#queens-inner)"/>
   <g mask="url(#queens-field)"><rect class="th-soft" width="40" height="40"/><path class="th-line-deep" stroke-width="4.25" d="M9 7L31 29M31 7L9 29"/></g>
   <path class="th-tile" d="M17 15.5Q18.5 14.9 20 16.4Q21.5 14.9 23 15.5V19.5Q21.5 18.9 20 20.4Q18.5 18.9 17 19.5Z"/>
-  <path class="th-accent" d="M17 9V7L18.5 7.9L20 6.5L21.5 7.9L23 7V9Z"/>
+  <path class="th-deep" d="M17 9V7L18.5 7.9L20 6.5L21.5 7.9L23 7V9Z"/>
 </svg>
