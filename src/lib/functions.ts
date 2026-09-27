@@ -5,7 +5,7 @@ export const slugify = (stringToSlugify: string): string =>
   getSlug(stringToSlugify, {
     replacement: "-",
     lower: true,
-    remove: /:/,
+    remove: /[:!]/,
   }).replaceAll(/[–—-]+/g, "-");
 
 export const remsToPixels = (rems: number): number => Math.round(rems * 16);
