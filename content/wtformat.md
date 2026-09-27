@@ -9,6 +9,7 @@ image: wtformat
 thumbnail: wtformat-thumb
 excerpt: Type a date example, get format codes for date-fns, Moment.js, Day.js, and Luxon.
 tags: [typescript, vuedotjs]
+isHidden: true
 ---
 
 I built <a href="https://wtformat.com" target="_blank" rel="noopener">WTFormat</a> because I was tired of looking up date format tokens. Every JavaScript date library invents its own dialect, and I never remember whether `YYYY` or `yyyy` is the right one for whichever library I happen to be using that day. WTFormat hands me the answer instead.
