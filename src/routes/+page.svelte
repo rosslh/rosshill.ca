@@ -18,7 +18,7 @@
   const meta = {
     title: "Ross Hill - Projects and Experience",
     description:
-      "I'm a full-stack engineer in Toronto turning messy product and technical problems into intuitive, reliable software and practical AI workflows.",
+      "I'm a full-stack engineer in Toronto who leads engineering work and still writes code. I also build things of my own, from a fractal explorer to a deployment platform.",
     url: "https://rosshill.ca",
     siteName: "Ross Hill",
     image: {
@@ -68,12 +68,14 @@
     <p>
       {#key $themeStore}
         <Balancer>
-          I'm a full-stack engineer in Toronto with a builder's mindset. I turn
-          messy product and technical problems into software that feels
-          intuitive and reliable. I lead engineering work, help teams make
-          practical technical decisions, and stay close to the craft. Recently,
-          I've been exploring how AI tools can improve product and engineering
-          workflows without compromising good software design.
+          I'm a full-stack engineer in Toronto, where I lead engineering work
+          and still keep my hands in the code. For the last decade, I've also
+          been building things of my own: a directory of developer websites, a
+          fractal explorer, even a deployment platform. Under the hood the
+          projects are just as varied, from heavy math running right in your
+          browser to the servers that keep other people's apps online. My
+          favourite part is seeing people use what I've dreamed up, so check
+          some of them out below.
         </Balancer>
       {/key}
     </p>
